@@ -1,0 +1,959 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/coding-agent/test/session-manager/tree-traversal.test.ts",
+      "type": "file",
+      "name": "tree-traversal.test.ts",
+      "filePath": "packages/coding-agent/test/session-manager/tree-traversal.test.ts",
+      "summary": "测试会话管理器的树遍历功能，验证会话树的构建与遍历逻辑。",
+      "tags": [
+        "test",
+        "session-manager",
+        "tree-traversal"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/test/session-selector-search.test.ts",
+      "type": "file",
+      "name": "session-selector-search.test.ts",
+      "filePath": "packages/coding-agent/test/session-selector-search.test.ts",
+      "summary": "测试会话选择器搜索功能，验证搜索逻辑对会话列表的过滤。",
+      "tags": [
+        "test",
+        "session-selector",
+        "search"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/test/session-selector-search.test.ts:makeSession",
+      "type": "function",
+      "name": "makeSession",
+      "filePath": "packages/coding-agent/test/session-selector-search.test.ts",
+      "lineRange": [
+        5,
+        19
+      ],
+      "summary": "创建测试用会话对象，用于会话选择器搜索测试。",
+      "tags": [
+        "test-helper",
+        "session-factory",
+        "test-data"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/test/settings-manager-bug.test.ts",
+      "type": "file",
+      "name": "settings-manager-bug.test.ts",
+      "filePath": "packages/coding-agent/test/settings-manager-bug.test.ts",
+      "summary": "测试设置管理器的缺陷修复，验证特定场景下的设置读取行为。",
+      "tags": [
+        "test",
+        "settings-manager",
+        "bug-fix",
+        "regression"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/settings-manager.test.ts",
+      "type": "file",
+      "name": "settings-manager.test.ts",
+      "filePath": "packages/coding-agent/test/settings-manager.test.ts",
+      "summary": "测试设置管理器的核心功能，验证设置存储、HTTP 调度器和配置管理。",
+      "tags": [
+        "test",
+        "settings-manager",
+        "http-dispatcher",
+        "configuration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/test/skills.test.ts",
+      "type": "file",
+      "name": "skills.test.ts",
+      "filePath": "packages/coding-agent/test/skills.test.ts",
+      "summary": "测试技能系统的核心功能，验证技能创建、诊断和源信息管理。",
+      "tags": [
+        "test",
+        "skills",
+        "diagnostics",
+        "source-info"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/test/skills.test.ts:createTestSkill",
+      "type": "function",
+      "name": "createTestSkill",
+      "filePath": "packages/coding-agent/test/skills.test.ts",
+      "lineRange": [
+        11,
+        27
+      ],
+      "summary": "创建测试技能对象，用于技能系统测试。",
+      "tags": [
+        "test-helper",
+        "skill-factory",
+        "test-data"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/test/startup-session-name.test.ts",
+      "type": "file",
+      "name": "startup-session-name.test.ts",
+      "filePath": "packages/coding-agent/test/startup-session-name.test.ts",
+      "summary": "测试启动时会话名称的设置，验证 CLI 创建会话文件和命名行为。",
+      "tags": [
+        "test",
+        "startup",
+        "session-name",
+        "cli"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/test/startup-session-name.test.ts:createSessionFile",
+      "type": "function",
+      "name": "createSessionFile",
+      "filePath": "packages/coding-agent/test/startup-session-name.test.ts",
+      "lineRange": [
+        35,
+        55
+      ],
+      "summary": "创建会话文件，用于启动会话名称测试。",
+      "tags": [
+        "test-helper",
+        "file-io",
+        "session"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/test/startup-session-name.test.ts:runCli",
+      "type": "function",
+      "name": "runCli",
+      "filePath": "packages/coding-agent/test/startup-session-name.test.ts",
+      "lineRange": [
+        66,
+        95
+      ],
+      "summary": "运行 CLI 命令并捕获输出，用于测试 CLI 行为。",
+      "tags": [
+        "test-helper",
+        "cli-runner",
+        "integration-test"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/test/startup-session-name.test.ts:setup",
+      "type": "function",
+      "name": "setup",
+      "filePath": "packages/coding-agent/test/startup-session-name.test.ts",
+      "lineRange": [
+        97,
+        108
+      ],
+      "summary": "测试环境初始化，设置临时目录和配置。",
+      "tags": [
+        "test-helper",
+        "setup",
+        "initialization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/test/stdout-cleanliness.test.ts",
+      "type": "file",
+      "name": "stdout-cleanliness.test.ts",
+      "filePath": "packages/coding-agent/test/stdout-cleanliness.test.ts",
+      "summary": "测试标准输出清洁性，验证 CLI 运行时 stdout 不包含非法输出。",
+      "tags": [
+        "test",
+        "stdout",
+        "cli",
+        "cleanliness"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/test/stdout-cleanliness.test.ts:runCli",
+      "type": "function",
+      "name": "runCli",
+      "filePath": "packages/coding-agent/test/stdout-cleanliness.test.ts",
+      "lineRange": [
+        29,
+        85
+      ],
+      "summary": "运行 CLI 命令并捕获输出，用于测试 CLI 行为。",
+      "tags": [
+        "test-helper",
+        "cli-runner",
+        "integration-test"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/test/suite/agent-session-bash-persistence.test.ts",
+      "type": "file",
+      "name": "agent-session-bash-persistence.test.ts",
+      "filePath": "packages/coding-agent/test/suite/agent-session-bash-persistence.test.ts",
+      "summary": "测试 Agent 会话中 Bash 工具的持久性，验证受控 Bash 操作在会话间的状态保持。",
+      "tags": [
+        "test",
+        "bash-tool",
+        "persistence",
+        "agent-session"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/test/suite/agent-session-bash-persistence.test.ts:createControlledBashOperations",
+      "type": "function",
+      "name": "createControlledBashOperations",
+      "filePath": "packages/coding-agent/test/suite/agent-session-bash-persistence.test.ts",
+      "lineRange": [
+        18,
+        29
+      ],
+      "summary": "创建受控 Bash 操作序列，用于 Bash 持久性测试。",
+      "tags": [
+        "test-helper",
+        "bash-tool",
+        "mock"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/test/suite/agent-session-prompt.test.ts",
+      "type": "file",
+      "name": "agent-session-prompt.test.ts",
+      "filePath": "packages/coding-agent/test/suite/agent-session-prompt.test.ts",
+      "summary": "测试 Agent 会话提示功能，验证扩展、提示模板和源信息的集成。",
+      "tags": [
+        "test",
+        "prompt",
+        "agent-session",
+        "extensions"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/test/suite/agent-session-runtime.test.ts",
+      "type": "file",
+      "name": "agent-session-runtime.test.ts",
+      "filePath": "packages/coding-agent/test/suite/agent-session-runtime.test.ts",
+      "summary": "测试 Agent 会话运行时，验证认证存储、会话管理和运行时的协同工作。",
+      "tags": [
+        "test",
+        "agent-session",
+        "runtime",
+        "integration-test"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/test/suite/regressions/2753-reload-stale-resource-settings.test.ts",
+      "type": "file",
+      "name": "2753-reload-stale-resource-settings.test.ts",
+      "filePath": "packages/coding-agent/test/suite/regressions/2753-reload-stale-resource-settings.test.ts",
+      "summary": "回归测试 #2753，验证重载后过时资源设置的正确刷新。",
+      "tags": [
+        "test",
+        "regression",
+        "resource-settings",
+        "reload"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/suite/regressions/2781-skill-collision-precedence.test.ts",
+      "type": "file",
+      "name": "2781-skill-collision-precedence.test.ts",
+      "filePath": "packages/coding-agent/test/suite/regressions/2781-skill-collision-precedence.test.ts",
+      "summary": "回归测试 #2781，验证技能名称冲突时的优先级处理。",
+      "tags": [
+        "test",
+        "regression",
+        "skill-collision",
+        "precedence"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/suite/regressions/2835-tools-allowlist-filters-extension-tools.test.ts",
+      "type": "file",
+      "name": "2835-tools-allowlist-filters-extension-tools.test.ts",
+      "filePath": "packages/coding-agent/test/suite/regressions/2835-tools-allowlist-filters-extension-tools.test.ts",
+      "summary": "回归测试 #2835，验证工具白名单对扩展工具的过滤行为。",
+      "tags": [
+        "test",
+        "regression",
+        "tools-allowlist",
+        "extension-tools"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/suite/regressions/2860-replaced-session-context.test.ts",
+      "type": "file",
+      "name": "2860-replaced-session-context.test.ts",
+      "filePath": "packages/coding-agent/test/suite/regressions/2860-replaced-session-context.test.ts",
+      "summary": "回归测试 #2860，验证被替换会话上下文的正确处理。",
+      "tags": [
+        "test",
+        "regression",
+        "session-context",
+        "replacement"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/test/suite/regressions/2860-replaced-session-context.test.ts:getText",
+      "type": "function",
+      "name": "getText",
+      "filePath": "packages/coding-agent/test/suite/regressions/2860-replaced-session-context.test.ts",
+      "lineRange": [
+        18,
+        28
+      ],
+      "summary": "从消息中提取文本内容，用于会话上下文验证。",
+      "tags": [
+        "test-helper",
+        "text-extraction",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/test/suite/regressions/3302-find-path-glob.test.ts",
+      "type": "file",
+      "name": "3302-find-path-glob.test.ts",
+      "filePath": "packages/coding-agent/test/suite/regressions/3302-find-path-glob.test.ts",
+      "summary": "回归测试 #3302，验证 find 工具的路径 glob 匹配行为。",
+      "tags": [
+        "test",
+        "regression",
+        "find-tool",
+        "glob"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/suite/regressions/3303-find-nested-gitignore.test.ts",
+      "type": "file",
+      "name": "3303-find-nested-gitignore.test.ts",
+      "filePath": "packages/coding-agent/test/suite/regressions/3303-find-nested-gitignore.test.ts",
+      "summary": "回归测试 #3303，验证 find 工具对嵌套 .gitignore 的处理。",
+      "tags": [
+        "test",
+        "regression",
+        "find-tool",
+        "gitignore"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/coding-agent/test/session-selector-search.test.ts",
+      "target": "function:packages/coding-agent/test/session-selector-search.test.ts:makeSession",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/skills.test.ts",
+      "target": "function:packages/coding-agent/test/skills.test.ts:createTestSkill",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/startup-session-name.test.ts",
+      "target": "function:packages/coding-agent/test/startup-session-name.test.ts:createSessionFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/startup-session-name.test.ts",
+      "target": "function:packages/coding-agent/test/startup-session-name.test.ts:runCli",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/startup-session-name.test.ts",
+      "target": "function:packages/coding-agent/test/startup-session-name.test.ts:setup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/stdout-cleanliness.test.ts",
+      "target": "function:packages/coding-agent/test/stdout-cleanliness.test.ts:runCli",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/agent-session-bash-persistence.test.ts",
+      "target": "function:packages/coding-agent/test/suite/agent-session-bash-persistence.test.ts:createControlledBashOperations",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/2860-replaced-session-context.test.ts",
+      "target": "function:packages/coding-agent/test/suite/regressions/2860-replaced-session-context.test.ts:getText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/session-manager/tree-traversal.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/session-manager/tree-traversal.test.ts",
+      "target": "file:packages/coding-agent/test/utilities.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/session-selector-search.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/session-selector-search.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/session-selector-search.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/settings-manager-bug.test.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/settings-manager.test.ts",
+      "target": "file:packages/coding-agent/src/core/http-dispatcher.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/settings-manager.test.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/skills.test.ts",
+      "target": "file:packages/coding-agent/src/core/diagnostics.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/skills.test.ts",
+      "target": "file:packages/coding-agent/src/core/skills.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/skills.test.ts",
+      "target": "file:packages/coding-agent/src/core/source-info.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/startup-session-name.test.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/stdout-cleanliness.test.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/stdout-cleanliness.test.ts",
+      "target": "file:packages/coding-agent/test/test-network-env.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/agent-session-bash-persistence.test.ts",
+      "target": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/agent-session-bash-persistence.test.ts",
+      "target": "file:packages/coding-agent/test/suite/harness.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/agent-session-prompt.test.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/agent-session-prompt.test.ts",
+      "target": "file:packages/coding-agent/src/core/prompt-templates.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/agent-session-prompt.test.ts",
+      "target": "file:packages/coding-agent/src/core/source-info.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/agent-session-prompt.test.ts",
+      "target": "file:packages/coding-agent/test/suite/harness.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/agent-session-prompt.test.ts",
+      "target": "file:packages/coding-agent/test/utilities.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/agent-session-runtime.test.ts",
+      "target": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/agent-session-runtime.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/agent-session-runtime.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/agent-session-runtime.test.ts",
+      "target": "file:packages/coding-agent/src/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/2753-reload-stale-resource-settings.test.ts",
+      "target": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/2753-reload-stale-resource-settings.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/2753-reload-stale-resource-settings.test.ts",
+      "target": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/2753-reload-stale-resource-settings.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/2781-skill-collision-precedence.test.ts",
+      "target": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/2835-tools-allowlist-filters-extension-tools.test.ts",
+      "target": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/2835-tools-allowlist-filters-extension-tools.test.ts",
+      "target": "file:packages/coding-agent/src/core/sdk.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/2835-tools-allowlist-filters-extension-tools.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/2835-tools-allowlist-filters-extension-tools.test.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/2860-replaced-session-context.test.ts",
+      "target": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/2860-replaced-session-context.test.ts",
+      "target": "file:packages/coding-agent/src/core/agent-session.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/2860-replaced-session-context.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/2860-replaced-session-context.test.ts",
+      "target": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/2860-replaced-session-context.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/2860-replaced-session-context.test.ts",
+      "target": "file:packages/coding-agent/src/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/3302-find-path-glob.test.ts",
+      "target": "file:packages/coding-agent/src/core/tools/find.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/3303-find-nested-gitignore.test.ts",
+      "target": "file:packages/coding-agent/src/core/tools/find.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "file:packages/coding-agent/test/session-manager/tree-traversal.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "file:packages/coding-agent/test/session-selector-search.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/session-selector-search.ts",
+      "target": "file:packages/coding-agent/test/session-selector-search.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "target": "file:packages/coding-agent/test/settings-manager-bug.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/http-dispatcher.ts",
+      "target": "file:packages/coding-agent/test/settings-manager.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "target": "file:packages/coding-agent/test/settings-manager.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/diagnostics.ts",
+      "target": "file:packages/coding-agent/test/skills.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/skills.ts",
+      "target": "file:packages/coding-agent/test/skills.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/source-info.ts",
+      "target": "file:packages/coding-agent/test/skills.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "file:packages/coding-agent/test/startup-session-name.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "file:packages/coding-agent/test/stdout-cleanliness.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "target": "file:packages/coding-agent/test/suite/agent-session-bash-persistence.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/index.ts",
+      "target": "file:packages/coding-agent/test/suite/agent-session-prompt.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/prompt-templates.ts",
+      "target": "file:packages/coding-agent/test/suite/agent-session-prompt.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/source-info.ts",
+      "target": "file:packages/coding-agent/test/suite/agent-session-prompt.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "file:packages/coding-agent/test/suite/agent-session-runtime.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/suite/agent-session-runtime.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "file:packages/coding-agent/test/suite/agent-session-runtime.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/index.ts",
+      "target": "file:packages/coding-agent/test/suite/agent-session-runtime.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/2753-reload-stale-resource-settings.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/2753-reload-stale-resource-settings.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/2753-reload-stale-resource-settings.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/2753-reload-stale-resource-settings.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/2781-skill-collision-precedence.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/2835-tools-allowlist-filters-extension-tools.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/sdk.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/2835-tools-allowlist-filters-extension-tools.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/2835-tools-allowlist-filters-extension-tools.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/2835-tools-allowlist-filters-extension-tools.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/2860-replaced-session-context.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/2860-replaced-session-context.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/2860-replaced-session-context.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/2860-replaced-session-context.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/2860-replaced-session-context.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/index.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/2860-replaced-session-context.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/find.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/3302-find-path-glob.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/find.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/3303-find-nested-gitignore.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

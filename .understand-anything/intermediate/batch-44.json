@@ -1,0 +1,96 @@
+{
+  "batchIndex": 44,
+  "nodes": [
+    {
+      "id": ".github/workflows/approve-contributor.yml",
+      "type": "file",
+      "label": "approve-contributor.yml",
+      "language": "yaml",
+      "category": "infra",
+      "summary": "贡献者审批工作流。监听 issue 评论中的 lgtm/lgtmi 命令，由具有 write 权限的维护者触发，将 @mentioned 用户或 issue 作者添加到 APPROVED_CONTRIBUTORS 文件中，并自动提交和评论通知。",
+      "concepts": ["贡献者审批", "lgtm 命令", "GitHub Actions", "自动化协作管理"]
+    },
+    {
+      "id": ".github/workflows/build-binaries.yml",
+      "type": "file",
+      "label": "build-binaries.yml",
+      "language": "yaml",
+      "category": "infra",
+      "summary": "发布构建工作流。在版本 tag 推送或手动触发时，构建跨平台二进制文件（darwin/linux/windows, arm64/x64），创建 GitHub Draft Release，发布 npm 包，上传到 Cloudflare R2，并最终公开 Release。包含失败时的 draft 清理机制。",
+      "concepts": ["发布流水线", "跨平台二进制构建", "GitHub Release", "npm 发布", "R2 存储", "draft release 安全机制"]
+    },
+    {
+      "id": ".github/workflows/ci.yml",
+      "type": "file",
+      "label": "ci.yml",
+      "language": "yaml",
+      "category": "infra",
+      "summary": "持续集成工作流。在 main 分支推送和 PR 时触发，执行依赖安装、构建、类型检查和测试。",
+      "concepts": ["CI", "构建检查", "测试"]
+    },
+    {
+      "id": ".github/workflows/issue-analysis.yml",
+      "type": "file",
+      "label": "issue-analysis.yml",
+      "language": "yaml",
+      "category": "infra",
+      "summary": "Issue 分析工作流。通过 pi-analyze 标签或 @issuron analyze 评论触发，验证触发者为 earendil-works/staff 成员后，使用 pi /is 命令分析 issue，将会话导出为 gist 并评论到 issue。支持 Linux/macOS/Windows 运行器选择，自动刷新 OAuth 凭证。",
+      "concepts": ["Issue 自动分析", "pi /is 命令", "会话导出", "OAuth 凭证管理", "多平台运行器", "权限验证"]
+    },
+    {
+      "id": ".github/workflows/issue-gate.yml",
+      "type": "file",
+      "label": "issue-gate.yml",
+      "language": "yaml",
+      "category": "infra",
+      "summary": "Issue 准入门控。新 issue 打开时检查作者是否为已审批的贡献者或有 write 权限的协作者，否则自动关闭 issue 并添加 untriaged 标签，附带贡献指南说明。",
+      "concepts": ["Issue 门控", "贡献者验证", "自动关闭", "可信机器人豁免"]
+    },
+    {
+      "id": ".github/workflows/issue-triage-labels.yml",
+      "type": "file",
+      "label": "issue-triage-labels.yml",
+      "language": "yaml",
+      "category": "infra",
+      "summary": "Issue 分拣标签管理。当 issue 被重新打开时移除 untriaged/no-action 标签；当添加 last-read 标签时，自动将前一个 last-read 到当前 issue 之间的未分拣 issue 标记为 no-action 并关闭。",
+      "concepts": ["标签管理", "Issue 分拣", "批量关闭", "last-read 标记"]
+    },
+    {
+      "id": ".github/workflows/npm-audit.yml",
+      "type": "file",
+      "label": "npm-audit.yml",
+      "language": "yaml",
+      "category": "infra",
+      "summary": "每日 npm 安全审计工作流。每天 7:37 UTC 自动运行，检查生产依赖中的中等及以上漏洞，并验证 registry 签名。",
+      "concepts": ["安全审计", "npm audit", "依赖漏洞", "签名验证"]
+    },
+    {
+      "id": ".github/workflows/pr-gate.yml",
+      "type": "file",
+      "label": "pr-gate.yml",
+      "language": "yaml",
+      "category": "infra",
+      "summary": "PR 准入门控。新 PR 打开时检查作者是否为已审批的贡献者（需要 pr 级别）或有 write 权限的协作者，否则自动关闭 PR 并评论引导信息。",
+      "concepts": ["PR 门控", "贡献者验证", "自动关闭", "lgtm 审批要求"]
+    },
+    {
+      "id": ".github/workflows/publish-model-catalog.yml",
+      "type": "file",
+      "label": "publish-model-catalog.yml",
+      "language": "yaml",
+      "category": "infra",
+      "summary": "模型目录发布工作流。CI 成功后或按计划在周一至周五的 10:17/12:17/14:17（维也纳时间）生成并发布模型目录 JSON 到 Cloudflare R2。支持手动触发发布，包含发布时间窗口校验。",
+      "concepts": ["模型目录", "R2 发布", "定时发布", "CI 联动", "发布窗口控制"]
+    },
+    {
+      "id": ".github/workflows/remove-inprogress-on-close.yml",
+      "type": "file",
+      "label": "remove-inprogress-on-close.yml",
+      "language": "yaml",
+      "category": "infra",
+      "summary": "Issue 关闭时自动移除 inprogress 标签的简单工作流。",
+      "concepts": ["标签清理", "Issue 生命周期"]
+    }
+  ],
+  "edges": []
+}

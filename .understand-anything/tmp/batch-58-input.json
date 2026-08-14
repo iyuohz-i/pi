@@ -1,0 +1,13 @@
+{
+  "projectRoot": "/Users/zhouyi/AiHub/pi",
+  "batchFiles": [
+    {"path": "packages/coding-agent/examples/extensions/subagent/prompts/implement-and-review.md", "language": "markdown", "sizeLines": 10, "fileCategory": "docs"},
+    {"path": "packages/coding-agent/examples/extensions/subagent/prompts/implement.md", "language": "markdown", "sizeLines": 10, "fileCategory": "docs"},
+    {"path": "packages/coding-agent/examples/extensions/subagent/prompts/scout-and-plan.md", "language": "markdown", "sizeLines": 9, "fileCategory": "docs"}
+  ],
+  "batchImportData": {
+    "packages/coding-agent/examples/extensions/subagent/prompts/implement-and-review.md": [],
+    "packages/coding-agent/examples/extensions/subagent/prompts/implement.md": [],
+    "packages/coding-agent/examples/extensions/subagent/prompts/scout-and-plan.md": []
+  }
+}

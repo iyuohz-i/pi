@@ -1,0 +1,449 @@
+{
+  "nodes": [
+    {
+      "id": "packages/agent/docs/harness.md",
+      "type": "file",
+      "label": "harness.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "summary": "AgentHarness 实现规范文档：定义了 agent 对话的持久化运行时，包括存储模型（entries/registers/usage ledger）、对话树、操作状态机、执行与恢复、公共 API 表面、Schema 演化、构建顺序和不变量测试。",
+      "metadata": { "sizeLines": 2941, "parts": 10, "appendices": 3 }
+    },
+    {
+      "id": "packages/agent/docs/search.md",
+      "type": "file",
+      "label": "search.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "summary": "Session Search API 规范文档：定义了会话搜索的核心查询接口（SessionSearch），描述了扫描搜索、SQLite FTS 和 Elasticsearch 索引三种实现方式，以及正确性和失败边界。",
+      "metadata": { "sizeLines": 276 }
+    },
+    {
+      "id": "packages/agent/docs/telemetry-schema.md",
+      "type": "file",
+      "label": "telemetry-schema.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "summary": "Pi Agent 遥测 Schema 文档：定义了 AI 请求和 Harness 操作的 OpenTelemetry span 属性规范，包括 pi.ai.request、pi.harness.run/compaction/navigation/checkpoint/turn/step/tool/hook/sleep/event_handler 和 pi.session.write。",
+      "metadata": { "sizeLines": 381 }
+    },
+    {
+      "id": "doc:AgentHarness",
+      "type": "concept",
+      "label": "AgentHarness",
+      "summary": "持久化 agent 对话运行时。驱动 lane 执行：接受 prompt、运行模型和工具步骤、管理队列、压缩或导航对话树、恢复中断的工作。拥有工具注册表、prompt 资源、钩子和事件系统。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "Part 0, 5.2" }
+    },
+    {
+      "id": "doc:Storage",
+      "type": "concept",
+      "label": "Storage",
+      "summary": "底层存储抽象，暴露原子事务和查询。三种持久形式：不可变 entries、可变 registers（命名空间键值存储）和 append-only usage ledger。一个 Storage 实例服务一个 session。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "Part 1" }
+    },
+    {
+      "id": "doc:Entry",
+      "type": "concept",
+      "label": "Entry",
+      "summary": "Write-once 对话记录：placement 字段和 payload 在同一行。四种类型：message、compaction、branch_summary、custom。ID 为 UUIDv7，永远不被修改或删除。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "1.1, 2.1" }
+    },
+    {
+      "id": "doc:Register",
+      "type": "concept",
+      "label": "Register",
+      "summary": "唯一可变存储。命名空间键值单元格，保存当前类型值。覆写替换值，删除移除键。命名空间包括 lane.leaf、lane.config、lane.state、lane.lastResult、op.meta、op.state、op.tool_args、op.preparation、pending.entry、fact.* 等。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "1.1, 1.3" }
+    },
+    {
+      "id": "doc:UsageRow",
+      "type": "concept",
+      "label": "UsageRow",
+      "summary": "Append-only 成本账本行。记录 token 使用和成本。永不修改，永不删除。终端清理删除操作的 registers 但永不删除 ledger 行。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "1.1, 1.6" }
+    },
+    {
+      "id": "doc:Transaction",
+      "type": "concept",
+      "label": "Transaction",
+      "summary": "原子提交原语。包含 entry inserts、usage inserts 和 register writes（set/delete），全有或全无，严格递增 seq。崩溃状态只存在于事务之间，不存在于事务之内。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "1.4" }
+    },
+    {
+      "id": "doc:ConversationTree",
+      "type": "concept",
+      "label": "ConversationTree",
+      "summary": "对话树模型。Entries 形成树结构（每条分支是一个对话线程），支持分支、压缩、分叉和并行工作。通过 branch scan 查询上下文，stopAtType 控制扫描终止。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "Part 2" }
+    },
+    {
+      "id": "doc:Lane",
+      "type": "concept",
+      "label": "Lane",
+      "summary": "树的命名游标。每个 session 有 main lane。Lane 拥有自己的叶子节点、模型配置、队列和最多一个操作。额外 lane 支持 Slack 线程、子 agent 等并行工作。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "2.3" }
+    },
+    {
+      "id": "doc:Operation",
+      "type": "concept",
+      "label": "Operation",
+      "summary": "一个被接受的 lane 工作单元：run、compaction 或 navigation。不可变元数据记录身份、意图和起点；total current state 记录阶段、控制、队列和恢复数据。完成后删除状态并记录 lane.lastResult。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "3.1" }
+    },
+    {
+      "id": "doc:OperationState",
+      "type": "concept",
+      "label": "OperationState",
+      "summary": "持久化程序计数器。op.state/{operationId} 保存完整的当前操作状态。每次转换覆写整个寄存器；终端事务删除它。恢复不重放日志，而是读取该寄存器并分支。类型：RunState | CompactionState | NavigationState。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "3.2" }
+    },
+    {
+      "id": "doc:EffectSandwich",
+      "type": "concept",
+      "label": "Effect Sandwich",
+      "summary": "Provider 请求和真实工具调用被包裹在两次提交中：intent 提交（记录即将执行的操作和预分配的 ID）→ 执行（不确定部分）→ settlement 提交（输出 + usage + 下一状态）。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "0.3" }
+    },
+    {
+      "id": "doc:Checkpoint",
+      "type": "concept",
+      "label": "Checkpoint",
+      "summary": "轮次之间的状态，在此决定队列消费、deferred writes 应用、阈值压缩、是否继续生成或完成。按固定顺序执行：应用 deferred writes → 消费 steer → 阈值压缩 → 生成 → 消费 followUp → before_run_end → 终端事务。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "3.12" }
+    },
+    {
+      "id": "doc:TerminalTransaction",
+      "type": "concept",
+      "label": "Terminal Transaction",
+      "summary": "操作结束时的一次原子提交。删除操作拥有的所有 op.* 和 pending.entry registers，写入 lane.lastResult，清除 currentOperationId。操作不再有状态，只留下对话 entries 和 ledger rows。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "3.13" }
+    },
+    {
+      "id": "doc:SessionTree",
+      "type": "concept",
+      "label": "SessionTree",
+      "summary": "会话树的公共只读/追加接口。提供 getLeafId、getEntry、getStats、fact 操作、findEntries/findEntriesOnBranch 查询和 appendMessage/appendCustomEntry 写入。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "5.3" }
+    },
+    {
+      "id": "doc:SessionRepo",
+      "type": "concept",
+      "label": "SessionRepo",
+      "summary": "会话仓库接口，负责发现和 Storage 实例生命周期。提供 create、open、list、delete、fork 操作。open() 比较 storageVersion 并运行链式迁移。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "2.8" }
+    },
+    {
+      "id": "doc:Fork",
+      "type": "concept",
+      "label": "Fork",
+      "summary": "仓库级操作，从一个 session 快照创建新 session。复制 entries、facts、lane leaves 和配置；不复制 op.*、pending.entry、lane.lastResult 或 ledger rows。支持 branch scope 和 tree scope。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "2.7" }
+    },
+    {
+      "id": "doc:BranchIndex",
+      "type": "concept",
+      "label": "Branch Index",
+      "summary": "SQLite 私有分段分支缓存。branch_entries 存储物理存在的 entries，branch_meta 存储 tip 和可选的 base 分支引用。避免 diverging append 时无限复制 root prefix。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "2.6" }
+    },
+    {
+      "id": "doc:PreciseRewrite",
+      "type": "concept",
+      "label": "Precise Rewrite",
+      "summary": "管理级仓库操作：将保留集合复制到新 session store，然后原子替换旧 store。唯一被允许的 entries/usage 删除路径，用于合规级擦除、裁剪废弃分支和重铸遗留 ID。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "2.9" }
+    },
+    {
+      "id": "doc:Hooks",
+      "type": "concept",
+      "label": "Hooks",
+      "summary": "拦截和转换执行的钩子系统。包括 before_run、before_resume、before_run_end、transform_context、before_request、before_payload、after_response、before_tool、after_tool、before_compaction、before_navigation。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "5.6" }
+    },
+    {
+      "id": "doc:Events",
+      "type": "concept",
+      "label": "Events",
+      "summary": "被动事件流。监听器不能改变执行，抛出产生 handler_error。涵盖 run/turn/retry/message/tool/tree/queue/fact/config/compaction/navigation lifecycle 事件。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "5.5" }
+    },
+    {
+      "id": "doc:Compaction",
+      "type": "concept",
+      "label": "Compaction",
+      "summary": "上下文压缩操作。通过 provider 请求生成摘要，创建 compaction entry（包含 summary + retainedTail）。触发原因：manual（手动）、threshold（阈值自动）、overflow（上下文溢出）。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "3.9" }
+    },
+    {
+      "id": "doc:Navigation",
+      "type": "concept",
+      "label": "Navigation",
+      "summary": "树导航操作。移动 lane leaf 到目标 entry，可选生成 branch_summary。未摘要导航在一个终端事务中完成；摘要导航可能包含生成步骤。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "3.10" }
+    },
+    {
+      "id": "doc:SchemaEvolution",
+      "type": "concept",
+      "label": "Schema Evolution",
+      "summary": "Schema 演化策略：storageVersion + migrate-on-open。entries/usage 必须永久读兼容；lane/fact registers 在 open 时迁移；op.* registers  ephemeral，状态机变更时随 open operations 迁移。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "Part 7" }
+    },
+    {
+      "id": "doc:UUIDv7",
+      "type": "concept",
+      "label": "UUIDv7",
+      "summary": "所有 ID（entry、usage、reserved）使用 UUIDv7。前 48 位是铸造时间，自描述且时间可排序。工具结果 ID 继承其 assistant ID 的时间戳以形成时间凝聚组。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "1.2" }
+    },
+    {
+      "id": "doc:StorageBackends",
+      "type": "concept",
+      "label": "Storage Backends",
+      "summary": "三种存储后端实现同一模型：Memory（Map 结构）、JSONL（replay recipe 格式 4）、SQLite（一文件一会话，WAL + BEGIN IMMEDIATE + writer_lease 单写者强制）。全部通过同一一致性测试套件。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "1.7" }
+    },
+    {
+      "id": "doc:RecoveryModel",
+      "type": "concept",
+      "label": "Recovery Model",
+      "summary": "恢复模型：读取 op.state 寄存器确定位置，无日志重放。崩溃位置可枚举（事务之间）。Effect sandwich 确保 intent 先于 effect 持久化。replay 策略（never/safe）控制工具重试行为。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "Part 4" }
+    },
+    {
+      "id": "doc:InboxQueues",
+      "type": "concept",
+      "label": "Inbox & Queues",
+      "summary": "队列系统：nextRun（下次运行）、steer（运行中转向）、followUp（后续）、deferred writes。每个队列项的 entry ID 在入队时铸造，payload 存储在 pending.entry register 中。支持取消和 mode（all/one-at-a-time）。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "3.11" }
+    },
+    {
+      "id": "doc:SessionSearch",
+      "type": "concept",
+      "label": "SessionSearch",
+      "summary": "会话搜索核心接口。最小命中身份为 (sessionId, entryId)。search() 返回 AsyncIterable 支持早期渲染和 AbortSignal 取消。后端可扩展命中数据。",
+      "metadata": { "source": "packages/agent/docs/search.md", "section": "Core API" }
+    },
+    {
+      "id": "doc:ScanningSessionSearch",
+      "type": "concept",
+      "label": "ScanningSessionSearch",
+      "summary": "可复用的扫描搜索实现。将 session-like readables 适配为投影 entries，进行文本匹配。适用于已打开的 sessions 或 storages，以及 JSONL 后端。",
+      "metadata": { "source": "packages/agent/docs/search.md", "section": "Scanning search" }
+    },
+    {
+      "id": "doc:SqliteSessionSearch",
+      "type": "concept",
+      "label": "SqliteSessionSearch",
+      "summary": "SQLite FTS5 搜索实现。扩展命中包含 metadata、timestamp 和 score。FTS 表和触发器在首次非空搜索时惰性创建，之后通过触发器与 entries 同步。",
+      "metadata": { "source": "packages/agent/docs/search.md", "section": "SQLite FTS" }
+    },
+    {
+      "id": "doc:ElasticSessionSearch",
+      "type": "concept",
+      "label": "ElasticSessionSearch",
+      "summary": "Elasticsearch 索引搜索实现（应用层 glue）。实现 IndexedSessionSearch 接口，支持 bulk apply/flush 和 async iterable search。JSONL sessions 可通过 indexJsonlSessionsIntoElastic 导入。",
+      "metadata": { "source": "packages/agent/docs/search.md", "section": "JSONL sessions with Elasticsearch" }
+    },
+    {
+      "id": "doc:SearchService",
+      "type": "concept",
+      "label": "SessionSearchService",
+      "summary": "独立搜索服务（harness.md §2.8 定义）。pull-based 索引：持久化 per-session 游标，sync() 枚举和追赶，notify() 作为新鲜度提示。支持 searchSessions 和可选的 searchEntries。引用实现为独立 SQLite FTS5 数据库。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "2.8" }
+    },
+    {
+      "id": "doc:telemetry.pi.ai.request",
+      "type": "concept",
+      "label": "pi.ai.request",
+      "summary": "AI provider 请求遥测 span。Start 属性：operation、provider、model、api、streaming、deferred。End 属性：response.model/id/stop_reason、http.status_code、usage（input/output/cache_read/cache_write/reasoning/total tokens, cost）、stream 指标、error.type。",
+      "metadata": { "source": "packages/agent/docs/telemetry-schema.md", "section": "AI request schema" }
+    },
+    {
+      "id": "doc:telemetry.pi.harness.run",
+      "type": "concept",
+      "label": "pi.harness.run",
+      "summary": "运行操作遥测 span。Start：session.id、lane.name、operation.id、operation.recovery、operation.kind=run。End：operation.outcome (completed/aborted/failed/suspended)、error.code、error.type。",
+      "metadata": { "source": "packages/agent/docs/telemetry-schema.md", "section": "Harness schema" }
+    },
+    {
+      "id": "doc:telemetry.pi.harness.compaction",
+      "type": "concept",
+      "label": "pi.harness.compaction",
+      "summary": "压缩操作遥测 span。Start：session.id、lane.name、operation.id、operation.recovery、operation.kind=compaction。End：operation.outcome (completed/declined/aborted/failed)、error.code、error.type。",
+      "metadata": { "source": "packages/agent/docs/telemetry-schema.md", "section": "Harness schema" }
+    },
+    {
+      "id": "doc:telemetry.pi.harness.navigation",
+      "type": "concept",
+      "label": "pi.harness.navigation",
+      "summary": "导航操作遥测 span。Start：session.id、lane.name、operation.id、operation.recovery、operation.kind=navigation。End：operation.outcome (completed/declined/aborted/failed)、error.code、error.type。",
+      "metadata": { "source": "packages/agent/docs/telemetry-schema.md", "section": "Harness schema" }
+    },
+    {
+      "id": "doc:telemetry.pi.harness.checkpoint",
+      "type": "concept",
+      "label": "pi.harness.checkpoint",
+      "summary": "运行检查点遥测 span。Parent：pi.harness.run。Start：lane.name、operation.id、checkpoint.kind (normal/failure_drain/abort_reconcile)。",
+      "metadata": { "source": "packages/agent/docs/telemetry-schema.md", "section": "Harness schema" }
+    },
+    {
+      "id": "doc:telemetry.pi.harness.turn",
+      "type": "concept",
+      "label": "pi.harness.turn",
+      "summary": "助手响应及其工具批次遥测 span。Parent：pi.harness.run。Start：lane.name、operation.id、turn.id。",
+      "metadata": { "source": "packages/agent/docs/telemetry-schema.md", "section": "Harness schema" }
+    },
+    {
+      "id": "doc:telemetry.pi.harness.step",
+      "type": "concept",
+      "label": "pi.harness.step",
+      "summary": "持久化重试尝试遥测 span。Parent：pi.harness.turn/checkpoint/compaction/navigation。Start：lane.name、operation.id、step.kind (assistant/compaction/branch_summary)、step.attempt。End：step.outcome (succeeded/retry/failed/aborted/deferred/overflow)。",
+      "metadata": { "source": "packages/agent/docs/telemetry-schema.md", "section": "Harness schema" }
+    },
+    {
+      "id": "doc:telemetry.pi.harness.tool",
+      "type": "concept",
+      "label": "pi.harness.tool",
+      "summary": "Phase-2 工具执行遥测 span。Parent：pi.harness.turn/run。Start：lane.name、operation.id、turn.id、tool.name、tool.call_id、tool.replay (never/safe)、tool.recovery。End：tool.is_error。",
+      "metadata": { "source": "packages/agent/docs/telemetry-schema.md", "section": "Harness schema" }
+    },
+    {
+      "id": "doc:telemetry.pi.harness.hook",
+      "type": "concept",
+      "label": "pi.harness.hook",
+      "summary": "钩子处理器调用遥测 span。Start：lane.name、operation.id、hook.name、hook.registration_id。End：hook.outcome (completed/skipped/blocked/failed)。",
+      "metadata": { "source": "packages/agent/docs/telemetry-schema.md", "section": "Harness schema" }
+    },
+    {
+      "id": "doc:telemetry.pi.harness.sleep",
+      "type": "concept",
+      "label": "pi.harness.sleep",
+      "summary": "重试延迟遥测 span。Parent：pi.harness.step/run。Start：operation.id、sleep.delay_ms。End：sleep.outcome (elapsed/aborted)。",
+      "metadata": { "source": "packages/agent/docs/telemetry-schema.md", "section": "Harness schema" }
+    },
+    {
+      "id": "doc:telemetry.pi.harness.event_handler",
+      "type": "concept",
+      "label": "pi.harness.event_handler",
+      "summary": "被动事件监听器调用遥测 span。Start：event.type（run_start/run_end/turn_start/tool_end 等）、lane.name。",
+      "metadata": { "source": "packages/agent/docs/telemetry-schema.md", "section": "Harness schema" }
+    },
+    {
+      "id": "doc:telemetry.pi.session.write",
+      "type": "concept",
+      "label": "pi.session.write",
+      "summary": "会话变更提交遥测 span。Start：lane.name、operation.id、session.mutation (entry/record/lane/fact)、session.item_type。End：session.seq。",
+      "metadata": { "source": "packages/agent/docs/telemetry-schema.md", "section": "Harness schema" }
+    },
+    {
+      "id": "doc:Facts",
+      "type": "concept",
+      "label": "Facts",
+      "summary": "Session 级可变键值状态，不属于树。内置：fact.name（session 名称）、fact.label（entry 标签）。应用可存储自定义 fact.custom。undefined 删除 register，JSON null 是合法值。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "2.4" }
+    },
+    {
+      "id": "doc:WriterLease",
+      "type": "concept",
+      "label": "Writer Lease",
+      "summary": "SQLite 后端的单写者强制机制。fenced lease（owner_id, fence, expires_at_ms）防止多进程交替写入。open() 获取声明，close() 仅删除匹配的 (owner_id, fence) 对。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "1.7" }
+    },
+    {
+      "id": "doc:BuildOrder",
+      "type": "concept",
+      "label": "Build Order",
+      "summary": "构建顺序：共享类型表面（Slice 1）→ Session 层 + Memory + 一致性测试（Slice 2）→ 并行 Track S（JSONL/SQLite/Search/Dev TUI）和顺序 Track R（Runtime shell → minimal run → recovery → tools → inbox → abort → deferred → compaction → navigation → schema version → surface completion）。",
+      "metadata": { "source": "packages/agent/docs/harness.md", "section": "Part 8" }
+    }
+  ],
+  "edges": [
+    { "source": "packages/agent/docs/harness.md", "target": "doc:AgentHarness", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:Storage", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:Entry", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:Register", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:UsageRow", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:Transaction", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:ConversationTree", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:Lane", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:Operation", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:OperationState", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:EffectSandwich", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:Checkpoint", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:TerminalTransaction", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:SessionTree", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:SessionRepo", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:Fork", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:BranchIndex", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:PreciseRewrite", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:Hooks", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:Events", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:Compaction", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:Navigation", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:SchemaEvolution", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:UUIDv7", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:StorageBackends", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:RecoveryModel", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:InboxQueues", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:SearchService", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:Facts", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:WriterLease", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/harness.md", "target": "doc:BuildOrder", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/search.md", "target": "doc:SessionSearch", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/search.md", "target": "doc:ScanningSessionSearch", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/search.md", "target": "doc:SqliteSessionSearch", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/search.md", "target": "doc:ElasticSessionSearch", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/telemetry-schema.md", "target": "doc:telemetry.pi.ai.request", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/telemetry-schema.md", "target": "doc:telemetry.pi.harness.run", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/telemetry-schema.md", "target": "doc:telemetry.pi.harness.compaction", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/telemetry-schema.md", "target": "doc:telemetry.pi.harness.navigation", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/telemetry-schema.md", "target": "doc:telemetry.pi.harness.checkpoint", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/telemetry-schema.md", "target": "doc:telemetry.pi.harness.turn", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/telemetry-schema.md", "target": "doc:telemetry.pi.harness.step", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/telemetry-schema.md", "target": "doc:telemetry.pi.harness.tool", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/telemetry-schema.md", "target": "doc:telemetry.pi.harness.hook", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/telemetry-schema.md", "target": "doc:telemetry.pi.harness.sleep", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/telemetry-schema.md", "target": "doc:telemetry.pi.harness.event_handler", "type": "documents", "label": "defines" },
+    { "source": "packages/agent/docs/telemetry-schema.md", "target": "doc:telemetry.pi.session.write", "type": "documents", "label": "defines" },
+    { "source": "doc:AgentHarness", "target": "doc:Storage", "type": "depends_on", "label": "uses storage layer" },
+    { "source": "doc:AgentHarness", "target": "doc:Lane", "type": "depends_on", "label": "drives lanes" },
+    { "source": "doc:AgentHarness", "target": "doc:Operation", "type": "depends_on", "label": "accepts operations" },
+    { "source": "doc:AgentHarness", "target": "doc:Hooks", "type": "depends_on", "label": "owns hooks" },
+    { "source": "doc:AgentHarness", "target": "doc:Events", "type": "depends_on", "label": "owns events" },
+    { "source": "doc:Storage", "target": "doc:Entry", "type": "depends_on", "label": "stores entries" },
+    { "source": "doc:Storage", "target": "doc:Register", "type": "depends_on", "label": "stores registers" },
+    { "source": "doc:Storage", "target": "doc:UsageRow", "type": "depends_on", "label": "stores usage rows" },
+    { "source": "doc:Storage", "target": "doc:Transaction", "type": "depends_on", "label": "commits via transactions" },
+    { "source": "doc:Storage", "target": "doc:StorageBackends", "type": "depends_on", "label": "implemented by backends" },
+    { "source": "doc:Storage", "target": "doc:WriterLease", "type": "depends_on", "label": "SQLite enforces via lease" },
+    { "source": "doc:ConversationTree", "target": "doc:Entry", "type": "depends_on", "label": "composed of entries" },
+    { "source": "doc:ConversationTree", "target": "doc:Lane", "type": "depends_on", "label": "accessed via lanes" },
+    { "source": "doc:ConversationTree", "target": "doc:BranchIndex", "type": "depends_on", "label": "SQLite indexes via branch index" },
+    { "source": "doc:Operation", "target": "doc:OperationState", "type": "depends_on", "label": "tracked by state register" },
+    { "source": "doc:Operation", "target": "doc:TerminalTransaction", "type": "depends_on", "label": "ends via terminal transaction" },
+    { "source": "doc:OperationState", "target": "doc:Checkpoint", "type": "depends_on", "label": "includes checkpoint phase" },
+    { "source": "doc:OperationState", "target": "doc:Compaction", "type": "depends_on", "label": "includes compaction states" },
+    { "source": "doc:OperationState", "target": "doc:Navigation", "type": "depends_on", "label": "includes navigation states" },
+    { "source": "doc:SessionRepo", "target": "doc:Storage", "type": "depends_on", "label": "manages storage lifecycle" },
+    { "source": "doc:SessionRepo", "target": "doc:Fork", "type": "depends_on", "label": "provides fork" },
+    { "source": "doc:SessionRepo", "target": "doc:SchemaEvolution", "type": "depends_on", "label": "handles version migration" },
+    { "source": "doc:SessionTree", "target": "doc:ConversationTree", "type": "depends_on", "label": "read interface over tree" },
+    { "source": "doc:SessionTree", "target": "doc:Facts", "type": "depends_on", "label": "exposes facts" },
+    { "source": "doc:RecoveryModel", "target": "doc:EffectSandwich", "type": "depends_on", "label": "based on effect sandwich" },
+    { "source": "doc:RecoveryModel", "target": "doc:OperationState", "type": "depends_on", "label": "reads program counter" },
+    { "source": "doc:InboxQueues", "target": "doc:Register", "type": "depends_on", "label": "uses pending.entry registers" },
+    { "source": "doc:Checkpoint", "target": "doc:InboxQueues", "type": "depends_on", "label": "consumes inbox items" },
+    { "source": "doc:PreciseRewrite", "target": "doc:Fork", "type": "depends_on", "label": "similar to fork" },
+    { "source": "doc:UUIDv7", "target": "doc:Entry", "type": "depends_on", "label": "ids for entries" },
+    { "source": "doc:SearchService", "target": "doc:SessionRepo", "type": "depends_on", "label": "queries via repository" },
+    { "source": "doc:SqliteSessionSearch", "target": "doc:SessionSearch", "type": "implements", "label": "implements search interface" },
+    { "source": "doc:ScanningSessionSearch", "target": "doc:SessionSearch", "type": "implements", "label": "implements search interface" },
+    { "source": "doc:ElasticSessionSearch", "target": "doc:SessionSearch", "type": "implements", "label": "implements search interface" },
+    { "source": "packages/agent/docs/search.md", "target": "packages/agent/docs/harness.md", "type": "references", "label": "search.md 的 SessionSearch 在 harness.md §2.8 有独立定义" },
+    { "source": "packages/agent/docs/telemetry-schema.md", "target": "packages/agent/docs/harness.md", "type": "references", "label": "遥测 span 对应 harness 规范中的操作和步骤" },
+    { "source": "doc:telemetry.pi.harness.run", "target": "doc:Operation", "type": "references", "label": "run span tracks operation" },
+    { "source": "doc:telemetry.pi.harness.step", "target": "doc:OperationState", "type": "references", "label": "step span tracks retry attempts" },
+    { "source": "doc:telemetry.pi.session.write", "target": "doc:Transaction", "type": "references", "label": "write span tracks commit" },
+    { "source": "doc:telemetry.pi.ai.request", "target": "doc:EffectSandwich", "type": "references", "label": "AI request span covers intent→effect→settlement" }
+  ]
+}

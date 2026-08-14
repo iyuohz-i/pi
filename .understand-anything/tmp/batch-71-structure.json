@@ -1,0 +1,816 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "packages/coding-agent/examples/extensions/summarize.ts",
+      "language": "typescript",
+      "totalLines": 199,
+      "nonEmptyLines": 166,
+      "functions": [
+        {
+          "name": "extractTextParts",
+          "startLine": 21,
+          "endLine": 43,
+          "params": [
+            "content"
+          ]
+        },
+        {
+          "name": "extractToolCallLines",
+          "startLine": 45,
+          "endLine": 66,
+          "params": [
+            "content"
+          ]
+        },
+        {
+          "name": "buildConversationText",
+          "startLine": 68,
+          "endLine": 104,
+          "params": [
+            "entries"
+          ]
+        },
+        {
+          "name": "buildSummaryPrompt",
+          "startLine": 106,
+          "endLine": 115,
+          "params": [
+            "conversationText"
+          ]
+        },
+        {
+          "name": "showSummaryUi",
+          "startLine": 117,
+          "endLine": 143,
+          "params": [
+            "summary",
+            "ctx"
+          ]
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/extensions/system-prompt-header.ts",
+      "language": "typescript",
+      "totalLines": 17,
+      "nonEmptyLines": 15,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "language": "typescript",
+      "totalLines": 1008,
+      "nonEmptyLines": 881,
+      "functions": [
+        {
+          "name": "createInitialState",
+          "startLine": 79,
+          "endLine": 95,
+          "params": []
+        },
+        {
+          "name": "getWinLine",
+          "startLine": 97,
+          "endLine": 147,
+          "params": [
+            "board"
+          ]
+        },
+        {
+          "name": "checkWin",
+          "startLine": 149,
+          "endLine": 159,
+          "params": [
+            "board"
+          ]
+        },
+        {
+          "name": "boardToAscii",
+          "startLine": 161,
+          "endLine": 176,
+          "params": [
+            "board",
+            "agentCursorRow",
+            "agentCursorCol"
+          ]
+        },
+        {
+          "name": "DIM",
+          "startLine": 200,
+          "endLine": 200,
+          "params": [
+            "s"
+          ]
+        },
+        {
+          "name": "centerPad",
+          "startLine": 203,
+          "endLine": 209,
+          "params": [
+            "content",
+            "width"
+          ]
+        },
+        {
+          "name": "cellFgCode",
+          "startLine": 213,
+          "endLine": 217,
+          "params": [
+            "cell",
+            "isWin"
+          ]
+        },
+        {
+          "name": "buildCellContent",
+          "startLine": 219,
+          "endLine": 232,
+          "params": [
+            "mark",
+            "lineIdx",
+            "isWin"
+          ]
+        },
+        {
+          "name": "borderFgCode",
+          "startLine": 237,
+          "endLine": 242,
+          "params": [
+            "adjacent"
+          ]
+        },
+        {
+          "name": "renderBoard",
+          "startLine": 252,
+          "endLine": 342,
+          "params": [
+            "opts"
+          ]
+        },
+        {
+          "name": "renderVisualBoard",
+          "startLine": 345,
+          "endLine": 356,
+          "params": [
+            "state",
+            "maxWidth"
+          ]
+        },
+        {
+          "name": "renderBoardSnapshot",
+          "startLine": 359,
+          "endLine": 361,
+          "params": [
+            "board",
+            "maxWidth"
+          ]
+        },
+        {
+          "name": "delay",
+          "startLine": 611,
+          "endLine": 613,
+          "params": [
+            "ms"
+          ]
+        },
+        {
+          "name": "reconstructState",
+          "startLine": 627,
+          "endLine": 646,
+          "params": [
+            "ctx"
+          ]
+        },
+        {
+          "name": "getBoardDetails",
+          "startLine": 648,
+          "endLine": 656,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "TicTacToeError",
+          "startLine": 27,
+          "endLine": 32,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        },
+        {
+          "name": "TicTacToeComponent",
+          "startLine": 367,
+          "endLine": 506,
+          "methods": [
+            "constructor",
+            "updateState",
+            "handleInput",
+            "invalidate",
+            "render"
+          ],
+          "properties": [
+            "state",
+            "onClose",
+            "onUserPlay",
+            "tui",
+            "cachedLines",
+            "cachedWidth",
+            "version",
+            "cachedVersion"
+          ]
+        },
+        {
+          "name": "BannerMessageComponent",
+          "startLine": 513,
+          "endLine": 544,
+          "methods": [
+            "constructor",
+            "invalidate",
+            "render"
+          ],
+          "properties": [
+            "title",
+            "details",
+            "expanded",
+            "theme"
+          ]
+        },
+        {
+          "name": "GameOverMessageComponent",
+          "startLine": 548,
+          "endLine": 605,
+          "methods": [
+            "constructor",
+            "invalidate",
+            "render"
+          ],
+          "properties": [
+            "status",
+            "details",
+            "theme"
+          ]
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 15,
+        "classCount": 4
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/extensions/timed-confirm.ts",
+      "language": "typescript",
+      "totalLines": 70,
+      "nonEmptyLines": 60,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/extensions/titlebar-spinner.ts",
+      "language": "typescript",
+      "totalLines": 58,
+      "nonEmptyLines": 49,
+      "functions": [
+        {
+          "name": "getBaseTitle",
+          "startLine": 16,
+          "endLine": 20,
+          "params": [
+            "pi"
+          ]
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/extensions/todo.ts",
+      "language": "typescript",
+      "totalLines": 297,
+      "nonEmptyLines": 261,
+      "classes": [
+        {
+          "name": "TodoListComponent",
+          "startLine": 40,
+          "endLine": 103,
+          "methods": [
+            "constructor",
+            "handleInput",
+            "render",
+            "invalidate"
+          ],
+          "properties": [
+            "todos",
+            "theme",
+            "onClose",
+            "cachedWidth",
+            "cachedLines"
+          ]
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/extensions/tool-override.ts",
+      "language": "typescript",
+      "totalLines": 144,
+      "nonEmptyLines": 127,
+      "functions": [
+        {
+          "name": "isBlockedPath",
+          "startLine": 43,
+          "endLine": 45,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "logAccess",
+          "startLine": 47,
+          "endLine": 60,
+          "params": [
+            "path",
+            "allowed",
+            "reason"
+          ]
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/extensions/tools.ts",
+      "language": "typescript",
+      "totalLines": 146,
+      "nonEmptyLines": 127,
+      "functions": [
+        {
+          "name": "toolsExtension",
+          "startLine": 21,
+          "endLine": 146,
+          "params": [
+            "pi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "toolsExtension",
+          "line": 21,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/extensions/truncated-tool.ts",
+      "language": "typescript",
+      "totalLines": 195,
+      "nonEmptyLines": 169,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/extensions/widget-placement.ts",
+      "language": "typescript",
+      "totalLines": 9,
+      "nonEmptyLines": 8,
+      "functions": [
+        {
+          "name": "widgetPlacementExtension",
+          "startLine": 3,
+          "endLine": 9,
+          "params": [
+            "pi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "widgetPlacementExtension",
+          "line": 3,
+          "isDefault": true
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/extensions/with-deps/index.ts",
+      "language": "typescript",
+      "totalLines": 32,
+      "nonEmptyLines": 30,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/extensions/with-deps/package.json",
+      "language": "json",
+      "totalLines": 22,
+      "nonEmptyLines": 22,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "private",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "type",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "scripts",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "pi",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "dependencies",
+          "level": 1,
+          "line": 16
+        },
+        {
+          "heading": "devDependencies",
+          "level": 1,
+          "line": 19
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/extensions/working-indicator.ts",
+      "language": "typescript",
+      "totalLines": 123,
+      "nonEmptyLines": 111,
+      "functions": [
+        {
+          "name": "colorize",
+          "startLine": 37,
+          "endLine": 39,
+          "params": [
+            "text",
+            "color"
+          ]
+        },
+        {
+          "name": "getIndicator",
+          "startLine": 41,
+          "endLine": 69,
+          "params": [
+            "mode"
+          ]
+        },
+        {
+          "name": "describeMode",
+          "startLine": 71,
+          "endLine": 84,
+          "params": [
+            "mode"
+          ]
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/extensions/working-message-test.ts",
+      "language": "typescript",
+      "totalLines": 25,
+      "nonEmptyLines": 22,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/README.md",
+      "language": "markdown",
+      "totalLines": 25,
+      "nonEmptyLines": 19,
+      "sections": [
+        {
+          "heading": "Examples",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Directories",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "[sdk/](sdk/)",
+          "level": 3,
+          "line": 7
+        },
+        {
+          "heading": "[extensions/](extensions/)",
+          "level": 3,
+          "line": 10
+        },
+        {
+          "heading": "Documentation",
+          "level": 2,
+          "line": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/rpc-extension-ui.ts",
+      "language": "typescript",
+      "totalLines": 641,
+      "nonEmptyLines": 540,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 255,
+          "endLine": 636,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "OutputLog",
+          "startLine": 72,
+          "endLine": 103,
+          "methods": [
+            "setVisibleLines",
+            "append",
+            "appendRaw",
+            "invalidate",
+            "render"
+          ],
+          "properties": [
+            "lines",
+            "maxLines",
+            "visibleLines"
+          ]
+        },
+        {
+          "name": "LoadingIndicator",
+          "startLine": 109,
+          "endLine": 135,
+          "methods": [
+            "start",
+            "stop",
+            "invalidate",
+            "render"
+          ],
+          "properties": [
+            "dots",
+            "intervalId",
+            "tui"
+          ]
+        },
+        {
+          "name": "PromptInput",
+          "startLine": 141,
+          "endLine": 164,
+          "methods": [
+            "constructor",
+            "handleInput",
+            "invalidate",
+            "render"
+          ],
+          "properties": [
+            "input",
+            "onCtrlD"
+          ]
+        },
+        {
+          "name": "SelectDialog",
+          "startLine": 170,
+          "endLine": 205,
+          "methods": [
+            "constructor",
+            "handleInput",
+            "invalidate",
+            "render"
+          ],
+          "properties": [
+            "list",
+            "title",
+            "onSelect",
+            "onCancel"
+          ]
+        },
+        {
+          "name": "InputDialog",
+          "startLine": 207,
+          "endLine": 249,
+          "methods": [
+            "constructor",
+            "onSubmit",
+            "onEscape",
+            "inputComponent",
+            "handleInput",
+            "invalidate",
+            "render"
+          ],
+          "properties": [
+            "dialogInput",
+            "title",
+            "onCtrlD"
+          ]
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 5
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/sdk/01-minimal.ts",
+      "language": "typescript",
+      "totalLines": 26,
+      "nonEmptyLines": 22,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/sdk/02-custom-model.ts",
+      "language": "typescript",
+      "totalLines": 49,
+      "nonEmptyLines": 41,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/sdk/03-custom-prompt.ts",
+      "language": "typescript",
+      "totalLines": 75,
+      "nonEmptyLines": 65,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/sdk/04-skills.ts",
+      "language": "typescript",
+      "totalLines": 55,
+      "nonEmptyLines": 50,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/sdk/05-tools.ts",
+      "language": "typescript",
+      "totalLines": 48,
+      "nonEmptyLines": 43,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/sdk/06-extensions.ts",
+      "language": "typescript",
+      "totalLines": 99,
+      "nonEmptyLines": 87,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/sdk/07-context-files.ts",
+      "language": "typescript",
+      "totalLines": 47,
+      "nonEmptyLines": 42,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/sdk/08-prompt-templates.ts",
+      "language": "typescript",
+      "totalLines": 51,
+      "nonEmptyLines": 45,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/sdk/09-api-keys-and-oauth.ts",
+      "language": "typescript",
+      "totalLines": 34,
+      "nonEmptyLines": 30,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

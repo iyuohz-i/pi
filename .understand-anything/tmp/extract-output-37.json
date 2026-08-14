@@ -1,0 +1,1279 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 7,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "scripts/package-workspaces.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 19,
+      "functions": [
+        {
+          "name": "findPackageDirectories",
+          "startLine": 6,
+          "endLine": 24,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "findPackageDirectories",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "visit",
+          "callee": "existsSync",
+          "lineNumber": 10
+        },
+        {
+          "caller": "visit",
+          "callee": "join",
+          "lineNumber": 10
+        },
+        {
+          "caller": "visit",
+          "callee": "packageDirectories.push",
+          "lineNumber": 11
+        },
+        {
+          "caller": "visit",
+          "callee": "readdirSync",
+          "lineNumber": 14
+        },
+        {
+          "caller": "visit",
+          "callee": "entry.isDirectory",
+          "lineNumber": 15
+        },
+        {
+          "caller": "visit",
+          "callee": "SKIPPED_DIRECTORIES.has",
+          "lineNumber": 15
+        },
+        {
+          "caller": "visit",
+          "callee": "visit",
+          "lineNumber": 18
+        },
+        {
+          "caller": "visit",
+          "callee": "join",
+          "lineNumber": 18
+        },
+        {
+          "caller": "findPackageDirectories",
+          "callee": "visit",
+          "lineNumber": 22
+        },
+        {
+          "caller": "findPackageDirectories",
+          "callee": "packageDirectories.sort",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/publish-release-announcement.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 290,
+      "nonEmptyLines": 262,
+      "functions": [
+        {
+          "name": "parseArgs",
+          "startLine": 17,
+          "endLine": 43,
+          "params": [
+            "args"
+          ]
+        },
+        {
+          "name": "sleep",
+          "startLine": 45,
+          "endLine": 47,
+          "params": [
+            "milliseconds"
+          ]
+        },
+        {
+          "name": "resolvePackageFromNpm",
+          "startLine": 49,
+          "endLine": 82,
+          "params": [
+            "pkg"
+          ]
+        },
+        {
+          "name": "verifyPackagesAreAvailable",
+          "startLine": 84,
+          "endLine": 106,
+          "params": [
+            "packages"
+          ]
+        },
+        {
+          "name": "gitSourceCommit",
+          "startLine": 108,
+          "endLine": 110,
+          "params": []
+        },
+        {
+          "name": "runAws",
+          "startLine": 112,
+          "endLine": 131,
+          "params": [
+            "args"
+          ]
+        },
+        {
+          "name": "readLatestRelease",
+          "startLine": 133,
+          "endLine": 175,
+          "params": [
+            "bucket",
+            "endpoint",
+            "outputPath"
+          ]
+        },
+        {
+          "name": "putJson",
+          "startLine": 177,
+          "endLine": 197,
+          "params": [
+            "bucket",
+            "endpoint",
+            "path",
+            "key",
+            "cacheControl",
+            "condition"
+          ]
+        },
+        {
+          "name": "compareReleaseVersions",
+          "startLine": 199,
+          "endLine": 209,
+          "params": [
+            "left",
+            "right"
+          ]
+        },
+        {
+          "name": "advanceLatestRelease",
+          "startLine": 211,
+          "endLine": 224,
+          "params": [
+            "version",
+            "readLatest",
+            "writeLatest"
+          ]
+        },
+        {
+          "name": "main",
+          "startLine": 226,
+          "endLine": 283,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "compareReleaseVersions",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "advanceLatestRelease",
+          "line": 211,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parseArgs",
+          "callee": "STABLE_SEMVER_RE.test",
+          "lineNumber": 39
+        },
+        {
+          "caller": "sleep",
+          "callee": "setTimeout",
+          "lineNumber": 46
+        },
+        {
+          "caller": "resolvePackageFromNpm",
+          "callee": "encodeURIComponent",
+          "lineNumber": 50
+        },
+        {
+          "caller": "resolvePackageFromNpm",
+          "callee": "fetch",
+          "lineNumber": 51
+        },
+        {
+          "caller": "resolvePackageFromNpm",
+          "callee": "response.json",
+          "lineNumber": 56
+        },
+        {
+          "caller": "resolvePackageFromNpm",
+          "callee": "Array.isArray",
+          "lineNumber": 60
+        },
+        {
+          "caller": "resolvePackageFromNpm",
+          "callee": "Array.isArray",
+          "lineNumber": 64
+        },
+        {
+          "caller": "resolvePackageFromNpm",
+          "callee": "fetch",
+          "lineNumber": 71
+        },
+        {
+          "caller": "verifyPackagesAreAvailable",
+          "callee": "Date.now",
+          "lineNumber": 85
+        },
+        {
+          "caller": "verifyPackagesAreAvailable",
+          "callee": "Promise.allSettled",
+          "lineNumber": 91
+        },
+        {
+          "caller": "verifyPackagesAreAvailable",
+          "callee": "packages.map",
+          "lineNumber": 91
+        },
+        {
+          "caller": "verifyPackagesAreAvailable",
+          "callee": "results.flatMap",
+          "lineNumber": 92
+        },
+        {
+          "caller": "verifyPackagesAreAvailable",
+          "callee": "console.log",
+          "lineNumber": 96
+        },
+        {
+          "caller": "verifyPackagesAreAvailable",
+          "callee": "results.map",
+          "lineNumber": 97
+        },
+        {
+          "caller": "verifyPackagesAreAvailable",
+          "callee": "console.log",
+          "lineNumber": 100
+        },
+        {
+          "caller": "verifyPackagesAreAvailable",
+          "callee": "console.log",
+          "lineNumber": 101
+        },
+        {
+          "caller": "verifyPackagesAreAvailable",
+          "callee": "Date.now",
+          "lineNumber": 102
+        },
+        {
+          "caller": "verifyPackagesAreAvailable",
+          "callee": "sleep",
+          "lineNumber": 102
+        },
+        {
+          "caller": "verifyPackagesAreAvailable",
+          "callee": "Date.now",
+          "lineNumber": 103
+        },
+        {
+          "caller": "verifyPackagesAreAvailable",
+          "callee": "failures.map((failure) => `  ${failure}`).join",
+          "lineNumber": 105
+        },
+        {
+          "caller": "verifyPackagesAreAvailable",
+          "callee": "failures.map",
+          "lineNumber": 105
+        },
+        {
+          "caller": "gitSourceCommit",
+          "callee": "execFileSync(\"git\", [\"rev-parse\", \"HEAD\"], { encoding: \"utf8\" }).trim",
+          "lineNumber": 109
+        },
+        {
+          "caller": "gitSourceCommit",
+          "callee": "execFileSync",
+          "lineNumber": 109
+        },
+        {
+          "caller": "runAws",
+          "callee": "spawnSync",
+          "lineNumber": 113
+        },
+        {
+          "caller": "runAws",
+          "callee": "`${result.stdout}\\n${result.stderr}`.trim",
+          "lineNumber": 125
+        },
+        {
+          "caller": "runAws",
+          "callee": "/(?:404|NoSuchKey|Not Found)/i.test",
+          "lineNumber": 126
+        },
+        {
+          "caller": "runAws",
+          "callee": "/(?:412|PreconditionFailed|ConditionalRequestConflict)/i.test",
+          "lineNumber": 127
+        },
+        {
+          "caller": "runAws",
+          "callee": "args.slice(0, 2).join",
+          "lineNumber": 130
+        },
+        {
+          "caller": "runAws",
+          "callee": "args.slice",
+          "lineNumber": 130
+        },
+        {
+          "caller": "readLatestRelease",
+          "callee": "runAws",
+          "lineNumber": 134
+        },
+        {
+          "caller": "readLatestRelease",
+          "callee": "JSON.parse",
+          "lineNumber": 149
+        },
+        {
+          "caller": "readLatestRelease",
+          "callee": "runAws",
+          "lineNumber": 153
+        },
+        {
+          "caller": "readLatestRelease",
+          "callee": "JSON.parse",
+          "lineNumber": 164
+        },
+        {
+          "caller": "readLatestRelease",
+          "callee": "readFileSync",
+          "lineNumber": 164
+        },
+        {
+          "caller": "readLatestRelease",
+          "callee": "Array.isArray",
+          "lineNumber": 168
+        },
+        {
+          "caller": "readLatestRelease",
+          "callee": "STABLE_SEMVER_RE.test",
+          "lineNumber": 170
+        },
+        {
+          "caller": "putJson",
+          "callee": "args.push",
+          "lineNumber": 194
+        },
+        {
+          "caller": "putJson",
+          "callee": "args.push",
+          "lineNumber": 195
+        },
+        {
+          "caller": "putJson",
+          "callee": "runAws",
+          "lineNumber": 196
+        },
+        {
+          "caller": "putJson",
+          "callee": "Boolean",
+          "lineNumber": 196
+        },
+        {
+          "caller": "compareReleaseVersions",
+          "callee": "STABLE_SEMVER_RE.exec",
+          "lineNumber": 200
+        },
+        {
+          "caller": "compareReleaseVersions",
+          "callee": "STABLE_SEMVER_RE.exec",
+          "lineNumber": 201
+        },
+        {
+          "caller": "compareReleaseVersions",
+          "callee": "Number",
+          "lineNumber": 205
+        },
+        {
+          "caller": "compareReleaseVersions",
+          "callee": "Number",
+          "lineNumber": 205
+        },
+        {
+          "caller": "advanceLatestRelease",
+          "callee": "readLatest",
+          "lineNumber": 213
+        },
+        {
+          "caller": "advanceLatestRelease",
+          "callee": "compareReleaseVersions",
+          "lineNumber": 214
+        },
+        {
+          "caller": "advanceLatestRelease",
+          "callee": "writeLatest",
+          "lineNumber": 218
+        },
+        {
+          "caller": "main",
+          "callee": "parseArgs",
+          "lineNumber": 227
+        },
+        {
+          "caller": "main",
+          "callee": "process.argv.slice",
+          "lineNumber": 227
+        },
+        {
+          "caller": "main",
+          "callee": "getPublicWorkspacePackages",
+          "lineNumber": 228
+        },
+        {
+          "caller": "main",
+          "callee": "verifyPackagesAreAvailable",
+          "lineNumber": 235
+        },
+        {
+          "caller": "main",
+          "callee": "gitSourceCommit",
+          "lineNumber": 239
+        },
+        {
+          "caller": "main",
+          "callee": "new Date().toISOString",
+          "lineNumber": 240
+        },
+        {
+          "caller": "main",
+          "callee": "mkdtempSync",
+          "lineNumber": 243
+        },
+        {
+          "caller": "main",
+          "callee": "join",
+          "lineNumber": 243
+        },
+        {
+          "caller": "main",
+          "callee": "tmpdir",
+          "lineNumber": 243
+        },
+        {
+          "caller": "main",
+          "callee": "join",
+          "lineNumber": 245
+        },
+        {
+          "caller": "main",
+          "callee": "join",
+          "lineNumber": 246
+        },
+        {
+          "caller": "main",
+          "callee": "writeFileSync",
+          "lineNumber": 247
+        },
+        {
+          "caller": "main",
+          "callee": "JSON.stringify",
+          "lineNumber": 247
+        },
+        {
+          "caller": "main",
+          "callee": "putJson",
+          "lineNumber": 249
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 258
+        },
+        {
+          "caller": "main",
+          "callee": "writeFileSync",
+          "lineNumber": 261
+        },
+        {
+          "caller": "main",
+          "callee": "JSON.stringify",
+          "lineNumber": 261
+        },
+        {
+          "caller": "main",
+          "callee": "advanceLatestRelease",
+          "lineNumber": 262
+        },
+        {
+          "caller": "main",
+          "callee": "readLatestRelease",
+          "lineNumber": 264
+        },
+        {
+          "caller": "main",
+          "callee": "join",
+          "lineNumber": 264
+        },
+        {
+          "caller": "main",
+          "callee": "putJson",
+          "lineNumber": 266
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 275
+        },
+        {
+          "caller": "main",
+          "callee": "rmSync",
+          "lineNumber": 281
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/publish-release-announcement.test.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 55,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/publish.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 110,
+      "nonEmptyLines": 86,
+      "functions": [
+        {
+          "name": "commandForPlatform",
+          "startLine": 18,
+          "endLine": 20,
+          "params": [
+            "command"
+          ]
+        },
+        {
+          "name": "run",
+          "startLine": 22,
+          "endLine": 36,
+          "params": [
+            "command",
+            "args"
+          ]
+        },
+        {
+          "name": "assertBuildOutputExists",
+          "startLine": 38,
+          "endLine": 42,
+          "params": [
+            "directory"
+          ]
+        },
+        {
+          "name": "validatePack",
+          "startLine": 44,
+          "endLine": 48,
+          "params": [
+            "directory"
+          ]
+        },
+        {
+          "name": "isPublished",
+          "startLine": 50,
+          "endLine": 66,
+          "params": [
+            "name",
+            "version"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "run",
+          "callee": "console.log",
+          "lineNumber": 23
+        },
+        {
+          "caller": "run",
+          "callee": "[command, ...args].join",
+          "lineNumber": 23
+        },
+        {
+          "caller": "run",
+          "callee": "spawnSync",
+          "lineNumber": 24
+        },
+        {
+          "caller": "run",
+          "callee": "commandForPlatform",
+          "lineNumber": 24
+        },
+        {
+          "caller": "run",
+          "callee": "[result.stdout, result.stderr].filter(Boolean).join",
+          "lineNumber": 31
+        },
+        {
+          "caller": "run",
+          "callee": "[result.stdout, result.stderr].filter",
+          "lineNumber": 31
+        },
+        {
+          "caller": "run",
+          "callee": "args.join",
+          "lineNumber": 32
+        },
+        {
+          "caller": "run",
+          "callee": "args.join",
+          "lineNumber": 32
+        },
+        {
+          "caller": "assertBuildOutputExists",
+          "callee": "existsSync",
+          "lineNumber": 39
+        },
+        {
+          "caller": "assertBuildOutputExists",
+          "callee": "join",
+          "lineNumber": 39
+        },
+        {
+          "caller": "validatePack",
+          "callee": "run",
+          "lineNumber": 45
+        },
+        {
+          "caller": "validatePack",
+          "callee": "JSON.parse",
+          "lineNumber": 46
+        },
+        {
+          "caller": "validatePack",
+          "callee": "console.log",
+          "lineNumber": 47
+        },
+        {
+          "caller": "isPublished",
+          "callee": "spawnSync",
+          "lineNumber": 51
+        },
+        {
+          "caller": "isPublished",
+          "callee": "commandForPlatform",
+          "lineNumber": 51
+        },
+        {
+          "caller": "isPublished",
+          "callee": "result.stdout.trim",
+          "lineNumber": 56
+        },
+        {
+          "caller": "isPublished",
+          "callee": "[result.stdout, result.stderr].filter(Boolean).join",
+          "lineNumber": 60
+        },
+        {
+          "caller": "isPublished",
+          "callee": "[result.stdout, result.stderr].filter",
+          "lineNumber": 60
+        },
+        {
+          "caller": "isPublished",
+          "callee": "output.includes",
+          "lineNumber": 61
+        },
+        {
+          "caller": "isPublished",
+          "callee": "output.includes",
+          "lineNumber": 61
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/release-packages.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 13,
+      "nonEmptyLines": 12,
+      "functions": [
+        {
+          "name": "getPublicWorkspacePackages",
+          "startLine": 5,
+          "endLine": 13,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "getPublicWorkspacePackages",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getPublicWorkspacePackages",
+          "callee": "findPackageDirectories()\n\t\t.map((directory) => ({\n\t\t\tdirectory,\n\t\t\t...JSON.parse(readFileSync(join(directory, \"package.json\"), \"utf8\")),\n\t\t}))\n\t\t.filter((pkg) => pkg.private !== true)\n\t\t.map",
+          "lineNumber": 6
+        },
+        {
+          "caller": "getPublicWorkspacePackages",
+          "callee": "findPackageDirectories()\n\t\t.map((directory) => ({\n\t\t\tdirectory,\n\t\t\t...JSON.parse(readFileSync(join(directory, \"package.json\"), \"utf8\")),\n\t\t}))\n\t\t.filter",
+          "lineNumber": 6
+        },
+        {
+          "caller": "getPublicWorkspacePackages",
+          "callee": "findPackageDirectories()\n\t\t.map",
+          "lineNumber": 6
+        },
+        {
+          "caller": "getPublicWorkspacePackages",
+          "callee": "findPackageDirectories",
+          "lineNumber": 6
+        },
+        {
+          "caller": "getPublicWorkspacePackages",
+          "callee": "JSON.parse",
+          "lineNumber": 9
+        },
+        {
+          "caller": "getPublicWorkspacePackages",
+          "callee": "readFileSync",
+          "lineNumber": 9
+        },
+        {
+          "caller": "getPublicWorkspacePackages",
+          "callee": "join",
+          "lineNumber": 9
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/release.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 281,
+      "nonEmptyLines": 234,
+      "functions": [
+        {
+          "name": "run",
+          "startLine": 37,
+          "endLine": 48,
+          "params": [
+            "cmd"
+          ]
+        },
+        {
+          "name": "getVersion",
+          "startLine": 50,
+          "endLine": 53,
+          "params": []
+        },
+        {
+          "name": "assertPackagesAreRegisteredWithNpm",
+          "startLine": 55,
+          "endLine": 85,
+          "params": []
+        },
+        {
+          "name": "compareVersions",
+          "startLine": 87,
+          "endLine": 99,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "shellQuote",
+          "startLine": 101,
+          "endLine": 103,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "removeStaleWorkspaceLockEntries",
+          "startLine": 105,
+          "endLine": 130,
+          "params": []
+        },
+        {
+          "name": "stageChangedFiles",
+          "startLine": 132,
+          "endLine": 140,
+          "params": []
+        },
+        {
+          "name": "bumpOrSetVersion",
+          "startLine": 142,
+          "endLine": 165,
+          "params": [
+            "target"
+          ]
+        },
+        {
+          "name": "getChangelogs",
+          "startLine": 167,
+          "endLine": 171,
+          "params": []
+        },
+        {
+          "name": "updateChangelogsForRelease",
+          "startLine": 173,
+          "endLine": 192,
+          "params": [
+            "version"
+          ]
+        },
+        {
+          "name": "addUnreleasedSection",
+          "startLine": 194,
+          "endLine": 209,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "run",
+          "callee": "console.log",
+          "lineNumber": 38
+        },
+        {
+          "caller": "run",
+          "callee": "execSync",
+          "lineNumber": 40
+        },
+        {
+          "caller": "run",
+          "callee": "console.error",
+          "lineNumber": 43
+        },
+        {
+          "caller": "run",
+          "callee": "process.exit",
+          "lineNumber": 44
+        },
+        {
+          "caller": "getVersion",
+          "callee": "JSON.parse",
+          "lineNumber": 51
+        },
+        {
+          "caller": "getVersion",
+          "callee": "readFileSync",
+          "lineNumber": 51
+        },
+        {
+          "caller": "assertPackagesAreRegisteredWithNpm",
+          "callee": "getPublicWorkspacePackages().map",
+          "lineNumber": 56
+        },
+        {
+          "caller": "assertPackagesAreRegisteredWithNpm",
+          "callee": "getPublicWorkspacePackages",
+          "lineNumber": 56
+        },
+        {
+          "caller": "assertPackagesAreRegisteredWithNpm",
+          "callee": "console.log",
+          "lineNumber": 59
+        },
+        {
+          "caller": "assertPackagesAreRegisteredWithNpm",
+          "callee": "spawnSync",
+          "lineNumber": 61
+        },
+        {
+          "caller": "assertPackagesAreRegisteredWithNpm",
+          "callee": "result.stdout.trim",
+          "lineNumber": 66
+        },
+        {
+          "caller": "assertPackagesAreRegisteredWithNpm",
+          "callee": "console.log",
+          "lineNumber": 67
+        },
+        {
+          "caller": "assertPackagesAreRegisteredWithNpm",
+          "callee": "[result.stdout, result.stderr, result.error?.message].filter(Boolean).join",
+          "lineNumber": 71
+        },
+        {
+          "caller": "assertPackagesAreRegisteredWithNpm",
+          "callee": "[result.stdout, result.stderr, result.error?.message].filter",
+          "lineNumber": 71
+        },
+        {
+          "caller": "assertPackagesAreRegisteredWithNpm",
+          "callee": "output.includes",
+          "lineNumber": 72
+        },
+        {
+          "caller": "assertPackagesAreRegisteredWithNpm",
+          "callee": "output.includes",
+          "lineNumber": 72
+        },
+        {
+          "caller": "assertPackagesAreRegisteredWithNpm",
+          "callee": "unregisteredPackages.push",
+          "lineNumber": 73
+        },
+        {
+          "caller": "assertPackagesAreRegisteredWithNpm",
+          "callee": "unregisteredPackages.map((packageName) => `  ${packageName}`).join",
+          "lineNumber": 81
+        },
+        {
+          "caller": "assertPackagesAreRegisteredWithNpm",
+          "callee": "unregisteredPackages.map",
+          "lineNumber": 81
+        },
+        {
+          "caller": "assertPackagesAreRegisteredWithNpm",
+          "callee": "console.log",
+          "lineNumber": 84
+        },
+        {
+          "caller": "compareVersions",
+          "callee": "a.split(\".\").map",
+          "lineNumber": 88
+        },
+        {
+          "caller": "compareVersions",
+          "callee": "a.split",
+          "lineNumber": 88
+        },
+        {
+          "caller": "compareVersions",
+          "callee": "b.split(\".\").map",
+          "lineNumber": 89
+        },
+        {
+          "caller": "compareVersions",
+          "callee": "b.split",
+          "lineNumber": 89
+        },
+        {
+          "caller": "shellQuote",
+          "callee": "value.replace",
+          "lineNumber": 102
+        },
+        {
+          "caller": "removeStaleWorkspaceLockEntries",
+          "callee": "getPublicWorkspacePackages().map",
+          "lineNumber": 107
+        },
+        {
+          "caller": "removeStaleWorkspaceLockEntries",
+          "callee": "getPublicWorkspacePackages",
+          "lineNumber": 107
+        },
+        {
+          "caller": "removeStaleWorkspaceLockEntries",
+          "callee": "JSON.parse",
+          "lineNumber": 110
+        },
+        {
+          "caller": "removeStaleWorkspaceLockEntries",
+          "callee": "readFileSync",
+          "lineNumber": 110
+        },
+        {
+          "caller": "removeStaleWorkspaceLockEntries",
+          "callee": "Object.entries",
+          "lineNumber": 113
+        },
+        {
+          "caller": "removeStaleWorkspaceLockEntries",
+          "callee": "path.startsWith",
+          "lineNumber": 114
+        },
+        {
+          "caller": "removeStaleWorkspaceLockEntries",
+          "callee": "path.endsWith",
+          "lineNumber": 118
+        },
+        {
+          "caller": "removeStaleWorkspaceLockEntries",
+          "callee": "writeFileSync",
+          "lineNumber": 127
+        },
+        {
+          "caller": "removeStaleWorkspaceLockEntries",
+          "callee": "JSON.stringify",
+          "lineNumber": 127
+        },
+        {
+          "caller": "removeStaleWorkspaceLockEntries",
+          "callee": "console.log",
+          "lineNumber": 128
+        },
+        {
+          "caller": "stageChangedFiles",
+          "callee": "run",
+          "lineNumber": 133
+        },
+        {
+          "caller": "stageChangedFiles",
+          "callee": "(output || \"\").split(\"\\n\").map((line) => line.trim()).filter",
+          "lineNumber": 134
+        },
+        {
+          "caller": "stageChangedFiles",
+          "callee": "(output || \"\").split(\"\\n\").map",
+          "lineNumber": 134
+        },
+        {
+          "caller": "stageChangedFiles",
+          "callee": "(output || \"\").split",
+          "lineNumber": 134
+        },
+        {
+          "caller": "stageChangedFiles",
+          "callee": "line.trim",
+          "lineNumber": 134
+        },
+        {
+          "caller": "stageChangedFiles",
+          "callee": "run",
+          "lineNumber": 139
+        },
+        {
+          "caller": "stageChangedFiles",
+          "callee": "paths.map(shellQuote).join",
+          "lineNumber": 139
+        },
+        {
+          "caller": "stageChangedFiles",
+          "callee": "paths.map",
+          "lineNumber": 139
+        },
+        {
+          "caller": "bumpOrSetVersion",
+          "callee": "getVersion",
+          "lineNumber": 143
+        },
+        {
+          "caller": "bumpOrSetVersion",
+          "callee": "BUMP_TYPES.has",
+          "lineNumber": 145
+        },
+        {
+          "caller": "bumpOrSetVersion",
+          "callee": "console.log",
+          "lineNumber": 146
+        },
+        {
+          "caller": "bumpOrSetVersion",
+          "callee": "run",
+          "lineNumber": 147
+        },
+        {
+          "caller": "bumpOrSetVersion",
+          "callee": "compareVersions",
+          "lineNumber": 149
+        },
+        {
+          "caller": "bumpOrSetVersion",
+          "callee": "console.error",
+          "lineNumber": 150
+        },
+        {
+          "caller": "bumpOrSetVersion",
+          "callee": "process.exit",
+          "lineNumber": 151
+        },
+        {
+          "caller": "bumpOrSetVersion",
+          "callee": "console.log",
+          "lineNumber": 154
+        },
+        {
+          "caller": "bumpOrSetVersion",
+          "callee": "run",
+          "lineNumber": 155
+        },
+        {
+          "caller": "bumpOrSetVersion",
+          "callee": "removeStaleWorkspaceLockEntries",
+          "lineNumber": 161
+        },
+        {
+          "caller": "bumpOrSetVersion",
+          "callee": "run",
+          "lineNumber": 162
+        },
+        {
+          "caller": "bumpOrSetVersion",
+          "callee": "run",
+          "lineNumber": 163
+        },
+        {
+          "caller": "bumpOrSetVersion",
+          "callee": "getVersion",
+          "lineNumber": 164
+        },
+        {
+          "caller": "getChangelogs",
+          "callee": "findPackageDirectories()\n\t\t.map((directory) => join(directory, \"CHANGELOG.md\"))\n\t\t.filter",
+          "lineNumber": 168
+        },
+        {
+          "caller": "getChangelogs",
+          "callee": "findPackageDirectories()\n\t\t.map",
+          "lineNumber": 168
+        },
+        {
+          "caller": "getChangelogs",
+          "callee": "findPackageDirectories",
+          "lineNumber": 168
+        },
+        {
+          "caller": "getChangelogs",
+          "callee": "join",
+          "lineNumber": 169
+        },
+        {
+          "caller": "getChangelogs",
+          "callee": "existsSync",
+          "lineNumber": 170
+        },
+        {
+          "caller": "updateChangelogsForRelease",
+          "callee": "new Date().toISOString().split",
+          "lineNumber": 174
+        },
+        {
+          "caller": "updateChangelogsForRelease",
+          "callee": "new Date().toISOString",
+          "lineNumber": 174
+        },
+        {
+          "caller": "updateChangelogsForRelease",
+          "callee": "getChangelogs",
+          "lineNumber": 175
+        },
+        {
+          "caller": "updateChangelogsForRelease",
+          "callee": "readFileSync",
+          "lineNumber": 178
+        },
+        {
+          "caller": "updateChangelogsForRelease",
+          "callee": "content.includes",
+          "lineNumber": 180
+        },
+        {
+          "caller": "updateChangelogsForRelease",
+          "callee": "console.log",
+          "lineNumber": 181
+        },
+        {
+          "caller": "updateChangelogsForRelease",
+          "callee": "content.replace",
+          "lineNumber": 185
+        },
+        {
+          "caller": "updateChangelogsForRelease",
+          "callee": "writeFileSync",
+          "lineNumber": 189
+        },
+        {
+          "caller": "updateChangelogsForRelease",
+          "callee": "console.log",
+          "lineNumber": 190
+        },
+        {
+          "caller": "addUnreleasedSection",
+          "callee": "getChangelogs",
+          "lineNumber": 195
+        },
+        {
+          "caller": "addUnreleasedSection",
+          "callee": "readFileSync",
+          "lineNumber": 199
+        },
+        {
+          "caller": "addUnreleasedSection",
+          "callee": "content.replace",
+          "lineNumber": 202
+        },
+        {
+          "caller": "addUnreleasedSection",
+          "callee": "writeFileSync",
+          "lineNumber": 206
+        },
+        {
+          "caller": "addUnreleasedSection",
+          "callee": "console.log",
+          "lineNumber": 207
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/sync-versions.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 66,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

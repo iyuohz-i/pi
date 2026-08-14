@@ -1,0 +1,472 @@
+{
+  "nodes": [
+    {
+      "id": "file:.gitattributes",
+      "type": "file",
+      "name": ".gitattributes",
+      "filePath": ".gitattributes",
+      "summary": "Git 属性配置文件，定义跨平台行尾规范化、二进制文件识别以及 LFS（Large File Storage）追踪规则，确保仓库在不同操作系统间保持一致的文件处理行为。",
+      "tags": ["config", "git", "跨平台", "行尾规范化"],
+      "complexity": "simple",
+      "languageNotes": "纯配置文件，无运行时逻辑；通过声明式条目控制 Git 对文件的处理方式。"
+    },
+    {
+      "id": "file:.github/APPROVED_CONTRIBUTORS",
+      "type": "file",
+      "name": "APPROVED_CONTRIBUTORS",
+      "filePath": ".github/APPROVED_CONTRIBUTORS",
+      "summary": "已批准贡献者名单，记录经过审核可向项目提交代码的贡献者清单，用于贡献流程的准入控制与合规管理。",
+      "tags": ["docs", "governance", "贡献者"],
+      "complexity": "simple",
+      "languageNotes": "纯文本清单文件，每行一个贡献者标识。"
+    },
+    {
+      "id": "file:.husky/pre-commit",
+      "type": "file",
+      "name": "pre-commit",
+      "filePath": ".husky/pre-commit",
+      "summary": "Husky 管理的 Git pre-commit hook 脚本，在提交前自动运行 lint、格式化或测试等质量门禁，拦截不合规的提交。",
+      "tags": ["config", "git-hook", "husky", "质量门禁"],
+      "complexity": "simple",
+      "languageNotes": "Shell 脚本，由 Husky 在 commit 阶段触发执行。"
+    },
+    {
+      "id": "file:.npmrc",
+      "type": "file",
+      "name": ".npmrc",
+      "filePath": ".npmrc",
+      "summary": "npm 配置文件，定义 registry 源、认证令牌、安装策略等包管理行为，在 pnpm monorepo 中用于统一依赖解析与发布配置。",
+      "tags": ["config", "npm", "registry"],
+      "complexity": "simple",
+      "languageNotes": "键值对配置文件，控制包管理器行为。"
+    },
+    {
+      "id": "file:.pi/extensions/import-repro.ts",
+      "type": "file",
+      "name": "import-repro.ts",
+      "filePath": ".pi/extensions/import-repro.ts",
+      "summary": "pi 扩展插件，用于导入由 issue-analysis CI 工作流以 gist 形式分享的 pi 会话。它会解析会话 JSONL、将记录的 cwd 重写为本地检出路径、安装会话文件并切换到该会话，提供 `/ir <gist-id>` 命令实现可复现的 issue 重现。",
+      "tags": ["extension", "session", "gist", "issue-repro", "ci"],
+      "complexity": "complex",
+      "languageNotes": "包含路径解析、JSONL 解析、HTML 解码、gist 抓取与会话重写等多阶段处理逻辑；18 个函数中 8 个达到显著性阈值。"
+    },
+    {
+      "id": "function:.pi/extensions/import-repro.ts:parseRef",
+      "type": "function",
+      "name": "parseRef",
+      "filePath": ".pi/extensions/import-repro.ts",
+      "summary": "解析用户输入的引用字符串，识别其是 gist ID、URL 还是简写形式，返回规范化后的 gist 标识供后续抓取使用。",
+      "tags": ["parsing", "gist", "引用解析"],
+      "complexity": "moderate",
+      "lineRange": [58, 78]
+    },
+    {
+      "id": "function:.pi/extensions/import-repro.ts:parseSessionJsonl",
+      "type": "function",
+      "name": "parseSessionJsonl",
+      "filePath": ".pi/extensions/import-repro.ts",
+      "summary": "逐行解析会话 JSONL 文件内容，将其转换为结构化的会话消息数组，容忍空行与格式异常。",
+      "tags": ["parsing", "jsonl", "session"],
+      "complexity": "moderate",
+      "lineRange": [80, 94]
+    },
+    {
+      "id": "function:.pi/extensions/import-repro.ts:decodeExportedHtml",
+      "type": "function",
+      "name": "decodeExportedHtml",
+      "filePath": ".pi/extensions/import-repro.ts",
+      "summary": "解码导出的 HTML 会话格式，从中提取嵌入的 JSONL 数据，处理 HTML 实体与转义字符以还原原始会话内容。",
+      "tags": ["parsing", "html", "解码", "session"],
+      "complexity": "moderate",
+      "lineRange": [96, 118]
+    },
+    {
+      "id": "function:.pi/extensions/import-repro.ts:getWindowsDrivePathParts",
+      "type": "function",
+      "name": "getWindowsDrivePathParts",
+      "filePath": ".pi/extensions/import-repro.ts",
+      "summary": "识别并拆分 Windows 盘符路径（如 C:\\Users），返回盘符与剩余路径部分，用于跨平台 cwd 重写时的路径规范化。",
+      "tags": ["path", "windows", "跨平台"],
+      "complexity": "moderate",
+      "lineRange": [139, 152]
+    },
+    {
+      "id": "function:.pi/extensions/import-repro.ts:getCwdRewriteVariants",
+      "type": "function",
+      "name": "getCwdRewriteVariants",
+      "filePath": ".pi/extensions/import-repro.ts",
+      "summary": "根据原始 cwd 路径生成多种可能的本地重写变体（含/不含盘符、正斜杠/反斜杠等），提高会话 cwd 与本地检出路径匹配的成功率。",
+      "tags": ["path", "cwd", "跨平台", "变体生成"],
+      "complexity": "moderate",
+      "lineRange": [154, 170]
+    },
+    {
+      "id": "function:.pi/extensions/import-repro.ts:rewriteSessionCwd",
+      "type": "function",
+      "name": "rewriteSessionCwd",
+      "filePath": ".pi/extensions/import-repro.ts",
+      "summary": "遍历会话消息，将记录中的原始工作目录替换为用户本地检出路径，使导入的会话能在本地环境中正确复现工具调用与文件操作。",
+      "tags": ["session", "cwd", "重写", "repro"],
+      "complexity": "complex",
+      "lineRange": [198, 220]
+    },
+    {
+      "id": "function:.pi/extensions/import-repro.ts:findIssueGistId",
+      "type": "function",
+      "name": "findIssueGistId",
+      "filePath": ".pi/extensions/import-repro.ts",
+      "summary": "从 GitHub issue 或 PR 的描述与评论中搜索关联的 gist 链接，提取 gist ID 以支持从 issue 直接导入可复现会话。",
+      "tags": ["github", "issue", "gist", "搜索"],
+      "complexity": "complex",
+      "lineRange": [236, 261]
+    },
+    {
+      "id": "function:.pi/extensions/import-repro.ts:fetchGistSession",
+      "type": "function",
+      "name": "fetchGistSession",
+      "filePath": ".pi/extensions/import-repro.ts",
+      "summary": "通过 gist ID 从 GitHub 抓取会话内容，处理认证与错误响应，返回原始会话数据供解析与重写流程使用。",
+      "tags": ["github", "gist", "网络请求", "session"],
+      "complexity": "moderate",
+      "lineRange": [263, 281]
+    },
+    {
+      "id": "file:.pi/extensions/prompt-url-widget.ts",
+      "type": "file",
+      "name": "prompt-url-widget.ts",
+      "filePath": ".pi/extensions/prompt-url-widget.ts",
+      "summary": "TUI 扩展插件，检测用户 prompt 中出现的 GitHub PR、issue 或 security advisory URL，自动抓取相关元数据（标题、作者、严重级别等）并在输入框上方以 widget 形式展示上下文信息，提升处理 URL 类任务时的可见性。",
+      "tags": ["extension", "tui", "widget", "github", "prompt"],
+      "complexity": "complex",
+      "languageNotes": "包含正则匹配、YAML 解析、GitHub API 抓取与 TUI 渲染；11 个函数中 7 个达到显著性阈值，1 个 default export。"
+    },
+    {
+      "id": "function:.pi/extensions/prompt-url-widget.ts:extractPromptMatch",
+      "type": "function",
+      "name": "extractPromptMatch",
+      "filePath": ".pi/extensions/prompt-url-widget.ts",
+      "summary": "用预定义正则模式扫描 prompt 文本，识别其中包含的 PR、issue 或 advisory URL，返回匹配类型与目标地址。",
+      "tags": ["parsing", "正则", "prompt", "url"],
+      "complexity": "moderate",
+      "lineRange": [42, 59]
+    },
+    {
+      "id": "function:.pi/extensions/prompt-url-widget.ts:parseAdvisoryUrl",
+      "type": "function",
+      "name": "parseAdvisoryUrl",
+      "filePath": ".pi/extensions/prompt-url-widget.ts",
+      "summary": "解析 GitHub security advisory URL，提取 owner、repo 与 GHSA ID 等组成部分，用于后续抓取 advisory 元数据。",
+      "tags": ["parsing", "url", "advisory", "github"],
+      "complexity": "moderate",
+      "lineRange": [67, 78]
+    },
+    {
+      "id": "function:.pi/extensions/prompt-url-widget.ts:unquoteYamlValue",
+      "type": "function",
+      "name": "unquoteYamlValue",
+      "filePath": ".pi/extensions/prompt-url-widget.ts",
+      "summary": "去除 YAML 值的引号与转义，返回纯文本内容，用于解析草稿中嵌入的 advisory 引用字段。",
+      "tags": ["parsing", "yaml", "解码"],
+      "complexity": "simple",
+      "lineRange": [80, 89]
+    },
+    {
+      "id": "function:.pi/extensions/prompt-url-widget.ts:readAdvisoryRefFromDraft",
+      "type": "function",
+      "name": "readAdvisoryRefFromDraft",
+      "filePath": ".pi/extensions/prompt-url-widget.ts",
+      "summary": "从当前草稿内容中读取并解析 advisory 引用，提取关联的仓库与 GHSA ID，为 advisory 元数据抓取提供输入。",
+      "tags": ["parsing", "advisory", "draft", "yaml"],
+      "complexity": "moderate",
+      "lineRange": [97, 108]
+    },
+    {
+      "id": "function:.pi/extensions/prompt-url-widget.ts:fetchAdvisoryMetadata",
+      "type": "function",
+      "name": "fetchAdvisoryMetadata",
+      "filePath": ".pi/extensions/prompt-url-widget.ts",
+      "summary": "通过 GitHub GraphQL/REST API 抓取 security advisory 的元数据，包括 GHSA ID、摘要、严重级别、状态与 CVE 编号。",
+      "tags": ["github", "advisory", "api", "网络请求"],
+      "complexity": "moderate",
+      "lineRange": [117, 136]
+    },
+    {
+      "id": "function:.pi/extensions/prompt-url-widget.ts:fetchGhMetadata",
+      "type": "function",
+      "name": "fetchGhMetadata",
+      "filePath": ".pi/extensions/prompt-url-widget.ts",
+      "summary": "抓取 GitHub PR 或 issue 的元数据（标题、作者、详情、展示 URL），处理 API 响应与错误，返回用于 widget 展示的结构化信息。",
+      "tags": ["github", "api", "网络请求", "metadata"],
+      "complexity": "complex",
+      "lineRange": [138, 160]
+    },
+    {
+      "id": "function:.pi/extensions/prompt-url-widget.ts:promptUrlWidgetExtension",
+      "type": "function",
+      "name": "promptUrlWidgetExtension",
+      "filePath": ".pi/extensions/prompt-url-widget.ts",
+      "summary": "扩展主入口（default export），注册 TUI widget 在 prompt 变更时检测 URL、抓取元数据并渲染上下文展示区域，管理异步请求与状态更新。",
+      "tags": ["extension", "tui", "widget", "入口"],
+      "complexity": "complex",
+      "lineRange": [172, 270]
+    },
+    {
+      "id": "file:.pi/extensions/redraws.ts",
+      "type": "file",
+      "name": "redraws.ts",
+      "filePath": ".pi/extensions/redraws.ts",
+      "summary": "pi TUI 扩展，处理界面重绘相关逻辑，确保在特定事件触发时正确刷新终端渲染。",
+      "tags": ["extension", "tui", "redraw"],
+      "complexity": "simple",
+      "languageNotes": "小型扩展文件，无达到显著性阈值的函数，仅作为文件节点记录。"
+    },
+    {
+      "id": "file:.pi/extensions/tps.ts",
+      "type": "file",
+      "name": "tps.ts",
+      "filePath": ".pi/extensions/tps.ts",
+      "summary": "pi TUI 扩展，计算并展示 tokens per second（TPS）指标，辅助监控模型推理吞吐。",
+      "tags": ["extension", "tui", "metrics", "tps"],
+      "complexity": "simple",
+      "languageNotes": "小型扩展文件，辅助函数未达显著性阈值，仅作为文件节点记录。"
+    },
+    {
+      "id": "file:.pi/skills/add-llm-provider.md",
+      "type": "document",
+      "name": "add-llm-provider.md",
+      "filePath": ".pi/skills/add-llm-provider.md",
+      "summary": "pi 技能文档，指导如何为项目添加新的 LLM provider，涵盖 provider 接口实现、配置注册与测试验证步骤。",
+      "tags": ["docs", "skill", "llm", "provider"],
+      "complexity": "simple",
+      "languageNotes": "Markdown 文档，作为技能说明被记录为 document 节点。"
+    },
+    {
+      "id": "file:.understand-anything/.understandignore",
+      "type": "file",
+      "name": ".understandignore",
+      "filePath": ".understand-anything/.understandignore",
+      "summary": "understand-anything 工具的忽略规则文件，采用 .gitignore 语法定义应从知识图谱分析中排除的文件与目录模式。",
+      "tags": ["config", "ignore", "understand-anything"],
+      "complexity": "simple",
+      "languageNotes": "声明式忽略规则文件，控制知识图谱扫描范围。"
+    },
+    {
+      "id": "file:.understand-anything/config.json",
+      "type": "config",
+      "name": "config.json",
+      "filePath": ".understand-anything/config.json",
+      "summary": "understand-anything 配置文件，存储输出语言、自动更新等偏好设置，控制知识图谱生成行为。",
+      "tags": ["config", "understand-anything"],
+      "complexity": "simple",
+      "languageNotes": "JSON 配置文件，键值对形式存储工具偏好。"
+    },
+    {
+      "id": "file:packages/agent/src/harness/events.ts",
+      "type": "file",
+      "name": "events.ts",
+      "filePath": "packages/agent/src/harness/events.ts",
+      "summary": "harness 事件总线模块，定义 HarnessEventBus 类管理 harness 运行的开始、结束等生命周期事件，提供类型安全的监听器注册、事件触发与订阅管理机制。",
+      "tags": ["harness", "event-bus", "events", "agent"],
+      "complexity": "moderate",
+      "languageNotes": "以 class 形式封装事件总线，含 on/emit/watch 三个方法；1 个 export。"
+    },
+    {
+      "id": "class:packages/agent/src/harness/events.ts:HarnessEventBus",
+      "type": "class",
+      "name": "HarnessEventBus",
+      "filePath": "packages/agent/src/harness/events.ts",
+      "summary": "harness 事件总线类，维护运行开始/结束事件的监听器集合，支持注册一次性与持久监听器、触发带负载的事件以及监听流式事件，为 harness 执行流程提供解耦的事件通信机制。",
+      "tags": ["class", "event-bus", "harness", "observer"],
+      "complexity": "moderate",
+      "lineRange": [37, 102]
+    },
+    {
+      "id": "file:packages/agent/src/harness/session/jsonl.ts",
+      "type": "file",
+      "name": "jsonl.ts",
+      "filePath": "packages/agent/src/harness/session/jsonl.ts",
+      "summary": "harness 会话 JSONL 模块的 barrel 文件，重新导出会话序列化与反序列化相关的类型和函数。",
+      "tags": ["barrel", "session", "jsonl", "harness"],
+      "complexity": "simple",
+      "languageNotes": "纯 re-export barrel 文件，7 个导出，无自身运行时逻辑。"
+    },
+    {
+      "id": "file:packages/agent/src/harness/tools/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "packages/agent/src/harness/tools/index.ts",
+      "summary": "harness 工具模块的 barrel 文件，统一重新导出所有 harness 工具实现，作为工具集合的入口点。",
+      "tags": ["barrel", "tools", "harness", "entry-point"],
+      "complexity": "simple",
+      "languageNotes": "纯 re-export barrel 文件，18 个导出，无自身运行时逻辑。"
+    },
+    {
+      "id": "file:packages/agent/src/node.ts",
+      "type": "file",
+      "name": "node.ts",
+      "filePath": "packages/agent/src/node.ts",
+      "summary": "Node 执行环境 barrel 文件，重新导出 NodeExecutionEnv 相关定义，将 Node.js 平台特定的执行环境配置集中暴露。",
+      "tags": ["barrel", "node", "execution-env"],
+      "complexity": "simple",
+      "languageNotes": "纯 re-export barrel 文件，1 个导出，无自身运行时逻辑。"
+    },
+    {
+      "id": "file:packages/agent/src/proxy.ts",
+      "type": "file",
+      "name": "proxy.ts",
+      "filePath": "packages/agent/src/proxy.ts",
+      "summary": "代理流模块，为应用提供将 LLM 调用经服务端代理路由的能力。核心 streamProxy 函数构建代理请求、处理流式响应事件并转发给客户端，支持事件流转换与错误处理。",
+      "tags": ["proxy", "streaming", "llm", "network"],
+      "complexity": "complex",
+      "languageNotes": "含 3 个显著函数（buildProxyRequestOptions、streamProxy、processProxyEvent）与 1 个未达显著阈值的类；1 个 export。"
+    },
+    {
+      "id": "function:packages/agent/src/proxy.ts:buildProxyRequestOptions",
+      "type": "function",
+      "name": "buildProxyRequestOptions",
+      "filePath": "packages/agent/src/proxy.ts",
+      "summary": "根据客户端请求参数构建发往代理服务端的请求选项，组装 URL、headers、body 与认证信息，为 streamProxy 提供标准化的请求配置。",
+      "tags": ["proxy", "request", "构建"],
+      "complexity": "moderate",
+      "lineRange": [102, 116]
+    },
+    {
+      "id": "function:packages/agent/src/proxy.ts:streamProxy",
+      "type": "function",
+      "name": "streamProxy",
+      "filePath": "packages/agent/src/proxy.ts",
+      "summary": "代理流核心函数，向代理服务端发起请求并处理流式响应，逐事件调用 processProxyEvent 进行解析与转发，管理连接生命周期、错误恢复与流式回压。",
+      "tags": ["proxy", "streaming", "核心", "network"],
+      "complexity": "complex",
+      "lineRange": [118, 235]
+    },
+    {
+      "id": "function:packages/agent/src/proxy.ts:processProxyEvent",
+      "type": "function",
+      "name": "processProxyEvent",
+      "filePath": "packages/agent/src/proxy.ts",
+      "summary": "处理单个代理流事件，解析事件类型与负载，转换为客户端可消费的消息格式并转发，处理 content block、tool use、错误等多种事件分支。",
+      "tags": ["proxy", "event", "解析", "streaming"],
+      "complexity": "complex",
+      "lineRange": [240, 370]
+    },
+    {
+      "id": "file:packages/agent/test/harness/events.test.ts",
+      "type": "file",
+      "name": "events.test.ts",
+      "filePath": "packages/agent/test/harness/events.test.ts",
+      "summary": "HarnessEventBus 事件总线的单元测试，验证监听器注册、事件触发、一次性监听与订阅管理等行为符合预期。",
+      "tags": ["test", "harness", "event-bus", "unit-test"],
+      "complexity": "simple",
+      "languageNotes": "测试文件，无达到显著性阈值的自身函数，作为文件节点记录并建立对被测模块的 tested_by 边。"
+    },
+    {
+      "id": "file:packages/agent/test/proxy.test.ts",
+      "type": "file",
+      "name": "proxy.test.ts",
+      "filePath": "packages/agent/test/proxy.test.ts",
+      "summary": "代理流模块的单元测试，验证 buildProxyRequestOptions、streamProxy、processProxyEvent 的请求构建、流式处理与事件转换逻辑。",
+      "tags": ["test", "proxy", "streaming", "unit-test"],
+      "complexity": "simple",
+      "languageNotes": "测试文件，无达到显著性阈值的自身函数，作为文件节点记录并建立对被测模块的 tested_by 边。"
+    },
+    {
+      "id": "file:packages/agent/vitest.config.ts",
+      "type": "file",
+      "name": "vitest.config.ts",
+      "filePath": "packages/agent/vitest.config.ts",
+      "summary": "agent 包的 Vitest 测试配置，定义测试环境、include/exclude 规则、覆盖率收集与 mock 设置。",
+      "tags": ["config", "test", "vitest"],
+      "complexity": "simple",
+      "languageNotes": "测试框架配置文件，声明式定义测试运行参数。"
+    },
+    {
+      "id": "file:packages/agent/vitest.harness.config.ts",
+      "type": "file",
+      "name": "vitest.harness.config.ts",
+      "filePath": "packages/agent/vitest.harness.config.ts",
+      "summary": "agent 包 harness 测试套件的专用 Vitest 配置，针对 harness 集成测试定义独立的测试环境、超时与 include 规则。",
+      "tags": ["config", "test", "vitest", "harness"],
+      "complexity": "simple",
+      "languageNotes": "专用测试配置文件，针对 harness 测试场景定制。"
+    },
+    {
+      "id": "file:packages/ai/bedrock-provider.d.ts",
+      "type": "file",
+      "name": "bedrock-provider.d.ts",
+      "filePath": "packages/ai/bedrock-provider.d.ts",
+      "summary": "Bedrock provider 的 TypeScript 类型声明文件，为 JS 实现提供类型定义。",
+      "tags": ["types", "declaration", "bedrock", "ai"],
+      "complexity": "simple",
+      "languageNotes": "纯类型声明文件，无运行时逻辑。"
+    },
+    {
+      "id": "file:packages/ai/bedrock-provider.js",
+      "type": "file",
+      "name": "bedrock-provider.js",
+      "filePath": "packages/ai/bedrock-provider.js",
+      "summary": "Bedrock provider 的 JavaScript 入口文件，重新导出编译后的实现，作为 AWS Bedrock LLM provider 的包入口。",
+      "tags": ["entry-point", "bedrock", "ai"],
+      "complexity": "simple",
+      "languageNotes": "极简入口文件，转发到 dist 构建产物。"
+    },
+    {
+      "id": "file:packages/ai/scripts/generate-test-image.ts",
+      "type": "file",
+      "name": "generate-test-image.ts",
+      "filePath": "packages/ai/scripts/generate-test-image.ts",
+      "summary": "测试辅助脚本，生成用于多模态测试的示例图片文件，辅助验证 image content block 的处理逻辑。",
+      "tags": ["script", "test", "image", "ai"],
+      "complexity": "simple",
+      "languageNotes": "小型脚本文件，生成测试 fixture。"
+    },
+    {
+      "id": "file:packages/ai/src/providers/data-json.d.ts",
+      "type": "file",
+      "name": "data-json.d.ts",
+      "filePath": "packages/ai/src/providers/data-json.d.ts",
+      "summary": "data-json provider 的 TypeScript 类型声明文件，为 JSON 数据导入式 provider 提供类型定义。",
+      "tags": ["types", "declaration", "provider", "ai"],
+      "complexity": "simple",
+      "languageNotes": "纯类型声明文件，无运行时逻辑。"
+    },
+    {
+      "id": "file:packages/ai/test/generate-models-strict.test.ts",
+      "type": "file",
+      "name": "generate-models-strict.test.ts",
+      "filePath": "packages/ai/test/generate-models-strict.test.ts",
+      "summary": "严格模式模型生成器的测试，验证模型目录生成逻辑的完整性与正确性，确保生成的模型定义符合 schema 约束。",
+      "tags": ["test", "models", "strict", "ai"],
+      "complexity": "simple",
+      "languageNotes": "测试文件，验证模型生成脚本的严格模式输出。"
+    }
+  ],
+  "edges": [
+    {"source": "file:.pi/extensions/import-repro.ts", "target": "function:.pi/extensions/import-repro.ts:parseRef", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:.pi/extensions/import-repro.ts", "target": "function:.pi/extensions/import-repro.ts:parseSessionJsonl", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:.pi/extensions/import-repro.ts", "target": "function:.pi/extensions/import-repro.ts:decodeExportedHtml", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:.pi/extensions/import-repro.ts", "target": "function:.pi/extensions/import-repro.ts:getWindowsDrivePathParts", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:.pi/extensions/import-repro.ts", "target": "function:.pi/extensions/import-repro.ts:getCwdRewriteVariants", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:.pi/extensions/import-repro.ts", "target": "function:.pi/extensions/import-repro.ts:rewriteSessionCwd", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:.pi/extensions/import-repro.ts", "target": "function:.pi/extensions/import-repro.ts:findIssueGistId", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:.pi/extensions/import-repro.ts", "target": "function:.pi/extensions/import-repro.ts:fetchGistSession", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:.pi/extensions/prompt-url-widget.ts", "target": "function:.pi/extensions/prompt-url-widget.ts:extractPromptMatch", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:.pi/extensions/prompt-url-widget.ts", "target": "function:.pi/extensions/prompt-url-widget.ts:parseAdvisoryUrl", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:.pi/extensions/prompt-url-widget.ts", "target": "function:.pi/extensions/prompt-url-widget.ts:unquoteYamlValue", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:.pi/extensions/prompt-url-widget.ts", "target": "function:.pi/extensions/prompt-url-widget.ts:readAdvisoryRefFromDraft", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:.pi/extensions/prompt-url-widget.ts", "target": "function:.pi/extensions/prompt-url-widget.ts:fetchAdvisoryMetadata", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:.pi/extensions/prompt-url-widget.ts", "target": "function:.pi/extensions/prompt-url-widget.ts:fetchGhMetadata", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:.pi/extensions/prompt-url-widget.ts", "target": "function:.pi/extensions/prompt-url-widget.ts:promptUrlWidgetExtension", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:.pi/extensions/prompt-url-widget.ts", "target": "function:.pi/extensions/prompt-url-widget.ts:promptUrlWidgetExtension", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:packages/agent/src/harness/events.ts", "target": "class:packages/agent/src/harness/events.ts:HarnessEventBus", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:packages/agent/src/harness/events.ts", "target": "class:packages/agent/src/harness/events.ts:HarnessEventBus", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:packages/agent/src/proxy.ts", "target": "function:packages/agent/src/proxy.ts:buildProxyRequestOptions", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:packages/agent/src/proxy.ts", "target": "function:packages/agent/src/proxy.ts:streamProxy", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:packages/agent/src/proxy.ts", "target": "function:packages/agent/src/proxy.ts:processProxyEvent", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:packages/agent/src/proxy.ts", "target": "function:packages/agent/src/proxy.ts:streamProxy", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:packages/agent/test/harness/events.test.ts", "target": "file:packages/agent/src/harness/events.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:packages/agent/test/proxy.test.ts", "target": "file:packages/agent/src/proxy.ts", "type": "imports", "direction": "forward", "weight": 0.7},
+    {"source": "file:packages/agent/test/harness/events.test.ts", "target": "file:packages/agent/src/harness/events.ts", "type": "tested_by", "direction": "forward", "weight": 0.5},
+    {"source": "file:packages/agent/test/proxy.test.ts", "target": "file:packages/agent/src/proxy.ts", "type": "tested_by", "direction": "forward", "weight": 0.5}
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "fixedSectionOk": true,
+  "nodesRecovered": 0,
+  "edgesRestored": 2,
+  "crossBatchEdgesAdded": 0,
+  "typesRemapped": {
+    "nodes": 9,
+    "edges": 323,
+    "details": {
+      "node_aliases": {
+        "constant": "config",
+        "interface": "class",
+        "dependency": "module",
+        "type": "schema"
+      },
+      "node_defaulted": 5,
+      "edge_aliases": {
+        "import": "imports",
+        "call": "calls",
+        "tests": "tested_by",
+        "uses": "depends_on",
+        "extends": "inherits",
+        "references": "cites",
+        "belongs_to": "categorized_under",
+        "defines": "defines_schema",
+        "used_by": "related",
+        "covers": "documents",
+        "related_example": "exemplifies",
+        "produces": "transforms",
+        "compiled_from": "depends_on",
+        "builds": "builds_on",
+        "config_reference": "configures",
+        "has_member": "contains",
+        "test_double_for": "tested_by",
+        "orchestrates": "calls",
+        "provides_to": "serves",
+        "enables": "related",
+        "delegates": "calls",
+        "defined_in": "related",
+        "supports": "related",
+        "variant_of": "similar_to",
+        "type_reference": "defines_schema",
+        "schema_ref": "defines_schema",
+        "relates_to": "related",
+        "related_to": "related",
+        "semantic": "related"
+      },
+      "edges_dropped_none_type": 84
+    }
+  },
+  "complexityRemapped": 0,
+  "notes": [
+    "已修复 batch-72 中 clipboard-image-bmp-conversion.test.ts 文件节点的 filePath 错误",
+    "5 个 server 节点(CHANGELOG.md/README.md/package.json/tsconfig.*)缺失类型,已按文件扩展名推断为 document/config",
+    "9 个非规范节点类型已通过别名映射:constant→config(3), interface→class(3), dependency→module(2), type→schema(1)",
+    "323 条非规范边类型已通过别名映射为规范类型",
+    "84 条 None 类型边无法推断,已丢弃",
+    "242 条被丢弃的 imports 边中,仅 2 条目标节点存在且未与现有边重复,已恢复;其余 240 条目标节点不存在(实际缺失的 packages/tui、scripts 等文件)",
+    "12 条指向 path::member 的边无法解析成员引用,已跳过",
+    "最终图:3503 节点,6538 边,全部类型符合 schema 规范"
+  ]
+}

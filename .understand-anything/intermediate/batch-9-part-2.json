@@ -1,0 +1,2929 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/coding-agent/src/modes/interactive/external-editor.ts",
+      "type": "file",
+      "name": "external-editor.ts",
+      "filePath": "packages/coding-agent/src/modes/interactive/external-editor.ts",
+      "summary": "外部编辑器启动函数，在系统默认编辑器中打开文本供用户编辑。",
+      "tags": [
+        "utility",
+        "editor",
+        "external"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "type": "file",
+      "name": "interactive-mode.ts",
+      "filePath": "packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "summary": "交互模式核心控制器，管理整个 TUI 交互界面、会话生命周期、工具执行、斜杠命令和扩展系统。",
+      "tags": [
+        "entry-point",
+        "interactive",
+        "tui",
+        "controller"
+      ],
+      "complexity": "complex",
+      "languageNotes": "超大型 TUI 控制器类（6000+ 行），集中管理交互模式的全部状态和行为。"
+    },
+    {
+      "id": "file:packages/coding-agent/src/modes/interactive/model-search.ts",
+      "type": "file",
+      "name": "model-search.ts",
+      "filePath": "packages/coding-agent/src/modes/interactive/model-search.ts",
+      "summary": "模型搜索辅助函数，为模型选择器和作用域模型选择器提供搜索文本提取。",
+      "tags": [
+        "utility",
+        "model",
+        "search"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/modes/interactive/theme/theme-controller.ts",
+      "type": "file",
+      "name": "theme-controller.ts",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme-controller.ts",
+      "summary": "交互式主题控制器，管理主题设置、终端配色方案监听和自动主题切换。",
+      "tags": [
+        "controller",
+        "theme",
+        "tui"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "file",
+      "name": "theme.ts",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "summary": "主题系统核心模块，提供主题加载、解析、颜色转换、语法高亮和终端背景检测等功能。",
+      "tags": [
+        "theme",
+        "color",
+        "syntax-highlight",
+        "terminal"
+      ],
+      "complexity": "complex",
+      "languageNotes": "包含 256 色 ANSI 转换、终端背景检测和 CliHighlight 集成。"
+    },
+    {
+      "id": "file:packages/coding-agent/src/utils/ansi.ts",
+      "type": "file",
+      "name": "ansi.ts",
+      "filePath": "packages/coding-agent/src/utils/ansi.ts",
+      "summary": "ANSI 转义序列工具，提供正则匹配和剥离 ANSI 码的功能。",
+      "tags": [
+        "utility",
+        "ansi",
+        "terminal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/src/utils/changelog.ts",
+      "type": "file",
+      "name": "changelog.ts",
+      "filePath": "packages/coding-agent/src/utils/changelog.ts",
+      "summary": "变更日志工具，解析 changelog 文件、规范化链接和版本比较。",
+      "tags": [
+        "utility",
+        "changelog",
+        "parser"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/src/utils/fs-watch.ts",
+      "type": "file",
+      "name": "fs-watch.ts",
+      "filePath": "packages/coding-agent/src/utils/fs-watch.ts",
+      "summary": "文件系统监听工具，提供带错误处理和重试的文件监听功能。",
+      "tags": [
+        "utility",
+        "filesystem",
+        "watcher"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/utils/git.ts",
+      "type": "file",
+      "name": "git.ts",
+      "filePath": "packages/coding-agent/src/utils/git.ts",
+      "summary": "Git URL 解析工具，支持 SSH、HTTPS、SCP 等多种 Git URL 格式的解析。",
+      "tags": [
+        "utility",
+        "git",
+        "parser"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/src/utils/html.ts",
+      "type": "file",
+      "name": "html.ts",
+      "filePath": "packages/coding-agent/src/utils/html.ts",
+      "summary": "HTML 实体解码工具，将 HTML 实体字符解码为对应的 Unicode 字符。",
+      "tags": [
+        "utility",
+        "html",
+        "decoder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/utils/open-browser.ts",
+      "type": "file",
+      "name": "open-browser.ts",
+      "filePath": "packages/coding-agent/src/utils/open-browser.ts",
+      "summary": "浏览器打开工具，跨平台打开指定 URL。",
+      "tags": [
+        "utility",
+        "browser",
+        "cross-platform"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/utils/syntax-highlight.ts",
+      "type": "file",
+      "name": "syntax-highlight.ts",
+      "filePath": "packages/coding-agent/src/utils/syntax-highlight.ts",
+      "summary": "语法高亮工具，基于 CliHighlight 和主题配置渲染代码高亮 HTML。",
+      "tags": [
+        "utility",
+        "syntax-highlight",
+        "cli"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/external-editor.ts:editInExternalEditor",
+      "type": "function",
+      "name": "editInExternalEditor",
+      "filePath": "packages/coding-agent/src/modes/interactive/external-editor.ts",
+      "lineRange": [
+        13,
+        45
+      ],
+      "summary": "在系统外部编辑器中打开文本供用户编辑。",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/interactive-mode.ts:formatResumeCommand",
+      "type": "function",
+      "name": "formatResumeCommand",
+      "filePath": "packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "lineRange": [
+        240,
+        253
+      ],
+      "summary": "格式化会话恢复命令字符串。",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/interactive-mode.ts:createFuzzyAutocompleteItems",
+      "type": "function",
+      "name": "createFuzzyAutocompleteItems",
+      "filePath": "packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "lineRange": [
+        267,
+        276
+      ],
+      "summary": "创建模糊匹配自动补全选项列表。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/interactive-mode.ts:getLoginProviderCompletionOptions",
+      "type": "function",
+      "name": "getLoginProviderCompletionOptions",
+      "filePath": "packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "lineRange": [
+        278,
+        298
+      ],
+      "summary": "获取登录提供商补全选项。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/interactive-mode.ts:createInteractiveTui",
+      "type": "function",
+      "name": "createInteractiveTui",
+      "filePath": "packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "lineRange": [
+        345,
+        357
+      ],
+      "summary": "创建交互式 TUI 实例的工厂函数。",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/interactive-mode.ts:createInteractiveTuiReference",
+      "type": "function",
+      "name": "createInteractiveTuiReference",
+      "filePath": "packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "lineRange": [
+        360,
+        388
+      ],
+      "summary": "创建 TUI 引用对象，延迟获取 TUI 实例。",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/coding-agent/src/modes/interactive/interactive-mode.ts:ExpandableText",
+      "type": "class",
+      "name": "ExpandableText",
+      "filePath": "packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "lineRange": [
+        180,
+        199
+      ],
+      "summary": "可展开文本组件，支持折叠/展开切换。",
+      "tags": [
+        "class",
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/coding-agent/src/modes/interactive/interactive-mode.ts:InteractiveMode",
+      "type": "class",
+      "name": "InteractiveMode",
+      "filePath": "packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "lineRange": [
+        390,
+        6407
+      ],
+      "summary": "交互模式核心控制器类，管理 TUI 界面、会话、工具、命令和扩展的完整生命周期。",
+      "tags": [
+        "class",
+        "component",
+        "exported"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/model-search.ts:getModelSearchText",
+      "type": "function",
+      "name": "getModelSearchText",
+      "filePath": "packages/coding-agent/src/modes/interactive/model-search.ts",
+      "lineRange": [
+        7,
+        11
+      ],
+      "summary": "提取模型搜索文本。",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/model-search.ts:getModelSelectorSearchText",
+      "type": "function",
+      "name": "getModelSelectorSearchText",
+      "filePath": "packages/coding-agent/src/modes/interactive/model-search.ts",
+      "lineRange": [
+        17,
+        21
+      ],
+      "summary": "提取模型选择器搜索文本。",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/coding-agent/src/modes/interactive/theme/theme-controller.ts:InteractiveThemeController",
+      "type": "class",
+      "name": "InteractiveThemeController",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme-controller.ts",
+      "lineRange": [
+        18,
+        166
+      ],
+      "summary": "交互式主题控制器，管理主题设置、终端配色监听和自动切换。",
+      "tags": [
+        "class",
+        "component",
+        "exported"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:hexToRgb",
+      "type": "function",
+      "name": "hexToRgb",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        180,
+        192
+      ],
+      "summary": "将十六进制颜色转换为 RGB 值。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:findClosestCubeIndex",
+      "type": "function",
+      "name": "findClosestCubeIndex",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        200,
+        211
+      ],
+      "summary": "findClosestCubeIndex 函数",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:findClosestGrayIndex",
+      "type": "function",
+      "name": "findClosestGrayIndex",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        213,
+        224
+      ],
+      "summary": "findClosestGrayIndex 函数",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:rgbTo256",
+      "type": "function",
+      "name": "rgbTo256",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        234,
+        265
+      ],
+      "summary": "将 RGB 值转换为 256 色 ANSI 索引。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:fgAnsi",
+      "type": "function",
+      "name": "fgAnsi",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        272,
+        285
+      ],
+      "summary": "生成前景色 ANSI 转义序列。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:bgAnsi",
+      "type": "function",
+      "name": "bgAnsi",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        287,
+        300
+      ],
+      "summary": "生成背景色 ANSI 转义序列。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:resolveVarRefs",
+      "type": "function",
+      "name": "resolveVarRefs",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        302,
+        318
+      ],
+      "summary": "resolveVarRefs 函数",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:resolveThemeColors",
+      "type": "function",
+      "name": "resolveThemeColors",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        320,
+        329
+      ],
+      "summary": "解析主题颜色中的变量引用。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:withThemeColorFallbacks",
+      "type": "function",
+      "name": "withThemeColorFallbacks",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        331,
+        344
+      ],
+      "summary": "withThemeColorFallbacks 函数",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getBuiltinThemes",
+      "type": "function",
+      "name": "getBuiltinThemes",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        471,
+        482
+      ],
+      "summary": "getBuiltinThemes 函数",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getAvailableThemes",
+      "type": "function",
+      "name": "getAvailableThemes",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        484,
+        486
+      ],
+      "summary": "getAvailableThemes 函数",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getAvailableThemesWithPaths",
+      "type": "function",
+      "name": "getAvailableThemesWithPaths",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        493,
+        520
+      ],
+      "summary": "getAvailableThemesWithPaths 函数",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getCustomThemeInfos",
+      "type": "function",
+      "name": "getCustomThemeInfos",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        522,
+        545
+      ],
+      "summary": "getCustomThemeInfos 函数",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:parseThemeJson",
+      "type": "function",
+      "name": "parseThemeJson",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        555,
+        594
+      ],
+      "summary": "解析主题 JSON 文件。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:loadThemeJson",
+      "type": "function",
+      "name": "loadThemeJson",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        606,
+        626
+      ],
+      "summary": "loadThemeJson 函数",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:createTheme",
+      "type": "function",
+      "name": "createTheme",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        628,
+        654
+      ],
+      "summary": "从主题 JSON 创建 Theme 实例。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:loadThemeFromPath",
+      "type": "function",
+      "name": "loadThemeFromPath",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        656,
+        660
+      ],
+      "summary": "loadThemeFromPath 函数",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getThemeByName",
+      "type": "function",
+      "name": "getThemeByName",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        671,
+        677
+      ],
+      "summary": "按名称获取已注册主题。",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:parseAutoThemeSetting",
+      "type": "function",
+      "name": "parseAutoThemeSetting",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        681,
+        696
+      ],
+      "summary": "parseAutoThemeSetting 函数",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:resolveThemeSetting",
+      "type": "function",
+      "name": "resolveThemeSetting",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        698,
+        709
+      ],
+      "summary": "resolveThemeSetting 函数",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getColorFgBgBackgroundIndex",
+      "type": "function",
+      "name": "getColorFgBgBackgroundIndex",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        740,
+        749
+      ],
+      "summary": "getColorFgBgBackgroundIndex 函数",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getThemeForRgbColor",
+      "type": "function",
+      "name": "getThemeForRgbColor",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        763,
+        765
+      ],
+      "summary": "getThemeForRgbColor 函数",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:detectTerminalBackgroundFromEnv",
+      "type": "function",
+      "name": "detectTerminalBackgroundFromEnv",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        767,
+        786
+      ],
+      "summary": "从环境变量检测终端背景色。",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:detectTerminalBackgroundTheme",
+      "type": "function",
+      "name": "detectTerminalBackgroundTheme",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        788,
+        808
+      ],
+      "summary": "检测终端背景主题（亮色/暗色）。",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:detectTerminalThemeForAuto",
+      "type": "function",
+      "name": "detectTerminalThemeForAuto",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        810,
+        830
+      ],
+      "summary": "为自动主题模式检测终端主题。",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getDefaultTheme",
+      "type": "function",
+      "name": "getDefaultTheme",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        832,
+        834
+      ],
+      "summary": "getDefaultTheme 函数",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:setRegisteredThemes",
+      "type": "function",
+      "name": "setRegisteredThemes",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        865,
+        873
+      ],
+      "summary": "setRegisteredThemes 函数",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:initTheme",
+      "type": "function",
+      "name": "initTheme",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        875,
+        889
+      ],
+      "summary": "初始化主题系统。",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:setTheme",
+      "type": "function",
+      "name": "setTheme",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        891,
+        912
+      ],
+      "summary": "设置当前主题并可选启用文件监听。",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:setThemeInstance",
+      "type": "function",
+      "name": "setThemeInstance",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        914,
+        921
+      ],
+      "summary": "setThemeInstance 函数",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:onThemeChange",
+      "type": "function",
+      "name": "onThemeChange",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        923,
+        925
+      ],
+      "summary": "onThemeChange 函数",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:startThemeWatcher",
+      "type": "function",
+      "name": "startThemeWatcher",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        927,
+        998
+      ],
+      "summary": "启动主题文件变更监听器。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:stopThemeWatcher",
+      "type": "function",
+      "name": "stopThemeWatcher",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        1000,
+        1007
+      ],
+      "summary": "停止主题文件监听器。",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:ansi256ToHex",
+      "type": "function",
+      "name": "ansi256ToHex",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        1019,
+        1057
+      ],
+      "summary": "将 256 色索引转换为十六进制颜色。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getResolvedThemeColors",
+      "type": "function",
+      "name": "getResolvedThemeColors",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        1063,
+        1084
+      ],
+      "summary": "获取解析后的主题颜色配置。",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:isLightTheme",
+      "type": "function",
+      "name": "isLightTheme",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        1089,
+        1092
+      ],
+      "summary": "isLightTheme 函数",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getThemeExportColors",
+      "type": "function",
+      "name": "getThemeExportColors",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        1098,
+        1126
+      ],
+      "summary": "getThemeExportColors 函数",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:buildCliHighlightTheme",
+      "type": "function",
+      "name": "buildCliHighlightTheme",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        1137,
+        1165
+      ],
+      "summary": "从主题构建 CliHighlight 主题对象。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:highlightCode",
+      "type": "function",
+      "name": "highlightCode",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        1179,
+        1198
+      ],
+      "summary": "对代码进行语法高亮渲染。",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getLanguageFromPath",
+      "type": "function",
+      "name": "getLanguageFromPath",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        1203,
+        1269
+      ],
+      "summary": "从文件路径推断语言标识符。",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getMarkdownTheme",
+      "type": "function",
+      "name": "getMarkdownTheme",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        1271,
+        1308
+      ],
+      "summary": "获取 Markdown 渲染主题配置。",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getSelectListTheme",
+      "type": "function",
+      "name": "getSelectListTheme",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        1310,
+        1318
+      ],
+      "summary": "getSelectListTheme 函数",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getEditorTheme",
+      "type": "function",
+      "name": "getEditorTheme",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        1320,
+        1325
+      ],
+      "summary": "getEditorTheme 函数",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getSettingsListTheme",
+      "type": "function",
+      "name": "getSettingsListTheme",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        1327,
+        1335
+      ],
+      "summary": "getSettingsListTheme 函数",
+      "tags": [
+        "function",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/coding-agent/src/modes/interactive/theme/theme.ts:Theme",
+      "type": "class",
+      "name": "Theme",
+      "filePath": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "lineRange": [
+        350,
+        463
+      ],
+      "summary": "主题类，封装颜色配置并提供 ANSI 转义序列生成方法。",
+      "tags": [
+        "class",
+        "component",
+        "exported"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/ansi.ts:ansiRegex",
+      "type": "function",
+      "name": "ansiRegex",
+      "filePath": "packages/coding-agent/src/utils/ansi.ts",
+      "lineRange": [
+        29,
+        42
+      ],
+      "summary": "匹配 ANSI 转义序列的正则表达式。",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/ansi.ts:stripAnsi",
+      "type": "function",
+      "name": "stripAnsi",
+      "filePath": "packages/coding-agent/src/utils/ansi.ts",
+      "lineRange": [
+        46,
+        60
+      ],
+      "summary": "从字符串中移除所有 ANSI 转义序列。",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/changelog.ts:splitLocalTarget",
+      "type": "function",
+      "name": "splitLocalTarget",
+      "filePath": "packages/coding-agent/src/utils/changelog.ts",
+      "lineRange": [
+        26,
+        41
+      ],
+      "summary": "splitLocalTarget 函数",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/changelog.ts:resolveRepositoryPath",
+      "type": "function",
+      "name": "resolveRepositoryPath",
+      "filePath": "packages/coding-agent/src/utils/changelog.ts",
+      "lineRange": [
+        47,
+        58
+      ],
+      "summary": "解析 changelog 链接的仓库路径。",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/changelog.ts:normalizeChangelogLinkTarget",
+      "type": "function",
+      "name": "normalizeChangelogLinkTarget",
+      "filePath": "packages/coding-agent/src/utils/changelog.ts",
+      "lineRange": [
+        69,
+        98
+      ],
+      "summary": "规范化 changelog 链接目标路径。",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/changelog.ts:normalizeChangelogLinks",
+      "type": "function",
+      "name": "normalizeChangelogLinks",
+      "filePath": "packages/coding-agent/src/utils/changelog.ts",
+      "lineRange": [
+        100,
+        105
+      ],
+      "summary": "规范化 changelog 中的链接路径。",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/changelog.ts:parseChangelog",
+      "type": "function",
+      "name": "parseChangelog",
+      "filePath": "packages/coding-agent/src/utils/changelog.ts",
+      "lineRange": [
+        111,
+        168
+      ],
+      "summary": "解析 changelog 文件为结构化条目列表。",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/changelog.ts:compareVersions",
+      "type": "function",
+      "name": "compareVersions",
+      "filePath": "packages/coding-agent/src/utils/changelog.ts",
+      "lineRange": [
+        173,
+        177
+      ],
+      "summary": "比较两个语义化版本号的大小。",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/changelog.ts:getNewEntries",
+      "type": "function",
+      "name": "getNewEntries",
+      "filePath": "packages/coding-agent/src/utils/changelog.ts",
+      "lineRange": [
+        182,
+        193
+      ],
+      "summary": "获取指定版本之后的新 changelog 条目。",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/fs-watch.ts:closeWatcher",
+      "type": "function",
+      "name": "closeWatcher",
+      "filePath": "packages/coding-agent/src/utils/fs-watch.ts",
+      "lineRange": [
+        5,
+        15
+      ],
+      "summary": "安全关闭文件监听器。",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/fs-watch.ts:watchWithErrorHandler",
+      "type": "function",
+      "name": "watchWithErrorHandler",
+      "filePath": "packages/coding-agent/src/utils/fs-watch.ts",
+      "lineRange": [
+        17,
+        30
+      ],
+      "summary": "创建带错误处理和重试的文件监听。",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/git.ts:splitRef",
+      "type": "function",
+      "name": "splitRef",
+      "filePath": "packages/coding-agent/src/utils/git.ts",
+      "lineRange": [
+        21,
+        74
+      ],
+      "summary": "从 Git URL 中分离 ref（分支/标签）。",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/git.ts:hasUnsafeGitInstallPart",
+      "type": "function",
+      "name": "hasUnsafeGitInstallPart",
+      "filePath": "packages/coding-agent/src/utils/git.ts",
+      "lineRange": [
+        84,
+        102
+      ],
+      "summary": "hasUnsafeGitInstallPart 函数",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/git.ts:buildGitSource",
+      "type": "function",
+      "name": "buildGitSource",
+      "filePath": "packages/coding-agent/src/utils/git.ts",
+      "lineRange": [
+        104,
+        124
+      ],
+      "summary": "从解析参数构建 Git 源对象。",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/git.ts:parseGenericGitUrl",
+      "type": "function",
+      "name": "parseGenericGitUrl",
+      "filePath": "packages/coding-agent/src/utils/git.ts",
+      "lineRange": [
+        126,
+        163
+      ],
+      "summary": "解析通用 Git URL 格式。",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/git.ts:parseGitUrl",
+      "type": "function",
+      "name": "parseGitUrl",
+      "filePath": "packages/coding-agent/src/utils/git.ts",
+      "lineRange": [
+        172,
+        226
+      ],
+      "summary": "解析 Git URL（SSH、HTTPS、SCP 等格式）为结构化数据。",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/html.ts:decodeHtmlEntity",
+      "type": "function",
+      "name": "decodeHtmlEntity",
+      "filePath": "packages/coding-agent/src/utils/html.ts",
+      "lineRange": [
+        13,
+        36
+      ],
+      "summary": "解码单个 HTML 实体为 Unicode 字符。",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/html.ts:decodeHtmlEntityAt",
+      "type": "function",
+      "name": "decodeHtmlEntityAt",
+      "filePath": "packages/coding-agent/src/utils/html.ts",
+      "lineRange": [
+        38,
+        51
+      ],
+      "summary": "在字符串指定位置解码 HTML 实体。",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/open-browser.ts:openBrowser",
+      "type": "function",
+      "name": "openBrowser",
+      "filePath": "packages/coding-agent/src/utils/open-browser.ts",
+      "lineRange": [
+        10,
+        24
+      ],
+      "summary": "跨平台打开浏览器访问指定 URL。",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/syntax-highlight.ts:getScopeFromSpanTag",
+      "type": "function",
+      "name": "getScopeFromSpanTag",
+      "filePath": "packages/coding-agent/src/utils/syntax-highlight.ts",
+      "lineRange": [
+        17,
+        31
+      ],
+      "summary": "getScopeFromSpanTag 函数",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/syntax-highlight.ts:getScopeFormatter",
+      "type": "function",
+      "name": "getScopeFormatter",
+      "filePath": "packages/coding-agent/src/utils/syntax-highlight.ts",
+      "lineRange": [
+        33,
+        56
+      ],
+      "summary": "获取指定 scope 的格式化器。",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/syntax-highlight.ts:getActiveFormatter",
+      "type": "function",
+      "name": "getActiveFormatter",
+      "filePath": "packages/coding-agent/src/utils/syntax-highlight.ts",
+      "lineRange": [
+        58,
+        70
+      ],
+      "summary": "从 scope 列表中获取激活的格式化器。",
+      "tags": [
+        "function",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/syntax-highlight.ts:renderHighlightedHtml",
+      "type": "function",
+      "name": "renderHighlightedHtml",
+      "filePath": "packages/coding-agent/src/utils/syntax-highlight.ts",
+      "lineRange": [
+        80,
+        132
+      ],
+      "summary": "渲染语法高亮 HTML 输出。",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/syntax-highlight.ts:highlight",
+      "type": "function",
+      "name": "highlight",
+      "filePath": "packages/coding-agent/src/utils/syntax-highlight.ts",
+      "lineRange": [
+        134,
+        142
+      ],
+      "summary": "对代码进行语法高亮处理。",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/syntax-highlight.ts:supportsLanguage",
+      "type": "function",
+      "name": "supportsLanguage",
+      "filePath": "packages/coding-agent/src/utils/syntax-highlight.ts",
+      "lineRange": [
+        144,
+        146
+      ],
+      "summary": "检查是否支持指定语言的高亮。",
+      "tags": [
+        "function",
+        "exported",
+        "utility"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/external-editor.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/external-editor.ts:editInExternalEditor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/external-editor.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/external-editor.ts:editInExternalEditor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/interactive-mode.ts:formatResumeCommand",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/interactive-mode.ts:formatResumeCommand",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/interactive-mode.ts:createFuzzyAutocompleteItems",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/interactive-mode.ts:getLoginProviderCompletionOptions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/interactive-mode.ts:createInteractiveTui",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/interactive-mode.ts:createInteractiveTui",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/interactive-mode.ts:createInteractiveTuiReference",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/interactive-mode.ts:createInteractiveTuiReference",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/interactive-mode.ts:ExpandableText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/interactive-mode.ts:InteractiveMode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/interactive-mode.ts:InteractiveMode",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/model-search.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/model-search.ts:getModelSearchText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/model-search.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/model-search.ts:getModelSearchText",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/model-search.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/model-search.ts:getModelSelectorSearchText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/model-search.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/model-search.ts:getModelSelectorSearchText",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme-controller.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/theme/theme-controller.ts:InteractiveThemeController",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme-controller.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/theme/theme-controller.ts:InteractiveThemeController",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:hexToRgb",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:findClosestCubeIndex",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:findClosestGrayIndex",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:rgbTo256",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:fgAnsi",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:bgAnsi",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:resolveVarRefs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:resolveThemeColors",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:withThemeColorFallbacks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getBuiltinThemes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getAvailableThemes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getAvailableThemes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getAvailableThemesWithPaths",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getAvailableThemesWithPaths",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getCustomThemeInfos",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:parseThemeJson",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:loadThemeJson",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:createTheme",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:loadThemeFromPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:loadThemeFromPath",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getThemeByName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getThemeByName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:parseAutoThemeSetting",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:parseAutoThemeSetting",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:resolveThemeSetting",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:resolveThemeSetting",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getColorFgBgBackgroundIndex",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getThemeForRgbColor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getThemeForRgbColor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:detectTerminalBackgroundFromEnv",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:detectTerminalBackgroundFromEnv",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:detectTerminalBackgroundTheme",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:detectTerminalBackgroundTheme",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:detectTerminalThemeForAuto",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:detectTerminalThemeForAuto",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getDefaultTheme",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getDefaultTheme",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:setRegisteredThemes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:setRegisteredThemes",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:initTheme",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:initTheme",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:setTheme",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:setTheme",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:setThemeInstance",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:setThemeInstance",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:onThemeChange",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:onThemeChange",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:startThemeWatcher",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:stopThemeWatcher",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:stopThemeWatcher",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:ansi256ToHex",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getResolvedThemeColors",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getResolvedThemeColors",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:isLightTheme",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:isLightTheme",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getThemeExportColors",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getThemeExportColors",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:buildCliHighlightTheme",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:highlightCode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:highlightCode",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getLanguageFromPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getLanguageFromPath",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getMarkdownTheme",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getMarkdownTheme",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getSelectListTheme",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getSelectListTheme",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getEditorTheme",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getEditorTheme",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getSettingsListTheme",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/theme/theme.ts:getSettingsListTheme",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/theme/theme.ts:Theme",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/theme/theme.ts:Theme",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/ansi.ts",
+      "target": "function:packages/coding-agent/src/utils/ansi.ts:ansiRegex",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/ansi.ts",
+      "target": "function:packages/coding-agent/src/utils/ansi.ts:stripAnsi",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/ansi.ts",
+      "target": "function:packages/coding-agent/src/utils/ansi.ts:stripAnsi",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/changelog.ts",
+      "target": "function:packages/coding-agent/src/utils/changelog.ts:splitLocalTarget",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/changelog.ts",
+      "target": "function:packages/coding-agent/src/utils/changelog.ts:resolveRepositoryPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/changelog.ts",
+      "target": "function:packages/coding-agent/src/utils/changelog.ts:normalizeChangelogLinkTarget",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/changelog.ts",
+      "target": "function:packages/coding-agent/src/utils/changelog.ts:normalizeChangelogLinks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/changelog.ts",
+      "target": "function:packages/coding-agent/src/utils/changelog.ts:normalizeChangelogLinks",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/changelog.ts",
+      "target": "function:packages/coding-agent/src/utils/changelog.ts:parseChangelog",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/changelog.ts",
+      "target": "function:packages/coding-agent/src/utils/changelog.ts:parseChangelog",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/changelog.ts",
+      "target": "function:packages/coding-agent/src/utils/changelog.ts:compareVersions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/changelog.ts",
+      "target": "function:packages/coding-agent/src/utils/changelog.ts:compareVersions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/changelog.ts",
+      "target": "function:packages/coding-agent/src/utils/changelog.ts:getNewEntries",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/changelog.ts",
+      "target": "function:packages/coding-agent/src/utils/changelog.ts:getNewEntries",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/fs-watch.ts",
+      "target": "function:packages/coding-agent/src/utils/fs-watch.ts:closeWatcher",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/fs-watch.ts",
+      "target": "function:packages/coding-agent/src/utils/fs-watch.ts:closeWatcher",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/fs-watch.ts",
+      "target": "function:packages/coding-agent/src/utils/fs-watch.ts:watchWithErrorHandler",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/fs-watch.ts",
+      "target": "function:packages/coding-agent/src/utils/fs-watch.ts:watchWithErrorHandler",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/git.ts",
+      "target": "function:packages/coding-agent/src/utils/git.ts:splitRef",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/git.ts",
+      "target": "function:packages/coding-agent/src/utils/git.ts:hasUnsafeGitInstallPart",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/git.ts",
+      "target": "function:packages/coding-agent/src/utils/git.ts:buildGitSource",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/git.ts",
+      "target": "function:packages/coding-agent/src/utils/git.ts:parseGenericGitUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/git.ts",
+      "target": "function:packages/coding-agent/src/utils/git.ts:parseGitUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/git.ts",
+      "target": "function:packages/coding-agent/src/utils/git.ts:parseGitUrl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/html.ts",
+      "target": "function:packages/coding-agent/src/utils/html.ts:decodeHtmlEntity",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/html.ts",
+      "target": "function:packages/coding-agent/src/utils/html.ts:decodeHtmlEntity",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/html.ts",
+      "target": "function:packages/coding-agent/src/utils/html.ts:decodeHtmlEntityAt",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/html.ts",
+      "target": "function:packages/coding-agent/src/utils/html.ts:decodeHtmlEntityAt",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/open-browser.ts",
+      "target": "function:packages/coding-agent/src/utils/open-browser.ts:openBrowser",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/open-browser.ts",
+      "target": "function:packages/coding-agent/src/utils/open-browser.ts:openBrowser",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/syntax-highlight.ts",
+      "target": "function:packages/coding-agent/src/utils/syntax-highlight.ts:getScopeFromSpanTag",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/syntax-highlight.ts",
+      "target": "function:packages/coding-agent/src/utils/syntax-highlight.ts:getScopeFormatter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/syntax-highlight.ts",
+      "target": "function:packages/coding-agent/src/utils/syntax-highlight.ts:getActiveFormatter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/syntax-highlight.ts",
+      "target": "function:packages/coding-agent/src/utils/syntax-highlight.ts:renderHighlightedHtml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/syntax-highlight.ts",
+      "target": "function:packages/coding-agent/src/utils/syntax-highlight.ts:renderHighlightedHtml",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/syntax-highlight.ts",
+      "target": "function:packages/coding-agent/src/utils/syntax-highlight.ts:highlight",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/syntax-highlight.ts",
+      "target": "function:packages/coding-agent/src/utils/syntax-highlight.ts:highlight",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/syntax-highlight.ts",
+      "target": "function:packages/coding-agent/src/utils/syntax-highlight.ts:supportsLanguage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/syntax-highlight.ts",
+      "target": "function:packages/coding-agent/src/utils/syntax-highlight.ts:supportsLanguage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/core/agent-session.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/core/cache-stats.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/core/footer-data-provider.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/core/http-dispatcher.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/core/keybindings.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/core/messages.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/core/package-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/core/session-cwd.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/core/slash-commands.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/core/source-info.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/core/telemetry.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/core/tools/truncate.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/core/trust-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/core/usage-totals.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/armin.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/assistant-message.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/bash-execution.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/bordered-loader.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/branch-summary-message.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/compaction-summary-message.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/custom-editor.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/custom-entry.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/custom-message.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/daxnuts.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/dynamic-border.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/earendil-announcement.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/extension-editor.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/extension-input.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/extension-selector.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/footer.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/keybinding-hints.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/login-dialog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/mermaid.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/model-selector.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/oauth-selector.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/scoped-models-selector.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/session-selector.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/settings-selector.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/skill-invocation-message.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/status-indicator.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/tool-execution.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/tree-selector.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/trust-selector.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/user-message-selector.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/user-message.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/external-editor.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/model-search.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme-controller.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/utils/changelog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/utils/clipboard-image.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/utils/clipboard.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/utils/git.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/utils/open-browser.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/utils/paths.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/utils/pi-user-agent.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/utils/shell.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/utils/tools-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/src/utils/version-check.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme-controller.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme-controller.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "file:packages/coding-agent/src/core/source-info.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "file:packages/coding-agent/src/utils/fs-watch.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "target": "file:packages/coding-agent/src/utils/syntax-highlight.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/syntax-highlight.ts",
+      "target": "file:packages/coding-agent/src/utils/html.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/ansi.ts",
+      "target": "file:packages/coding-agent/test/ansi-utils.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/changelog.ts",
+      "target": "file:packages/coding-agent/test/changelog.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/external-editor.ts",
+      "target": "file:packages/coding-agent/test/external-editor.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/git.ts",
+      "target": "file:packages/coding-agent/test/git-ssh-url.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/test/interactive-mode-anthropic-warning.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "target": "file:packages/coding-agent/test/interactive-mode-clone-command.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

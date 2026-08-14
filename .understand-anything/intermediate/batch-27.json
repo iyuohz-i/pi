@@ -1,0 +1,379 @@
+{
+  "nodes": [
+    {
+      "id": "packages/coding-agent/test/suite/regressions/3686-session-name-event.test.ts",
+      "type": "file",
+      "label": "3686-session-name-event.test.ts",
+      "language": "typescript",
+      "filePath": "packages/coding-agent/test/suite/regressions/3686-session-name-event.test.ts",
+      "summary": "回归测试 #3686：验证会话名称变更时发射 session_info_changed 事件。覆盖 AgentSession.setSessionName 和扩展 pi.setSessionName 两条路径，确保事件通知到达订阅者和扩展监听器。",
+      "metadata": { "lines": 61, "category": "test", "testDomain": "session-management" }
+    },
+    {
+      "id": "packages/coding-agent/test/suite/regressions/3688-tree-cancel-compacting.test.ts",
+      "type": "file",
+      "label": "3688-tree-cancel-compacting.test.ts",
+      "language": "typescript",
+      "filePath": "packages/coding-agent/test/suite/regressions/3688-tree-cancel-compacting.test.ts",
+      "summary": "回归测试 #3688：当 session_before_tree 取消树导航时，验证分支摘要状态被正确清理，compact 状态重置，叶子节点不变。",
+      "metadata": { "lines": 36, "category": "test", "testDomain": "tree-navigation" }
+    },
+    {
+      "id": "packages/coding-agent/test/suite/regressions/3982-message-end-cost-override.test.ts",
+      "type": "file",
+      "label": "3982-message-end-cost-override.test.ts",
+      "language": "typescript",
+      "filePath": "packages/coding-agent/test/suite/regressions/3982-message-end-cost-override.test.ts",
+      "summary": "回归测试 #3982：验证扩展可通过 message_end 事件处理器替换已最终化的 assistant 消息用量费用（cost.total），确保修改后的值在会话消息和事件中一致。",
+      "metadata": { "lines": 56, "category": "test", "testDomain": "extension-events" }
+    },
+    {
+      "id": "packages/coding-agent/test/suite/regressions/5109-exclude-tools.test.ts",
+      "type": "file",
+      "label": "5109-exclude-tools.test.ts",
+      "language": "typescript",
+      "filePath": "packages/coding-agent/test/suite/regressions/5109-exclude-tools.test.ts",
+      "summary": "回归测试 #5109：验证 excludeTools 配置可从 getAllTools、getActiveTools 和系统提示中过滤内置工具和扩展注册工具，且排除列表优先于 allowlist。",
+      "metadata": { "lines": 81, "category": "test", "testDomain": "tool-management" }
+    },
+    {
+      "id": "fn:recordingExtension",
+      "type": "function",
+      "label": "recordingExtension",
+      "filePath": "packages/coding-agent/test/suite/regressions/5217-compaction-reason.test.ts",
+      "summary": "创建记录压缩事件的扩展工厂。监听 session_before_compact 和 session_compact，将事件类型、原因和 willRetry 状态推入记录数组，并在 before_compact 中返回自定义摘要。",
+      "metadata": { "lines": 17, "fileNode": "packages/coding-agent/test/suite/regressions/5217-compaction-reason.test.ts" }
+    },
+    {
+      "id": "fn:createCompactionHarness",
+      "type": "function",
+      "label": "createCompactionHarness",
+      "filePath": "packages/coding-agent/test/suite/regressions/5217-compaction-reason.test.ts",
+      "summary": "创建压缩测试工具集，配置 keepRecentTokens=1 和记录扩展，执行两轮对话以填充可压缩会话上下文。",
+      "metadata": { "lines": 10, "fileNode": "packages/coding-agent/test/suite/regressions/5217-compaction-reason.test.ts" }
+    },
+    {
+      "id": "packages/coding-agent/test/suite/regressions/5217-compaction-reason.test.ts",
+      "type": "file",
+      "label": "5217-compaction-reason.test.ts",
+      "language": "typescript",
+      "filePath": "packages/coding-agent/test/suite/regressions/5217-compaction-reason.test.ts",
+      "summary": "回归测试 #5217：验证压缩事件（session_before_compact / session_compact）携带正确的 reason 字段——manual（手动 compact）、threshold（阈值自动压缩）、overflow（溢出自动压缩），并在扩展事件处理器中可访问。",
+      "metadata": { "lines": 95, "category": "test", "testDomain": "compaction" }
+    },
+    {
+      "id": "fn:createUiContext",
+      "type": "function",
+      "label": "createUiContext",
+      "filePath": "packages/coding-agent/test/suite/regressions/5943-session-start-notify.test.ts",
+      "summary": "创建模拟 ExtensionUIContext，提供 select/confirm/input/notify 等 UI 交互的桩实现，用于测试 session_start 通知的 UI 行为。",
+      "metadata": { "lines": 35, "fileNode": "packages/coding-agent/test/suite/regressions/5943-session-start-notify.test.ts" }
+    },
+    {
+      "id": "fn:createReloadCommandContext",
+      "type": "function",
+      "label": "createReloadCommandContext",
+      "filePath": "packages/coding-agent/test/suite/regressions/5943-session-start-notify.test.ts",
+      "summary": "创建模拟 ReloadCommandContext，包含 session、settingsManager、keybindings、editor、ui、themeController 等完整上下文的桩实现，支持通过 overrides 参数定制各字段。",
+      "metadata": { "lines": 50, "fileNode": "packages/coding-agent/test/suite/regressions/5943-session-start-notify.test.ts" }
+    },
+    {
+      "id": "fn:getMessageText",
+      "type": "function",
+      "label": "getMessageText",
+      "filePath": "packages/coding-agent/test/suite/regressions/5943-session-start-notify.test.ts",
+      "summary": "从 message_start/message_end 事件中提取文本内容，处理字符串和 content block 数组两种消息格式。",
+      "metadata": { "lines": 13, "fileNode": "packages/coding-agent/test/suite/regressions/5943-session-start-notify.test.ts" }
+    },
+    {
+      "id": "fn:createLoadedResourcesContext",
+      "type": "function",
+      "label": "createLoadedResourcesContext",
+      "filePath": "packages/coding-agent/test/suite/regressions/5943-session-start-notify.test.ts",
+      "summary": "创建模拟 LoadedResourcesContext，提供 resourceLoader（agentsFiles、skills、prompts 等）和 extensionRunner 的桩实现，用于测试 showLoadedResources 的渲染行为。",
+      "metadata": { "lines": 30, "fileNode": "packages/coding-agent/test/suite/regressions/5943-session-start-notify.test.ts" }
+    },
+    {
+      "id": "packages/coding-agent/test/suite/regressions/5943-session-start-notify.test.ts",
+      "type": "file",
+      "label": "5943-session-start-notify.test.ts",
+      "language": "typescript",
+      "filePath": "packages/coding-agent/test/suite/regressions/5943-session-start-notify.test.ts",
+      "summary": "回归测试 #5943：验证 session_start 瞬态 UI 行为——showLoadedResources 在恢复消息前渲染、rebindCurrentSession 在扩展 session_start 通知前替换会话状态、订阅先于 session_start 消息发送、reload 渲染钩子先于通知执行、hideThinkingBlock 在重建聊天前刷新。包含 7 个测试用例。",
+      "metadata": { "lines": 519, "category": "test", "testDomain": "interactive-mode" }
+    },
+    {
+      "id": "packages/coding-agent/test/suite/regressions/5996-session-name-newlines.test.ts",
+      "type": "file",
+      "label": "5996-session-name-newlines.test.ts",
+      "language": "typescript",
+      "filePath": "packages/coding-agent/test/suite/regressions/5996-session-name-newlines.test.ts",
+      "summary": "回归测试 #5996：验证会话名称中的换行符（\\n、\\r\\n）被过滤为空格，覆盖 AgentSession.setSessionName 和扩展 pi.setSessionName 两条路径。",
+      "metadata": { "lines": 40, "category": "test", "testDomain": "session-management" }
+    },
+    {
+      "id": "packages/coding-agent/test/suite/regressions/5998-blocked-tool-terminate.test.ts",
+      "type": "file",
+      "label": "5998-blocked-tool-terminate.test.ts",
+      "language": "typescript",
+      "filePath": "packages/coding-agent/test/suite/regressions/5998-blocked-tool-terminate.test.ts",
+      "summary": "回归测试 #5998：验证 tool_call 处理器可通过 block+terminate 阻止工具执行并终止运行，保留待处理响应、跳过后续消息、生成错误 toolResult 消息。",
+      "metadata": { "lines": 53, "category": "test", "testDomain": "tool-execution" }
+    },
+    {
+      "id": "packages/coding-agent/test/suite/regressions/6019-explicit-provider-retry-message.test.ts",
+      "type": "file",
+      "label": "6019-explicit-provider-retry-message.test.ts",
+      "language": "typescript",
+      "filePath": "packages/coding-agent/test/suite/regressions/6019-explicit-provider-retry-message.test.ts",
+      "summary": "回归测试 #6019：验证 OpenAI 和 Bedrock 的显式重试引导消息能被正确识别为可重试错误，触发自动重试机制并成功恢复。",
+      "metadata": { "lines": 31, "category": "test", "testDomain": "retry" }
+    },
+    {
+      "id": "packages/coding-agent/test/suite/regressions/6162-extension-active-tools-next-turn.test.ts",
+      "type": "file",
+      "label": "6162-extension-active-tools-next-turn.test.ts",
+      "language": "typescript",
+      "filePath": "packages/coding-agent/test/suite/regressions/6162-extension-active-tools-next-turn.test.ts",
+      "summary": "回归测试 #6162：验证扩展 pi.setActiveTools 在同一运行的下一次 provider 请求前生效，包括替换式和增量式工具集变更，以及 before_agent_start 系统提示覆盖在工具切换后保持不变。",
+      "metadata": { "lines": 192, "category": "test", "testDomain": "extension-tools" }
+    },
+    {
+      "id": "packages/coding-agent/test/suite/regressions/6260-inline-extension-naming.test.ts",
+      "type": "file",
+      "label": "6260-inline-extension-naming.test.ts",
+      "language": "typescript",
+      "filePath": "packages/coding-agent/test/suite/regressions/6260-inline-extension-naming.test.ts",
+      "summary": "回归测试 #6260：验证 DefaultResourceLoader 对内联扩展工厂的命名规则——裸函数显示为 <inline:N>，命名包装器显示为 <inline:name>，隐藏状态正确保留，支持混合模式。",
+      "metadata": { "lines": 119, "category": "test", "testDomain": "resource-loader" }
+    },
+    {
+      "id": "packages/coding-agent/test/suite/regressions/6324-branch-summary-ambient-auth.test.ts",
+      "type": "file",
+      "label": "6324-branch-summary-ambient-auth.test.ts",
+      "language": "typescript",
+      "filePath": "packages/coding-agent/test/suite/regressions/6324-branch-summary-ambient-auth.test.ts",
+      "summary": "回归测试 #6324：验证在无 API key 的环境认证（ambient auth）配置下，树导航的分支摘要功能仍能正常工作，streamFunction 不接收 apiKey，且摘要条目正确记录 usage cost。",
+      "metadata": { "lines": 62, "category": "test", "testDomain": "tree-navigation" }
+    },
+    {
+      "id": "fn:createWaitTool",
+      "type": "function",
+      "label": "createWaitTool",
+      "filePath": "packages/coding-agent/test/suite/regressions/6363-agent-settled-event.test.ts",
+      "summary": "创建一个等待 Promise 释放后才返回的测试工具，用于模拟长时间运行的工具执行以验证 agent_settled 事件时序。",
+      "metadata": { "lines": 11, "fileNode": "packages/coding-agent/test/suite/regressions/6363-agent-settled-event.test.ts" }
+    },
+    {
+      "id": "packages/coding-agent/test/suite/regressions/6363-agent-settled-event.test.ts",
+      "type": "file",
+      "label": "6363-agent-settled-event.test.ts",
+      "language": "typescript",
+      "filePath": "packages/coding-agent/test/suite/regressions/6363-agent-settled-event.test.ts",
+      "summary": "回归测试 #6363：验证 agent_settled 事件语义——自动重试后仅发射一次 settled 且 isIdle 为 true、agent_end 处理器排队的后续消息完成后再 settled、扩展命令 waitForIdle 等待会话级空闲。",
+      "metadata": { "lines": 158, "category": "test", "testDomain": "agent-lifecycle" }
+    },
+    {
+      "id": "fn:seedCompactableSession",
+      "type": "function",
+      "label": "seedCompactableSession",
+      "filePath": "packages/coding-agent/test/suite/regressions/6647-compaction-retries-transient-stream-drop.test.ts",
+      "summary": "向测试工具集注入可压缩会话：设置 keepRecentTokens=1，添加用户消息和带有 usage 的 assistant 消息，同步 agent 内部消息状态。",
+      "metadata": { "lines": 20, "fileNode": "packages/coding-agent/test/suite/regressions/6647-compaction-retries-transient-stream-drop.test.ts" }
+    },
+    {
+      "id": "fn:useScriptedStreamFn",
+      "type": "function",
+      "label": "useScriptedStreamFn",
+      "filePath": "packages/coding-agent/test/suite/regressions/6647-compaction-retries-transient-stream-drop.test.ts",
+      "summary": "安装脚本化 streamFunction，按顺序返回预编程的 assistant 消息响应（包括错误和成功），返回调用计数查询函数。支持 error/aborted/pending 等 stopReason。",
+      "metadata": { "lines": 25, "fileNode": "packages/coding-agent/test/suite/regressions/6647-compaction-retries-transient-stream-drop.test.ts" }
+    },
+    {
+      "id": "packages/coding-agent/test/suite/regressions/6647-compaction-retries-transient-stream-drop.test.ts",
+      "type": "file",
+      "label": "6647-compaction-retries-transient-stream-drop.test.ts",
+      "language": "typescript",
+      "filePath": "packages/coding-agent/test/suite/regressions/6647-compaction-retries-transient-stream-drop.test.ts",
+      "summary": "回归测试 #6647：验证压缩摘要调用复用 settings.retry 进行有界重试。覆盖瞬态 terminated 错误重试成功、不可重试错误（insufficient_quota）不重试、retry 禁用时不重试、超过 maxRetries 后报告失败、abortCompaction 中止重试退避。",
+      "metadata": { "lines": 192, "category": "test", "testDomain": "compaction" }
+    },
+    {
+      "id": "fn:seedCompactableSession:6768",
+      "type": "function",
+      "label": "seedCompactableSession",
+      "filePath": "packages/coding-agent/test/suite/regressions/6768-copilot-compaction-base-url.test.ts",
+      "summary": "向测试工具集注入可压缩会话（Copilot 变体），配置 keepRecentTokens=1 并添加带有完整 usage 的用户/assistant 消息对。",
+      "metadata": { "lines": 25, "fileNode": "packages/coding-agent/test/suite/regressions/6768-copilot-compaction-base-url.test.ts" }
+    },
+    {
+      "id": "packages/coding-agent/test/suite/regressions/6768-copilot-compaction-base-url.test.ts",
+      "type": "file",
+      "label": "6768-copilot-compaction-base-url.test.ts",
+      "language": "typescript",
+      "filePath": "packages/coding-agent/test/suite/regressions/6768-copilot-compaction-base-url.test.ts",
+      "summary": "回归测试 #6768：验证 Copilot 压缩时使用认证解析的 base URL（individual/enterprise），通过 SDK 风格 stream wrapper 确保请求携带正确的 baseUrl。",
+      "metadata": { "lines": 114, "category": "test", "testDomain": "compaction" }
+    },
+    {
+      "id": "packages/coding-agent/test/suite/regressions/6904-dns-transport-retry.test.ts",
+      "type": "file",
+      "label": "6904-dns-transport-retry.test.ts",
+      "language": "typescript",
+      "filePath": "packages/coding-agent/test/suite/regressions/6904-dns-transport-retry.test.ts",
+      "summary": "回归测试 #6904：验证 DNS 传输层故障（getaddrinfo ENOTFOUND）被识别为可重试错误，自动重试后成功恢复。",
+      "metadata": { "lines": 28, "category": "test", "testDomain": "retry" }
+    },
+    {
+      "id": "packages/coding-agent/test/suite/regressions/7150-rpc-prompt-during-compaction.test.ts",
+      "type": "file",
+      "label": "7150-rpc-prompt-during-compaction.test.ts",
+      "language": "typescript",
+      "filePath": "packages/coding-agent/test/suite/regressions/7150-rpc-prompt-during-compaction.test.ts",
+      "summary": "回归测试 #7150：验证手动压缩进行中时 RPC prompt 被拒绝——preflightResult 回调报告 false，抛出 'compaction is in progress' 错误，用户消息不持久化，不发射 agent_start/agent_settled 事件。",
+      "metadata": { "lines": 91, "category": "test", "testDomain": "compaction" }
+    },
+    {
+      "id": "packages/coding-agent/test/suite/regressions/7253-manual-compact-during-response.test.ts",
+      "type": "file",
+      "label": "7253-manual-compact-during-response.test.ts",
+      "language": "typescript",
+      "filePath": "packages/coding-agent/test/suite/regressions/7253-manual-compact-during-response.test.ts",
+      "summary": "回归测试 #7253：验证活跃响应期间发起手动压缩时，仅执行请求的手动压缩（不触发阈值自动压缩），最终生成且仅生成一条压缩条目。",
+      "metadata": { "lines": 75, "category": "test", "testDomain": "compaction" }
+    },
+    {
+      "id": "packages/coding-agent/test/suite/regressions/7290-json-stream-linear.test.ts",
+      "type": "file",
+      "label": "7290-json-stream-linear.test.ts",
+      "language": "typescript",
+      "filePath": "packages/coding-agent/test/suite/regressions/7290-json-stream-linear.test.ts",
+      "summary": "回归测试 #7290：验证 JSON 事件流中 message_update 保持线性增长——投影到线路格式后仅包含 delta（不含完整 message 快照），且字节大小随响应长度线性增长（4K/2K 比率 < 2.2）。",
+      "metadata": { "lines": 44, "category": "test", "testDomain": "json-streaming" }
+    },
+    {
+      "id": "fn:createDeferred",
+      "type": "function",
+      "label": "createDeferred",
+      "filePath": "packages/coding-agent/test/suite/regressions/7301-stalled-availability-refresh.test.ts",
+      "summary": "创建可外部控制 resolve/reject 的 Deferred Promise 工具函数。",
+      "metadata": { "lines": 9, "fileNode": "packages/coding-agent/test/suite/regressions/7301-stalled-availability-refresh.test.ts" }
+    },
+    {
+      "id": "fn:stallNextCredentialList",
+      "type": "function",
+      "label": "stallNextCredentialList",
+      "filePath": "packages/coding-agent/test/suite/regressions/7301-stalled-availability-refresh.test.ts",
+      "summary": "拦截 harness.authStorage.list 的下一次调用使其暂停（stall），返回 started/release/fail/getCallCount 控制接口，用于模拟网络请求竞争条件。",
+      "metadata": { "lines": 24, "fileNode": "packages/coding-agent/test/suite/regressions/7301-stalled-availability-refresh.test.ts" }
+    },
+    {
+      "id": "packages/coding-agent/test/suite/regressions/7301-stalled-availability-refresh.test.ts",
+      "type": "file",
+      "label": "7301-stalled-availability-refresh.test.ts",
+      "language": "typescript",
+      "filePath": "packages/coding-agent/test/suite/regressions/7301-stalled-availability-refresh.test.ts",
+      "summary": "回归测试 #7301：验证暂停的可用性刷新不会覆盖较新的快照——stale refresh 完成后不覆盖后续 credential 变更、stale 失败不覆盖新的 error 状态、stale provider 级失败不覆盖新的可用性通过。",
+      "metadata": { "lines": 133, "category": "test", "testDomain": "model-runtime" }
+    },
+    {
+      "id": "packages/coding-agent/test/suite/regressions/7443-model-command-cached-match.test.ts",
+      "type": "file",
+      "label": "7443-model-command-cached-match.test.ts",
+      "language": "typescript",
+      "filePath": "packages/coding-agent/test/suite/regressions/7443-model-command-cached-match.test.ts",
+      "summary": "回归测试 #7443：验证 /model 命令的 findExactModelMatch 在缓存命中时不触发 catalog 刷新，缓存未命中时才使用带 AbortSignal 的 deadline 进行刷新。",
+      "metadata": { "lines": 46, "category": "test", "testDomain": "model-management" }
+    },
+    {
+      "id": "packages/coding-agent/test/suite/regressions/7911-json-stream-usage.test.ts",
+      "type": "file",
+      "label": "7911-json-stream-usage.test.ts",
+      "language": "typescript",
+      "filePath": "packages/coding-agent/test/suite/regressions/7911-json-stream-usage.test.ts",
+      "summary": "回归测试 #7911：验证 JSON message update 在 #7290 delta-only 投影后仍保留累积 usage 数据，不包含完整 message 快照。",
+      "metadata": { "lines": 32, "category": "test", "testDomain": "json-streaming" }
+    },
+    {
+      "id": "fn:createUsage",
+      "type": "function",
+      "label": "createUsage",
+      "filePath": "packages/coding-agent/test/suite/regressions/pre-prompt-compaction-no-continue.test.ts",
+      "summary": "创建测试用 usage 对象，将 totalTokens 设置为指定值，其余字段归零。",
+      "metadata": { "lines": 10, "fileNode": "packages/coding-agent/test/suite/regressions/pre-prompt-compaction-no-continue.test.ts" }
+    },
+    {
+      "id": "packages/coding-agent/test/suite/regressions/pre-prompt-compaction-no-continue.test.ts",
+      "type": "file",
+      "label": "pre-prompt-compaction-no-continue.test.ts",
+      "language": "typescript",
+      "filePath": "packages/coding-agent/test/suite/regressions/pre-prompt-compaction-no-continue.test.ts",
+      "summary": "验证 pre-prompt 压缩回归：当上一轮因 length-stop 溢出时，在新 prompt 前执行溢出压缩但不调用 agent.continue()，压缩以 willRetry=true 完成，新 prompt 正常发送。",
+      "metadata": { "lines": 75, "category": "test", "testDomain": "compaction" }
+    },
+    {
+      "id": "packages/coding-agent/test/suite/regressions/tree-during-streaming.test.ts",
+      "type": "file",
+      "label": "tree-during-streaming.test.ts",
+      "language": "typescript",
+      "filePath": "packages/coding-agent/test/suite/regressions/tree-during-streaming.test.ts",
+      "summary": "验证活跃响应期间树导航被拒绝——在流式响应工厂内调用 navigateTree 返回错误 'Wait for the current response to finish'，叶子节点不变。",
+      "metadata": { "lines": 35, "category": "test", "testDomain": "tree-navigation" }
+    }
+  ],
+  "edges": [
+    { "source": "packages/coding-agent/test/suite/regressions/3686-session-name-event.test.ts", "target": "packages/coding-agent/src/index.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/3686-session-name-event.test.ts", "target": "packages/coding-agent/test/suite/harness.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/3688-tree-cancel-compacting.test.ts", "target": "packages/coding-agent/test/suite/harness.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/3688-tree-cancel-compacting.test.ts", "target": "packages/coding-agent/test/utilities.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/3982-message-end-cost-override.test.ts", "target": "packages/coding-agent/test/suite/harness.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/5109-exclude-tools.test.ts", "target": "packages/coding-agent/src/index.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/5109-exclude-tools.test.ts", "target": "packages/coding-agent/test/suite/harness.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/5217-compaction-reason.test.ts", "target": "packages/coding-agent/src/index.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/5217-compaction-reason.test.ts", "target": "packages/coding-agent/test/suite/harness.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/5943-session-start-notify.test.ts", "target": "packages/coding-agent/src/core/agent-session.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/5943-session-start-notify.test.ts", "target": "packages/coding-agent/src/core/extensions/index.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/5943-session-start-notify.test.ts", "target": "packages/coding-agent/src/modes/interactive/interactive-mode.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/5943-session-start-notify.test.ts", "target": "packages/coding-agent/src/modes/interactive/theme/theme.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/5943-session-start-notify.test.ts", "target": "packages/coding-agent/test/suite/harness.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/5996-session-name-newlines.test.ts", "target": "packages/coding-agent/src/index.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/5996-session-name-newlines.test.ts", "target": "packages/coding-agent/test/suite/harness.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/5998-blocked-tool-terminate.test.ts", "target": "packages/coding-agent/test/suite/harness.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/6019-explicit-provider-retry-message.test.ts", "target": "packages/coding-agent/test/suite/harness.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/6162-extension-active-tools-next-turn.test.ts", "target": "packages/coding-agent/src/index.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/6162-extension-active-tools-next-turn.test.ts", "target": "packages/coding-agent/test/suite/harness.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/6260-inline-extension-naming.test.ts", "target": "packages/coding-agent/src/core/resource-loader.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/6260-inline-extension-naming.test.ts", "target": "packages/coding-agent/src/index.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/6324-branch-summary-ambient-auth.test.ts", "target": "packages/coding-agent/test/suite/harness.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/6324-branch-summary-ambient-auth.test.ts", "target": "packages/coding-agent/test/utilities.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/6363-agent-settled-event.test.ts", "target": "packages/coding-agent/test/suite/harness.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/6647-compaction-retries-transient-stream-drop.test.ts", "target": "packages/coding-agent/test/suite/harness.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/6768-copilot-compaction-base-url.test.ts", "target": "packages/coding-agent/test/suite/harness.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/6904-dns-transport-retry.test.ts", "target": "packages/coding-agent/test/suite/harness.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/7150-rpc-prompt-during-compaction.test.ts", "target": "packages/coding-agent/test/suite/harness.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/7253-manual-compact-during-response.test.ts", "target": "packages/coding-agent/test/suite/harness.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/7290-json-stream-linear.test.ts", "target": "packages/coding-agent/src/modes/json-event.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/7290-json-stream-linear.test.ts", "target": "packages/coding-agent/test/suite/harness.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/7301-stalled-availability-refresh.test.ts", "target": "packages/coding-agent/test/suite/harness.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/7443-model-command-cached-match.test.ts", "target": "packages/coding-agent/src/modes/interactive/interactive-mode.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/7443-model-command-cached-match.test.ts", "target": "packages/coding-agent/test/suite/harness.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/7911-json-stream-usage.test.ts", "target": "packages/coding-agent/src/modes/json-event.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/7911-json-stream-usage.test.ts", "target": "packages/coding-agent/test/suite/harness.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/pre-prompt-compaction-no-continue.test.ts", "target": "packages/coding-agent/test/suite/harness.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/tree-during-streaming.test.ts", "target": "packages/coding-agent/test/suite/harness.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/tree-during-streaming.test.ts", "target": "packages/coding-agent/test/utilities.ts", "type": "import" },
+    { "source": "packages/coding-agent/test/suite/regressions/5217-compaction-reason.test.ts", "target": "fn:recordingExtension", "type": "contains" },
+    { "source": "packages/coding-agent/test/suite/regressions/5217-compaction-reason.test.ts", "target": "fn:createCompactionHarness", "type": "contains" },
+    { "source": "packages/coding-agent/test/suite/regressions/5943-session-start-notify.test.ts", "target": "fn:createUiContext", "type": "contains" },
+    { "source": "packages/coding-agent/test/suite/regressions/5943-session-start-notify.test.ts", "target": "fn:createReloadCommandContext", "type": "contains" },
+    { "source": "packages/coding-agent/test/suite/regressions/5943-session-start-notify.test.ts", "target": "fn:getMessageText", "type": "contains" },
+    { "source": "packages/coding-agent/test/suite/regressions/5943-session-start-notify.test.ts", "target": "fn:createLoadedResourcesContext", "type": "contains" },
+    { "source": "packages/coding-agent/test/suite/regressions/6363-agent-settled-event.test.ts", "target": "fn:createWaitTool", "type": "contains" },
+    { "source": "packages/coding-agent/test/suite/regressions/6647-compaction-retries-transient-stream-drop.test.ts", "target": "fn:seedCompactableSession", "type": "contains" },
+    { "source": "packages/coding-agent/test/suite/regressions/6647-compaction-retries-transient-stream-drop.test.ts", "target": "fn:useScriptedStreamFn", "type": "contains" },
+    { "source": "packages/coding-agent/test/suite/regressions/6768-copilot-compaction-base-url.test.ts", "target": "fn:seedCompactableSession:6768", "type": "contains" },
+    { "source": "packages/coding-agent/test/suite/regressions/7301-stalled-availability-refresh.test.ts", "target": "fn:createDeferred", "type": "contains" },
+    { "source": "packages/coding-agent/test/suite/regressions/7301-stalled-availability-refresh.test.ts", "target": "fn:stallNextCredentialList", "type": "contains" },
+    { "source": "packages/coding-agent/test/suite/regressions/pre-prompt-compaction-no-continue.test.ts", "target": "fn:createUsage", "type": "contains" }
+  ]
+}

@@ -1,0 +1,619 @@
+{
+  "batchIndex": 68,
+  "nodes": [
+    {
+      "id": "packages/ai/test/lazy-module-load.test.ts",
+      "type": "file",
+      "label": "lazy-module-load.test.ts",
+      "language": "typescript",
+      "summary": "懒加载模块加载测试。验证 @earendil-works/pi-ai 的入口点（index.ts、compat.ts、providers/all.ts）在导入时不会提前加载 SDK 依赖（Anthropic、OpenAI、Google、AWS），仅在创建 provider 实例时才按需加载。",
+      "lineCount": 113
+    },
+    {
+      "id": "packages/ai/vitest.config.ts",
+      "type": "file",
+      "label": "vitest.config.ts",
+      "language": "typescript",
+      "summary": "pi-ai 包的 Vitest 测试配置。设置 Node 环境、30 秒超时、点报告器，并通过 resolve.alias 将 @earendil-works/pi-telemetry 映射到遥测包的源码索引以实现懒加载测试。",
+      "lineCount": 16
+    },
+    {
+      "id": "packages/client/vitest.config.ts",
+      "type": "file",
+      "label": "vitest.config.ts",
+      "language": "typescript",
+      "summary": "pi-client 包的 Vitest 测试配置。设置 Node 环境、超时和报告器选项。",
+      "lineCount": 15
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/auto-commit-on-exit.ts",
+      "type": "file",
+      "label": "auto-commit-on-exit.ts",
+      "language": "typescript",
+      "summary": "退出时自动提交扩展。在 session_shutdown 事件中检测未提交的 git 变更，提取最后一条助手消息生成提交信息，然后执行 git add -A 和 git commit。",
+      "lineCount": 49
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/bash-spawn-hook.ts",
+      "type": "file",
+      "label": "bash-spawn-hook.ts",
+      "language": "typescript",
+      "summary": "Bash 执行钩子扩展示例。在创建 bash 工具时使用 spawnHook 选项注入 ~/.profile 源命令和 PI_SPAWN_HOOK 环境变量，演示如何在命令执行前修改 command、cwd 和 env。",
+      "lineCount": 30
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/bookmark.ts",
+      "type": "file",
+      "label": "bookmark.ts",
+      "language": "typescript",
+      "summary": "条目书签扩展。注册 /bookmark 和 /unbookmark 命令，使用 pi.setLabel() 为助手消息添加标签，便于在 /tree 视图中快速导航到重要节点。",
+      "lineCount": 50
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/border-status-editor.ts",
+      "type": "file",
+      "label": "border-status-editor.ts",
+      "language": "typescript",
+      "summary": "边框状态编辑器扩展。实现 CustomEditor 接口，提供全屏边框编辑 UI，包含 fitBorder 布局函数、formatCwd/formatContext/formatThinking 格式化辅助函数和 EmptyFooter 类，支持自定义编辑器主题。",
+      "lineCount": 150
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/built-in-tool-renderer.ts",
+      "type": "file",
+      "label": "built-in-tool-renderer.ts",
+      "language": "typescript",
+      "summary": "内置工具渲染器覆盖扩展。重新注册 read、bash、edit、write 四个内置工具，保持原始执行逻辑不变，但通过 renderCall 和 renderResult 提供简洁的自定义渲染输出（如文件行数、退出码、diff 统计）。",
+      "lineCount": 249
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/claude-rules.ts",
+      "type": "file",
+      "label": "claude-rules.ts",
+      "language": "typescript",
+      "summary": "Claude 规则扩展。扫描项目目录查找 .md 规则文件，通过 resources_discover 事件将其作为 prompt 资源注入。包含 findMarkdownFiles 递归扫描函数和 claudeRulesExtension 默认导出。",
+      "lineCount": 86
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/commands.ts",
+      "type": "file",
+      "label": "commands.ts",
+      "language": "typescript",
+      "summary": "命令列表扩展。注册 /commands 斜杠命令，通过 pi.getCommands() API 列出所有可用的斜杠命令，支持按来源（extension、prompt、skill）过滤。",
+      "lineCount": 72
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/confirm-destructive.ts",
+      "type": "file",
+      "label": "confirm-destructive.ts",
+      "language": "typescript",
+      "summary": "破坏性操作确认扩展。在 session_before_switch 和 session_before_fork 事件中拦截清除会话、切换会话和分叉操作，弹出确认对话框防止误操作，支持通过 cancel 返回值取消事件。",
+      "lineCount": 59
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/custom-compaction.ts",
+      "type": "file",
+      "label": "custom-compaction.ts",
+      "language": "typescript",
+      "summary": "自定义压缩扩展。在 session_before_compact 事件中替换默认压缩行为，使用 Gemini Flash 模型对所有消息进行全量摘要，保留完整的对话上下文而非截断最近 20k tokens。",
+      "lineCount": 117
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/custom-footer.ts",
+      "type": "file",
+      "label": "custom-footer.ts",
+      "language": "typescript",
+      "summary": "自定义页脚扩展。通过 ctx.ui.setFooter() 设置自定义页脚，显示 token 统计（输入/输出/费用）、当前模型 ID 和 git 分支信息，支持 /footer 命令切换开关。",
+      "lineCount": 64
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/custom-header.ts",
+      "type": "file",
+      "label": "custom-header.ts",
+      "language": "typescript",
+      "summary": "自定义页眉扩展。使用 ctx.ui.setHeader() 替换内置页眉，通过 getPiMascot 函数用 Unicode 块字符渲染 pi 吉祥物，并提供 /builtin-header 命令恢复默认页眉。",
+      "lineCount": 73
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts",
+      "type": "file",
+      "label": "custom-provider-anthropic/index.ts",
+      "language": "typescript",
+      "summary": "自定义 Anthropic 提供商扩展示例。实现完整的 OAuth 登录流程（PKCE + 回调服务器）、令牌刷新、消息/工具转换（pi-ai ↔ Anthropic SDK 格式）、流式响应处理，支持 Claude Sonnet 和 Opus 模型。",
+      "lineCount": 611
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/custom-provider-anthropic/package.json",
+      "type": "file",
+      "label": "package.json",
+      "language": "json",
+      "summary": "自定义 Anthropic 提供商扩展的包配置。声明 @anthropic-ai/sdk 和 @earendil-works/pi-ai 依赖。",
+      "lineCount": 19
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/index.ts",
+      "type": "file",
+      "label": "custom-provider-gitlab-duo/index.ts",
+      "language": "typescript",
+      "summary": "GitLab Duo 提供商扩展。通过 GitLab AI Gateway 代理访问 Claude 和 GPT 模型，实现 OAuth 登录（gitlab.com）、直接访问令牌管理、流式响应转发（代理到 Anthropic Messages API 和 OpenAI Responses API）。",
+      "lineCount": 405
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/package.json",
+      "type": "file",
+      "label": "package.json",
+      "language": "json",
+      "summary": "GitLab Duo 提供商扩展的包配置。声明 @earendil-works/pi-ai 依赖。",
+      "lineCount": 16
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/test.ts",
+      "type": "file",
+      "label": "test.ts",
+      "language": "typescript",
+      "summary": "GitLab Duo 提供商测试脚本。手动测试流式 API 调用，验证模型列表、消息发送和流式响应解析，包含 main 函数作为入口点。",
+      "lineCount": 82
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/dirty-repo-guard.ts",
+      "type": "file",
+      "label": "dirty-repo-guard.ts",
+      "language": "typescript",
+      "summary": "脏仓库守卫扩展。在会话切换/分叉前检查 git 工作区状态，当存在未提交变更时弹出确认对话框，防止在有未保存工作时丢失上下文。包含 checkDirtyRepo 辅助函数。",
+      "lineCount": 56
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/doom-overlay/doom/build.sh",
+      "type": "file",
+      "label": "build.sh",
+      "language": "shell",
+      "summary": "DOOM overlay 的构建脚本。下载 doomgeneric 源码、应用 pi 平台补丁（doomgeneric_pi.c）、使用 Emscripten 编译为 WebAssembly、下载 DOOM 共享 WAD 文件。",
+      "lineCount": 152
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/doom-overlay/doom/doomgeneric_pi.c",
+      "type": "file",
+      "label": "doomgeneric_pi.c",
+      "language": "c",
+      "summary": "DOOM 的 pi 平台适配层。实现 doomgeneric 的平台抽象接口（DG_Init、DG_DrawFrame、DG_GetKey 等），通过 EM_ASM 调用 JavaScript 桥接函数实现屏幕渲染、键盘事件传递和窗口标题设置。",
+      "lineCount": 72
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/doom-overlay/README.md",
+      "type": "file",
+      "label": "README.md",
+      "language": "markdown",
+      "summary": "DOOM Overlay 演示文档。介绍如何在 pi 中运行 DOOM 作为终端覆盖层（35 FPS），说明控制键位、半块字符渲染原理、overlay 尺寸配置和第三方致谢。",
+      "lineCount": 46
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/dynamic-resources/index.ts",
+      "type": "file",
+      "label": "dynamic-resources/index.ts",
+      "language": "typescript",
+      "summary": "动态资源发现扩展。通过 resources_discover 事件动态注入 skill、prompt 和 theme 资源路径，演示如何从扩展目录加载外部资源文件。",
+      "lineCount": 15
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/dynamic-tools.ts",
+      "type": "file",
+      "label": "dynamic-tools.ts",
+      "language": "typescript",
+      "summary": "动态工具注册扩展。演示在 session_start 时注册工具，以及通过 /add-echo-tool 命令在运行时动态创建 echo 工具。包含 normalizeToolName 名称验证函数。",
+      "lineCount": 74
+    },
+    {
+      "id": "packages/ai/test/lazy-module-load.test.ts::runProbe",
+      "type": "function",
+      "label": "runProbe",
+      "summary": "运行模块加载探针。生成内联脚本使用 registerHooks 拦截模块解析，统计目标 SDK 的加载情况，验证懒加载行为。",
+      "file": "packages/ai/test/lazy-module-load.test.ts",
+      "startLine": 17,
+      "endLine": 57
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/border-status-editor.ts::fitBorder",
+      "type": "function",
+      "label": "fitBorder",
+      "summary": "边框布局适配函数。根据终端宽度截断左右文本，计算间隙宽度，使用边框字符和填充字符构建单行边框字符串。",
+      "file": "packages/coding-agent/examples/extensions/border-status-editor.ts",
+      "startLine": 10,
+      "endLine": 40
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/claude-rules.ts::findMarkdownFiles",
+      "type": "function",
+      "label": "findMarkdownFiles",
+      "summary": "递归扫描目录查找 .md 文件。跳过 node_modules 和隐藏目录，返回所有 Markdown 文件的绝对路径列表。",
+      "file": "packages/coding-agent/examples/extensions/claude-rules.ts",
+      "startLine": 27,
+      "endLine": 47
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/claude-rules.ts::claudeRulesExtension",
+      "type": "function",
+      "label": "claudeRulesExtension",
+      "summary": "Claude 规则扩展入口。扫描项目中的 .md 规则文件并通过 resources_discover 事件注入为 prompt 资源。",
+      "file": "packages/coding-agent/examples/extensions/claude-rules.ts",
+      "startLine": 49,
+      "endLine": 86
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/commands.ts::commandsExtension",
+      "type": "function",
+      "label": "commandsExtension",
+      "summary": "命令列表扩展入口。注册 /commands 斜杠命令，支持按来源过滤和参数补全，格式化输出所有可用命令的名称、描述和来源。",
+      "file": "packages/coding-agent/examples/extensions/commands.ts",
+      "startLine": 15,
+      "endLine": 72
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/custom-header.ts::getPiMascot",
+      "type": "function",
+      "label": "getPiMascot",
+      "summary": "生成 pi 吉祥物的 Unicode 字符画。使用块字符（█）和半块字符（▌）构建眼睛、顶栏和腿部，配合主题颜色渲染。",
+      "file": "packages/coding-agent/examples/extensions/custom-header.ts",
+      "startLine": 13,
+      "endLine": 45
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts::generatePKCE",
+      "type": "function",
+      "label": "generatePKCE",
+      "summary": "生成 PKCE（Proof Key for Code Exchange）参数。创建随机 code_verifier 和对应的 code_challenge（SHA-256 + base64url），用于 OAuth 授权码流程。",
+      "file": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts",
+      "startLine": 59,
+      "endLine": 76
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts::loginAnthropic",
+      "type": "function",
+      "label": "loginAnthropic",
+      "summary": "Anthropic OAuth 登录流程。启动本地 HTTP 回调服务器，打开浏览器完成授权，交换 code 获取 access_token 和 refresh_token。",
+      "file": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts",
+      "startLine": 78,
+      "endLine": 125
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts::refreshAnthropicToken",
+      "type": "function",
+      "label": "refreshAnthropicToken",
+      "summary": "刷新 Anthropic OAuth 令牌。使用 refresh_token 获取新的 access_token，更新凭证存储。",
+      "file": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts",
+      "startLine": 127,
+      "endLine": 154
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts::convertContentBlocks",
+      "type": "function",
+      "label": "convertContentBlocks",
+      "summary": "将 pi-ai 内容块转换为 Anthropic SDK 格式。处理文本、图片（base64/URL）、工具调用和工具结果等块类型。",
+      "file": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts",
+      "startLine": 189,
+      "endLine": 216
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts::convertMessages",
+      "type": "function",
+      "label": "convertMessages",
+      "summary": "将 pi-ai 消息历史转换为 Anthropic Messages API 格式。处理系统消息、用户消息、助手消息（含思考块）和工具结果消息的转换逻辑。",
+      "file": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts",
+      "startLine": 218,
+      "endLine": 306
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts::convertTools",
+      "type": "function",
+      "label": "convertTools",
+      "summary": "将 pi-ai 工具定义转换为 Anthropic SDK 工具格式。映射工具名称、描述和 JSON Schema 参数。",
+      "file": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts",
+      "startLine": 308,
+      "endLine": 318
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts::mapStopReason",
+      "type": "function",
+      "label": "mapStopReason",
+      "summary": "将 Anthropic API 的 stop_reason 映射为 pi-ai 的 StopReason 枚举。处理 end_turn、max_tokens、tool_use 和 stop_sequence 等停止原因。",
+      "file": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts",
+      "startLine": 320,
+      "endLine": 333
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts::streamCustomAnthropic",
+      "type": "function",
+      "label": "streamCustomAnthropic",
+      "summary": "自定义 Anthropic 流式响应处理。实现 SimpleStreamOptions 接口，创建 Anthropic 客户端（支持 OAuth 和 API Key），发送消息请求并转换 SSE 事件流为 pi-ai 的 AssistantMessageEventStream 格式。",
+      "file": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts",
+      "startLine": 335,
+      "endLine": 569
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/index.ts::getDirectAccessToken",
+      "type": "function",
+      "label": "getDirectAccessToken",
+      "summary": "获取 GitLab 直接访问令牌。通过 OAuth 授权码流程从 gitlab.com 获取 token，支持令牌缓存和 TTL 过期管理。",
+      "file": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/index.ts",
+      "startLine": 183,
+      "endLine": 208
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/index.ts::generatePKCE",
+      "type": "function",
+      "label": "generatePKCE",
+      "summary": "GitLab Duo 的 PKCE 参数生成。创建随机 code_verifier 和 SHA-256 code_challenge，用于 GitLab OAuth 授权。",
+      "file": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/index.ts",
+      "startLine": 218,
+      "endLine": 231
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/index.ts::loginGitLab",
+      "type": "function",
+      "label": "loginGitLab",
+      "summary": "GitLab OAuth 登录流程。启动本地回调服务器，打开浏览器完成 gitlab.com 授权，交换 code 获取访问令牌。",
+      "file": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/index.ts",
+      "startLine": 233,
+      "endLine": 275
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/index.ts::refreshGitLabToken",
+      "type": "function",
+      "label": "refreshGitLabToken",
+      "summary": "刷新 GitLab OAuth 令牌。使用 refresh_token 获取新的 access_token。",
+      "file": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/index.ts",
+      "startLine": 277,
+      "endLine": 301
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/index.ts::streamGitLabDuo",
+      "type": "function",
+      "label": "streamGitLabDuo",
+      "summary": "GitLab Duo 流式响应处理。根据模型类型（Claude/GPT）将请求路由到 Anthropic 或 OpenAI AI Gateway 代理端点，转换流式事件为 pi-ai 格式。",
+      "file": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/index.ts",
+      "startLine": 307,
+      "endLine": 376
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/test.ts::main",
+      "type": "function",
+      "label": "main",
+      "summary": "GitLab Duo 测试入口函数。初始化 API 连接，测试模型列表、消息发送和流式响应解析，验证提供商集成的正确性。",
+      "file": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/test.ts",
+      "startLine": 19,
+      "endLine": 80
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/dirty-repo-guard.ts::checkDirtyRepo",
+      "type": "function",
+      "label": "checkDirtyRepo",
+      "summary": "检查 git 仓库状态并拦截操作。执行 git status 检测未提交变更，有 UI 时弹出确认对话框，无 UI 时默认阻止操作。",
+      "file": "packages/coding-agent/examples/extensions/dirty-repo-guard.ts",
+      "startLine": 10,
+      "endLine": 45
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/dynamic-tools.ts::dynamicToolsExtension",
+      "type": "function",
+      "label": "dynamicToolsExtension",
+      "summary": "动态工具注册扩展入口。在 session_start 时注册初始 echo 工具，并通过 /add-echo-tool 命令在运行时动态创建新工具，维护已注册工具名称集合防止重复。",
+      "file": "packages/coding-agent/examples/extensions/dynamic-tools.ts",
+      "startLine": 24,
+      "endLine": 74
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/border-status-editor.ts::EmptyFooter",
+      "type": "class",
+      "label": "EmptyFooter",
+      "summary": "空页脚实现类。实现 Footer 接口的 render 和 invalidate 方法，返回空数组作为占位页脚。",
+      "file": "packages/coding-agent/examples/extensions/border-status-editor.ts",
+      "startLine": 63,
+      "endLine": 69,
+      "methods": ["render", "invalidate"]
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/doom-overlay/doom/doomgeneric_pi.c::DG_PushKeyEvent",
+      "type": "function",
+      "label": "DG_PushKeyEvent",
+      "summary": "将键盘事件推送到 DOOM 事件队列。通过 EM_ASM 调用 JavaScript 的 pushKeyEvent 函数传递按键状态和键码。",
+      "file": "packages/coding-agent/examples/extensions/doom-overlay/doom/doomgeneric_pi.c",
+      "startLine": 33,
+      "endLine": 41
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/doom-overlay/doom/doomgeneric_pi.c::DG_Init",
+      "type": "function",
+      "label": "DG_Init",
+      "summary": "DOOM 平台初始化函数。通过 EM_ASM 调用 JavaScript 的 doomInit 函数初始化渲染环境。",
+      "file": "packages/coding-agent/examples/extensions/doom-overlay/doom/doomgeneric_pi.c",
+      "startLine": 43,
+      "endLine": 45
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/doom-overlay/doom/doomgeneric_pi.c::DG_DrawFrame",
+      "type": "function",
+      "label": "DG_DrawFrame",
+      "summary": "渲染 DOOM 帧。通过 EM_ASM 将帧缓冲区数据传递给 JavaScript 的 renderFrame 函数进行屏幕绘制。",
+      "file": "packages/coding-agent/examples/extensions/doom-overlay/doom/doomgeneric_pi.c",
+      "startLine": 47,
+      "endLine": 49
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/doom-overlay/doom/doomgeneric_pi.c::DG_GetKey",
+      "type": "function",
+      "label": "DG_GetKey",
+      "summary": "从事件队列获取按键。通过 EM_ASM 调用 JavaScript 的 getNextKey 函数获取下一个待处理的键盘事件。",
+      "file": "packages/coding-agent/examples/extensions/doom-overlay/doom/doomgeneric_pi.c",
+      "startLine": 60,
+      "endLine": 68
+    }
+  ],
+  "edges": [
+    {
+      "source": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/test.ts",
+      "target": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/index.ts",
+      "type": "import",
+      "label": "import"
+    },
+    {
+      "source": "packages/ai/test/lazy-module-load.test.ts",
+      "target": "packages/ai/test/lazy-module-load.test.ts::runProbe",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/border-status-editor.ts",
+      "target": "packages/coding-agent/examples/extensions/border-status-editor.ts::fitBorder",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/border-status-editor.ts",
+      "target": "packages/coding-agent/examples/extensions/border-status-editor.ts::EmptyFooter",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/claude-rules.ts",
+      "target": "packages/coding-agent/examples/extensions/claude-rules.ts::findMarkdownFiles",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/claude-rules.ts",
+      "target": "packages/coding-agent/examples/extensions/claude-rules.ts::claudeRulesExtension",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/commands.ts",
+      "target": "packages/coding-agent/examples/extensions/commands.ts::commandsExtension",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/custom-header.ts",
+      "target": "packages/coding-agent/examples/extensions/custom-header.ts::getPiMascot",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts",
+      "target": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts::generatePKCE",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts",
+      "target": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts::loginAnthropic",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts",
+      "target": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts::refreshAnthropicToken",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts",
+      "target": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts::convertContentBlocks",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts",
+      "target": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts::convertMessages",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts",
+      "target": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts::convertTools",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts",
+      "target": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts::mapStopReason",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts",
+      "target": "packages/coding-agent/examples/extensions/custom-provider-anthropic/index.ts::streamCustomAnthropic",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/index.ts",
+      "target": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/index.ts::getDirectAccessToken",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/index.ts",
+      "target": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/index.ts::generatePKCE",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/index.ts",
+      "target": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/index.ts::loginGitLab",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/index.ts",
+      "target": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/index.ts::refreshGitLabToken",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/index.ts",
+      "target": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/index.ts::streamGitLabDuo",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/test.ts",
+      "target": "packages/coding-agent/examples/extensions/custom-provider-gitlab-duo/test.ts::main",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/dirty-repo-guard.ts",
+      "target": "packages/coding-agent/examples/extensions/dirty-repo-guard.ts::checkDirtyRepo",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/dynamic-tools.ts",
+      "target": "packages/coding-agent/examples/extensions/dynamic-tools.ts::dynamicToolsExtension",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/doom/doomgeneric_pi.c",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/doom/doomgeneric_pi.c::DG_PushKeyEvent",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/doom/doomgeneric_pi.c",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/doom/doomgeneric_pi.c::DG_Init",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/doom/doomgeneric_pi.c",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/doom/doomgeneric_pi.c::DG_DrawFrame",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/doom/doomgeneric_pi.c",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/doom/doomgeneric_pi.c::DG_GetKey",
+      "type": "contains",
+      "label": "contains"
+    }
+  ]
+}

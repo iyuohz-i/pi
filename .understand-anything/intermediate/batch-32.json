@@ -1,0 +1,197 @@
+{
+  "nodes": [
+    {
+      "id": "packages/coding-agent/src/cli/experimental/auth.ts",
+      "type": "file",
+      "label": "auth.ts",
+      "summary": "定义认证输入类型（AuthInput）和解析函数（parseAuthInput）。支持 token 和 file 两种认证方式，确保 --auth-token 和 --auth-token-file 互斥。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "metrics": { "totalLines": 21, "nonEmptyLines": 19, "importCount": 0, "exportCount": 1, "functionCount": 1, "classCount": 0 }
+    },
+    {
+      "id": "packages/coding-agent/src/cli/experimental/cli.ts",
+      "type": "file",
+      "label": "cli.ts",
+      "summary": "实验性 CLI 的入口点。组合 piCommand、serverCommand、clientCommand 三个子命令为统一的 experimentalCli 命令树，并导出组合上下文类型 ExperimentalCliContext。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "metrics": { "totalLines": 7, "nonEmptyLines": 5, "importCount": 3, "exportCount": 1, "functionCount": 0, "classCount": 0 }
+    },
+    {
+      "id": "packages/coding-agent/src/cli/experimental/command-options.ts",
+      "type": "file",
+      "label": "command-options.ts",
+      "summary": "定义实验性 CLI 的共享命令选项（auth-token、auth-token-file、transport）。提供认证解析、旧版 CLI 参数解析以及不支持选项的错误提示功能。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "metrics": { "totalLines": 38, "nonEmptyLines": 33, "importCount": 4, "exportCount": 6, "functionCount": 4, "classCount": 0 }
+    },
+    {
+      "id": "packages/coding-agent/src/cli/experimental/command.ts",
+      "type": "file",
+      "label": "command.ts",
+      "summary": "实验性 CLI 的核心框架文件。定义泛型 Command 类，支持命令注册、选项解析、子命令路由和动作执行。提供 valueOption 和 stringOption 工厂函数创建命令选项。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "metrics": { "totalLines": 205, "nonEmptyLines": 178, "importCount": 0, "exportCount": 3, "functionCount": 2, "classCount": 1 }
+    },
+    {
+      "id": "packages/coding-agent/src/cli/experimental/commands/client.ts",
+      "type": "file",
+      "label": "client.ts",
+      "summary": "定义 client 子命令。支持 --connect（Unix socket 连接地址）和认证选项。通过 ClientCommandContext 接口委托 runClient 执行。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "metrics": { "totalLines": 44, "nonEmptyLines": 40, "importCount": 4, "exportCount": 1, "functionCount": 0, "classCount": 0 }
+    },
+    {
+      "id": "packages/coding-agent/src/cli/experimental/commands/pi.ts",
+      "type": "file",
+      "label": "pi.ts",
+      "summary": "定义 pi 主命令（默认命令）。支持 --listen（多个 Unix socket 监听地址）、认证选项和旧版 CLI 参数传递。禁止使用 --connect 选项。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "metrics": { "totalLines": 47, "nonEmptyLines": 43, "importCount": 5, "exportCount": 1, "functionCount": 0, "classCount": 0 }
+    },
+    {
+      "id": "packages/coding-agent/src/cli/experimental/commands/server.ts",
+      "type": "file",
+      "label": "server.ts",
+      "summary": "定义 server 子命令。支持 --listen（多个 Unix socket 监听地址）和认证选项。通过 ServerCommandContext 接口委托 runServer 执行。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "metrics": { "totalLines": 44, "nonEmptyLines": 40, "importCount": 4, "exportCount": 1, "functionCount": 0, "classCount": 0 }
+    },
+    {
+      "id": "packages/coding-agent/src/cli/experimental/transport-address.ts",
+      "type": "file",
+      "label": "transport-address.ts",
+      "summary": "解析 Unix socket 传输地址。验证 URL 格式为 unix:/// 协议，确保路径为绝对路径，拒绝包含 authority、query、fragment 或 null 字节的地址。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "metrics": { "totalLines": 48, "nonEmptyLines": 45, "importCount": 0, "exportCount": 1, "functionCount": 1, "classCount": 0 }
+    },
+    {
+      "id": "packages/coding-agent/test/experimental-cli-command.test.ts",
+      "type": "file",
+      "label": "experimental-cli-command.test.ts",
+      "summary": "实验性 CLI 命令的综合测试套件。覆盖 pi/server/client 命令的参数解析、认证解析、传输地址解析、错误处理以及旧版 CLI 参数兼容性。",
+      "language": "typescript",
+      "fileCategory": "test",
+      "metrics": { "totalLines": 163, "nonEmptyLines": 152, "importCount": 1, "exportCount": 0, "functionCount": 0, "classCount": 0 }
+    },
+    {
+      "id": "packages/coding-agent/test/experimental-cli-resolution.test.ts",
+      "type": "file",
+      "label": "experimental-cli-resolution.test.ts",
+      "summary": "测试实验性 CLI 命令的组合和解析行为。验证 pi 命令与旧版解析器的集成、命令执行分发（通过 context mock）以及不支持选项的拒绝逻辑。",
+      "language": "typescript",
+      "fileCategory": "test",
+      "metrics": { "totalLines": 96, "nonEmptyLines": 85, "importCount": 1, "exportCount": 0, "functionCount": 0, "classCount": 0 }
+    },
+    {
+      "id": "packages/coding-agent/src/cli/experimental/auth.ts::parseAuthInput",
+      "type": "function",
+      "label": "parseAuthInput",
+      "summary": "解析认证输入选项，返回 AuthInput 或错误列表。确保 --auth-token 和 --auth-token-file 互斥，优先处理 token 类型。",
+      "file": "packages/coding-agent/src/cli/experimental/auth.ts",
+      "startLine": 10,
+      "endLine": 21,
+      "params": ["options"],
+      "metrics": { "lines": 12 }
+    },
+    {
+      "id": "packages/coding-agent/src/cli/experimental/transport-address.ts::parseTransportAddress",
+      "type": "function",
+      "label": "parseTransportAddress",
+      "summary": "解析并验证 Unix socket 传输地址字符串。检查 URL 协议为 unix:，拒绝 authority/query/fragment，验证路径为绝对路径且不含 null 字节。",
+      "file": "packages/coding-agent/src/cli/experimental/transport-address.ts",
+      "startLine": 10,
+      "endLine": 48,
+      "params": ["value", "option"],
+      "metrics": { "lines": 39 }
+    },
+    {
+      "id": "packages/coding-agent/src/cli/experimental/command.ts::Command",
+      "type": "class",
+      "label": "Command",
+      "summary": "泛型 CLI 命令构建器类。支持选项注册（option）、构建器（build）、动作绑定（action）、子命令嵌套（command），以及参数解析（parse）和命令执行（execute）流程。采用不可变的 Map 存储选项和子命令。",
+      "file": "packages/coding-agent/src/cli/experimental/command.ts",
+      "startLine": 63,
+      "endLine": 205,
+      "methods": ["constructor", "option", "build", "action", "command", "parse", "execute", "select", "parseOwn", "parseOptions"],
+      "metrics": { "lines": 143, "methodCount": 10 }
+    },
+    {
+      "id": "packages/coding-agent/src/cli/experimental/command.ts::Command::parseOptions",
+      "type": "function",
+      "label": "parseOptions",
+      "summary": "解析命令行参数数组，处理 --name=value 和 --name value 两种格式，支持 -- 分隔符将后续参数传递给旧版解析器。收集解析错误并验证选项值唯一性。",
+      "file": "packages/coding-agent/src/cli/experimental/command.ts",
+      "startLine": 156,
+      "endLine": 204,
+      "params": ["argv"],
+      "metrics": { "lines": 49 }
+    },
+    {
+      "id": "packages/coding-agent/src/cli/experimental/command.ts::Command::execute",
+      "type": "function",
+      "label": "execute",
+      "summary": "执行命令：先尝试匹配子命令并委托执行，否则解析自身参数并调用绑定的 commandAction。返回执行结果或错误。",
+      "file": "packages/coding-agent/src/cli/experimental/command.ts",
+      "startLine": 121,
+      "endLine": 132,
+      "params": ["argv", "context"],
+      "metrics": { "lines": 12 }
+    },
+    {
+      "id": "packages/coding-agent/src/cli/experimental/command.ts::Command::parseOwn",
+      "type": "function",
+      "label": "parseOwn",
+      "summary": "解析自身命令的参数：调用 parseOptions 获取选项值，构造 ParsedCommandInput 传递给 builder 函数，合并解析错误和构建错误。",
+      "file": "packages/coding-agent/src/cli/experimental/command.ts",
+      "startLine": 141,
+      "endLine": 154,
+      "params": ["argv"],
+      "metrics": { "lines": 14 }
+    }
+  ],
+  "edges": [
+    { "source": "packages/coding-agent/src/cli/experimental/cli.ts", "target": "packages/coding-agent/src/cli/experimental/commands/client.ts", "type": "imports", "label": "imports clientCommand" },
+    { "source": "packages/coding-agent/src/cli/experimental/cli.ts", "target": "packages/coding-agent/src/cli/experimental/commands/pi.ts", "type": "imports", "label": "imports piCommand" },
+    { "source": "packages/coding-agent/src/cli/experimental/cli.ts", "target": "packages/coding-agent/src/cli/experimental/commands/server.ts", "type": "imports", "label": "imports serverCommand" },
+    { "source": "packages/coding-agent/src/cli/experimental/command-options.ts", "target": "packages/coding-agent/src/cli/args.ts", "type": "imports", "label": "imports parseArgs" },
+    { "source": "packages/coding-agent/src/cli/experimental/command-options.ts", "target": "packages/coding-agent/src/cli/experimental/auth.ts", "type": "imports", "label": "imports parseAuthInput" },
+    { "source": "packages/coding-agent/src/cli/experimental/command-options.ts", "target": "packages/coding-agent/src/cli/experimental/command.ts", "type": "imports", "label": "imports valueOption, stringOption" },
+    { "source": "packages/coding-agent/src/cli/experimental/command-options.ts", "target": "packages/coding-agent/src/cli/experimental/transport-address.ts", "type": "imports", "label": "imports parseTransportAddress" },
+    { "source": "packages/coding-agent/src/cli/experimental/commands/client.ts", "target": "packages/coding-agent/src/cli/experimental/auth.ts", "type": "imports", "label": "imports AuthInput" },
+    { "source": "packages/coding-agent/src/cli/experimental/commands/client.ts", "target": "packages/coding-agent/src/cli/experimental/command-options.ts", "type": "imports", "label": "imports options and parsers" },
+    { "source": "packages/coding-agent/src/cli/experimental/commands/client.ts", "target": "packages/coding-agent/src/cli/experimental/command.ts", "type": "imports", "label": "imports Command" },
+    { "source": "packages/coding-agent/src/cli/experimental/commands/client.ts", "target": "packages/coding-agent/src/cli/experimental/transport-address.ts", "type": "imports", "label": "imports TransportAddress" },
+    { "source": "packages/coding-agent/src/cli/experimental/commands/pi.ts", "target": "packages/coding-agent/src/cli/args.ts", "type": "imports", "label": "imports Args" },
+    { "source": "packages/coding-agent/src/cli/experimental/commands/pi.ts", "target": "packages/coding-agent/src/cli/experimental/auth.ts", "type": "imports", "label": "imports AuthInput" },
+    { "source": "packages/coding-agent/src/cli/experimental/commands/pi.ts", "target": "packages/coding-agent/src/cli/experimental/command-options.ts", "type": "imports", "label": "imports options and parsers" },
+    { "source": "packages/coding-agent/src/cli/experimental/commands/pi.ts", "target": "packages/coding-agent/src/cli/experimental/command.ts", "type": "imports", "label": "imports Command" },
+    { "source": "packages/coding-agent/src/cli/experimental/commands/pi.ts", "target": "packages/coding-agent/src/cli/experimental/transport-address.ts", "type": "imports", "label": "imports TransportAddress" },
+    { "source": "packages/coding-agent/src/cli/experimental/commands/server.ts", "target": "packages/coding-agent/src/cli/experimental/auth.ts", "type": "imports", "label": "imports AuthInput" },
+    { "source": "packages/coding-agent/src/cli/experimental/commands/server.ts", "target": "packages/coding-agent/src/cli/experimental/command-options.ts", "type": "imports", "label": "imports options and parsers" },
+    { "source": "packages/coding-agent/src/cli/experimental/commands/server.ts", "target": "packages/coding-agent/src/cli/experimental/command.ts", "type": "imports", "label": "imports Command" },
+    { "source": "packages/coding-agent/src/cli/experimental/commands/server.ts", "target": "packages/coding-agent/src/cli/experimental/transport-address.ts", "type": "imports", "label": "imports TransportAddress" },
+    { "source": "packages/coding-agent/test/experimental-cli-command.test.ts", "target": "packages/coding-agent/src/cli/experimental/cli.ts", "type": "imports", "label": "imports experimentalCli" },
+    { "source": "packages/coding-agent/test/experimental-cli-resolution.test.ts", "target": "packages/coding-agent/src/cli/experimental/cli.ts", "type": "imports", "label": "imports experimentalCli" },
+    { "source": "packages/coding-agent/src/cli/experimental/command.ts::Command", "target": "packages/coding-agent/src/cli/experimental/command.ts::Command::parseOptions", "type": "contains", "label": "contains method" },
+    { "source": "packages/coding-agent/src/cli/experimental/command.ts::Command", "target": "packages/coding-agent/src/cli/experimental/command.ts::Command::execute", "type": "contains", "label": "contains method" },
+    { "source": "packages/coding-agent/src/cli/experimental/command.ts::Command", "target": "packages/coding-agent/src/cli/experimental/command.ts::Command::parseOwn", "type": "contains", "label": "contains method" },
+    { "source": "packages/coding-agent/src/cli/experimental/command.ts::Command::execute", "target": "packages/coding-agent/src/cli/experimental/command.ts::Command::parseOwn", "type": "calls", "label": "calls parseOwn" },
+    { "source": "packages/coding-agent/src/cli/experimental/command.ts::Command::parseOwn", "target": "packages/coding-agent/src/cli/experimental/command.ts::Command::parseOptions", "type": "calls", "label": "calls parseOptions" },
+    { "source": "packages/coding-agent/src/cli/experimental/command-options.ts", "target": "packages/coding-agent/src/cli/experimental/auth.ts::parseAuthInput", "type": "uses", "label": "parseAuth calls parseAuthInput" },
+    { "source": "packages/coding-agent/src/cli/experimental/command-options.ts", "target": "packages/coding-agent/src/cli/experimental/transport-address.ts::parseTransportAddress", "type": "uses", "label": "transportOption calls parseTransportAddress" },
+    { "source": "packages/coding-agent/src/cli/experimental/commands/pi.ts", "target": "packages/coding-agent/src/cli/experimental/command.ts::Command", "type": "uses", "label": "piCommand instantiates Command" },
+    { "source": "packages/coding-agent/src/cli/experimental/commands/server.ts", "target": "packages/coding-agent/src/cli/experimental/command.ts::Command", "type": "uses", "label": "serverCommand instantiates Command" },
+    { "source": "packages/coding-agent/src/cli/experimental/commands/client.ts", "target": "packages/coding-agent/src/cli/experimental/command.ts::Command", "type": "uses", "label": "clientCommand instantiates Command" },
+    { "source": "packages/coding-agent/src/cli/experimental/cli.ts", "target": "packages/coding-agent/src/cli/experimental/command.ts::Command", "type": "uses", "label": "composes sub-commands via Command.command()" },
+    { "source": "packages/coding-agent/test/experimental-cli-command.test.ts", "target": "packages/coding-agent/src/cli/experimental/cli.ts", "type": "tests", "label": "tests experimentalCli parse/execute" },
+    { "source": "packages/coding-agent/test/experimental-cli-resolution.test.ts", "target": "packages/coding-agent/src/cli/experimental/cli.ts", "type": "tests", "label": "tests command composition and execution" }
+  ]
+}

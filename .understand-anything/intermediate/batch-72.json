@@ -1,0 +1,307 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/coding-agent/examples/sdk/10-settings.ts",
+      "type": "file",
+      "name": "10-settings.ts",
+      "filePath": "packages/coding-agent/examples/sdk/10-settings.ts",
+      "summary": "SDK 示例：设置配置。演示如何使用 SettingsManager.create(cwd) 创建设置管理器，并通过 applyOverrides 应用 compaction 与 retry 等覆盖配置。",
+      "tags": ["example", "sdk", "settings", "configuration"],
+      "complexity": "simple",
+      "languageNotes": "该示例展示了 coding-agent SDK 的 settings 管理入口，SettingsManager 是配置的核心抽象，applyOverrides 采用不可变合并方式覆盖默认值。"
+    },
+    {
+      "id": "file:packages/coding-agent/examples/sdk/11-sessions.ts",
+      "type": "file",
+      "name": "11-sessions.ts",
+      "filePath": "packages/coding-agent/examples/sdk/11-sessions.ts",
+      "summary": "SDK 示例：会话管理。演示 createAgentSession 创建会话，使用 SessionManager.inMemory() 内存后端与 SessionManager.create() 持久化后端。",
+      "tags": ["example", "sdk", "session", "session-manager"],
+      "complexity": "simple",
+      "languageNotes": "SessionManager 支持 inMemory 与持久化两种后端，会话生命周期管理是 SDK 的核心能力之一。"
+    },
+    {
+      "id": "file:packages/coding-agent/examples/sdk/12-full-control.ts",
+      "type": "file",
+      "name": "12-full-control.ts",
+      "filePath": "packages/coding-agent/examples/sdk/12-full-control.ts",
+      "summary": "SDK 示例：完全控制。演示通过 pi-ai/compat 的 getModel 获取模型，结合 createAgentSession、createExtensionRuntime 与 ModelRuntime.create() 实现全流程自定义控制。",
+      "tags": ["example", "sdk", "full-control", "model-runtime", "extension-runtime"],
+      "complexity": "moderate",
+      "languageNotes": "该示例组合了模型获取、会话创建、extension runtime 与 ModelRuntime 四层抽象，体现了 SDK 的分层架构设计。"
+    },
+    {
+      "id": "file:packages/coding-agent/examples/sdk/13-session-runtime.ts",
+      "type": "file",
+      "name": "13-session-runtime.ts",
+      "filePath": "packages/coding-agent/examples/sdk/13-session-runtime.ts",
+      "summary": "SDK 示例：会话运行时。演示使用 AgentSessionRuntime 替换活动会话（newSession、resume、fork、import 流程），并在替换后重新绑定 session-local 订阅与 extension 绑定。",
+      "tags": ["example", "sdk", "session-runtime", "agent-session-runtime"],
+      "complexity": "moderate",
+      "languageNotes": "AgentSessionRuntime 是会话替换的核心抽象，关键模式是替换活动会话后必须 rebind session-local 订阅与 extension 绑定至 runtime.session，否则会产生悬空引用。"
+    },
+    {
+      "id": "function:packages/coding-agent/examples/sdk/13-session-runtime.ts:createRuntime",
+      "type": "function",
+      "name": "createRuntime",
+      "filePath": "packages/coding-agent/examples/sdk/13-session-runtime.ts",
+      "summary": "会话运行时工厂函数，创建 AgentSessionServices 并组装为包含 session、services、diagnostics 的运行时对象。",
+      "tags": ["runtime-factory", "session-services"],
+      "complexity": "moderate",
+      "lineRange": [20, 31]
+    },
+    {
+      "id": "function:packages/coding-agent/examples/sdk/13-session-runtime.ts:bindSession",
+      "type": "function",
+      "name": "bindSession",
+      "filePath": "packages/coding-agent/examples/sdk/13-session-runtime.ts",
+      "summary": "绑定当前 runtime.session：先取消旧订阅，再绑定 extensions 并订阅事件，返回已绑定的 session 实例。",
+      "tags": ["session-binding", "subscription", "extensions"],
+      "complexity": "moderate",
+      "lineRange": [40, 50]
+    },
+    {
+      "id": "document:packages/coding-agent/examples/sdk/README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "packages/coding-agent/examples/sdk/README.md",
+      "summary": "SDK 示例目录说明文档，介绍各编号示例的用途与运行方式，涵盖 settings、sessions、full-control、session-runtime 等主题。",
+      "tags": ["docs", "readme", "sdk", "examples"],
+      "complexity": "simple",
+      "languageNotes": "README 以渐进式编号组织示例，从基础配置到完全控制再到运行时替换，体现了 SDK 的学习曲线。"
+    },
+    {
+      "id": "config:packages/coding-agent/install-lock/package.json",
+      "type": "config",
+      "name": "package.json",
+      "filePath": "packages/coding-agent/install-lock/package.json",
+      "summary": "install-lock 子包的 package.json，用于锁定安装时依赖版本，确保可复现安装。",
+      "tags": ["config", "package-json", "install-lock"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/scripts/migrate-sessions.sh",
+      "type": "file",
+      "name": "migrate-sessions.sh",
+      "filePath": "packages/coding-agent/scripts/migrate-sessions.sh",
+      "summary": "会话迁移 Shell 脚本，用于将旧版会话格式转换为新版格式，处理会话文件的批量迁移与格式适配。",
+      "tags": ["script", "shell", "migration", "sessions"],
+      "complexity": "moderate",
+      "languageNotes": "迁移脚本属于运维工具层，通过 shell 实现跨版本会话格式兼容，是保证向后兼容性的关键基础设施。"
+    },
+    {
+      "id": "file:packages/coding-agent/src/bun/register-bedrock.ts",
+      "type": "file",
+      "name": "register-bedrock.ts",
+      "filePath": "packages/coding-agent/src/bun/register-bedrock.ts",
+      "summary": "Bun 运行时注册脚本，导入 bedrockProviderModule 并通过 setBedrockProviderModule 注册 Bedrock provider 模块。",
+      "tags": ["bun", "provider-registration", "bedrock"],
+      "complexity": "simple",
+      "languageNotes": "该文件是 Bun 运行时专用的 provider 注册入口，体现了多运行时（Node/Bun）适配的设计模式。"
+    },
+    {
+      "id": "file:packages/coding-agent/src/client/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "packages/coding-agent/src/client/index.ts",
+      "summary": "客户端模块的 barrel 文件，统一导出 RemoteSession 相关类型与实现，以及 transcript 状态管理工具（applyTranscriptProgress、applyTranscriptSnapshot、createTranscriptState、selectTranscript）。",
+      "tags": ["barrel", "client", "remote-session", "transcript"],
+      "complexity": "simple",
+      "languageNotes": "作为纯 re-export barrel，该文件不包含自身逻辑，仅聚合 client 模块的公共 API。"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/export-html/template.css",
+      "type": "file",
+      "name": "template.css",
+      "filePath": "packages/coding-agent/src/core/export-html/template.css",
+      "summary": "导出 HTML 功能的样式模板，包含代码高亮、消息布局、主题配色等样式定义，用于将对话渲染为独立 HTML 文件。",
+      "tags": ["css", "export-html", "template", "styling"],
+      "complexity": "complex",
+      "languageNotes": "该 CSS 是 export-html 渲染管线的表现层，与 template.html 和 template.js 共同构成 HTML 导出的模板三件套。"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/export-html/template.html",
+      "type": "file",
+      "name": "template.html",
+      "filePath": "packages/coding-agent/src/core/export-html/template.html",
+      "summary": "导出 HTML 功能的 HTML 骨架模板，定义页面结构占位符，由 template.js 填充对话内容。",
+      "tags": ["html", "export-html", "template"],
+      "complexity": "simple",
+      "languageNotes": "template.html 提供静态骨架，与 template.js 的动态渲染逻辑解耦，符合模板与逻辑分离的设计原则。"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/export-html/template.js",
+      "type": "file",
+      "name": "template.js",
+      "filePath": "packages/coding-agent/src/core/export-html/template.js",
+      "summary": "导出 HTML 功能的核心渲染脚本，负责将对话消息、工具调用、代码块等渲染为带高亮与交互的 HTML 内容，是 export-html 模块的核心逻辑文件。",
+      "tags": ["javascript", "export-html", "template", "rendering"],
+      "complexity": "complex",
+      "languageNotes": "template.js 是 export-html 渲染管线的核心，规模较大（1864 行），包含消息渲染、XSS 防护、代码高亮集成等逻辑，被 export-html 相关测试覆盖。"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "packages/coding-agent/src/core/index.ts",
+      "summary": "core 模块的 barrel 文件，统一导出所有运行模式共享的核心模块：AgentSession、AgentSessionRuntime、agent-session-services、bash-executor、compaction、event-bus、experimental、extensions 系统、source-info 等。",
+      "tags": ["barrel", "core", "agent-session", "extensions", "event-bus"],
+      "complexity": "simple",
+      "languageNotes": "作为 core 模块的公共 API 聚合点，该 barrel 导出了 coding-agent 的核心抽象层，是理解整体架构的关键入口。"
+    },
+    {
+      "id": "file:packages/coding-agent/src/modes/interactive/components/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/index.ts",
+      "summary": "interactive 模式 UI 组件的 barrel 文件，统一导出各类交互组件（消息、编辑器、选择器、加载器、对话框等）。",
+      "tags": ["barrel", "components", "interactive-mode", "ui"],
+      "complexity": "simple",
+      "languageNotes": "该 barrel 聚合了 interactive 模式的全部 UI 组件，是 TUI 渲染层的公共导出点。"
+    },
+    {
+      "id": "file:packages/coding-agent/src/utils/deprecation.ts",
+      "type": "file",
+      "name": "deprecation.ts",
+      "filePath": "packages/coding-agent/src/utils/deprecation.ts",
+      "summary": "弃用警告工具模块，提供 warnDeprecation 输出去重弃用提示，以及 clearDeprecationWarningsForTests 用于测试间重置警告状态。",
+      "tags": ["utils", "deprecation", "warnings"],
+      "complexity": "simple",
+      "languageNotes": "warnDeprecation 使用 Set 去重避免重复警告，clearDeprecationWarningsForTests 体现测试隔离设计；两个函数均低于显著性阈值，故仅生成文件节点。"
+    },
+    {
+      "id": "file:packages/coding-agent/src/utils/highlight-js-lib-index.d.ts",
+      "type": "file",
+      "name": "highlight-js-lib-index.d.ts",
+      "filePath": "packages/coding-agent/src/utils/highlight-js-lib-index.d.ts",
+      "summary": "highlight.js 库的类型声明文件，为代码高亮库提供 TypeScript 类型定义。",
+      "tags": ["typescript", "type-declaration", "highlight-js"],
+      "complexity": "simple",
+      "languageNotes": "该 .d.ts 文件为第三方 highlight.js 库补充类型声明，属于环境类型声明（ambient declaration）。"
+    },
+    {
+      "id": "file:packages/coding-agent/test/clipboard-image-bmp-conversion.test.ts",
+      "type": "file",
+      "name": "clipboard-image-bmp-conversion.test.ts",
+      "filePath": "packages/coding-agent/test/clipboard-image-bmp-conversion.test.ts",
+      "summary": "剪贴板 BMP 转 PNG 转换测试，针对 WSL2/WSLg 场景下剪贴板提供 image/bmp 而非 image/png 的问题，验证 BMP 到 PNG 的转换逻辑。",
+      "tags": ["test", "clipboard", "bmp", "image-conversion", "wsl"],
+      "complexity": "moderate",
+      "languageNotes": "该测试独立于 clipboard-image.test.ts，因其需要不同的 mock 策略；createTinyBmp1x1Red24bpp 手工构造最小 BMP 二进制以驱动转换逻辑。"
+    },
+    {
+      "id": "function:packages/coding-agent/test/clipboard-image-bmp-conversion.test.ts:createTinyBmp1x1Red24bpp",
+      "type": "function",
+      "name": "createTinyBmp1x1Red24bpp",
+      "filePath": "packages/coding-agent/test/clipboard-image-bmp-conversion.test.ts",
+      "summary": "构造最小化的 1x1 24bpp 红色 BMP 字节数组，包含完整的 BITMAPFILEHEADER 与 BITMAPINFOHEADER 及像素行填充，用于测试 BMP 转换。",
+      "tags": ["test-helper", "bmp", "binary-construction"],
+      "complexity": "moderate",
+      "lineRange": [10, 42]
+    },
+    {
+      "id": "file:packages/coding-agent/test/clipboard-image.test.ts",
+      "type": "file",
+      "name": "clipboard-image.test.ts",
+      "filePath": "packages/coding-agent/test/clipboard-image.test.ts",
+      "summary": "剪贴板图像读取测试，通过 mock spawnSync 与 clipboard-native 模块，验证 readClipboardImage 在不同场景下的行为（正常、错误、无图像）。",
+      "tags": ["test", "clipboard", "image", "vitest", "mocking"],
+      "complexity": "moderate",
+      "languageNotes": "该测试使用 vi.hoisted 与 vi.mock 隔离 child_process 与 clipboard-native 依赖，spawnOk/spawnError 作为 mock 辅助构造 spawn 返回值。"
+    },
+    {
+      "id": "function:packages/coding-agent/test/clipboard-image.test.ts:spawnOk",
+      "type": "function",
+      "name": "spawnOk",
+      "filePath": "packages/coding-agent/test/clipboard-image.test.ts",
+      "summary": "测试辅助函数，构造成功的 spawnSync 返回对象（status:0，带 stdout），用于模拟剪贴板命令正常执行。",
+      "tags": ["test-helper", "spawn-mock"],
+      "complexity": "simple",
+      "lineRange": [27, 36]
+    },
+    {
+      "id": "function:packages/coding-agent/test/clipboard-image.test.ts:spawnError",
+      "type": "function",
+      "name": "spawnError",
+      "filePath": "packages/coding-agent/test/clipboard-image.test.ts",
+      "summary": "测试辅助函数，构造失败的 spawnSync 返回对象（status:null，带 error），用于模拟剪贴板命令执行出错。",
+      "tags": ["test-helper", "spawn-mock", "error-simulation"],
+      "complexity": "simple",
+      "lineRange": [38, 48]
+    },
+    {
+      "id": "file:packages/coding-agent/test/export-html-skill-block.test.ts",
+      "type": "file",
+      "name": "export-html-skill-block.test.ts",
+      "filePath": "packages/coding-agent/test/export-html-skill-block.test.ts",
+      "summary": "导出 HTML 的 skill block 渲染测试，通过 readFileSync 读取 template.js 并验证 skill 块的渲染输出。",
+      "tags": ["test", "export-html", "skill-block", "vitest"],
+      "complexity": "simple",
+      "languageNotes": "该测试通过读取 template.js 源码字符串进行验证，而非直接导入模块，体现了对模板脚本的隔离测试策略。"
+    },
+    {
+      "id": "file:packages/coding-agent/test/export-html-xss.test.ts",
+      "type": "file",
+      "name": "export-html-xss.test.ts",
+      "filePath": "packages/coding-agent/test/export-html-xss.test.ts",
+      "summary": "导出 HTML 的 XSS 防护测试，验证 markdown 链接与图片的恶意 URL 方案（javascript:、data: 等）是否被正确过滤。",
+      "tags": ["test", "export-html", "xss", "security", "vitest"],
+      "complexity": "moderate",
+      "languageNotes": "XSS 测试覆盖 URL 方案白名单过滤，是 export-html 安全性的关键验证点，与 React security 规则中的 unsafe URL schemes 检查相呼应。"
+    },
+    {
+      "id": "config:packages/coding-agent/test/fixtures/assistant-message-with-thinking-code.json",
+      "type": "config",
+      "name": "assistant-message-with-thinking-code.json",
+      "filePath": "packages/coding-agent/test/fixtures/assistant-message-with-thinking-code.json",
+      "summary": "测试 fixture，包含带 thinking 与 code 块的 assistant 消息 JSON 数据，用于测试消息渲染逻辑。",
+      "tags": ["fixture", "test-data", "assistant-message", "json"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/test/fixtures/before-compaction.jsonl",
+      "type": "file",
+      "name": "before-compaction.jsonl",
+      "filePath": "packages/coding-agent/test/fixtures/before-compaction.jsonl",
+      "summary": "测试 fixture，包含压缩前的完整会话 JSONL 记录（1003 行），用于测试 compaction 逻辑的输入数据。",
+      "tags": ["fixture", "test-data", "compaction", "jsonl"],
+      "complexity": "moderate",
+      "languageNotes": "该 JSONL fixture 是 compaction 测试的黄金输入，记录了压缩前的完整对话上下文，体积较大。"
+    },
+    {
+      "id": "file:packages/coding-agent/test/fixtures/empty-agent/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep",
+      "filePath": "packages/coding-agent/test/fixtures/empty-agent/.gitkeep",
+      "summary": "占位文件，保留 empty-agent fixture 空目录于版本控制中，用于测试空 agent 目录场景。",
+      "tags": ["fixture", "gitkeep", "empty-directory"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/test/fixtures/empty-cwd/.gitkeep",
+      "type": "file",
+      "name": ".gitkeep",
+      "filePath": "packages/coding-agent/test/fixtures/empty-cwd/.gitkeep",
+      "summary": "占位文件，保留 empty-cwd fixture 空目录于版本控制中，用于测试空工作目录场景。",
+      "tags": ["fixture", "gitkeep", "empty-directory"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/test/fixtures/fake-external-editor.mjs",
+      "type": "file",
+      "name": "fake-external-editor.mjs",
+      "filePath": "packages/coding-agent/test/fixtures/fake-external-editor.mjs",
+      "summary": "测试 fixture 脚本，模拟外部编辑器行为，处理 capturePath/filePath 参数并通过 writeFileSync 回写内容，用于测试外部编辑器集成。",
+      "tags": ["fixture", "test-script", "external-editor", "mjs"],
+      "complexity": "simple",
+      "languageNotes": "该 fixture 以顶层脚本形式实现 mock 编辑器逻辑，无命名函数达到显著性阈值，故仅生成文件节点。"
+    }
+  ],
+  "edges": [
+    {"source": "file:packages/coding-agent/examples/sdk/13-session-runtime.ts", "target": "function:packages/coding-agent/examples/sdk/13-session-runtime.ts:createRuntime", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:packages/coding-agent/examples/sdk/13-session-runtime.ts", "target": "function:packages/coding-agent/examples/sdk/13-session-runtime.ts:bindSession", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:packages/coding-agent/test/clipboard-image-bmp-conversion.test.ts", "target": "function:packages/coding-agent/test/clipboard-image-bmp-conversion.test.ts:createTinyBmp1x1Red24bpp", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:packages/coding-agent/test/clipboard-image.test.ts", "target": "function:packages/coding-agent/test/clipboard-image.test.ts:spawnOk", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:packages/coding-agent/test/clipboard-image.test.ts", "target": "function:packages/coding-agent/test/clipboard-image.test.ts:spawnError", "type": "exports", "direction": "forward", "weight": 0.8}
+  ]
+}

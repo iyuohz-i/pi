@@ -1,0 +1,801 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 13,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "AGENTS.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 168,
+      "nonEmptyLines": 120,
+      "sections": [
+        {
+          "heading": "Development Rules",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Conversational Style",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Code Quality",
+          "level": 2,
+          "line": 15
+        },
+        {
+          "heading": "Commands",
+          "level": 2,
+          "line": 29
+        },
+        {
+          "heading": "Dependency and Install Security",
+          "level": 2,
+          "line": 42
+        },
+        {
+          "heading": "Git",
+          "level": 2,
+          "line": 51
+        },
+        {
+          "heading": "Issues and PRs",
+          "level": 2,
+          "line": 73
+        },
+        {
+          "heading": "Testing pi Interactive Mode with tmux",
+          "level": 2,
+          "line": 97
+        },
+        {
+          "heading": "Changelog",
+          "level": 2,
+          "line": 110
+        },
+        {
+          "heading": "Releasing",
+          "level": 2,
+          "line": 126
+        },
+        {
+          "heading": "User Override",
+          "level": 2,
+          "line": 166
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 11
+      }
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 102,
+      "nonEmptyLines": 56,
+      "sections": [
+        {
+          "heading": "Contributing to pi",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Philosophy",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "The One Rule",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Contribution Gate",
+          "level": 2,
+          "line": 21
+        },
+        {
+          "heading": "Quality Bar For Issues",
+          "level": 2,
+          "line": 36
+        },
+        {
+          "heading": "Blocking",
+          "level": 2,
+          "line": 50
+        },
+        {
+          "heading": "Before Submitting a PR",
+          "level": 2,
+          "line": 56
+        },
+        {
+          "heading": "Questions?",
+          "level": 2,
+          "line": 73
+        },
+        {
+          "heading": "FAQ",
+          "level": 2,
+          "line": 77
+        },
+        {
+          "heading": "Why are new issues and PRs auto-closed?",
+          "level": 3,
+          "line": 79
+        },
+        {
+          "heading": "Why are weekend issues lower priority?",
+          "level": 3,
+          "line": 83
+        },
+        {
+          "heading": "Why do some issues get no reply?",
+          "level": 3,
+          "line": 87
+        },
+        {
+          "heading": "Why not let AI triage everything?",
+          "level": 3,
+          "line": 91
+        },
+        {
+          "heading": "Is this hostile to contributors?",
+          "level": 3,
+          "line": 95
+        },
+        {
+          "heading": "Where can I learn about plans?",
+          "level": 2,
+          "line": 99
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 15
+      }
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 114,
+      "nonEmptyLines": 79,
+      "sections": [
+        {
+          "heading": "Pi Agent Harness",
+          "level": 1,
+          "line": 13
+        },
+        {
+          "heading": "All Packages",
+          "level": 2,
+          "line": 26
+        },
+        {
+          "heading": "Permissions & Containerization",
+          "level": 2,
+          "line": 38
+        },
+        {
+          "heading": "Contributing",
+          "level": 2,
+          "line": 48
+        },
+        {
+          "heading": "Development",
+          "level": 2,
+          "line": 52
+        },
+        {
+          "heading": "Building standalone binaries from release source",
+          "level": 2,
+          "line": 63
+        },
+        {
+          "heading": "Supply-chain hardening",
+          "level": 2,
+          "line": 76
+        },
+        {
+          "heading": "Share your OSS coding agent sessions",
+          "level": 2,
+          "line": 90
+        },
+        {
+          "heading": "License",
+          "level": 2,
+          "line": 106
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "SECURITY.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 87,
+      "nonEmptyLines": 69,
+      "sections": [
+        {
+          "heading": "Security Policy",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Reporting a Vulnerability",
+          "level": 2,
+          "line": 24
+        },
+        {
+          "heading": "Scope",
+          "level": 2,
+          "line": 42
+        },
+        {
+          "heading": "Out Of Scope",
+          "level": 2,
+          "line": 48
+        },
+        {
+          "heading": "Notes for Reporters",
+          "level": 2,
+          "line": 70
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "biome.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 41,
+      "nonEmptyLines": 41,
+      "sections": [
+        {
+          "heading": "$schema",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "linter",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "formatter",
+          "level": 1,
+          "line": 19
+        },
+        {
+          "heading": "files",
+          "level": 1,
+          "line": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "package.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 74,
+      "nonEmptyLines": 74,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "private",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "type",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "workspaces",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "scripts",
+          "level": 1,
+          "line": 14
+        },
+        {
+          "heading": "devDependencies",
+          "level": 1,
+          "line": 51
+        },
+        {
+          "heading": "engines",
+          "level": 1,
+          "line": 63
+        },
+        {
+          "heading": "version",
+          "level": 1,
+          "line": 66
+        },
+        {
+          "heading": "overrides",
+          "level": 1,
+          "line": 67
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "pi-test.bat",
+      "language": "batch",
+      "fileCategory": "script",
+      "totalLines": 14,
+      "nonEmptyLines": 11,
+      "metrics": {}
+    },
+    {
+      "path": "pi-test.ps1",
+      "language": "powershell",
+      "fileCategory": "script",
+      "totalLines": 71,
+      "nonEmptyLines": 64,
+      "metrics": {}
+    },
+    {
+      "path": "pi-test.sh",
+      "language": "shell",
+      "fileCategory": "script",
+      "totalLines": 57,
+      "nonEmptyLines": 53,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "test.sh",
+      "language": "shell",
+      "fileCategory": "script",
+      "totalLines": 79,
+      "nonEmptyLines": 70,
+      "functions": [
+        {
+          "name": "cleanup",
+          "startLine": 16,
+          "endLine": 36,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tsconfig.base.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 25,
+      "nonEmptyLines": 25,
+      "sections": [
+        {
+          "heading": "compilerOptions",
+          "level": 1,
+          "line": 2
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "tsconfig.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 40,
+      "nonEmptyLines": 40,
+      "sections": [
+        {
+          "heading": "extends",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "compilerOptions",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "include",
+          "level": 1,
+          "line": 38
+        },
+        {
+          "heading": "exclude",
+          "level": 1,
+          "line": 39
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "tui-plan.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 1001,
+      "nonEmptyLines": 751,
+      "sections": [
+        {
+          "heading": "Alternate-Screen Layout System Plan",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Purpose",
+          "level": 2,
+          "line": 3
+        },
+        {
+          "heading": "Core decisions",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "Why main-screen and alternate-screen layouts differ",
+          "level": 2,
+          "line": 26
+        },
+        {
+          "heading": "Goals",
+          "level": 2,
+          "line": 74
+        },
+        {
+          "heading": "Required for the first implementation",
+          "level": 3,
+          "line": 76
+        },
+        {
+          "heading": "Future uses enabled by the design",
+          "level": 3,
+          "line": 92
+        },
+        {
+          "heading": "Non-goals for the first implementation",
+          "level": 2,
+          "line": 101
+        },
+        {
+          "heading": "Public API",
+          "level": 2,
+          "line": 114
+        },
+        {
+          "heading": "Stack entries",
+          "level": 3,
+          "line": 116
+        },
+        {
+          "heading": "`VStack`",
+          "level": 3,
+          "line": 150
+        },
+        {
+          "heading": "`HStack`",
+          "level": 3,
+          "line": 172
+        },
+        {
+          "heading": "`ScrollView`",
+          "level": 3,
+          "line": 194
+        },
+        {
+          "heading": "Viewport capability",
+          "level": 3,
+          "line": 247
+        },
+        {
+          "heading": "Internal layout API",
+          "level": 2,
+          "line": 267
+        },
+        {
+          "heading": "Component tree versus layout tree",
+          "level": 3,
+          "line": 321
+        },
+        {
+          "heading": "Rendering and caching strategy",
+          "level": 2,
+          "line": 347
+        },
+        {
+          "heading": "Rebuild geometry, reuse leaf lines",
+          "level": 3,
+          "line": 349
+        },
+        {
+          "heading": "Avoid unnecessary flattening where practical",
+          "level": 3,
+          "line": 378
+        },
+        {
+          "heading": "No render means no layout",
+          "level": 3,
+          "line": 386
+        },
+        {
+          "heading": "Stack layout algorithm",
+          "level": 2,
+          "line": 390
+        },
+        {
+          "heading": "Visibility",
+          "level": 3,
+          "line": 394
+        },
+        {
+          "heading": "Intrinsic sizes",
+          "level": 3,
+          "line": 399
+        },
+        {
+          "heading": "Positive remaining space",
+          "level": 3,
+          "line": 408
+        },
+        {
+          "heading": "Overflow",
+          "level": 3,
+          "line": 414
+        },
+        {
+          "heading": "Initial interactive layout sizing",
+          "level": 3,
+          "line": 425
+        },
+        {
+          "heading": "Painting",
+          "level": 2,
+          "line": 457
+        },
+        {
+          "heading": "Frame surface",
+          "level": 3,
+          "line": 459
+        },
+        {
+          "heading": "Vertical stacks",
+          "level": 3,
+          "line": 480
+        },
+        {
+          "heading": "Horizontal stacks",
+          "level": 3,
+          "line": 484
+        },
+        {
+          "heading": "Scroll views",
+          "level": 3,
+          "line": 488
+        },
+        {
+          "heading": "Input and event routing",
+          "level": 2,
+          "line": 496
+        },
+        {
+          "heading": "Normalized mouse events",
+          "level": 3,
+          "line": 498
+        },
+        {
+          "heading": "Hit testing",
+          "level": 3,
+          "line": 515
+        },
+        {
+          "heading": "Wheel routing",
+          "level": 3,
+          "line": 524
+        },
+        {
+          "heading": "Trackpads",
+          "level": 3,
+          "line": 544
+        },
+        {
+          "heading": "Mouse-disabled fallback",
+          "level": 3,
+          "line": 548
+        },
+        {
+          "heading": "Focus and cursor behavior",
+          "level": 2,
+          "line": 568
+        },
+        {
+          "heading": "Selection and hyperlinks",
+          "level": 2,
+          "line": 577
+        },
+        {
+          "heading": "Images",
+          "level": 2,
+          "line": 599
+        },
+        {
+          "heading": "Overlays",
+          "level": 2,
+          "line": 618
+        },
+        {
+          "heading": "`TuiAltScreen` refactor",
+          "level": 2,
+          "line": 633
+        },
+        {
+          "heading": "Legacy implicit root",
+          "level": 3,
+          "line": 664
+        },
+        {
+          "heading": "Final document on stop",
+          "level": 3,
+          "line": 677
+        },
+        {
+          "heading": "Interactive-mode changes",
+          "level": 2,
+          "line": 689
+        },
+        {
+          "heading": "Add stable grouping containers",
+          "level": 3,
+          "line": 695
+        },
+        {
+          "heading": "Main-screen composition",
+          "level": 3,
+          "line": 727
+        },
+        {
+          "heading": "Alternate-screen composition",
+          "level": 3,
+          "line": 743
+        },
+        {
+          "heading": "Custom footer replacement",
+          "level": 3,
+          "line": 771
+        },
+        {
+          "heading": "Features that should require no logic changes",
+          "level": 3,
+          "line": 783
+        },
+        {
+          "heading": "Existing alt-specific status workaround",
+          "level": 3,
+          "line": 800
+        },
+        {
+          "heading": "Suggested files",
+          "level": 2,
+          "line": 812
+        },
+        {
+          "heading": "Test plan",
+          "level": 2,
+          "line": 839
+        },
+        {
+          "heading": "Stack allocation tests",
+          "level": 3,
+          "line": 841
+        },
+        {
+          "heading": "ScrollView tests",
+          "level": 3,
+          "line": 858
+        },
+        {
+          "heading": "Layout frame tests",
+          "level": 3,
+          "line": 875
+        },
+        {
+          "heading": "Alternate-screen renderer tests",
+          "level": 3,
+          "line": 887
+        },
+        {
+          "heading": "Main-screen regression tests",
+          "level": 3,
+          "line": 922
+        },
+        {
+          "heading": "Coding-agent integration tests",
+          "level": 3,
+          "line": 929
+        },
+        {
+          "heading": "Verification commands",
+          "level": 2,
+          "line": 943
+        },
+        {
+          "heading": "Recommended implementation order",
+          "level": 2,
+          "line": 968
+        },
+        {
+          "heading": "Acceptance criteria",
+          "level": 2,
+          "line": 985
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 62
+      }
+    }
+  ]
+}

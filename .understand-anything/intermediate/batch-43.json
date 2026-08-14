@@ -1,0 +1,163 @@
+{
+  "batchIndex": 43,
+  "nodes": [
+    {
+      "id": "packages/protocol/src/cbor/decoder.ts",
+      "type": "file",
+      "label": "decoder.ts",
+      "description": "CBOR 解码器模块，实现 RFC 8949 严格子集的反序列化。导出 decodeCbor 函数作为公共入口，内部通过 CborReader 类递归解析 CBOR 字节流。支持无符号/负整数、字节串、文本串、数组、映射、布尔值、null 和浮点数。强制限制嵌套深度、容器长度和字节长度以防止恶意负载攻击。",
+      "metadata": {
+        "language": "typescript",
+        "sizeLines": 168,
+        "fileCategory": "code",
+        "exports": ["decodeCbor"]
+      }
+    },
+    {
+      "id": "packages/protocol/src/cbor/encoder.ts",
+      "type": "file",
+      "label": "encoder.ts",
+      "description": "CBOR 编码器模块，实现严格定长 RFC 8949 子集的序列化。导出 encodeCbor 函数作为公共入口，内部通过 CborWriter 类构建字节输出。支持整数、浮点数、字符串、字节串、数组、映射、布尔值和 null 的编码。检测循环引用、验证 Unicode 标量值、拒绝稀疏数组和 undefined 值。",
+      "metadata": {
+        "language": "typescript",
+        "sizeLines": 216,
+        "fileCategory": "code",
+        "exports": ["encodeCbor"]
+      }
+    },
+    {
+      "id": "packages/protocol/src/cbor/options.ts",
+      "type": "file",
+      "label": "options.ts",
+      "description": "CBOR 编解码共享配置模块。定义 CborOptions/ResolvedCborOptions 接口、CborError 自定义错误类、TextEncoder/TextDecoder 单例，以及最大字节长度（16MB）、最大容器长度（100万）、最大嵌套深度（64）的安全默认值。提供 resolveOptions 函数解析并校验用户配置。",
+      "metadata": {
+        "language": "typescript",
+        "sizeLines": 52,
+        "fileCategory": "code",
+        "exports": ["UINT32_BASE", "MAX_UINT32", "DEFAULT_MAX_CBOR_BYTE_LENGTH", "DEFAULT_MAX_CBOR_CONTAINER_LENGTH", "DEFAULT_MAX_CBOR_DEPTH", "CborError", "textEncoder", "textDecoder", "resolveOptions"]
+      }
+    },
+    {
+      "id": "packages/protocol/src/cbor/decoder.ts::CborReader",
+      "type": "class",
+      "label": "CborReader",
+      "description": "CBOR 字节流递归读取器。维护字节缓冲区和偏移量，根据主要类型（major type 0-7）分发解析逻辑。通过 readItem 递归处理嵌套结构，readArgument 处理变长整数参数，readSimple 处理布尔/null/浮点值。强制嵌套深度和容器大小限制以防御畸形输入。",
+      "metadata": {
+        "file": "packages/protocol/src/cbor/decoder.ts",
+        "methods": ["constructor", "decode", "readItem", "readSimple", "readLength", "readArgument", "readByte", "readBytes"],
+        "startLine": 10,
+        "endLine": 158
+      }
+    },
+    {
+      "id": "packages/protocol/src/cbor/encoder.ts::CborWriter",
+      "type": "class",
+      "label": "CborWriter",
+      "description": "CBOR 字节流写入器，使用动态扩容的 Uint8Array 缓冲区。提供 writeByte/writeBytes/writeUint16/writeUint32/writeUint64/writeFloat64 等底层写入方法，以及 ensureCapacity 自动扩容机制。初始缓冲区 256 字节，按 2 倍增长且不超过 maxByteLength 上限。",
+      "metadata": {
+        "file": "packages/protocol/src/cbor/encoder.ts",
+        "methods": ["constructor", "writeByte", "writeBytes", "writeUint16", "writeUint32", "writeUint64", "writeFloat64", "finish", "ensureCapacity"],
+        "startLine": 12,
+        "endLine": 81
+      }
+    },
+    {
+      "id": "packages/protocol/src/cbor/options.ts::resolveOptions",
+      "type": "function",
+      "label": "resolveOptions",
+      "description": "解析并验证 CBOR 配置选项。将用户提供的 CborOptions 与默认值合并，通过 resolveLimit 校验每个限制值必须为安全整数且在有效范围内，返回完全填充的 ResolvedCborOptions 对象。",
+      "metadata": {
+        "file": "packages/protocol/src/cbor/options.ts",
+        "params": ["options"],
+        "startLine": 42,
+        "endLine": 52
+      }
+    },
+    {
+      "id": "packages/protocol/src/cbor/encoder.ts::writeArgument",
+      "type": "function",
+      "label": "writeArgument",
+      "description": "将 CBOR 参数值按主要类型前缀编码写入。根据值的大小选择最优编码方式：直接内联（<24）、1字节（≤0xFF）、2字节（≤0xFFFF）、4字节（≤MAX_UINT32）或 8字节（uint64），并将主要类型左移5位作为前缀。",
+      "metadata": {
+        "file": "packages/protocol/src/cbor/encoder.ts",
+        "params": ["writer", "majorType", "value"],
+        "startLine": 83,
+        "endLine": 100
+      }
+    },
+    {
+      "id": "packages/protocol/src/cbor/encoder.ts::encodeValue",
+      "type": "function",
+      "label": "encodeValue",
+      "description": "递归编码任意 JavaScript 值为 CBOR 格式。处理 null、布尔值、数字（整数/浮点数）、字符串、Uint8Array、数组和普通对象。通过 ancestors Set 检测循环引用，通过 depth 参数限制嵌套深度，验证映射键必须为字符串、数组不能有空洞或 undefined 值。",
+      "metadata": {
+        "file": "packages/protocol/src/cbor/encoder.ts",
+        "params": ["writer", "value", "options", "depth", "ancestors"],
+        "startLine": 119,
+        "endLine": 208
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "packages/protocol/src/cbor/decoder.ts",
+      "target": "packages/protocol/src/cbor/options.ts",
+      "type": "imports",
+      "label": "imports"
+    },
+    {
+      "source": "packages/protocol/src/cbor/encoder.ts",
+      "target": "packages/protocol/src/cbor/options.ts",
+      "type": "imports",
+      "label": "imports"
+    },
+    {
+      "source": "packages/protocol/src/cbor/decoder.ts",
+      "target": "packages/protocol/src/cbor/decoder.ts::CborReader",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/protocol/src/cbor/encoder.ts",
+      "target": "packages/protocol/src/cbor/encoder.ts::CborWriter",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/protocol/src/cbor/encoder.ts",
+      "target": "packages/protocol/src/cbor/encoder.ts::writeArgument",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/protocol/src/cbor/encoder.ts",
+      "target": "packages/protocol/src/cbor/encoder.ts::encodeValue",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/protocol/src/cbor/options.ts",
+      "target": "packages/protocol/src/cbor/options.ts::resolveOptions",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/protocol/src/cbor/encoder.ts::encodeValue",
+      "target": "packages/protocol/src/cbor/encoder.ts::writeArgument",
+      "type": "calls",
+      "label": "calls"
+    },
+    {
+      "source": "packages/protocol/src/cbor/encoder.ts::encodeValue",
+      "target": "packages/protocol/src/cbor/encoder.ts::CborWriter",
+      "type": "uses",
+      "label": "uses"
+    },
+    {
+      "source": "packages/protocol/src/cbor/encoder.ts::writeArgument",
+      "target": "packages/protocol/src/cbor/encoder.ts::CborWriter",
+      "type": "uses",
+      "label": "uses"
+    }
+  ]
+}

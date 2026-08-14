@@ -1,0 +1,1447 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 33,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "packages/ai/src/providers/ant-ling.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 14,
+      "functions": [
+        {
+          "name": "antLingProvider",
+          "startLine": 6,
+          "endLine": 15,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "antLingProvider",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "antLingProvider",
+          "callee": "createProvider",
+          "lineNumber": 7
+        },
+        {
+          "caller": "antLingProvider",
+          "callee": "envApiKeyAuth",
+          "lineNumber": 11
+        },
+        {
+          "caller": "antLingProvider",
+          "callee": "Object.values",
+          "lineNumber": 12
+        },
+        {
+          "caller": "antLingProvider",
+          "callee": "openAICompletionsApi",
+          "lineNumber": 13
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/anthropic.models.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 6,
+      "exports": [
+        {
+          "name": "ANTHROPIC_MODELS",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/anthropic.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 59,
+      "nonEmptyLines": 55,
+      "functions": [
+        {
+          "name": "anthropicApiKeyAuth",
+          "startLine": 9,
+          "endLine": 41,
+          "params": []
+        },
+        {
+          "name": "anthropicProvider",
+          "startLine": 43,
+          "endLine": 59,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "anthropicProvider",
+          "line": 43,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "anthropicApiKeyAuth",
+          "callee": "interaction.signal.throwIfAborted",
+          "lineNumber": 13
+        },
+        {
+          "caller": "anthropicApiKeyAuth",
+          "callee": "interaction.prompt",
+          "lineNumber": 14
+        },
+        {
+          "caller": "anthropicApiKeyAuth",
+          "callee": "interaction.signal.throwIfAborted",
+          "lineNumber": 15
+        },
+        {
+          "caller": "anthropicApiKeyAuth",
+          "callee": "signal.throwIfAborted",
+          "lineNumber": 19
+        },
+        {
+          "caller": "anthropicApiKeyAuth",
+          "callee": "ctx.env",
+          "lineNumber": 24
+        },
+        {
+          "caller": "anthropicApiKeyAuth",
+          "callee": "signal.throwIfAborted",
+          "lineNumber": 25
+        },
+        {
+          "caller": "anthropicApiKeyAuth",
+          "callee": "ctx.env",
+          "lineNumber": 34
+        },
+        {
+          "caller": "anthropicApiKeyAuth",
+          "callee": "signal.throwIfAborted",
+          "lineNumber": 35
+        },
+        {
+          "caller": "anthropicProvider",
+          "callee": "createProvider",
+          "lineNumber": 44
+        },
+        {
+          "caller": "anthropicProvider",
+          "callee": "anthropicApiKeyAuth",
+          "lineNumber": 49
+        },
+        {
+          "caller": "anthropicProvider",
+          "callee": "lazyOAuth",
+          "lineNumber": 50
+        },
+        {
+          "caller": "anthropicProvider",
+          "callee": "Object.values",
+          "lineNumber": 56
+        },
+        {
+          "caller": "anthropicProvider",
+          "callee": "anthropicMessagesApi",
+          "lineNumber": 57
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/azure-openai-responses.models.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 6,
+      "exports": [
+        {
+          "name": "AZURE_OPENAI_RESPONSES_MODELS",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/azure-openai-responses.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 14,
+      "nonEmptyLines": 13,
+      "functions": [
+        {
+          "name": "azureOpenAIResponsesProvider",
+          "startLine": 6,
+          "endLine": 14,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "azureOpenAIResponsesProvider",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "azureOpenAIResponsesProvider",
+          "callee": "createProvider",
+          "lineNumber": 7
+        },
+        {
+          "caller": "azureOpenAIResponsesProvider",
+          "callee": "envApiKeyAuth",
+          "lineNumber": 10
+        },
+        {
+          "caller": "azureOpenAIResponsesProvider",
+          "callee": "Object.values",
+          "lineNumber": 11
+        },
+        {
+          "caller": "azureOpenAIResponsesProvider",
+          "callee": "azureOpenAIResponsesApi",
+          "lineNumber": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/baseten.models.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 6,
+      "exports": [
+        {
+          "name": "BASETEN_MODELS",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/baseten.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 14,
+      "functions": [
+        {
+          "name": "basetenProvider",
+          "startLine": 6,
+          "endLine": 15,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "basetenProvider",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "basetenProvider",
+          "callee": "createProvider",
+          "lineNumber": 7
+        },
+        {
+          "caller": "basetenProvider",
+          "callee": "envApiKeyAuth",
+          "lineNumber": 11
+        },
+        {
+          "caller": "basetenProvider",
+          "callee": "Object.values",
+          "lineNumber": 12
+        },
+        {
+          "caller": "basetenProvider",
+          "callee": "openAICompletionsApi",
+          "lineNumber": 13
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/cerebras.models.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 6,
+      "exports": [
+        {
+          "name": "CEREBRAS_MODELS",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/cerebras.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 14,
+      "functions": [
+        {
+          "name": "cerebrasProvider",
+          "startLine": 6,
+          "endLine": 15,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "cerebrasProvider",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "cerebrasProvider",
+          "callee": "createProvider",
+          "lineNumber": 7
+        },
+        {
+          "caller": "cerebrasProvider",
+          "callee": "envApiKeyAuth",
+          "lineNumber": 11
+        },
+        {
+          "caller": "cerebrasProvider",
+          "callee": "Object.values",
+          "lineNumber": 12
+        },
+        {
+          "caller": "cerebrasProvider",
+          "callee": "openAICompletionsApi",
+          "lineNumber": 13
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/cloudflare-ai-gateway.models.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 6,
+      "exports": [
+        {
+          "name": "CLOUDFLARE_AI_GATEWAY_MODELS",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/cloudflare-ai-gateway.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 22,
+      "functions": [
+        {
+          "name": "cloudflareAIGatewayProvider",
+          "startLine": 9,
+          "endLine": 23,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "cloudflareAIGatewayProvider",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "cloudflareAIGatewayProvider",
+          "callee": "createProvider",
+          "lineNumber": 12
+        },
+        {
+          "caller": "cloudflareAIGatewayProvider",
+          "callee": "cloudflareAIGatewayAuth",
+          "lineNumber": 15
+        },
+        {
+          "caller": "cloudflareAIGatewayProvider",
+          "callee": "Object.values",
+          "lineNumber": 16
+        },
+        {
+          "caller": "cloudflareAIGatewayProvider",
+          "callee": "cloudflareStreams",
+          "lineNumber": 18
+        },
+        {
+          "caller": "cloudflareAIGatewayProvider",
+          "callee": "anthropicMessagesApi",
+          "lineNumber": 18
+        },
+        {
+          "caller": "cloudflareAIGatewayProvider",
+          "callee": "cloudflareStreams",
+          "lineNumber": 19
+        },
+        {
+          "caller": "cloudflareAIGatewayProvider",
+          "callee": "openAICompletionsApi",
+          "lineNumber": 19
+        },
+        {
+          "caller": "cloudflareAIGatewayProvider",
+          "callee": "cloudflareStreams",
+          "lineNumber": 20
+        },
+        {
+          "caller": "cloudflareAIGatewayProvider",
+          "callee": "openAIResponsesApi",
+          "lineNumber": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/cloudflare-auth.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 103,
+      "nonEmptyLines": 95,
+      "functions": [
+        {
+          "name": "resolveValue",
+          "startLine": 10,
+          "endLine": 29,
+          "params": [
+            "name",
+            "ctx",
+            "credential",
+            "signal"
+          ]
+        },
+        {
+          "name": "resolveCloudflareEnv",
+          "startLine": 31,
+          "endLine": 52,
+          "params": [
+            "kind",
+            "ctx",
+            "credential",
+            "signal"
+          ]
+        },
+        {
+          "name": "cloudflareWorkersAIAuth",
+          "startLine": 54,
+          "endLine": 72,
+          "params": []
+        },
+        {
+          "name": "cloudflareAIGatewayAuth",
+          "startLine": 74,
+          "endLine": 103,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "cloudflareWorkersAIAuth",
+          "line": 54,
+          "isDefault": false
+        },
+        {
+          "name": "cloudflareAIGatewayAuth",
+          "line": 74,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resolveValue",
+          "callee": "signal.throwIfAborted",
+          "lineNumber": 25
+        },
+        {
+          "caller": "resolveValue",
+          "callee": "ctx.env",
+          "lineNumber": 26
+        },
+        {
+          "caller": "resolveValue",
+          "callee": "signal.throwIfAborted",
+          "lineNumber": 27
+        },
+        {
+          "caller": "resolveCloudflareEnv",
+          "callee": "resolveValue",
+          "lineNumber": 37
+        },
+        {
+          "caller": "resolveCloudflareEnv",
+          "callee": "resolveValue",
+          "lineNumber": 38
+        },
+        {
+          "caller": "resolveCloudflareEnv",
+          "callee": "resolveValue",
+          "lineNumber": 40
+        },
+        {
+          "caller": "cloudflareWorkersAIAuth",
+          "callee": "interaction.prompt",
+          "lineNumber": 58
+        },
+        {
+          "caller": "cloudflareWorkersAIAuth",
+          "callee": "interaction.prompt",
+          "lineNumber": 59
+        },
+        {
+          "caller": "cloudflareWorkersAIAuth",
+          "callee": "resolveCloudflareEnv",
+          "lineNumber": 63
+        },
+        {
+          "caller": "cloudflareAIGatewayAuth",
+          "callee": "interaction.prompt",
+          "lineNumber": 78
+        },
+        {
+          "caller": "cloudflareAIGatewayAuth",
+          "callee": "interaction.prompt",
+          "lineNumber": 79
+        },
+        {
+          "caller": "cloudflareAIGatewayAuth",
+          "callee": "interaction.prompt",
+          "lineNumber": 80
+        },
+        {
+          "caller": "cloudflareAIGatewayAuth",
+          "callee": "resolveCloudflareEnv",
+          "lineNumber": 88
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 2,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/cloudflare-stream.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "resolveCloudflareModel",
+          "startLine": 6,
+          "endLine": 15,
+          "params": [
+            "model",
+            "env"
+          ]
+        },
+        {
+          "name": "cloudflareStreams",
+          "startLine": 21,
+          "endLine": 28,
+          "params": [
+            "streams"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "resolveCloudflareModel",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "cloudflareStreams",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resolveCloudflareModel",
+          "callee": "model.baseUrl\n\t\t.replaceAll(`{${CLOUDFLARE_ACCOUNT_ID}}`, env[CLOUDFLARE_ACCOUNT_ID] ?? `{${CLOUDFLARE_ACCOUNT_ID}}`)\n\t\t.replaceAll",
+          "lineNumber": 11
+        },
+        {
+          "caller": "resolveCloudflareModel",
+          "callee": "model.baseUrl\n\t\t.replaceAll",
+          "lineNumber": 11
+        },
+        {
+          "caller": "cloudflareStreams",
+          "callee": "streams.stream",
+          "lineNumber": 24
+        },
+        {
+          "caller": "cloudflareStreams",
+          "callee": "resolveCloudflareModel",
+          "lineNumber": 24
+        },
+        {
+          "caller": "cloudflareStreams",
+          "callee": "streams.streamSimple",
+          "lineNumber": 26
+        },
+        {
+          "caller": "cloudflareStreams",
+          "callee": "resolveCloudflareModel",
+          "lineNumber": 26
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/cloudflare-workers-ai.models.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 6,
+      "exports": [
+        {
+          "name": "CLOUDFLARE_WORKERS_AI_MODELS",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/cloudflare-workers-ai.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 14,
+      "functions": [
+        {
+          "name": "cloudflareWorkersAIProvider",
+          "startLine": 7,
+          "endLine": 15,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "cloudflareWorkersAIProvider",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "cloudflareWorkersAIProvider",
+          "callee": "createProvider",
+          "lineNumber": 8
+        },
+        {
+          "caller": "cloudflareWorkersAIProvider",
+          "callee": "cloudflareWorkersAIAuth",
+          "lineNumber": 11
+        },
+        {
+          "caller": "cloudflareWorkersAIProvider",
+          "callee": "Object.values",
+          "lineNumber": 12
+        },
+        {
+          "caller": "cloudflareWorkersAIProvider",
+          "callee": "cloudflareStreams",
+          "lineNumber": 13
+        },
+        {
+          "caller": "cloudflareWorkersAIProvider",
+          "callee": "openAICompletionsApi",
+          "lineNumber": 13
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/deepseek.models.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 6,
+      "exports": [
+        {
+          "name": "DEEPSEEK_MODELS",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/deepseek.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 14,
+      "functions": [
+        {
+          "name": "deepseekProvider",
+          "startLine": 6,
+          "endLine": 15,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "deepseekProvider",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "deepseekProvider",
+          "callee": "createProvider",
+          "lineNumber": 7
+        },
+        {
+          "caller": "deepseekProvider",
+          "callee": "envApiKeyAuth",
+          "lineNumber": 11
+        },
+        {
+          "caller": "deepseekProvider",
+          "callee": "Object.values",
+          "lineNumber": 12
+        },
+        {
+          "caller": "deepseekProvider",
+          "callee": "openAICompletionsApi",
+          "lineNumber": 13
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/fireworks.models.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 6,
+      "exports": [
+        {
+          "name": "FIREWORKS_MODELS",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/fireworks.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 19,
+      "nonEmptyLines": 18,
+      "functions": [
+        {
+          "name": "fireworksProvider",
+          "startLine": 7,
+          "endLine": 19,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "fireworksProvider",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fireworksProvider",
+          "callee": "createProvider",
+          "lineNumber": 8
+        },
+        {
+          "caller": "fireworksProvider",
+          "callee": "envApiKeyAuth",
+          "lineNumber": 12
+        },
+        {
+          "caller": "fireworksProvider",
+          "callee": "Object.values",
+          "lineNumber": 13
+        },
+        {
+          "caller": "fireworksProvider",
+          "callee": "anthropicMessagesApi",
+          "lineNumber": 15
+        },
+        {
+          "caller": "fireworksProvider",
+          "callee": "openAICompletionsApi",
+          "lineNumber": 16
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/github-copilot.models.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 6,
+      "exports": [
+        {
+          "name": "GITHUB_COPILOT_MODELS",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/github-copilot.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 33,
+      "functions": [
+        {
+          "name": "githubCopilotProvider",
+          "startLine": 9,
+          "endLine": 34,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "githubCopilotProvider",
+          "line": 9,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "githubCopilotProvider",
+          "callee": "createProvider",
+          "lineNumber": 10
+        },
+        {
+          "caller": "githubCopilotProvider",
+          "callee": "envApiKeyAuth",
+          "lineNumber": 15
+        },
+        {
+          "caller": "githubCopilotProvider",
+          "callee": "lazyOAuth",
+          "lineNumber": 16
+        },
+        {
+          "caller": "githubCopilotProvider",
+          "callee": "Object.values",
+          "lineNumber": 18
+        },
+        {
+          "caller": "githubCopilotProvider",
+          "callee": "Array.isArray",
+          "lineNumber": 22
+        },
+        {
+          "caller": "githubCopilotProvider",
+          "callee": "availableModelIds.every",
+          "lineNumber": 22
+        },
+        {
+          "caller": "githubCopilotProvider",
+          "callee": "models.filter",
+          "lineNumber": 26
+        },
+        {
+          "caller": "githubCopilotProvider",
+          "callee": "available.has",
+          "lineNumber": 26
+        },
+        {
+          "caller": "githubCopilotProvider",
+          "callee": "anthropicMessagesApi",
+          "lineNumber": 29
+        },
+        {
+          "caller": "githubCopilotProvider",
+          "callee": "openAICompletionsApi",
+          "lineNumber": 30
+        },
+        {
+          "caller": "githubCopilotProvider",
+          "callee": "openAIResponsesApi",
+          "lineNumber": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/google-vertex.models.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 6,
+      "exports": [
+        {
+          "name": "GOOGLE_VERTEX_MODELS",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/google-vertex.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 100,
+      "nonEmptyLines": 96,
+      "functions": [
+        {
+          "name": "googleVertexProvider",
+          "startLine": 92,
+          "endLine": 100,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "googleVertexProvider",
+          "line": 92,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "env",
+          "callee": "signal.throwIfAborted",
+          "lineNumber": 66
+        },
+        {
+          "caller": "env",
+          "callee": "ctx.env",
+          "lineNumber": 67
+        },
+        {
+          "caller": "env",
+          "callee": "signal.throwIfAborted",
+          "lineNumber": 68
+        },
+        {
+          "caller": "googleVertexProvider",
+          "callee": "createProvider",
+          "lineNumber": 93
+        },
+        {
+          "caller": "googleVertexProvider",
+          "callee": "Object.values",
+          "lineNumber": 97
+        },
+        {
+          "caller": "googleVertexProvider",
+          "callee": "googleVertexApi",
+          "lineNumber": 98
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/google.models.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 6,
+      "exports": [
+        {
+          "name": "GOOGLE_MODELS",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/google.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 14,
+      "functions": [
+        {
+          "name": "googleProvider",
+          "startLine": 6,
+          "endLine": 15,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "googleProvider",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "googleProvider",
+          "callee": "createProvider",
+          "lineNumber": 7
+        },
+        {
+          "caller": "googleProvider",
+          "callee": "envApiKeyAuth",
+          "lineNumber": 11
+        },
+        {
+          "caller": "googleProvider",
+          "callee": "Object.values",
+          "lineNumber": 12
+        },
+        {
+          "caller": "googleProvider",
+          "callee": "googleGenerativeAIApi",
+          "lineNumber": 13
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/groq.models.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 6,
+      "exports": [
+        {
+          "name": "GROQ_MODELS",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/groq.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 14,
+      "functions": [
+        {
+          "name": "groqProvider",
+          "startLine": 6,
+          "endLine": 15,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "groqProvider",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "groqProvider",
+          "callee": "createProvider",
+          "lineNumber": 7
+        },
+        {
+          "caller": "groqProvider",
+          "callee": "envApiKeyAuth",
+          "lineNumber": 11
+        },
+        {
+          "caller": "groqProvider",
+          "callee": "Object.values",
+          "lineNumber": 12
+        },
+        {
+          "caller": "groqProvider",
+          "callee": "openAICompletionsApi",
+          "lineNumber": 13
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/huggingface.models.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 6,
+      "exports": [
+        {
+          "name": "HUGGINGFACE_MODELS",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/huggingface.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 14,
+      "functions": [
+        {
+          "name": "huggingfaceProvider",
+          "startLine": 6,
+          "endLine": 15,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "huggingfaceProvider",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "huggingfaceProvider",
+          "callee": "createProvider",
+          "lineNumber": 7
+        },
+        {
+          "caller": "huggingfaceProvider",
+          "callee": "envApiKeyAuth",
+          "lineNumber": 11
+        },
+        {
+          "caller": "huggingfaceProvider",
+          "callee": "Object.values",
+          "lineNumber": 12
+        },
+        {
+          "caller": "huggingfaceProvider",
+          "callee": "openAICompletionsApi",
+          "lineNumber": 13
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/kimi-coding.models.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 6,
+      "exports": [
+        {
+          "name": "KIMI_CODING_MODELS",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/kimi-coding.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 23,
+      "functions": [
+        {
+          "name": "kimiCodingProvider",
+          "startLine": 7,
+          "endLine": 24,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "kimiCodingProvider",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "kimiCodingProvider",
+          "callee": "createProvider",
+          "lineNumber": 8
+        },
+        {
+          "caller": "kimiCodingProvider",
+          "callee": "envApiKeyAuth",
+          "lineNumber": 13
+        },
+        {
+          "caller": "kimiCodingProvider",
+          "callee": "lazyOAuth",
+          "lineNumber": 14
+        },
+        {
+          "caller": "kimiCodingProvider",
+          "callee": "Object.values",
+          "lineNumber": 21
+        },
+        {
+          "caller": "kimiCodingProvider",
+          "callee": "anthropicMessagesApi",
+          "lineNumber": 22
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/minimax-cn.models.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 6,
+      "exports": [
+        {
+          "name": "MINIMAX_CN_MODELS",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/minimax-cn.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 14,
+      "functions": [
+        {
+          "name": "minimaxCnProvider",
+          "startLine": 6,
+          "endLine": 15,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "minimaxCnProvider",
+          "line": 6,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "minimaxCnProvider",
+          "callee": "createProvider",
+          "lineNumber": 7
+        },
+        {
+          "caller": "minimaxCnProvider",
+          "callee": "envApiKeyAuth",
+          "lineNumber": 11
+        },
+        {
+          "caller": "minimaxCnProvider",
+          "callee": "Object.values",
+          "lineNumber": 12
+        },
+        {
+          "caller": "minimaxCnProvider",
+          "callee": "anthropicMessagesApi",
+          "lineNumber": 13
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

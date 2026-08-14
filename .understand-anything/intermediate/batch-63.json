@@ -1,0 +1,171 @@
+{
+  "batchIndex": 63,
+  "nodes": [
+    {
+      "id": "packages/session-backends/sqlite-node/CHANGELOG.md",
+      "type": "file",
+      "label": "CHANGELOG.md",
+      "fileKind": "docs",
+      "language": "markdown",
+      "loc": 42,
+      "summary": "sqlite-node 后端的变更日志，记录从 v0.81.0 到 v0.84.1 的版本变更。涵盖包重命名（从 pi-storage-sqlite-node 到 pi-session-backend-sqlite-node）、v4 lane-based SessionRepo 迁移、sql 模板标签、分支查询优化、有界日志读取和覆盖索引等关键变更。"
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/README.md",
+      "type": "file",
+      "label": "README.md",
+      "fileKind": "docs",
+      "language": "markdown",
+      "loc": 22,
+      "summary": "@earendil-works/pi-session-backend-sqlite-node 包的文档。描述 node:sqlite 适配器（SqliteDatabase 实现）、SQLite 会话仓储、迁移、物化视图和可选 FTS 搜索功能，并提供使用示例。"
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/package.json",
+      "type": "file",
+      "label": "package.json",
+      "fileKind": "config",
+      "language": "json",
+      "loc": 44,
+      "summary": "sqlite-node 会话后端的包配置。定义包名 @earendil-works/pi-session-backend-sqlite-node v0.84.1，ESM 模块，依赖 pi-ai 和 pi-agent-core，使用 vitest 测试和 tsgo 构建。"
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/tsconfig.build.json",
+      "type": "file",
+      "label": "tsconfig.build.json",
+      "fileKind": "config",
+      "language": "json",
+      "loc": 11,
+      "summary": "TypeScript 构建配置。继承 tsconfig.base.json，设置 rootDir=src、outDir=dist，启用声明文件输出。"
+    },
+    {
+      "id": "packages/session-backends/sqlite-node#SqliteSessionRepository",
+      "type": "concept",
+      "label": "SqliteSessionRepository",
+      "summary": "SQLite 会话仓储核心类。懒初始化共享数据库连接，支持会话创建、消息追加，并提供 dispose 接口实现资源清理。"
+    },
+    {
+      "id": "packages/session-backends/sqlite-node#SqliteDatabase",
+      "type": "concept",
+      "label": "SqliteDatabase",
+      "summary": "node:sqlite 适配器实现，提供 SqliteDatabase 接口。封装 Node.js 内置 SQLite 模块的底层操作。"
+    },
+    {
+      "id": "packages/session-backends/sqlite-node#SessionRepo",
+      "type": "concept",
+      "label": "SessionRepo (v4 lane-based)",
+      "summary": "v4 lane-based 会话仓储契约。定义了有界活跃分支查询、持久化操作记录、全局 facts、共享序列分配、会话统计和围栏写入租约等能力。"
+    },
+    {
+      "id": "packages/session-backends/sqlite-node#SqliteSessionSearch",
+      "type": "concept",
+      "label": "SqliteSessionSearch",
+      "summary": "独立于仓储的 FTS 搜索服务。FTS 表和触发器在首次非空搜索时懒创建，创建后从规范条目一次性重建，之后由 SQLite 触发器保持同步。"
+    },
+    {
+      "id": "packages/session-backends/sqlite-node#SQLiteMigrations",
+      "type": "concept",
+      "label": "SQLite 迁移系统",
+      "summary": "数据库 schema 版本管理。通过 prepare-dist 脚本在构建时复制迁移文件到 dist 目录，支持物化会话视图的创建。"
+    }
+  ],
+  "edges": [
+    {
+      "from": "packages/session-backends/sqlite-node#SqliteSessionRepository",
+      "to": "packages/session-backends/sqlite-node#SessionRepo",
+      "type": "IMPLEMENTS",
+      "label": "实现",
+      "summary": "SqliteSessionRepository 实现 v4 lane-based SessionRepo 契约"
+    },
+    {
+      "from": "packages/session-backends/sqlite-node#SqliteDatabase",
+      "to": "packages/session-backends/sqlite-node#SqliteSessionRepository",
+      "type": "PROVIDES_TO",
+      "label": "提供底层连接",
+      "summary": "SqliteDatabase (node:sqlite 适配器) 为 SqliteSessionRepository 提供数据库连接"
+    },
+    {
+      "from": "packages/session-backends/sqlite-node#SqliteSessionSearch",
+      "to": "packages/session-backends/sqlite-node#SqliteSessionRepository",
+      "type": "COMPLEMENTS",
+      "label": "补充搜索能力",
+      "summary": "SqliteSessionSearch 作为独立搜索服务，补充仓储的 FTS 搜索能力"
+    },
+    {
+      "from": "packages/session-backends/sqlite-node#SqliteSessionRepository",
+      "to": "packages/session-backends/sqlite-node#SQLiteMigrations",
+      "type": "DEPENDS_ON",
+      "label": "依赖迁移",
+      "summary": "仓储依赖迁移系统初始化和管理数据库 schema"
+    },
+    {
+      "from": "packages/session-backends/sqlite-node/README.md",
+      "to": "packages/session-backends/sqlite-node#SqliteSessionRepository",
+      "type": "DOCUMENTS",
+      "label": "文档描述",
+      "summary": "README 描述 SqliteSessionRepository 的使用方式和 API"
+    },
+    {
+      "from": "packages/session-backends/sqlite-node/README.md",
+      "to": "packages/session-backends/sqlite-node#SqliteSessionSearch",
+      "type": "DOCUMENTS",
+      "label": "文档描述",
+      "summary": "README 描述 FTS 搜索的懒初始化和触发器同步机制"
+    },
+    {
+      "from": "packages/session-backends/sqlite-node/CHANGELOG.md",
+      "to": "packages/session-backends/sqlite-node#SessionRepo",
+      "type": "DOCUMENTS",
+      "label": "版本变更记录",
+      "summary": "CHANGELOG 记录 v0.84.0 的 v4 lane-based SessionRepo 迁移（breaking change）"
+    },
+    {
+      "from": "packages/session-backends/sqlite-node/CHANGELOG.md",
+      "to": "packages/session-backends/sqlite-node#SQLiteMigrations",
+      "type": "DOCUMENTS",
+      "label": "版本变更记录",
+      "summary": "CHANGELOG 记录 v0.81.0 的迁移和物化会话视图引入"
+    },
+    {
+      "from": "packages/session-backends/sqlite-node/package.json",
+      "to": "packages/session-backends/sqlite-node/README.md",
+      "type": "REFERENCES",
+      "label": "包含文件",
+      "summary": "包发布包含 README.md 文件"
+    },
+    {
+      "from": "packages/session-backends/sqlite-node/package.json",
+      "to": "packages/session-backends/sqlite-node/CHANGELOG.md",
+      "type": "REFERENCES",
+      "label": "包含文件",
+      "summary": "包发布包含 CHANGELOG.md 文件"
+    },
+    {
+      "from": "packages/session-backends/sqlite-node/package.json",
+      "to": "packages/session-backends/sqlite-node/tsconfig.build.json",
+      "type": "REFERENCES",
+      "label": "构建引用",
+      "summary": "build 脚本使用 tsconfig.build.json 作为 tsgo 编译配置"
+    },
+    {
+      "from": "packages/session-backends/sqlite-node/package.json",
+      "to": "@earendil-works/pi-agent-core",
+      "type": "DEPENDS_ON",
+      "label": "npm 依赖",
+      "summary": "依赖 pi-agent-core ^0.84.1，提供会话仓储契约定义"
+    },
+    {
+      "from": "packages/session-backends/sqlite-node/package.json",
+      "to": "@earendil-works/pi-ai",
+      "type": "DEPENDS_ON",
+      "label": "npm 依赖",
+      "summary": "依赖 pi-ai ^0.84.1"
+    },
+    {
+      "from": "packages/session-backends/sqlite-node/tsconfig.build.json",
+      "to": "tsconfig.base.json",
+      "type": "EXTENDS",
+      "label": "继承",
+      "summary": "继承项目级 tsconfig.base.json 基础编译配置"
+    }
+  ]
+}

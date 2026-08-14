@@ -1,0 +1,3315 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 33,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "packages/coding-agent/test/rpc-prompt-response-semantics.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 288,
+      "nonEmptyLines": 256,
+      "functions": [
+        {
+          "name": "createAssistantMessage",
+          "startLine": 59,
+          "endLine": 77,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "parseOutputLines",
+          "startLine": 81,
+          "endLine": 86,
+          "params": [
+            "outputLines"
+          ]
+        },
+        {
+          "name": "getPromptResponses",
+          "startLine": 88,
+          "endLine": 92,
+          "params": [
+            "outputLines",
+            "id"
+          ]
+        },
+        {
+          "name": "sleep",
+          "startLine": 94,
+          "endLine": 96,
+          "params": [
+            "ms"
+          ]
+        },
+        {
+          "name": "createRuntimeHost",
+          "startLine": 98,
+          "endLine": 171,
+          "params": [
+            "options"
+          ]
+        },
+        {
+          "name": "startRpcMode",
+          "startLine": 173,
+          "endLine": 185,
+          "params": [
+            "options"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MockAssistantStream",
+          "startLine": 46,
+          "endLine": 57,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 48
+        },
+        {
+          "caller": "createAssistantMessage",
+          "callee": "Date.now",
+          "lineNumber": 75
+        },
+        {
+          "caller": "parseOutputLines",
+          "callee": "outputLines\n\t\t.flatMap((line) => line.split(\"\\n\"))\n\t\t.filter((line) => line.trim().length > 0)\n\t\t.map",
+          "lineNumber": 82
+        },
+        {
+          "caller": "parseOutputLines",
+          "callee": "outputLines\n\t\t.flatMap((line) => line.split(\"\\n\"))\n\t\t.filter",
+          "lineNumber": 82
+        },
+        {
+          "caller": "parseOutputLines",
+          "callee": "outputLines\n\t\t.flatMap",
+          "lineNumber": 82
+        },
+        {
+          "caller": "parseOutputLines",
+          "callee": "line.split",
+          "lineNumber": 83
+        },
+        {
+          "caller": "parseOutputLines",
+          "callee": "line.trim",
+          "lineNumber": 84
+        },
+        {
+          "caller": "parseOutputLines",
+          "callee": "JSON.parse",
+          "lineNumber": 85
+        },
+        {
+          "caller": "getPromptResponses",
+          "callee": "parseOutputLines(outputLines).filter",
+          "lineNumber": 89
+        },
+        {
+          "caller": "getPromptResponses",
+          "callee": "parseOutputLines",
+          "lineNumber": 89
+        },
+        {
+          "caller": "sleep",
+          "callee": "setTimeout",
+          "lineNumber": 95
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "join",
+          "lineNumber": 102
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "tmpdir",
+          "lineNumber": 102
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "Date.now",
+          "lineNumber": 102
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "Math.random().toString(36).slice",
+          "lineNumber": 102
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "Math.random().toString",
+          "lineNumber": 102
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "Math.random",
+          "lineNumber": 102
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "mkdirSync",
+          "lineNumber": 103
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "getModel",
+          "lineNumber": 105
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "queueMicrotask",
+          "lineNumber": 119
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "stream.push",
+          "lineNumber": 120
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "createAssistantMessage",
+          "lineNumber": 120
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "setTimeout",
+          "lineNumber": 121
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "stream.push",
+          "lineNumber": 122
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "createAssistantMessage",
+          "lineNumber": 122
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "SessionManager.inMemory",
+          "lineNumber": 129
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "SettingsManager.create",
+          "lineNumber": 130
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "AuthStorage.create",
+          "lineNumber": 131
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "join",
+          "lineNumber": 131
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "createInMemoryModelRegistry",
+          "lineNumber": 132
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "authStorage.modify",
+          "lineNumber": 134
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "getModelRuntime",
+          "lineNumber": 142
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "createTestResourceLoader",
+          "lineNumber": 143
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "vi.fn",
+          "lineNumber": 148
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "vi.fn",
+          "lineNumber": 149
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "vi.fn",
+          "lineNumber": 150
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "vi.fn",
+          "lineNumber": 151
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "vi.fn",
+          "lineNumber": 152
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "session.abort",
+          "lineNumber": 160
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "session.dispose",
+          "lineNumber": 165
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "existsSync",
+          "lineNumber": 166
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "rmSync",
+          "lineNumber": 167
+        },
+        {
+          "caller": "startRpcMode",
+          "callee": "createRuntimeHost",
+          "lineNumber": 180
+        },
+        {
+          "caller": "startRpcMode",
+          "callee": "runRpcMode",
+          "lineNumber": 181
+        },
+        {
+          "caller": "startRpcMode",
+          "callee": "vi.waitFor",
+          "lineNumber": 182
+        },
+        {
+          "caller": "startRpcMode",
+          "callee": "expect(rpcIo.lineHandler).toBeDefined",
+          "lineNumber": 182
+        },
+        {
+          "caller": "startRpcMode",
+          "callee": "expect",
+          "lineNumber": 182
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 0,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/runtime-credentials.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 86,
+      "nonEmptyLines": 73,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 499,
+      "nonEmptyLines": 453,
+      "functions": [
+        {
+          "name": "parseArgs",
+          "startLine": 70,
+          "endLine": 123,
+          "params": [
+            "argv"
+          ]
+        },
+        {
+          "name": "printHelp",
+          "startLine": 125,
+          "endLine": 142,
+          "params": []
+        },
+        {
+          "name": "estimateTokens",
+          "startLine": 144,
+          "endLine": 146,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "buildPrompt",
+          "startLine": 148,
+          "endLine": 171,
+          "params": [
+            "turn"
+          ]
+        },
+        {
+          "name": "createMinimalResourceLoader",
+          "startLine": 173,
+          "endLine": 187,
+          "params": [
+            "systemPrompt"
+          ]
+        },
+        {
+          "name": "average",
+          "startLine": 189,
+          "endLine": 191,
+          "params": [
+            "values"
+          ]
+        },
+        {
+          "name": "percentile",
+          "startLine": 193,
+          "endLine": 198,
+          "params": [
+            "values",
+            "percentileValue"
+          ]
+        },
+        {
+          "name": "getWebSocketStatsSnapshot",
+          "startLine": 200,
+          "endLine": 211,
+          "params": [
+            "sessionId"
+          ]
+        },
+        {
+          "name": "diffWebSocketStats",
+          "startLine": 213,
+          "endLine": 223,
+          "params": [
+            "after",
+            "before"
+          ]
+        },
+        {
+          "name": "formatWebSocketStats",
+          "startLine": 225,
+          "endLine": 235,
+          "params": [
+            "label",
+            "stats"
+          ]
+        },
+        {
+          "name": "getAssistantText",
+          "startLine": 237,
+          "endLine": 243,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "deterministicProbeTool",
+          "startLine": 250,
+          "endLine": 273,
+          "params": []
+        },
+        {
+          "name": "main",
+          "startLine": 275,
+          "endLine": 493,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parseArgs",
+          "callee": "resolve",
+          "lineNumber": 72
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "join",
+          "lineNumber": 72
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "tmpdir",
+          "lineNumber": 72
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "Date.now",
+          "lineNumber": 72
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "Number.parseInt",
+          "lineNumber": 82
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "resolve",
+          "lineNumber": 88
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "Number.parseInt",
+          "lineNumber": 102
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "printHelp",
+          "lineNumber": 106
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "process.exit",
+          "lineNumber": 107
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "Number.isInteger",
+          "lineNumber": 115
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "Number.isInteger",
+          "lineNumber": 118
+        },
+        {
+          "caller": "printHelp",
+          "callee": "console.log",
+          "lineNumber": 126
+        },
+        {
+          "caller": "estimateTokens",
+          "callee": "Math.ceil",
+          "lineNumber": 145
+        },
+        {
+          "caller": "buildPrompt",
+          "callee": "String(turn).padStart",
+          "lineNumber": 149
+        },
+        {
+          "caller": "buildPrompt",
+          "callee": "String",
+          "lineNumber": 149
+        },
+        {
+          "caller": "buildPrompt",
+          "callee": "lines.push",
+          "lineNumber": 151
+        },
+        {
+          "caller": "buildPrompt",
+          "callee": "lines.push",
+          "lineNumber": 152
+        },
+        {
+          "caller": "buildPrompt",
+          "callee": "lines.push",
+          "lineNumber": 153
+        },
+        {
+          "caller": "buildPrompt",
+          "callee": "lines.push",
+          "lineNumber": 154
+        },
+        {
+          "caller": "buildPrompt",
+          "callee": "lines.push",
+          "lineNumber": 155
+        },
+        {
+          "caller": "buildPrompt",
+          "callee": "lines.push",
+          "lineNumber": 156
+        },
+        {
+          "caller": "buildPrompt",
+          "callee": "lines.push",
+          "lineNumber": 157
+        },
+        {
+          "caller": "buildPrompt",
+          "callee": "lines.push",
+          "lineNumber": 158
+        },
+        {
+          "caller": "buildPrompt",
+          "callee": "lines.push",
+          "lineNumber": 159
+        },
+        {
+          "caller": "buildPrompt",
+          "callee": "lines.push",
+          "lineNumber": 160
+        },
+        {
+          "caller": "buildPrompt",
+          "callee": "lines.push",
+          "lineNumber": 161
+        },
+        {
+          "caller": "buildPrompt",
+          "callee": "lines.push",
+          "lineNumber": 163
+        },
+        {
+          "caller": "buildPrompt",
+          "callee": "String(i).padStart",
+          "lineNumber": 164
+        },
+        {
+          "caller": "buildPrompt",
+          "callee": "String",
+          "lineNumber": 164
+        },
+        {
+          "caller": "buildPrompt",
+          "callee": "lines.push",
+          "lineNumber": 167
+        },
+        {
+          "caller": "buildPrompt",
+          "callee": "lines.push",
+          "lineNumber": 168
+        },
+        {
+          "caller": "buildPrompt",
+          "callee": "lines.push",
+          "lineNumber": 169
+        },
+        {
+          "caller": "buildPrompt",
+          "callee": "lines.join",
+          "lineNumber": 170
+        },
+        {
+          "caller": "createMinimalResourceLoader",
+          "callee": "createExtensionRuntime",
+          "lineNumber": 175
+        },
+        {
+          "caller": "average",
+          "callee": "values.reduce",
+          "lineNumber": 190
+        },
+        {
+          "caller": "percentile",
+          "callee": "[...values].sort",
+          "lineNumber": 195
+        },
+        {
+          "caller": "percentile",
+          "callee": "Math.min",
+          "lineNumber": 196
+        },
+        {
+          "caller": "percentile",
+          "callee": "Math.max",
+          "lineNumber": 196
+        },
+        {
+          "caller": "percentile",
+          "callee": "Math.ceil",
+          "lineNumber": 196
+        },
+        {
+          "caller": "getWebSocketStatsSnapshot",
+          "callee": "getOpenAICodexWebSocketDebugStats",
+          "lineNumber": 201
+        },
+        {
+          "caller": "formatWebSocketStats",
+          "callee": "[\n\t\t`${label} websocket`,\n\t\t`requests ${stats.requests}`,\n\t\t`new/reused ${stats.connectionsCreated}/${stats.connectionsReused}`,\n\t\t`cached ${stats.cachedContextRequests}`,\n\t\t`store ${stats.storeTrueRequests}`,\n\t\t`full/delta ${stats.fullContextRequests}/${stats.deltaRequests}`,\n\t].join",
+          "lineNumber": 227
+        },
+        {
+          "caller": "getAssistantText",
+          "callee": "message.content\n\t\t.filter((block): block is Extract<AssistantMessage[\"content\"][number], { type: \"text\" }> => block.type === \"text\")\n\t\t.map((block) => block.text)\n\t\t.join(\"\\n\")\n\t\t.trim",
+          "lineNumber": 238
+        },
+        {
+          "caller": "getAssistantText",
+          "callee": "message.content\n\t\t.filter((block): block is Extract<AssistantMessage[\"content\"][number], { type: \"text\" }> => block.type === \"text\")\n\t\t.map((block) => block.text)\n\t\t.join",
+          "lineNumber": 238
+        },
+        {
+          "caller": "getAssistantText",
+          "callee": "message.content\n\t\t.filter((block): block is Extract<AssistantMessage[\"content\"][number], { type: \"text\" }> => block.type === \"text\")\n\t\t.map",
+          "lineNumber": 238
+        },
+        {
+          "caller": "getAssistantText",
+          "callee": "message.content\n\t\t.filter",
+          "lineNumber": 238
+        },
+        {
+          "caller": "main",
+          "callee": "parseArgs",
+          "lineNumber": 276
+        },
+        {
+          "caller": "main",
+          "callee": "process.argv.slice",
+          "lineNumber": 276
+        },
+        {
+          "caller": "main",
+          "callee": "mkdirSync",
+          "lineNumber": 277
+        },
+        {
+          "caller": "main",
+          "callee": "dirname",
+          "lineNumber": 277
+        },
+        {
+          "caller": "main",
+          "callee": "AuthStorage.create",
+          "lineNumber": 279
+        },
+        {
+          "caller": "main",
+          "callee": "createModelRegistry",
+          "lineNumber": 280
+        },
+        {
+          "caller": "main",
+          "callee": "getModel",
+          "lineNumber": 282
+        },
+        {
+          "caller": "streamSimpleOpenAICodexResponsesForRegistry",
+          "callee": "streamSimpleOpenAICodexResponses",
+          "lineNumber": 292
+        },
+        {
+          "caller": "main",
+          "callee": "modelRegistry.registerProvider",
+          "lineNumber": 293
+        },
+        {
+          "caller": "main",
+          "callee": "getModelRuntime",
+          "lineNumber": 301
+        },
+        {
+          "caller": "main",
+          "callee": "SettingsManager.inMemory",
+          "lineNumber": 302
+        },
+        {
+          "caller": "main",
+          "callee": "createMinimalResourceLoader",
+          "lineNumber": 308
+        },
+        {
+          "caller": "main",
+          "callee": "createAgentSession",
+          "lineNumber": 312
+        },
+        {
+          "caller": "main",
+          "callee": "process.cwd",
+          "lineNumber": 313
+        },
+        {
+          "caller": "main",
+          "callee": "dirname",
+          "lineNumber": 314
+        },
+        {
+          "caller": "main",
+          "callee": "deterministicProbeTool",
+          "lineNumber": 317
+        },
+        {
+          "caller": "main",
+          "callee": "SessionManager.open",
+          "lineNumber": 319
+        },
+        {
+          "caller": "main",
+          "callee": "session.setActiveToolsByName",
+          "lineNumber": 324
+        },
+        {
+          "caller": "main",
+          "callee": "session.subscribe",
+          "lineNumber": 325
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 331
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 332
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 333
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 334
+        },
+        {
+          "caller": "main",
+          "callee": "buildPrompt",
+          "lineNumber": 337
+        },
+        {
+          "caller": "main",
+          "callee": "estimateTokens",
+          "lineNumber": 338
+        },
+        {
+          "caller": "main",
+          "callee": "getWebSocketStatsSnapshot",
+          "lineNumber": 340
+        },
+        {
+          "caller": "main",
+          "callee": "Date.now",
+          "lineNumber": 341
+        },
+        {
+          "caller": "main",
+          "callee": "session.prompt",
+          "lineNumber": 342
+        },
+        {
+          "caller": "main",
+          "callee": "Date.now",
+          "lineNumber": 343
+        },
+        {
+          "caller": "main",
+          "callee": "turnElapsedMs.push",
+          "lineNumber": 344
+        },
+        {
+          "caller": "main",
+          "callee": "session.messages.slice",
+          "lineNumber": 346
+        },
+        {
+          "caller": "main",
+          "callee": "newMessages.filter",
+          "lineNumber": 347
+        },
+        {
+          "caller": "main",
+          "callee": "Boolean",
+          "lineNumber": 348
+        },
+        {
+          "caller": "main",
+          "callee": "newMessages.filter",
+          "lineNumber": 350
+        },
+        {
+          "caller": "main",
+          "callee": "Boolean",
+          "lineNumber": 351
+        },
+        {
+          "caller": "main",
+          "callee": "getAssistantText",
+          "lineNumber": 374
+        },
+        {
+          "caller": "main",
+          "callee": "records.push",
+          "lineNumber": 376
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 386
+        },
+        {
+          "caller": "main",
+          "callee": "[\n\t\t\t\t\t`turn ${String(turn).padStart(2, \"0\")}.${i + 1}`,\n\t\t\t\t\t`elapsed ${(elapsedMs / 1000).toFixed(1)}s`,\n\t\t\t\t\t`prompt~${promptTokens}`,\n\t\t\t\t\t`stop ${assistant.stopReason}`,\n\t\t\t\t\t`in ${assistant.usage.input}`,\n\t\t\t\t\t`out ${assistant.usage.output}`,\n\t\t\t\t\t`cache ${assistant.usage.cacheRead}/${assistant.usage.cacheWrite}`,\n\t\t\t\t\t`total ${assistant.usage.totalTokens}`,\n\t\t\t\t\t`cache>=prev ${monotonic}`,\n\t\t\t\t].join",
+          "lineNumber": 387
+        },
+        {
+          "caller": "main",
+          "callee": "String(turn).padStart",
+          "lineNumber": 388
+        },
+        {
+          "caller": "main",
+          "callee": "String",
+          "lineNumber": 388
+        },
+        {
+          "caller": "main",
+          "callee": "(elapsedMs / 1000).toFixed",
+          "lineNumber": 389
+        },
+        {
+          "caller": "main",
+          "callee": "getWebSocketStatsSnapshot",
+          "lineNumber": 408
+        },
+        {
+          "caller": "main",
+          "callee": "diffWebSocketStats",
+          "lineNumber": 409
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 410
+        },
+        {
+          "caller": "main",
+          "callee": "[\n\t\t\t\t`turn ${String(turn).padStart(2, \"0\")} agg`,\n\t\t\t\t`assistants ${assistantMessages.length}`,\n\t\t\t\t`toolResults ${toolResults.length}`,\n\t\t\t\t`in ${turnInput}`,\n\t\t\t\t`out ${turnOutput}`,\n\t\t\t\t`cache ${turnCacheRead}/${turnCacheWrite}`,\n\t\t\t\t`total ${turnTotal}`,\n\t\t\t].join",
+          "lineNumber": 411
+        },
+        {
+          "caller": "main",
+          "callee": "String(turn).padStart",
+          "lineNumber": 412
+        },
+        {
+          "caller": "main",
+          "callee": "String",
+          "lineNumber": 412
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 421
+        },
+        {
+          "caller": "main",
+          "callee": "formatWebSocketStats",
+          "lineNumber": 421
+        },
+        {
+          "caller": "main",
+          "callee": "String(turn).padStart",
+          "lineNumber": 421
+        },
+        {
+          "caller": "main",
+          "callee": "String",
+          "lineNumber": 421
+        },
+        {
+          "caller": "main",
+          "callee": "records\n\t\t.map((record, index) => {\n\t\t\tif (index === 0) return null;\n\t\t\tconst previous = records[index - 1];\n\t\t\tif (record.usage.cacheRead >= previous.usage.cacheRead) return null;\n\t\t\treturn {\n\t\t\t\tturn: record.turn,\n\t\t\t\tsubrequest: record.subrequest,\n\t\t\t\tprevious: previous.usage.cacheRead,\n\t\t\t\tcurrent: record.usage.cacheRead,\n\t\t\t};\n\t\t})\n\t\t.filter",
+          "lineNumber": 424
+        },
+        {
+          "caller": "main",
+          "callee": "records\n\t\t.map",
+          "lineNumber": 424
+        },
+        {
+          "caller": "main",
+          "callee": "turnElapsedMs.reduce",
+          "lineNumber": 438
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 439
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 440
+        },
+        {
+          "caller": "main",
+          "callee": "[\n\t\t\t\"timing\",\n\t\t\t`turns ${turnElapsedMs.length}`,\n\t\t\t`total ${(totalElapsedMs / 1000).toFixed(1)}s`,\n\t\t\t`avg ${(average(turnElapsedMs) / 1000).toFixed(2)}s`,\n\t\t\t`p50 ${(percentile(turnElapsedMs, 50) / 1000).toFixed(2)}s`,\n\t\t\t`p95 ${(percentile(turnElapsedMs, 95) / 1000).toFixed(2)}s`,\n\t\t\t`max ${(Math.max(...turnElapsedMs) / 1000).toFixed(2)}s`,\n\t\t].join",
+          "lineNumber": 441
+        },
+        {
+          "caller": "main",
+          "callee": "(totalElapsedMs / 1000).toFixed",
+          "lineNumber": 444
+        },
+        {
+          "caller": "main",
+          "callee": "(average(turnElapsedMs) / 1000).toFixed",
+          "lineNumber": 445
+        },
+        {
+          "caller": "main",
+          "callee": "average",
+          "lineNumber": 445
+        },
+        {
+          "caller": "main",
+          "callee": "(percentile(turnElapsedMs, 50) / 1000).toFixed",
+          "lineNumber": 446
+        },
+        {
+          "caller": "main",
+          "callee": "percentile",
+          "lineNumber": 446
+        },
+        {
+          "caller": "main",
+          "callee": "(percentile(turnElapsedMs, 95) / 1000).toFixed",
+          "lineNumber": 447
+        },
+        {
+          "caller": "main",
+          "callee": "percentile",
+          "lineNumber": 447
+        },
+        {
+          "caller": "main",
+          "callee": "(Math.max(...turnElapsedMs) / 1000).toFixed",
+          "lineNumber": 448
+        },
+        {
+          "caller": "main",
+          "callee": "Math.max",
+          "lineNumber": 448
+        },
+        {
+          "caller": "main",
+          "callee": "getOpenAICodexWebSocketDebugStats",
+          "lineNumber": 451
+        },
+        {
+          "caller": "main",
+          "callee": "Boolean",
+          "lineNumber": 454
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 455
+        },
+        {
+          "caller": "main",
+          "callee": "[\n\t\t\t\"transport summary\",\n\t\t\t`requested ${args.transport}`,\n\t\t\t`observed ${observedWebsocket ? \"websocket\" : \"sse/no-websocket\"}`,\n\t\t\t`sseFallbackSuspected ${requestedWebsocket && !observedWebsocket ? \"yes\" : \"no\"}`,\n\t\t\t`cachedContext ${websocketStats?.cachedContextRequests ? \"yes\" : \"no\"}`,\n\t\t\t`storeTrue ${websocketStats ? `${websocketStats.storeTrueRequests}/${websocketStats.requests}` : \"0/0\"}`,\n\t\t\t`delta ${websocketStats ? `${websocketStats.deltaRequests}/${websocketStats.requests}` : \"0/0\"}`,\n\t\t\t`full ${websocketStats ? `${websocketStats.fullContextRequests}/${websocketStats.requests}` : \"0/0\"}`,\n\t\t].join",
+          "lineNumber": 456
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 468
+        },
+        {
+          "caller": "main",
+          "callee": "[\n\t\t\t\t\"websocket details\",\n\t\t\t\t`requests ${websocketStats.requests}`,\n\t\t\t\t`connections created/reused ${websocketStats.connectionsCreated}/${websocketStats.connectionsReused}`,\n\t\t\t\t`cachedContext ${websocketStats.cachedContextRequests}`,\n\t\t\t\t`storeTrue ${websocketStats.storeTrueRequests}`,\n\t\t\t\t`full/delta ${websocketStats.fullContextRequests}/${websocketStats.deltaRequests}`,\n\t\t\t\t`lastInputItems ${websocketStats.lastInputItems}`,\n\t\t\t\t`lastDeltaItems ${websocketStats.lastDeltaInputItems ?? \"n/a\"}`,\n\t\t\t\t`lastPreviousResponseId ${websocketStats.lastPreviousResponseId ?? \"n/a\"}`,\n\t\t\t].join",
+          "lineNumber": 469
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 482
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 484
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 486
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 489
+        },
+        {
+          "caller": "main",
+          "callee": "unsubscribe",
+          "lineNumber": 491
+        },
+        {
+          "caller": "main",
+          "callee": "session.dispose",
+          "lineNumber": 492
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 0,
+        "functionCount": 13,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/sdk-openrouter-attribution.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 267,
+      "nonEmptyLines": 229,
+      "callGraph": [
+        {
+          "caller": "createDoneStream",
+          "callee": "createAssistantMessageEventStream",
+          "lineNumber": 63
+        },
+        {
+          "caller": "createDoneStream",
+          "callee": "Date.now",
+          "lineNumber": 79
+        },
+        {
+          "caller": "createDoneStream",
+          "callee": "stream.end",
+          "lineNumber": 81
+        },
+        {
+          "caller": "captureHeaders",
+          "callee": "SettingsManager.create",
+          "lineNumber": 94
+        },
+        {
+          "caller": "captureHeaders",
+          "callee": "settingsManager.setEnableInstallTelemetry",
+          "lineNumber": 96
+        },
+        {
+          "caller": "captureHeaders",
+          "callee": "AuthStorage.inMemory",
+          "lineNumber": 99
+        },
+        {
+          "caller": "captureHeaders",
+          "callee": "createInMemoryModelRegistry",
+          "lineNumber": 102
+        },
+        {
+          "caller": "captureHeaders",
+          "callee": "modelRegistry.registerProvider",
+          "lineNumber": 105
+        },
+        {
+          "caller": "captureHeaders",
+          "callee": "createDoneStream",
+          "lineNumber": 110
+        },
+        {
+          "caller": "captureHeaders",
+          "callee": "getModelRuntime",
+          "lineNumber": 114
+        },
+        {
+          "caller": "captureHeaders",
+          "callee": "SessionManager.inMemory",
+          "lineNumber": 115
+        },
+        {
+          "caller": "captureHeaders",
+          "callee": "sessionManager.newSession",
+          "lineNumber": 117
+        },
+        {
+          "caller": "captureHeaders",
+          "callee": "createAgentSession",
+          "lineNumber": 120
+        },
+        {
+          "caller": "captureHeaders",
+          "callee": "session.agent.streamFunction",
+          "lineNumber": 130
+        },
+        {
+          "caller": "captureHeaders",
+          "callee": "stream.result",
+          "lineNumber": 138
+        },
+        {
+          "caller": "captureHeaders",
+          "callee": "session.dispose",
+          "lineNumber": 141
+        },
+        {
+          "caller": "captureHeaders",
+          "callee": "modelRegistry.unregisterProvider",
+          "lineNumber": 142
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/sdk-session-manager.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 131,
+      "nonEmptyLines": 108,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/sdk-skills.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 113,
+      "nonEmptyLines": 98,
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/sdk-stream-options.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 197,
+      "nonEmptyLines": 172,
+      "callGraph": [
+        {
+          "caller": "createDoneStream",
+          "callee": "createAssistantMessageEventStream",
+          "lineNumber": 55
+        },
+        {
+          "caller": "createDoneStream",
+          "callee": "Date.now",
+          "lineNumber": 71
+        },
+        {
+          "caller": "createDoneStream",
+          "callee": "stream.end",
+          "lineNumber": 73
+        },
+        {
+          "caller": "captureStreamOptions",
+          "callee": "createModel",
+          "lineNumber": 83
+        },
+        {
+          "caller": "captureStreamOptions",
+          "callee": "SettingsManager.inMemory",
+          "lineNumber": 84
+        },
+        {
+          "caller": "captureStreamOptions",
+          "callee": "join",
+          "lineNumber": 86
+        },
+        {
+          "caller": "captureStreamOptions",
+          "callee": "mkdirSync",
+          "lineNumber": 87
+        },
+        {
+          "caller": "captureStreamOptions",
+          "callee": "writeFileSync",
+          "lineNumber": 88
+        },
+        {
+          "caller": "captureStreamOptions",
+          "callee": "join",
+          "lineNumber": 88
+        },
+        {
+          "caller": "captureStreamOptions",
+          "callee": "AuthStorage.create",
+          "lineNumber": 91
+        },
+        {
+          "caller": "captureStreamOptions",
+          "callee": "join",
+          "lineNumber": 91
+        },
+        {
+          "caller": "captureStreamOptions",
+          "callee": "authStorage.modify",
+          "lineNumber": 92
+        },
+        {
+          "caller": "captureStreamOptions",
+          "callee": "createModelRegistry",
+          "lineNumber": 93
+        },
+        {
+          "caller": "captureStreamOptions",
+          "callee": "join",
+          "lineNumber": 93
+        },
+        {
+          "caller": "captureStreamOptions",
+          "callee": "modelRegistry.registerProvider",
+          "lineNumber": 96
+        },
+        {
+          "caller": "captureStreamOptions",
+          "callee": "createDoneStream",
+          "lineNumber": 101
+        },
+        {
+          "caller": "captureStreamOptions",
+          "callee": "getModelRuntime",
+          "lineNumber": 105
+        },
+        {
+          "caller": "captureStreamOptions",
+          "callee": "SessionManager.inMemory",
+          "lineNumber": 106
+        },
+        {
+          "caller": "captureStreamOptions",
+          "callee": "createAgentSession",
+          "lineNumber": 107
+        },
+        {
+          "caller": "captureStreamOptions",
+          "callee": "session.agent.streamFunction",
+          "lineNumber": 117
+        },
+        {
+          "caller": "captureStreamOptions",
+          "callee": "stream.result",
+          "lineNumber": 118
+        },
+        {
+          "caller": "captureStreamOptions",
+          "callee": "session.dispose",
+          "lineNumber": 121
+        },
+        {
+          "caller": "captureStreamOptions",
+          "callee": "modelRegistry.unregisterProvider",
+          "lineNumber": 122
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/server/create-harness.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 352,
+      "nonEmptyLines": 328,
+      "functions": [
+        {
+          "name": "resolveSystemPrompt",
+          "startLine": 34,
+          "endLine": 38,
+          "params": [
+            "systemPrompt"
+          ]
+        },
+        {
+          "name": "createPromptTool",
+          "startLine": 40,
+          "endLine": 50,
+          "params": [
+            "name",
+            "promptSnippet",
+            "promptGuidelines"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "CapturingExecutionEnv",
+          "startLine": 22,
+          "endLine": 32,
+          "methods": [
+            "exec"
+          ],
+          "properties": [
+            "executionOverrides"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "exec",
+          "callee": "super.exec",
+          "lineNumber": 30
+        },
+        {
+          "caller": "resolveSystemPrompt",
+          "callee": "systemPrompt",
+          "lineNumber": 37
+        },
+        {
+          "caller": "createPromptTool",
+          "callee": "Type.Object",
+          "lineNumber": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/session-cwd.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 91,
+      "nonEmptyLines": 80,
+      "functions": [
+        {
+          "name": "createTempDir",
+          "startLine": 9,
+          "endLine": 13,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "writeSessionFile",
+          "startLine": 15,
+          "endLine": 26,
+          "params": [
+            "path",
+            "cwd"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createTempDir",
+          "callee": "join",
+          "lineNumber": 10
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "tmpdir",
+          "lineNumber": 10
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "Date.now",
+          "lineNumber": 10
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "Math.random().toString(36).slice",
+          "lineNumber": 10
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "Math.random().toString",
+          "lineNumber": 10
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "Math.random",
+          "lineNumber": 10
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "mkdirSync",
+          "lineNumber": 11
+        },
+        {
+          "caller": "writeSessionFile",
+          "callee": "writeFileSync",
+          "lineNumber": 16
+        },
+        {
+          "caller": "writeSessionFile",
+          "callee": "JSON.stringify",
+          "lineNumber": 18
+        },
+        {
+          "caller": "writeSessionFile",
+          "callee": "new Date().toISOString",
+          "lineNumber": 22
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/session-file-invalid.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 57,
+      "functions": [
+        {
+          "name": "createTempDir",
+          "startLine": 17,
+          "endLine": 21,
+          "params": []
+        },
+        {
+          "name": "runCli",
+          "startLine": 23,
+          "endLine": 44,
+          "params": [
+            "args",
+            "cwd",
+            "agentDir"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createTempDir",
+          "callee": "realpathSync",
+          "lineNumber": 18
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "mkdtempSync",
+          "lineNumber": 18
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "join",
+          "lineNumber": 18
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "tmpdir",
+          "lineNumber": 18
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "tempDirs.push",
+          "lineNumber": 19
+        },
+        {
+          "caller": "runCli",
+          "callee": "spawn",
+          "lineNumber": 26
+        },
+        {
+          "caller": "runCli",
+          "callee": "resolve",
+          "lineNumber": 32
+        },
+        {
+          "caller": "runCli",
+          "callee": "child.stderr.on",
+          "lineNumber": 36
+        },
+        {
+          "caller": "runCli",
+          "callee": "chunk.toString",
+          "lineNumber": 37
+        },
+        {
+          "caller": "runCli",
+          "callee": "child.on",
+          "lineNumber": 39
+        },
+        {
+          "caller": "runCli",
+          "callee": "child.on",
+          "lineNumber": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/session-id-readonly.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 190,
+      "nonEmptyLines": 166,
+      "functions": [
+        {
+          "name": "createTempDir",
+          "startLine": 26,
+          "endLine": 33,
+          "params": []
+        },
+        {
+          "name": "hasSessionWithId",
+          "startLine": 35,
+          "endLine": 51,
+          "params": [
+            "root",
+            "sessionId"
+          ]
+        },
+        {
+          "name": "runCli",
+          "startLine": 59,
+          "endLine": 94,
+          "params": [
+            "args",
+            "setup"
+          ]
+        },
+        {
+          "name": "writeSession",
+          "startLine": 96,
+          "endLine": 101,
+          "params": [
+            "sessionDir",
+            "cwd",
+            "id"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createTempDir",
+          "callee": "realpathSync",
+          "lineNumber": 30
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "mkdtempSync",
+          "lineNumber": 30
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "join",
+          "lineNumber": 30
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "tmpdir",
+          "lineNumber": 30
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "tempDirs.push",
+          "lineNumber": 31
+        },
+        {
+          "caller": "hasSessionWithId",
+          "callee": "existsSync",
+          "lineNumber": 36
+        },
+        {
+          "caller": "hasSessionWithId",
+          "callee": "readdirSync",
+          "lineNumber": 37
+        },
+        {
+          "caller": "hasSessionWithId",
+          "callee": "join",
+          "lineNumber": 38
+        },
+        {
+          "caller": "hasSessionWithId",
+          "callee": "entry.isDirectory",
+          "lineNumber": 39
+        },
+        {
+          "caller": "hasSessionWithId",
+          "callee": "hasSessionWithId",
+          "lineNumber": 39
+        },
+        {
+          "caller": "hasSessionWithId",
+          "callee": "entry.isFile",
+          "lineNumber": 40
+        },
+        {
+          "caller": "hasSessionWithId",
+          "callee": "entry.name.endsWith",
+          "lineNumber": 40
+        },
+        {
+          "caller": "hasSessionWithId",
+          "callee": "readFileSync(path, \"utf8\").split",
+          "lineNumber": 43
+        },
+        {
+          "caller": "hasSessionWithId",
+          "callee": "readFileSync",
+          "lineNumber": 43
+        },
+        {
+          "caller": "hasSessionWithId",
+          "callee": "JSON.parse",
+          "lineNumber": 44
+        },
+        {
+          "caller": "runCli",
+          "callee": "createTempDir",
+          "lineNumber": 63
+        },
+        {
+          "caller": "runCli",
+          "callee": "join",
+          "lineNumber": 65
+        },
+        {
+          "caller": "runCli",
+          "callee": "join",
+          "lineNumber": 66
+        },
+        {
+          "caller": "runCli",
+          "callee": "join",
+          "lineNumber": 67
+        },
+        {
+          "caller": "runCli",
+          "callee": "mkdirSync",
+          "lineNumber": 69
+        },
+        {
+          "caller": "runCli",
+          "callee": "mkdirSync",
+          "lineNumber": 70
+        },
+        {
+          "caller": "runCli",
+          "callee": "setup",
+          "lineNumber": 71
+        },
+        {
+          "caller": "runCli",
+          "callee": "args",
+          "lineNumber": 72
+        },
+        {
+          "caller": "runCli",
+          "callee": "spawn",
+          "lineNumber": 76
+        },
+        {
+          "caller": "runCli",
+          "callee": "resolve",
+          "lineNumber": 82
+        },
+        {
+          "caller": "runCli",
+          "callee": "child.stderr.on",
+          "lineNumber": 86
+        },
+        {
+          "caller": "runCli",
+          "callee": "chunk.toString",
+          "lineNumber": 87
+        },
+        {
+          "caller": "runCli",
+          "callee": "child.on",
+          "lineNumber": 89
+        },
+        {
+          "caller": "runCli",
+          "callee": "child.on",
+          "lineNumber": 90
+        },
+        {
+          "caller": "writeSession",
+          "callee": "writeFileSync",
+          "lineNumber": 97
+        },
+        {
+          "caller": "writeSession",
+          "callee": "join",
+          "lineNumber": 98
+        },
+        {
+          "caller": "writeSession",
+          "callee": "JSON.stringify",
+          "lineNumber": 99
+        },
+        {
+          "caller": "writeSession",
+          "callee": "new Date().toISOString",
+          "lineNumber": 99
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/session-manager/build-context.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 305,
+      "nonEmptyLines": 273,
+      "functions": [
+        {
+          "name": "msg",
+          "startLine": 14,
+          "endLine": 39,
+          "params": [
+            "id",
+            "parentId",
+            "role",
+            "text"
+          ]
+        },
+        {
+          "name": "compaction",
+          "startLine": 41,
+          "endLine": 51,
+          "params": [
+            "id",
+            "parentId",
+            "summary",
+            "firstKeptEntryId"
+          ]
+        },
+        {
+          "name": "branchSummary",
+          "startLine": 53,
+          "endLine": 55,
+          "params": [
+            "id",
+            "parentId",
+            "summary",
+            "fromId"
+          ]
+        },
+        {
+          "name": "custom",
+          "startLine": 57,
+          "endLine": 59,
+          "params": [
+            "id",
+            "parentId",
+            "customType",
+            "data"
+          ]
+        },
+        {
+          "name": "thinkingLevel",
+          "startLine": 61,
+          "endLine": 63,
+          "params": [
+            "id",
+            "parentId",
+            "level"
+          ]
+        },
+        {
+          "name": "modelChange",
+          "startLine": 65,
+          "endLine": 67,
+          "params": [
+            "id",
+            "parentId",
+            "provider",
+            "modelId"
+          ]
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/session-manager/custom-session-id.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 169,
+      "nonEmptyLines": 149,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/session-manager/file-operations.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 376,
+      "nonEmptyLines": 313,
+      "callGraph": [
+        {
+          "caller": "writeSessionHeader",
+          "callee": "writeFileSync",
+          "lineNumber": 23
+        },
+        {
+          "caller": "writeSessionHeader",
+          "callee": "JSON.stringify",
+          "lineNumber": 25
+        },
+        {
+          "caller": "createPersistedSession",
+          "callee": "SessionManager.create",
+          "lineNumber": 258
+        },
+        {
+          "caller": "createPersistedSession",
+          "callee": "session.appendMessage",
+          "lineNumber": 259
+        },
+        {
+          "caller": "createPersistedSession",
+          "callee": "Date.now",
+          "lineNumber": 259
+        },
+        {
+          "caller": "createPersistedSession",
+          "callee": "session.appendMessage",
+          "lineNumber": 260
+        },
+        {
+          "caller": "createPersistedSession",
+          "callee": "Date.now",
+          "lineNumber": 275
+        },
+        {
+          "caller": "createPersistedSession",
+          "callee": "session.getSessionFile",
+          "lineNumber": 277
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/session-manager/labels.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 211,
+      "nonEmptyLines": 170,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/session-manager/migration.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 78,
+      "nonEmptyLines": 69,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/session-manager/save-entry.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 47,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/session-manager/tree-traversal.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 597,
+      "nonEmptyLines": 474,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/session-selector-search.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 195,
+      "nonEmptyLines": 176,
+      "functions": [
+        {
+          "name": "makeSession",
+          "startLine": 5,
+          "endLine": 19,
+          "params": [
+            "overrides"
+          ]
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/settings-manager-bug.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 147,
+      "nonEmptyLines": 118,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/settings-manager.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 601,
+      "nonEmptyLines": 471,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/skills.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 432,
+      "nonEmptyLines": 368,
+      "functions": [
+        {
+          "name": "createTestSkill",
+          "startLine": 11,
+          "endLine": 27,
+          "params": [
+            "options"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createTestSkill",
+          "callee": "createSyntheticSourceInfo",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/startup-session-name.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 135,
+      "nonEmptyLines": 121,
+      "functions": [
+        {
+          "name": "createTempDir",
+          "startLine": 17,
+          "endLine": 21,
+          "params": []
+        },
+        {
+          "name": "createSessionFile",
+          "startLine": 35,
+          "endLine": 55,
+          "params": [
+            "projectDir",
+            "sessionFile"
+          ]
+        },
+        {
+          "name": "readSessionInfoNames",
+          "startLine": 57,
+          "endLine": 64,
+          "params": [
+            "sessionFile"
+          ]
+        },
+        {
+          "name": "runCli",
+          "startLine": 66,
+          "endLine": 95,
+          "params": [
+            "args",
+            "dirs"
+          ]
+        },
+        {
+          "name": "setup",
+          "startLine": 97,
+          "endLine": 108,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createTempDir",
+          "callee": "mkdtempSync",
+          "lineNumber": 18
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "join",
+          "lineNumber": 18
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "tmpdir",
+          "lineNumber": 18
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "tempDirs.push",
+          "lineNumber": 19
+        },
+        {
+          "caller": "createSessionFile",
+          "callee": "new Date().toISOString",
+          "lineNumber": 36
+        },
+        {
+          "caller": "createSessionFile",
+          "callee": "writeFileSync",
+          "lineNumber": 37
+        },
+        {
+          "caller": "createSessionFile",
+          "callee": "JSON.stringify",
+          "lineNumber": 39
+        },
+        {
+          "caller": "createSessionFile",
+          "callee": "JSON.stringify",
+          "lineNumber": 39
+        },
+        {
+          "caller": "createSessionFile",
+          "callee": "Date.now",
+          "lineNumber": 50
+        },
+        {
+          "caller": "readSessionInfoNames",
+          "callee": "readFileSync(sessionFile, \"utf8\")\n\t\t.trim()\n\t\t.split(\"\\n\")\n\t\t.map((line) => JSON.parse(line) as { type?: string; name?: string })\n\t\t.filter((entry) => entry.type === \"session_info\")\n\t\t.map",
+          "lineNumber": 58
+        },
+        {
+          "caller": "readSessionInfoNames",
+          "callee": "readFileSync(sessionFile, \"utf8\")\n\t\t.trim()\n\t\t.split(\"\\n\")\n\t\t.map((line) => JSON.parse(line) as { type?: string; name?: string })\n\t\t.filter",
+          "lineNumber": 58
+        },
+        {
+          "caller": "readSessionInfoNames",
+          "callee": "readFileSync(sessionFile, \"utf8\")\n\t\t.trim()\n\t\t.split(\"\\n\")\n\t\t.map",
+          "lineNumber": 58
+        },
+        {
+          "caller": "readSessionInfoNames",
+          "callee": "readFileSync(sessionFile, \"utf8\")\n\t\t.trim()\n\t\t.split",
+          "lineNumber": 58
+        },
+        {
+          "caller": "readSessionInfoNames",
+          "callee": "readFileSync(sessionFile, \"utf8\")\n\t\t.trim",
+          "lineNumber": 58
+        },
+        {
+          "caller": "readSessionInfoNames",
+          "callee": "readFileSync",
+          "lineNumber": 58
+        },
+        {
+          "caller": "readSessionInfoNames",
+          "callee": "JSON.parse",
+          "lineNumber": 61
+        },
+        {
+          "caller": "runCli",
+          "callee": "spawn",
+          "lineNumber": 68
+        },
+        {
+          "caller": "runCli",
+          "callee": "resolve",
+          "lineNumber": 74
+        },
+        {
+          "caller": "runCli",
+          "callee": "child.stderr.on",
+          "lineNumber": 78
+        },
+        {
+          "caller": "runCli",
+          "callee": "chunk.toString",
+          "lineNumber": 79
+        },
+        {
+          "caller": "runCli",
+          "callee": "setTimeout",
+          "lineNumber": 83
+        },
+        {
+          "caller": "runCli",
+          "callee": "child.kill",
+          "lineNumber": 84
+        },
+        {
+          "caller": "runCli",
+          "callee": "child.on",
+          "lineNumber": 86
+        },
+        {
+          "caller": "runCli",
+          "callee": "clearTimeout",
+          "lineNumber": 87
+        },
+        {
+          "caller": "runCli",
+          "callee": "reject",
+          "lineNumber": 88
+        },
+        {
+          "caller": "runCli",
+          "callee": "child.on",
+          "lineNumber": 90
+        },
+        {
+          "caller": "runCli",
+          "callee": "clearTimeout",
+          "lineNumber": 91
+        },
+        {
+          "caller": "runCli",
+          "callee": "resolvePromise",
+          "lineNumber": 92
+        },
+        {
+          "caller": "setup",
+          "callee": "createTempDir",
+          "lineNumber": 98
+        },
+        {
+          "caller": "setup",
+          "callee": "join",
+          "lineNumber": 100
+        },
+        {
+          "caller": "setup",
+          "callee": "join",
+          "lineNumber": 101
+        },
+        {
+          "caller": "setup",
+          "callee": "join",
+          "lineNumber": 102
+        },
+        {
+          "caller": "setup",
+          "callee": "mkdirSync",
+          "lineNumber": 104
+        },
+        {
+          "caller": "setup",
+          "callee": "mkdirSync",
+          "lineNumber": 105
+        },
+        {
+          "caller": "setup",
+          "callee": "createSessionFile",
+          "lineNumber": 106
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/stdout-cleanliness.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 133,
+      "nonEmptyLines": 113,
+      "functions": [
+        {
+          "name": "createTempDir",
+          "startLine": 23,
+          "endLine": 27,
+          "params": []
+        },
+        {
+          "name": "runCli",
+          "startLine": 29,
+          "endLine": 85,
+          "params": [
+            "args"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createTempDir",
+          "callee": "mkdtempSync",
+          "lineNumber": 24
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "join",
+          "lineNumber": 24
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "tmpdir",
+          "lineNumber": 24
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "tempDirs.push",
+          "lineNumber": 25
+        },
+        {
+          "caller": "runCli",
+          "callee": "createTempDir",
+          "lineNumber": 30
+        },
+        {
+          "caller": "runCli",
+          "callee": "join",
+          "lineNumber": 31
+        },
+        {
+          "caller": "runCli",
+          "callee": "join",
+          "lineNumber": 32
+        },
+        {
+          "caller": "runCli",
+          "callee": "join",
+          "lineNumber": 33
+        },
+        {
+          "caller": "runCli",
+          "callee": "mkdirSync",
+          "lineNumber": 34
+        },
+        {
+          "caller": "runCli",
+          "callee": "mkdirSync",
+          "lineNumber": 35
+        },
+        {
+          "caller": "runCli",
+          "callee": "join",
+          "lineNumber": 37
+        },
+        {
+          "caller": "runCli",
+          "callee": "writeFileSync",
+          "lineNumber": 38
+        },
+        {
+          "caller": "runCli",
+          "callee": "[\n\t\t\t'console.log(\"changed 1 package in 471ms\");',\n\t\t\t'console.log(\"found 0 vulnerabilities\");',\n\t\t\t\"process.exit(0);\",\n\t\t].join",
+          "lineNumber": 40
+        },
+        {
+          "caller": "runCli",
+          "callee": "writeFileSync",
+          "lineNumber": 48
+        },
+        {
+          "caller": "runCli",
+          "callee": "join",
+          "lineNumber": 49
+        },
+        {
+          "caller": "runCli",
+          "callee": "JSON.stringify",
+          "lineNumber": 50
+        },
+        {
+          "caller": "runCli",
+          "callee": "spawn",
+          "lineNumber": 62
+        },
+        {
+          "caller": "runCli",
+          "callee": "resolve",
+          "lineNumber": 67
+        },
+        {
+          "caller": "runCli",
+          "callee": "child.stdout.on",
+          "lineNumber": 74
+        },
+        {
+          "caller": "runCli",
+          "callee": "chunk.toString",
+          "lineNumber": 75
+        },
+        {
+          "caller": "runCli",
+          "callee": "child.stderr.on",
+          "lineNumber": 77
+        },
+        {
+          "caller": "runCli",
+          "callee": "chunk.toString",
+          "lineNumber": 78
+        },
+        {
+          "caller": "runCli",
+          "callee": "child.on",
+          "lineNumber": 80
+        },
+        {
+          "caller": "runCli",
+          "callee": "child.on",
+          "lineNumber": 81
+        },
+        {
+          "caller": "runCli",
+          "callee": "resolvePromise",
+          "lineNumber": 82
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/agent-session-bash-persistence.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 337,
+      "nonEmptyLines": 290,
+      "functions": [
+        {
+          "name": "getEntryTypes",
+          "startLine": 9,
+          "endLine": 11,
+          "params": [
+            "harness"
+          ]
+        },
+        {
+          "name": "createControlledBashOperations",
+          "startLine": 18,
+          "endLine": 29,
+          "params": [
+            "invocations"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getEntryTypes",
+          "callee": "harness.sessionManager.getEntries().map",
+          "lineNumber": 10
+        },
+        {
+          "caller": "getEntryTypes",
+          "callee": "harness.sessionManager.getEntries",
+          "lineNumber": 10
+        },
+        {
+          "caller": "createControlledBashOperations",
+          "callee": "invocations.push",
+          "lineNumber": 22
+        },
+        {
+          "caller": "createControlledBashOperations",
+          "callee": "resolve",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/agent-session-prompt.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 506,
+      "nonEmptyLines": 445,
+      "callGraph": [
+        {
+          "caller": "makeTool",
+          "callee": "Type.Object",
+          "lineNumber": 86
+        },
+        {
+          "caller": "makeTool",
+          "callee": "Type.String",
+          "lineNumber": 86
+        },
+        {
+          "caller": "makeTool",
+          "callee": "String",
+          "lineNumber": 89
+        },
+        {
+          "caller": "makeTool",
+          "callee": "setTimeout",
+          "lineNumber": 90
+        },
+        {
+          "caller": "makeTool",
+          "callee": "toolRuns.push",
+          "lineNumber": 91
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/agent-session-runtime.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 660,
+      "nonEmptyLines": 607,
+      "callGraph": [
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "join",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "tmpdir",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "Date.now",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "Math.random().toString(36).slice",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "Math.random().toString",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "Math.random",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "mkdirSync",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "registerFauxProvider",
+          "lineNumber": 48
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "faux.setResponses",
+          "lineNumber": 54
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "fauxAssistantMessage",
+          "lineNumber": 54
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "fauxAssistantMessage",
+          "lineNumber": 54
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "fauxAssistantMessage",
+          "lineNumber": 54
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "AuthStorage.inMemory",
+          "lineNumber": 56
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "authStorage.modify",
+          "lineNumber": 57
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "faux.getModel",
+          "lineNumber": 57
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "faux.getModel",
+          "lineNumber": 62
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "pi.registerProvider",
+          "lineNumber": 67
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "faux.getModel",
+          "lineNumber": 67
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "faux.getModel",
+          "lineNumber": 68
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "faux.models.map",
+          "lineNumber": 71
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "extensionFactory",
+          "lineNumber": 82
+        },
+        {
+          "caller": "createRuntime",
+          "callee": "createAgentSessionServices",
+          "lineNumber": 91
+        },
+        {
+          "caller": "createRuntime",
+          "callee": "createAgentSessionFromServices",
+          "lineNumber": 96
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "createAgentSessionRuntime",
+          "lineNumber": 107
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "SessionManager.create",
+          "lineNumber": 110
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "runtime.session.bindExtensions",
+          "lineNumber": 112
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "cleanups.push",
+          "lineNumber": 114
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "runtime.dispose",
+          "lineNumber": 115
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "faux.unregister",
+          "lineNumber": 116
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "existsSync",
+          "lineNumber": 117
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "rmSync",
+          "lineNumber": 118
+        },
+        {
+          "caller": "createRuntime",
+          "callee": "createAgentSessionServices",
+          "lineNumber": 442
+        },
+        {
+          "caller": "createRuntime",
+          "callee": "createAgentSessionFromServices",
+          "lineNumber": 447
+        },
+        {
+          "caller": "createOtherRuntime",
+          "callee": "createAgentSessionServices",
+          "lineNumber": 555
+        },
+        {
+          "caller": "createOtherRuntime",
+          "callee": "createAgentSessionFromServices",
+          "lineNumber": 560
+        },
+        {
+          "caller": "createOtherRuntime",
+          "callee": "createAgentSessionServices",
+          "lineNumber": 628
+        },
+        {
+          "caller": "createOtherRuntime",
+          "callee": "createAgentSessionFromServices",
+          "lineNumber": 633
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/2753-reload-stale-resource-settings.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 105,
+      "nonEmptyLines": 95,
+      "callGraph": [
+        {
+          "caller": "createRuntime",
+          "callee": "createAgentSessionServices",
+          "lineNumber": 43
+        },
+        {
+          "caller": "createRuntime",
+          "callee": "pi.registerProvider",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createRuntime",
+          "callee": "faux.getModel",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createRuntime",
+          "callee": "faux.getModel",
+          "lineNumber": 51
+        },
+        {
+          "caller": "createRuntime",
+          "callee": "faux.models.map",
+          "lineNumber": 54
+        },
+        {
+          "caller": "createRuntime",
+          "callee": "createAgentSessionFromServices",
+          "lineNumber": 72
+        },
+        {
+          "caller": "createRuntime",
+          "callee": "faux.getModel",
+          "lineNumber": 76
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/2781-skill-collision-precedence.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 120,
+      "nonEmptyLines": 101,
+      "callGraph": [
+        {
+          "caller": "createPackageWithSkill",
+          "callee": "join",
+          "lineNumber": 25
+        },
+        {
+          "caller": "createPackageWithSkill",
+          "callee": "join",
+          "lineNumber": 26
+        },
+        {
+          "caller": "createPackageWithSkill",
+          "callee": "mkdirSync",
+          "lineNumber": 27
+        },
+        {
+          "caller": "createPackageWithSkill",
+          "callee": "writeFileSync",
+          "lineNumber": 28
+        },
+        {
+          "caller": "createPackageWithSkill",
+          "callee": "join",
+          "lineNumber": 29
+        },
+        {
+          "caller": "createPackageWithSkill",
+          "callee": "JSON.stringify",
+          "lineNumber": 30
+        },
+        {
+          "caller": "createPackageWithSkill",
+          "callee": "writeFileSync",
+          "lineNumber": 32
+        },
+        {
+          "caller": "createPackageWithSkill",
+          "callee": "join",
+          "lineNumber": 33
+        },
+        {
+          "caller": "createUserSkill",
+          "callee": "join",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createUserSkill",
+          "callee": "mkdirSync",
+          "lineNumber": 41
+        },
+        {
+          "caller": "createUserSkill",
+          "callee": "join",
+          "lineNumber": 42
+        },
+        {
+          "caller": "createUserSkill",
+          "callee": "writeFileSync",
+          "lineNumber": 43
+        },
+        {
+          "caller": "createProjectSkill",
+          "callee": "join",
+          "lineNumber": 48
+        },
+        {
+          "caller": "createProjectSkill",
+          "callee": "mkdirSync",
+          "lineNumber": 49
+        },
+        {
+          "caller": "createProjectSkill",
+          "callee": "join",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createProjectSkill",
+          "callee": "writeFileSync",
+          "lineNumber": 51
+        },
+        {
+          "caller": "createSettingsWithPackage",
+          "callee": "join",
+          "lineNumber": 56
+        },
+        {
+          "caller": "createSettingsWithPackage",
+          "callee": "mkdirSync",
+          "lineNumber": 57
+        },
+        {
+          "caller": "createSettingsWithPackage",
+          "callee": "writeFileSync",
+          "lineNumber": 58
+        },
+        {
+          "caller": "createSettingsWithPackage",
+          "callee": "join",
+          "lineNumber": 58
+        },
+        {
+          "caller": "createSettingsWithPackage",
+          "callee": "JSON.stringify",
+          "lineNumber": 58
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/2835-tools-allowlist-filters-extension-tools.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 94,
+      "nonEmptyLines": 85,
+      "callGraph": [
+        {
+          "caller": "createSession",
+          "callee": "SettingsManager.create",
+          "lineNumber": 29
+        },
+        {
+          "caller": "createSession",
+          "callee": "SessionManager.inMemory",
+          "lineNumber": 30
+        },
+        {
+          "caller": "createSession",
+          "callee": "pi.on",
+          "lineNumber": 37
+        },
+        {
+          "caller": "createSession",
+          "callee": "pi.registerTool",
+          "lineNumber": 38
+        },
+        {
+          "caller": "createSession",
+          "callee": "Type.Object",
+          "lineNumber": 43
+        },
+        {
+          "caller": "createSession",
+          "callee": "resourceLoader.reload",
+          "lineNumber": 53
+        },
+        {
+          "caller": "createSession",
+          "callee": "createAgentSession",
+          "lineNumber": 55
+        },
+        {
+          "caller": "createSession",
+          "callee": "getModel",
+          "lineNumber": 58
+        },
+        {
+          "caller": "createSession",
+          "callee": "session.bindExtensions",
+          "lineNumber": 64
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/2860-replaced-session-context.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 279,
+      "nonEmptyLines": 256,
+      "functions": [
+        {
+          "name": "getText",
+          "startLine": 18,
+          "endLine": 28,
+          "params": [
+            "message"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getText",
+          "callee": "message.content\n\t\t\t\t.filter((part): part is { type: \"text\"; text: string } => part.type === \"text\")\n\t\t\t\t.map((part) => part.text)\n\t\t\t\t.join",
+          "lineNumber": 24
+        },
+        {
+          "caller": "getText",
+          "callee": "message.content\n\t\t\t\t.filter((part): part is { type: \"text\"; text: string } => part.type === \"text\")\n\t\t\t\t.map",
+          "lineNumber": 24
+        },
+        {
+          "caller": "getText",
+          "callee": "message.content\n\t\t\t\t.filter",
+          "lineNumber": 24
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "join",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "tmpdir",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "Date.now",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "Math.random().toString(36).slice",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "Math.random().toString",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "Math.random",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "mkdirSync",
+          "lineNumber": 41
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "registerFauxProvider",
+          "lineNumber": 43
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "faux.setResponses",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "responses.map",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "fauxAssistantMessage",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "AuthStorage.inMemory",
+          "lineNumber": 48
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "authStorage.modify",
+          "lineNumber": 49
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "faux.getModel",
+          "lineNumber": 49
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "ModelRuntime.create",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "join",
+          "lineNumber": 52
+        },
+        {
+          "caller": "createRuntime",
+          "callee": "createAgentSessionServices",
+          "lineNumber": 56
+        },
+        {
+          "caller": "createRuntime",
+          "callee": "pi.registerProvider",
+          "lineNumber": 63
+        },
+        {
+          "caller": "createRuntime",
+          "callee": "faux.getModel",
+          "lineNumber": 63
+        },
+        {
+          "caller": "createRuntime",
+          "callee": "faux.getModel",
+          "lineNumber": 64
+        },
+        {
+          "caller": "createRuntime",
+          "callee": "faux.models.map",
+          "lineNumber": 67
+        },
+        {
+          "caller": "createRuntime",
+          "callee": "extensionFactory",
+          "lineNumber": 78
+        },
+        {
+          "caller": "createRuntime",
+          "callee": "createAgentSessionFromServices",
+          "lineNumber": 87
+        },
+        {
+          "caller": "createRuntime",
+          "callee": "faux.getModel",
+          "lineNumber": 91
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "createAgentSessionRuntime",
+          "lineNumber": 98
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "SessionManager.create",
+          "lineNumber": 101
+        },
+        {
+          "caller": "rebindSession",
+          "callee": "session.bindExtensions",
+          "lineNumber": 106
+        },
+        {
+          "caller": "rebindSession",
+          "callee": "session.agent.waitForIdle",
+          "lineNumber": 108
+        },
+        {
+          "caller": "rebindSession",
+          "callee": "runtime.newSession",
+          "lineNumber": 109
+        },
+        {
+          "caller": "rebindSession",
+          "callee": "runtime.fork",
+          "lineNumber": 111
+        },
+        {
+          "caller": "rebindSession",
+          "callee": "session.navigateTree",
+          "lineNumber": 115
+        },
+        {
+          "caller": "rebindSession",
+          "callee": "runtime.switchSession",
+          "lineNumber": 123
+        },
+        {
+          "caller": "rebindSession",
+          "callee": "session.reload",
+          "lineNumber": 125
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "runtime.setRebindSession",
+          "lineNumber": 131
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "rebindSession",
+          "lineNumber": 132
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "rebindSession",
+          "lineNumber": 134
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "cleanups.push",
+          "lineNumber": 136
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "runtime.dispose",
+          "lineNumber": 137
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "faux.unregister",
+          "lineNumber": 138
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "existsSync",
+          "lineNumber": 139
+        },
+        {
+          "caller": "createRuntimeForTest",
+          "callee": "rmSync",
+          "lineNumber": 140
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/3302-find-path-glob.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 72,
+      "nonEmptyLines": 64,
+      "callGraph": [
+        {
+          "caller": "runFind",
+          "callee": "createFindToolDefinition",
+          "lineNumber": 36
+        },
+        {
+          "caller": "runFind",
+          "callee": "def.execute",
+          "lineNumber": 39
+        },
+        {
+          "caller": "runFind",
+          "callee": "text\n\t\t\t.split(\"\\n\")\n\t\t\t.map((l) => l.trim())\n\t\t\t.filter",
+          "lineNumber": 44
+        },
+        {
+          "caller": "runFind",
+          "callee": "text\n\t\t\t.split(\"\\n\")\n\t\t\t.map",
+          "lineNumber": 44
+        },
+        {
+          "caller": "runFind",
+          "callee": "text\n\t\t\t.split",
+          "lineNumber": 44
+        },
+        {
+          "caller": "runFind",
+          "callee": "l.trim",
+          "lineNumber": 46
+        },
+        {
+          "caller": "runFind",
+          "callee": "l.startsWith",
+          "lineNumber": 47
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/3303-find-nested-gitignore.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 83,
+      "nonEmptyLines": 76,
+      "callGraph": [
+        {
+          "caller": "runFind",
+          "callee": "createFindToolDefinition",
+          "lineNumber": 21
+        },
+        {
+          "caller": "runFind",
+          "callee": "def.execute",
+          "lineNumber": 23
+        },
+        {
+          "caller": "runFind",
+          "callee": "text\n\t\t\t.split(\"\\n\")\n\t\t\t.map((l) => l.trim())\n\t\t\t.filter((l) => l.length > 0 && !l.startsWith(\"[\"))\n\t\t\t.sort",
+          "lineNumber": 28
+        },
+        {
+          "caller": "runFind",
+          "callee": "text\n\t\t\t.split(\"\\n\")\n\t\t\t.map((l) => l.trim())\n\t\t\t.filter",
+          "lineNumber": 28
+        },
+        {
+          "caller": "runFind",
+          "callee": "text\n\t\t\t.split(\"\\n\")\n\t\t\t.map",
+          "lineNumber": 28
+        },
+        {
+          "caller": "runFind",
+          "callee": "text\n\t\t\t.split",
+          "lineNumber": 28
+        },
+        {
+          "caller": "runFind",
+          "callee": "l.trim",
+          "lineNumber": 30
+        },
+        {
+          "caller": "runFind",
+          "callee": "l.startsWith",
+          "lineNumber": 31
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,1337 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/ai/test/google-shared-gemini3-unsigned-tool-call.test.ts",
+      "type": "file",
+      "name": "google-shared-gemini3-unsigned-tool-call.test.ts",
+      "filePath": "packages/ai/test/google-shared-gemini3-unsigned-tool-call.test.ts",
+      "summary": "测试 Gemini 3 模型在未签名 tool call 场景下的消息转换与 stop reason 映射，验证 google-shared API 层的容错能力。",
+      "tags": [
+        "test",
+        "google",
+        "tool-call",
+        "gemini"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/google-shared-gemini3-unsigned-tool-call.test.ts:makeGemini3Model",
+      "type": "function",
+      "name": "makeGemini3Model",
+      "filePath": "packages/ai/test/google-shared-gemini3-unsigned-tool-call.test.ts",
+      "lineRange": [
+        5,
+        22
+      ],
+      "summary": "构建 Gemini 3 模型配置对象，封装 API、provider 和 model ID 参数。",
+      "tags": [
+        "test-helper",
+        "factory",
+        "model-config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/google-shared-gemini3-unsigned-tool-call.test.ts:makeContext",
+      "type": "function",
+      "name": "makeContext",
+      "filePath": "packages/ai/test/google-shared-gemini3-unsigned-tool-call.test.ts",
+      "lineRange": [
+        24,
+        78
+      ],
+      "summary": "构建测试上下文，包含消息历史与 thought signature，用于 Gemini 3 未签名 tool call 测试。",
+      "tags": [
+        "test-helper",
+        "context-builder"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/test/google-shared-image-tool-result-routing.test.ts",
+      "type": "file",
+      "name": "google-shared-image-tool-result-routing.test.ts",
+      "filePath": "packages/ai/test/google-shared-image-tool-result-routing.test.ts",
+      "summary": "验证 Google 共享 API 层对图片类型 tool result 的消息路由与转换逻辑是否正确。",
+      "tags": [
+        "test",
+        "google",
+        "image",
+        "tool-result"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/google-shared-image-tool-result-routing.test.ts:makeModel",
+      "type": "function",
+      "name": "makeModel",
+      "filePath": "packages/ai/test/google-shared-image-tool-result-routing.test.ts",
+      "lineRange": [
+        5,
+        22
+      ],
+      "summary": "构建 Google 模型配置对象，用于图片 tool result 路由测试。",
+      "tags": [
+        "test-helper",
+        "factory",
+        "model-config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/google-shared-image-tool-result-routing.test.ts:makeContext",
+      "type": "function",
+      "name": "makeContext",
+      "filePath": "packages/ai/test/google-shared-image-tool-result-routing.test.ts",
+      "lineRange": [
+        24,
+        76
+      ],
+      "summary": "构建包含图片 tool result 的测试上下文，用于验证消息路由逻辑。",
+      "tags": [
+        "test-helper",
+        "context-builder",
+        "image"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/test/google-shared-retry.test.ts",
+      "type": "file",
+      "name": "google-shared-retry.test.ts",
+      "filePath": "packages/ai/test/google-shared-retry.test.ts",
+      "summary": "测试 Google API 请求的重试逻辑，验证 retryGoogleRequest 在不同错误状态码下的行为。",
+      "tags": [
+        "test",
+        "google",
+        "retry",
+        "error-handling"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/google-shared-signed-empty-blocks.test.ts",
+      "type": "file",
+      "name": "google-shared-signed-empty-blocks.test.ts",
+      "filePath": "packages/ai/test/google-shared-signed-empty-blocks.test.ts",
+      "summary": "测试 Google 共享 API 对签名空 thinking block 的处理，确保 retainThoughtSignature 逻辑正确。",
+      "tags": [
+        "test",
+        "google",
+        "thinking",
+        "signature"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/google-shared-signed-empty-blocks.test.ts:makeModel",
+      "type": "function",
+      "name": "makeModel",
+      "filePath": "packages/ai/test/google-shared-signed-empty-blocks.test.ts",
+      "lineRange": [
+        11,
+        24
+      ],
+      "summary": "构建 Google 模型配置对象，用于签名空 block 测试。",
+      "tags": [
+        "test-helper",
+        "factory",
+        "model-config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/google-shared-signed-empty-blocks.test.ts:makeContext",
+      "type": "function",
+      "name": "makeContext",
+      "filePath": "packages/ai/test/google-shared-signed-empty-blocks.test.ts",
+      "lineRange": [
+        28,
+        55
+      ],
+      "summary": "构建包含签名空 block 内容的测试上下文，验证 thinking signature 保留逻辑。",
+      "tags": [
+        "test-helper",
+        "context-builder",
+        "thinking"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/google-thinking-disable.test.ts",
+      "type": "file",
+      "name": "google-thinking-disable.test.ts",
+      "filePath": "packages/ai/test/google-thinking-disable.test.ts",
+      "summary": "端到端测试 Google 模型禁用 thinking/reasoning 功能后的行为，验证输出不含 thinking 事件且 token 消耗降低。",
+      "tags": [
+        "test",
+        "google",
+        "thinking",
+        "e2e"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/google-thinking-disable.test.ts:makeContext",
+      "type": "function",
+      "name": "makeContext",
+      "filePath": "packages/ai/test/google-thinking-disable.test.ts",
+      "lineRange": [
+        21,
+        33
+      ],
+      "summary": "构建禁用 thinking 的测试上下文，生成简单的 pong 问答消息。",
+      "tags": [
+        "test-helper",
+        "context-builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/google-thinking-disable.test.ts:runWithoutReasoning",
+      "type": "function",
+      "name": "runWithoutReasoning",
+      "filePath": "packages/ai/test/google-thinking-disable.test.ts",
+      "lineRange": [
+        39,
+        78
+      ],
+      "summary": "执行禁用 reasoning 的流式请求，收集响应并统计 thinking 事件数、字符数与输出 token 数。",
+      "tags": [
+        "test-runner",
+        "streaming",
+        "thinking"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/google-thinking-disable.test.ts:expectThinkingDisabledE2E",
+      "type": "function",
+      "name": "expectThinkingDisabledE2E",
+      "filePath": "packages/ai/test/google-thinking-disable.test.ts",
+      "lineRange": [
+        80,
+        90
+      ],
+      "summary": "端到端验证 thinking 已被禁用，断言无 thinking 事件、pong 响应正常且 token 消耗在阈值内。",
+      "tags": [
+        "test-assertion",
+        "e2e",
+        "thinking"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/google-thinking-signature.test.ts",
+      "type": "file",
+      "name": "google-thinking-signature.test.ts",
+      "filePath": "packages/ai/test/google-thinking-signature.test.ts",
+      "summary": "测试 Google thinking signature 保留逻辑，验证 retainThoughtSignature 函数的行为。",
+      "tags": [
+        "test",
+        "google",
+        "thinking",
+        "signature"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/google-vertex-api-key-resolution.test.ts",
+      "type": "file",
+      "name": "google-vertex-api-key-resolution.test.ts",
+      "filePath": "packages/ai/test/google-vertex-api-key-resolution.test.ts",
+      "summary": "测试 Google Vertex AI 的 API Key 解析逻辑，使用 mock 验证不同凭据配置下的密钥选取策略。",
+      "tags": [
+        "test",
+        "google-vertex",
+        "api-key",
+        "authentication"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/test/image-model-data.test.ts",
+      "type": "file",
+      "name": "image-model-data.test.ts",
+      "filePath": "packages/ai/test/image-model-data.test.ts",
+      "summary": "验证图像模型数据生成脚本的输出是否符合预期格式，测试 parseOpenRouterImageModels 的解析能力。",
+      "tags": [
+        "test",
+        "image-models",
+        "data-validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/image-tool-result.test.ts",
+      "type": "file",
+      "name": "image-tool-result.test.ts",
+      "filePath": "packages/ai/test/image-tool-result.test.ts",
+      "summary": "端到端测试各 LLM provider 对包含图片的 tool result 的处理能力，验证模型能正确识别并描述图片内容。",
+      "tags": [
+        "test",
+        "image",
+        "tool-result",
+        "e2e",
+        "multi-provider"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/test/image-tool-result.test.ts:handleToolWithImageResult",
+      "type": "function",
+      "name": "handleToolWithImageResult",
+      "filePath": "packages/ai/test/image-tool-result.test.ts",
+      "lineRange": [
+        30,
+        109
+      ],
+      "summary": "端到端测试：发送含图片的 tool result 给模型，验证模型能识别图片内容并生成后续文本响应。",
+      "tags": [
+        "test-runner",
+        "e2e",
+        "image",
+        "tool-result"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/image-tool-result.test.ts:handleToolWithTextAndImageResult",
+      "type": "function",
+      "name": "handleToolWithTextAndImageResult",
+      "filePath": "packages/ai/test/image-tool-result.test.ts",
+      "lineRange": [
+        118,
+        207
+      ],
+      "summary": "端到端测试：发送含文本与图片混合的 tool result，验证模型对多模态工具结果的处理能力。",
+      "tags": [
+        "test-runner",
+        "e2e",
+        "image",
+        "multimodal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/test/images.test.ts",
+      "type": "file",
+      "name": "images.test.ts",
+      "filePath": "packages/ai/test/images.test.ts",
+      "summary": "测试图像生成功能，涵盖基本生成、文本+图片混合输出、图片输入处理三种场景。",
+      "tags": [
+        "test",
+        "image-generation",
+        "multi-provider"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/images.test.ts:basicImageGeneration",
+      "type": "function",
+      "name": "basicImageGeneration",
+      "filePath": "packages/ai/test/images.test.ts",
+      "lineRange": [
+        14,
+        25
+      ],
+      "summary": "测试基本图像生成流程，调用 generateImages 并验证输出包含图片类型。",
+      "tags": [
+        "test-runner",
+        "image-generation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/images.test.ts:handleTextAndImageOutput",
+      "type": "function",
+      "name": "handleTextAndImageOutput",
+      "filePath": "packages/ai/test/images.test.ts",
+      "lineRange": [
+        27,
+        45
+      ],
+      "summary": "测试文本与图片混合输出场景，验证 generateImages 返回结果中同时包含图片和文本内容。",
+      "tags": [
+        "test-runner",
+        "image-generation",
+        "multimodal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/images.test.ts:handleImageInput",
+      "type": "function",
+      "name": "handleImageInput",
+      "filePath": "packages/ai/test/images.test.ts",
+      "lineRange": [
+        47,
+        69
+      ],
+      "summary": "测试图片输入处理场景，读取本地图片文件并传入 generateImages，验证模型能处理图片输入。",
+      "tags": [
+        "test-runner",
+        "image-generation",
+        "image-input"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/interleaved-thinking.test.ts",
+      "type": "file",
+      "name": "interleaved-thinking.test.ts",
+      "filePath": "packages/ai/test/interleaved-thinking.test.ts",
+      "summary": "测试 LLM 在工具调用间的交错思考能力，验证第二次 tool call 前仍能产生 thinking block。",
+      "tags": [
+        "test",
+        "thinking",
+        "tool-call",
+        "interleaved"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/interleaved-thinking.test.ts:asCalculatorArguments",
+      "type": "function",
+      "name": "asCalculatorArguments",
+      "filePath": "packages/ai/test/interleaved-thinking.test.ts",
+      "lineRange": [
+        31,
+        47
+      ],
+      "summary": "将计算器工具调用参数解析为结构化对象，提取操作数与运算符。",
+      "tags": [
+        "test-helper",
+        "parser",
+        "calculator"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/interleaved-thinking.test.ts:evaluateCalculatorCall",
+      "type": "function",
+      "name": "evaluateCalculatorCall",
+      "filePath": "packages/ai/test/interleaved-thinking.test.ts",
+      "lineRange": [
+        49,
+        61
+      ],
+      "summary": "评估计算器工具调用，解析参数并执行算术运算返回结果。",
+      "tags": [
+        "test-helper",
+        "calculator",
+        "evaluator"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/interleaved-thinking.test.ts:assertSecondToolCallWithInterleavedThinking",
+      "type": "function",
+      "name": "assertSecondToolCallWithInterleavedThinking",
+      "filePath": "packages/ai/test/interleaved-thinking.test.ts",
+      "lineRange": [
+        63,
+        118
+      ],
+      "summary": "验证第二次 tool call 前存在交错 thinking block，执行两轮工具调用并断言每轮均产生 thinking 事件。",
+      "tags": [
+        "test-runner",
+        "thinking",
+        "tool-call",
+        "interleaved"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/test/lax-message-content.test.ts",
+      "type": "file",
+      "name": "lax-message-content.test.ts",
+      "filePath": "packages/ai/test/lax-message-content.test.ts",
+      "summary": "测试宽松消息内容转换逻辑，验证 transformMessages 对仅文本消息的兼容处理。",
+      "tags": [
+        "test",
+        "message-transform",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/lax-message-content.test.ts:makeTextOnlyModel",
+      "type": "function",
+      "name": "makeTextOnlyModel",
+      "filePath": "packages/ai/test/lax-message-content.test.ts",
+      "lineRange": [
+        15,
+        28
+      ],
+      "summary": "构建仅返回文本内容的 mock 模型，用于宽松消息内容转换测试。",
+      "tags": [
+        "test-helper",
+        "mock",
+        "model-config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/max-thinking.test.ts",
+      "type": "file",
+      "name": "max-thinking.test.ts",
+      "filePath": "packages/ai/test/max-thinking.test.ts",
+      "summary": "测试 OpenAI Codex 模型的 thinking token 上限配置，使用 mock token 验证 max thinking budget 限制。",
+      "tags": [
+        "test",
+        "openai-codex",
+        "thinking",
+        "token-budget"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/test/mistral-http-transport.test.ts",
+      "type": "file",
+      "name": "mistral-http-transport.test.ts",
+      "filePath": "packages/ai/test/mistral-http-transport.test.ts",
+      "summary": "测试 Mistral Conversations API 的 HTTP 传输层，使用 mock SSE 响应验证流式解析、分块传输与错误处理。",
+      "tags": [
+        "test",
+        "mistral",
+        "http-transport",
+        "sse",
+        "streaming"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/test/mistral-http-transport.test.ts:createBytewiseSseResponse",
+      "type": "function",
+      "name": "createBytewiseSseResponse",
+      "filePath": "packages/ai/test/mistral-http-transport.test.ts",
+      "lineRange": [
+        14,
+        25
+      ],
+      "summary": "创建逐字节的 SSE 响应流，模拟 Mistral API 的分块传输场景。",
+      "tags": [
+        "test-helper",
+        "sse",
+        "mock",
+        "streaming"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/mistral-raw-stop-reason.test.ts",
+      "type": "file",
+      "name": "mistral-raw-stop-reason.test.ts",
+      "filePath": "packages/ai/test/mistral-raw-stop-reason.test.ts",
+      "summary": "测试 Mistral API 原始 stop reason 的映射逻辑，验证不同 finishReason 到统一 stopReason 的转换。",
+      "tags": [
+        "test",
+        "mistral",
+        "stop-reason",
+        "mapping"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/mistral-raw-stop-reason.test.ts:createFetch",
+      "type": "function",
+      "name": "createFetch",
+      "filePath": "packages/ai/test/mistral-raw-stop-reason.test.ts",
+      "lineRange": [
+        11,
+        32
+      ],
+      "summary": "创建 mock fetch 函数，返回指定 finishReason 的 Mistral SSE 响应，用于 stop reason 映射测试。",
+      "tags": [
+        "test-helper",
+        "mock",
+        "fetch",
+        "sse"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/mistral-reasoning-mode.test.ts",
+      "type": "file",
+      "name": "mistral-reasoning-mode.test.ts",
+      "filePath": "packages/ai/test/mistral-reasoning-mode.test.ts",
+      "summary": "测试 Mistral 模型的 reasoning mode 配置，验证 streamSimple 请求中 reasoning 参数的正确传递。",
+      "tags": [
+        "test",
+        "mistral",
+        "reasoning",
+        "streaming"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/mistral-reasoning-mode.test.ts:capturePayload",
+      "type": "function",
+      "name": "capturePayload",
+      "filePath": "packages/ai/test/mistral-reasoning-mode.test.ts",
+      "lineRange": [
+        17,
+        43
+      ],
+      "summary": "捕获 streamSimple 发送的请求 payload，验证 reasoning mode 参数的正确传递。",
+      "tags": [
+        "test-runner",
+        "streaming",
+        "payload-capture"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/mistral-tool-schema.test.ts",
+      "type": "file",
+      "name": "mistral-tool-schema.test.ts",
+      "filePath": "packages/ai/test/mistral-tool-schema.test.ts",
+      "summary": "测试 Mistral 模型的 tool schema 转换，验证工具定义格式在 compat 层的正确映射。",
+      "tags": [
+        "test",
+        "mistral",
+        "tool-schema",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/node-http-proxy.test.ts",
+      "type": "file",
+      "name": "node-http-proxy.test.ts",
+      "filePath": "packages/ai/test/node-http-proxy.test.ts",
+      "summary": "测试 Node.js HTTP 代理 URL 解析逻辑，验证 resolveHttpProxyUrlForTarget 在不同环境变量配置下的行为。",
+      "tags": [
+        "test",
+        "http-proxy",
+        "network",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/ai/test/google-shared-gemini3-unsigned-tool-call.test.ts",
+      "target": "file:packages/ai/src/api/google-shared.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/google-shared-gemini3-unsigned-tool-call.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/google-shared-image-tool-result-routing.test.ts",
+      "target": "file:packages/ai/src/api/google-shared.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/google-shared-image-tool-result-routing.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/google-shared-retry.test.ts",
+      "target": "file:packages/ai/src/api/google-shared.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/google-shared-signed-empty-blocks.test.ts",
+      "target": "file:packages/ai/src/api/google-shared.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/google-shared-signed-empty-blocks.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/google-thinking-disable.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/google-thinking-disable.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/google-thinking-signature.test.ts",
+      "target": "file:packages/ai/src/api/google-shared.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/google-vertex-api-key-resolution.test.ts",
+      "target": "file:packages/ai/src/api/google-vertex.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/google-vertex-api-key-resolution.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/google-vertex-api-key-resolution.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/image-model-data.test.ts",
+      "target": "file:packages/ai/scripts/generate-image-models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/image-tool-result.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/image-tool-result.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/image-tool-result.test.ts",
+      "target": "file:packages/ai/test/azure-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/image-tool-result.test.ts",
+      "target": "file:packages/ai/test/bedrock-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/image-tool-result.test.ts",
+      "target": "file:packages/ai/test/oauth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/images.test.ts",
+      "target": "file:packages/ai/src/image-models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/images.test.ts",
+      "target": "file:packages/ai/src/images.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/images.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/interleaved-thinking.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/interleaved-thinking.test.ts",
+      "target": "file:packages/ai/src/env-api-keys.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/interleaved-thinking.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/interleaved-thinking.test.ts",
+      "target": "file:packages/ai/src/utils/typebox-helpers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/interleaved-thinking.test.ts",
+      "target": "file:packages/ai/test/bedrock-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/lax-message-content.test.ts",
+      "target": "file:packages/ai/src/api/transform-messages.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/lax-message-content.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/max-thinking.test.ts",
+      "target": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/max-thinking.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/max-thinking.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/mistral-http-transport.test.ts",
+      "target": "file:packages/ai/src/api/mistral-conversations.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/mistral-http-transport.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/mistral-http-transport.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/mistral-raw-stop-reason.test.ts",
+      "target": "file:packages/ai/src/api/mistral-conversations.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/mistral-raw-stop-reason.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/mistral-raw-stop-reason.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/mistral-reasoning-mode.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/mistral-reasoning-mode.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/mistral-tool-schema.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/mistral-tool-schema.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/node-http-proxy.test.ts",
+      "target": "file:packages/ai/src/utils/node-http-proxy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/google-shared-gemini3-unsigned-tool-call.test.ts",
+      "target": "function:packages/ai/test/google-shared-gemini3-unsigned-tool-call.test.ts:makeGemini3Model",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/google-shared-gemini3-unsigned-tool-call.test.ts",
+      "target": "function:packages/ai/test/google-shared-gemini3-unsigned-tool-call.test.ts:makeContext",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/google-shared-image-tool-result-routing.test.ts",
+      "target": "function:packages/ai/test/google-shared-image-tool-result-routing.test.ts:makeModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/google-shared-image-tool-result-routing.test.ts",
+      "target": "function:packages/ai/test/google-shared-image-tool-result-routing.test.ts:makeContext",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/google-shared-signed-empty-blocks.test.ts",
+      "target": "function:packages/ai/test/google-shared-signed-empty-blocks.test.ts:makeModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/google-shared-signed-empty-blocks.test.ts",
+      "target": "function:packages/ai/test/google-shared-signed-empty-blocks.test.ts:makeContext",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/google-thinking-disable.test.ts",
+      "target": "function:packages/ai/test/google-thinking-disable.test.ts:makeContext",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/google-thinking-disable.test.ts",
+      "target": "function:packages/ai/test/google-thinking-disable.test.ts:runWithoutReasoning",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/google-thinking-disable.test.ts",
+      "target": "function:packages/ai/test/google-thinking-disable.test.ts:expectThinkingDisabledE2E",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/image-tool-result.test.ts",
+      "target": "function:packages/ai/test/image-tool-result.test.ts:handleToolWithImageResult",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/image-tool-result.test.ts",
+      "target": "function:packages/ai/test/image-tool-result.test.ts:handleToolWithTextAndImageResult",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/images.test.ts",
+      "target": "function:packages/ai/test/images.test.ts:basicImageGeneration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/images.test.ts",
+      "target": "function:packages/ai/test/images.test.ts:handleTextAndImageOutput",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/images.test.ts",
+      "target": "function:packages/ai/test/images.test.ts:handleImageInput",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/interleaved-thinking.test.ts",
+      "target": "function:packages/ai/test/interleaved-thinking.test.ts:asCalculatorArguments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/interleaved-thinking.test.ts",
+      "target": "function:packages/ai/test/interleaved-thinking.test.ts:evaluateCalculatorCall",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/interleaved-thinking.test.ts",
+      "target": "function:packages/ai/test/interleaved-thinking.test.ts:assertSecondToolCallWithInterleavedThinking",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/lax-message-content.test.ts",
+      "target": "function:packages/ai/test/lax-message-content.test.ts:makeTextOnlyModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/mistral-http-transport.test.ts",
+      "target": "function:packages/ai/test/mistral-http-transport.test.ts:createBytewiseSseResponse",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/mistral-raw-stop-reason.test.ts",
+      "target": "function:packages/ai/test/mistral-raw-stop-reason.test.ts:createFetch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/mistral-reasoning-mode.test.ts",
+      "target": "function:packages/ai/test/mistral-reasoning-mode.test.ts:capturePayload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/src/api/google-shared.ts",
+      "target": "file:packages/ai/test/google-shared-gemini3-unsigned-tool-call.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/google-shared-gemini3-unsigned-tool-call.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/api/google-shared.ts",
+      "target": "file:packages/ai/test/google-shared-image-tool-result-routing.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/google-shared-image-tool-result-routing.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/api/google-shared.ts",
+      "target": "file:packages/ai/test/google-shared-retry.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/api/google-shared.ts",
+      "target": "file:packages/ai/test/google-shared-signed-empty-blocks.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/google-shared-signed-empty-blocks.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/test/google-thinking-disable.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/google-thinking-disable.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/api/google-shared.ts",
+      "target": "file:packages/ai/test/google-thinking-signature.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/api/google-vertex.ts",
+      "target": "file:packages/ai/test/google-vertex-api-key-resolution.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/test/google-vertex-api-key-resolution.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/google-vertex-api-key-resolution.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/scripts/generate-image-models.ts",
+      "target": "file:packages/ai/test/image-model-data.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/test/image-tool-result.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/image-tool-result.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/image-models.ts",
+      "target": "file:packages/ai/test/images.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/images.ts",
+      "target": "file:packages/ai/test/images.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/images.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/test/interleaved-thinking.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/env-api-keys.ts",
+      "target": "file:packages/ai/test/interleaved-thinking.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/interleaved-thinking.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/utils/typebox-helpers.ts",
+      "target": "file:packages/ai/test/interleaved-thinking.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/api/transform-messages.ts",
+      "target": "file:packages/ai/test/lax-message-content.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/lax-message-content.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "file:packages/ai/test/max-thinking.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/test/max-thinking.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/max-thinking.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "file:packages/ai/test/mistral-http-transport.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/test/mistral-http-transport.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/mistral-http-transport.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "file:packages/ai/test/mistral-raw-stop-reason.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/test/mistral-raw-stop-reason.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/mistral-raw-stop-reason.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/test/mistral-reasoning-mode.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/mistral-reasoning-mode.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/test/mistral-tool-schema.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/mistral-tool-schema.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/utils/node-http-proxy.ts",
+      "target": "file:packages/ai/test/node-http-proxy.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

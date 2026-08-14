@@ -1,0 +1,1397 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/ai/test/sampling-options.test.ts",
+      "type": "file",
+      "name": "sampling-options.test.ts",
+      "filePath": "packages/ai/test/sampling-options.test.ts",
+      "summary": "测试采样参数（temperature、topP 等）在不同供应商 API 中的正确传递。",
+      "tags": [
+        "test",
+        "validation",
+        "unit"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/sampling-options.test.ts:makeCompletionsModel",
+      "type": "function",
+      "name": "makeCompletionsModel",
+      "filePath": "packages/ai/test/sampling-options.test.ts",
+      "lineRange": [
+        25,
+        39
+      ],
+      "summary": "创建使用 OpenAI Completions API 格式的测试模型配置。",
+      "tags": [
+        "test",
+        "test-helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/sampling-options.test.ts:makeAnthropicModel",
+      "type": "function",
+      "name": "makeAnthropicModel",
+      "filePath": "packages/ai/test/sampling-options.test.ts",
+      "lineRange": [
+        41,
+        54
+      ],
+      "summary": "创建使用 Anthropic API 格式的测试模型配置。",
+      "tags": [
+        "test",
+        "test-helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/sampling-options.test.ts:capturePayload",
+      "type": "function",
+      "name": "capturePayload",
+      "filePath": "packages/ai/test/sampling-options.test.ts",
+      "lineRange": [
+        56,
+        75
+      ],
+      "summary": "执行流式调用并捕获发送给供应商的请求 payload，用于验证采样参数。",
+      "tags": [
+        "test",
+        "test-helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/stream.test.ts",
+      "type": "file",
+      "name": "stream.test.ts",
+      "filePath": "packages/ai/test/stream.test.ts",
+      "summary": "核心流式和完成 API 的综合测试套件，覆盖文本生成、工具调用、流式传输、思考链、图像处理和多轮对话等场景。",
+      "tags": [
+        "test",
+        "integration",
+        "streaming"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/test/stream.test.ts:basicTextGeneration",
+      "type": "function",
+      "name": "basicTextGeneration",
+      "filePath": "packages/ai/test/stream.test.ts",
+      "lineRange": [
+        46,
+        73
+      ],
+      "summary": "测试基本文本生成，验证响应角色、内容、usage 统计和多轮对话。",
+      "tags": [
+        "test",
+        "test-helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/stream.test.ts:handleToolCall",
+      "type": "function",
+      "name": "handleToolCall",
+      "filePath": "packages/ai/test/stream.test.ts",
+      "lineRange": [
+        75,
+        151
+      ],
+      "summary": "测试流式工具调用，验证工具调用事件的开始、增量和结束事件序列。",
+      "tags": [
+        "test",
+        "test-helper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/stream.test.ts:handleStreaming",
+      "type": "function",
+      "name": "handleStreaming",
+      "filePath": "packages/ai/test/stream.test.ts",
+      "lineRange": [
+        153,
+        181
+      ],
+      "summary": "测试流式文本生成，验证文本块的开始、增量和完成事件。",
+      "tags": [
+        "test",
+        "test-helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/stream.test.ts:handleThinking",
+      "type": "function",
+      "name": "handleThinking",
+      "filePath": "packages/ai/test/stream.test.ts",
+      "lineRange": [
+        183,
+        218
+      ],
+      "summary": "测试流式思考链（thinking）生成，验证思考块的事件序列。",
+      "tags": [
+        "test",
+        "test-helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/stream.test.ts:handleImage",
+      "type": "function",
+      "name": "handleImage",
+      "filePath": "packages/ai/test/stream.test.ts",
+      "lineRange": [
+        220,
+        265
+      ],
+      "summary": "测试图像输入处理，验证模型能正确识别和描述图像内容。",
+      "tags": [
+        "test",
+        "test-helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/stream.test.ts:multiTurn",
+      "type": "function",
+      "name": "multiTurn",
+      "filePath": "packages/ai/test/stream.test.ts",
+      "lineRange": [
+        267,
+        347
+      ],
+      "summary": "测试多轮对话场景，包含工具调用、思考链和文本生成的完整流程。",
+      "tags": [
+        "test",
+        "test-helper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/test/supports-xhigh.test.ts",
+      "type": "file",
+      "name": "supports-xhigh.test.ts",
+      "filePath": "packages/ai/test/supports-xhigh.test.ts",
+      "summary": "测试模型是否正确报告对 xhigh 推理级别的支持。",
+      "tags": [
+        "test",
+        "model-registry",
+        "unit"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/test/telemetry-options.test.ts",
+      "type": "file",
+      "name": "telemetry-options.test.ts",
+      "filePath": "packages/ai/test/telemetry-options.test.ts",
+      "summary": "测试遥测选项配置，验证模型参数构建和图像 API 注册逻辑。",
+      "tags": [
+        "test",
+        "telemetry",
+        "unit"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/telemetry-options.test.ts:completedStream",
+      "type": "function",
+      "name": "completedStream",
+      "filePath": "packages/ai/test/telemetry-options.test.ts",
+      "lineRange": [
+        46,
+        72
+      ],
+      "summary": "创建预完成的流式响应，用于测试遥测选项和模型参数构建。",
+      "tags": [
+        "test",
+        "test-helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/together-models.test.ts",
+      "type": "file",
+      "name": "together-models.test.ts",
+      "filePath": "packages/ai/test/together-models.test.ts",
+      "summary": "测试 Together AI 模型的注册和 API 密钥环境变量解析。",
+      "tags": [
+        "test",
+        "model-registry",
+        "unit"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/test/tokens.test.ts",
+      "type": "file",
+      "name": "tokens.test.ts",
+      "filePath": "packages/ai/test/tokens.test.ts",
+      "summary": "测试 LLM 流式请求在中途终止时的 token 计数和费用统计正确性。",
+      "tags": [
+        "test",
+        "integration",
+        "streaming"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/test/tokens.test.ts:testTokensOnAbort",
+      "type": "function",
+      "name": "testTokensOnAbort",
+      "filePath": "packages/ai/test/tokens.test.ts",
+      "lineRange": [
+        20,
+        84
+      ],
+      "summary": "测试流式请求在中途终止时的 token 计数和费用统计正确性。",
+      "tags": [
+        "test",
+        "test-helper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/test/tool-call-id-normalization.test.ts",
+      "type": "file",
+      "name": "tool-call-id-normalization.test.ts",
+      "filePath": "packages/ai/test/tool-call-id-normalization.test.ts",
+      "summary": "验证不同供应商 API 对 tool call ID 的标准化处理，确保跨供应商的 ID 格式一致性。",
+      "tags": [
+        "test",
+        "tool-call",
+        "unit"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/ai/test/tool-call-without-result.test.ts",
+      "type": "file",
+      "name": "tool-call-without-result.test.ts",
+      "filePath": "packages/ai/test/tool-call-without-result.test.ts",
+      "summary": "测试当工具调用缺少结果时，多轮对话中 agent 的容错处理能力。",
+      "tags": [
+        "test",
+        "integration",
+        "tool-call"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/test/tool-call-without-result.test.ts:testToolCallWithoutResult",
+      "type": "function",
+      "name": "testToolCallWithoutResult",
+      "filePath": "packages/ai/test/tool-call-without-result.test.ts",
+      "lineRange": [
+        32,
+        91
+      ],
+      "summary": "测试当工具调用缺少结果时，后续对话轮次的容错处理。",
+      "tags": [
+        "test",
+        "test-helper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/test/total-tokens.test.ts",
+      "type": "file",
+      "name": "total-tokens.test.ts",
+      "filePath": "packages/ai/test/total-tokens.test.ts",
+      "summary": "验证多供应商 LLM 响应中 totalTokens 字段与各 token 分量之和的一致性，包括缓存读写场景。",
+      "tags": [
+        "test",
+        "integration",
+        "streaming"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/test/total-tokens.test.ts:testTotalTokensWithCache",
+      "type": "function",
+      "name": "testTotalTokensWithCache",
+      "filePath": "packages/ai/test/total-tokens.test.ts",
+      "lineRange": [
+        47,
+        84
+      ],
+      "summary": "验证带缓存的 LLM 响应中 totalTokens 与各 token 分量之和的一致性。",
+      "tags": [
+        "test",
+        "test-helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/transform-messages-copilot-openai-to-anthropic.test.ts",
+      "type": "file",
+      "name": "transform-messages-copilot-openai-to-anthropic.test.ts",
+      "filePath": "packages/ai/test/transform-messages-copilot-openai-to-anthropic.test.ts",
+      "summary": "测试从 Copilot OpenAI 消息格式到 Anthropic 消息格式的转换逻辑。",
+      "tags": [
+        "test",
+        "message-transform",
+        "unit"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/transform-messages-copilot-openai-to-anthropic.test.ts:makeCopilotClaudeModel",
+      "type": "function",
+      "name": "makeCopilotClaudeModel",
+      "filePath": "packages/ai/test/transform-messages-copilot-openai-to-anthropic.test.ts",
+      "lineRange": [
+        14,
+        27
+      ],
+      "summary": "创建模拟 Copilot Claude 模型配置，用于消息格式转换测试。",
+      "tags": [
+        "test",
+        "test-helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/transform-messages-copilot-openai-to-anthropic.test.ts:makeAssistantMessage",
+      "type": "function",
+      "name": "makeAssistantMessage",
+      "filePath": "packages/ai/test/transform-messages-copilot-openai-to-anthropic.test.ts",
+      "lineRange": [
+        29,
+        47
+      ],
+      "summary": "构造包含工具调用的 assistant 消息，用于消息转换测试。",
+      "tags": [
+        "test",
+        "test-helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/unicode-surrogate.test.ts",
+      "type": "file",
+      "name": "unicode-surrogate.test.ts",
+      "filePath": "packages/ai/test/unicode-surrogate.test.ts",
+      "summary": "测试包含 emoji、LinkedIn 真实数据和未配对高代理项的 Unicode 代理对在工具结果和消息中的正确处理。",
+      "tags": [
+        "test",
+        "integration",
+        "unit"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/test/unicode-surrogate.test.ts:testEmojiInToolResults",
+      "type": "function",
+      "name": "testEmojiInToolResults",
+      "filePath": "packages/ai/test/unicode-surrogate.test.ts",
+      "lineRange": [
+        35,
+        120
+      ],
+      "summary": "测试包含 emoji 的工具结果在多轮对话中的正确处理。",
+      "tags": [
+        "test",
+        "test-helper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/unicode-surrogate.test.ts:testRealWorldLinkedInData",
+      "type": "function",
+      "name": "testRealWorldLinkedInData",
+      "filePath": "packages/ai/test/unicode-surrogate.test.ts",
+      "lineRange": [
+        122,
+        209
+      ],
+      "summary": "测试包含真实 LinkedIn 数据（含特殊 Unicode 字符）的工具结果处理。",
+      "tags": [
+        "test",
+        "test-helper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/unicode-surrogate.test.ts:testUnpairedHighSurrogate",
+      "type": "function",
+      "name": "testUnpairedHighSurrogate",
+      "filePath": "packages/ai/test/unicode-surrogate.test.ts",
+      "lineRange": [
+        211,
+        283
+      ],
+      "summary": "测试未配对高代理项 Unicode 字符在 LLM 请求中的处理。",
+      "tags": [
+        "test",
+        "test-helper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/test/uuid.test.ts",
+      "type": "file",
+      "name": "uuid.test.ts",
+      "filePath": "packages/ai/test/uuid.test.ts",
+      "summary": "测试 uuidv7 生成器的时间戳可解析性和唯一性。",
+      "tags": [
+        "test",
+        "validation",
+        "unit"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/validation.test.ts",
+      "type": "file",
+      "name": "validation.test.ts",
+      "filePath": "packages/ai/test/validation.test.ts",
+      "summary": "测试工具调用验证逻辑，包括 schema 验证和参数校验。",
+      "tags": [
+        "test",
+        "validation",
+        "unit"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/validation.test.ts:createToolCallWithPlainSchema",
+      "type": "function",
+      "name": "createToolCallWithPlainSchema",
+      "filePath": "packages/ai/test/validation.test.ts",
+      "lineRange": [
+        7,
+        34
+      ],
+      "summary": "创建带 plain schema 的工具调用对象，用于验证工具调用参数校验。",
+      "tags": [
+        "test",
+        "test-helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/xhigh.test.ts",
+      "type": "file",
+      "name": "xhigh.test.ts",
+      "filePath": "packages/ai/test/xhigh.test.ts",
+      "summary": "测试 xhigh 推理级别的配置和模型行为。",
+      "tags": [
+        "test",
+        "model-registry",
+        "unit"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/xhigh.test.ts:makeContext",
+      "type": "function",
+      "name": "makeContext",
+      "filePath": "packages/ai/test/xhigh.test.ts",
+      "lineRange": [
+        5,
+        15
+      ],
+      "summary": "创建测试用的对话上下文，包含随机消息以避免缓存命中。",
+      "tags": [
+        "test",
+        "test-helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/xiaomi-models.test.ts",
+      "type": "file",
+      "name": "xiaomi-models.test.ts",
+      "filePath": "packages/ai/test/xiaomi-models.test.ts",
+      "summary": "测试小米模型在供应商列表中的注册。",
+      "tags": [
+        "test",
+        "model-registry",
+        "unit"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/xiaomi-token-plan-ams-anthropic-empty-signature-smoke.test.ts",
+      "type": "file",
+      "name": "xiaomi-token-plan-ams-anthropic-empty-signature-smoke.test.ts",
+      "filePath": "packages/ai/test/xiaomi-token-plan-ams-anthropic-empty-signature-smoke.test.ts",
+      "summary": "冒烟测试小米 token 计划 AMS Anthropic 端点在空签名场景下的行为。",
+      "tags": [
+        "test",
+        "unit"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/xiaomi-token-plan-ams-anthropic-empty-signature-smoke.test.ts:makeInitialContext",
+      "type": "function",
+      "name": "makeInitialContext",
+      "filePath": "packages/ai/test/xiaomi-token-plan-ams-anthropic-empty-signature-smoke.test.ts",
+      "lineRange": [
+        36,
+        47
+      ],
+      "summary": "创建初始对话上下文，用于冒烟测试 thinking 重放。",
+      "tags": [
+        "test",
+        "test-helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/xiaomi-token-plan-ams-anthropic-empty-signature-smoke.test.ts:captureReplayPayload",
+      "type": "function",
+      "name": "captureReplayPayload",
+      "filePath": "packages/ai/test/xiaomi-token-plan-ams-anthropic-empty-signature-smoke.test.ts",
+      "lineRange": [
+        53,
+        71
+      ],
+      "summary": "执行流式调用并捕获重放 payload，用于验证 thinking 块的签名处理。",
+      "tags": [
+        "test",
+        "test-helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/zen.test.ts",
+      "type": "file",
+      "name": "zen.test.ts",
+      "filePath": "packages/ai/test/zen.test.ts",
+      "summary": "测试 Zen 模型的基本流式生成功能。",
+      "tags": [
+        "test",
+        "model-registry",
+        "unit"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/ai/test/sampling-options.test.ts",
+      "target": "function:packages/ai/test/sampling-options.test.ts:makeCompletionsModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/sampling-options.test.ts",
+      "target": "function:packages/ai/test/sampling-options.test.ts:makeAnthropicModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/sampling-options.test.ts",
+      "target": "function:packages/ai/test/sampling-options.test.ts:capturePayload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/sampling-options.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/sampling-options.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/test/sampling-options.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/sampling-options.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/test/stream.test.ts",
+      "target": "function:packages/ai/test/stream.test.ts:basicTextGeneration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/stream.test.ts",
+      "target": "function:packages/ai/test/stream.test.ts:handleToolCall",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/stream.test.ts",
+      "target": "function:packages/ai/test/stream.test.ts:handleStreaming",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/stream.test.ts",
+      "target": "function:packages/ai/test/stream.test.ts:handleThinking",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/stream.test.ts",
+      "target": "function:packages/ai/test/stream.test.ts:handleImage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/stream.test.ts",
+      "target": "function:packages/ai/test/stream.test.ts:multiTurn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/stream.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/stream.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/stream.test.ts",
+      "target": "file:packages/ai/src/utils/typebox-helpers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/stream.test.ts",
+      "target": "file:packages/ai/test/azure-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/stream.test.ts",
+      "target": "file:packages/ai/test/bedrock-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/stream.test.ts",
+      "target": "file:packages/ai/test/cloudflare-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/stream.test.ts",
+      "target": "file:packages/ai/test/oauth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/test/stream.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/stream.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/utils/typebox-helpers.ts",
+      "target": "file:packages/ai/test/stream.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/test/supports-xhigh.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/test/supports-xhigh.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/test/telemetry-options.test.ts",
+      "target": "function:packages/ai/test/telemetry-options.test.ts:completedStream",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/telemetry-options.test.ts",
+      "target": "file:packages/ai/src/api/simple-options.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/telemetry-options.test.ts",
+      "target": "file:packages/ai/src/images-api-registry.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/telemetry-options.test.ts",
+      "target": "file:packages/ai/src/images-models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/telemetry-options.test.ts",
+      "target": "file:packages/ai/src/images.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/telemetry-options.test.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/telemetry-options.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/telemetry-options.test.ts",
+      "target": "file:packages/ai/src/utils/event-stream.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/simple-options.ts",
+      "target": "file:packages/ai/test/telemetry-options.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/images-api-registry.ts",
+      "target": "file:packages/ai/test/telemetry-options.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/images-models.ts",
+      "target": "file:packages/ai/test/telemetry-options.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/images.ts",
+      "target": "file:packages/ai/test/telemetry-options.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/models.ts",
+      "target": "file:packages/ai/test/telemetry-options.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/telemetry-options.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/utils/event-stream.ts",
+      "target": "file:packages/ai/test/telemetry-options.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/test/together-models.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/together-models.test.ts",
+      "target": "file:packages/ai/src/env-api-keys.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/test/together-models.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/env-api-keys.ts",
+      "target": "file:packages/ai/test/together-models.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/test/tokens.test.ts",
+      "target": "function:packages/ai/test/tokens.test.ts:testTokensOnAbort",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/tokens.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/tokens.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/tokens.test.ts",
+      "target": "file:packages/ai/test/azure-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/tokens.test.ts",
+      "target": "file:packages/ai/test/bedrock-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/tokens.test.ts",
+      "target": "file:packages/ai/test/cloudflare-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/tokens.test.ts",
+      "target": "file:packages/ai/test/oauth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/test/tokens.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/tokens.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/test/tool-call-id-normalization.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/tool-call-id-normalization.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/tool-call-id-normalization.test.ts",
+      "target": "file:packages/ai/test/oauth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/test/tool-call-id-normalization.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/tool-call-id-normalization.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/test/tool-call-without-result.test.ts",
+      "target": "function:packages/ai/test/tool-call-without-result.test.ts:testToolCallWithoutResult",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/tool-call-without-result.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/tool-call-without-result.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/tool-call-without-result.test.ts",
+      "target": "file:packages/ai/test/azure-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/tool-call-without-result.test.ts",
+      "target": "file:packages/ai/test/bedrock-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/tool-call-without-result.test.ts",
+      "target": "file:packages/ai/test/cloudflare-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/tool-call-without-result.test.ts",
+      "target": "file:packages/ai/test/oauth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/test/tool-call-without-result.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/tool-call-without-result.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/test/total-tokens.test.ts",
+      "target": "function:packages/ai/test/total-tokens.test.ts:testTotalTokensWithCache",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/total-tokens.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/total-tokens.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/total-tokens.test.ts",
+      "target": "file:packages/ai/test/azure-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/total-tokens.test.ts",
+      "target": "file:packages/ai/test/bedrock-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/total-tokens.test.ts",
+      "target": "file:packages/ai/test/cloudflare-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/total-tokens.test.ts",
+      "target": "file:packages/ai/test/oauth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/test/total-tokens.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/total-tokens.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/test/transform-messages-copilot-openai-to-anthropic.test.ts",
+      "target": "function:packages/ai/test/transform-messages-copilot-openai-to-anthropic.test.ts:makeCopilotClaudeModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/transform-messages-copilot-openai-to-anthropic.test.ts",
+      "target": "function:packages/ai/test/transform-messages-copilot-openai-to-anthropic.test.ts:makeAssistantMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/transform-messages-copilot-openai-to-anthropic.test.ts",
+      "target": "file:packages/ai/src/api/transform-messages.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/transform-messages-copilot-openai-to-anthropic.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/transform-messages.ts",
+      "target": "file:packages/ai/test/transform-messages-copilot-openai-to-anthropic.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/transform-messages-copilot-openai-to-anthropic.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/test/unicode-surrogate.test.ts",
+      "target": "function:packages/ai/test/unicode-surrogate.test.ts:testEmojiInToolResults",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/unicode-surrogate.test.ts",
+      "target": "function:packages/ai/test/unicode-surrogate.test.ts:testRealWorldLinkedInData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/unicode-surrogate.test.ts",
+      "target": "function:packages/ai/test/unicode-surrogate.test.ts:testUnpairedHighSurrogate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/unicode-surrogate.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/unicode-surrogate.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/unicode-surrogate.test.ts",
+      "target": "file:packages/ai/test/azure-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/unicode-surrogate.test.ts",
+      "target": "file:packages/ai/test/bedrock-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/unicode-surrogate.test.ts",
+      "target": "file:packages/ai/test/cloudflare-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/unicode-surrogate.test.ts",
+      "target": "file:packages/ai/test/oauth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/test/unicode-surrogate.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/unicode-surrogate.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/test/uuid.test.ts",
+      "target": "file:packages/ai/src/utils/uuid.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/utils/uuid.ts",
+      "target": "file:packages/ai/test/uuid.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/test/validation.test.ts",
+      "target": "function:packages/ai/test/validation.test.ts:createToolCallWithPlainSchema",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/validation.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/validation.test.ts",
+      "target": "file:packages/ai/src/utils/validation.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/validation.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/utils/validation.ts",
+      "target": "file:packages/ai/test/validation.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/test/xhigh.test.ts",
+      "target": "function:packages/ai/test/xhigh.test.ts:makeContext",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/xhigh.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/xhigh.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/test/xhigh.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/xhigh.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/test/xiaomi-models.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/test/xiaomi-models.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/test/xiaomi-token-plan-ams-anthropic-empty-signature-smoke.test.ts",
+      "target": "function:packages/ai/test/xiaomi-token-plan-ams-anthropic-empty-signature-smoke.test.ts:makeInitialContext",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/xiaomi-token-plan-ams-anthropic-empty-signature-smoke.test.ts",
+      "target": "function:packages/ai/test/xiaomi-token-plan-ams-anthropic-empty-signature-smoke.test.ts:captureReplayPayload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/ai/test/xiaomi-token-plan-ams-anthropic-empty-signature-smoke.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/xiaomi-token-plan-ams-anthropic-empty-signature-smoke.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/test/xiaomi-token-plan-ams-anthropic-empty-signature-smoke.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/xiaomi-token-plan-ams-anthropic-empty-signature-smoke.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/test/zen.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/zen.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/test/zen.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/types.ts",
+      "target": "file:packages/ai/test/zen.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

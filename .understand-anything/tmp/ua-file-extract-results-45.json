@@ -1,0 +1,287 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 1,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql",
+      "language": "sql",
+      "fileCategory": "data",
+      "totalLines": 122,
+      "nonEmptyLines": 106,
+      "definitions": [
+        {
+          "name": "sessions",
+          "kind": "table",
+          "fields": [
+            "id",
+            "created_at",
+            "cwd",
+            "parent_session_id",
+            "metadata"
+          ],
+          "startLine": 1,
+          "endLine": 9
+        },
+        {
+          "name": "entries",
+          "kind": "table",
+          "fields": [
+            "session_id",
+            "seq",
+            "id",
+            "parent_id",
+            "type",
+            "timestamp",
+            "payload"
+          ],
+          "startLine": 12,
+          "endLine": 22
+        },
+        {
+          "name": "session_sequences",
+          "kind": "table",
+          "fields": [
+            "session_id",
+            "next_seq",
+            "message_count",
+            "cached_tokens",
+            "uncached_tokens",
+            "total_tokens",
+            "cost_total",
+            "branch_id",
+            "entry_id",
+            "entry_seq",
+            "entry_type",
+            "custom_type"
+          ],
+          "startLine": 27,
+          "endLine": 53
+        },
+        {
+          "name": "session_stats",
+          "kind": "table",
+          "fields": [
+            "session_id",
+            "message_count",
+            "cached_tokens",
+            "uncached_tokens",
+            "total_tokens",
+            "cost_total",
+            "branch_id",
+            "entry_id",
+            "entry_seq",
+            "entry_type",
+            "custom_type"
+          ],
+          "startLine": 32,
+          "endLine": 53
+        },
+        {
+          "name": "branch_entries",
+          "kind": "table",
+          "fields": [
+            "session_id",
+            "branch_id",
+            "entry_id",
+            "entry_seq",
+            "entry_type",
+            "custom_type"
+          ],
+          "startLine": 43,
+          "endLine": 53
+        },
+        {
+          "name": "lanes",
+          "kind": "table",
+          "fields": [
+            "session_id",
+            "lane",
+            "leaf_id",
+            "open_operation_id",
+            "seq",
+            "id",
+            "lane",
+            "run_id",
+            "type",
+            "op_kind",
+            "timestamp",
+            "payload"
+          ],
+          "startLine": 58,
+          "endLine": 80
+        },
+        {
+          "name": "records",
+          "kind": "table",
+          "fields": [
+            "session_id",
+            "seq",
+            "id",
+            "lane",
+            "run_id",
+            "type",
+            "op_kind",
+            "timestamp",
+            "payload"
+          ],
+          "startLine": 66,
+          "endLine": 80
+        },
+        {
+          "name": "lane_moves",
+          "kind": "table",
+          "fields": [
+            "session_id",
+            "seq",
+            "lane",
+            "leaf_id",
+            "seq",
+            "kind",
+            "value"
+          ],
+          "startLine": 87,
+          "endLine": 105
+        },
+        {
+          "name": "facts",
+          "kind": "table",
+          "fields": [
+            "session_id",
+            "seq",
+            "kind",
+            "value"
+          ],
+          "startLine": 96,
+          "endLine": 105
+        },
+        {
+          "name": "branch_tips",
+          "kind": "table",
+          "fields": [],
+          "startLine": 107,
+          "endLine": 112
+        },
+        {
+          "name": "writer_leases",
+          "kind": "table",
+          "fields": [],
+          "startLine": 117,
+          "endLine": 122
+        },
+        {
+          "name": "idx_sessions_created_at",
+          "kind": "index",
+          "fields": [],
+          "startLine": 9,
+          "endLine": 9
+        },
+        {
+          "name": "idx_sessions_cwd_created_at",
+          "kind": "index",
+          "fields": [],
+          "startLine": 10,
+          "endLine": 10
+        },
+        {
+          "name": "idx_entries_session_parent",
+          "kind": "index",
+          "fields": [],
+          "startLine": 24,
+          "endLine": 24
+        },
+        {
+          "name": "idx_entries_session_type_seq",
+          "kind": "index",
+          "fields": [],
+          "startLine": 25,
+          "endLine": 25
+        },
+        {
+          "name": "idx_branch_entries_session_branch_seq",
+          "kind": "index",
+          "fields": [],
+          "startLine": 53,
+          "endLine": 53
+        },
+        {
+          "name": "idx_branch_entries_session_entry",
+          "kind": "index",
+          "fields": [],
+          "startLine": 54,
+          "endLine": 54
+        },
+        {
+          "name": "idx_branch_entries_session_branch_type_seq",
+          "kind": "index",
+          "fields": [],
+          "startLine": 55,
+          "endLine": 55
+        },
+        {
+          "name": "idx_branch_entries_session_branch_custom_seq",
+          "kind": "index",
+          "fields": [],
+          "startLine": 56,
+          "endLine": 56
+        },
+        {
+          "name": "idx_records_session_lane_seq",
+          "kind": "index",
+          "fields": [],
+          "startLine": 80,
+          "endLine": 80
+        },
+        {
+          "name": "idx_records_session_type_seq",
+          "kind": "index",
+          "fields": [],
+          "startLine": 81,
+          "endLine": 81
+        },
+        {
+          "name": "idx_records_session_type_op_kind_seq",
+          "kind": "index",
+          "fields": [],
+          "startLine": 82,
+          "endLine": 82
+        },
+        {
+          "name": "idx_records_session_lane_type_seq",
+          "kind": "index",
+          "fields": [],
+          "startLine": 83,
+          "endLine": 83
+        },
+        {
+          "name": "idx_records_session_lane_type_op_kind_seq",
+          "kind": "index",
+          "fields": [],
+          "startLine": 84,
+          "endLine": 84
+        },
+        {
+          "name": "idx_records_session_run_id_seq",
+          "kind": "index",
+          "fields": [],
+          "startLine": 85,
+          "endLine": 85
+        },
+        {
+          "name": "idx_facts_session_kind_key_seq",
+          "kind": "index",
+          "fields": [],
+          "startLine": 105,
+          "endLine": 105
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 26
+      }
+    }
+  ]
+}

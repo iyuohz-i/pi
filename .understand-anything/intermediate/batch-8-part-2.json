@@ -1,0 +1,819 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/coding-agent/src/modes/interactive/components/armin.ts",
+      "type": "file",
+      "name": "armin.ts",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/armin.ts",
+      "summary": "ASCII 艺术动画组件 Armin，支持打字机、扫描线、雨滴、淡入、CRT、故障和溶解等多种视觉效果。",
+      "tags": [
+        "interactive",
+        "component",
+        "animation",
+        "ascii-art"
+      ],
+      "complexity": "complex",
+      "languageNotes": "使用字符网格和帧动画实现多种终端视觉效果。"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/components/armin.ts:buildFinalGrid",
+      "type": "function",
+      "name": "buildFinalGrid",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/armin.ts",
+      "lineRange": [
+        48,
+        58
+      ],
+      "summary": "buildFinalGrid function。",
+      "tags": [
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/coding-agent/src/modes/interactive/components/armin.ts:ArminComponent",
+      "type": "class",
+      "name": "ArminComponent",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/armin.ts",
+      "lineRange": [
+        60,
+        382
+      ],
+      "summary": "Armin 动画组件类，管理字符网格、帧动画循环和多种视觉效果的状态机。",
+      "tags": [
+        "interactive",
+        "component",
+        "animation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/src/modes/interactive/components/assistant-message.ts",
+      "type": "file",
+      "name": "assistant-message.ts",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/assistant-message.ts",
+      "summary": "渲染助手消息的交互式组件，支持 Markdown 转换、思考块折叠和流式更新。",
+      "tags": [
+        "interactive",
+        "component",
+        "message-rendering",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:packages/coding-agent/src/modes/interactive/components/assistant-message.ts:AssistantMessageComponent",
+      "type": "class",
+      "name": "AssistantMessageComponent",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/assistant-message.ts",
+      "lineRange": [
+        14,
+        197
+      ],
+      "summary": "助手消息渲染组件，处理 Markdown 显示、思考块隐藏和流式内容更新。",
+      "tags": [
+        "interactive",
+        "component",
+        "message-rendering"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/src/modes/interactive/components/bash-execution.ts",
+      "type": "file",
+      "name": "bash-execution.ts",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/bash-execution.ts",
+      "summary": "渲染 Bash 命令执行结果的交互式组件，支持输出截断、展开/折叠和状态显示。",
+      "tags": [
+        "interactive",
+        "component",
+        "bash",
+        "output-rendering"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:packages/coding-agent/src/modes/interactive/components/bash-execution.ts:BashExecutionComponent",
+      "type": "class",
+      "name": "BashExecutionComponent",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/bash-execution.ts",
+      "lineRange": [
+        21,
+        220
+      ],
+      "summary": "Bash 执行结果渲染组件，管理命令输出、截断显示和展开折叠状态。",
+      "tags": [
+        "interactive",
+        "component",
+        "bash"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/src/modes/interactive/components/bordered-loader.ts",
+      "type": "file",
+      "name": "bordered-loader.ts",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/bordered-loader.ts",
+      "summary": "带边框的加载动画组件，支持取消操作和信号控制。",
+      "tags": [
+        "interactive",
+        "component",
+        "loader",
+        "ui"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:packages/coding-agent/src/modes/interactive/components/bordered-loader.ts:BorderedLoader",
+      "type": "class",
+      "name": "BorderedLoader",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/bordered-loader.ts",
+      "lineRange": [
+        7,
+        68
+      ],
+      "summary": "带边框的加载器组件，封装可取消的加载动画和键盘输入处理。",
+      "tags": [
+        "interactive",
+        "component",
+        "loader"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/src/modes/interactive/components/branch-summary-message.ts",
+      "type": "file",
+      "name": "branch-summary-message.ts",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/branch-summary-message.ts",
+      "summary": "渲染分支摘要消息的交互式组件，支持展开/折叠显示摘要内容。",
+      "tags": [
+        "interactive",
+        "component",
+        "message-rendering",
+        "branch-summary"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:packages/coding-agent/src/modes/interactive/components/branch-summary-message.ts:BranchSummaryMessageComponent",
+      "type": "class",
+      "name": "BranchSummaryMessageComponent",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/branch-summary-message.ts",
+      "lineRange": [
+        10,
+        58
+      ],
+      "summary": "分支摘要消息渲染组件，支持展开折叠和 Markdown 显示。",
+      "tags": [
+        "interactive",
+        "component",
+        "branch-summary"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/src/modes/interactive/components/compaction-summary-message.ts",
+      "type": "file",
+      "name": "compaction-summary-message.ts",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/compaction-summary-message.ts",
+      "summary": "渲染压缩摘要消息的交互式组件，支持展开/折叠显示压缩前后的上下文信息。",
+      "tags": [
+        "interactive",
+        "component",
+        "message-rendering",
+        "compaction"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:packages/coding-agent/src/modes/interactive/components/compaction-summary-message.ts:CompactionSummaryMessageComponent",
+      "type": "class",
+      "name": "CompactionSummaryMessageComponent",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/compaction-summary-message.ts",
+      "lineRange": [
+        10,
+        59
+      ],
+      "summary": "压缩摘要消息渲染组件，支持展开折叠和 Markdown 显示。",
+      "tags": [
+        "interactive",
+        "component",
+        "compaction"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/src/modes/interactive/components/countdown-timer.ts",
+      "type": "file",
+      "name": "countdown-timer.ts",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/countdown-timer.ts",
+      "summary": "倒计时定时器组件，在终端 UI 中显示剩余秒数并在到期时回调。",
+      "tags": [
+        "interactive",
+        "component",
+        "timer",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/coding-agent/src/modes/interactive/components/countdown-timer.ts:CountdownTimer",
+      "type": "class",
+      "name": "CountdownTimer",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/countdown-timer.ts",
+      "lineRange": [
+        7,
+        39
+      ],
+      "summary": "倒计时定时器类，管理间隔定时器和到期回调。",
+      "tags": [
+        "interactive",
+        "component",
+        "timer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/src/modes/interactive/components/custom-editor.ts",
+      "type": "file",
+      "name": "custom-editor.ts",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/custom-editor.ts",
+      "summary": "自定义编辑器组件，处理键盘快捷键、粘贴图片和扩展快捷键等编辑器操作。",
+      "tags": [
+        "interactive",
+        "component",
+        "editor",
+        "input-handling"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:packages/coding-agent/src/modes/interactive/components/custom-editor.ts:CustomEditor",
+      "type": "class",
+      "name": "CustomEditor",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/custom-editor.ts",
+      "lineRange": [
+        7,
+        90
+      ],
+      "summary": "自定义编辑器类，代理键盘输入并分发动作处理器给上层组件。",
+      "tags": [
+        "interactive",
+        "component",
+        "editor"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/src/modes/interactive/components/custom-message.ts",
+      "type": "file",
+      "name": "custom-message.ts",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/custom-message.ts",
+      "summary": "渲染自定义类型消息的交互式组件，支持自定义渲染器和展开/折叠。",
+      "tags": [
+        "interactive",
+        "component",
+        "message-rendering",
+        "custom"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:packages/coding-agent/src/modes/interactive/components/custom-message.ts:CustomMessageComponent",
+      "type": "class",
+      "name": "CustomMessageComponent",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/custom-message.ts",
+      "lineRange": [
+        12,
+        113
+      ],
+      "summary": "自定义消息渲染组件，支持自定义渲染器、Markdown 主题和展开折叠。",
+      "tags": [
+        "interactive",
+        "component",
+        "custom-message"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/src/modes/interactive/components/daxnuts.ts",
+      "type": "file",
+      "name": "daxnuts.ts",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/daxnuts.ts",
+      "summary": "ASCII 艺术动画组件 Daxnuts，渲染图像并逐帧播放动画效果。",
+      "tags": [
+        "interactive",
+        "component",
+        "animation",
+        "ascii-art"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/components/daxnuts.ts:parseImage",
+      "type": "function",
+      "name": "parseImage",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/daxnuts.ts",
+      "lineRange": [
+        17,
+        31
+      ],
+      "summary": "parseImage function。",
+      "tags": [
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/components/daxnuts.ts:buildImage",
+      "type": "function",
+      "name": "buildImage",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/daxnuts.ts",
+      "lineRange": [
+        39,
+        55
+      ],
+      "summary": "buildImage function。",
+      "tags": [
+        "code"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/coding-agent/src/modes/interactive/components/daxnuts.ts:DaxnutsComponent",
+      "type": "class",
+      "name": "DaxnutsComponent",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/daxnuts.ts",
+      "lineRange": [
+        57,
+        164
+      ],
+      "summary": "Daxnuts 动画组件类，管理图像解析、帧动画循环和渲染缓存。",
+      "tags": [
+        "interactive",
+        "component",
+        "animation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/src/modes/interactive/components/diff.ts",
+      "type": "file",
+      "name": "diff.ts",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/diff.ts",
+      "summary": "在终端中渲染 diff 输出的组件，支持行内差异高亮和颜色标记。",
+      "tags": [
+        "interactive",
+        "component",
+        "diff",
+        "rendering"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/components/diff.ts:renderIntraLineDiff",
+      "type": "function",
+      "name": "renderIntraLineDiff",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/diff.ts",
+      "lineRange": [
+        26,
+        66
+      ],
+      "summary": "计算两个文本行的行内差异并生成高亮标记。",
+      "tags": [
+        "interactive",
+        "diff",
+        "algorithm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/components/diff.ts:renderDiff",
+      "type": "function",
+      "name": "renderDiff",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/diff.ts",
+      "lineRange": [
+        79,
+        147
+      ],
+      "summary": "渲染 diff 文本为带颜色的终端输出，支持行内差异高亮显示。",
+      "tags": [
+        "interactive",
+        "diff",
+        "rendering"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/src/modes/interactive/components/dynamic-border.ts",
+      "type": "file",
+      "name": "dynamic-border.ts",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/dynamic-border.ts",
+      "summary": "动态边框组件，根据主题颜色渲染可变颜色的边框。",
+      "tags": [
+        "interactive",
+        "component",
+        "border",
+        "ui"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/coding-agent/src/modes/interactive/components/dynamic-border.ts:DynamicBorder",
+      "type": "class",
+      "name": "DynamicBorder",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/dynamic-border.ts",
+      "lineRange": [
+        11,
+        25
+      ],
+      "summary": "动态边框类，根据主题颜色渲染可变颜色的边框。",
+      "tags": [
+        "interactive",
+        "component",
+        "border"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/armin.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/components/armin.ts:buildFinalGrid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/armin.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/armin.ts:ArminComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/armin.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/armin.ts:ArminComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/assistant-message.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/assistant-message.ts:AssistantMessageComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/assistant-message.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/assistant-message.ts:AssistantMessageComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/bash-execution.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/bash-execution.ts:BashExecutionComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/bash-execution.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/bash-execution.ts:BashExecutionComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/bordered-loader.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/bordered-loader.ts:BorderedLoader",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/bordered-loader.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/bordered-loader.ts:BorderedLoader",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/branch-summary-message.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/branch-summary-message.ts:BranchSummaryMessageComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/branch-summary-message.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/branch-summary-message.ts:BranchSummaryMessageComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/compaction-summary-message.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/compaction-summary-message.ts:CompactionSummaryMessageComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/compaction-summary-message.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/compaction-summary-message.ts:CompactionSummaryMessageComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/countdown-timer.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/countdown-timer.ts:CountdownTimer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/countdown-timer.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/countdown-timer.ts:CountdownTimer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/custom-editor.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/custom-editor.ts:CustomEditor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/custom-editor.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/custom-editor.ts:CustomEditor",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/custom-message.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/custom-message.ts:CustomMessageComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/custom-message.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/custom-message.ts:CustomMessageComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/daxnuts.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/components/daxnuts.ts:parseImage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/daxnuts.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/components/daxnuts.ts:buildImage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/daxnuts.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/daxnuts.ts:DaxnutsComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/daxnuts.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/daxnuts.ts:DaxnutsComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/diff.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/components/diff.ts:renderIntraLineDiff",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/diff.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/components/diff.ts:renderDiff",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/diff.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/components/diff.ts:renderDiff",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/dynamic-border.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/dynamic-border.ts:DynamicBorder",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/dynamic-border.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/dynamic-border.ts:DynamicBorder",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/armin.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/assistant-message.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/assistant-message.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/markdown-transform.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/assistant-message.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/bash-execution.ts",
+      "target": "file:packages/coding-agent/src/core/tools/truncate.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/bash-execution.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/dynamic-border.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/bash-execution.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/keybinding-hints.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/bash-execution.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/visual-truncate.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/bash-execution.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/bash-execution.ts",
+      "target": "file:packages/coding-agent/src/utils/ansi.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/bordered-loader.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/dynamic-border.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/bordered-loader.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/keybinding-hints.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/bordered-loader.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/branch-summary-message.ts",
+      "target": "file:packages/coding-agent/src/core/messages.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/branch-summary-message.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/keybinding-hints.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/branch-summary-message.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/compaction-summary-message.ts",
+      "target": "file:packages/coding-agent/src/core/messages.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/compaction-summary-message.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/keybinding-hints.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/compaction-summary-message.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/custom-editor.ts",
+      "target": "file:packages/coding-agent/src/core/keybindings.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/custom-message.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/custom-message.ts",
+      "target": "file:packages/coding-agent/src/core/messages.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/custom-message.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/daxnuts.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/diff.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/dynamic-border.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

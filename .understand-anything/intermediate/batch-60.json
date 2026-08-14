@@ -1,0 +1,54 @@
+{
+  "batchIndex": 60,
+  "nodes": [
+    {
+      "id": "packages/evals/README.md",
+      "type": "file",
+      "label": "Pi Evals 文档",
+      "fileCategory": "docs",
+      "language": "markdown",
+      "metrics": { "totalLines": 153, "nonEmptyLines": 117, "sectionCount": 6 },
+      "sections": [
+        { "heading": "Pi evals", "level": 1, "line": 1 },
+        { "heading": "Running evals", "level": 2, "line": 7 },
+        { "heading": "Writing evals", "level": 2, "line": 36 },
+        { "heading": "Configuring the Pi harness", "level": 3, "line": 57 },
+        { "heading": "Transforming harness output", "level": 3, "line": 87 },
+        { "heading": "Writing comparative eval sets", "level": 3, "line": 104 }
+      ],
+      "summary": "Pi evals 包的说明文档。描述了如何使用 vitest-evals 框架对 Pi 工作流进行行为化、模型驱动的检查。涵盖运行 eval（通过 npm run eval）、编写 eval（使用 createPiCodingAgentHarness）、配置 harness（模型选择、工具禁用、系统提示转换、输出转换）、以及编写对比 eval 集合（evalHarnessTable）。文档强调 harness 名称的稳定性和唯一性，以及比较评估中的 baseline/candidate 模式。"
+    },
+    {
+      "id": "packages/evals/package.json",
+      "type": "file",
+      "label": "Evals 包配置",
+      "fileCategory": "config",
+      "language": "json",
+      "metrics": { "totalLines": 20, "nonEmptyLines": 20, "sectionCount": 6 },
+      "summary": "Pi evals 包的 package.json 配置。定义包名 @earendil-works/pi-evals（v0.84.1），私有 ESM 模块。提供三个脚本：clean（清理 .eval 目录）、eval（运行 run-evals.mjs）、test（vitest 运行）。devDependencies 包括 pi-ai 和 pi-coding-agent 核心包、vitest-evals 框架、vitest 测试运行器和 TypeScript 编译器。"
+    },
+    {
+      "id": "packages/evals/tsconfig.json",
+      "type": "file",
+      "label": "Evals TypeScript 配置",
+      "fileCategory": "config",
+      "language": "json",
+      "metrics": { "totalLines": 10, "nonEmptyLines": 10, "sectionCount": 3 },
+      "summary": "Pi evals 包的 TypeScript 编译配置。继承根目录 tsconfig.json，配置 NodeNext 模块解析，仅类型检查（noEmit: true），包含 node 和 vitest 类型定义，编译范围为 src/**/*.ts。"
+    }
+  ],
+  "edges": [
+    {
+      "source": "packages/evals/README.md",
+      "target": "packages/evals/package.json",
+      "type": "documents",
+      "label": "文档描述"
+    },
+    {
+      "source": "packages/evals/tsconfig.json",
+      "target": "packages/evals/package.json",
+      "type": "configures",
+      "label": "配置编译"
+    }
+  ]
+}

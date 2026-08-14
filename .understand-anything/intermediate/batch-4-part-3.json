@@ -1,0 +1,784 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/ai/test/anthropic-adaptive-thinking-models.test.ts",
+      "type": "file",
+      "name": "anthropic-adaptive-thinking-models.test.ts",
+      "filePath": "packages/ai/test/anthropic-adaptive-thinking-models.test.ts",
+      "summary": "测试 Anthropic 自适应思维模型配置，验证所有模型的 thinking level 支持。",
+      "tags": [
+        "test",
+        "anthropic",
+        "thinking-models"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/anthropic-auth-token.test.ts",
+      "type": "file",
+      "name": "anthropic-auth-token.test.ts",
+      "filePath": "packages/ai/test/anthropic-auth-token.test.ts",
+      "summary": "测试 Anthropic auth token 认证流程，验证 SSE 响应和 token 鉴权。",
+      "tags": [
+        "test",
+        "anthropic",
+        "auth-token",
+        "sse"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/test/anthropic-cache-write-1h-cost.test.ts",
+      "type": "file",
+      "name": "anthropic-cache-write-1h-cost.test.ts",
+      "filePath": "packages/ai/test/anthropic-cache-write-1h-cost.test.ts",
+      "summary": "测试 Anthropic 1 小时缓存写入计费，验证 cache_creation input tokens 的费用计算。",
+      "tags": [
+        "test",
+        "anthropic",
+        "cache",
+        "cost"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/anthropic-cache-write-1h-cost.test.ts:eventsWithCacheCreation",
+      "type": "function",
+      "name": "eventsWithCacheCreation",
+      "filePath": "packages/ai/test/anthropic-cache-write-1h-cost.test.ts",
+      "lineRange": [
+        18,
+        57
+      ],
+      "summary": "构造带 cache_creation input tokens 的 SSE 事件序列。",
+      "tags": [
+        "test",
+        "sse",
+        "cache-creation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/anthropic-eager-tool-input-compat.test.ts",
+      "type": "file",
+      "name": "anthropic-eager-tool-input-compat.test.ts",
+      "filePath": "packages/ai/test/anthropic-eager-tool-input-compat.test.ts",
+      "summary": "测试 Anthropic eager tool input 兼容性，验证工具输入 schema 的兼容模式处理。",
+      "tags": [
+        "test",
+        "anthropic",
+        "tool-input",
+        "compat"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/anthropic-eager-tool-input-compat.test.ts:createModel",
+      "type": "function",
+      "name": "createModel",
+      "filePath": "packages/ai/test/anthropic-eager-tool-input-compat.test.ts",
+      "lineRange": [
+        13,
+        27
+      ],
+      "summary": "创建用于测试的 Anthropic 模型实例，配置 compat 选项。",
+      "tags": [
+        "test",
+        "model-creation",
+        "compat"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/anthropic-eager-tool-input-compat.test.ts:captureAnthropicRequest",
+      "type": "function",
+      "name": "captureAnthropicRequest",
+      "filePath": "packages/ai/test/anthropic-eager-tool-input-compat.test.ts",
+      "lineRange": [
+        69,
+        105
+      ],
+      "summary": "启动本地服务器捕获 Anthropic API 请求，验证 tool input schema。",
+      "tags": [
+        "test",
+        "request-capture",
+        "server"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/anthropic-eager-tool-input-e2e.test.ts",
+      "type": "file",
+      "name": "anthropic-eager-tool-input-e2e.test.ts",
+      "filePath": "packages/ai/test/anthropic-eager-tool-input-e2e.test.ts",
+      "summary": "端到端测试 Anthropic eager tool input 流式功能，验证各 provider 的工具启用请求。",
+      "tags": [
+        "test",
+        "anthropic",
+        "tool-input",
+        "e2e"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/anthropic-eager-tool-input-e2e.test.ts:getProbePriority",
+      "type": "function",
+      "name": "getProbePriority",
+      "filePath": "packages/ai/test/anthropic-eager-tool-input-e2e.test.ts",
+      "lineRange": [
+        48,
+        64
+      ],
+      "summary": "根据模型 ID 获取探针优先级，用于选择测试模型。",
+      "tags": [
+        "test",
+        "probe-priority",
+        "model-selection"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/anthropic-eager-tool-input-e2e.test.ts:selectOneCasePerProvider",
+      "type": "function",
+      "name": "selectOneCasePerProvider",
+      "filePath": "packages/ai/test/anthropic-eager-tool-input-e2e.test.ts",
+      "lineRange": [
+        66,
+        80
+      ],
+      "summary": "从所有用例中按 provider 选择一个代表用例。",
+      "tags": [
+        "test",
+        "case-selection",
+        "provider"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/anthropic-eager-tool-input-e2e.test.ts:expectToolEnabledRequestAccepted",
+      "type": "function",
+      "name": "expectToolEnabledRequestAccepted",
+      "filePath": "packages/ai/test/anthropic-eager-tool-input-e2e.test.ts",
+      "lineRange": [
+        97,
+        124
+      ],
+      "summary": "验证带工具启用的请求被 provider 接受并返回有效响应。",
+      "tags": [
+        "test",
+        "tool-enabled",
+        "e2e"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/anthropic-empty-thinking-signature-compat.test.ts",
+      "type": "file",
+      "name": "anthropic-empty-thinking-signature-compat.test.ts",
+      "filePath": "packages/ai/test/anthropic-empty-thinking-signature-compat.test.ts",
+      "summary": "测试 Anthropic 空 thinking signature 兼容性，验证允许空签名时的请求 payload。",
+      "tags": [
+        "test",
+        "anthropic",
+        "thinking-signature",
+        "compat"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/anthropic-empty-thinking-signature-compat.test.ts:makeModel",
+      "type": "function",
+      "name": "makeModel",
+      "filePath": "packages/ai/test/anthropic-empty-thinking-signature-compat.test.ts",
+      "lineRange": [
+        19,
+        33
+      ],
+      "summary": "创建 Anthropic 模型实例，配置空 thinking signature 兼容选项。",
+      "tags": [
+        "test",
+        "model-creation",
+        "thinking-signature"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/anthropic-empty-thinking-signature-compat.test.ts:makeContext",
+      "type": "function",
+      "name": "makeContext",
+      "filePath": "packages/ai/test/anthropic-empty-thinking-signature-compat.test.ts",
+      "lineRange": [
+        35,
+        65
+      ],
+      "summary": "构造包含 thinking signature 的测试上下文。",
+      "tags": [
+        "test",
+        "context-creation",
+        "thinking"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/anthropic-empty-thinking-signature-compat.test.ts:capturePayload",
+      "type": "function",
+      "name": "capturePayload",
+      "filePath": "packages/ai/test/anthropic-empty-thinking-signature-compat.test.ts",
+      "lineRange": [
+        67,
+        79
+      ],
+      "summary": "流式发送请求并捕获实际发送的 payload。",
+      "tags": [
+        "test",
+        "payload-capture",
+        "streaming"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/anthropic-force-adaptive-thinking.test.ts",
+      "type": "file",
+      "name": "anthropic-force-adaptive-thinking.test.ts",
+      "filePath": "packages/ai/test/anthropic-force-adaptive-thinking.test.ts",
+      "summary": "测试 Anthropic 强制自适应思维功能，验证 compat 配置对 thinking 参数的控制。",
+      "tags": [
+        "test",
+        "anthropic",
+        "adaptive-thinking",
+        "compat"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/anthropic-force-adaptive-thinking.test.ts:makeCustomModel",
+      "type": "function",
+      "name": "makeCustomModel",
+      "filePath": "packages/ai/test/anthropic-force-adaptive-thinking.test.ts",
+      "lineRange": [
+        23,
+        39
+      ],
+      "summary": "创建带 compat 配置的自定义 Anthropic 模型。",
+      "tags": [
+        "test",
+        "model-creation",
+        "compat"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/anthropic-force-adaptive-thinking.test.ts:capturePayload",
+      "type": "function",
+      "name": "capturePayload",
+      "filePath": "packages/ai/test/anthropic-force-adaptive-thinking.test.ts",
+      "lineRange": [
+        41,
+        68
+      ],
+      "summary": "流式发送请求并捕获 payload，验证 thinking 参数。",
+      "tags": [
+        "test",
+        "payload-capture",
+        "thinking"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/anthropic-long-cache-retention-e2e.test.ts",
+      "type": "file",
+      "name": "anthropic-long-cache-retention-e2e.test.ts",
+      "filePath": "packages/ai/test/anthropic-long-cache-retention-e2e.test.ts",
+      "summary": "端到端测试 Anthropic 长缓存保留功能，验证各 provider 的长缓存保留请求。",
+      "tags": [
+        "test",
+        "anthropic",
+        "cache-retention",
+        "e2e"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/anthropic-long-cache-retention-e2e.test.ts:getProbePriority",
+      "type": "function",
+      "name": "getProbePriority",
+      "filePath": "packages/ai/test/anthropic-long-cache-retention-e2e.test.ts",
+      "lineRange": [
+        37,
+        51
+      ],
+      "summary": "根据模型 ID 获取探针优先级。",
+      "tags": [
+        "test",
+        "probe-priority",
+        "model-selection"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/anthropic-long-cache-retention-e2e.test.ts:selectOneCasePerProvider",
+      "type": "function",
+      "name": "selectOneCasePerProvider",
+      "filePath": "packages/ai/test/anthropic-long-cache-retention-e2e.test.ts",
+      "lineRange": [
+        53,
+        67
+      ],
+      "summary": "按 provider 选择一个代表用例。",
+      "tags": [
+        "test",
+        "case-selection",
+        "provider"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/anthropic-long-cache-retention-e2e.test.ts:expectLongCacheRetentionAccepted",
+      "type": "function",
+      "name": "expectLongCacheRetentionAccepted",
+      "filePath": "packages/ai/test/anthropic-long-cache-retention-e2e.test.ts",
+      "lineRange": [
+        81,
+        108
+      ],
+      "summary": "验证长缓存保留请求被 provider 接受。",
+      "tags": [
+        "test",
+        "cache-retention",
+        "e2e"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/anthropic-opus-4-8-smoke.test.ts",
+      "type": "file",
+      "name": "anthropic-opus-4-8-smoke.test.ts",
+      "filePath": "packages/ai/test/anthropic-opus-4-8-smoke.test.ts",
+      "summary": "Anthropic Opus 4.8 模型冒烟测试，验证模型基本可用性。",
+      "tags": [
+        "test",
+        "anthropic",
+        "smoke-test",
+        "opus"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/anthropic-opus-4-8-smoke.test.ts:makeContext",
+      "type": "function",
+      "name": "makeContext",
+      "filePath": "packages/ai/test/anthropic-opus-4-8-smoke.test.ts",
+      "lineRange": [
+        10,
+        22
+      ],
+      "summary": "创建 Opus 4.8 冒烟测试的上下文。",
+      "tags": [
+        "test",
+        "context-creation",
+        "smoke"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/anthropic-sse-parsing.test.ts",
+      "type": "file",
+      "name": "anthropic-sse-parsing.test.ts",
+      "filePath": "packages/ai/test/anthropic-sse-parsing.test.ts",
+      "summary": "测试 Anthropic SSE 事件流解析，验证各类 SSE 事件的正确处理和错误恢复。",
+      "tags": [
+        "test",
+        "anthropic",
+        "sse-parsing",
+        "streaming"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/ai/test/anthropic-temperature-compat.test.ts",
+      "type": "file",
+      "name": "anthropic-temperature-compat.test.ts",
+      "filePath": "packages/ai/test/anthropic-temperature-compat.test.ts",
+      "summary": "测试 Anthropic temperature 兼容性，验证 compat 配置对 temperature 参数的控制。",
+      "tags": [
+        "test",
+        "anthropic",
+        "temperature",
+        "compat"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/anthropic-temperature-compat.test.ts:makeCustomModel",
+      "type": "function",
+      "name": "makeCustomModel",
+      "filePath": "packages/ai/test/anthropic-temperature-compat.test.ts",
+      "lineRange": [
+        22,
+        36
+      ],
+      "summary": "创建带 temperature compat 配置的自定义模型。",
+      "tags": [
+        "test",
+        "model-creation",
+        "temperature"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/anthropic-temperature-compat.test.ts:capturePayload",
+      "type": "function",
+      "name": "capturePayload",
+      "filePath": "packages/ai/test/anthropic-temperature-compat.test.ts",
+      "lineRange": [
+        38,
+        65
+      ],
+      "summary": "流式发送请求并捕获 payload，验证 temperature 参数。",
+      "tags": [
+        "test",
+        "payload-capture",
+        "temperature"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/ai/test/anthropic-adaptive-thinking-models.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-adaptive-thinking-models.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-auth-token.test.ts",
+      "target": "file:packages/ai/src/api/anthropic-messages.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-auth-token.test.ts",
+      "target": "file:packages/ai/src/env-api-keys.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-auth-token.test.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-auth-token.test.ts",
+      "target": "file:packages/ai/src/providers/anthropic.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-auth-token.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-cache-write-1h-cost.test.ts",
+      "target": "file:packages/ai/src/api/anthropic-messages.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-cache-write-1h-cost.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-cache-write-1h-cost.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-eager-tool-input-compat.test.ts",
+      "target": "file:packages/ai/src/api/anthropic-messages.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-eager-tool-input-compat.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-eager-tool-input-e2e.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-eager-tool-input-e2e.test.ts",
+      "target": "file:packages/ai/src/env-api-keys.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-eager-tool-input-e2e.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-eager-tool-input-e2e.test.ts",
+      "target": "file:packages/ai/test/oauth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-empty-thinking-signature-compat.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-empty-thinking-signature-compat.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-force-adaptive-thinking.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-force-adaptive-thinking.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-long-cache-retention-e2e.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-long-cache-retention-e2e.test.ts",
+      "target": "file:packages/ai/src/env-api-keys.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-long-cache-retention-e2e.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-long-cache-retention-e2e.test.ts",
+      "target": "file:packages/ai/test/oauth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-opus-4-8-smoke.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-opus-4-8-smoke.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-sse-parsing.test.ts",
+      "target": "file:packages/ai/src/api/anthropic-messages.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-sse-parsing.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-sse-parsing.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-temperature-compat.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-temperature-compat.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-cache-write-1h-cost.test.ts",
+      "target": "function:packages/ai/test/anthropic-cache-write-1h-cost.test.ts:eventsWithCacheCreation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-eager-tool-input-compat.test.ts",
+      "target": "function:packages/ai/test/anthropic-eager-tool-input-compat.test.ts:createModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-eager-tool-input-compat.test.ts",
+      "target": "function:packages/ai/test/anthropic-eager-tool-input-compat.test.ts:captureAnthropicRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-eager-tool-input-e2e.test.ts",
+      "target": "function:packages/ai/test/anthropic-eager-tool-input-e2e.test.ts:getProbePriority",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-eager-tool-input-e2e.test.ts",
+      "target": "function:packages/ai/test/anthropic-eager-tool-input-e2e.test.ts:selectOneCasePerProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-eager-tool-input-e2e.test.ts",
+      "target": "function:packages/ai/test/anthropic-eager-tool-input-e2e.test.ts:expectToolEnabledRequestAccepted",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-empty-thinking-signature-compat.test.ts",
+      "target": "function:packages/ai/test/anthropic-empty-thinking-signature-compat.test.ts:makeModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-empty-thinking-signature-compat.test.ts",
+      "target": "function:packages/ai/test/anthropic-empty-thinking-signature-compat.test.ts:makeContext",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-empty-thinking-signature-compat.test.ts",
+      "target": "function:packages/ai/test/anthropic-empty-thinking-signature-compat.test.ts:capturePayload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-force-adaptive-thinking.test.ts",
+      "target": "function:packages/ai/test/anthropic-force-adaptive-thinking.test.ts:makeCustomModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-force-adaptive-thinking.test.ts",
+      "target": "function:packages/ai/test/anthropic-force-adaptive-thinking.test.ts:capturePayload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-long-cache-retention-e2e.test.ts",
+      "target": "function:packages/ai/test/anthropic-long-cache-retention-e2e.test.ts:getProbePriority",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-long-cache-retention-e2e.test.ts",
+      "target": "function:packages/ai/test/anthropic-long-cache-retention-e2e.test.ts:selectOneCasePerProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-long-cache-retention-e2e.test.ts",
+      "target": "function:packages/ai/test/anthropic-long-cache-retention-e2e.test.ts:expectLongCacheRetentionAccepted",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-opus-4-8-smoke.test.ts",
+      "target": "function:packages/ai/test/anthropic-opus-4-8-smoke.test.ts:makeContext",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-temperature-compat.test.ts",
+      "target": "function:packages/ai/test/anthropic-temperature-compat.test.ts:makeCustomModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-temperature-compat.test.ts",
+      "target": "function:packages/ai/test/anthropic-temperature-compat.test.ts:capturePayload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    }
+  ]
+}

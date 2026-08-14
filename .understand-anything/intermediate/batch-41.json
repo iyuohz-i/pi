@@ -1,0 +1,249 @@
+{
+  "batchIndex": 41,
+  "nodes": [
+    {
+      "id": "packages/protocol/src/cbor/index.ts",
+      "type": "file",
+      "label": "cbor/index.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "CBOR 编解码模块的桶文件（barrel），统一重导出 decodeCbor、encodeCbor 及相关错误类型与配置常量（DEFAULT_MAX_CBOR_BYTE_LENGTH、DEFAULT_MAX_CBOR_CONTAINER_LENGTH、DEFAULT_MAX_CBOR_DEPTH）",
+      "exports": ["decodeCbor", "encodeCbor", "CborError", "CborOptions", "DEFAULT_MAX_CBOR_BYTE_LENGTH", "DEFAULT_MAX_CBOR_CONTAINER_LENGTH", "DEFAULT_MAX_CBOR_DEPTH"],
+      "sizeLines": 9
+    },
+    {
+      "id": "packages/protocol/src/codec.ts",
+      "type": "file",
+      "label": "codec.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "协议消息编解码器（codec）。负责 ClientMessage 和 ServerMessage 的验证、编码与增量解码。整合 CBOR 序列化（cbor/）、长度前缀帧（framing.ts）和 TypeBox schema 验证（schemas.ts），提供同步编码函数和流式解码器类",
+      "exports": ["ProtocolValidationError", "parseClientMessage", "parseServerMessage", "encodeClientMessage", "encodeServerMessage", "ClientMessageDecoder", "ServerMessageDecoder", "createClientMessageDecoder", "createServerMessageDecoder", "isSupportedProtocolVersion"],
+      "sizeLines": 172
+    },
+    {
+      "id": "packages/protocol/src/framing.ts",
+      "type": "file",
+      "label": "framing.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "长度前缀帧协议实现。定义 4 字节大端长度头部 + payload 的帧格式，提供同步编码/验证函数和基于状态机的增量流式解码器 FrameDecoder，支持任意分块的字节流拆帧",
+      "exports": ["DEFAULT_MAX_FRAME_LENGTH", "FrameError", "encodeFrame", "assertCompleteFrame", "FrameDecoder"],
+      "sizeLines": 165
+    },
+    {
+      "id": "packages/protocol/src/schemas.ts",
+      "type": "file",
+      "label": "schemas.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "协议类型系统的 TypeBox schema 定义中心。定义客户端/服务端消息结构、会话快照、转录项（user/assistant/tool）、命令与结果、模型元数据、使用量统计、协议错误码等全部协议数据结构，并通过 Static 导出对应 TypeScript 类型",
+      "exports": ["PROTOCOL_VERSION", "JsonValueSchema", "ThinkingLevelSchema", "SessionPhaseSchema", "ModelRefSchema", "ModelCostSchema", "ModelMetadataSchema", "TextContentSchema", "ThinkingContentSchema", "ImageContentSchema", "ToolCallContentSchema", "UserContentSchema", "AssistantContentSchema", "ToolContentSchema", "UsageSchema", "UserTranscriptItemSchema", "AssistantTranscriptItemSchema", "ToolTranscriptItemSchema", "TranscriptItemSchema", "TranscriptProgressSchema", "SessionMetadataSchema", "SessionSnapshotSchema", "ServerSnapshotSchema", "ProtocolErrorCodeSchema", "ProtocolErrorSchema", "ListCommandSchema", "CreateCommandSchema", "AttachCommandSchema", "DetachCommandSchema", "PromptCommandSchema", "SteerCommandSchema", "AbortCommandSchema", "SetModelCommandSchema", "SetThinkingCommandSchema", "CommandSchema", "CreateResultSchema", "AttachResultSchema", "PromptResultSchema", "SteerResultSchema", "AbortResultSchema", "SetModelResultSchema", "SetThinkingResultSchema", "ListResultSchema", "DetachResultSchema", "CommandResultSchema", "ClientHelloSchema", "RequestEnvelopeSchema", "ClientMessageSchema", "ServerEventSchema", "ServerHelloSchema", "ServerHelloErrorSchema", "ResponseEnvelopeSchema", "EventEnvelopeSchema", "ServerMessageSchema"],
+      "sizeLines": 450
+    },
+    {
+      "id": "packages/protocol/src/codec.ts::isProtocolValue",
+      "type": "function",
+      "label": "isProtocolValue",
+      "description": "递归验证值是否为合法的协议值类型（null、boolean、number、string、纯对象、数组），使用祖先集合防止循环引用，确保值可安全进行 CBOR 序列化",
+      "file": "packages/protocol/src/codec.ts",
+      "startLine": 25,
+      "endLine": 39,
+      "params": ["value", "optionalProperty", "ancestors"]
+    },
+    {
+      "id": "packages/protocol/src/codec.ts::encodeProtocolMessage",
+      "type": "function",
+      "label": "encodeProtocolMessage",
+      "description": "通用协议消息编码管线：先通过 parse 函数验证消息结构，再 CBOR 序列化，最后加长度前缀帧。统一处理编码阶段错误并截断错误信息",
+      "file": "packages/protocol/src/codec.ts",
+      "startLine": 60,
+      "endLine": 76,
+      "params": ["value", "parse", "kind", "options"]
+    },
+    {
+      "id": "packages/protocol/src/codec.ts::ValidatedMessageDecoder",
+      "type": "class",
+      "label": "ValidatedMessageDecoder",
+      "description": "泛型已验证消息增量解码器。内部持有 FrameDecoder 进行流式拆帧，对每一帧执行 CBOR 反序列化和 schema 验证。采用失败锁定模式（failed 标志），一旦出错后续调用直接抛出",
+      "file": "packages/protocol/src/codec.ts",
+      "startLine": 88,
+      "endLine": 126,
+      "methods": ["constructor", "push", "end"],
+      "properties": ["failed", "frames", "kind", "maxFrameLength", "parse"]
+    },
+    {
+      "id": "packages/protocol/src/codec.ts::ClientMessageDecoder",
+      "type": "class",
+      "label": "ClientMessageDecoder",
+      "description": "客户端消息增量解码器，封装 ValidatedMessageDecoder 并绑定 parseClientMessage 验证逻辑，用于从字节流中持续解码客户端协议消息",
+      "file": "packages/protocol/src/codec.ts",
+      "startLine": 129,
+      "endLine": 143,
+      "methods": ["constructor", "push", "end"],
+      "properties": ["decoder"]
+    },
+    {
+      "id": "packages/protocol/src/codec.ts::ServerMessageDecoder",
+      "type": "class",
+      "label": "ServerMessageDecoder",
+      "description": "服务端消息增量解码器，封装 ValidatedMessageDecoder 并绑定 parseServerMessage 验证逻辑，用于从字节流中持续解码服务端协议消息",
+      "file": "packages/protocol/src/codec.ts",
+      "startLine": 146,
+      "endLine": 160,
+      "methods": ["constructor", "push", "end"],
+      "properties": ["decoder"]
+    },
+    {
+      "id": "packages/protocol/src/framing.ts::encodeFrame",
+      "type": "function",
+      "label": "encodeFrame",
+      "description": "将 payload 编码为长度前缀帧：4 字节大端无符号整数表示 payload 长度，后接 payload 原始字节。限制最大长度为 UINT32 上限",
+      "file": "packages/protocol/src/framing.ts",
+      "startLine": 28,
+      "endLine": 39,
+      "params": ["payload"]
+    },
+    {
+      "id": "packages/protocol/src/framing.ts::assertCompleteFrame",
+      "type": "function",
+      "label": "assertCompleteFrame",
+      "description": "验证字节数组包含恰好一个完整的长度前缀帧：检查头部完整性、长度不超限、帧总长度与声明长度一致",
+      "file": "packages/protocol/src/framing.ts",
+      "startLine": 42,
+      "endLine": 53,
+      "params": ["frame", "options"]
+    },
+    {
+      "id": "packages/protocol/src/framing.ts::FrameDecoder",
+      "type": "class",
+      "label": "FrameDecoder",
+      "description": "基于状态机的增量帧解码器。从任意分块的字节流中拆分出完整的长度前缀帧。管理 header 解析、payload 分块缓冲、流结束校验，采用 open/ended/failed 三态状态机防止错误恢复",
+      "file": "packages/protocol/src/framing.ts",
+      "startLine": 58,
+      "endLine": 165,
+      "methods": ["constructor", "push", "end", "fail"],
+      "properties": ["header", "headerLength", "maxFrameLength", "payloadBlocks", "currentPayloadBlock", "currentPayloadBlockLength", "expectedPayloadLength", "payloadLength", "state"]
+    }
+  ],
+  "edges": [
+    {
+      "source": "packages/protocol/src/codec.ts",
+      "target": "packages/protocol/src/cbor/index.ts",
+      "type": "import",
+      "label": "import",
+      "description": "codec 导入 CBOR 编解码函数（decodeCbor、encodeCbor）用于消息序列化/反序列化"
+    },
+    {
+      "source": "packages/protocol/src/codec.ts",
+      "target": "packages/protocol/src/framing.ts",
+      "type": "import",
+      "label": "import",
+      "description": "codec 导入帧编码/解码工具（encodeFrame、assertCompleteFrame、FrameDecoder）用于消息的帧封装与拆帧"
+    },
+    {
+      "source": "packages/protocol/src/codec.ts",
+      "target": "packages/protocol/src/schemas.ts",
+      "type": "import",
+      "label": "import",
+      "description": "codec 导入协议消息 schema（ClientMessageSchema、ServerMessageSchema、PROTOCOL_VERSION）用于消息类型验证"
+    },
+    {
+      "source": "packages/protocol/src/codec.ts::ValidatedMessageDecoder",
+      "target": "packages/protocol/src/codec.ts",
+      "type": "contains",
+      "label": "defined_in"
+    },
+    {
+      "source": "packages/protocol/src/codec.ts::ClientMessageDecoder",
+      "target": "packages/protocol/src/codec.ts",
+      "type": "contains",
+      "label": "defined_in"
+    },
+    {
+      "source": "packages/protocol/src/codec.ts::ServerMessageDecoder",
+      "target": "packages/protocol/src/codec.ts",
+      "type": "contains",
+      "label": "defined_in"
+    },
+    {
+      "source": "packages/protocol/src/codec.ts::isProtocolValue",
+      "target": "packages/protocol/src/codec.ts",
+      "type": "contains",
+      "label": "defined_in"
+    },
+    {
+      "source": "packages/protocol/src/codec.ts::encodeProtocolMessage",
+      "target": "packages/protocol/src/codec.ts",
+      "type": "contains",
+      "label": "defined_in"
+    },
+    {
+      "source": "packages/protocol/src/framing.ts::FrameDecoder",
+      "target": "packages/protocol/src/framing.ts",
+      "type": "contains",
+      "label": "defined_in"
+    },
+    {
+      "source": "packages/protocol/src/framing.ts::encodeFrame",
+      "target": "packages/protocol/src/framing.ts",
+      "type": "contains",
+      "label": "defined_in"
+    },
+    {
+      "source": "packages/protocol/src/framing.ts::assertCompleteFrame",
+      "target": "packages/protocol/src/framing.ts",
+      "type": "contains",
+      "label": "defined_in"
+    },
+    {
+      "source": "packages/protocol/src/codec.ts::ValidatedMessageDecoder",
+      "target": "packages/protocol/src/framing.ts::FrameDecoder",
+      "type": "uses",
+      "label": "uses",
+      "description": "ValidatedMessageDecoder 内部持有 FrameDecoder 实例进行流式拆帧"
+    },
+    {
+      "source": "packages/protocol/src/codec.ts::encodeProtocolMessage",
+      "target": "packages/protocol/src/framing.ts::encodeFrame",
+      "type": "uses",
+      "label": "calls",
+      "description": "编码管线调用 encodeFrame 为 CBOR 序列化后的消息添加长度前缀帧"
+    },
+    {
+      "source": "packages/protocol/src/codec.ts::encodeProtocolMessage",
+      "target": "packages/protocol/src/framing.ts::assertCompleteFrame",
+      "type": "uses",
+      "label": "calls",
+      "description": "编码管线调用 assertCompleteFrame 验证生成的帧完整性"
+    },
+    {
+      "source": "packages/protocol/src/codec.ts::ClientMessageDecoder",
+      "target": "packages/protocol/src/codec.ts::ValidatedMessageDecoder",
+      "type": "uses",
+      "label": "delegates_to",
+      "description": "ClientMessageDecoder 将实际解码逻辑委托给 ValidatedMessageDecoder，绑定 parseClientMessage"
+    },
+    {
+      "source": "packages/protocol/src/codec.ts::ServerMessageDecoder",
+      "target": "packages/protocol/src/codec.ts::ValidatedMessageDecoder",
+      "type": "uses",
+      "label": "delegates_to",
+      "description": "ServerMessageDecoder 将实际解码逻辑委托给 ValidatedMessageDecoder，绑定 parseServerMessage"
+    },
+    {
+      "source": "packages/protocol/src/codec.ts::encodeProtocolMessage",
+      "target": "packages/protocol/src/cbor/index.ts",
+      "type": "uses",
+      "label": "calls",
+      "description": "编码管线调用 encodeCbor 将消息对象序列化为 CBOR 字节"
+    },
+    {
+      "source": "packages/protocol/src/codec.ts::ValidatedMessageDecoder",
+      "target": "packages/protocol/src/cbor/index.ts",
+      "type": "uses",
+      "label": "calls",
+      "description": "解码器调用 decodeCbor 将帧 payload 反序列化为对象"
+    }
+  ]
+}

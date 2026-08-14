@@ -1,0 +1,808 @@
+{
+  "nodes": [
+    {
+      "id": "packages/coding-agent/examples/extensions/kimi-deferred-tools.ts",
+      "type": "file",
+      "label": "kimi-deferred-tools.ts",
+      "description": "Kimi 延迟工具加载演示 — 演示按需激活工具模式，初始只启用 tool_search，通过搜索动态加载 Calculator 工具",
+      "category": "code",
+      "tags": [
+        "扩展示例",
+        "延迟加载",
+        "工具管理"
+      ],
+      "lineRange": {
+        "start": 1,
+        "end": 61
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/mac-system-theme.ts",
+      "type": "file",
+      "label": "mac-system-theme.ts",
+      "description": "macOS 系统主题同步扩展 — 定时检测系统外观偏好并自动切换 pi 的深色/浅色主题",
+      "category": "code",
+      "tags": [
+        "扩展示例",
+        "主题",
+        "macOS集成",
+        "定时轮询"
+      ],
+      "lineRange": {
+        "start": 1,
+        "end": 47
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/message-renderer.ts",
+      "type": "file",
+      "label": "message-renderer.ts",
+      "description": "自定义消息渲染示例 — 使用 registerMessageRenderer 控制自定义消息类型在 TUI 中的显示样式",
+      "category": "code",
+      "tags": [
+        "扩展示例",
+        "TUI渲染",
+        "消息定制"
+      ],
+      "lineRange": {
+        "start": 1,
+        "end": 59
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/minimal-mode.ts",
+      "type": "file",
+      "label": "minimal-mode.ts",
+      "description": "最小模式扩展 — 覆盖内置工具渲染器，折叠态仅显示工具调用，展开态显示完整输出，演示极简工具展示模式",
+      "category": "code",
+      "tags": [
+        "扩展示例",
+        "工具渲染",
+        "TUI定制",
+        "极简模式"
+      ],
+      "lineRange": {
+        "start": 1,
+        "end": 426
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/modal-editor.ts",
+      "type": "file",
+      "label": "modal-editor.ts",
+      "description": "模态编辑器扩展 — 实现 vim 风格的模态编辑（Normal/Insert 模式），支持 hjkl 导航和模式切换",
+      "category": "code",
+      "tags": [
+        "扩展示例",
+        "编辑器",
+        "Vim模式",
+        "输入处理"
+      ],
+      "lineRange": {
+        "start": 1,
+        "end": 85
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/model-status.ts",
+      "type": "file",
+      "label": "model-status.ts",
+      "description": "模型状态扩展 — 监听 model_select 事件在状态栏显示当前模型信息",
+      "category": "code",
+      "tags": [
+        "扩展示例",
+        "状态栏",
+        "模型切换"
+      ],
+      "lineRange": {
+        "start": 1,
+        "end": 31
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/notify.ts",
+      "type": "file",
+      "label": "notify.ts",
+      "description": "系统通知扩展 — agent 完成时发送原生终端通知，支持 OSC 777/OSC 99 和 Windows Toast 多种终端协议",
+      "category": "code",
+      "tags": [
+        "扩展示例",
+        "通知",
+        "终端协议",
+        "跨平台"
+      ],
+      "lineRange": {
+        "start": 1,
+        "end": 55
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts",
+      "type": "file",
+      "label": "overlay-qa-tests.ts",
+      "description": "Overlay QA 综合测试 — 包含 15+ 个测试命令，全面验证浮层定位、锚点、边距、堆叠、动画、焦点管理、流式输出等边缘场景",
+      "category": "code",
+      "tags": [
+        "扩展示例",
+        "测试",
+        "浮层",
+        "TUI",
+        "QA"
+      ],
+      "lineRange": {
+        "start": 1,
+        "end": 1450
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/overlay-test.ts",
+      "type": "file",
+      "label": "overlay-test.ts",
+      "description": "Overlay 基础测试 — 验证浮层渲染中的内联文本输入、宽字符、样式文本和 emoji 等边缘情况",
+      "category": "code",
+      "tags": [
+        "扩展示例",
+        "测试",
+        "浮层",
+        "输入组件"
+      ],
+      "lineRange": {
+        "start": 1,
+        "end": 153
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/permission-gate.ts",
+      "type": "file",
+      "label": "permission-gate.ts",
+      "description": "权限门控扩展 — 拦截危险 bash 命令（rm -rf、sudo、chmod 777），在 TUI 中提示用户确认",
+      "category": "code",
+      "tags": [
+        "扩展示例",
+        "安全",
+        "权限控制",
+        "命令拦截"
+      ],
+      "lineRange": {
+        "start": 1,
+        "end": 34
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/pirate.ts",
+      "type": "file",
+      "label": "pirate.ts",
+      "description": "海盗模式扩展 — 通过 before_agent_start 事件动态修改系统提示词，使 agent 以海盗风格回答",
+      "category": "code",
+      "tags": [
+        "扩展示例",
+        "系统提示词",
+        "趣味性"
+      ],
+      "lineRange": {
+        "start": 1,
+        "end": 47
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/plan-mode/README.md",
+      "type": "file",
+      "label": "plan-mode/README.md",
+      "description": "Plan Mode 扩展文档 — 描述只读探索模式的功能：禁用写入工具、Bash 白名单、计划提取和进度跟踪",
+      "category": "docs",
+      "tags": [
+        "文档",
+        "计划模式",
+        "只读模式"
+      ],
+      "lineRange": {
+        "start": 1,
+        "end": 66
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/mac-system-theme.ts#isDarkMode",
+      "type": "function",
+      "label": "isDarkMode",
+      "description": "通过 osascript 检测 macOS 当前是否处于深色模式",
+      "category": "code",
+      "tags": [
+        "macOS",
+        "系统检测",
+        "AppleScript"
+      ],
+      "lineRange": {
+        "start": 14,
+        "end": 23
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/notify.ts#windowsToastScript",
+      "type": "function",
+      "label": "windowsToastScript",
+      "description": "生成 Windows PowerShell Toast 通知脚本，构造 UWP Toast 通知的 XML 模板并显示",
+      "category": "code",
+      "tags": [
+        "Windows",
+        "通知",
+        "PowerShell"
+      ],
+      "lineRange": {
+        "start": 13,
+        "end": 24
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#hslToRgb",
+      "type": "function",
+      "label": "hslToRgb",
+      "description": "HSL 到 RGB 颜色空间转换，用于动画演示中的色彩循环效果",
+      "category": "code",
+      "tags": [
+        "颜色转换",
+        "动画",
+        "数学"
+      ],
+      "lineRange": {
+        "start": 856,
+        "end": 876
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/minimal-mode.ts#createBuiltInTools",
+      "type": "function",
+      "label": "createBuiltInTools",
+      "description": "创建一组 pi 内置工具实例（read、bash、edit、write、find、grep、ls），用于最小模式覆盖",
+      "category": "code",
+      "tags": [
+        "工具创建",
+        "内置工具",
+        "缓存"
+      ],
+      "lineRange": {
+        "start": 46,
+        "end": 56
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/modal-editor.ts#ModalEditor",
+      "type": "class",
+      "label": "ModalEditor",
+      "description": "vim 风格模态编辑器组件 — 继承 CustomEditor，实现 Normal/Insert 双模式输入处理和模式指示器渲染",
+      "category": "code",
+      "tags": [
+        "编辑器",
+        "Vim",
+        "TUI组件",
+        "输入处理"
+      ],
+      "lineRange": {
+        "start": 28,
+        "end": 79
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/overlay-test.ts#OverlayTestComponent",
+      "type": "class",
+      "label": "OverlayTestComponent",
+      "description": "浮层基础测试组件 — 实现 Focusable 接口，包含内联文本输入、宽字符/emoji/样式文本边缘测试和菜单导航",
+      "category": "code",
+      "tags": [
+        "测试组件",
+        "浮层",
+        "输入处理",
+        "边缘情况"
+      ],
+      "lineRange": {
+        "start": 31,
+        "end": 153
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#BaseOverlay",
+      "type": "class",
+      "label": "BaseOverlay",
+      "description": "浮层测试基类（抽象） — 提供通用边框渲染 box() 方法和生命周期钩子，所有测试组件继承此类",
+      "category": "code",
+      "tags": [
+        "基类",
+        "浮层",
+        "边框渲染",
+        "抽象类"
+      ],
+      "lineRange": {
+        "start": 305,
+        "end": 333
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#AnchorTestComponent",
+      "type": "class",
+      "label": "AnchorTestComponent",
+      "description": "锚点位置测试组件 — 循环展示 9 个 OverlayAnchor 位置，验证浮层锚点定位正确性",
+      "category": "code",
+      "tags": [
+        "测试组件",
+        "锚点",
+        "定位"
+      ],
+      "lineRange": {
+        "start": 336,
+        "end": 372
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#MarginTestComponent",
+      "type": "class",
+      "label": "MarginTestComponent",
+      "description": "边距测试组件 — 循环展示不同 margin/offset 配置，验证浮层边距和偏移渲染",
+      "category": "code",
+      "tags": [
+        "测试组件",
+        "边距",
+        "偏移"
+      ],
+      "lineRange": {
+        "start": 375,
+        "end": 412
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#StackOverlayComponent",
+      "type": "class",
+      "label": "StackOverlayComponent",
+      "description": "堆叠浮层测试组件 — 展示多层叠加的浮层效果，使用不同颜色区分层级",
+      "category": "code",
+      "tags": [
+        "测试组件",
+        "堆叠",
+        "层级"
+      ],
+      "lineRange": {
+        "start": 415,
+        "end": 457
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#StreamingOverflowComponent",
+      "type": "class",
+      "label": "StreamingOverflowComponent",
+      "description": "流式溢出测试组件 — 启动子进程生成带 ANSI 颜色的长路径输出，测试浮层内滚动和宽度溢出处理",
+      "category": "code",
+      "tags": [
+        "测试组件",
+        "流式输出",
+        "滚动",
+        "溢出处理"
+      ],
+      "lineRange": {
+        "start": 460,
+        "end": 590
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#EdgeTestComponent",
+      "type": "class",
+      "label": "EdgeTestComponent",
+      "description": "边缘定位测试组件 — 验证浮层在终端右边缘的边框对齐",
+      "category": "code",
+      "tags": [
+        "测试组件",
+        "边缘",
+        "对齐"
+      ],
+      "lineRange": {
+        "start": 593,
+        "end": 625
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#PercentTestComponent",
+      "type": "class",
+      "label": "PercentTestComponent",
+      "description": "百分比定位测试组件 — 验证 rowPercent/colPercent 百分比定位模式",
+      "category": "code",
+      "tags": [
+        "测试组件",
+        "百分比",
+        "定位"
+      ],
+      "lineRange": {
+        "start": 628,
+        "end": 665
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#MaxHeightTestComponent",
+      "type": "class",
+      "label": "MaxHeightTestComponent",
+      "description": "最大高度测试组件 — 渲染超过 maxHeight 限制的内容，验证截断行为",
+      "category": "code",
+      "tags": [
+        "测试组件",
+        "高度限制",
+        "截断"
+      ],
+      "lineRange": {
+        "start": 668,
+        "end": 700
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#SidepanelComponent",
+      "type": "class",
+      "label": "SidepanelComponent",
+      "description": "响应式侧面板组件 — 使用百分比宽度和 visible 回调实现终端宽度 <100 列时自动隐藏",
+      "category": "code",
+      "tags": [
+        "测试组件",
+        "响应式",
+        "侧面板",
+        "自适应"
+      ],
+      "lineRange": {
+        "start": 703,
+        "end": 761
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#AnimationDemoComponent",
+      "type": "class",
+      "label": "AnimationDemoComponent",
+      "description": "动画演示组件 — 以约 30 FPS 渲染弹跳条、旋转字符和颜色循环，验证浮层实时渲染能力",
+      "category": "code",
+      "tags": [
+        "测试组件",
+        "动画",
+        "FPS",
+        "实时渲染"
+      ],
+      "lineRange": {
+        "start": 764,
+        "end": 853
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#ToggleDemoComponent",
+      "type": "class",
+      "label": "ToggleDemoComponent",
+      "description": "切换演示组件 — 通过 OverlayHandle.setHidden() API 演示浮层可见性切换",
+      "category": "code",
+      "tags": [
+        "测试组件",
+        "可见性",
+        "OverlayHandle"
+      ],
+      "lineRange": {
+        "start": 879,
+        "end": 937
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#PassiveDemoController",
+      "type": "class",
+      "label": "PassiveDemoController",
+      "description": "非捕获浮层控制器 — 演示 nonCapturing 模式，配合 TimerPanel 非捕获浮层实现被动信息面板",
+      "category": "code",
+      "tags": [
+        "测试组件",
+        "非捕获",
+        "浮层控制"
+      ],
+      "lineRange": {
+        "start": 941,
+        "end": 1014
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#TimerPanel",
+      "type": "class",
+      "label": "TimerPanel",
+      "description": "计时器面板 — 非捕获浮层示例，每秒更新显示时间，与主浮层并行存在",
+      "category": "code",
+      "tags": [
+        "测试组件",
+        "计时器",
+        "非捕获"
+      ],
+      "lineRange": {
+        "start": 1016,
+        "end": 1030
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#FocusDemoController",
+      "type": "class",
+      "label": "FocusDemoController",
+      "description": "焦点循环控制器 — 管理三个重叠的非捕获浮层的焦点切换、输入路由和关闭逻辑",
+      "category": "code",
+      "tags": [
+        "测试组件",
+        "焦点管理",
+        "浮层控制"
+      ],
+      "lineRange": {
+        "start": 1044,
+        "end": 1164
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#FocusPanel",
+      "type": "class",
+      "label": "FocusPanel",
+      "description": "焦点面板组件 — 非捕获浮层中的可聚焦面板，支持输入处理和 Tab/Shift+Tab 焦点循环",
+      "category": "code",
+      "tags": [
+        "测试组件",
+        "焦点",
+        "输入面板"
+      ],
+      "lineRange": {
+        "start": 1166,
+        "end": 1247
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#StreamingInputController",
+      "type": "class",
+      "label": "StreamingInputController",
+      "description": "流式输入控制器 — 管理三个输入面板的焦点循环和模拟流式输出，演示多面板输入路由",
+      "category": "code",
+      "tags": [
+        "测试组件",
+        "流式输入",
+        "焦点循环"
+      ],
+      "lineRange": {
+        "start": 1251,
+        "end": 1380
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#StreamingInputPanel",
+      "type": "class",
+      "label": "StreamingInputPanel",
+      "description": "流式输入面板组件 — 实现 Component 接口的非捕获浮层输入面板，支持焦点状态显示和文本输入",
+      "category": "code",
+      "tags": [
+        "测试组件",
+        "输入面板",
+        "Component接口"
+      ],
+      "lineRange": {
+        "start": 1382,
+        "end": 1450
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "packages/coding-agent/examples/extensions/mac-system-theme.ts",
+      "target": "packages/coding-agent/examples/extensions/mac-system-theme.ts#isDarkMode",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/notify.ts",
+      "target": "packages/coding-agent/examples/extensions/notify.ts#windowsToastScript",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#hslToRgb",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/minimal-mode.ts",
+      "target": "packages/coding-agent/examples/extensions/minimal-mode.ts#createBuiltInTools",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/modal-editor.ts",
+      "target": "packages/coding-agent/examples/extensions/modal-editor.ts#ModalEditor",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-test.ts",
+      "target": "packages/coding-agent/examples/extensions/overlay-test.ts#OverlayTestComponent",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#BaseOverlay",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#AnchorTestComponent",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#MarginTestComponent",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#StackOverlayComponent",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#StreamingOverflowComponent",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#EdgeTestComponent",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#PercentTestComponent",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#MaxHeightTestComponent",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#SidepanelComponent",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#AnimationDemoComponent",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#ToggleDemoComponent",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#PassiveDemoController",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#TimerPanel",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#FocusDemoController",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#FocusPanel",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#StreamingInputController",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#StreamingInputPanel",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#AnchorTestComponent",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#BaseOverlay",
+      "type": "extends",
+      "label": "extends"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#MarginTestComponent",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#BaseOverlay",
+      "type": "extends",
+      "label": "extends"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#StackOverlayComponent",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#BaseOverlay",
+      "type": "extends",
+      "label": "extends"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#StreamingOverflowComponent",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#BaseOverlay",
+      "type": "extends",
+      "label": "extends"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#EdgeTestComponent",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#BaseOverlay",
+      "type": "extends",
+      "label": "extends"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#PercentTestComponent",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#BaseOverlay",
+      "type": "extends",
+      "label": "extends"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#MaxHeightTestComponent",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#BaseOverlay",
+      "type": "extends",
+      "label": "extends"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#SidepanelComponent",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#BaseOverlay",
+      "type": "extends",
+      "label": "extends"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#AnimationDemoComponent",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#BaseOverlay",
+      "type": "extends",
+      "label": "extends"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#ToggleDemoComponent",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#BaseOverlay",
+      "type": "extends",
+      "label": "extends"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#PassiveDemoController",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#BaseOverlay",
+      "type": "extends",
+      "label": "extends"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#TimerPanel",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#BaseOverlay",
+      "type": "extends",
+      "label": "extends"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#FocusDemoController",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#BaseOverlay",
+      "type": "extends",
+      "label": "extends"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#FocusPanel",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#BaseOverlay",
+      "type": "extends",
+      "label": "extends"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#StreamingInputController",
+      "target": "packages/coding-agent/examples/extensions/overlay-qa-tests.ts#BaseOverlay",
+      "type": "extends",
+      "label": "extends"
+    }
+  ]
+}

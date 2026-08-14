@@ -1,0 +1,101 @@
+{
+  "batchIndex": 61,
+  "nodes": [
+    {
+      "id": "packages/protocol/CHANGELOG.md",
+      "type": "file",
+      "label": "CHANGELOG.md",
+      "layer": "docs",
+      "summary": "协议包变更日志，记录 v0.84.0 和 v0.84.1 版本的 Breaking Changes（会话生命周期 schema 限制、SessionMetadata 替换）及新增功能（CBOR 协议编解码、长度前缀帧、协议错误码）。",
+      "metadata": {
+        "language": "markdown",
+        "sizeLines": 17,
+        "fileCategory": "docs",
+        "sections": ["Changelog", "[Unreleased]", "[0.84.1]", "[0.84.0]", "Breaking Changes", "Added"]
+      }
+    },
+    {
+      "id": "packages/protocol/README.md",
+      "type": "file",
+      "label": "README.md (protocol)",
+      "layer": "docs",
+      "summary": "@earendil-works/pi-protocol 包的完整文档。描述协议 v1 二进制消息格式（4 字节大端长度 + CBOR 载荷），验证消息 API（encodeClientMessage/encodeServerMessage + 增量解码器），传输层中立设计，以及 CBOR 编解码子集（RFC 8949 严格子集）和帧限制配置。",
+      "metadata": {
+        "language": "markdown",
+        "sizeLines": 69,
+        "fileCategory": "docs",
+        "sections": ["@earendil-works/pi-protocol", "Validated message API", "Transport support", "Encoding and framing"]
+      }
+    },
+    {
+      "id": "packages/protocol/package.json",
+      "type": "file",
+      "label": "package.json (protocol)",
+      "layer": "config",
+      "summary": "@earendil-works/pi-protocol v0.84.1 包配置。ESM 模块，入口 dist/index.js，使用 tsgo 构建，vitest 测试。运行时依赖 typebox（schema 验证），开发依赖 shx（跨平台 shell）。Node.js >= 22.19.0。",
+      "metadata": {
+        "language": "json",
+        "sizeLines": 48,
+        "fileCategory": "config",
+        "packageName": "@earendil-works/pi-protocol",
+        "version": "0.84.1",
+        "buildTool": "tsgo",
+        "testTool": "vitest",
+        "dependencies": ["typebox"]
+      }
+    },
+    {
+      "id": "packages/protocol/tsconfig.build.json",
+      "type": "file",
+      "label": "tsconfig.build.json",
+      "layer": "config",
+      "summary": "协议包生产构建 TypeScript 配置。继承根 tsconfig.base.json，输出到 dist/，源码根目录为 src/，排除声明文件和 node_modules。",
+      "metadata": {
+        "language": "json",
+        "sizeLines": 9,
+        "fileCategory": "config",
+        "extends": "../../tsconfig.base.json",
+        "outDir": "./dist",
+        "rootDir": "./src"
+      }
+    },
+    {
+      "id": "packages/protocol/tsconfig.test.json",
+      "type": "file",
+      "label": "tsconfig.test.json",
+      "layer": "config",
+      "summary": "协议包测试 TypeScript 配置。继承根 tsconfig.base.json，noEmit 模式，NodeNext 模块解析，包含 src 和 test 目录的类型定义（node、vitest）。",
+      "metadata": {
+        "language": "json",
+        "sizeLines": 10,
+        "fileCategory": "config",
+        "extends": "../../tsconfig.base.json",
+        "module": "NodeNext",
+        "types": ["node", "vitest"]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "packages/protocol/package.json",
+      "target": "packages/protocol/tsconfig.build.json",
+      "type": "configures",
+      "label": "build 脚本引用",
+      "description": "package.json 的 build 脚本通过 tsgo -p tsconfig.build.json 引用该构建配置"
+    },
+    {
+      "source": "packages/protocol/README.md",
+      "target": "packages/protocol/CHANGELOG.md",
+      "type": "documents",
+      "label": "同一包的文档",
+      "description": "README 和 CHANGELOG 共同构成 @earendil-works/pi-protocol 包的文档体系"
+    },
+    {
+      "source": "packages/protocol/tsconfig.build.json",
+      "target": "packages/protocol/tsconfig.test.json",
+      "type": "related_to",
+      "label": "共享 TS 配置",
+      "description": "两个 tsconfig 文件均继承 tsconfig.base.json，分别服务于构建和测试场景"
+    }
+  ]
+}

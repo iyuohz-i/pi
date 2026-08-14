@@ -1,0 +1,302 @@
+{
+  "batchIndex": 30,
+  "nodes": [
+    {
+      "id": "packages/client/src/client.ts",
+      "type": "file",
+      "label": "client.ts",
+      "language": "typescript",
+      "lines": 432,
+      "category": "code",
+      "summary": "PiClient 主类 — 通过 ByteTransport 与服务端进行帧协议通信，管理连接生命周期、会话租约（共享/独占）、请求-响应关联及快照状态订阅。"
+    },
+    {
+      "id": "packages/client/src/connection.ts",
+      "type": "file",
+      "label": "connection.ts",
+      "language": "typescript",
+      "lines": 236,
+      "category": "code",
+      "summary": "Connection 类 — 封装传输层握手、消息解码和连接状态机（disconnected/connecting/connected），处理 hello 握手协议及帧错误。"
+    },
+    {
+      "id": "packages/client/src/errors.ts",
+      "type": "file",
+      "label": "errors.ts",
+      "language": "typescript",
+      "lines": 56,
+      "category": "code",
+      "summary": "客户端错误类层次 — PiServerError、PiDisconnectedError、PiClientDisposedError、PiSessionOwnershipError、PiSessionDetachedError 以及辅助转换函数 toError/toDisconnectedError。"
+    },
+    {
+      "id": "packages/client/src/index.ts",
+      "type": "file",
+      "label": "index.ts",
+      "language": "typescript",
+      "lines": 18,
+      "category": "code",
+      "summary": "包公共导出桶文件 — 统一导出 PiClient、错误类、会话类型、传输接口及客户端选项类型。"
+    },
+    {
+      "id": "packages/client/src/promise.ts",
+      "type": "file",
+      "label": "promise.ts",
+      "language": "typescript",
+      "lines": 16,
+      "category": "code",
+      "summary": "Promise 工具 — 提供 PromiseResolvers 接口及 createPromiseResolvers 工厂函数，在 TS 基线升级到 ES2024 前作为 Promise.withResolvers 的 polyfill。"
+    },
+    {
+      "id": "packages/client/src/session-handle.ts",
+      "type": "file",
+      "label": "session-handle.ts",
+      "language": "typescript",
+      "lines": 111,
+      "category": "code",
+      "summary": "SessionLease 接口与 SessionHandle 实现 — 会话租约句柄，提供 prompt/steer/abort/setModel/setThinking 等会话操作方法及事件订阅。"
+    },
+    {
+      "id": "packages/client/src/state.ts",
+      "type": "file",
+      "label": "state.ts",
+      "language": "typescript",
+      "lines": 156,
+      "category": "code",
+      "summary": "ClientState 类 — 客户端状态管理器，维护服务端快照、会话快照映射、附件状态，以及全局/会话级快照和事件监听器。"
+    },
+    {
+      "id": "packages/client/src/transport.ts",
+      "type": "file",
+      "label": "transport.ts",
+      "language": "typescript",
+      "lines": 18,
+      "category": "code",
+      "summary": "传输层接口定义 — ByteTransport（send/close）、ByteTransportHandlers（onData/onClose/onError）及 ByteTransportFactory 类型。"
+    },
+    {
+      "id": "packages/client/src/types.ts",
+      "type": "file",
+      "label": "types.ts",
+      "language": "typescript",
+      "lines": 26,
+      "category": "code",
+      "summary": "客户端公共类型 — ConnectionState、ConnectionStateChange、Unsubscribe、ListenerErrorHandler、PiClientOptions、CreateSessionOptions。"
+    },
+    {
+      "id": "packages/client/src/unix.ts",
+      "type": "file",
+      "label": "unix.ts",
+      "language": "typescript",
+      "lines": 156,
+      "category": "code",
+      "summary": "Unix 域套接字传输实现 — createUnixTransportFactory 工厂函数、connectUnixSocket 连接逻辑、UnixByteTransport 类（带背压控制和有序写入）。"
+    },
+    {
+      "id": "packages/client/test/connection.test.ts",
+      "type": "file",
+      "label": "connection.test.ts",
+      "language": "typescript",
+      "lines": 327,
+      "category": "test",
+      "summary": "连接层集成测试 — 覆盖握手分片、协议错误、订阅者隔离、重连、帧限制及截断帧等场景。"
+    },
+    {
+      "id": "packages/client/test/disposal.test.ts",
+      "type": "file",
+      "label": "disposal.test.ts",
+      "language": "typescript",
+      "lines": 54,
+      "category": "test",
+      "summary": "客户端销毁测试 — 验证 PiClient.dispose() 的幂等性、会话句柄失效及 Symbol.asyncDispose 支持。"
+    },
+    {
+      "id": "packages/client/test/requests.test.ts",
+      "type": "file",
+      "label": "requests.test.ts",
+      "language": "typescript",
+      "lines": 68,
+      "category": "test",
+      "summary": "请求-响应测试 — 覆盖合并乱序响应、命令不匹配校验及服务端类型化错误。"
+    },
+    {
+      "id": "packages/client/test/sessions.test.ts",
+      "type": "file",
+      "label": "sessions.test.ts",
+      "language": "typescript",
+      "lines": 261,
+      "category": "test",
+      "summary": "会话租约测试 — 覆盖独占/共享模式、多租约独立释放、租约失效、释放中命令拒绝、序列化再获取及修订版本回退。"
+    },
+    {
+      "id": "packages/client/test/state.test.ts",
+      "type": "file",
+      "label": "state.test.ts",
+      "language": "typescript",
+      "lines": 146,
+      "category": "test",
+      "summary": "状态管理测试 — 验证快照修订去重、订阅/退订、事件传播、延迟响应不覆盖新快照等场景。"
+    },
+    {
+      "id": "packages/client/test/support.ts",
+      "type": "file",
+      "label": "support.ts",
+      "language": "typescript",
+      "lines": 153,
+      "category": "test",
+      "summary": "测试基础设施 — MemoryByteServer 内存传输桩、快照工厂函数、客户端创建/连接辅助函数及请求收集器。"
+    },
+    {
+      "id": "packages/client/test/unix.test.ts",
+      "type": "file",
+      "label": "unix.test.ts",
+      "language": "typescript",
+      "lines": 223,
+      "category": "test",
+      "summary": "Unix 域套接字集成测试 — 真实 socket 上的分片消息交换、背压写入限制与顺序保证、截断帧处理及连接错误。"
+    },
+    {
+      "id": "packages/client/src/client.ts::PiClient",
+      "type": "class",
+      "label": "PiClient",
+      "parent": "packages/client/src/client.ts",
+      "lines": 381,
+      "summary": "Pi 协议客户端主类 — 提供 connect/disconnect/reconnect、会话管理（create/attach/acquire/list）、事件订阅及请求-响应关联，管理连接状态与租约生命周期。"
+    },
+    {
+      "id": "packages/client/src/connection.ts::Connection",
+      "type": "class",
+      "label": "Connection",
+      "parent": "packages/client/src/connection.ts",
+      "lines": 196,
+      "summary": "连接状态机 — 管理传输层生命周期，执行 hello 握手协议，解码服务端消息帧，处理连接/断开/失败状态转换。"
+    },
+    {
+      "id": "packages/client/src/session-handle.ts::SessionHandle",
+      "type": "class",
+      "label": "SessionHandle",
+      "parent": "packages/client/src/session-handle.ts",
+      "lines": 64,
+      "summary": "会话租约句柄实现 — 代理 SessionHandleCallbacks，提供 prompt/steer/abort/setModel/setThinking 等会话操作方法及 AsyncDisposable 支持。"
+    },
+    {
+      "id": "packages/client/src/state.ts::ClientState",
+      "type": "class",
+      "label": "ClientState",
+      "parent": "packages/client/src/state.ts",
+      "lines": 128,
+      "summary": "客户端状态管理器 — 维护服务端快照、会话快照映射、附件状态集合，以及全局/会话级快照和事件监听器通知机制。"
+    },
+    {
+      "id": "packages/client/src/unix.ts::UnixByteTransport",
+      "type": "class",
+      "label": "UnixByteTransport",
+      "parent": "packages/client/src/unix.ts",
+      "lines": 88,
+      "summary": "Unix 域套接字传输实现 — 封装 Node.js net.Socket，实现 ByteTransport 接口，支持背压控制（maxPendingBytes）和有序写入队列。"
+    },
+    {
+      "id": "packages/client/test/support.ts::MemoryByteServer",
+      "type": "class",
+      "label": "MemoryByteServer",
+      "parent": "packages/client/test/support.ts",
+      "lines": 64,
+      "summary": "测试用内存传输服务器 — 模拟 ByteTransport 服务端，提供消息解码、帧发送、分片发送及事件监听，用于客户端协议测试。"
+    },
+    {
+      "id": "packages/client/src/unix.ts::createUnixTransportFactory",
+      "type": "function",
+      "label": "createUnixTransportFactory",
+      "parent": "packages/client/src/unix.ts",
+      "lines": 11,
+      "summary": "Unix 传输工厂函数 — 验证路径长度和参数合法性，返回 ByteTransportFactory 闭包，用于创建 Unix 域套接字连接。"
+    },
+    {
+      "id": "packages/client/src/unix.ts::connectUnixSocket",
+      "type": "function",
+      "label": "connectUnixSocket",
+      "parent": "packages/client/src/unix.ts",
+      "lines": 40,
+      "summary": "Unix 套接字连接函数 — 使用 node:net.createConnection 建立连接，处理连接/数据/错误/关闭事件，返回 Promise<ByteTransport>。"
+    },
+    {
+      "id": "packages/client/src/state.ts::addMappedListener",
+      "type": "function",
+      "label": "addMappedListener",
+      "parent": "packages/client/src/state.ts",
+      "lines": 15,
+      "summary": "映射监听器辅助函数 — 管理 Map<id, Set<listener>> 结构的监听器注册与退订，空集合自动清理。"
+    },
+    {
+      "id": "packages/client/test/support.ts::sessionSnapshot",
+      "type": "function",
+      "label": "sessionSnapshot",
+      "parent": "packages/client/test/support.ts",
+      "lines": 17,
+      "summary": "测试快照工厂 — 创建带有合理默认值的 SessionSnapshot 对象，支持部分字段覆盖。"
+    },
+    {
+      "id": "packages/client/test/support.ts::connectClient",
+      "type": "function",
+      "label": "connectClient",
+      "parent": "packages/client/test/support.ts",
+      "lines": 14,
+      "summary": "测试客户端连接辅助 — 创建 PiClient 实例，自动响应 hello 握手并返回已连接的客户端。"
+    },
+    {
+      "id": "packages/client/test/support.ts::attachSession",
+      "type": "function",
+      "label": "attachSession",
+      "parent": "packages/client/test/support.ts",
+      "lines": 16,
+      "summary": "测试会话附加辅助 — 发起 attachSession 请求，拦截请求并发送模拟响应，返回已附加的 SessionHandle。"
+    }
+  ],
+  "edges": [
+    {"source": "packages/client/src/client.ts", "target": "packages/client/src/connection.ts", "type": "import", "label": "imports"},
+    {"source": "packages/client/src/client.ts", "target": "packages/client/src/errors.ts", "type": "import", "label": "imports"},
+    {"source": "packages/client/src/client.ts", "target": "packages/client/src/promise.ts", "type": "import", "label": "imports"},
+    {"source": "packages/client/src/client.ts", "target": "packages/client/src/session-handle.ts", "type": "import", "label": "imports"},
+    {"source": "packages/client/src/client.ts", "target": "packages/client/src/state.ts", "type": "import", "label": "imports"},
+    {"source": "packages/client/src/client.ts", "target": "packages/client/src/types.ts", "type": "import", "label": "imports"},
+    {"source": "packages/client/src/connection.ts", "target": "packages/client/src/errors.ts", "type": "import", "label": "imports"},
+    {"source": "packages/client/src/connection.ts", "target": "packages/client/src/promise.ts", "type": "import", "label": "imports"},
+    {"source": "packages/client/src/connection.ts", "target": "packages/client/src/transport.ts", "type": "import", "label": "imports"},
+    {"source": "packages/client/src/connection.ts", "target": "packages/client/src/types.ts", "type": "import", "label": "imports"},
+    {"source": "packages/client/src/session-handle.ts", "target": "packages/client/src/types.ts", "type": "import", "label": "imports"},
+    {"source": "packages/client/src/state.ts", "target": "packages/client/src/errors.ts", "type": "import", "label": "imports"},
+    {"source": "packages/client/src/state.ts", "target": "packages/client/src/types.ts", "type": "import", "label": "imports"},
+    {"source": "packages/client/src/types.ts", "target": "packages/client/src/transport.ts", "type": "import", "label": "imports"},
+    {"source": "packages/client/src/unix.ts", "target": "packages/client/src/transport.ts", "type": "import", "label": "imports"},
+    {"source": "packages/client/test/connection.test.ts", "target": "packages/client/src/index.ts", "type": "import", "label": "imports"},
+    {"source": "packages/client/test/connection.test.ts", "target": "packages/client/test/support.ts", "type": "import", "label": "imports"},
+    {"source": "packages/client/test/disposal.test.ts", "target": "packages/client/src/index.ts", "type": "import", "label": "imports"},
+    {"source": "packages/client/test/disposal.test.ts", "target": "packages/client/test/support.ts", "type": "import", "label": "imports"},
+    {"source": "packages/client/test/requests.test.ts", "target": "packages/client/test/support.ts", "type": "import", "label": "imports"},
+    {"source": "packages/client/test/sessions.test.ts", "target": "packages/client/src/index.ts", "type": "import", "label": "imports"},
+    {"source": "packages/client/test/sessions.test.ts", "target": "packages/client/test/support.ts", "type": "import", "label": "imports"},
+    {"source": "packages/client/test/state.test.ts", "target": "packages/client/test/support.ts", "type": "import", "label": "imports"},
+    {"source": "packages/client/test/support.ts", "target": "packages/client/src/index.ts", "type": "import", "label": "imports"},
+    {"source": "packages/client/test/unix.test.ts", "target": "packages/client/src/index.ts", "type": "import", "label": "imports"},
+    {"source": "packages/client/test/unix.test.ts", "target": "packages/client/src/unix.ts", "type": "import", "label": "imports"},
+    {"source": "packages/client/src/client.ts", "target": "packages/client/src/client.ts::PiClient", "type": "contains", "label": "defines"},
+    {"source": "packages/client/src/connection.ts", "target": "packages/client/src/connection.ts::Connection", "type": "contains", "label": "defines"},
+    {"source": "packages/client/src/session-handle.ts", "target": "packages/client/src/session-handle.ts::SessionHandle", "type": "contains", "label": "defines"},
+    {"source": "packages/client/src/state.ts", "target": "packages/client/src/state.ts::ClientState", "type": "contains", "label": "defines"},
+    {"source": "packages/client/src/state.ts", "target": "packages/client/src/state.ts::addMappedListener", "type": "contains", "label": "defines"},
+    {"source": "packages/client/src/unix.ts", "target": "packages/client/src/unix.ts::UnixByteTransport", "type": "contains", "label": "defines"},
+    {"source": "packages/client/src/unix.ts", "target": "packages/client/src/unix.ts::createUnixTransportFactory", "type": "contains", "label": "defines"},
+    {"source": "packages/client/src/unix.ts", "target": "packages/client/src/unix.ts::connectUnixSocket", "type": "contains", "label": "defines"},
+    {"source": "packages/client/test/support.ts", "target": "packages/client/test/support.ts::MemoryByteServer", "type": "contains", "label": "defines"},
+    {"source": "packages/client/test/support.ts", "target": "packages/client/test/support.ts::sessionSnapshot", "type": "contains", "label": "defines"},
+    {"source": "packages/client/test/support.ts", "target": "packages/client/test/support.ts::connectClient", "type": "contains", "label": "defines"},
+    {"source": "packages/client/test/support.ts", "target": "packages/client/test/support.ts::attachSession", "type": "contains", "label": "defines"},
+    {"source": "packages/client/src/client.ts::PiClient", "target": "packages/client/src/connection.ts::Connection", "type": "uses", "label": "创建并使用 Connection 管理传输层"},
+    {"source": "packages/client/src/client.ts::PiClient", "target": "packages/client/src/state.ts::ClientState", "type": "uses", "label": "委托 ClientState 管理快照与监听器"},
+    {"source": "packages/client/src/client.ts::PiClient", "target": "packages/client/src/session-handle.ts::SessionHandle", "type": "uses", "label": "创建并返回 SessionHandle 租约句柄"},
+    {"source": "packages/client/src/connection.ts::Connection", "target": "packages/client/src/transport.ts", "type": "uses", "label": "依赖 ByteTransport/ByteTransportFactory 接口"},
+    {"source": "packages/client/src/unix.ts::UnixByteTransport", "target": "packages/client/src/transport.ts", "type": "implements", "label": "实现 ByteTransport 接口"},
+    {"source": "packages/client/src/unix.ts::createUnixTransportFactory", "target": "packages/client/src/unix.ts::UnixByteTransport", "type": "uses", "label": "通过 connectUnixSocket 创建 UnixByteTransport"},
+    {"source": "packages/client/src/unix.ts::createUnixTransportFactory", "target": "packages/client/src/unix.ts::connectUnixSocket", "type": "uses", "label": "调用 connectUnixSocket 建立连接"},
+    {"source": "packages/client/test/support.ts::MemoryByteServer", "target": "packages/client/src/transport.ts", "type": "test_double_for", "label": "测试桩实现 ByteTransport 接口"}
+  ]
+}

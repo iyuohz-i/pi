@@ -1,0 +1,444 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/tui/test/editor.test.ts",
+      "type": "file",
+      "name": "editor.test.ts",
+      "filePath": "packages/tui/test/editor.test.ts",
+      "summary": "编辑器组件的全面测试套件，覆盖文本输入、删除、选择、自动补全、换行、Emacs 快捷键等交互场景。",
+      "tags": [
+        "test",
+        "editor",
+        "component",
+        "integration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/tui/test/editor.test.ts:applyCompletion",
+      "type": "function",
+      "name": "applyCompletion",
+      "filePath": "packages/tui/test/editor.test.ts",
+      "lineRange": [
+        18,
+        35
+      ],
+      "summary": "应用自动补全建议到编辑器。",
+      "tags": [
+        "test",
+        "autocomplete",
+        "editor"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/tui/test/fuzzy.test.ts",
+      "type": "file",
+      "name": "fuzzy.test.ts",
+      "filePath": "packages/tui/test/fuzzy.test.ts",
+      "summary": "模糊匹配算法的单元测试，验证 fuzzyMatch 和 fuzzyFilter 的匹配精度和评分。",
+      "tags": [
+        "test",
+        "fuzzy",
+        "unit"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/tui/test/image-test.ts",
+      "type": "file",
+      "name": "image-test.ts",
+      "filePath": "packages/tui/test/image-test.ts",
+      "summary": "终端图像渲染的可视化测试脚本，验证 Kitty/iTerm2 图像协议在 TUI 中的显示效果。",
+      "tags": [
+        "test",
+        "image",
+        "demo"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/tui/test/input.test.ts",
+      "type": "file",
+      "name": "input.test.ts",
+      "filePath": "packages/tui/test/input.test.ts",
+      "summary": "Input 组件的测试套件，验证文本输入、光标移动、选择及剪贴板操作等行为。",
+      "tags": [
+        "test",
+        "input",
+        "component"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/tui/test/key-tester.ts",
+      "type": "file",
+      "name": "key-tester.ts",
+      "filePath": "packages/tui/test/key-tester.ts",
+      "summary": "键盘事件测试工具，拦截并记录所有终端按键输入及其协议类型，用于调试键盘映射。",
+      "tags": [
+        "test",
+        "keyboard",
+        "debug-tool"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:packages/tui/test/key-tester.ts:KeyLogger",
+      "type": "class",
+      "name": "KeyLogger",
+      "filePath": "packages/tui/test/key-tester.ts",
+      "lineRange": [
+        11,
+        102
+      ],
+      "summary": "测试用键盘事件记录器，捕获并显示所有按键及其协议类型。",
+      "tags": [
+        "test",
+        "keyboard",
+        "debug-tool"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/tui/test/keybindings.test.ts",
+      "type": "file",
+      "name": "keybindings.test.ts",
+      "filePath": "packages/tui/test/keybindings.test.ts",
+      "summary": "快捷键绑定系统的测试，验证 KeybindingsManager 的绑定、冲突检测和查找功能。",
+      "tags": [
+        "test",
+        "keybindings",
+        "unit"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/tui/test/keys.test.ts",
+      "type": "file",
+      "name": "keys.test.ts",
+      "filePath": "packages/tui/test/keys.test.ts",
+      "summary": "键盘协议解析的测试套件，覆盖 Kitty 键盘协议、修饰键、按键释放/重复事件等解析场景。",
+      "tags": [
+        "test",
+        "keyboard",
+        "protocol"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/tui/test/keys.test.ts:withEnv",
+      "type": "function",
+      "name": "withEnv",
+      "filePath": "packages/tui/test/keys.test.ts",
+      "lineRange": [
+        16,
+        26
+      ],
+      "summary": "设置测试环境变量。",
+      "tags": [
+        "test",
+        "utility",
+        "environment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/tui/test/keys.test.ts:withEnvVars",
+      "type": "function",
+      "name": "withEnvVars",
+      "filePath": "packages/tui/test/keys.test.ts",
+      "lineRange": [
+        28,
+        39
+      ],
+      "summary": "设置多个测试环境变量。",
+      "tags": [
+        "test",
+        "utility",
+        "environment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/tui/test/latex.test.ts",
+      "type": "file",
+      "name": "latex.test.ts",
+      "filePath": "packages/tui/test/latex.test.ts",
+      "summary": "LaTeX 渲染器的测试套件，覆盖希腊字母、分数、上下标、矩阵、运算符等多种数学公式的渲染正确性。",
+      "tags": [
+        "test",
+        "latex",
+        "rendering"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/tui/test/layout.test.ts",
+      "type": "file",
+      "name": "layout.test.ts",
+      "filePath": "packages/tui/test/layout.test.ts",
+      "summary": "布局引擎的测试套件，验证 HStack/VStack 布局、ScrollView 滚动及组件尺寸计算的正确性。",
+      "tags": [
+        "test",
+        "layout",
+        "component"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/tui/test/editor.test.ts",
+      "target": "function:packages/tui/test/editor.test.ts:applyCompletion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/tui/test/key-tester.ts",
+      "target": "class:packages/tui/test/key-tester.ts:KeyLogger",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/tui/test/keys.test.ts",
+      "target": "function:packages/tui/test/keys.test.ts:withEnv",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/tui/test/keys.test.ts",
+      "target": "function:packages/tui/test/keys.test.ts:withEnvVars",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/tui/test/editor.test.ts",
+      "target": "file:packages/tui/src/autocomplete.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/editor.test.ts",
+      "target": "file:packages/tui/src/components/editor.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/editor.test.ts",
+      "target": "file:packages/tui/src/tui-main-screen.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/editor.test.ts",
+      "target": "file:packages/tui/src/tui.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/editor.test.ts",
+      "target": "file:packages/tui/src/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/editor.test.ts",
+      "target": "file:packages/tui/test/test-themes.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/editor.test.ts",
+      "target": "file:packages/tui/test/virtual-terminal.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/fuzzy.test.ts",
+      "target": "file:packages/tui/src/fuzzy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/image-test.ts",
+      "target": "file:packages/tui/src/components/image.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/image-test.ts",
+      "target": "file:packages/tui/src/components/spacer.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/image-test.ts",
+      "target": "file:packages/tui/src/components/text.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/image-test.ts",
+      "target": "file:packages/tui/src/terminal-image.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/image-test.ts",
+      "target": "file:packages/tui/src/terminal.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/image-test.ts",
+      "target": "file:packages/tui/src/tui-main-screen.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/image-test.ts",
+      "target": "file:packages/tui/src/tui.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/input.test.ts",
+      "target": "file:packages/tui/src/components/input.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/input.test.ts",
+      "target": "file:packages/tui/src/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/key-tester.ts",
+      "target": "file:packages/tui/src/keys.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/key-tester.ts",
+      "target": "file:packages/tui/src/terminal.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/key-tester.ts",
+      "target": "file:packages/tui/src/tui-main-screen.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/key-tester.ts",
+      "target": "file:packages/tui/src/tui.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/key-tester.ts",
+      "target": "file:packages/tui/src/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/keybindings.test.ts",
+      "target": "file:packages/tui/src/keybindings.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/keys.test.ts",
+      "target": "file:packages/tui/src/keys.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/latex.test.ts",
+      "target": "file:packages/tui/src/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/layout.test.ts",
+      "target": "file:packages/tui/src/components/h-stack.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/layout.test.ts",
+      "target": "file:packages/tui/src/components/scroll-view.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/layout.test.ts",
+      "target": "file:packages/tui/src/components/text.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/layout.test.ts",
+      "target": "file:packages/tui/src/components/v-stack.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/layout.test.ts",
+      "target": "file:packages/tui/src/layout.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/layout.test.ts",
+      "target": "file:packages/tui/src/terminal-image.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/tui/test/layout.test.ts",
+      "target": "file:packages/tui/src/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

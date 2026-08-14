@@ -1,0 +1,1331 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts",
+      "type": "file",
+      "name": "rpc-prompt-response-semantics.test.ts",
+      "filePath": "packages/coding-agent/test/rpc-prompt-response-semantics.test.ts",
+      "summary": "测试 RPC 模式下的提示响应语义，验证助手消息创建、运行时主机和 RPC 模式启动的正确性。",
+      "tags": [
+        "test",
+        "rpc-mode",
+        "integration-test",
+        "prompt-response"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts:createAssistantMessage",
+      "type": "function",
+      "name": "createAssistantMessage",
+      "filePath": "packages/coding-agent/test/rpc-prompt-response-semantics.test.ts",
+      "lineRange": [
+        59,
+        77
+      ],
+      "summary": "创建助手消息对象，用于 RPC 模式测试中的消息构造。",
+      "tags": [
+        "test-helper",
+        "message-construction",
+        "rpc-mode"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts:createRuntimeHost",
+      "type": "function",
+      "name": "createRuntimeHost",
+      "filePath": "packages/coding-agent/test/rpc-prompt-response-semantics.test.ts",
+      "lineRange": [
+        98,
+        171
+      ],
+      "summary": "创建运行时主机实例，设置模拟助手流和会话状态用于 RPC 模式测试。",
+      "tags": [
+        "test-helper",
+        "runtime-host",
+        "mock-stream"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts:startRpcMode",
+      "type": "function",
+      "name": "startRpcMode",
+      "filePath": "packages/coding-agent/test/rpc-prompt-response-semantics.test.ts",
+      "lineRange": [
+        173,
+        185
+      ],
+      "summary": "启动 RPC 模式并执行测试断言，验证 RPC 命令的响应语义。",
+      "tags": [
+        "test-helper",
+        "rpc-mode",
+        "integration-test"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/test/runtime-credentials.test.ts",
+      "type": "file",
+      "name": "runtime-credentials.test.ts",
+      "filePath": "packages/coding-agent/test/runtime-credentials.test.ts",
+      "summary": "测试运行时凭证管理，验证认证存储与凭证读取的行为。",
+      "tags": [
+        "test",
+        "credentials",
+        "auth-storage",
+        "runtime"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "type": "file",
+      "name": "sdk-codex-cache-probe-tool-loop.ts",
+      "filePath": "packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "summary": "Codex 缓存探测工具循环的 SDK 集成测试脚本，验证确定性探测与 WebSocket 统计追踪。",
+      "tags": [
+        "test",
+        "codex",
+        "cache-probe",
+        "websocket",
+        "script"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts:parseArgs",
+      "type": "function",
+      "name": "parseArgs",
+      "filePath": "packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "lineRange": [
+        70,
+        123
+      ],
+      "summary": "解析命令行参数，配置 Codex 缓存探测工具循环的运行选项。",
+      "tags": [
+        "cli-parsing",
+        "configuration",
+        "script"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts:printHelp",
+      "type": "function",
+      "name": "printHelp",
+      "filePath": "packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "lineRange": [
+        125,
+        142
+      ],
+      "summary": "打印帮助信息，显示命令行参数用法。",
+      "tags": [
+        "cli-help",
+        "script",
+        "documentation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts:buildPrompt",
+      "type": "function",
+      "name": "buildPrompt",
+      "filePath": "packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "lineRange": [
+        148,
+        171
+      ],
+      "summary": "构建测试提示词，用于 Codex 缓存探测的输入构造。",
+      "tags": [
+        "prompt-construction",
+        "test-helper",
+        "codex"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts:createMinimalResourceLoader",
+      "type": "function",
+      "name": "createMinimalResourceLoader",
+      "filePath": "packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "lineRange": [
+        173,
+        187
+      ],
+      "summary": "创建最小化资源加载器，用于测试环境的资源加载。",
+      "tags": [
+        "test-helper",
+        "resource-loader",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts:getWebSocketStatsSnapshot",
+      "type": "function",
+      "name": "getWebSocketStatsSnapshot",
+      "filePath": "packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "lineRange": [
+        200,
+        211
+      ],
+      "summary": "获取 WebSocket 统计快照，记录当前连接状态。",
+      "tags": [
+        "websocket",
+        "statistics",
+        "monitoring"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts:diffWebSocketStats",
+      "type": "function",
+      "name": "diffWebSocketStats",
+      "filePath": "packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "lineRange": [
+        213,
+        223
+      ],
+      "summary": "比较两个 WebSocket 统计快照的差异。",
+      "tags": [
+        "websocket",
+        "statistics",
+        "comparison"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts:formatWebSocketStats",
+      "type": "function",
+      "name": "formatWebSocketStats",
+      "filePath": "packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "lineRange": [
+        225,
+        235
+      ],
+      "summary": "格式化 WebSocket 统计数据为可读字符串。",
+      "tags": [
+        "websocket",
+        "formatting",
+        "statistics"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts:deterministicProbeTool",
+      "type": "function",
+      "name": "deterministicProbeTool",
+      "filePath": "packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "lineRange": [
+        250,
+        273
+      ],
+      "summary": "执行确定性探测工具调用，验证缓存命中行为。",
+      "tags": [
+        "test-helper",
+        "probe",
+        "deterministic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "lineRange": [
+        275,
+        493
+      ],
+      "summary": "Codex 缓存探测工具循环的主函数，协调整个测试流程。",
+      "tags": [
+        "entry-point",
+        "script",
+        "codex-cache"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/test/sdk-openrouter-attribution.test.ts",
+      "type": "file",
+      "name": "sdk-openrouter-attribution.test.ts",
+      "filePath": "packages/coding-agent/test/sdk-openrouter-attribution.test.ts",
+      "summary": "测试 OpenRouter 归因功能在 SDK 层面的正确性，验证认证存储和会话管理的集成。",
+      "tags": [
+        "test",
+        "openrouter",
+        "attribution",
+        "sdk"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/test/sdk-session-manager.test.ts",
+      "type": "file",
+      "name": "sdk-session-manager.test.ts",
+      "filePath": "packages/coding-agent/test/sdk-session-manager.test.ts",
+      "summary": "测试 SDK 会话管理器的初始化与会话操作行为。",
+      "tags": [
+        "test",
+        "session-manager",
+        "sdk"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/sdk-skills.test.ts",
+      "type": "file",
+      "name": "sdk-skills.test.ts",
+      "filePath": "packages/coding-agent/test/sdk-skills.test.ts",
+      "summary": "测试 SDK 技能系统，验证扩展加载器、资源加载器和源信息管理的集成。",
+      "tags": [
+        "test",
+        "skills",
+        "extensions",
+        "resource-loader"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/sdk-stream-options.test.ts",
+      "type": "file",
+      "name": "sdk-stream-options.test.ts",
+      "filePath": "packages/coding-agent/test/sdk-stream-options.test.ts",
+      "summary": "测试 SDK 流式选项配置，验证认证、会话和设置管理器的协同工作。",
+      "tags": [
+        "test",
+        "stream-options",
+        "sdk",
+        "settings-manager"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/server/create-harness.test.ts",
+      "type": "file",
+      "name": "create-harness.test.ts",
+      "filePath": "packages/coding-agent/test/server/create-harness.test.ts",
+      "summary": "测试服务器端 harness 创建逻辑，验证捕获执行环境和提示工具的行为。",
+      "tags": [
+        "test",
+        "harness",
+        "server",
+        "execution-env"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/test/server/create-harness.test.ts:createPromptTool",
+      "type": "function",
+      "name": "createPromptTool",
+      "filePath": "packages/coding-agent/test/server/create-harness.test.ts",
+      "lineRange": [
+        40,
+        50
+      ],
+      "summary": "创建提示工具函数，用于 harness 测试中的工具注册。",
+      "tags": [
+        "test-helper",
+        "prompt-tool",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/test/session-cwd.test.ts",
+      "type": "file",
+      "name": "session-cwd.test.ts",
+      "filePath": "packages/coding-agent/test/session-cwd.test.ts",
+      "summary": "测试会话工作目录管理，验证会话文件的写入与工作目录切换。",
+      "tags": [
+        "test",
+        "session-cwd",
+        "file-io"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/test/session-cwd.test.ts:writeSessionFile",
+      "type": "function",
+      "name": "writeSessionFile",
+      "filePath": "packages/coding-agent/test/session-cwd.test.ts",
+      "lineRange": [
+        15,
+        26
+      ],
+      "summary": "写入会话文件到临时目录，用于会话工作目录测试。",
+      "tags": [
+        "test-helper",
+        "file-io",
+        "session"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/test/session-file-invalid.test.ts",
+      "type": "file",
+      "name": "session-file-invalid.test.ts",
+      "filePath": "packages/coding-agent/test/session-file-invalid.test.ts",
+      "summary": "测试无效会话文件的错误处理，验证 CLI 在遇到损坏文件时的行为。",
+      "tags": [
+        "test",
+        "error-handling",
+        "cli",
+        "session"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/test/session-file-invalid.test.ts:runCli",
+      "type": "function",
+      "name": "runCli",
+      "filePath": "packages/coding-agent/test/session-file-invalid.test.ts",
+      "lineRange": [
+        23,
+        44
+      ],
+      "summary": "运行 CLI 命令并捕获输出，用于测试 CLI 行为。",
+      "tags": [
+        "test-helper",
+        "cli-runner",
+        "integration-test"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/session-id-readonly.test.ts",
+      "type": "file",
+      "name": "session-id-readonly.test.ts",
+      "filePath": "packages/coding-agent/test/session-id-readonly.test.ts",
+      "summary": "测试只读会话 ID 的行为，验证 CLI 对只读会话的查询与操作。",
+      "tags": [
+        "test",
+        "readonly-session",
+        "cli",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/test/session-id-readonly.test.ts:hasSessionWithId",
+      "type": "function",
+      "name": "hasSessionWithId",
+      "filePath": "packages/coding-agent/test/session-id-readonly.test.ts",
+      "lineRange": [
+        35,
+        51
+      ],
+      "summary": "检查是否存在指定 ID 的会话，用于只读会话测试。",
+      "tags": [
+        "test-helper",
+        "session-query",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/session-id-readonly.test.ts:runCli",
+      "type": "function",
+      "name": "runCli",
+      "filePath": "packages/coding-agent/test/session-id-readonly.test.ts",
+      "lineRange": [
+        59,
+        94
+      ],
+      "summary": "运行 CLI 命令并捕获输出，用于测试 CLI 行为。",
+      "tags": [
+        "test-helper",
+        "cli-runner",
+        "integration-test"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/session-manager/build-context.test.ts",
+      "type": "file",
+      "name": "build-context.test.ts",
+      "filePath": "packages/coding-agent/test/session-manager/build-context.test.ts",
+      "summary": "测试会话管理器的上下文构建功能，验证消息和压缩条目的上下文组装。",
+      "tags": [
+        "test",
+        "session-manager",
+        "context-building",
+        "compaction"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/test/session-manager/build-context.test.ts:msg",
+      "type": "function",
+      "name": "msg",
+      "filePath": "packages/coding-agent/test/session-manager/build-context.test.ts",
+      "lineRange": [
+        14,
+        39
+      ],
+      "summary": "构造测试消息对象的辅助函数，支持多种消息类型。",
+      "tags": [
+        "test-helper",
+        "message-builder",
+        "factory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/test/session-manager/build-context.test.ts:compaction",
+      "type": "function",
+      "name": "compaction",
+      "filePath": "packages/coding-agent/test/session-manager/build-context.test.ts",
+      "lineRange": [
+        41,
+        51
+      ],
+      "summary": "构造压缩条目消息，用于会话上下文压缩测试。",
+      "tags": [
+        "test-helper",
+        "compaction",
+        "message-builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/test/session-manager/custom-session-id.test.ts",
+      "type": "file",
+      "name": "custom-session-id.test.ts",
+      "filePath": "packages/coding-agent/test/session-manager/custom-session-id.test.ts",
+      "summary": "测试自定义会话 ID 功能，验证会话管理器对自定义 ID 的处理。",
+      "tags": [
+        "test",
+        "session-manager",
+        "custom-id"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/session-manager/file-operations.test.ts",
+      "type": "file",
+      "name": "file-operations.test.ts",
+      "filePath": "packages/coding-agent/test/session-manager/file-operations.test.ts",
+      "summary": "测试会话管理器的文件操作，验证会话文件的创建、读取和管理。",
+      "tags": [
+        "test",
+        "session-manager",
+        "file-operations"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/test/session-manager/labels.test.ts",
+      "type": "file",
+      "name": "labels.test.ts",
+      "filePath": "packages/coding-agent/test/session-manager/labels.test.ts",
+      "summary": "测试会话管理器的标签功能，验证会话标签的添加和管理。",
+      "tags": [
+        "test",
+        "session-manager",
+        "labels"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/session-manager/migration.test.ts",
+      "type": "file",
+      "name": "migration.test.ts",
+      "filePath": "packages/coding-agent/test/session-manager/migration.test.ts",
+      "summary": "测试会话管理器的数据迁移功能，验证不同版本会话数据的升级。",
+      "tags": [
+        "test",
+        "session-manager",
+        "migration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/session-manager/save-entry.test.ts",
+      "type": "file",
+      "name": "save-entry.test.ts",
+      "filePath": "packages/coding-agent/test/session-manager/save-entry.test.ts",
+      "summary": "测试会话管理器的条目保存功能，验证会话条目的持久化。",
+      "tags": [
+        "test",
+        "session-manager",
+        "persistence"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts",
+      "target": "function:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts:createAssistantMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts",
+      "target": "function:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts:createRuntimeHost",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts",
+      "target": "function:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts:startRpcMode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "target": "function:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts:parseArgs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "target": "function:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts:printHelp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "target": "function:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts:buildPrompt",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "target": "function:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts:createMinimalResourceLoader",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "target": "function:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts:getWebSocketStatsSnapshot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "target": "function:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts:diffWebSocketStats",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "target": "function:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts:formatWebSocketStats",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "target": "function:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts:deterministicProbeTool",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "target": "function:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/server/create-harness.test.ts",
+      "target": "function:packages/coding-agent/test/server/create-harness.test.ts:createPromptTool",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/session-cwd.test.ts",
+      "target": "function:packages/coding-agent/test/session-cwd.test.ts:writeSessionFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/session-file-invalid.test.ts",
+      "target": "function:packages/coding-agent/test/session-file-invalid.test.ts:runCli",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/session-id-readonly.test.ts",
+      "target": "function:packages/coding-agent/test/session-id-readonly.test.ts:hasSessionWithId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/session-id-readonly.test.ts",
+      "target": "function:packages/coding-agent/test/session-id-readonly.test.ts:runCli",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/session-manager/build-context.test.ts",
+      "target": "function:packages/coding-agent/test/session-manager/build-context.test.ts:msg",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/session-manager/build-context.test.ts",
+      "target": "function:packages/coding-agent/test/session-manager/build-context.test.ts:compaction",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts",
+      "target": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts",
+      "target": "file:packages/coding-agent/src/core/agent-session.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts",
+      "target": "file:packages/coding-agent/src/modes/rpc/rpc-mode.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts",
+      "target": "file:packages/coding-agent/test/model-runtime-test-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts",
+      "target": "file:packages/coding-agent/test/utilities.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/runtime-credentials.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/runtime-credentials.test.ts",
+      "target": "file:packages/coding-agent/src/core/runtime-credentials.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "target": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "target": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "target": "file:packages/coding-agent/src/core/sdk.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "target": "file:packages/coding-agent/test/model-runtime-test-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-openrouter-attribution.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-openrouter-attribution.test.ts",
+      "target": "file:packages/coding-agent/src/core/sdk.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-openrouter-attribution.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-openrouter-attribution.test.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-openrouter-attribution.test.ts",
+      "target": "file:packages/coding-agent/test/model-runtime-test-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-session-manager.test.ts",
+      "target": "file:packages/coding-agent/src/core/sdk.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-session-manager.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-skills.test.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-skills.test.ts",
+      "target": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-skills.test.ts",
+      "target": "file:packages/coding-agent/src/core/sdk.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-skills.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-skills.test.ts",
+      "target": "file:packages/coding-agent/src/core/source-info.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-stream-options.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-stream-options.test.ts",
+      "target": "file:packages/coding-agent/src/core/sdk.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-stream-options.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-stream-options.test.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/sdk-stream-options.test.ts",
+      "target": "file:packages/coding-agent/test/model-runtime-test-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/server/create-harness.test.ts",
+      "target": "file:packages/coding-agent/src/server/create-harness.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/session-cwd.test.ts",
+      "target": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/session-cwd.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-cwd.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/session-cwd.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/session-file-invalid.test.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/session-id-readonly.test.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/session-manager/build-context.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/session-manager/custom-session-id.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/session-manager/file-operations.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/session-manager/labels.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/session-manager/migration.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/session-manager/save-entry.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "file:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "file:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "target": "file:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/rpc/rpc-mode.ts",
+      "target": "file:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/runtime-credentials.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/runtime-credentials.ts",
+      "target": "file:packages/coding-agent/test/runtime-credentials.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "target": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/sdk.ts",
+      "target": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "target": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/sdk-openrouter-attribution.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/sdk.ts",
+      "target": "file:packages/coding-agent/test/sdk-openrouter-attribution.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "file:packages/coding-agent/test/sdk-openrouter-attribution.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "target": "file:packages/coding-agent/test/sdk-openrouter-attribution.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/sdk.ts",
+      "target": "file:packages/coding-agent/test/sdk-session-manager.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "file:packages/coding-agent/test/sdk-session-manager.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "file:packages/coding-agent/test/sdk-skills.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "target": "file:packages/coding-agent/test/sdk-skills.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/sdk.ts",
+      "target": "file:packages/coding-agent/test/sdk-skills.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "file:packages/coding-agent/test/sdk-skills.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/source-info.ts",
+      "target": "file:packages/coding-agent/test/sdk-skills.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/sdk-stream-options.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/sdk.ts",
+      "target": "file:packages/coding-agent/test/sdk-stream-options.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "file:packages/coding-agent/test/sdk-stream-options.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "target": "file:packages/coding-agent/test/sdk-stream-options.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/server/create-harness.ts",
+      "target": "file:packages/coding-agent/test/server/create-harness.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "file:packages/coding-agent/test/session-cwd.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-cwd.ts",
+      "target": "file:packages/coding-agent/test/session-cwd.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "file:packages/coding-agent/test/session-cwd.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "file:packages/coding-agent/test/session-file-invalid.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "file:packages/coding-agent/test/session-id-readonly.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "file:packages/coding-agent/test/session-manager/build-context.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "file:packages/coding-agent/test/session-manager/custom-session-id.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "file:packages/coding-agent/test/session-manager/file-operations.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "file:packages/coding-agent/test/session-manager/labels.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "file:packages/coding-agent/test/session-manager/migration.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "file:packages/coding-agent/test/session-manager/save-entry.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

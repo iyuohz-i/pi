@@ -1,0 +1,155 @@
+{
+  "batchIndex": 53,
+  "nodes": [
+    {
+      "id": "packages/coding-agent/CHANGELOG.md",
+      "label": "CHANGELOG.md",
+      "type": "file",
+      "language": "markdown",
+      "category": "docs",
+      "summary": "pi-coding-agent 的变更日志。记录从早期版本到 0.84.x 的完整发布历史，按 Added/Changed/Fixed/Breaking Changes 分类，涵盖全屏 TUI 模式、Mermaid/LaTeX 渲染、provider 认证、扩展系统、工具调用终止等特性的演进。",
+      "metadata": {
+        "sizeLines": 5457,
+        "latestVersion": "0.84.1",
+        "releaseDates": "2026-08-07",
+        "keyFeatures": ["fullscreen TUI", "Mermaid/LaTeX rendering", "per-directory context overrides", "advanced custom model sampling", "Qwen Token Plan", "auth readiness checks"]
+      }
+    },
+    {
+      "id": "packages/coding-agent/README.md",
+      "label": "README.md",
+      "type": "file",
+      "language": "markdown",
+      "category": "docs",
+      "summary": "pi-coding-agent 的主文档。介绍 Pi 作为终端编码工具的定位——通过 TypeScript 扩展、Skills、Prompt Templates 和 Themes 实现可定制性。覆盖四种运行模式（交互式、打印/JSON、RPC、SDK）、provider 与模型配置、会话管理、上下文文件、CLI 参考等。",
+      "metadata": {
+        "sizeLines": 713,
+        "sections": ["Quick Start", "Providers & Models", "Interactive Mode", "Sessions", "Settings", "Context Files", "Customization", "Programmatic Usage", "Philosophy", "CLI Reference"],
+        "tools": ["read", "write", "edit", "bash"],
+        "runModes": ["interactive", "print/JSON", "RPC", "SDK"]
+      }
+    },
+    {
+      "id": "packages/coding-agent/npm-shrinkwrap.json",
+      "label": "npm-shrinkwrap.json",
+      "type": "file",
+      "language": "json",
+      "category": "config",
+      "summary": "pi-coding-agent 的依赖锁定文件（lockfileVersion 3）。通过 `npm run shrinkwrap` 脚本（generate-coding-agent-shrinkwrap.mjs）生成，确保发布时依赖版本的一致性。包含所有直接和传递依赖的精确版本及完整性哈希。",
+      "metadata": {
+        "sizeLines": 1818,
+        "lockfileVersion": 3,
+        "generationScript": "scripts/generate-coding-agent-shrinkwrap.mjs"
+      }
+    },
+    {
+      "id": "packages/coding-agent/package.json",
+      "label": "package.json",
+      "type": "file",
+      "language": "json",
+      "category": "config",
+      "summary": "pi-coding-agent 包清单（v0.84.1）。定义 CLI 入口 dist/cli.js、库导出（index、rpc-entry、client）、构建脚本（tsgo + Bun 编译）、以及核心依赖（pi-agent-core、pi-ai、pi-client、pi-protocol、pi-tui）。MIT 许可，需 Node >=22.19.0。",
+      "metadata": {
+        "sizeLines": 108,
+        "packageName": "@earendil-works/pi-coding-agent",
+        "version": "0.84.1",
+        "bin": {"pi": "dist/cli.js"},
+        "license": "MIT",
+        "nodeEngine": ">=22.19.0",
+        "workspaceDependencies": [
+          "@earendil-works/pi-agent-core",
+          "@earendil-works/pi-ai",
+          "@earendil-works/pi-client",
+          "@earendil-works/pi-protocol",
+          "@earendil-works/pi-tui"
+        ]
+      }
+    },
+    {
+      "id": "packages/coding-agent/tsconfig.build.json",
+      "label": "tsconfig.build.json",
+      "type": "file",
+      "language": "json",
+      "category": "config",
+      "summary": "生产构建的 TypeScript 配置。继承 tsconfig.base.json，将 src/ 编译输出到 dist/，并通过 paths 映射五个 workspace 依赖（pi-agent-core、pi-ai、pi-client、pi-protocol、pi-tui）的类型声明路径。",
+      "metadata": {
+        "sizeLines": 19,
+        "extends": "../../tsconfig.base.json",
+        "rootDir": "./src",
+        "outDir": "./dist",
+        "pathMappings": [
+          "@earendil-works/pi-agent-core",
+          "@earendil-works/pi-ai",
+          "@earendil-works/pi-client",
+          "@earendil-works/pi-protocol",
+          "@earendil-works/pi-tui"
+        ]
+      }
+    },
+    {
+      "id": "packages/coding-agent/tsconfig.examples.json",
+      "label": "tsconfig.examples.json",
+      "type": "file",
+      "language": "json",
+      "category": "config",
+      "summary": "示例代码的 TypeScript 配置（noEmit 模式，仅类型检查）。继承 tsconfig.base.json，覆盖 examples/**/*.ts，通过 paths 将 @earendil-works/pi-coding-agent 映射到本地 src/ 以支持开发期类型解析。",
+      "metadata": {
+        "sizeLines": 16,
+        "extends": "../../tsconfig.base.json",
+        "noEmit": true,
+        "include": ["examples/**/*.ts"]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "packages/coding-agent/package.json",
+      "target": "packages/coding-agent/tsconfig.build.json",
+      "type": "config_reference",
+      "label": "build 引用",
+      "description": "package.json 的 build 脚本通过 `tsgo -p tsconfig.build.json` 引用此配置进行生产构建"
+    },
+    {
+      "source": "packages/coding-agent/package.json",
+      "target": "packages/coding-agent/npm-shrinkwrap.json",
+      "type": "config_reference",
+      "label": "shrinkwrap 生成",
+      "description": "package.json 的 shrinkwrap 脚本调用 generate-coding-agent-shrinkwrap.mjs 生成锁定文件，prepublishOnly 阶段自动执行"
+    },
+    {
+      "source": "packages/coding-agent/package.json",
+      "target": "packages/coding-agent/README.md",
+      "type": "references",
+      "label": "文档引用",
+      "description": "package.json 的 files 字段包含 README.md，确保发布时包含项目文档"
+    },
+    {
+      "source": "packages/coding-agent/package.json",
+      "target": "packages/coding-agent/CHANGELOG.md",
+      "type": "references",
+      "label": "文档引用",
+      "description": "package.json 的 files 字段包含 CHANGELOG.md，确保发布时包含变更日志"
+    },
+    {
+      "source": "packages/coding-agent/tsconfig.build.json",
+      "target": "packages/coding-agent/package.json",
+      "type": "config_reference",
+      "label": "构建关联",
+      "description": "tsconfig.build.json 的 paths 映射与 package.json 的 workspace 依赖一致，确保编译时类型解析到正确的兄弟包"
+    },
+    {
+      "source": "packages/coding-agent/tsconfig.examples.json",
+      "target": "packages/coding-agent/package.json",
+      "type": "config_reference",
+      "label": "构建关联",
+      "description": "tsconfig.examples.json 将 @earendil-works/pi-coding-agent 映射到本地 src/，为示例代码提供类型检查支持"
+    },
+    {
+      "source": "packages/coding-agent/README.md",
+      "target": "packages/coding-agent/CHANGELOG.md",
+      "type": "references",
+      "label": "文档关联",
+      "description": "README.md 与 CHANGELOG.md 共同构成用户文档体系——README 描述功能与用法，CHANGELOG 记录版本演进"
+    }
+  ]
+}

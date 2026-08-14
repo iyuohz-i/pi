@@ -1,0 +1,66 @@
+{
+  "nodes": [
+    {
+      "id": "packages/coding-agent/src/modes/interactive/theme/dark.json",
+      "label": "dark.json",
+      "type": "file",
+      "fileCategory": "config",
+      "language": "json",
+      "description": "暗色主题配置文件，定义终端 UI 的颜色变量、语义颜色映射及导出颜色。包含 16 个基础颜色变量（cyan、blue、green 等）和 50+ 个语义颜色槽位（accent、border、syntax*、thinking*、md*、tool* 等），通过 $schema 引用 theme-schema.json 进行校验。",
+      "properties": {
+        "themeName": "dark",
+        "varsCount": 16,
+        "colorsCount": 53,
+        "exportCount": 3
+      }
+    },
+    {
+      "id": "packages/coding-agent/src/modes/interactive/theme/light.json",
+      "label": "light.json",
+      "type": "file",
+      "fileCategory": "config",
+      "language": "json",
+      "description": "亮色主题配置文件，结构与 dark.json 完全对称。定义亮色模式下的基础颜色变量（teal、blue、green 等）和语义颜色映射，适用于浅色终端背景。同样通过 $schema 引用 theme-schema.json 进行校验。",
+      "properties": {
+        "themeName": "light",
+        "varsCount": 15,
+        "colorsCount": 52,
+        "exportCount": 3
+      }
+    },
+    {
+      "id": "packages/coding-agent/src/modes/interactive/theme/theme-schema.json",
+      "label": "theme-schema.json",
+      "type": "file",
+      "fileCategory": "config",
+      "language": "json",
+      "description": "主题的 JSON Schema 定义文件（draft-07），规定主题配置的完整结构：name（主题名，禁止包含 '/'）、vars（可复用颜色变量，支持 hex 字符串或 256 色索引）、colors（50+ 个必需语义颜色槽位）、export（可选 HTML 导出颜色）。通过 $defs/colorValue 定义颜色值类型（hex 字符串或 0-255 整数）。",
+      "properties": {
+        "schemaDraft": "draft-07",
+        "requiredFields": ["name", "colors"],
+        "colorSlotsCount": 53,
+        "exportSlotsCount": 3
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "packages/coding-agent/src/modes/interactive/theme/dark.json",
+      "target": "packages/coding-agent/src/modes/interactive/theme/theme-schema.json",
+      "type": "schema_ref",
+      "description": "dark.json 通过 $schema 字段引用 theme-schema.json 进行结构校验"
+    },
+    {
+      "source": "packages/coding-agent/src/modes/interactive/theme/light.json",
+      "target": "packages/coding-agent/src/modes/interactive/theme/theme-schema.json",
+      "type": "schema_ref",
+      "description": "light.json 通过 $schema 字段引用 theme-schema.json 进行结构校验"
+    },
+    {
+      "source": "packages/coding-agent/src/modes/interactive/theme/dark.json",
+      "target": "packages/coding-agent/src/modes/interactive/theme/light.json",
+      "type": "variant_of",
+      "description": "dark.json 与 light.json 是同一主题系统的两个明暗变体，结构完全对称"
+    }
+  ]
+}

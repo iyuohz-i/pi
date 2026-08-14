@@ -1,0 +1,86 @@
+{
+  "batchIndex": 51,
+  "nodes": [
+    {
+      "id": "packages/ai/CHANGELOG.md",
+      "type": "file",
+      "label": "CHANGELOG.md",
+      "description": "@earendil-works/pi-ai 包的版本变更日志，记录各版本的破坏性变更(Breaking Changes)、新增功能(Added)、变更(Changed)和修复(Fixed)。涵盖提供商模型刷新接口重构、OAuth 信号传递、延迟工具加载、Mistral 原生传输替换等核心变更。",
+      "fileCategory": "docs",
+      "language": "markdown",
+      "sizeLines": 1966,
+      "metadata": {
+        "package": "@earendil-works/pi-ai",
+        "content": "version-history",
+        "sections": ["Unreleased", "0.84.1", "0.84.0"],
+        "keyTopics": ["breaking-changes", "provider-api", "model-refresh", "oauth", "tool-calling"]
+      }
+    },
+    {
+      "id": "packages/ai/README.md",
+      "type": "file",
+      "label": "README.md",
+      "description": "@earendil-works/pi-ai 统一 LLM API 库的主文档。描述安装方式、快速开始、支持的提供商列表(30+提供商)、认证解析机制、工具定义与调用、流式输出、图像输入/生成、思考/推理、停止原因、错误处理、自定义提供商、跨提供商切换、上下文序列化、OAuth 提供商等核心功能。",
+      "fileCategory": "docs",
+      "language": "markdown",
+      "sizeLines": 1678,
+      "metadata": {
+        "package": "@earendil-works/pi-ai",
+        "content": "api-documentation",
+        "sections": ["Supported Providers", "Installation", "Quick Start", "Auth", "Tools", "Image Input", "Image Generation", "Thinking/Reasoning", "Error Handling", "Custom Providers", "OAuth"],
+        "keyTopics": ["unified-llm-api", "provider-collection", "model-streaming", "tool-calling", "auth-resolution", "context-serialization"]
+      }
+    },
+    {
+      "id": "packages/ai/package.json",
+      "type": "file",
+      "label": "package.json",
+      "description": "@earendil-works/pi-ai 包配置文件。定义包名、版本(0.84.1)、ESM 模块导出(main/exports)、CLI 二进制入口、构建脚本(vitest 测试、tsgo 编译、模型目录生成)、核心依赖(@anthropic-ai/sdk, @google/genai, openai, @aws-sdk/client-bedrock-runtime 等)及开发依赖。",
+      "fileCategory": "config",
+      "language": "json",
+      "sizeLines": 100,
+      "metadata": {
+        "packageName": "@earendil-works/pi-ai",
+        "version": "0.84.1",
+        "moduleType": "ESM",
+        "dependencies": [
+          "@anthropic-ai/sdk",
+          "@aws-sdk/client-bedrock-runtime",
+          "@earendil-works/pi-telemetry",
+          "@google/genai",
+          "@opentelemetry/api",
+          "@smithy/node-http-handler",
+          "http-proxy-agent",
+          "https-proxy-agent",
+          "openai",
+          "partial-json",
+          "typebox"
+        ],
+        "devDependencies": ["@types/node", "canvas", "vitest"],
+        "exports": [".", "./compat", "./providers/*", "./api/*", "./oauth", "./bedrock-provider", "./bun-oauth"],
+        "engines": { "node": ">=22.19.0" }
+      }
+    },
+    {
+      "id": "packages/ai/tsconfig.build.json",
+      "type": "file",
+      "label": "tsconfig.build.json",
+      "description": "@earendil-works/pi-ai 包的 TypeScript 构建配置。继承基础 tsconfig.base.json，配置输出目录(dist)、源码根目录(src)、模块系统(NodeNext)及包含/排除规则。",
+      "fileCategory": "config",
+      "language": "json",
+      "sizeLines": 10,
+      "metadata": {
+        "extends": "../../tsconfig.base.json",
+        "compilerOptions": {
+          "outDir": "./dist",
+          "rootDir": "./src",
+          "module": "NodeNext",
+          "moduleResolution": "NodeNext"
+        },
+        "include": ["src/**/*.ts"],
+        "exclude": ["node_modules", "dist", "**/*.d.ts", "src/**/*.d.ts"]
+      }
+    }
+  ],
+  "edges": []
+}

@@ -1,0 +1,75 @@
+{
+  "batchIndex": 57,
+  "nodes": [
+    {
+      "id": "packages/coding-agent/examples/extensions/subagent/agents/planner.md",
+      "type": "file",
+      "label": "planner.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "metrics": { "lines": 37, "sections": 5, "imports": 0, "exports": 0 },
+      "summary": "Planner agent 定义文件。作为规划专家，接收 scout 提供的上下文和需求，生成结构化的实施计划。使用 claude-sonnet-4-5 模型，仅具备只读工具（read, grep, find, ls），禁止修改文件。输出格式包含 Goal、Plan（编号步骤）、Files to Modify、New Files 和 Risks 五个部分。",
+      "tags": ["agent-definition", "multi-agent", "planning", "subagent-example", "claude-sonnet-4-5"]
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/subagent/agents/reviewer.md",
+      "type": "file",
+      "label": "reviewer.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "metrics": { "lines": 35, "sections": 5, "imports": 0, "exports": 0 },
+      "summary": "Reviewer agent 定义文件。作为高级代码审查专家，分析代码的质量、安全性和可维护性。使用 claude-sonnet-4-5 模型，具备 bash 工具但仅限于只读命令（git diff/log/show）。输出格式包含 Files Reviewed、Critical（必须修复）、Warnings（建议修复）、Suggestions（可考虑）和 Summary 五个审查级别。",
+      "tags": ["agent-definition", "multi-agent", "code-review", "subagent-example", "claude-sonnet-4-5"]
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/subagent/agents/scout.md",
+      "type": "file",
+      "label": "scout.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "metrics": { "lines": 50, "sections": 4, "imports": 0, "exports": 0 },
+      "summary": "Scout agent 定义文件。作为快速代码库侦察兵，返回压缩的结构化上下文供其他 agent 使用，无需重新阅读文件。使用轻量级 claude-haiku-4-5 模型以降低成本。支持三种深度模式（Quick/Medium/Thorough），输出包含 Files Retrieved（精确行范围）、Key Code（关键类型/接口/函数）、Architecture 和 Start Here 四个部分。",
+      "tags": ["agent-definition", "multi-agent", "reconnaissance", "subagent-example", "claude-haiku-4-5", "context-compression"]
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/subagent/agents/worker.md",
+      "type": "file",
+      "label": "worker.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "metrics": { "lines": 24, "sections": 3, "imports": 0, "exports": 0 },
+      "summary": "Worker agent 定义文件。作为通用子 agent，在隔离的上下文窗口中运行，处理委托任务而不污染主对话。使用 claude-sonnet-4-5 模型，具备完整工具能力。输出包含 Completed、Files Changed 和 Notes 三部分，支持向其他 agent（如 reviewer）交接时提供精确的文件路径和关键函数/类型列表。",
+      "tags": ["agent-definition", "multi-agent", "execution", "subagent-example", "claude-sonnet-4-5", "context-isolation"]
+    }
+  ],
+  "edges": [
+    {
+      "source": "packages/coding-agent/examples/extensions/subagent/agents/scout.md",
+      "target": "packages/coding-agent/examples/extensions/subagent/agents/planner.md",
+      "type": "semantic",
+      "label": "provides-context-to",
+      "description": "Scout agent 的代码库侦察结果作为 Planner agent 的输入上下文，形成 multi-agent 工作流的第一阶段"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/subagent/agents/planner.md",
+      "target": "packages/coding-agent/examples/extensions/subagent/agents/worker.md",
+      "type": "semantic",
+      "label": "plan-handoff-to",
+      "description": "Planner agent 生成的实施计划交给 Worker agent 逐条执行，Worker 按 verbatim 方式执行计划"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/subagent/agents/worker.md",
+      "target": "packages/coding-agent/examples/extensions/subagent/agents/reviewer.md",
+      "type": "semantic",
+      "label": "code-submitted-for-review",
+      "description": "Worker agent 完成任务后将变更文件提交给 Reviewer agent 进行代码质量和安全审查"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/subagent/agents/scout.md",
+      "target": "packages/coding-agent/examples/extensions/subagent/agents/worker.md",
+      "type": "semantic",
+      "label": "context-sharing",
+      "description": "Scout agent 的侦察结果也可传递给 Worker agent，为其提供代码库背景知识"
+    }
+  ]
+}

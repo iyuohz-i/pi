@@ -1,0 +1,189 @@
+{
+  "nodes": [
+    {
+      "id": "packages/telemetry/src/index.ts",
+      "type": "file",
+      "label": "index.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "遥测包核心入口。定义 Span/Context 基础类型、Schema 声明式类型系统（含属性推断、事件属性类型安全）、以及类型安全的 TypedSpanStarter 工厂。重新导出 InMemoryTelemetryContext 与 RecordedTelemetryEvent/RecordedTelemetrySpan。",
+      "metrics": { "lines": 357, "exports": 6, "functions": 3 }
+    },
+    {
+      "id": "packages/telemetry/src/memory.ts",
+      "type": "file",
+      "label": "memory.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "InMemoryTelemetryContext 实现。提供后端中立的内存录制实现，记录 span 树、事件、属性合并与状态管理。采用不可变快照模式返回录制数据，支持嵌套/并发 span 的父子关系追踪和 settle 顺序。",
+      "metrics": { "lines": 219, "exports": 1, "functions": 8, "classes": 1 }
+    },
+    {
+      "id": "packages/telemetry/src/noop.ts",
+      "type": "file",
+      "label": "noop.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "Noop 遥测上下文。当应用未提供遥测后端时使用的共享空操作实现，冻结的单例 noopTelemetrySpan 同步执行回调但不记录任何数据。",
+      "metrics": { "lines": 20, "exports": 1, "functions": 1 }
+    },
+    {
+      "id": "packages/telemetry/src/testing/conformance.ts",
+      "type": "file",
+      "label": "conformance.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "遥测适配器一致性测试套件。定义与测试运行器无关的标准化测试用例，覆盖回调生命周期、错误传播与保留、状态管理、属性/事件录制、父子关系、被动性（不可读 payload 抑制）等合约要求。",
+      "metrics": { "lines": 315, "exports": 1, "functions": 5 }
+    },
+    {
+      "id": "packages/telemetry/src/testing/index.ts",
+      "type": "file",
+      "label": "index.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "测试模块桶文件。重新导出 createTelemetryAdapterConformance 及 TelemetryAdapterFixture/ConformanceCase/FixtureFactory 类型。",
+      "metrics": { "lines": 6, "exports": 4 }
+    },
+    {
+      "id": "packages/telemetry/src/testing/types.ts",
+      "type": "file",
+      "label": "types.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "测试适配器合约类型定义。定义 TelemetryAdapterFixture（含 AsyncDisposable）、TelemetryAdapterFixtureFactory 和 TelemetryAdapterConformanceCase 接口。",
+      "metrics": { "lines": 18, "exports": 3 }
+    },
+    {
+      "id": "packages/telemetry/test/conformance.test.ts",
+      "type": "file",
+      "label": "conformance.test.ts",
+      "language": "typescript",
+      "category": "test",
+      "summary": "InMemoryTelemetryContext 一致性测试。使用 Vitest 运行标准化一致性用例，并增加快照隔离性测试验证 getSpans 返回不可变副本。",
+      "metrics": { "lines": 46 }
+    },
+    {
+      "id": "packages/telemetry/test/telemetry.test.ts",
+      "type": "file",
+      "label": "telemetry.test.ts",
+      "language": "typescript",
+      "category": "test",
+      "summary": "遥测核心功能测试。覆盖 schema 类型推断验证、多 schema 词汇表合并与子 span starter 绑定、NOOP_TELEMETRY_CONTEXT 的回调同步执行/拒绝值保留/被动性等场景。",
+      "metrics": { "lines": 197, "functions": 1 }
+    },
+    {
+      "id": "packages/telemetry/src/index.ts::bindTypedSpanStarter",
+      "type": "function",
+      "label": "bindTypedSpanStarter",
+      "parent": "packages/telemetry/src/index.ts",
+      "summary": "将 TelemetryContext 绑定到 schema 词汇表，返回类型安全的 TypedSpanStarter。内部通过闭包递归为每个子 span 创建新的绑定 starter，实现父子 span 的类型传播。",
+      "signature": "function bindTypedSpanStarter<Schemas>(telemetryContext: TelemetryContext): TypedSpanStarter<Schemas>",
+      "metrics": { "lines": 20, "params": 1 }
+    },
+    {
+      "id": "packages/telemetry/src/memory.ts::automaticErrorStatus",
+      "type": "function",
+      "label": "automaticErrorStatus",
+      "parent": "packages/telemetry/src/memory.ts",
+      "summary": "根据未知错误自动生成 error 状态。安全地检查 Error 实例以提取 name/message，对不可检查的错误回退到无详情的 error 状态。",
+      "signature": "function automaticErrorStatus(error: unknown): SpanStatus",
+      "metrics": { "lines": 10, "params": 1 }
+    },
+    {
+      "id": "packages/telemetry/src/memory.ts::settleSpan",
+      "type": "function",
+      "label": "settleSpan",
+      "parent": "packages/telemetry/src/memory.ts",
+      "summary": "完结 span 的生命周期。仅在首次调用时生效，若失败且未显式设置状态则自动设置 error 状态，分配全局递增的 endSequence 以确定结束顺序。",
+      "signature": "function settleSpan(state, span, failed, error?): void",
+      "metrics": { "lines": 11, "params": 4 }
+    },
+    {
+      "id": "packages/telemetry/src/memory.ts::createSpan",
+      "type": "function",
+      "label": "createSpan",
+      "parent": "packages/telemetry/src/memory.ts",
+      "summary": "创建新的可变录制 span。分配全局递增 ID，设置父 span ID（或 null），深拷贝初始属性，初始化空事件列表和 ok 状态。",
+      "signature": "function createSpan(state, parent, options): MutableRecordedTelemetrySpan",
+      "metrics": { "lines": 18, "params": 3 }
+    },
+    {
+      "id": "packages/telemetry/src/memory.ts::startInMemorySpan",
+      "type": "function",
+      "label": "startInMemorySpan",
+      "parent": "packages/telemetry/src/memory.ts",
+      "summary": "内存 span 启动核心实现。处理父 span 已 settle 时降级到 noop、创建录制 span、构建 TelemetrySpan 代理（含递归子 span 启动）、属性/事件/状态的被动录制，以及同步/异步错误的正确传播与状态设置。",
+      "signature": "function startInMemorySpan<T>(state, parent, options, callback): Promise<T>",
+      "metrics": { "lines": 67, "params": 4 }
+    },
+    {
+      "id": "packages/telemetry/src/memory.ts::InMemoryTelemetryContext",
+      "type": "class",
+      "label": "InMemoryTelemetryContext",
+      "parent": "packages/telemetry/src/memory.ts",
+      "summary": "后端中立的内存遥测上下文实现。维护私有录制状态（span 列表、ID/序列计数器），实现 TelemetryContext 接口的 startSpan 方法，提供 getSpans 返回不可变快照。",
+      "metrics": { "methods": 2, "lines": 28 }
+    },
+    {
+      "id": "packages/telemetry/src/testing/conformance.ts::createCase",
+      "type": "function",
+      "label": "createCase",
+      "parent": "packages/telemetry/src/testing/conformance.ts",
+      "summary": "一致性测试用例构造辅助。接受 factory、分组名、用例名和测试函数，返回包含 run 方法的 TelemetryAdapterConformanceCase，run 中通过 await using 管理 fixture 生命周期。",
+      "signature": "function createCase(factory, group, name, test): TelemetryAdapterConformanceCase",
+      "metrics": { "lines": 15, "params": 4 }
+    },
+    {
+      "id": "packages/telemetry/src/testing/conformance.ts::unreadable",
+      "type": "function",
+      "label": "unreadable",
+      "parent": "packages/telemetry/src/testing/conformance.ts",
+      "summary": "创建不可读代理对象。所有属性访问、描述符查询、原型获取和键枚举均抛出错误，用于验证遥测实现的被动性——不应检查或保留不可读的 payload。",
+      "signature": "function unreadable<T>(value: T): T",
+      "metrics": { "lines": 16, "params": 1 }
+    },
+    {
+      "id": "packages/telemetry/src/testing/conformance.ts::createTelemetryAdapterConformance",
+      "type": "function",
+      "label": "createTelemetryAdapterConformance",
+      "parent": "packages/telemetry/src/testing/conformance.ts",
+      "summary": "创建遥测适配器标准化一致性测试套件。包含 10 个测试用例覆盖：callback 生命周期（同步承认、错误值保留）、状态管理（最后显式状态优先）、录制（属性合并、事件排序、原子失败）、父子关系（嵌套/并发）、被动性（不可读 payload 抑制）。",
+      "signature": "function createTelemetryAdapterConformance(factory): readonly TelemetryAdapterConformanceCase[]",
+      "metrics": { "lines": 255, "params": 1 }
+    },
+    {
+      "id": "packages/telemetry/test/telemetry.test.ts::unreadable",
+      "type": "function",
+      "label": "unreadable",
+      "parent": "packages/telemetry/test/telemetry.test.ts",
+      "summary": "测试辅助：创建不可读代理对象。与 conformance.ts 中同名函数功能一致，用于验证 NOOP_TELEMETRY_CONTEXT 不检查传入的不可读 payload。",
+      "signature": "function unreadable<T>(value: T): T",
+      "metrics": { "lines": 13, "params": 1 }
+    }
+  ],
+  "edges": [
+    { "source": "packages/telemetry/src/memory.ts", "target": "packages/telemetry/src/index.ts", "type": "import", "label": "imports types" },
+    { "source": "packages/telemetry/src/memory.ts", "target": "packages/telemetry/src/noop.ts", "type": "import", "label": "imports NOOP_TELEMETRY_CONTEXT" },
+    { "source": "packages/telemetry/src/noop.ts", "target": "packages/telemetry/src/index.ts", "type": "import", "label": "imports types" },
+    { "source": "packages/telemetry/src/testing/conformance.ts", "target": "packages/telemetry/src/index.ts", "type": "import", "label": "imports types" },
+    { "source": "packages/telemetry/src/testing/conformance.ts", "target": "packages/telemetry/src/memory.ts", "type": "import", "label": "imports RecordedTelemetrySpan" },
+    { "source": "packages/telemetry/src/testing/conformance.ts", "target": "packages/telemetry/src/testing/types.ts", "type": "import", "label": "imports fixture types" },
+    { "source": "packages/telemetry/src/testing/types.ts", "target": "packages/telemetry/src/index.ts", "type": "import", "label": "imports TelemetryContext" },
+    { "source": "packages/telemetry/src/testing/types.ts", "target": "packages/telemetry/src/memory.ts", "type": "import", "label": "imports RecordedTelemetrySpan" },
+    { "source": "packages/telemetry/test/conformance.test.ts", "target": "packages/telemetry/src/index.ts", "type": "import", "label": "imports InMemoryTelemetryContext" },
+    { "source": "packages/telemetry/test/conformance.test.ts", "target": "packages/telemetry/src/testing/index.ts", "type": "import", "label": "imports conformance + types" },
+    { "source": "packages/telemetry/test/telemetry.test.ts", "target": "packages/telemetry/src/index.ts", "type": "import", "label": "imports schema + noop + types" },
+    { "source": "packages/telemetry/src/index.ts", "target": "packages/telemetry/src/index.ts::bindTypedSpanStarter", "type": "contains", "label": "defines" },
+    { "source": "packages/telemetry/src/memory.ts", "target": "packages/telemetry/src/memory.ts::automaticErrorStatus", "type": "contains", "label": "defines" },
+    { "source": "packages/telemetry/src/memory.ts", "target": "packages/telemetry/src/memory.ts::settleSpan", "type": "contains", "label": "defines" },
+    { "source": "packages/telemetry/src/memory.ts", "target": "packages/telemetry/src/memory.ts::createSpan", "type": "contains", "label": "defines" },
+    { "source": "packages/telemetry/src/memory.ts", "target": "packages/telemetry/src/memory.ts::startInMemorySpan", "type": "contains", "label": "defines" },
+    { "source": "packages/telemetry/src/memory.ts", "target": "packages/telemetry/src/memory.ts::InMemoryTelemetryContext", "type": "contains", "label": "defines" },
+    { "source": "packages/telemetry/src/testing/conformance.ts", "target": "packages/telemetry/src/testing/conformance.ts::createCase", "type": "contains", "label": "defines" },
+    { "source": "packages/telemetry/src/testing/conformance.ts", "target": "packages/telemetry/src/testing/conformance.ts::unreadable", "type": "contains", "label": "defines" },
+    { "source": "packages/telemetry/src/testing/conformance.ts", "target": "packages/telemetry/src/testing/conformance.ts::createTelemetryAdapterConformance", "type": "contains", "label": "defines" },
+    { "source": "packages/telemetry/test/telemetry.test.ts", "target": "packages/telemetry/test/telemetry.test.ts::unreadable", "type": "contains", "label": "defines" },
+    { "source": "packages/telemetry/src/memory.ts::startInMemorySpan", "target": "packages/telemetry/src/noop.ts", "type": "calls", "label": "降级到 NOOP_TELEMETRY_CONTEXT.startSpan" }
+  ]
+}

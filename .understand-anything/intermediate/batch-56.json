@@ -1,0 +1,49 @@
+{
+  "batchIndex": 56,
+  "nodes": [
+    {
+      "id": "packages/coding-agent/examples/extensions/dynamic-resources/SKILL.md",
+      "type": "file",
+      "label": "SKILL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "description": "动态资源技能的定义文件，声明技能名称为 dynamic-resources，描述其为由 resources_discover 加载的示例技能",
+      "metadata": {
+        "lines": 8,
+        "sections": ["Dynamic Resources Skill"],
+        "frontmatter": {
+          "name": "dynamic-resources",
+          "description": "Example skill loaded from resources_discover"
+        }
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/dynamic-resources/dynamic.json",
+      "type": "file",
+      "label": "dynamic.json",
+      "language": "json",
+      "fileCategory": "config",
+      "description": "动态资源扩展的主题配置文件，定义颜色变量（vars）、语义颜色映射（colors）及导出背景色（export），遵循 theme-schema.json 规范",
+      "metadata": {
+        "lines": 79,
+        "sections": ["$schema", "name", "vars", "colors", "export"],
+        "schema": "theme-schema.json"
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/dynamic-resources/dynamic.md",
+      "type": "file",
+      "label": "dynamic.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "description": "动态资源扩展的示例提示模板，由 resources_discover 加载，提示用户总结仓库结构并提及构建或测试命令",
+      "metadata": {
+        "lines": 5,
+        "frontmatter": {
+          "description": "Example prompt template loaded from resources_discover"
+        }
+      }
+    }
+  ],
+  "edges": []
+}

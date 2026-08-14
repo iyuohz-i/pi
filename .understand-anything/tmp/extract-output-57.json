@@ -1,0 +1,156 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 4,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "packages/coding-agent/examples/extensions/subagent/agents/planner.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 37,
+      "nonEmptyLines": 27,
+      "sections": [
+        {
+          "heading": "Goal",
+          "level": 2,
+          "line": 18
+        },
+        {
+          "heading": "Plan",
+          "level": 2,
+          "line": 21
+        },
+        {
+          "heading": "Files to Modify",
+          "level": 2,
+          "line": 27
+        },
+        {
+          "heading": "New Files (if any)",
+          "level": 2,
+          "line": 31
+        },
+        {
+          "heading": "Risks",
+          "level": 2,
+          "line": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/extensions/subagent/agents/reviewer.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 35,
+      "nonEmptyLines": 25,
+      "sections": [
+        {
+          "heading": "Files Reviewed",
+          "level": 2,
+          "line": 20
+        },
+        {
+          "heading": "Critical (must fix)",
+          "level": 2,
+          "line": 23
+        },
+        {
+          "heading": "Warnings (should fix)",
+          "level": 2,
+          "line": 26
+        },
+        {
+          "heading": "Suggestions (consider)",
+          "level": 2,
+          "line": 29
+        },
+        {
+          "heading": "Summary",
+          "level": 2,
+          "line": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/extensions/subagent/agents/scout.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 50,
+      "nonEmptyLines": 39,
+      "sections": [
+        {
+          "heading": "Files Retrieved",
+          "level": 2,
+          "line": 25
+        },
+        {
+          "heading": "Key Code",
+          "level": 2,
+          "line": 31
+        },
+        {
+          "heading": "Architecture",
+          "level": 2,
+          "line": 46
+        },
+        {
+          "heading": "Start Here",
+          "level": 2,
+          "line": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "packages/coding-agent/examples/extensions/subagent/agents/worker.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 24,
+      "nonEmptyLines": 17,
+      "sections": [
+        {
+          "heading": "Completed",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Files Changed",
+          "level": 2,
+          "line": 16
+        },
+        {
+          "heading": "Notes (if any)",
+          "level": 2,
+          "line": 19
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 3
+      }
+    }
+  ]
+}

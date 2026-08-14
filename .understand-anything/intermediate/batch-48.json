@@ -1,0 +1,185 @@
+{
+  "nodes": [
+    {
+      "id": "AGENTS.md",
+      "type": "file",
+      "label": "AGENTS.md",
+      "description": "开发规则文档，定义代码风格、命令规范、Git 工作流、依赖安全、发布流程等 Agent 行为准则",
+      "metadata": {
+        "language": "markdown",
+        "fileCategory": "docs",
+        "sizeLines": 168,
+        "sections": 11
+      }
+    },
+    {
+      "id": "CONTRIBUTING.md",
+      "type": "file",
+      "label": "CONTRIBUTING.md",
+      "description": "贡献指南，说明新贡献者的自动关闭机制、质量要求、PR 提交流程和常见问题解答",
+      "metadata": {
+        "language": "markdown",
+        "fileCategory": "docs",
+        "sizeLines": 102,
+        "sections": 15
+      }
+    },
+    {
+      "id": "README.md",
+      "type": "file",
+      "label": "README.md",
+      "description": "项目根 README，介绍 Pi Agent Harness 项目概览、包结构、开发命令、容器化方案和供应链安全",
+      "metadata": {
+        "language": "markdown",
+        "fileCategory": "docs",
+        "sizeLines": 114,
+        "sections": 9
+      }
+    },
+    {
+      "id": "SECURITY.md",
+      "type": "file",
+      "label": "SECURITY.md",
+      "description": "安全策略文档，定义 Pi 的信任边界、漏洞报告流程、安全范围及排除项",
+      "metadata": {
+        "language": "markdown",
+        "fileCategory": "docs",
+        "sizeLines": 87,
+        "sections": 5
+      }
+    },
+    {
+      "id": "tui-plan.md",
+      "type": "file",
+      "label": "tui-plan.md",
+      "description": "TUI 备选屏幕布局系统设计文档，定义 VStack/HStack/ScrollView 组件、约束布局算法、渲染策略和交互路由",
+      "metadata": {
+        "language": "markdown",
+        "fileCategory": "docs",
+        "sizeLines": 1001,
+        "sections": 23
+      }
+    },
+    {
+      "id": "biome.json",
+      "type": "file",
+      "label": "biome.json",
+      "description": "Biome 代码检查和格式化配置，启用推荐规则，设置 Tab 缩进和 120 字符行宽",
+      "metadata": {
+        "language": "json",
+        "fileCategory": "config",
+        "sizeLines": 41
+      }
+    },
+    {
+      "id": "package.json",
+      "type": "file",
+      "label": "package.json",
+      "description": "monorepo 根 package.json，定义 workspace 结构、构建脚本、开发依赖和版本管理",
+      "metadata": {
+        "language": "json",
+        "fileCategory": "config",
+        "sizeLines": 74
+      }
+    },
+    {
+      "id": "tsconfig.base.json",
+      "type": "file",
+      "label": "tsconfig.base.json",
+      "description": "TypeScript 基础配置，设置 ES2022 目标、Node16 模块、严格模式和可擦除语法",
+      "metadata": {
+        "language": "json",
+        "fileCategory": "config",
+        "sizeLines": 25
+      }
+    },
+    {
+      "id": "tsconfig.json",
+      "type": "file",
+      "label": "tsconfig.json",
+      "description": "TypeScript 根配置，继承 base 配置并定义所有 workspace 包的路径映射",
+      "metadata": {
+        "language": "json",
+        "fileCategory": "config",
+        "sizeLines": 40
+      }
+    },
+    {
+      "id": "pi-test.bat",
+      "type": "file",
+      "label": "pi-test.bat",
+      "description": "Windows Batch 启动脚本，检测 PowerShell 并委托给 pi-test.ps1 执行",
+      "metadata": {
+        "language": "batch",
+        "fileCategory": "script",
+        "sizeLines": 14
+      }
+    },
+    {
+      "id": "pi-test.ps1",
+      "type": "file",
+      "label": "pi-test.ps1",
+      "description": "PowerShell 启动脚本，解析 --no-env 参数，可选清除所有 API 密钥环境变量，通过 tsx 运行 CLI 入口",
+      "metadata": {
+        "language": "powershell",
+        "fileCategory": "script",
+        "sizeLines": 71
+      }
+    },
+    {
+      "id": "pi-test.sh",
+      "type": "file",
+      "label": "pi-test.sh",
+      "description": "Bash 启动脚本，解析 --no-env 参数，可选清除所有 API 密钥环境变量，通过 tsx 运行 CLI 入口",
+      "metadata": {
+        "language": "shell",
+        "fileCategory": "script",
+        "sizeLines": 57
+      }
+    },
+    {
+      "id": "test.sh",
+      "type": "file",
+      "label": "test.sh",
+      "description": "测试隔离脚本，创建临时目录，清理环境变量，在隔离的用户空间和凭证下运行 npm test",
+      "metadata": {
+        "language": "shell",
+        "fileCategory": "script",
+        "sizeLines": 79
+      }
+    },
+    {
+      "id": "test.sh#cleanup",
+      "type": "function",
+      "label": "cleanup",
+      "description": "清理临时测试目录的安全函数，验证目录所有权后删除，防止误删未验证路径",
+      "metadata": {
+        "lines": "16-36",
+        "parentFile": "test.sh"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "tsconfig.json",
+      "target": "tsconfig.base.json",
+      "type": "extends",
+      "label": "extends",
+      "description": "tsconfig.json 继承 tsconfig.base.json 的编译器选项"
+    },
+    {
+      "source": "pi-test.bat",
+      "target": "pi-test.ps1",
+      "type": "delegates",
+      "label": "delegates",
+      "description": "Windows Batch 脚本委托给 PowerShell 脚本执行"
+    },
+    {
+      "source": "test.sh#cleanup",
+      "target": "test.sh",
+      "type": "defined_in",
+      "label": "defined_in",
+      "description": "cleanup 函数定义在 test.sh 中"
+    }
+  ]
+}

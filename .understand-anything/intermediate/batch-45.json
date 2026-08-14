@@ -1,0 +1,204 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql",
+      "type": "file",
+      "name": "001_initial.sql",
+      "filePath": "packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql",
+      "summary": "SQLite 后端初始数据库迁移脚本，定义了会话持久化的完整模式——包含会话、条目、分支、记录、事实及写入租约等 11 张表和相关索引，使用 WITHOUT ROWID 优化主键查询。",
+      "tags": ["database", "migration", "schema-definition", "sqlite", "session-storage"],
+      "complexity": "moderate",
+      "languageNotes": "大量使用 WITHOUT ROWID 表（基于聚簇主键）以优化范围扫描；多组复合索引针对 session_id+seq 的追加写入模式进行了优化。"
+    },
+    {
+      "id": "table:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql:sessions",
+      "type": "table",
+      "name": "sessions",
+      "filePath": "packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql",
+      "lineRange": [1, 7],
+      "summary": "顶层会话表，存储每个会话的唯一 ID、创建时间、工作目录（cwd）、父会话引用及 JSON 元数据；使用 TEXT 主键和 WITHOUT ROWID 以支持高效的按 ID 查找。",
+      "tags": ["database", "data-model", "session", "root-entity"],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql:entries",
+      "type": "table",
+      "name": "entries",
+      "filePath": "packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql",
+      "lineRange": [12, 22],
+      "summary": "会话条目表，按 (session_id, id) 主键和 (session_id, seq) 唯一约束存储会话中的每条消息/事件；包含父条目链接以支持树状分支结构，payload 以 TEXT 存储序列化内容。",
+      "tags": ["database", "data-model", "event-store", "append-only"],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql:session_sequences",
+      "type": "table",
+      "name": "session_sequences",
+      "filePath": "packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql",
+      "lineRange": [27, 30],
+      "summary": "会话序号生成器表，为每个会话维护 next_seq 计数器，用于为条目分配单调递增的序列号；以 session_id 为主键的 WITHOUT ROWID 表。",
+      "tags": ["database", "data-model", "sequence", "counter"],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql:session_stats",
+      "type": "table",
+      "name": "session_stats",
+      "filePath": "packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql",
+      "lineRange": [32, 39],
+      "summary": "会话统计聚合表，记录每个会话的消息数、缓存/未缓存 token 数、总 token 数及累计成本；用于成本追踪和使用情况分析。",
+      "tags": ["database", "data-model", "telemetry", "cost-tracking"],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql:branch_entries",
+      "type": "table",
+      "name": "branch_entries",
+      "filePath": "packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql",
+      "lineRange": [43, 51],
+      "summary": "分支条目派生缓存表，将条目按 (session_id, branch_id, entry_id) 组织，用于加速分支扫描；entries 中的父链接保持为规范数据源，本表仅为性能优化。",
+      "tags": ["database", "data-model", "branch", "cache", "denormalized"],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql:lanes",
+      "type": "table",
+      "name": "lanes",
+      "filePath": "packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql",
+      "lineRange": [58, 64],
+      "summary": "泳道元数据表，记录每个会话中各泳道的当前状态——包括叶节点 ID 和打开操作的 ID；以 (session_id, lane) 为复合主键。",
+      "tags": ["database", "data-model", "lane", "concurrency"],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql:records",
+      "type": "table",
+      "name": "records",
+      "filePath": "packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql",
+      "lineRange": [66, 78],
+      "summary": "操作记录表，存储泳道内的每条操作——包含序列号、泳道、运行 ID、类型、操作种类、时间戳和负载；支持按 lane/type/op_kind 等多维度的高效查询。",
+      "tags": ["database", "data-model", "operation-log", "append-only"],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql:lane_moves",
+      "type": "table",
+      "name": "lane_moves",
+      "filePath": "packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql",
+      "lineRange": [87, 93],
+      "summary": "泳道移动事件表，按序列号记录每次泳道切换，包含目标泳道和叶节点 ID；用于追踪泳道间的状态迁移历史。",
+      "tags": ["database", "data-model", "lane", "event-log"],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql:facts",
+      "type": "table",
+      "name": "facts",
+      "filePath": "packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql",
+      "lineRange": [96, 103],
+      "summary": "会话事实表，以 (session_id, seq) 为主键存储键值形式的结构化事实——包含种类、键和值；用于提取和查询会话中的声明式知识。",
+      "tags": ["database", "data-model", "knowledge", "key-value"],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql:branch_tips",
+      "type": "table",
+      "name": "branch_tips",
+      "filePath": "packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql",
+      "lineRange": [107, 113],
+      "summary": "分支尖端表，维护每个分支的最新条目 ID；以 (session_id, tip_id) 为主键，并对 (session_id, branch_id) 施加唯一约束以确保每个分支仅有一个尖端。",
+      "tags": ["database", "data-model", "branch", "pointer"],
+      "complexity": "simple"
+    },
+    {
+      "id": "table:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql:writer_leases",
+      "type": "table",
+      "name": "writer_leases",
+      "filePath": "packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql",
+      "lineRange": [117, 122],
+      "summary": "写入租约表，实现每个会话的单写者互斥——通过 owner_id、fence（防旧写者）和过期时间戳确保租约过期后新写者可安全接管。",
+      "tags": ["database", "data-model", "concurrency", "lease", "fencing"],
+      "complexity": "simple",
+      "languageNotes": "使用 fence 令牌模式防止过期写者在租约转移后继续写入——这是一种轻量级的分布式锁实现。"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql",
+      "target": "table:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql:sessions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql",
+      "target": "table:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql:entries",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql",
+      "target": "table:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql:session_sequences",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql",
+      "target": "table:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql:session_stats",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql",
+      "target": "table:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql:branch_entries",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql",
+      "target": "table:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql:lanes",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql",
+      "target": "table:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql:records",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql",
+      "target": "table:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql:lane_moves",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql",
+      "target": "table:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql:facts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql",
+      "target": "table:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql:branch_tips",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql",
+      "target": "table:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql:writer_leases",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "projectRoot": "/Users/zhouyi/AiHub/pi",
+  "batchFiles": [
+    {"path": "packages/coding-agent/src/core/remote-catalog-provider.ts", "language": "typescript", "sizeLines": 132, "fileCategory": "code"},
+    {"path": "packages/coding-agent/src/utils/management-http.ts", "language": "typescript", "sizeLines": 68, "fileCategory": "code"},
+    {"path": "packages/coding-agent/src/utils/pi-user-agent.ts", "language": "typescript", "sizeLines": 4, "fileCategory": "code"},
+    {"path": "packages/coding-agent/src/utils/version-check.ts", "language": "typescript", "sizeLines": 109, "fileCategory": "code"},
+    {"path": "packages/coding-agent/test/management-http.test.ts", "language": "typescript", "sizeLines": 52, "fileCategory": "code"},
+    {"path": "packages/coding-agent/test/pi-user-agent.test.ts", "language": "typescript", "sizeLines": 12, "fileCategory": "code"},
+    {"path": "packages/coding-agent/test/remote-catalog-provider.test.ts", "language": "typescript", "sizeLines": 241, "fileCategory": "code"},
+    {"path": "packages/coding-agent/test/version-check.test.ts", "language": "typescript", "sizeLines": 131, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "packages/coding-agent/src/core/remote-catalog-provider.ts": ["packages/coding-agent/src/config.ts", "packages/coding-agent/src/utils/management-http.ts", "packages/coding-agent/src/utils/pi-user-agent.ts"],
+    "packages/coding-agent/src/utils/management-http.ts": [],
+    "packages/coding-agent/src/utils/pi-user-agent.ts": [],
+    "packages/coding-agent/src/utils/version-check.ts": ["packages/coding-agent/src/utils/management-http.ts", "packages/coding-agent/src/utils/pi-user-agent.ts"],
+    "packages/coding-agent/test/management-http.test.ts": ["packages/coding-agent/src/utils/management-http.ts"],
+    "packages/coding-agent/test/pi-user-agent.test.ts": ["packages/coding-agent/src/utils/pi-user-agent.ts"],
+    "packages/coding-agent/test/remote-catalog-provider.test.ts": ["packages/coding-agent/src/config.ts", "packages/coding-agent/src/core/remote-catalog-provider.ts"],
+    "packages/coding-agent/test/version-check.test.ts": ["packages/coding-agent/src/utils/version-check.ts", "packages/coding-agent/test/test-network-env.ts"]
+  }
+}

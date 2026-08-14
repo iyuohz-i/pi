@@ -1,0 +1,1275 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/coding-agent/src/core/system-prompt.ts",
+      "type": "file",
+      "name": "system-prompt.ts",
+      "filePath": "packages/coding-agent/src/core/system-prompt.ts",
+      "summary": "系统提示词构建器，组装 agent 的系统提示词，包含 skills 列表和工具说明。",
+      "tags": [
+        "system-prompt",
+        "builder",
+        "agent"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/telemetry.ts",
+      "type": "file",
+      "name": "telemetry.ts",
+      "filePath": "packages/coding-agent/src/core/telemetry.ts",
+      "summary": "遥测模块，重新导出设置管理器的遥测配置访问。",
+      "tags": [
+        "telemetry",
+        "barrel",
+        "re-export"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/timings.ts",
+      "type": "file",
+      "name": "timings.ts",
+      "filePath": "packages/coding-agent/src/core/timings.ts",
+      "summary": "性能计时工具，提供带命名空间的计时函数和分组打印功能。",
+      "tags": [
+        "performance",
+        "timing",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "type": "file",
+      "name": "bash.ts",
+      "filePath": "packages/coding-agent/src/core/tools/bash.ts",
+      "summary": "Bash 工具实现，创建 shell 命令执行工具定义，支持超时、输出截断和结果渲染。",
+      "tags": [
+        "tool",
+        "bash",
+        "shell",
+        "command-execution"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "type": "file",
+      "name": "edit-diff.ts",
+      "filePath": "packages/coding-agent/src/core/tools/edit-diff.ts",
+      "summary": "编辑差异计算模块，提供 fuzzy 匹配、行尾规范化、统一 diff 生成和编辑应用功能。",
+      "tags": [
+        "tool",
+        "diff",
+        "fuzzy-match",
+        "edit"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "type": "file",
+      "name": "edit.ts",
+      "filePath": "packages/coding-agent/src/core/tools/edit.ts",
+      "summary": "编辑工具实现，创建文件编辑工具定义，支持多编辑操作、diff 预览渲染和文件变更队列。",
+      "tags": [
+        "tool",
+        "edit",
+        "file-mutation",
+        "diff"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/system-prompt.ts:buildSystemPrompt",
+      "type": "function",
+      "name": "buildSystemPrompt",
+      "filePath": "packages/coding-agent/src/core/system-prompt.ts",
+      "lineRange": [
+        28,
+        162
+      ],
+      "summary": "构建 agent 系统提示词，组装基础指令、skills 和上下文。",
+      "tags": [
+        "system-prompt",
+        "builder",
+        "agent"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/telemetry.ts:isInstallTelemetryEnabled",
+      "type": "function",
+      "name": "isInstallTelemetryEnabled",
+      "filePath": "packages/coding-agent/src/core/telemetry.ts",
+      "lineRange": [
+        8,
+        13
+      ],
+      "summary": "isInstallTelemetryEnabled 函数，位于 telemetry.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/timings.ts:resetTimings",
+      "type": "function",
+      "name": "resetTimings",
+      "filePath": "packages/coding-agent/src/core/timings.ts",
+      "lineRange": [
+        16,
+        19
+      ],
+      "summary": "resetTimings 函数，位于 timings.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/timings.ts:time",
+      "type": "function",
+      "name": "time",
+      "filePath": "packages/coding-agent/src/core/timings.ts",
+      "lineRange": [
+        21,
+        32
+      ],
+      "summary": "计时函数，记录带命名空间的时间段。",
+      "tags": [
+        "timing",
+        "performance",
+        "measure"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/timings.ts:printTimingGroup",
+      "type": "function",
+      "name": "printTimingGroup",
+      "filePath": "packages/coding-agent/src/core/timings.ts",
+      "lineRange": [
+        34,
+        43
+      ],
+      "summary": "打印一组计时结果。",
+      "tags": [
+        "timing",
+        "performance",
+        "print"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/timings.ts:printTimings",
+      "type": "function",
+      "name": "printTimings",
+      "filePath": "packages/coding-agent/src/core/timings.ts",
+      "lineRange": [
+        45,
+        50
+      ],
+      "summary": "printTimings 函数，位于 timings.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/bash.ts:resolveTimeoutMs",
+      "type": "function",
+      "name": "resolveTimeoutMs",
+      "filePath": "packages/coding-agent/src/core/tools/bash.ts",
+      "lineRange": [
+        28,
+        39
+      ],
+      "summary": "解析 bash 命令超时毫秒值。",
+      "tags": [
+        "bash",
+        "timeout",
+        "resolver"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/bash.ts:createLocalBashOperations",
+      "type": "function",
+      "name": "createLocalBashOperations",
+      "filePath": "packages/coding-agent/src/core/tools/bash.ts",
+      "lineRange": [
+        88,
+        154
+      ],
+      "summary": "创建本地 bash 操作集，封装进程生成和输出处理。",
+      "tags": [
+        "bash",
+        "operations",
+        "factory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/bash.ts:resolveSpawnContext",
+      "type": "function",
+      "name": "resolveSpawnContext",
+      "filePath": "packages/coding-agent/src/core/tools/bash.ts",
+      "lineRange": [
+        164,
+        190
+      ],
+      "summary": "解析 bash 命令的生成上下文，处理环境变量和 shell 配置。",
+      "tags": [
+        "bash",
+        "spawn",
+        "context"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/bash.ts:rebuildBashResultRenderComponent",
+      "type": "function",
+      "name": "rebuildBashResultRenderComponent",
+      "filePath": "packages/coding-agent/src/core/tools/bash.ts",
+      "lineRange": [
+        240,
+        320
+      ],
+      "summary": "重建 bash 结果的渲染组件，包含输出和状态。",
+      "tags": [
+        "bash",
+        "render",
+        "result"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/bash.ts:createBashToolDefinition",
+      "type": "function",
+      "name": "createBashToolDefinition",
+      "filePath": "packages/coding-agent/src/core/tools/bash.ts",
+      "lineRange": [
+        322,
+        500
+      ],
+      "summary": "创建完整的 bash 工具定义，包括执行、渲染和截断逻辑。",
+      "tags": [
+        "bash",
+        "tool-definition",
+        "factory"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/bash.ts:createBashTool",
+      "type": "function",
+      "name": "createBashTool",
+      "filePath": "packages/coding-agent/src/core/tools/bash.ts",
+      "lineRange": [
+        502,
+        510
+      ],
+      "summary": "createBashTool 函数，位于 bash.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/edit-diff.ts:detectLineEnding",
+      "type": "function",
+      "name": "detectLineEnding",
+      "filePath": "packages/coding-agent/src/core/tools/edit-diff.ts",
+      "lineRange": [
+        10,
+        16
+      ],
+      "summary": "detectLineEnding 函数，位于 edit-diff.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/edit-diff.ts:normalizeToLF",
+      "type": "function",
+      "name": "normalizeToLF",
+      "filePath": "packages/coding-agent/src/core/tools/edit-diff.ts",
+      "lineRange": [
+        18,
+        20
+      ],
+      "summary": "normalizeToLF 函数，位于 edit-diff.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/edit-diff.ts:restoreLineEndings",
+      "type": "function",
+      "name": "restoreLineEndings",
+      "filePath": "packages/coding-agent/src/core/tools/edit-diff.ts",
+      "lineRange": [
+        22,
+        24
+      ],
+      "summary": "restoreLineEndings 函数，位于 edit-diff.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/edit-diff.ts:normalizeForFuzzyMatch",
+      "type": "function",
+      "name": "normalizeForFuzzyMatch",
+      "filePath": "packages/coding-agent/src/core/tools/edit-diff.ts",
+      "lineRange": [
+        33,
+        54
+      ],
+      "summary": "规范化文本用于模糊匹配，去除空白和大小写差异。",
+      "tags": [
+        "diff",
+        "normalize",
+        "fuzzy-match"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/edit-diff.ts:getReplacementLineRange",
+      "type": "function",
+      "name": "getReplacementLineRange",
+      "filePath": "packages/coding-agent/src/core/tools/edit-diff.ts",
+      "lineRange": [
+        83,
+        108
+      ],
+      "summary": "获取替换操作的行范围。",
+      "tags": [
+        "diff",
+        "replacement",
+        "line-range"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/edit-diff.ts:applyReplacements",
+      "type": "function",
+      "name": "applyReplacements",
+      "filePath": "packages/coding-agent/src/core/tools/edit-diff.ts",
+      "lineRange": [
+        110,
+        119
+      ],
+      "summary": "将替换操作应用到内容上。",
+      "tags": [
+        "diff",
+        "replacement",
+        "apply"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/edit-diff.ts:applyReplacementsPreservingUnchangedLines",
+      "type": "function",
+      "name": "applyReplacementsPreservingUnchangedLines",
+      "filePath": "packages/coding-agent/src/core/tools/edit-diff.ts",
+      "lineRange": [
+        131,
+        172
+      ],
+      "summary": "应用替换同时保留未更改的行。",
+      "tags": [
+        "diff",
+        "replacement",
+        "preserve"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/edit-diff.ts:fuzzyFindText",
+      "type": "function",
+      "name": "fuzzyFindText",
+      "filePath": "packages/coding-agent/src/core/tools/edit-diff.ts",
+      "lineRange": [
+        206,
+        244
+      ],
+      "summary": "在内容中模糊查找文本，支持容错匹配。",
+      "tags": [
+        "diff",
+        "fuzzy-match",
+        "finder"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/edit-diff.ts:stripBom",
+      "type": "function",
+      "name": "stripBom",
+      "filePath": "packages/coding-agent/src/core/tools/edit-diff.ts",
+      "lineRange": [
+        247,
+        249
+      ],
+      "summary": "stripBom 函数，位于 edit-diff.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/edit-diff.ts:getNotFoundError",
+      "type": "function",
+      "name": "getNotFoundError",
+      "filePath": "packages/coding-agent/src/core/tools/edit-diff.ts",
+      "lineRange": [
+        257,
+        266
+      ],
+      "summary": "生成未找到文本的错误消息。",
+      "tags": [
+        "diff",
+        "error",
+        "not-found"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/edit-diff.ts:getDuplicateError",
+      "type": "function",
+      "name": "getDuplicateError",
+      "filePath": "packages/coding-agent/src/core/tools/edit-diff.ts",
+      "lineRange": [
+        268,
+        277
+      ],
+      "summary": "生成重复匹配的错误消息。",
+      "tags": [
+        "diff",
+        "error",
+        "duplicate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/edit-diff.ts:applyEditsToNormalizedContent",
+      "type": "function",
+      "name": "applyEditsToNormalizedContent",
+      "filePath": "packages/coding-agent/src/core/tools/edit-diff.ts",
+      "lineRange": [
+        304,
+        366
+      ],
+      "summary": "将编辑操作应用到规范化后的内容上。",
+      "tags": [
+        "diff",
+        "edit",
+        "apply"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/edit-diff.ts:generateUnifiedPatch",
+      "type": "function",
+      "name": "generateUnifiedPatch",
+      "filePath": "packages/coding-agent/src/core/tools/edit-diff.ts",
+      "lineRange": [
+        369,
+        374
+      ],
+      "summary": "generateUnifiedPatch 函数，位于 edit-diff.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/edit-diff.ts:generateDiffString",
+      "type": "function",
+      "name": "generateDiffString",
+      "filePath": "packages/coding-agent/src/core/tools/edit-diff.ts",
+      "lineRange": [
+        380,
+        503
+      ],
+      "summary": "生成旧内容和新内容之间的 diff 字符串。",
+      "tags": [
+        "diff",
+        "generator",
+        "unified"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/edit-diff.ts:computeEditsDiff",
+      "type": "function",
+      "name": "computeEditsDiff",
+      "filePath": "packages/coding-agent/src/core/tools/edit-diff.ts",
+      "lineRange": [
+        518,
+        547
+      ],
+      "summary": "计算编辑操作的 diff 结果。",
+      "tags": [
+        "diff",
+        "compute",
+        "edit"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/edit-diff.ts:computeEditDiff",
+      "type": "function",
+      "name": "computeEditDiff",
+      "filePath": "packages/coding-agent/src/core/tools/edit-diff.ts",
+      "lineRange": [
+        553,
+        560
+      ],
+      "summary": "computeEditDiff 函数，位于 edit-diff.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/edit.ts:prepareEditArguments",
+      "type": "function",
+      "name": "prepareEditArguments",
+      "filePath": "packages/coding-agent/src/core/tools/edit.ts",
+      "lineRange": [
+        105,
+        129
+      ],
+      "summary": "准备和验证编辑工具的输入参数。",
+      "tags": [
+        "edit",
+        "args",
+        "preparation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/edit.ts:getEditCallRenderComponent",
+      "type": "function",
+      "name": "getEditCallRenderComponent",
+      "filePath": "packages/coding-agent/src/core/tools/edit.ts",
+      "lineRange": [
+        167,
+        179
+      ],
+      "summary": "获取编辑调用的渲染组件。",
+      "tags": [
+        "edit",
+        "render",
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/edit.ts:getRenderablePreviewInput",
+      "type": "function",
+      "name": "getRenderablePreviewInput",
+      "filePath": "packages/coding-agent/src/core/tools/edit.ts",
+      "lineRange": [
+        181,
+        204
+      ],
+      "summary": "获取可渲染的编辑预览输入。",
+      "tags": [
+        "edit",
+        "render",
+        "preview"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/edit.ts:formatEditResult",
+      "type": "function",
+      "name": "formatEditResult",
+      "filePath": "packages/coding-agent/src/core/tools/edit.ts",
+      "lineRange": [
+        211,
+        238
+      ],
+      "summary": "格式化编辑操作的结果文本。",
+      "tags": [
+        "edit",
+        "formatter",
+        "result"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/edit.ts:getEditHeaderBg",
+      "type": "function",
+      "name": "getEditHeaderBg",
+      "filePath": "packages/coding-agent/src/core/tools/edit.ts",
+      "lineRange": [
+        240,
+        255
+      ],
+      "summary": "获取编辑预览的头部背景色。",
+      "tags": [
+        "edit",
+        "render",
+        "theme"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/edit.ts:buildEditCallComponent",
+      "type": "function",
+      "name": "buildEditCallComponent",
+      "filePath": "packages/coding-agent/src/core/tools/edit.ts",
+      "lineRange": [
+        257,
+        276
+      ],
+      "summary": "构建编辑调用的完整渲染组件。",
+      "tags": [
+        "edit",
+        "render",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/edit.ts:setEditPreview",
+      "type": "function",
+      "name": "setEditPreview",
+      "filePath": "packages/coding-agent/src/core/tools/edit.ts",
+      "lineRange": [
+        278,
+        296
+      ],
+      "summary": "设置编辑预览内容和参数键。",
+      "tags": [
+        "edit",
+        "preview",
+        "setter"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/edit.ts:createEditToolDefinition",
+      "type": "function",
+      "name": "createEditToolDefinition",
+      "filePath": "packages/coding-agent/src/core/tools/edit.ts",
+      "lineRange": [
+        298,
+        439
+      ],
+      "summary": "创建完整的编辑工具定义，包括执行、diff 预览和渲染。",
+      "tags": [
+        "edit",
+        "tool-definition",
+        "factory"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/edit.ts:createEditTool",
+      "type": "function",
+      "name": "createEditTool",
+      "filePath": "packages/coding-agent/src/core/tools/edit.ts",
+      "lineRange": [
+        441,
+        443
+      ],
+      "summary": "createEditTool 函数，位于 edit.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/coding-agent/src/core/system-prompt.ts",
+      "target": "function:packages/coding-agent/src/core/system-prompt.ts:buildSystemPrompt",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/telemetry.ts",
+      "target": "function:packages/coding-agent/src/core/telemetry.ts:isInstallTelemetryEnabled",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/timings.ts",
+      "target": "function:packages/coding-agent/src/core/timings.ts:resetTimings",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/timings.ts",
+      "target": "function:packages/coding-agent/src/core/timings.ts:time",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/timings.ts",
+      "target": "function:packages/coding-agent/src/core/timings.ts:printTimingGroup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/timings.ts",
+      "target": "function:packages/coding-agent/src/core/timings.ts:printTimings",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "target": "function:packages/coding-agent/src/core/tools/bash.ts:resolveTimeoutMs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "target": "function:packages/coding-agent/src/core/tools/bash.ts:createLocalBashOperations",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "target": "function:packages/coding-agent/src/core/tools/bash.ts:resolveSpawnContext",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "target": "function:packages/coding-agent/src/core/tools/bash.ts:rebuildBashResultRenderComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "target": "function:packages/coding-agent/src/core/tools/bash.ts:createBashToolDefinition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "target": "function:packages/coding-agent/src/core/tools/bash.ts:createBashTool",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:detectLineEnding",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:normalizeToLF",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:restoreLineEndings",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:normalizeForFuzzyMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:getReplacementLineRange",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:applyReplacements",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:applyReplacementsPreservingUnchangedLines",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:fuzzyFindText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:stripBom",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:getNotFoundError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:getDuplicateError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:applyEditsToNormalizedContent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:generateUnifiedPatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:generateDiffString",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:computeEditsDiff",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:computeEditDiff",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit.ts:prepareEditArguments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit.ts:getEditCallRenderComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit.ts:getRenderablePreviewInput",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit.ts:formatEditResult",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit.ts:getEditHeaderBg",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit.ts:buildEditCallComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit.ts:setEditPreview",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit.ts:createEditToolDefinition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit.ts:createEditTool",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/system-prompt.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/system-prompt.ts",
+      "target": "file:packages/coding-agent/src/core/skills.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/telemetry.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "target": "file:packages/coding-agent/src/core/experimental.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "target": "file:packages/coding-agent/src/core/tools/output-accumulator.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "target": "file:packages/coding-agent/src/core/tools/render-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "target": "file:packages/coding-agent/src/core/tools/tool-definition-wrapper.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "target": "file:packages/coding-agent/src/core/tools/truncate.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/keybinding-hints.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/visual-truncate.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "target": "file:packages/coding-agent/src/utils/child-process.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "target": "file:packages/coding-agent/src/utils/shell.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "file:packages/coding-agent/src/core/tools/path-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "target": "file:packages/coding-agent/src/core/experimental.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "target": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "target": "file:packages/coding-agent/src/core/tools/file-mutation-queue.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "target": "file:packages/coding-agent/src/core/tools/path-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "target": "file:packages/coding-agent/src/core/tools/render-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "target": "file:packages/coding-agent/src/core/tools/tool-definition-wrapper.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/diff.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/system-prompt.ts",
+      "target": "function:packages/coding-agent/src/core/system-prompt.ts:buildSystemPrompt",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/telemetry.ts",
+      "target": "function:packages/coding-agent/src/core/telemetry.ts:isInstallTelemetryEnabled",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/timings.ts",
+      "target": "function:packages/coding-agent/src/core/timings.ts:resetTimings",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/timings.ts",
+      "target": "function:packages/coding-agent/src/core/timings.ts:time",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/timings.ts",
+      "target": "function:packages/coding-agent/src/core/timings.ts:printTimings",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "target": "function:packages/coding-agent/src/core/tools/bash.ts:createLocalBashOperations",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "target": "function:packages/coding-agent/src/core/tools/bash.ts:createBashToolDefinition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "target": "function:packages/coding-agent/src/core/tools/bash.ts:createBashTool",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:detectLineEnding",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:normalizeToLF",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:restoreLineEndings",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:normalizeForFuzzyMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:applyReplacementsPreservingUnchangedLines",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:fuzzyFindText",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:stripBom",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:applyEditsToNormalizedContent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:generateUnifiedPatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:generateDiffString",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:computeEditsDiff",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit-diff.ts:computeEditDiff",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit.ts:createEditToolDefinition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "target": "function:packages/coding-agent/src/core/tools/edit.ts:createEditTool",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "projectRoot": "/Users/zhouyi/AiHub/pi",
+  "batchFiles": [
+    {"path": "packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql", "language": "sql", "sizeLines": 122, "fileCategory": "data"}
+  ],
+  "batchImportData": {
+    "packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql": []
+  }
+}

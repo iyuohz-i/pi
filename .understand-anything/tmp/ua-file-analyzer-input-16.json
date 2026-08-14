@@ -1,0 +1,384 @@
+{
+  "projectRoot": "/Users/zhouyi/AiHub/pi",
+  "batchFiles": [
+    {
+      "path": "packages/coding-agent/src/utils/paths.ts",
+      "language": "typescript",
+      "sizeLines": 139,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/src/utils/shell.ts",
+      "language": "typescript",
+      "sizeLines": 225,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/src/utils/sleep.ts",
+      "language": "typescript",
+      "sizeLines": 18,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/src/utils/tools-manager.ts",
+      "language": "typescript",
+      "sizeLines": 371,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/src/utils/windows-self-update.ts",
+      "language": "typescript",
+      "sizeLines": 84,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/agent-session-auto-compaction-queue.test.ts",
+      "language": "typescript",
+      "sizeLines": 449,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/agent-session-branching.test.ts",
+      "language": "typescript",
+      "sizeLines": 156,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/agent-session-compaction.test.ts",
+      "language": "typescript",
+      "sizeLines": 209,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/agent-session-concurrent.test.ts",
+      "language": "typescript",
+      "sizeLines": 629,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/agent-session-dynamic-provider.test.ts",
+      "language": "typescript",
+      "sizeLines": 179,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/agent-session-dynamic-tools.test.ts",
+      "language": "typescript",
+      "sizeLines": 256,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/agent-session-retry.test.ts",
+      "language": "typescript",
+      "sizeLines": 322,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/agent-session-runtime-events.test.ts",
+      "language": "typescript",
+      "sizeLines": 257,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/agent-session-stats.test.ts",
+      "language": "typescript",
+      "sizeLines": 283,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/agent-session-tree-navigation.test.ts",
+      "language": "typescript",
+      "sizeLines": 323,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/args.test.ts",
+      "language": "typescript",
+      "sizeLines": 480,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/auth-check.test.ts",
+      "language": "typescript",
+      "sizeLines": 171,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/auth-storage.test.ts",
+      "language": "typescript",
+      "sizeLines": 535,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/bash-close-hang-windows.test.ts",
+      "language": "typescript",
+      "sizeLines": 126,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/block-images.test.ts",
+      "language": "typescript",
+      "sizeLines": 148,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/cache-stats.test.ts",
+      "language": "typescript",
+      "sizeLines": 143,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/compaction-extensions-example.test.ts",
+      "language": "typescript",
+      "sizeLines": 152,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/compaction-extensions.test.ts",
+      "language": "typescript",
+      "sizeLines": 416,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/config-value-migration.test.ts",
+      "language": "typescript",
+      "sizeLines": 178,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/config.test.ts",
+      "language": "typescript",
+      "sizeLines": 437,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/credential-print.test.ts",
+      "language": "typescript",
+      "sizeLines": 130,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/default-tools-setting.test.ts",
+      "language": "typescript",
+      "sizeLines": 150,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/edit-tool-legacy-input.test.ts",
+      "language": "typescript",
+      "sizeLines": 116,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/edit-tool-no-full-redraw.test.ts",
+      "language": "typescript",
+      "sizeLines": 235,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/experimental-tool-strict-mode.test.ts",
+      "language": "typescript",
+      "sizeLines": 38,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/experimental.test.ts",
+      "language": "typescript",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/extensions-discovery.test.ts",
+      "language": "typescript",
+      "sizeLines": 532,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/extensions-input-event.test.ts",
+      "language": "typescript",
+      "sizeLines": 125,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "packages/coding-agent/src/utils/paths.ts": [
+      "packages/coding-agent/src/utils/child-process.ts"
+    ],
+    "packages/coding-agent/src/utils/shell.ts": [
+      "packages/coding-agent/src/config.ts"
+    ],
+    "packages/coding-agent/src/utils/sleep.ts": [],
+    "packages/coding-agent/src/utils/tools-manager.ts": [
+      "packages/coding-agent/src/config.ts",
+      "packages/coding-agent/src/utils/management-http.ts"
+    ],
+    "packages/coding-agent/src/utils/windows-self-update.ts": [
+      "packages/coding-agent/src/utils/paths.ts"
+    ],
+    "packages/coding-agent/test/agent-session-auto-compaction-queue.test.ts": [
+      "packages/coding-agent/src/core/agent-session.ts",
+      "packages/coding-agent/src/core/auth-storage.ts",
+      "packages/coding-agent/src/core/session-manager.ts",
+      "packages/coding-agent/src/core/settings-manager.ts",
+      "packages/coding-agent/test/model-runtime-test-utils.ts",
+      "packages/coding-agent/test/utilities.ts"
+    ],
+    "packages/coding-agent/test/agent-session-branching.test.ts": [
+      "packages/coding-agent/src/core/agent-session-runtime.ts",
+      "packages/coding-agent/src/core/agent-session.ts",
+      "packages/coding-agent/src/core/auth-storage.ts",
+      "packages/coding-agent/src/core/session-manager.ts",
+      "packages/coding-agent/test/utilities.ts"
+    ],
+    "packages/coding-agent/test/agent-session-compaction.test.ts": [
+      "packages/coding-agent/src/core/agent-session.ts",
+      "packages/coding-agent/src/core/auth-storage.ts",
+      "packages/coding-agent/src/core/session-manager.ts",
+      "packages/coding-agent/src/core/settings-manager.ts",
+      "packages/coding-agent/src/index.ts",
+      "packages/coding-agent/test/model-runtime-test-utils.ts",
+      "packages/coding-agent/test/utilities.ts"
+    ],
+    "packages/coding-agent/test/agent-session-concurrent.test.ts": [
+      "packages/coding-agent/src/core/agent-session.ts",
+      "packages/coding-agent/src/core/auth-storage.ts",
+      "packages/coding-agent/src/core/session-manager.ts",
+      "packages/coding-agent/src/core/settings-manager.ts",
+      "packages/coding-agent/src/core/system-prompt.ts",
+      "packages/coding-agent/test/model-runtime-test-utils.ts",
+      "packages/coding-agent/test/utilities.ts"
+    ],
+    "packages/coding-agent/test/agent-session-dynamic-provider.test.ts": [
+      "packages/coding-agent/src/core/auth-storage.ts",
+      "packages/coding-agent/src/core/model-runtime.ts",
+      "packages/coding-agent/src/core/resource-loader.ts",
+      "packages/coding-agent/src/core/sdk.ts",
+      "packages/coding-agent/src/core/session-manager.ts",
+      "packages/coding-agent/src/core/settings-manager.ts"
+    ],
+    "packages/coding-agent/test/agent-session-dynamic-tools.test.ts": [
+      "packages/coding-agent/src/core/resource-loader.ts",
+      "packages/coding-agent/src/core/sdk.ts",
+      "packages/coding-agent/src/core/session-manager.ts",
+      "packages/coding-agent/src/core/settings-manager.ts",
+      "packages/coding-agent/src/core/tools/bash.ts"
+    ],
+    "packages/coding-agent/test/agent-session-retry.test.ts": [
+      "packages/coding-agent/src/core/agent-session.ts",
+      "packages/coding-agent/src/core/auth-storage.ts",
+      "packages/coding-agent/src/core/session-manager.ts",
+      "packages/coding-agent/src/core/settings-manager.ts",
+      "packages/coding-agent/test/model-runtime-test-utils.ts",
+      "packages/coding-agent/test/utilities.ts"
+    ],
+    "packages/coding-agent/test/agent-session-runtime-events.test.ts": [
+      "packages/coding-agent/src/core/agent-session-runtime.ts",
+      "packages/coding-agent/src/core/auth-storage.ts",
+      "packages/coding-agent/src/core/model-runtime.ts",
+      "packages/coding-agent/src/core/session-manager.ts",
+      "packages/coding-agent/src/index.ts"
+    ],
+    "packages/coding-agent/test/agent-session-stats.test.ts": [
+      "packages/coding-agent/src/core/agent-session.ts",
+      "packages/coding-agent/src/core/auth-storage.ts",
+      "packages/coding-agent/src/core/session-manager.ts",
+      "packages/coding-agent/src/core/settings-manager.ts",
+      "packages/coding-agent/src/core/usage-totals.ts",
+      "packages/coding-agent/test/model-runtime-test-utils.ts",
+      "packages/coding-agent/test/utilities.ts"
+    ],
+    "packages/coding-agent/test/agent-session-tree-navigation.test.ts": [
+      "packages/coding-agent/test/utilities.ts"
+    ],
+    "packages/coding-agent/test/args.test.ts": [
+      "packages/coding-agent/src/cli/args.ts"
+    ],
+    "packages/coding-agent/test/auth-check.test.ts": [
+      "packages/coding-agent/src/cli/args.ts",
+      "packages/coding-agent/src/cli/auth-check.ts",
+      "packages/coding-agent/src/cli/auth-command.ts",
+      "packages/coding-agent/src/core/auth-storage.ts",
+      "packages/coding-agent/src/core/model-runtime.ts"
+    ],
+    "packages/coding-agent/test/auth-storage.test.ts": [
+      "packages/coding-agent/src/core/auth-storage.ts"
+    ],
+    "packages/coding-agent/test/bash-close-hang-windows.test.ts": [
+      "packages/coding-agent/src/core/bash-executor.ts",
+      "packages/coding-agent/src/core/tools/bash.ts"
+    ],
+    "packages/coding-agent/test/block-images.test.ts": [
+      "packages/coding-agent/src/cli/file-processor.ts",
+      "packages/coding-agent/src/core/settings-manager.ts",
+      "packages/coding-agent/src/core/tools/read.ts"
+    ],
+    "packages/coding-agent/test/cache-stats.test.ts": [
+      "packages/coding-agent/src/core/cache-stats.ts",
+      "packages/coding-agent/src/core/session-manager.ts"
+    ],
+    "packages/coding-agent/test/compaction-extensions-example.test.ts": [
+      "packages/coding-agent/src/core/extensions/index.ts"
+    ],
+    "packages/coding-agent/test/compaction-extensions.test.ts": [
+      "packages/coding-agent/src/core/agent-session.ts",
+      "packages/coding-agent/src/core/auth-storage.ts",
+      "packages/coding-agent/src/core/extensions/index.ts",
+      "packages/coding-agent/src/core/session-manager.ts",
+      "packages/coding-agent/src/core/settings-manager.ts",
+      "packages/coding-agent/src/core/source-info.ts",
+      "packages/coding-agent/src/index.ts",
+      "packages/coding-agent/test/model-runtime-test-utils.ts",
+      "packages/coding-agent/test/utilities.ts"
+    ],
+    "packages/coding-agent/test/config-value-migration.test.ts": [
+      "packages/coding-agent/src/config.ts",
+      "packages/coding-agent/src/core/auth-storage.ts",
+      "packages/coding-agent/src/migrations.ts",
+      "packages/coding-agent/test/model-runtime-test-utils.ts"
+    ],
+    "packages/coding-agent/test/config.test.ts": [
+      "packages/coding-agent/src/config.ts"
+    ],
+    "packages/coding-agent/test/credential-print.test.ts": [
+      "packages/coding-agent/src/cli/args.ts",
+      "packages/coding-agent/src/cli/auth-command.ts",
+      "packages/coding-agent/src/cli/credential-print.ts",
+      "packages/coding-agent/src/core/auth-storage.ts",
+      "packages/coding-agent/src/core/model-runtime.ts",
+      "packages/coding-agent/src/main.ts"
+    ],
+    "packages/coding-agent/test/default-tools-setting.test.ts": [
+      "packages/coding-agent/src/core/agent-session-services.ts",
+      "packages/coding-agent/src/core/resource-loader.ts",
+      "packages/coding-agent/src/core/sdk.ts",
+      "packages/coding-agent/src/core/session-manager.ts",
+      "packages/coding-agent/src/core/settings-manager.ts"
+    ],
+    "packages/coding-agent/test/edit-tool-legacy-input.test.ts": [
+      "packages/coding-agent/src/core/extensions/types.ts",
+      "packages/coding-agent/src/core/tools/edit.ts"
+    ],
+    "packages/coding-agent/test/edit-tool-no-full-redraw.test.ts": [
+      "packages/coding-agent/src/core/tools/edit-diff.ts",
+      "packages/coding-agent/src/core/tools/edit.ts",
+      "packages/coding-agent/src/modes/interactive/components/tool-execution.ts",
+      "packages/coding-agent/src/modes/interactive/theme/theme.ts"
+    ],
+    "packages/coding-agent/test/experimental-tool-strict-mode.test.ts": [
+      "packages/coding-agent/src/core/tools/index.ts"
+    ],
+    "packages/coding-agent/test/experimental.test.ts": [
+      "packages/coding-agent/src/core/experimental.ts"
+    ],
+    "packages/coding-agent/test/extensions-discovery.test.ts": [
+      "packages/coding-agent/src/core/extensions/loader.ts"
+    ],
+    "packages/coding-agent/test/extensions-input-event.test.ts": [
+      "packages/coding-agent/src/core/auth-storage.ts",
+      "packages/coding-agent/src/core/extensions/loader.ts",
+      "packages/coding-agent/src/core/extensions/runner.ts",
+      "packages/coding-agent/src/core/session-manager.ts",
+      "packages/coding-agent/test/model-runtime-test-utils.ts"
+    ]
+  }
+}

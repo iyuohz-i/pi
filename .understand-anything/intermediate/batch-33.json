@@ -1,0 +1,515 @@
+{
+  "batchIndex": 33,
+  "nodes": [
+    {
+      "id": "packages/coding-agent/src/core/remote-catalog-provider.ts",
+      "type": "file",
+      "label": "remote-catalog-provider.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "path": "packages/coding-agent/src/core/remote-catalog-provider.ts",
+      "summary": "远程模型目录提供者：从 pi.dev 获取动态模型列表并叠加到静态内置 Provider 上，支持 ETag 缓存验证、TTL 刷新间隔和失败时保留已有覆盖层",
+      "metadata": {
+        "lines": 132,
+        "functionCount": 4,
+        "exportCount": 2
+      }
+    },
+    {
+      "id": "packages/coding-agent/src/core/remote-catalog-provider.ts::mergeModels",
+      "type": "function",
+      "label": "mergeModels",
+      "parent": "packages/coding-agent/src/core/remote-catalog-provider.ts",
+      "summary": "将动态模型合并到基线模型数组中，相同 ID 的模型会被覆盖，新模型追加到末尾",
+      "metadata": {
+        "startLine": 9,
+        "endLine": 17,
+        "params": ["baseline", "dynamic"]
+      }
+    },
+    {
+      "id": "packages/coding-agent/src/core/remote-catalog-provider.ts::parseCatalog",
+      "type": "function",
+      "label": "parseCatalog",
+      "parent": "packages/coding-agent/src/core/remote-catalog-provider.ts",
+      "summary": "解析远程目录 API 响应，支持数组、带 models 字段的对象和键值对对象三种格式，统一转换为 Model[] 并标记 provider ID",
+      "metadata": {
+        "startLine": 19,
+        "endLine": 31,
+        "params": ["providerId", "value"]
+      }
+    },
+    {
+      "id": "packages/coding-agent/src/core/remote-catalog-provider.ts::remoteModels",
+      "type": "function",
+      "label": "remoteModels",
+      "parent": "packages/coding-agent/src/core/remote-catalog-provider.ts",
+      "summary": "根据本地生成时间戳过滤远程模型，仅保留比本地更新（lastModified > localGeneratedAt）的远程模型条目",
+      "metadata": {
+        "startLine": 33,
+        "endLine": 42,
+        "params": ["entry", "localGeneratedAt"]
+      }
+    },
+    {
+      "id": "packages/coding-agent/src/core/remote-catalog-provider.ts::withRemoteCatalog",
+      "type": "function",
+      "label": "withRemoteCatalog",
+      "parent": "packages/coding-agent/src/core/remote-catalog-provider.ts",
+      "summary": "核心导出函数：为静态 Provider 添加持久化的 pi.dev 远程目录覆盖层。通过 fetchWithRetry 发起带 ETag/If-None-Match 的 HTTP 请求，处理 304 缓存验证、404/501 不可用降级、瞬时失败重试以及 TTL 驱动的刷新策略，并通过 publish 机制同步更新内存模型列表和持久化存储",
+      "metadata": {
+        "startLine": 45,
+        "endLine": 132,
+        "params": ["provider", "catalogBaseUrl", "localGeneratedAt"]
+      }
+    },
+    {
+      "id": "packages/coding-agent/src/utils/management-http.ts",
+      "type": "file",
+      "label": "management-http.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "path": "packages/coding-agent/src/utils/management-http.ts",
+      "summary": "管理 HTTP 传输层工具：提供带有限次数即时重试的 fetch 封装，专为幂等的管理请求（版本检查、目录获取、下载）设计，支持超时预算跨重试共享和调用方取消信号",
+      "metadata": {
+        "lines": 68,
+        "functionCount": 1,
+        "exportCount": 1
+      }
+    },
+    {
+      "id": "packages/coding-agent/src/utils/management-http.ts::fetchWithRetry",
+      "type": "function",
+      "label": "fetchWithRetry",
+      "parent": "packages/coding-agent/src/utils/management-http.ts",
+      "summary": "带边界即时重试的 HTTP fetch 封装。对 408/425/429/500/502/503/504 等瞬时状态码和传输层失败自动重试（默认 2 次额外尝试），合并父级取消信号与超时信号，超时预算在所有尝试间共享，调用方取消为终止操作",
+      "metadata": {
+        "startLine": 25,
+        "endLine": 68,
+        "params": ["input", "init", "options"]
+      }
+    },
+    {
+      "id": "packages/coding-agent/src/utils/pi-user-agent.ts",
+      "type": "file",
+      "label": "pi-user-agent.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "path": "packages/coding-agent/src/utils/pi-user-agent.ts",
+      "summary": "构建 pi CLI 的 HTTP User-Agent 字符串，包含版本号、操作系统、运行时（bun/node）和架构信息",
+      "metadata": {
+        "lines": 4,
+        "functionCount": 1,
+        "exportCount": 1
+      }
+    },
+    {
+      "id": "packages/coding-agent/src/utils/version-check.ts",
+      "type": "file",
+      "label": "version-check.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "path": "packages/coding-agent/src/utils/version-check.ts",
+      "summary": "版本检查工具：从 pi.dev 获取最新发布版本信息，比较 semver 版本号，支持自动更新检测和手动查询，具备嵌套网络错误格式化能力",
+      "metadata": {
+        "lines": 109,
+        "functionCount": 6,
+        "exportCount": 6
+      }
+    },
+    {
+      "id": "packages/coding-agent/src/utils/version-check.ts::formatVersionCheckError",
+      "type": "function",
+      "label": "formatVersionCheckError",
+      "parent": "packages/coding-agent/src/utils/version-check.ts",
+      "summary": "格式化版本检查错误信息，提取嵌套的 AggregateError 中的 errno 代码（如 ETIMEDOUT、ENETUNREACH）并附加到根错误消息中",
+      "metadata": {
+        "startLine": 15,
+        "endLine": 32,
+        "params": ["error"]
+      }
+    },
+    {
+      "id": "packages/coding-agent/src/utils/version-check.ts::getLatestPiRelease",
+      "type": "function",
+      "label": "getLatestPiRelease",
+      "parent": "packages/coding-agent/src/utils/version-check.ts",
+      "summary": "从 pi.dev/api/latest-version 获取最新发布信息（版本号、包名、更新说明），支持离线模式（PI_OFFLINE 环境变量）和可选重试",
+      "metadata": {
+        "startLine": 51,
+        "endLine": 88,
+        "params": ["currentVersion", "options"]
+      }
+    },
+    {
+      "id": "packages/coding-agent/src/utils/version-check.ts::checkForNewPiVersion",
+      "type": "function",
+      "label": "checkForNewPiVersion",
+      "parent": "packages/coding-agent/src/utils/version-check.ts",
+      "summary": "自动版本检查入口：获取最新发布版本并与当前版本比较，仅返回更新版本信息。受 PI_SKIP_VERSION_CHECK 环境变量控制，异常静默吞没",
+      "metadata": {
+        "startLine": 97,
+        "endLine": 109,
+        "params": ["currentVersion"]
+      }
+    },
+    {
+      "id": "packages/coding-agent/test/management-http.test.ts",
+      "type": "file",
+      "label": "management-http.test.ts",
+      "language": "typescript",
+      "fileCategory": "test",
+      "path": "packages/coding-agent/test/management-http.test.ts",
+      "summary": "fetchWithRetry 单元测试：验证传输层重试、超时预算共享、HTTP 状态码重试和调用方取消不重试等场景",
+      "metadata": {
+        "lines": 52,
+        "testCount": 4
+      }
+    },
+    {
+      "id": "packages/coding-agent/test/pi-user-agent.test.ts",
+      "type": "file",
+      "label": "pi-user-agent.test.ts",
+      "language": "typescript",
+      "fileCategory": "test",
+      "path": "packages/coding-agent/test/pi-user-agent.test.ts",
+      "summary": "getPiUserAgent 单元测试：验证 User-Agent 字符串格式符合 pi.dev 期望",
+      "metadata": {
+        "lines": 12,
+        "testCount": 1
+      }
+    },
+    {
+      "id": "packages/coding-agent/test/remote-catalog-provider.test.ts",
+      "type": "file",
+      "label": "remote-catalog-provider.test.ts",
+      "language": "typescript",
+      "fileCategory": "test",
+      "path": "packages/coding-agent/test/remote-catalog-provider.test.ts",
+      "summary": "远程目录提供者完整测试套件：覆盖目录解析、版本头发送、TTL 刷新、ETag 缓存验证、304 响应处理、501 降级、瞬时失败保留、并发请求竞态和强制刷新等场景",
+      "metadata": {
+        "lines": 241,
+        "functionCount": 3,
+        "testCount": 7
+      }
+    },
+    {
+      "id": "packages/coding-agent/test/remote-catalog-provider.test.ts::model",
+      "type": "function",
+      "label": "model",
+      "parent": "packages/coding-agent/test/remote-catalog-provider.test.ts",
+      "summary": "测试辅助函数：创建一个具有默认属性的测试 Model 对象（openai-completions API）",
+      "metadata": {
+        "startLine": 16,
+        "endLine": 29,
+        "params": ["id"]
+      }
+    },
+    {
+      "id": "packages/coding-agent/test/remote-catalog-provider.test.ts::testProvider",
+      "type": "function",
+      "label": "testProvider",
+      "parent": "packages/coding-agent/test/remote-catalog-provider.test.ts",
+      "summary": "测试辅助函数：创建一个包含静态模型并绑定 pi.dev 目录的测试 Provider，可选传入 localGeneratedAt 参数",
+      "metadata": {
+        "startLine": 31,
+        "endLine": 49,
+        "params": ["localGeneratedAt"]
+      }
+    },
+    {
+      "id": "packages/coding-agent/test/remote-catalog-provider.test.ts::refreshProvider",
+      "type": "function",
+      "label": "refreshProvider",
+      "parent": "packages/coding-agent/test/remote-catalog-provider.test.ts",
+      "summary": "测试辅助函数：使用 InMemoryModelsStore 驱动 Provider 的 refreshModels 流程，支持覆盖 allowNetwork/force/signal 参数",
+      "metadata": {
+        "startLine": 51,
+        "endLine": 70,
+        "params": ["provider", "store", "overrides"]
+      }
+    },
+    {
+      "id": "packages/coding-agent/test/version-check.test.ts",
+      "type": "file",
+      "label": "version-check.test.ts",
+      "language": "typescript",
+      "fileCategory": "test",
+      "path": "packages/coding-agent/test/version-check.test.ts",
+      "summary": "版本检查工具完整测试套件：覆盖 semver 比较、API 请求验证、重试行为、错误格式化、包元数据解析和环境变量控制等场景",
+      "metadata": {
+        "lines": 131,
+        "testCount": 10
+      }
+    },
+    {
+      "id": "packages/coding-agent/src/core/remote-catalog-provider.ts::REMOTE_CATALOG_REFRESH_INTERVAL_MS",
+      "type": "constant",
+      "label": "REMOTE_CATALOG_REFRESH_INTERVAL_MS",
+      "parent": "packages/coding-agent/src/core/remote-catalog-provider.ts",
+      "summary": "远程目录刷新间隔常量：4 小时（毫秒），控制目录自动刷新的最小时间窗口",
+      "metadata": {
+        "value": "4 * 60 * 60 * 1000",
+        "line": 7
+      }
+    },
+    {
+      "id": "packages/coding-agent/src/utils/version-check.ts::LatestPiRelease",
+      "type": "interface",
+      "label": "LatestPiRelease",
+      "parent": "packages/coding-agent/src/utils/version-check.ts",
+      "summary": "最新发布版本信息接口：包含版本号（必填）、包名和更新说明（可选）",
+      "metadata": {
+        "line": 8
+      }
+    },
+    {
+      "id": "packages/coding-agent/src/utils/version-check.ts::comparePackageVersions",
+      "type": "function",
+      "label": "comparePackageVersions",
+      "parent": "packages/coding-agent/src/utils/version-check.ts",
+      "summary": "使用 semver 库比较两个版本号字符串，返回 -1/0/1 或 undefined（无效版本号时）",
+      "metadata": {
+        "startLine": 34,
+        "endLine": 41,
+        "params": ["leftVersion", "rightVersion"]
+      }
+    },
+    {
+      "id": "packages/coding-agent/src/utils/version-check.ts::isNewerPackageVersion",
+      "type": "function",
+      "label": "isNewerPackageVersion",
+      "parent": "packages/coding-agent/src/utils/version-check.ts",
+      "summary": "判断候选版本号是否比当前版本更新，基于 semver 比较结果",
+      "metadata": {
+        "startLine": 43,
+        "endLine": 49,
+        "params": ["candidateVersion", "currentVersion"]
+      }
+    },
+    {
+      "id": "packages/coding-agent/src/utils/version-check.ts::getLatestPiVersion",
+      "type": "function",
+      "label": "getLatestPiVersion",
+      "parent": "packages/coding-agent/src/utils/version-check.ts",
+      "summary": "便捷封装：从 getLatestPiRelease 返回值中提取纯版本号字符串",
+      "metadata": {
+        "startLine": 90,
+        "endLine": 95,
+        "params": ["currentVersion", "options"]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "packages/coding-agent/src/core/remote-catalog-provider.ts",
+      "target": "packages/coding-agent/src/config.ts",
+      "type": "import",
+      "label": "VERSION"
+    },
+    {
+      "source": "packages/coding-agent/src/core/remote-catalog-provider.ts",
+      "target": "packages/coding-agent/src/utils/management-http.ts",
+      "type": "import",
+      "label": "fetchWithRetry"
+    },
+    {
+      "source": "packages/coding-agent/src/core/remote-catalog-provider.ts",
+      "target": "packages/coding-agent/src/utils/pi-user-agent.ts",
+      "type": "import",
+      "label": "getPiUserAgent"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/version-check.ts",
+      "target": "packages/coding-agent/src/utils/management-http.ts",
+      "type": "import",
+      "label": "fetchWithRetry"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/version-check.ts",
+      "target": "packages/coding-agent/src/utils/pi-user-agent.ts",
+      "type": "import",
+      "label": "getPiUserAgent"
+    },
+    {
+      "source": "packages/coding-agent/test/management-http.test.ts",
+      "target": "packages/coding-agent/src/utils/management-http.ts",
+      "type": "import",
+      "label": "fetchWithRetry"
+    },
+    {
+      "source": "packages/coding-agent/test/pi-user-agent.test.ts",
+      "target": "packages/coding-agent/src/utils/pi-user-agent.ts",
+      "type": "import",
+      "label": "getPiUserAgent"
+    },
+    {
+      "source": "packages/coding-agent/test/remote-catalog-provider.test.ts",
+      "target": "packages/coding-agent/src/config.ts",
+      "type": "import",
+      "label": "VERSION"
+    },
+    {
+      "source": "packages/coding-agent/test/remote-catalog-provider.test.ts",
+      "target": "packages/coding-agent/src/core/remote-catalog-provider.ts",
+      "type": "import",
+      "label": "withRemoteCatalog"
+    },
+    {
+      "source": "packages/coding-agent/test/version-check.test.ts",
+      "target": "packages/coding-agent/src/utils/version-check.ts",
+      "type": "import",
+      "label": "version-check exports"
+    },
+    {
+      "source": "packages/coding-agent/test/version-check.test.ts",
+      "target": "packages/coding-agent/test/test-network-env.ts",
+      "type": "import",
+      "label": "allowNetwork"
+    },
+    {
+      "source": "packages/coding-agent/src/core/remote-catalog-provider.ts",
+      "target": "packages/coding-agent/src/core/remote-catalog-provider.ts::parseCatalog",
+      "type": "contains",
+      "label": ""
+    },
+    {
+      "source": "packages/coding-agent/src/core/remote-catalog-provider.ts",
+      "target": "packages/coding-agent/src/core/remote-catalog-provider.ts::remoteModels",
+      "type": "contains",
+      "label": ""
+    },
+    {
+      "source": "packages/coding-agent/src/core/remote-catalog-provider.ts",
+      "target": "packages/coding-agent/src/core/remote-catalog-provider.ts::withRemoteCatalog",
+      "type": "contains",
+      "label": ""
+    },
+    {
+      "source": "packages/coding-agent/src/core/remote-catalog-provider.ts",
+      "target": "packages/coding-agent/src/core/remote-catalog-provider.ts::mergeModels",
+      "type": "contains",
+      "label": ""
+    },
+    {
+      "source": "packages/coding-agent/src/core/remote-catalog-provider.ts",
+      "target": "packages/coding-agent/src/core/remote-catalog-provider.ts::REMOTE_CATALOG_REFRESH_INTERVAL_MS",
+      "type": "contains",
+      "label": ""
+    },
+    {
+      "source": "packages/coding-agent/src/utils/management-http.ts",
+      "target": "packages/coding-agent/src/utils/management-http.ts::fetchWithRetry",
+      "type": "contains",
+      "label": ""
+    },
+    {
+      "source": "packages/coding-agent/src/utils/version-check.ts",
+      "target": "packages/coding-agent/src/utils/version-check.ts::formatVersionCheckError",
+      "type": "contains",
+      "label": ""
+    },
+    {
+      "source": "packages/coding-agent/src/utils/version-check.ts",
+      "target": "packages/coding-agent/src/utils/version-check.ts::comparePackageVersions",
+      "type": "contains",
+      "label": ""
+    },
+    {
+      "source": "packages/coding-agent/src/utils/version-check.ts",
+      "target": "packages/coding-agent/src/utils/version-check.ts::isNewerPackageVersion",
+      "type": "contains",
+      "label": ""
+    },
+    {
+      "source": "packages/coding-agent/src/utils/version-check.ts",
+      "target": "packages/coding-agent/src/utils/version-check.ts::getLatestPiRelease",
+      "type": "contains",
+      "label": ""
+    },
+    {
+      "source": "packages/coding-agent/src/utils/version-check.ts",
+      "target": "packages/coding-agent/src/utils/version-check.ts::getLatestPiVersion",
+      "type": "contains",
+      "label": ""
+    },
+    {
+      "source": "packages/coding-agent/src/utils/version-check.ts",
+      "target": "packages/coding-agent/src/utils/version-check.ts::checkForNewPiVersion",
+      "type": "contains",
+      "label": ""
+    },
+    {
+      "source": "packages/coding-agent/src/utils/version-check.ts",
+      "target": "packages/coding-agent/src/utils/version-check.ts::LatestPiRelease",
+      "type": "contains",
+      "label": ""
+    },
+    {
+      "source": "packages/coding-agent/test/remote-catalog-provider.test.ts",
+      "target": "packages/coding-agent/test/remote-catalog-provider.test.ts::model",
+      "type": "contains",
+      "label": ""
+    },
+    {
+      "source": "packages/coding-agent/test/remote-catalog-provider.test.ts",
+      "target": "packages/coding-agent/test/remote-catalog-provider.test.ts::testProvider",
+      "type": "contains",
+      "label": ""
+    },
+    {
+      "source": "packages/coding-agent/test/remote-catalog-provider.test.ts",
+      "target": "packages/coding-agent/test/remote-catalog-provider.test.ts::refreshProvider",
+      "type": "contains",
+      "label": ""
+    },
+    {
+      "source": "packages/coding-agent/src/core/remote-catalog-provider.ts::withRemoteCatalog",
+      "target": "packages/coding-agent/src/core/remote-catalog-provider.ts::parseCatalog",
+      "type": "calls",
+      "label": "解析远程目录响应"
+    },
+    {
+      "source": "packages/coding-agent/src/core/remote-catalog-provider.ts::withRemoteCatalog",
+      "target": "packages/coding-agent/src/core/remote-catalog-provider.ts::remoteModels",
+      "type": "calls",
+      "label": "过滤过期模型"
+    },
+    {
+      "source": "packages/coding-agent/src/core/remote-catalog-provider.ts::withRemoteCatalog",
+      "target": "packages/coding-agent/src/utils/management-http.ts::fetchWithRetry",
+      "type": "calls",
+      "label": "发起 HTTP 请求"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/version-check.ts::getLatestPiRelease",
+      "target": "packages/coding-agent/src/utils/management-http.ts::fetchWithRetry",
+      "type": "calls",
+      "label": "获取最新版本"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/version-check.ts::getLatestPiVersion",
+      "target": "packages/coding-agent/src/utils/version-check.ts::getLatestPiRelease",
+      "type": "calls",
+      "label": "委托获取版本"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/version-check.ts::checkForNewPiVersion",
+      "target": "packages/coding-agent/src/utils/version-check.ts::getLatestPiRelease",
+      "type": "calls",
+      "label": "获取最新发布"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/version-check.ts::isNewerPackageVersion",
+      "target": "packages/coding-agent/src/utils/version-check.ts::comparePackageVersions",
+      "type": "calls",
+      "label": "执行 semver 比较"
+    },
+    {
+      "source": "packages/coding-agent/test/remote-catalog-provider.test.ts::testProvider",
+      "target": "packages/coding-agent/src/core/remote-catalog-provider.ts::withRemoteCatalog",
+      "type": "calls",
+      "label": "创建远程目录测试提供者"
+    }
+  ]
+}

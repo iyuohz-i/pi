@@ -1,0 +1,941 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 4,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "packages/protocol/src/cbor/index.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 9,
+      "exports": [
+        {
+          "name": "decodeCbor",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "encodeCbor",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "CborError",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "CborOptions",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_MAX_CBOR_BYTE_LENGTH",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_MAX_CBOR_CONTAINER_LENGTH",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_MAX_CBOR_DEPTH",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/protocol/src/codec.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 172,
+      "nonEmptyLines": 149,
+      "functions": [
+        {
+          "name": "isProtocolValue",
+          "startLine": 25,
+          "endLine": 39,
+          "params": [
+            "value",
+            "optionalProperty",
+            "ancestors"
+          ]
+        },
+        {
+          "name": "parseClientMessage",
+          "startLine": 41,
+          "endLine": 46,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "parseServerMessage",
+          "startLine": 48,
+          "endLine": 53,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "boundedErrorMessage",
+          "startLine": 55,
+          "endLine": 58,
+          "params": [
+            "error"
+          ]
+        },
+        {
+          "name": "encodeProtocolMessage",
+          "startLine": 60,
+          "endLine": 76,
+          "params": [
+            "value",
+            "parse",
+            "kind",
+            "options"
+          ]
+        },
+        {
+          "name": "encodeClientMessage",
+          "startLine": 79,
+          "endLine": 81,
+          "params": [
+            "message",
+            "options"
+          ]
+        },
+        {
+          "name": "encodeServerMessage",
+          "startLine": 84,
+          "endLine": 86,
+          "params": [
+            "message",
+            "options"
+          ]
+        },
+        {
+          "name": "createClientMessageDecoder",
+          "startLine": 162,
+          "endLine": 164,
+          "params": [
+            "options"
+          ]
+        },
+        {
+          "name": "createServerMessageDecoder",
+          "startLine": 166,
+          "endLine": 168,
+          "params": [
+            "options"
+          ]
+        },
+        {
+          "name": "isSupportedProtocolVersion",
+          "startLine": 170,
+          "endLine": 172,
+          "params": [
+            "version"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ProtocolValidationError",
+          "startLine": 18,
+          "endLine": 23,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        },
+        {
+          "name": "ValidatedMessageDecoder",
+          "startLine": 88,
+          "endLine": 126,
+          "methods": [
+            "constructor",
+            "push",
+            "end"
+          ],
+          "properties": [
+            "failed",
+            "frames",
+            "kind",
+            "maxFrameLength",
+            "parse"
+          ]
+        },
+        {
+          "name": "ClientMessageDecoder",
+          "startLine": 129,
+          "endLine": 143,
+          "methods": [
+            "constructor",
+            "push",
+            "end"
+          ],
+          "properties": [
+            "decoder"
+          ]
+        },
+        {
+          "name": "ServerMessageDecoder",
+          "startLine": 146,
+          "endLine": 160,
+          "methods": [
+            "constructor",
+            "push",
+            "end"
+          ],
+          "properties": [
+            "decoder"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProtocolValidationError",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "parseClientMessage",
+          "line": 41,
+          "isDefault": false
+        },
+        {
+          "name": "parseServerMessage",
+          "line": 48,
+          "isDefault": false
+        },
+        {
+          "name": "encodeClientMessage",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "encodeServerMessage",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "ClientMessageDecoder",
+          "line": 129,
+          "isDefault": false
+        },
+        {
+          "name": "ServerMessageDecoder",
+          "line": 146,
+          "isDefault": false
+        },
+        {
+          "name": "createClientMessageDecoder",
+          "line": 162,
+          "isDefault": false
+        },
+        {
+          "name": "createServerMessageDecoder",
+          "line": 166,
+          "isDefault": false
+        },
+        {
+          "name": "isSupportedProtocolVersion",
+          "line": 170,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 20
+        },
+        {
+          "caller": "isProtocolValue",
+          "callee": "ancestors.has",
+          "lineNumber": 30
+        },
+        {
+          "caller": "isProtocolValue",
+          "callee": "ancestors.add",
+          "lineNumber": 31
+        },
+        {
+          "caller": "isProtocolValue",
+          "callee": "Array.isArray",
+          "lineNumber": 33
+        },
+        {
+          "caller": "isProtocolValue",
+          "callee": "value.every",
+          "lineNumber": 33
+        },
+        {
+          "caller": "isProtocolValue",
+          "callee": "isProtocolValue",
+          "lineNumber": 33
+        },
+        {
+          "caller": "isProtocolValue",
+          "callee": "Object.getPrototypeOf",
+          "lineNumber": 34
+        },
+        {
+          "caller": "isProtocolValue",
+          "callee": "Object.values(value).every",
+          "lineNumber": 35
+        },
+        {
+          "caller": "isProtocolValue",
+          "callee": "Object.values",
+          "lineNumber": 35
+        },
+        {
+          "caller": "isProtocolValue",
+          "callee": "isProtocolValue",
+          "lineNumber": 35
+        },
+        {
+          "caller": "isProtocolValue",
+          "callee": "ancestors.delete",
+          "lineNumber": 37
+        },
+        {
+          "caller": "parseClientMessage",
+          "callee": "isProtocolValue",
+          "lineNumber": 42
+        },
+        {
+          "caller": "parseClientMessage",
+          "callee": "Check",
+          "lineNumber": 42
+        },
+        {
+          "caller": "parseServerMessage",
+          "callee": "isProtocolValue",
+          "lineNumber": 49
+        },
+        {
+          "caller": "parseServerMessage",
+          "callee": "Check",
+          "lineNumber": 49
+        },
+        {
+          "caller": "boundedErrorMessage",
+          "callee": "error.message.slice",
+          "lineNumber": 57
+        },
+        {
+          "caller": "encodeProtocolMessage",
+          "callee": "parse",
+          "lineNumber": 66
+        },
+        {
+          "caller": "encodeProtocolMessage",
+          "callee": "encodeFrame",
+          "lineNumber": 69
+        },
+        {
+          "caller": "encodeProtocolMessage",
+          "callee": "encodeCbor",
+          "lineNumber": 69
+        },
+        {
+          "caller": "encodeProtocolMessage",
+          "callee": "assertCompleteFrame",
+          "lineNumber": 70
+        },
+        {
+          "caller": "encodeProtocolMessage",
+          "callee": "boundedErrorMessage",
+          "lineNumber": 74
+        },
+        {
+          "caller": "encodeClientMessage",
+          "callee": "encodeProtocolMessage",
+          "lineNumber": 80
+        },
+        {
+          "caller": "encodeServerMessage",
+          "callee": "encodeProtocolMessage",
+          "lineNumber": 85
+        },
+        {
+          "caller": "push",
+          "callee": "this.frames.push",
+          "lineNumber": 106
+        },
+        {
+          "caller": "push",
+          "callee": "messages.push",
+          "lineNumber": 107
+        },
+        {
+          "caller": "push",
+          "callee": "this.parse",
+          "lineNumber": 107
+        },
+        {
+          "caller": "push",
+          "callee": "decodeCbor",
+          "lineNumber": 107
+        },
+        {
+          "caller": "push",
+          "callee": "boundedErrorMessage",
+          "lineNumber": 113
+        },
+        {
+          "caller": "end",
+          "callee": "this.frames.end",
+          "lineNumber": 120
+        },
+        {
+          "caller": "end",
+          "callee": "boundedErrorMessage",
+          "lineNumber": 123
+        },
+        {
+          "caller": "push",
+          "callee": "this.decoder.push",
+          "lineNumber": 137
+        },
+        {
+          "caller": "end",
+          "callee": "this.decoder.end",
+          "lineNumber": 141
+        },
+        {
+          "caller": "push",
+          "callee": "this.decoder.push",
+          "lineNumber": 154
+        },
+        {
+          "caller": "end",
+          "callee": "this.decoder.end",
+          "lineNumber": 158
+        },
+        {
+          "caller": "isSupportedProtocolVersion",
+          "callee": "Number.isInteger",
+          "lineNumber": 171
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 10,
+        "functionCount": 10,
+        "classCount": 4
+      }
+    },
+    {
+      "path": "packages/protocol/src/framing.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 165,
+      "nonEmptyLines": 150,
+      "functions": [
+        {
+          "name": "resolveMaxFrameLength",
+          "startLine": 19,
+          "endLine": 25,
+          "params": [
+            "options"
+          ]
+        },
+        {
+          "name": "encodeFrame",
+          "startLine": 28,
+          "endLine": 39,
+          "params": [
+            "payload"
+          ]
+        },
+        {
+          "name": "assertCompleteFrame",
+          "startLine": 42,
+          "endLine": 53,
+          "params": [
+            "frame",
+            "options"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "FrameError",
+          "startLine": 12,
+          "endLine": 17,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        },
+        {
+          "name": "FrameDecoder",
+          "startLine": 58,
+          "endLine": 165,
+          "methods": [
+            "constructor",
+            "push",
+            "end",
+            "fail"
+          ],
+          "properties": [
+            "header",
+            "headerLength",
+            "maxFrameLength",
+            "payloadBlocks",
+            "currentPayloadBlock",
+            "currentPayloadBlockLength",
+            "expectedPayloadLength",
+            "payloadLength",
+            "state"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "DEFAULT_MAX_FRAME_LENGTH",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "FrameError",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "encodeFrame",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "assertCompleteFrame",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "FrameDecoder",
+          "line": 58,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 14
+        },
+        {
+          "caller": "resolveMaxFrameLength",
+          "callee": "Number.isSafeInteger",
+          "lineNumber": 21
+        },
+        {
+          "caller": "encodeFrame",
+          "callee": "frame.set",
+          "lineNumber": 37
+        },
+        {
+          "caller": "assertCompleteFrame",
+          "callee": "resolveMaxFrameLength",
+          "lineNumber": 46
+        },
+        {
+          "caller": "constructor",
+          "callee": "resolveMaxFrameLength",
+          "lineNumber": 70
+        },
+        {
+          "caller": "push",
+          "callee": "Math.min",
+          "lineNumber": 82
+        },
+        {
+          "caller": "push",
+          "callee": "this.header.set",
+          "lineNumber": 83
+        },
+        {
+          "caller": "push",
+          "callee": "chunk.subarray",
+          "lineNumber": 83
+        },
+        {
+          "caller": "push",
+          "callee": "this.fail",
+          "lineNumber": 92
+        },
+        {
+          "caller": "push",
+          "callee": "frames.push",
+          "lineNumber": 95
+        },
+        {
+          "caller": "push",
+          "callee": "Math.min",
+          "lineNumber": 110
+        },
+        {
+          "caller": "push",
+          "callee": "this.payloadBlocks.push",
+          "lineNumber": 111
+        },
+        {
+          "caller": "push",
+          "callee": "Math.min",
+          "lineNumber": 115
+        },
+        {
+          "caller": "push",
+          "callee": "block.set",
+          "lineNumber": 119
+        },
+        {
+          "caller": "push",
+          "callee": "chunk.subarray",
+          "lineNumber": 119
+        },
+        {
+          "caller": "push",
+          "callee": "frames.push",
+          "lineNumber": 126
+        },
+        {
+          "caller": "push",
+          "callee": "payload.set",
+          "lineNumber": 131
+        },
+        {
+          "caller": "push",
+          "callee": "frames.push",
+          "lineNumber": 134
+        },
+        {
+          "caller": "end",
+          "callee": "this.fail",
+          "lineNumber": 150
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 5,
+        "functionCount": 3,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "packages/protocol/src/schemas.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 450,
+      "nonEmptyLines": 426,
+      "functions": [
+        {
+          "name": "StrictObject",
+          "startLine": 7,
+          "endLine": 8,
+          "params": [
+            "properties"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PROTOCOL_VERSION",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "JsonValueSchema",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "ThinkingLevelSchema",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "SessionPhaseSchema",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "ModelRefSchema",
+          "line": 47,
+          "isDefault": false
+        },
+        {
+          "name": "ModelCostSchema",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ModelMetadataSchema",
+          "line": 60,
+          "isDefault": false
+        },
+        {
+          "name": "TextContentSchema",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "ThinkingContentSchema",
+          "line": 79,
+          "isDefault": false
+        },
+        {
+          "name": "ImageContentSchema",
+          "line": 84,
+          "isDefault": false
+        },
+        {
+          "name": "ToolCallContentSchema",
+          "line": 89,
+          "isDefault": false
+        },
+        {
+          "name": "UserContentSchema",
+          "line": 95,
+          "isDefault": false
+        },
+        {
+          "name": "AssistantContentSchema",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "ToolContentSchema",
+          "line": 97,
+          "isDefault": false
+        },
+        {
+          "name": "UsageSchema",
+          "line": 103,
+          "isDefault": false
+        },
+        {
+          "name": "UserTranscriptItemSchema",
+          "line": 120,
+          "isDefault": false
+        },
+        {
+          "name": "AssistantTranscriptItemSchema",
+          "line": 156,
+          "isDefault": false
+        },
+        {
+          "name": "ToolTranscriptItemSchema",
+          "line": 188,
+          "isDefault": false
+        },
+        {
+          "name": "TranscriptItemSchema",
+          "line": 193,
+          "isDefault": false
+        },
+        {
+          "name": "TranscriptProgressSchema",
+          "line": 204,
+          "isDefault": false
+        },
+        {
+          "name": "SessionMetadataSchema",
+          "line": 233,
+          "isDefault": false
+        },
+        {
+          "name": "SessionSnapshotSchema",
+          "line": 241,
+          "isDefault": false
+        },
+        {
+          "name": "ServerSnapshotSchema",
+          "line": 260,
+          "isDefault": false
+        },
+        {
+          "name": "ProtocolErrorCodeSchema",
+          "line": 269,
+          "isDefault": false
+        },
+        {
+          "name": "ProtocolErrorSchema",
+          "line": 278,
+          "isDefault": false
+        },
+        {
+          "name": "ListCommandSchema",
+          "line": 291,
+          "isDefault": false
+        },
+        {
+          "name": "CreateCommandSchema",
+          "line": 292,
+          "isDefault": false
+        },
+        {
+          "name": "AttachCommandSchema",
+          "line": 299,
+          "isDefault": false
+        },
+        {
+          "name": "DetachCommandSchema",
+          "line": 300,
+          "isDefault": false
+        },
+        {
+          "name": "PromptCommandSchema",
+          "line": 301,
+          "isDefault": false
+        },
+        {
+          "name": "SteerCommandSchema",
+          "line": 302,
+          "isDefault": false
+        },
+        {
+          "name": "AbortCommandSchema",
+          "line": 303,
+          "isDefault": false
+        },
+        {
+          "name": "SetModelCommandSchema",
+          "line": 304,
+          "isDefault": false
+        },
+        {
+          "name": "SetThinkingCommandSchema",
+          "line": 309,
+          "isDefault": false
+        },
+        {
+          "name": "CommandSchema",
+          "line": 314,
+          "isDefault": false
+        },
+        {
+          "name": "CreateResultSchema",
+          "line": 328,
+          "isDefault": false
+        },
+        {
+          "name": "AttachResultSchema",
+          "line": 332,
+          "isDefault": false
+        },
+        {
+          "name": "PromptResultSchema",
+          "line": 336,
+          "isDefault": false
+        },
+        {
+          "name": "SteerResultSchema",
+          "line": 340,
+          "isDefault": false
+        },
+        {
+          "name": "AbortResultSchema",
+          "line": 344,
+          "isDefault": false
+        },
+        {
+          "name": "SetModelResultSchema",
+          "line": 348,
+          "isDefault": false
+        },
+        {
+          "name": "SetThinkingResultSchema",
+          "line": 352,
+          "isDefault": false
+        },
+        {
+          "name": "ListResultSchema",
+          "line": 357,
+          "isDefault": false
+        },
+        {
+          "name": "DetachResultSchema",
+          "line": 361,
+          "isDefault": false
+        },
+        {
+          "name": "CommandResultSchema",
+          "line": 365,
+          "isDefault": false
+        },
+        {
+          "name": "ClientHelloSchema",
+          "line": 385,
+          "isDefault": false
+        },
+        {
+          "name": "RequestEnvelopeSchema",
+          "line": 391,
+          "isDefault": false
+        },
+        {
+          "name": "ClientMessageSchema",
+          "line": 397,
+          "isDefault": false
+        },
+        {
+          "name": "ServerEventSchema",
+          "line": 400,
+          "isDefault": false
+        },
+        {
+          "name": "ServerHelloSchema",
+          "line": 412,
+          "isDefault": false
+        },
+        {
+          "name": "ServerHelloErrorSchema",
+          "line": 418,
+          "isDefault": false
+        },
+        {
+          "name": "ResponseEnvelopeSchema",
+          "line": 422,
+          "isDefault": false
+        },
+        {
+          "name": "EventEnvelopeSchema",
+          "line": 436,
+          "isDefault": false
+        },
+        {
+          "name": "ServerMessageSchema",
+          "line": 440,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "StrictObject",
+          "callee": "Type.Object",
+          "lineNumber": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 54,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

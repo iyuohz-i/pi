@@ -1,0 +1,27 @@
+{
+  "projectRoot": "/Users/zhouyi/AiHub/pi",
+  "batchFiles": [
+    {"path": "scripts/generate-coding-agent-install-lock.mjs", "language": "javascript", "sizeLines": 439, "fileCategory": "code"},
+    {"path": "scripts/generate-coding-agent-shrinkwrap.mjs", "language": "javascript", "sizeLines": 365, "fileCategory": "code"},
+    {"path": "scripts/local-release.mjs", "language": "javascript", "sizeLines": 295, "fileCategory": "code"},
+    {"path": "scripts/profile-coding-agent-node.mjs", "language": "javascript", "sizeLines": 641, "fileCategory": "code"},
+    {"path": "scripts/publish-model-catalog.mjs", "language": "javascript", "sizeLines": 308, "fileCategory": "code"},
+    {"path": "scripts/read-tool-stats.mjs", "language": "javascript", "sizeLines": 505, "fileCategory": "code"},
+    {"path": "scripts/release-notes.mjs", "language": "javascript", "sizeLines": 364, "fileCategory": "code"},
+    {"path": "scripts/session-context-stats.mjs", "language": "javascript", "sizeLines": 405, "fileCategory": "code"},
+    {"path": "scripts/stats.ts", "language": "typescript", "sizeLines": 233, "fileCategory": "code"},
+    {"path": "scripts/sync-versions.test.mjs", "language": "javascript", "sizeLines": 75, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "scripts/generate-coding-agent-install-lock.mjs": [],
+    "scripts/generate-coding-agent-shrinkwrap.mjs": [],
+    "scripts/local-release.mjs": [],
+    "scripts/profile-coding-agent-node.mjs": [],
+    "scripts/publish-model-catalog.mjs": [],
+    "scripts/read-tool-stats.mjs": [],
+    "scripts/release-notes.mjs": [],
+    "scripts/session-context-stats.mjs": [],
+    "scripts/stats.ts": [],
+    "scripts/sync-versions.test.mjs": []
+  }
+}

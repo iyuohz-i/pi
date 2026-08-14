@@ -1,0 +1,1836 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "type": "file",
+      "name": "resource-loader.ts",
+      "filePath": "packages/coding-agent/src/core/resource-loader.ts",
+      "summary": "资源加载器核心，统一发现和加载扩展、skills、prompts、themes 和 context 文件，处理冲突检测和信任管理。",
+      "tags": [
+        "resource-loader",
+        "extensions",
+        "skills",
+        "themes",
+        "core"
+      ],
+      "complexity": "complex",
+      "languageNotes": "902 行的 DefaultResourceLoader 类管理所有运行时资源的发现、加载和冲突检测。"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/runtime-credentials.ts",
+      "type": "file",
+      "name": "runtime-credentials.ts",
+      "filePath": "packages/coding-agent/src/core/runtime-credentials.ts",
+      "summary": "运行时凭据管理器，在 auth storage 之上提供 API key 运行时覆盖，支持临时凭据注入。",
+      "tags": [
+        "auth",
+        "credentials",
+        "runtime"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/sdk.ts",
+      "type": "file",
+      "name": "sdk.ts",
+      "filePath": "packages/coding-agent/src/core/sdk.ts",
+      "summary": "SDK 入口模块，导出 createAgentSession 和所有公开工具创建函数，是外部集成的主要 API 表面。",
+      "tags": [
+        "sdk",
+        "entry-point",
+        "api",
+        "barrel"
+      ],
+      "complexity": "complex",
+      "languageNotes": "大量 re-exports 组成 SDK 公开 API，createAgentSession 是核心工厂函数。"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/session-cwd.ts",
+      "type": "file",
+      "name": "session-cwd.ts",
+      "filePath": "packages/coding-agent/src/core/session-cwd.ts",
+      "summary": "会话工作目录管理，检测和格式化会话 CWD 缺失错误，提供恢复提示。",
+      "tags": [
+        "session",
+        "cwd",
+        "error-handling"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "file",
+      "name": "session-manager.ts",
+      "filePath": "packages/coding-agent/src/core/session-manager.ts",
+      "summary": "会话管理器核心，处理会话的创建、持久化、分支、上下文构建和历史迁移，支持树形会话结构。",
+      "tags": [
+        "session",
+        "persistence",
+        "manager",
+        "core"
+      ],
+      "complexity": "complex",
+      "languageNotes": "1714 行的会话管理核心，SessionManager 类有 45 个方法，支持树形分支和版本迁移。"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "file",
+      "name": "settings-manager.ts",
+      "filePath": "packages/coding-agent/src/core/settings-manager.ts",
+      "summary": "设置管理器核心，处理全局和项目级设置的加载、持久化、迁移和版本控制，管理 100+ 配置项。",
+      "tags": [
+        "settings",
+        "config",
+        "persistence",
+        "manager",
+        "core"
+      ],
+      "complexity": "complex",
+      "languageNotes": "1290 行，SettingsManager 类有 137 个方法，覆盖所有配置项的 getter/setter。"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/skills.ts",
+      "type": "file",
+      "name": "skills.ts",
+      "filePath": "packages/coding-agent/src/core/skills.ts",
+      "summary": "Skills 加载器，从文件系统发现和加载 skill 定义，支持 frontmatter 解析、名称验证和冲突检测。",
+      "tags": [
+        "skills",
+        "loader",
+        "discovery"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/slash-commands.ts",
+      "type": "file",
+      "name": "slash-commands.ts",
+      "filePath": "packages/coding-agent/src/core/slash-commands.ts",
+      "summary": "斜杠命令加载器，从配置和扩展中收集自定义斜杠命令定义。",
+      "tags": [
+        "slash-commands",
+        "loader",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/source-info.ts",
+      "type": "file",
+      "name": "source-info.ts",
+      "filePath": "packages/coding-agent/src/core/source-info.ts",
+      "summary": "资源来源信息工厂，创建标记资源来源（builtin/package/extension 等）的 SourceInfo 对象。",
+      "tags": [
+        "source-info",
+        "factory",
+        "metadata"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/resource-loader.ts:resolvePromptInput",
+      "type": "function",
+      "name": "resolvePromptInput",
+      "filePath": "packages/coding-agent/src/core/resource-loader.ts",
+      "lineRange": [
+        53,
+        68
+      ],
+      "summary": "解析提示词输入，处理文件路径和内联文本。",
+      "tags": [
+        "resource-loader",
+        "prompt",
+        "resolver"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/resource-loader.ts:loadContextFileFromDir",
+      "type": "function",
+      "name": "loadContextFileFromDir",
+      "filePath": "packages/coding-agent/src/core/resource-loader.ts",
+      "lineRange": [
+        70,
+        89
+      ],
+      "summary": "从目录加载 context 文件。",
+      "tags": [
+        "resource-loader",
+        "context",
+        "loader"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/resource-loader.ts:findShadowedContextFile",
+      "type": "function",
+      "name": "findShadowedContextFile",
+      "filePath": "packages/coding-agent/src/core/resource-loader.ts",
+      "lineRange": [
+        100,
+        116
+      ],
+      "summary": "查找被项目级配置覆盖的 context 文件。",
+      "tags": [
+        "resource-loader",
+        "context",
+        "shadowing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/resource-loader.ts:loadProjectContextFiles",
+      "type": "function",
+      "name": "loadProjectContextFiles",
+      "filePath": "packages/coding-agent/src/core/resource-loader.ts",
+      "lineRange": [
+        118,
+        156
+      ],
+      "summary": "加载项目上下文文件，合并全局和项目级配置。",
+      "tags": [
+        "resource-loader",
+        "context",
+        "loader"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/sdk.ts:createAgentSession",
+      "type": "function",
+      "name": "createAgentSession",
+      "filePath": "packages/coding-agent/src/core/sdk.ts",
+      "lineRange": [
+        171,
+        401
+      ],
+      "summary": "创建完整的 agent 会话实例，组装所有运行时组件包括模型、工具、扩展和资源。",
+      "tags": [
+        "sdk",
+        "factory",
+        "agent-session",
+        "core"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/session-cwd.ts:getMissingSessionCwdIssue",
+      "type": "function",
+      "name": "getMissingSessionCwdIssue",
+      "filePath": "packages/coding-agent/src/core/session-cwd.ts",
+      "lineRange": [
+        14,
+        33
+      ],
+      "summary": "检测会话工作目录是否缺失并返回诊断信息。",
+      "tags": [
+        "session",
+        "cwd",
+        "diagnostics"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/session-cwd.ts:formatMissingSessionCwdError",
+      "type": "function",
+      "name": "formatMissingSessionCwdError",
+      "filePath": "packages/coding-agent/src/core/session-cwd.ts",
+      "lineRange": [
+        35,
+        38
+      ],
+      "summary": "formatMissingSessionCwdError 函数，位于 session-cwd.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/session-cwd.ts:formatMissingSessionCwdPrompt",
+      "type": "function",
+      "name": "formatMissingSessionCwdPrompt",
+      "filePath": "packages/coding-agent/src/core/session-cwd.ts",
+      "lineRange": [
+        40,
+        42
+      ],
+      "summary": "formatMissingSessionCwdPrompt 函数，位于 session-cwd.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/session-cwd.ts:assertSessionCwdExists",
+      "type": "function",
+      "name": "assertSessionCwdExists",
+      "filePath": "packages/coding-agent/src/core/session-cwd.ts",
+      "lineRange": [
+        54,
+        59
+      ],
+      "summary": "assertSessionCwdExists 函数，位于 session-cwd.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/session-manager.ts:assertValidSessionId",
+      "type": "function",
+      "name": "assertValidSessionId",
+      "filePath": "packages/coding-agent/src/core/session-manager.ts",
+      "lineRange": [
+        212,
+        218
+      ],
+      "summary": "assertValidSessionId 函数，位于 session-manager.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/session-manager.ts:migrateV1ToV2",
+      "type": "function",
+      "name": "migrateV1ToV2",
+      "filePath": "packages/coding-agent/src/core/session-manager.ts",
+      "lineRange": [
+        231,
+        257
+      ],
+      "summary": "将会话条目从 V1 格式迁移到 V2。",
+      "tags": [
+        "session",
+        "migration",
+        "version"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/session-manager.ts:migrateV2ToV3",
+      "type": "function",
+      "name": "migrateV2ToV3",
+      "filePath": "packages/coding-agent/src/core/session-manager.ts",
+      "lineRange": [
+        260,
+        275
+      ],
+      "summary": "将会话条目从 V2 格式迁移到 V3。",
+      "tags": [
+        "session",
+        "migration",
+        "version"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/session-manager.ts:migrateToCurrentVersion",
+      "type": "function",
+      "name": "migrateToCurrentVersion",
+      "filePath": "packages/coding-agent/src/core/session-manager.ts",
+      "lineRange": [
+        281,
+        291
+      ],
+      "summary": "将会话条目迁移到当前版本。",
+      "tags": [
+        "session",
+        "migration",
+        "version"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/session-manager.ts:migrateSessionEntries",
+      "type": "function",
+      "name": "migrateSessionEntries",
+      "filePath": "packages/coding-agent/src/core/session-manager.ts",
+      "lineRange": [
+        294,
+        296
+      ],
+      "summary": "migrateSessionEntries 函数，位于 session-manager.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/session-manager.ts:parseSessionEntries",
+      "type": "function",
+      "name": "parseSessionEntries",
+      "filePath": "packages/coding-agent/src/core/session-manager.ts",
+      "lineRange": [
+        299,
+        314
+      ],
+      "summary": "解析会话文件内容为条目数组。",
+      "tags": [
+        "session",
+        "parser",
+        "entries"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/session-manager.ts:getLatestCompactionEntry",
+      "type": "function",
+      "name": "getLatestCompactionEntry",
+      "filePath": "packages/coding-agent/src/core/session-manager.ts",
+      "lineRange": [
+        316,
+        323
+      ],
+      "summary": "getLatestCompactionEntry 函数，位于 session-manager.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/session-manager.ts:buildSessionPath",
+      "type": "function",
+      "name": "buildSessionPath",
+      "filePath": "packages/coding-agent/src/core/session-manager.ts",
+      "lineRange": [
+        334,
+        360
+      ],
+      "summary": "从会话条目构建到指定叶节点的路径。",
+      "tags": [
+        "session",
+        "tree",
+        "path"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/session-manager.ts:getSessionContextSettings",
+      "type": "function",
+      "name": "getSessionContextSettings",
+      "filePath": "packages/coding-agent/src/core/session-manager.ts",
+      "lineRange": [
+        362,
+        377
+      ],
+      "summary": "从会话路径提取上下文设置。",
+      "tags": [
+        "session",
+        "context",
+        "settings"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/session-manager.ts:sessionEntryToContextMessages",
+      "type": "function",
+      "name": "sessionEntryToContextMessages",
+      "filePath": "packages/coding-agent/src/core/session-manager.ts",
+      "lineRange": [
+        383,
+        408
+      ],
+      "summary": "将会话条目转换为 LLM 上下文消息。",
+      "tags": [
+        "session",
+        "context",
+        "converter"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/session-manager.ts:buildContextEntries",
+      "type": "function",
+      "name": "buildContextEntries",
+      "filePath": "packages/coding-agent/src/core/session-manager.ts",
+      "lineRange": [
+        418,
+        454
+      ],
+      "summary": "构建到指定叶节点的上下文条目链。",
+      "tags": [
+        "session",
+        "context",
+        "builder"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/session-manager.ts:buildSessionContext",
+      "type": "function",
+      "name": "buildSessionContext",
+      "filePath": "packages/coding-agent/src/core/session-manager.ts",
+      "lineRange": [
+        461,
+        470
+      ],
+      "summary": "从条目构建完整的会话上下文。",
+      "tags": [
+        "session",
+        "context",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/session-manager.ts:getDefaultSessionDir",
+      "type": "function",
+      "name": "getDefaultSessionDir",
+      "filePath": "packages/coding-agent/src/core/session-manager.ts",
+      "lineRange": [
+        483,
+        489
+      ],
+      "summary": "getDefaultSessionDir 函数，位于 session-manager.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/session-manager.ts:loadEntriesFromFile",
+      "type": "function",
+      "name": "loadEntriesFromFile",
+      "filePath": "packages/coding-agent/src/core/session-manager.ts",
+      "lineRange": [
+        514,
+        556
+      ],
+      "summary": "从会话文件加载并解析条目，处理迁移。",
+      "tags": [
+        "session",
+        "loader",
+        "file"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/session-manager.ts:readSessionHeader",
+      "type": "function",
+      "name": "readSessionHeader",
+      "filePath": "packages/coding-agent/src/core/session-manager.ts",
+      "lineRange": [
+        571,
+        613
+      ],
+      "summary": "读取会话文件头部信息。",
+      "tags": [
+        "session",
+        "reader",
+        "header"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/session-manager.ts:findMostRecentSession",
+      "type": "function",
+      "name": "findMostRecentSession",
+      "filePath": "packages/coding-agent/src/core/session-manager.ts",
+      "lineRange": [
+        635,
+        656
+      ],
+      "summary": "在目录中查找最近的会话文件。",
+      "tags": [
+        "session",
+        "finder",
+        "recent"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/session-manager.ts:extractTextContent",
+      "type": "function",
+      "name": "extractTextContent",
+      "filePath": "packages/coding-agent/src/core/session-manager.ts",
+      "lineRange": [
+        662,
+        671
+      ],
+      "summary": "从消息中提取纯文本内容。",
+      "tags": [
+        "session",
+        "extractor",
+        "text"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/session-manager.ts:getMessageActivityTime",
+      "type": "function",
+      "name": "getMessageActivityTime",
+      "filePath": "packages/coding-agent/src/core/session-manager.ts",
+      "lineRange": [
+        673,
+        685
+      ],
+      "summary": "获取会话条目的活动时间戳。",
+      "tags": [
+        "session",
+        "time",
+        "extractor"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/session-manager.ts:buildSessionInfo",
+      "type": "function",
+      "name": "buildSessionInfo",
+      "filePath": "packages/coding-agent/src/core/session-manager.ts",
+      "lineRange": [
+        687,
+        765
+      ],
+      "summary": "从会话文件构建会话信息摘要。",
+      "tags": [
+        "session",
+        "builder",
+        "info"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/session-manager.ts:buildSessionInfosWithConcurrency",
+      "type": "function",
+      "name": "buildSessionInfosWithConcurrency",
+      "filePath": "packages/coding-agent/src/core/session-manager.ts",
+      "lineRange": [
+        771,
+        809
+      ],
+      "summary": "并发构建多个会话信息。",
+      "tags": [
+        "session",
+        "builder",
+        "concurrency"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/session-manager.ts:listSessionsFromDir",
+      "type": "function",
+      "name": "listSessionsFromDir",
+      "filePath": "packages/coding-agent/src/core/session-manager.ts",
+      "lineRange": [
+        811,
+        842
+      ],
+      "summary": "列出目录中的所有会话。",
+      "tags": [
+        "session",
+        "lister",
+        "directory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/settings-manager.ts:deepMergeObjects",
+      "type": "function",
+      "name": "deepMergeObjects",
+      "filePath": "packages/coding-agent/src/core/settings-manager.ts",
+      "lineRange": [
+        146,
+        163
+      ],
+      "summary": "深度合并两个设置对象。",
+      "tags": [
+        "settings",
+        "merge",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/settings-manager.ts:parseTimeoutSetting",
+      "type": "function",
+      "name": "parseTimeoutSetting",
+      "filePath": "packages/coding-agent/src/core/settings-manager.ts",
+      "lineRange": [
+        170,
+        179
+      ],
+      "summary": "解析超时设置值。",
+      "tags": [
+        "settings",
+        "parser",
+        "timeout"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/skills.ts:prefixIgnorePattern",
+      "type": "function",
+      "name": "prefixIgnorePattern",
+      "filePath": "packages/coding-agent/src/core/skills.ts",
+      "lineRange": [
+        24,
+        45
+      ],
+      "summary": "为 skill 忽略模式添加前缀。",
+      "tags": [
+        "skills",
+        "ignore",
+        "pattern"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/skills.ts:addIgnoreRules",
+      "type": "function",
+      "name": "addIgnoreRules",
+      "filePath": "packages/coding-agent/src/core/skills.ts",
+      "lineRange": [
+        47,
+        65
+      ],
+      "summary": "向 ignore 实例添加 skill 目录规则。",
+      "tags": [
+        "skills",
+        "ignore",
+        "rules"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/skills.ts:validateName",
+      "type": "function",
+      "name": "validateName",
+      "filePath": "packages/coding-agent/src/core/skills.ts",
+      "lineRange": [
+        92,
+        112
+      ],
+      "summary": "验证 skill 名称的合法性。",
+      "tags": [
+        "skills",
+        "validation",
+        "name"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/skills.ts:validateDescription",
+      "type": "function",
+      "name": "validateDescription",
+      "filePath": "packages/coding-agent/src/core/skills.ts",
+      "lineRange": [
+        117,
+        127
+      ],
+      "summary": "验证 skill 描述的合法性。",
+      "tags": [
+        "skills",
+        "validation",
+        "description"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/skills.ts:createSkillSourceInfo",
+      "type": "function",
+      "name": "createSkillSourceInfo",
+      "filePath": "packages/coding-agent/src/core/skills.ts",
+      "lineRange": [
+        136,
+        158
+      ],
+      "summary": "创建 skill 的来源信息对象。",
+      "tags": [
+        "skills",
+        "source-info",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/skills.ts:loadSkillsFromDir",
+      "type": "function",
+      "name": "loadSkillsFromDir",
+      "filePath": "packages/coding-agent/src/core/skills.ts",
+      "lineRange": [
+        168,
+        171
+      ],
+      "summary": "loadSkillsFromDir 函数，位于 skills.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/skills.ts:loadSkillsFromDirInternal",
+      "type": "function",
+      "name": "loadSkillsFromDirInternal",
+      "filePath": "packages/coding-agent/src/core/skills.ts",
+      "lineRange": [
+        173,
+        275
+      ],
+      "summary": "从目录内部加载 skill 定义，解析 frontmatter。",
+      "tags": [
+        "skills",
+        "loader",
+        "directory"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/skills.ts:loadSkillFromFile",
+      "type": "function",
+      "name": "loadSkillFromFile",
+      "filePath": "packages/coding-agent/src/core/skills.ts",
+      "lineRange": [
+        277,
+        325
+      ],
+      "summary": "从单个文件加载 skill 定义。",
+      "tags": [
+        "skills",
+        "loader",
+        "file"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/skills.ts:formatSkillsForPrompt",
+      "type": "function",
+      "name": "formatSkillsForPrompt",
+      "filePath": "packages/coding-agent/src/core/skills.ts",
+      "lineRange": [
+        335,
+        361
+      ],
+      "summary": "将 skills 列表格式化为系统提示词文本。",
+      "tags": [
+        "skills",
+        "formatter",
+        "prompt"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/skills.ts:loadSkills",
+      "type": "function",
+      "name": "loadSkills",
+      "filePath": "packages/coding-agent/src/core/skills.ts",
+      "lineRange": [
+        387,
+        487
+      ],
+      "summary": "从所有配置源加载 skills，包括自动发现和扩展。",
+      "tags": [
+        "skills",
+        "loader",
+        "discovery"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/source-info.ts:createSourceInfo",
+      "type": "function",
+      "name": "createSourceInfo",
+      "filePath": "packages/coding-agent/src/core/source-info.ts",
+      "lineRange": [
+        14,
+        22
+      ],
+      "summary": "createSourceInfo 函数，位于 source-info.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/source-info.ts:createSyntheticSourceInfo",
+      "type": "function",
+      "name": "createSyntheticSourceInfo",
+      "filePath": "packages/coding-agent/src/core/source-info.ts",
+      "lineRange": [
+        24,
+        40
+      ],
+      "summary": "创建合成的来源信息对象，用于非文件来源。",
+      "tags": [
+        "source-info",
+        "factory",
+        "synthetic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/coding-agent/src/core/resource-loader.ts:DefaultResourceLoader",
+      "type": "class",
+      "name": "DefaultResourceLoader",
+      "filePath": "packages/coding-agent/src/core/resource-loader.ts",
+      "lineRange": [
+        195,
+        1096
+      ],
+      "summary": "默认资源加载器实现，统一发现和加载扩展、skills、prompts、themes 和 context 文件。",
+      "tags": [
+        "resource-loader",
+        "extensions",
+        "skills",
+        "core"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:packages/coding-agent/src/core/runtime-credentials.ts:RuntimeCredentials",
+      "type": "class",
+      "name": "RuntimeCredentials",
+      "filePath": "packages/coding-agent/src/core/runtime-credentials.ts",
+      "lineRange": [
+        4,
+        52
+      ],
+      "summary": "运行时凭据管理类，在 auth storage 之上提供 API key 临时覆盖。",
+      "tags": [
+        "auth",
+        "credentials",
+        "runtime"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/coding-agent/src/core/session-cwd.ts:MissingSessionCwdError",
+      "type": "class",
+      "name": "MissingSessionCwdError",
+      "filePath": "packages/coding-agent/src/core/session-cwd.ts",
+      "lineRange": [
+        44,
+        52
+      ],
+      "summary": "MissingSessionCwdError 类，位于 session-cwd.ts。",
+      "tags": [
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/coding-agent/src/core/session-manager.ts:SessionManager",
+      "type": "class",
+      "name": "SessionManager",
+      "filePath": "packages/coding-agent/src/core/session-manager.ts",
+      "lineRange": [
+        855,
+        1714
+      ],
+      "summary": "会话管理器类，处理会话创建、持久化、分支、上下文构建和版本迁移，支持树形会话结构。",
+      "tags": [
+        "session",
+        "manager",
+        "persistence",
+        "core"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:packages/coding-agent/src/core/settings-manager.ts:FileSettingsStorage",
+      "type": "class",
+      "name": "FileSettingsStorage",
+      "filePath": "packages/coding-agent/src/core/settings-manager.ts",
+      "lineRange": [
+        196,
+        263
+      ],
+      "summary": "文件设置存储后端，处理全局和项目级设置的文件 I/O 和锁。",
+      "tags": [
+        "settings",
+        "storage",
+        "file"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:packages/coding-agent/src/core/settings-manager.ts:InMemorySettingsStorage",
+      "type": "class",
+      "name": "InMemorySettingsStorage",
+      "filePath": "packages/coding-agent/src/core/settings-manager.ts",
+      "lineRange": [
+        265,
+        280
+      ],
+      "summary": "InMemorySettingsStorage 类，位于 settings-manager.ts。",
+      "tags": [
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/coding-agent/src/core/settings-manager.ts:SettingsManager",
+      "type": "class",
+      "name": "SettingsManager",
+      "filePath": "packages/coding-agent/src/core/settings-manager.ts",
+      "lineRange": [
+        282,
+        1290
+      ],
+      "summary": "设置管理器核心类，管理 100+ 配置项的加载、持久化、迁移和版本控制。",
+      "tags": [
+        "settings",
+        "manager",
+        "config",
+        "core"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "target": "function:packages/coding-agent/src/core/resource-loader.ts:resolvePromptInput",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "target": "function:packages/coding-agent/src/core/resource-loader.ts:loadContextFileFromDir",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "target": "function:packages/coding-agent/src/core/resource-loader.ts:findShadowedContextFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "target": "function:packages/coding-agent/src/core/resource-loader.ts:loadProjectContextFiles",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/sdk.ts",
+      "target": "function:packages/coding-agent/src/core/sdk.ts:createAgentSession",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-cwd.ts",
+      "target": "function:packages/coding-agent/src/core/session-cwd.ts:getMissingSessionCwdIssue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-cwd.ts",
+      "target": "function:packages/coding-agent/src/core/session-cwd.ts:formatMissingSessionCwdError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-cwd.ts",
+      "target": "function:packages/coding-agent/src/core/session-cwd.ts:formatMissingSessionCwdPrompt",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-cwd.ts",
+      "target": "function:packages/coding-agent/src/core/session-cwd.ts:assertSessionCwdExists",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:assertValidSessionId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:migrateV1ToV2",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:migrateV2ToV3",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:migrateToCurrentVersion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:migrateSessionEntries",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:parseSessionEntries",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:getLatestCompactionEntry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:buildSessionPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:getSessionContextSettings",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:sessionEntryToContextMessages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:buildContextEntries",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:buildSessionContext",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:getDefaultSessionDir",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:loadEntriesFromFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:readSessionHeader",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:findMostRecentSession",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:extractTextContent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:getMessageActivityTime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:buildSessionInfo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:buildSessionInfosWithConcurrency",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:listSessionsFromDir",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "target": "function:packages/coding-agent/src/core/settings-manager.ts:deepMergeObjects",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "target": "function:packages/coding-agent/src/core/settings-manager.ts:parseTimeoutSetting",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/skills.ts",
+      "target": "function:packages/coding-agent/src/core/skills.ts:prefixIgnorePattern",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/skills.ts",
+      "target": "function:packages/coding-agent/src/core/skills.ts:addIgnoreRules",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/skills.ts",
+      "target": "function:packages/coding-agent/src/core/skills.ts:validateName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/skills.ts",
+      "target": "function:packages/coding-agent/src/core/skills.ts:validateDescription",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/skills.ts",
+      "target": "function:packages/coding-agent/src/core/skills.ts:createSkillSourceInfo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/skills.ts",
+      "target": "function:packages/coding-agent/src/core/skills.ts:loadSkillsFromDir",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/skills.ts",
+      "target": "function:packages/coding-agent/src/core/skills.ts:loadSkillsFromDirInternal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/skills.ts",
+      "target": "function:packages/coding-agent/src/core/skills.ts:loadSkillFromFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/skills.ts",
+      "target": "function:packages/coding-agent/src/core/skills.ts:formatSkillsForPrompt",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/skills.ts",
+      "target": "function:packages/coding-agent/src/core/skills.ts:loadSkills",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/source-info.ts",
+      "target": "function:packages/coding-agent/src/core/source-info.ts:createSourceInfo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/source-info.ts",
+      "target": "function:packages/coding-agent/src/core/source-info.ts:createSyntheticSourceInfo",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "target": "class:packages/coding-agent/src/core/resource-loader.ts:DefaultResourceLoader",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/runtime-credentials.ts",
+      "target": "class:packages/coding-agent/src/core/runtime-credentials.ts:RuntimeCredentials",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-cwd.ts",
+      "target": "class:packages/coding-agent/src/core/session-cwd.ts:MissingSessionCwdError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "class:packages/coding-agent/src/core/session-manager.ts:SessionManager",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "target": "class:packages/coding-agent/src/core/settings-manager.ts:FileSettingsStorage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "target": "class:packages/coding-agent/src/core/settings-manager.ts:InMemorySettingsStorage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "target": "class:packages/coding-agent/src/core/settings-manager.ts:SettingsManager",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "target": "file:packages/coding-agent/src/core/diagnostics.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "target": "file:packages/coding-agent/src/core/event-bus.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "target": "file:packages/coding-agent/src/core/footer-data-provider.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "target": "file:packages/coding-agent/src/core/package-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "target": "file:packages/coding-agent/src/core/prompt-templates.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "target": "file:packages/coding-agent/src/core/skills.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "target": "file:packages/coding-agent/src/core/source-info.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "target": "file:packages/coding-agent/src/core/timings.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "target": "file:packages/coding-agent/src/utils/paths.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/sdk.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/sdk.ts",
+      "target": "file:packages/coding-agent/src/core/agent-session.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/sdk.ts",
+      "target": "file:packages/coding-agent/src/core/auth-guidance.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/sdk.ts",
+      "target": "file:packages/coding-agent/src/core/defaults.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/sdk.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/sdk.ts",
+      "target": "file:packages/coding-agent/src/core/messages.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/sdk.ts",
+      "target": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/sdk.ts",
+      "target": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/sdk.ts",
+      "target": "file:packages/coding-agent/src/core/provider-attribution.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/sdk.ts",
+      "target": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/sdk.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/sdk.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/sdk.ts",
+      "target": "file:packages/coding-agent/src/core/timings.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/sdk.ts",
+      "target": "file:packages/coding-agent/src/core/tools/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/sdk.ts",
+      "target": "file:packages/coding-agent/src/utils/paths.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "file:packages/coding-agent/src/core/messages.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "file:packages/coding-agent/src/utils/paths.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "target": "file:packages/coding-agent/src/core/http-dispatcher.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "target": "file:packages/coding-agent/src/utils/paths.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/skills.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/skills.ts",
+      "target": "file:packages/coding-agent/src/core/diagnostics.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/skills.ts",
+      "target": "file:packages/coding-agent/src/core/source-info.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/skills.ts",
+      "target": "file:packages/coding-agent/src/utils/frontmatter.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/skills.ts",
+      "target": "file:packages/coding-agent/src/utils/paths.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/slash-commands.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/slash-commands.ts",
+      "target": "file:packages/coding-agent/src/core/source-info.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/source-info.ts",
+      "target": "file:packages/coding-agent/src/core/package-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "target": "function:packages/coding-agent/src/core/resource-loader.ts:loadProjectContextFiles",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/sdk.ts",
+      "target": "function:packages/coding-agent/src/core/sdk.ts:createAgentSession",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-cwd.ts",
+      "target": "function:packages/coding-agent/src/core/session-cwd.ts:getMissingSessionCwdIssue",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-cwd.ts",
+      "target": "function:packages/coding-agent/src/core/session-cwd.ts:formatMissingSessionCwdError",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-cwd.ts",
+      "target": "function:packages/coding-agent/src/core/session-cwd.ts:formatMissingSessionCwdPrompt",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-cwd.ts",
+      "target": "function:packages/coding-agent/src/core/session-cwd.ts:assertSessionCwdExists",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:assertValidSessionId",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:migrateSessionEntries",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:parseSessionEntries",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:getLatestCompactionEntry",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:sessionEntryToContextMessages",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:buildContextEntries",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:buildSessionContext",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:getDefaultSessionDir",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:loadEntriesFromFile",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "function:packages/coding-agent/src/core/session-manager.ts:findMostRecentSession",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/skills.ts",
+      "target": "function:packages/coding-agent/src/core/skills.ts:loadSkillsFromDir",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/skills.ts",
+      "target": "function:packages/coding-agent/src/core/skills.ts:formatSkillsForPrompt",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/skills.ts",
+      "target": "function:packages/coding-agent/src/core/skills.ts:loadSkills",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/source-info.ts",
+      "target": "function:packages/coding-agent/src/core/source-info.ts:createSourceInfo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/source-info.ts",
+      "target": "function:packages/coding-agent/src/core/source-info.ts:createSyntheticSourceInfo",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "target": "class:packages/coding-agent/src/core/resource-loader.ts:DefaultResourceLoader",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/runtime-credentials.ts",
+      "target": "class:packages/coding-agent/src/core/runtime-credentials.ts:RuntimeCredentials",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-cwd.ts",
+      "target": "class:packages/coding-agent/src/core/session-cwd.ts:MissingSessionCwdError",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "class:packages/coding-agent/src/core/session-manager.ts:SessionManager",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "target": "class:packages/coding-agent/src/core/settings-manager.ts:FileSettingsStorage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "target": "class:packages/coding-agent/src/core/settings-manager.ts:InMemorySettingsStorage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "target": "class:packages/coding-agent/src/core/settings-manager.ts:SettingsManager",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

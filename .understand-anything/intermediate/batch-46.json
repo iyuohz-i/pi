@@ -1,0 +1,41 @@
+{
+  "nodes": [
+    {
+      "id": ".github/ISSUE_TEMPLATE/bug.yml",
+      "type": "file",
+      "label": "bug.yml",
+      "language": "yaml",
+      "category": "config",
+      "summary": "GitHub Issue 模板，用于提交 Bug 报告。包含说明文本（引导贡献者阅读 CONTRIBUTING.md）、问题描述、复现步骤、预期行为和版本号字段。新贡献者的 issue 默认自动关闭。",
+      "lines": 45
+    },
+    {
+      "id": ".github/ISSUE_TEMPLATE/config.yml",
+      "type": "file",
+      "label": "config.yml",
+      "language": "yaml",
+      "category": "config",
+      "summary": "GitHub Issue 模板配置文件。禁用空白 issue 提交（blank_issues_enabled: false），并将咨询链接指向 Discord 频道以替代创建 issue。",
+      "lines": 5
+    },
+    {
+      "id": ".github/ISSUE_TEMPLATE/contribution.yml",
+      "type": "file",
+      "label": "contribution.yml",
+      "language": "yaml",
+      "category": "config",
+      "summary": "GitHub Issue 模板，用于新贡献者在提交 PR 前提出变更或功能建议。包含变更内容（what）、变更原因（why）和技术方案（how，可选）三个字段。",
+      "lines": 36
+    },
+    {
+      "id": ".github/ISSUE_TEMPLATE/package-report.yml",
+      "type": "file",
+      "label": "package-report.yml",
+      "language": "yaml",
+      "category": "config",
+      "summary": "GitHub Issue 模板，用于报告 pi.dev 上列出的问题包。包含包名、版本号、报告类型（恶意行为/冒充/商标违规）和详情字段。与核心 bug 报告模板分离。",
+      "lines": 49
+    }
+  ],
+  "edges": []
+}

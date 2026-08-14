@@ -1,0 +1,366 @@
+{
+  "projectRoot": "/Users/zhouyi/AiHub/pi",
+  "batchFiles": [
+    {
+      "path": "packages/coding-agent/test/extensions-runner.test.ts",
+      "language": "typescript",
+      "sizeLines": 1018,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/file-mutation-queue.test.ts",
+      "language": "typescript",
+      "sizeLines": 274,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/first-time-setup-fork.test.ts",
+      "language": "typescript",
+      "sizeLines": 39,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/first-time-setup.test.ts",
+      "language": "typescript",
+      "sizeLines": 95,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/footer-data-provider.test.ts",
+      "language": "typescript",
+      "sizeLines": 265,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/footer-width.test.ts",
+      "language": "typescript",
+      "sizeLines": 252,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/format-resume-command.test.ts",
+      "language": "typescript",
+      "sizeLines": 135,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/frontmatter.test.ts",
+      "language": "typescript",
+      "sizeLines": 60,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/git-merge-and-resolve-extension.test.ts",
+      "language": "typescript",
+      "sizeLines": 206,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/git-update.test.ts",
+      "language": "typescript",
+      "sizeLines": 486,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/http-dispatcher.test.ts",
+      "language": "typescript",
+      "sizeLines": 113,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/initial-message.test.ts",
+      "language": "typescript",
+      "sizeLines": 48,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/input-transform-streaming-example.test.ts",
+      "language": "typescript",
+      "sizeLines": 84,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/keybindings-migration.test.ts",
+      "language": "typescript",
+      "sizeLines": 88,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/max-thinking.test.ts",
+      "language": "typescript",
+      "sizeLines": 45,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/mermaid.test.ts",
+      "language": "typescript",
+      "sizeLines": 99,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/model-registry.test.ts",
+      "language": "typescript",
+      "sizeLines": 1988,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/model-resolver.test.ts",
+      "language": "typescript",
+      "sizeLines": 801,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/model-runtime-auth-options.test.ts",
+      "language": "typescript",
+      "sizeLines": 326,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/model-runtime-cloudflare-compat.test.ts",
+      "language": "typescript",
+      "sizeLines": 102,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/model-runtime-credential-sync.test.ts",
+      "language": "typescript",
+      "sizeLines": 375,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/model-runtime-modify-models-compat.test.ts",
+      "language": "typescript",
+      "sizeLines": 332,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/model-runtime-test-utils.ts",
+      "language": "typescript",
+      "sizeLines": 34,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/models-store.test.ts",
+      "language": "typescript",
+      "sizeLines": 136,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/package-command-paths.test.ts",
+      "language": "typescript",
+      "sizeLines": 799,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/package-manager-ssh.test.ts",
+      "language": "typescript",
+      "sizeLines": 97,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/package-manager.test.ts",
+      "language": "typescript",
+      "sizeLines": 2593,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/path-utils.test.ts",
+      "language": "typescript",
+      "sizeLines": 174,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/paths.test.ts",
+      "language": "typescript",
+      "sizeLines": 184,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/prompt-templates.test.ts",
+      "language": "typescript",
+      "sizeLines": 624,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/radius.test.ts",
+      "language": "typescript",
+      "sizeLines": 171,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/resolve-config-value.test.ts",
+      "language": "typescript",
+      "sizeLines": 121,
+      "fileCategory": "code"
+    },
+    {
+      "path": "packages/coding-agent/test/resource-loader.test.ts",
+      "language": "typescript",
+      "sizeLines": 1121,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "packages/coding-agent/test/extensions-runner.test.ts": [
+      "packages/coding-agent/src/core/auth-storage.ts",
+      "packages/coding-agent/src/core/extensions/loader.ts",
+      "packages/coding-agent/src/core/extensions/runner.ts",
+      "packages/coding-agent/src/core/extensions/types.ts",
+      "packages/coding-agent/src/core/keybindings.ts",
+      "packages/coding-agent/src/core/model-registry.ts",
+      "packages/coding-agent/src/core/model-resolver.ts",
+      "packages/coding-agent/src/core/session-manager.ts",
+      "packages/coding-agent/test/model-runtime-test-utils.ts"
+    ],
+    "packages/coding-agent/test/file-mutation-queue.test.ts": [
+      "packages/coding-agent/src/core/tools/edit.ts",
+      "packages/coding-agent/src/core/tools/file-mutation-queue.ts",
+      "packages/coding-agent/src/core/tools/write.ts"
+    ],
+    "packages/coding-agent/test/first-time-setup-fork.test.ts": [
+      "packages/coding-agent/src/cli/startup-ui.ts"
+    ],
+    "packages/coding-agent/test/first-time-setup.test.ts": [
+      "packages/coding-agent/src/cli/startup-ui.ts",
+      "packages/coding-agent/src/config.ts",
+      "packages/coding-agent/src/core/settings-manager.ts"
+    ],
+    "packages/coding-agent/test/footer-data-provider.test.ts": [
+      "packages/coding-agent/src/core/footer-data-provider.ts"
+    ],
+    "packages/coding-agent/test/footer-width.test.ts": [
+      "packages/coding-agent/src/core/agent-session.ts",
+      "packages/coding-agent/src/core/footer-data-provider.ts",
+      "packages/coding-agent/src/modes/interactive/components/footer.ts",
+      "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "packages/coding-agent/src/utils/ansi.ts"
+    ],
+    "packages/coding-agent/test/format-resume-command.test.ts": [
+      "packages/coding-agent/src/config.ts",
+      "packages/coding-agent/src/core/session-manager.ts",
+      "packages/coding-agent/src/modes/interactive/interactive-mode.ts"
+    ],
+    "packages/coding-agent/test/frontmatter.test.ts": [
+      "packages/coding-agent/src/utils/frontmatter.ts"
+    ],
+    "packages/coding-agent/test/git-merge-and-resolve-extension.test.ts": [
+      "packages/coding-agent/examples/extensions/git-merge-and-resolve.ts",
+      "packages/coding-agent/src/core/extensions/index.ts"
+    ],
+    "packages/coding-agent/test/git-update.test.ts": [
+      "packages/coding-agent/src/core/package-manager.ts",
+      "packages/coding-agent/src/core/settings-manager.ts",
+      "packages/coding-agent/test/test-network-env.ts"
+    ],
+    "packages/coding-agent/test/http-dispatcher.test.ts": [
+      "packages/coding-agent/src/core/http-dispatcher.ts"
+    ],
+    "packages/coding-agent/test/initial-message.test.ts": [
+      "packages/coding-agent/src/cli/args.ts",
+      "packages/coding-agent/src/cli/initial-message.ts"
+    ],
+    "packages/coding-agent/test/input-transform-streaming-example.test.ts": [
+      "packages/coding-agent/examples/extensions/input-transform-streaming.ts",
+      "packages/coding-agent/src/core/extensions/index.ts"
+    ],
+    "packages/coding-agent/test/keybindings-migration.test.ts": [
+      "packages/coding-agent/src/config.ts",
+      "packages/coding-agent/src/core/keybindings.ts",
+      "packages/coding-agent/src/migrations.ts"
+    ],
+    "packages/coding-agent/test/max-thinking.test.ts": [
+      "packages/coding-agent/src/cli/args.ts",
+      "packages/coding-agent/src/core/settings-manager.ts",
+      "packages/coding-agent/src/modes/interactive/theme/theme.ts"
+    ],
+    "packages/coding-agent/test/mermaid.test.ts": [
+      "packages/coding-agent/src/core/extensions/types.ts",
+      "packages/coding-agent/src/core/settings-manager.ts",
+      "packages/coding-agent/src/modes/interactive/components/mermaid.ts",
+      "packages/coding-agent/src/modes/interactive/theme/theme.ts"
+    ],
+    "packages/coding-agent/test/model-registry.test.ts": [
+      "packages/coding-agent/src/core/auth-storage.ts",
+      "packages/coding-agent/src/core/model-registry.ts",
+      "packages/coding-agent/test/model-runtime-test-utils.ts"
+    ],
+    "packages/coding-agent/test/model-resolver.test.ts": [
+      "packages/coding-agent/src/core/model-resolver.ts"
+    ],
+    "packages/coding-agent/test/model-runtime-auth-options.test.ts": [
+      "packages/coding-agent/src/core/auth-storage.ts",
+      "packages/coding-agent/src/core/model-runtime.ts"
+    ],
+    "packages/coding-agent/test/model-runtime-cloudflare-compat.test.ts": [
+      "packages/coding-agent/src/core/auth-storage.ts",
+      "packages/coding-agent/src/core/model-registry.ts",
+      "packages/coding-agent/src/core/model-runtime.ts"
+    ],
+    "packages/coding-agent/test/model-runtime-credential-sync.test.ts": [
+      "packages/coding-agent/src/core/auth-storage.ts",
+      "packages/coding-agent/src/core/model-runtime.ts"
+    ],
+    "packages/coding-agent/test/model-runtime-modify-models-compat.test.ts": [
+      "packages/coding-agent/src/core/auth-storage.ts",
+      "packages/coding-agent/src/core/model-registry.ts",
+      "packages/coding-agent/src/core/model-runtime.ts"
+    ],
+    "packages/coding-agent/test/model-runtime-test-utils.ts": [
+      "packages/coding-agent/src/core/model-registry.ts",
+      "packages/coding-agent/src/core/model-runtime.ts",
+      "packages/coding-agent/src/core/models-store.ts"
+    ],
+    "packages/coding-agent/test/models-store.test.ts": [
+      "packages/coding-agent/src/core/models-store.ts"
+    ],
+    "packages/coding-agent/test/package-command-paths.test.ts": [
+      "packages/coding-agent/src/config.ts",
+      "packages/coding-agent/src/core/model-runtime.ts",
+      "packages/coding-agent/src/core/package-manager.ts",
+      "packages/coding-agent/src/core/settings-manager.ts",
+      "packages/coding-agent/src/core/trust-manager.ts",
+      "packages/coding-agent/src/main.ts",
+      "packages/coding-agent/src/modes/interactive/components/config-selector.ts",
+      "packages/coding-agent/src/package-manager-cli.ts",
+      "packages/coding-agent/test/test-network-env.ts"
+    ],
+    "packages/coding-agent/test/package-manager-ssh.test.ts": [
+      "packages/coding-agent/src/core/package-manager.ts",
+      "packages/coding-agent/src/core/settings-manager.ts"
+    ],
+    "packages/coding-agent/test/package-manager.test.ts": [
+      "packages/coding-agent/src/core/package-manager.ts",
+      "packages/coding-agent/src/core/settings-manager.ts"
+    ],
+    "packages/coding-agent/test/path-utils.test.ts": [
+      "packages/coding-agent/src/core/tools/path-utils.ts"
+    ],
+    "packages/coding-agent/test/paths.test.ts": [
+      "packages/coding-agent/src/utils/paths.ts"
+    ],
+    "packages/coding-agent/test/prompt-templates.test.ts": [
+      "packages/coding-agent/src/config.ts",
+      "packages/coding-agent/src/core/prompt-templates.ts"
+    ],
+    "packages/coding-agent/test/radius.test.ts": [
+      "packages/coding-agent/src/core/auth-storage.ts",
+      "packages/coding-agent/src/core/model-runtime.ts",
+      "packages/coding-agent/src/core/radius.ts",
+      "packages/coding-agent/test/test-network-env.ts"
+    ],
+    "packages/coding-agent/test/resolve-config-value.test.ts": [
+      "packages/coding-agent/src/core/resolve-config-value.ts",
+      "packages/coding-agent/src/utils/shell.ts"
+    ],
+    "packages/coding-agent/test/resource-loader.test.ts": [
+      "packages/coding-agent/src/core/auth-storage.ts",
+      "packages/coding-agent/src/core/extensions/runner.ts",
+      "packages/coding-agent/src/core/resource-loader.ts",
+      "packages/coding-agent/src/core/session-manager.ts",
+      "packages/coding-agent/src/core/settings-manager.ts",
+      "packages/coding-agent/src/core/skills.ts",
+      "packages/coding-agent/src/core/source-info.ts",
+      "packages/coding-agent/test/model-runtime-test-utils.ts"
+    ]
+  }
+}

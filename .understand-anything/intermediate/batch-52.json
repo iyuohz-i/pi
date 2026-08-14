@@ -1,0 +1,110 @@
+{
+  "batchIndex": 52,
+  "nodes": [
+    {
+      "id": "packages/client/CHANGELOG.md",
+      "type": "file",
+      "label": "CHANGELOG.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "summary": "@earendil-works/pi-client 包的变更日志，记录 0.84.0 和 0.84.1 版本的 breaking changes 与新功能，核心变更包括将 SessionSummary 替换为持久化的 SessionMetadata，以及引入实验性的传输中立 PiClient 和 PiSessionHandle API。",
+      "details": {
+        "versions": ["0.84.1", "0.84.0"],
+        "breakingChanges": ["Replaced SessionSummary with durable SessionMetadata"],
+        "addedFeatures": ["Experimental transport-neutral PiClient", "Multi-session PiSessionHandle APIs", "Structured PiServerError responses"]
+      }
+    },
+    {
+      "id": "packages/client/README.md",
+      "type": "file",
+      "label": "README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "summary": "PiClient 包的完整文档，描述传输中立的远程 pi 会话客户端架构：通过 ByteTransport 接口交换长度前缀 CBOR 消息，支持多会话管理、独占/共享会话租约（SessionLease）、快照订阅、Unix 域套接字传输，以及安全限制和错误处理机制。",
+      "details": {
+        "keyConcepts": [
+          "PiClient — 传输中立的远程会话客户端，通过 ByteTransport 接口交换 CBOR 消息",
+          "ByteTransport — 有序字节传输接口，支持 send/close 和 backpressure",
+          "SessionLease — 会话租约，支持 exclusive 和 shared 两种获取模式",
+          "exclusive 模式用作生命周期或变更协调器，shared 模式用于多个低级消费者共享会话",
+          "PiSessionOwnershipError — exclusive 获取失败时抛出",
+          "PiDisconnectedError — 客户端断开连接时命令抛出",
+          "PiSessionDetachedError — 租约释放中或已失效时命令抛出",
+          "subscribe() 观察权威快照，onEvent() 观察协议事件",
+          "maxFrameLength 限制入站和出站 CBOR 载荷大小",
+          "Unix 域套接字传输通过 @earendil-works/pi-client/unix 子路径导入",
+          "maxPendingBytes 限制排队出站数据，默认为帧限制的 4 倍",
+          "PiClient 不自动重连，需手动调用 reconnect()",
+          "Leases 实现 AsyncDisposable 接口"
+        ]
+      }
+    },
+    {
+      "id": "packages/client/package.json",
+      "type": "file",
+      "label": "package.json",
+      "language": "json",
+      "fileCategory": "config",
+      "summary": "@earendil-works/pi-client 包的配置文件，定义包元数据（v0.84.1）、导出映射（主入口 + ./unix 子路径）、构建/测试脚本，以及唯一运行时依赖 @earendil-works/pi-protocol。",
+      "details": {
+        "packageName": "@earendil-works/pi-client",
+        "version": "0.84.1",
+        "type": "module",
+        "exports": [".", "./unix", "./package.json"],
+        "main": "./dist/index.js",
+        "types": "./dist/index.d.ts",
+        "scripts": {
+          "clean": "shx rm -rf dist",
+          "build": "tsgo -p tsconfig.build.json",
+          "test": "vitest --run",
+          "typecheck": "tsgo -p tsconfig.test.json",
+          "prepublishOnly": "npm run clean && npm run build"
+        },
+        "engines": { "node": ">=22.19.0" },
+        "dependencies": ["@earendil-works/pi-protocol"],
+        "devDependencies": ["shx", "vitest"],
+        "keywords": ["pi", "client", "protocol", "cbor", "binary"],
+        "license": "MIT",
+        "sideEffects": false
+      }
+    },
+    {
+      "id": "packages/client/tsconfig.build.json",
+      "type": "file",
+      "label": "tsconfig.build.json",
+      "language": "json",
+      "fileCategory": "config",
+      "summary": "PiClient 包的 TypeScript 构建配置，继承 tsconfig.base.json，将 src/ 编译输出到 dist/，并通过 paths 映射 @earendil-works/pi-protocol 到 protocol 包的 dist 类型声明。",
+      "details": {
+        "extends": "../../tsconfig.base.json",
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "pathMappings": {
+          "@earendil-works/pi-protocol": "../protocol/dist/index.d.ts"
+        },
+        "include": ["src/**/*.ts"],
+        "exclude": ["node_modules", "dist", "**/*.d.ts", "src/**/*.d.ts"]
+      }
+    },
+    {
+      "id": "packages/client/tsconfig.test.json",
+      "type": "file",
+      "label": "tsconfig.test.json",
+      "language": "json",
+      "fileCategory": "config",
+      "summary": "PiClient 包的 TypeScript 测试/类型检查配置，继承 tsconfig.base.json，使用 NodeNext 模块解析，包含 src 和 test 目录，通过 paths 映射到 protocol 包的源码以便测试时直接引用。",
+      "details": {
+        "extends": "../../tsconfig.base.json",
+        "noEmit": true,
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "types": ["node", "vitest"],
+        "pathMappings": {
+          "@earendil-works/pi-protocol": "../protocol/src/index.ts"
+        },
+        "include": ["src/**/*.ts", "test/**/*.ts"]
+      }
+    }
+  ],
+  "edges": []
+}

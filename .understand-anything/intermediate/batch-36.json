@@ -1,0 +1,274 @@
+{
+  "nodes": [
+    {
+      "id": "packages/coding-agent/src/client/remote-session.ts",
+      "type": "file",
+      "label": "remote-session.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 420,
+      "summary": "RemoteSession 类的核心实现——管理客户端与服务器会话的完整生命周期，包括打开、创建、提交、中止、模型设置、思考级别设置、重连和销毁操作。通过状态机模式维护 unbound → ready → busy → disposed 生命周期转换，使用订阅者模式通知状态变更。",
+      "keyExports": ["RemoteSession", "RemoteSessionState", "RemoteSessionLifecycle", "RemoteSessionOperation", "CreateRemoteSessionOptions"]
+    },
+    {
+      "id": "packages/coding-agent/src/client/transcript.ts",
+      "type": "file",
+      "label": "transcript.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 101,
+      "summary": "Transcript 状态管理模块——提供不可变的 transcript 状态投影机制，将权威快照与流式进度增量合并。处理文本 delta、思考 delta、工具调用参数流式解析，以及 item 生命周期事件。",
+      "keyExports": ["TranscriptState", "createTranscriptState", "applyTranscriptSnapshot", "applyTranscriptProgress", "selectTranscript"]
+    },
+    {
+      "id": "packages/coding-agent/test/client/remote-session-lifecycle.test.ts",
+      "type": "file",
+      "label": "remote-session-lifecycle.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 190,
+      "summary": "RemoteSession 生命周期测试——验证会话替换时的 attach-before-detach 顺序、替换期间的互斥锁定、当服务器端会话变为活跃时的回滚行为，以及 dispose 对 reconnect 附件清理的等待语义。",
+      "keyExports": []
+    },
+    {
+      "id": "packages/coding-agent/test/client/remote-session-ownership.test.ts",
+      "type": "file",
+      "label": "remote-session-ownership.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 174,
+      "summary": "RemoteSession 所有权测试——验证工厂方法打开/创建会话、dispose 的幂等性与清理失败处理、独占协调器与共享租约的冲突检测、多会话共享单一客户端的独立性，以及客户端先销毁时的会话释放语义。",
+      "keyExports": []
+    },
+    {
+      "id": "packages/coding-agent/test/client/remote-session.test.ts",
+      "type": "file",
+      "label": "remote-session.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 196,
+      "summary": "RemoteSession 操作测试——验证流式进度投影不修改权威快照、session_removed 后的 unbound 状态与重新打开、submit 期间的 operation 暴露、turn 阶段的 steer 路由、abort 抢占、操作冲突拒绝，以及订阅者错误隔离。",
+      "keyExports": []
+    },
+    {
+      "id": "packages/coding-agent/test/client/support.ts",
+      "type": "file",
+      "label": "support.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 111,
+      "summary": "测试基础设施模块——提供 MemoryServer（内存 ByteTransport 模拟）、sessionSnapshot 工厂、connectClient 连接辅助、collectRequests 请求收集器，以及 openRemoteSession 便捷工厂，用于在测试中搭建完整的客户端-服务器交互环境。",
+      "keyExports": ["MemoryServer", "serverSnapshot", "sessionSnapshot", "connectClient", "collectRequests", "openRemoteSession"]
+    },
+    {
+      "id": "packages/coding-agent/test/client/transcript.test.ts",
+      "type": "file",
+      "label": "transcript.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 220,
+      "summary": "Transcript 状态投影测试——验证进度增量不修改权威快照、工具调用参数流式拼接与 JSON 解析、item_started/item_updated 瞬态项管理、revision 历史重置、跨会话低 revision 接受、queuedSteer 渲染，以及过期快照丢弃。",
+      "keyExports": []
+    },
+    {
+      "id": "packages/coding-agent/src/client/remote-session.ts::RemoteSession",
+      "type": "class",
+      "label": "RemoteSession",
+      "summary": "远程会话管理器——封装 PiClient 上的会话租约，提供声明式生命周期状态机（unbound/ready/busy/disposed）。支持打开已有会话、创建新会话、提交文本（自动区分 prompt/steer）、中止操作、修改模型和思考级别、重连，以及通过 subscribe 的响应式状态通知。所有操作通过 #runOperation 实现互斥。",
+      "methods": ["open", "create", "submit", "abort", "setModel", "setThinking", "reconnect", "dispose", "subscribe", "onConnectionStateChange"],
+      "parentId": "packages/coding-agent/src/client/remote-session.ts"
+    },
+    {
+      "id": "packages/coding-agent/src/client/transcript.ts::applyTranscriptProgress",
+      "type": "function",
+      "label": "applyTranscriptProgress",
+      "summary": "将流式进度事件应用到 transcript 状态——处理 item_started/item_updated/item_finished 生命周期事件，以及 assistant_delta 的 text/thinking/toolCall 三种增量类型。对 toolCall 增量维护缓冲区并在形成有效 JSON 时解析。返回新的不可变状态对象。",
+      "params": ["state", "progress"],
+      "parentId": "packages/coding-agent/src/client/transcript.ts"
+    },
+    {
+      "id": "packages/coding-agent/src/client/transcript.ts::selectTranscript",
+      "type": "function",
+      "label": "selectTranscript",
+      "summary": "从 transcript 状态中选择最终的 transcript 项列表——以快照 transcript 为基础，用进度项覆盖同 id 项，追加进度中新增的项（按 progressOrder 排序），最后追加 queuedSteer 中尚未出现的项。保证去重。",
+      "params": ["state"],
+      "parentId": "packages/coding-agent/src/client/transcript.ts"
+    },
+    {
+      "id": "packages/coding-agent/test/client/remote-session-ownership.test.ts::respondToAttach",
+      "type": "function",
+      "label": "respondToAttach",
+      "summary": "测试辅助函数——为 MemoryServer 注册消息监听器，自动对 attach 请求以指定 sessionId 的快照进行响应。简化所有权测试中的服务器模拟设置。",
+      "params": ["server", "sessionId"],
+      "parentId": "packages/coding-agent/test/client/remote-session-ownership.test.ts"
+    },
+    {
+      "id": "packages/coding-agent/test/client/support.ts::MemoryServer",
+      "type": "class",
+      "label": "MemoryServer",
+      "summary": "内存中的消息服务器模拟——实现 ByteTransport 接口，通过 ClientMessageDecoder 解码客户端消息并通过 onMessage 监听器分发。提供 send/close 方法模拟服务器端消息发送和连接关闭，用于测试中替代真实网络传输。",
+      "methods": ["connect", "onMessage", "send", "close"],
+      "parentId": "packages/coding-agent/test/client/support.ts"
+    },
+    {
+      "id": "packages/coding-agent/test/client/support.ts::sessionSnapshot",
+      "type": "function",
+      "label": "sessionSnapshot",
+      "summary": "创建测试用 SessionSnapshot 的工厂函数——提供合理的默认值（idle 阶段、faux 模型、空 transcript），支持通过 overrides 参数覆盖任意字段。被所有 RemoteSession 测试广泛使用。",
+      "params": ["id", "overrides"],
+      "parentId": "packages/coding-agent/test/client/support.ts"
+    },
+    {
+      "id": "packages/coding-agent/test/client/support.ts::connectClient",
+      "type": "function",
+      "label": "connectClient",
+      "summary": "创建并连接 PiClient 到 MemoryServer 的测试辅助——设置 hello 消息自动响应以完成握手协议，返回已连接的客户端实例。",
+      "params": ["server"],
+      "parentId": "packages/coding-agent/test/client/support.ts"
+    },
+    {
+      "id": "packages/coding-agent/test/client/support.ts::openRemoteSession",
+      "type": "function",
+      "label": "openRemoteSession",
+      "summary": "测试中打开远程会话的便捷工厂——调用 RemoteSession.open，自动拦截 attach 请求并以提供的快照响应，返回已就绪的 RemoteSession 实例。",
+      "params": ["client", "server", "snapshot", "options"],
+      "parentId": "packages/coding-agent/test/client/support.ts"
+    },
+    {
+      "id": "packages/coding-agent/test/client/transcript.test.ts::snapshot",
+      "type": "function",
+      "label": "snapshot",
+      "summary": "创建测试用 SessionSnapshot 的局部工厂——生成带有指定 revision 和文本内容的快照，包含一条 assistant 角色的 streaming transcript 项。用于 transcript 投影测试。",
+      "params": ["revision", "text"],
+      "parentId": "packages/coding-agent/test/client/transcript.test.ts"
+    }
+  ],
+  "edges": [
+    {
+      "source": "packages/coding-agent/src/client/remote-session.ts",
+      "target": "packages/coding-agent/src/client/transcript.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/client/remote-session-lifecycle.test.ts",
+      "target": "packages/coding-agent/test/client/support.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/client/remote-session-ownership.test.ts",
+      "target": "packages/coding-agent/src/client/remote-session.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/client/remote-session-ownership.test.ts",
+      "target": "packages/coding-agent/test/client/support.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/client/remote-session.test.ts",
+      "target": "packages/coding-agent/test/client/support.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/client/support.ts",
+      "target": "packages/coding-agent/src/client/remote-session.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/client/transcript.test.ts",
+      "target": "packages/coding-agent/src/client/transcript.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/src/client/remote-session.ts",
+      "target": "packages/coding-agent/src/client/remote-session.ts::RemoteSession",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/src/client/transcript.ts",
+      "target": "packages/coding-agent/src/client/transcript.ts::applyTranscriptProgress",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/src/client/transcript.ts",
+      "target": "packages/coding-agent/src/client/transcript.ts::selectTranscript",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/test/client/remote-session-ownership.test.ts",
+      "target": "packages/coding-agent/test/client/remote-session-ownership.test.ts::respondToAttach",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/test/client/support.ts",
+      "target": "packages/coding-agent/test/client/support.ts::MemoryServer",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/test/client/support.ts",
+      "target": "packages/coding-agent/test/client/support.ts::sessionSnapshot",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/test/client/support.ts",
+      "target": "packages/coding-agent/test/client/support.ts::connectClient",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/test/client/support.ts",
+      "target": "packages/coding-agent/test/client/support.ts::openRemoteSession",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/test/client/transcript.test.ts",
+      "target": "packages/coding-agent/test/client/transcript.test.ts::snapshot",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/src/client/remote-session.ts::RemoteSession",
+      "target": "packages/coding-agent/src/client/transcript.ts::applyTranscriptProgress",
+      "type": "calls",
+      "label": "uses applyTranscriptProgress"
+    },
+    {
+      "source": "packages/coding-agent/src/client/remote-session.ts::RemoteSession",
+      "target": "packages/coding-agent/src/client/transcript.ts::selectTranscript",
+      "type": "calls",
+      "label": "uses selectTranscript"
+    },
+    {
+      "source": "packages/coding-agent/test/client/support.ts::openRemoteSession",
+      "target": "packages/coding-agent/src/client/remote-session.ts::RemoteSession",
+      "type": "calls",
+      "label": "invokes RemoteSession.open"
+    },
+    {
+      "source": "packages/coding-agent/test/client/transcript.test.ts::snapshot",
+      "target": "packages/coding-agent/src/client/transcript.ts::applyTranscriptProgress",
+      "type": "calls",
+      "label": "tests applyTranscriptProgress"
+    },
+    {
+      "source": "packages/coding-agent/test/client/transcript.test.ts::snapshot",
+      "target": "packages/coding-agent/src/client/transcript.ts::selectTranscript",
+      "type": "calls",
+      "label": "tests selectTranscript"
+    }
+  ]
+}

@@ -1,0 +1,933 @@
+{
+  "batchIndex": 29,
+  "nodes": [
+    {
+      "id": "packages/coding-agent/src/cli/file-processor.ts",
+      "type": "file",
+      "label": "file-processor.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "path": "packages/coding-agent/src/cli/file-processor.ts",
+      "description": "CLI 文件参数处理器：将 @file 参数解析为文本内容和图片附件，支持图片自动调整大小。",
+      "lineCount": 87
+    },
+    {
+      "id": "packages/coding-agent/src/utils/clipboard-image.ts",
+      "type": "file",
+      "label": "clipboard-image.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "path": "packages/coding-agent/src/utils/clipboard-image.ts",
+      "description": "跨平台剪贴板图片读取模块：支持 Wayland (wl-paste)、X11 (xclip)、WSL (PowerShell)、以及原生 addon 等多种后端，并将不支持的格式转换为 PNG。",
+      "lineCount": 300
+    },
+    {
+      "id": "packages/coding-agent/src/utils/clipboard-native.ts",
+      "type": "file",
+      "label": "clipboard-native.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "path": "packages/coding-agent/src/utils/clipboard-native.ts",
+      "description": "原生剪贴板模块加载器：通过 createRequire 从多个路径尝试加载 @mariozechner/clipboard，并在 Termux / 无显示环境跳过。",
+      "lineCount": 33
+    },
+    {
+      "id": "packages/coding-agent/src/utils/clipboard.ts",
+      "type": "file",
+      "label": "clipboard.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "path": "packages/coding-agent/src/utils/clipboard.ts",
+      "description": "系统剪贴板读写模块：提供 readClipboardText 和 copyToClipboard，支持 native addon、平台工具 (pbcopy/clip/wl-copy/xclip/xsel)、Termux 以及 OSC 52 回退。",
+      "lineCount": 175
+    },
+    {
+      "id": "packages/coding-agent/src/utils/exif-orientation.ts",
+      "type": "file",
+      "label": "exif-orientation.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "path": "packages/coding-agent/src/utils/exif-orientation.ts",
+      "description": "EXIF 方向解析与应用模块：从 JPEG/WebP 的 EXIF 元数据中读取方向标记，并通过 Photon 像素操作进行旋转/翻转校正。",
+      "lineCount": 183
+    },
+    {
+      "id": "packages/coding-agent/src/utils/image-convert.ts",
+      "type": "file",
+      "label": "image-convert.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "path": "packages/coding-agent/src/utils/image-convert.ts",
+      "description": "图片格式转换模块：将非 PNG 图片通过 Photon 转换为 PNG，支持 EXIF 方向校正，用于终端 Kitty 图形协议显示。",
+      "lineCount": 49
+    },
+    {
+      "id": "packages/coding-agent/src/utils/image-process.ts",
+      "type": "file",
+      "label": "image-process.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "path": "packages/coding-agent/src/utils/image-process.ts",
+      "description": "图片处理管线：归一化图片格式（转换为支持的 MIME 类型）、可选自动缩放，生成 base64 数据和提示文本。",
+      "lineCount": 119
+    },
+    {
+      "id": "packages/coding-agent/src/utils/image-resize-core.ts",
+      "type": "file",
+      "label": "image-resize-core.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "path": "packages/coding-agent/src/utils/image-resize-core.ts",
+      "description": "图片缩放核心实现：使用 Photon (WASM) 进行尺寸调整，采用渐进式降质策略（PNG/JPEG 竞争、多质量等级、逐步缩小尺寸）以满足编码大小限制。",
+      "lineCount": 164
+    },
+    {
+      "id": "packages/coding-agent/src/utils/image-resize-worker.ts",
+      "type": "file",
+      "label": "image-resize-worker.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "path": "packages/coding-agent/src/utils/image-resize-worker.ts",
+      "description": "图片缩放 Worker 线程脚本：接收 inputBytes/mimeType/options，调用 resizeImageInProcess 并通过 postMessage 返回结果。",
+      "lineCount": 42
+    },
+    {
+      "id": "packages/coding-agent/src/utils/image-resize.ts",
+      "type": "file",
+      "label": "image-resize.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "path": "packages/coding-agent/src/utils/image-resize.ts",
+      "description": "图片缩放入口：优先在 Worker 线程中执行 Photon WASM 操作以避免阻塞 TUI 事件循环，失败时回退到进程内处理；还提供 formatDimensionNote 生成缩放提示。",
+      "lineCount": 123
+    },
+    {
+      "id": "packages/coding-agent/src/utils/mime.ts",
+      "type": "file",
+      "label": "mime.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "path": "packages/coding-agent/src/utils/mime.ts",
+      "description": "MIME 类型检测模块：通过魔数字节检测图片格式（JPEG/PNG/GIF/WebP/BMP），支持文件路径异步检测和缓冲区同步检测，并排除动画 PNG。",
+      "lineCount": 116
+    },
+    {
+      "id": "packages/coding-agent/src/utils/photon.ts",
+      "type": "file",
+      "label": "photon.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "path": "packages/coding-agent/src/utils/photon.ts",
+      "description": "Photon 图像库加载器：通过补丁 fs.readFileSync 解决 Bun 编译二进制中 WASM 路径硬编码问题，支持 Node.js 和 Bun 运行时。",
+      "lineCount": 139
+    },
+    {
+      "id": "packages/coding-agent/src/utils/tool-result-images.ts",
+      "type": "file",
+      "label": "tool-result-images.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "path": "packages/coding-agent/src/utils/tool-result-images.ts",
+      "description": "工具结果图片归一化：对工具返回的图片内容进行格式转换和尺寸调整，防止超大图片导致 provider 拒绝整个会话。",
+      "lineCount": 62
+    },
+    {
+      "id": "packages/coding-agent/test/clipboard-native.test.ts",
+      "type": "file",
+      "label": "clipboard-native.test.ts",
+      "language": "typescript",
+      "fileCategory": "test",
+      "path": "packages/coding-agent/test/clipboard-native.test.ts",
+      "description": "clipboard-native 单元测试：验证 loadClipboardNative 的多路径回退和全部失败返回 null 的行为。",
+      "lineCount": 32
+    },
+    {
+      "id": "packages/coding-agent/test/clipboard.test.ts",
+      "type": "file",
+      "label": "clipboard.test.ts",
+      "language": "typescript",
+      "fileCategory": "test",
+      "path": "packages/coding-agent/test/clipboard.test.ts",
+      "description": "clipboard 模块测试：覆盖 readClipboardText 的 Wayland/native 回退逻辑和 copyToClipboard 的 OSC 52/shell 回退链。",
+      "lineCount": 210
+    },
+    {
+      "id": "packages/coding-agent/test/image-process.test.ts",
+      "type": "file",
+      "label": "image-process.test.ts",
+      "language": "typescript",
+      "fileCategory": "test",
+      "path": "packages/coding-agent/test/image-process.test.ts",
+      "description": "图片处理管线测试：验证 BMP 魔数检测、BMP 到 PNG 转换（禁用/启用 auto-resize）。",
+      "lineCount": 53
+    },
+    {
+      "id": "packages/coding-agent/test/image-processing.test.ts",
+      "type": "file",
+      "label": "image-processing.test.ts",
+      "language": "typescript",
+      "fileCategory": "test",
+      "path": "packages/coding-agent/test/image-processing.test.ts",
+      "description": "图片处理工具测试：覆盖 convertToPng 格式转换、resizeImage 的尺寸/字节限制处理、formatDimensionNote 提示生成。",
+      "lineCount": 170
+    },
+    {
+      "id": "packages/coding-agent/test/image-resize-callers.test.ts",
+      "type": "file",
+      "label": "image-resize-callers.test.ts",
+      "language": "typescript",
+      "fileCategory": "test",
+      "path": "packages/coding-agent/test/image-resize-callers.test.ts",
+      "description": "图片缩放调用方测试：验证 read tool 和 file-processor 在 auto-resize 失败时优雅降级为文本输出。",
+      "lineCount": 53
+    },
+    {
+      "id": "packages/coding-agent/test/tool-result-images.test.ts",
+      "type": "file",
+      "label": "tool-result-images.test.ts",
+      "language": "typescript",
+      "fileCategory": "test",
+      "path": "packages/coding-agent/test/tool-result-images.test.ts",
+      "description": "工具结果图片归一化测试：覆盖无图片快速路径、超大图片缩放、禁用 auto-resize、不支持格式转换、不可解码图片保留、文本块顺序保持。",
+      "lineCount": 137
+    },
+    {
+      "id": "packages/coding-agent/src/cli/file-processor.ts::processFileArguments",
+      "type": "function",
+      "label": "processFileArguments",
+      "path": "packages/coding-agent/src/cli/file-processor.ts",
+      "description": "将 @file CLI 参数处理为文本内容和图片附件，支持路径解析、存在性检查、MIME 检测和图片处理。",
+      "lineCount": 64,
+      "startLine": 24
+    },
+    {
+      "id": "packages/coding-agent/src/utils/clipboard-image.ts::extensionForImageMimeType",
+      "type": "function",
+      "label": "extensionForImageMimeType",
+      "path": "packages/coding-agent/src/utils/clipboard-image.ts",
+      "description": "根据 MIME 类型返回对应文件扩展名（png/jpg/webp/gif）。",
+      "lineCount": 13,
+      "startLine": 30
+    },
+    {
+      "id": "packages/coding-agent/src/utils/clipboard-image.ts::selectPreferredImageMimeType",
+      "type": "function",
+      "label": "selectPreferredImageMimeType",
+      "path": "packages/coding-agent/src/utils/clipboard-image.ts",
+      "description": "从候选 MIME 类型列表中选择首选的受支持图片格式。",
+      "lineCount": 15,
+      "startLine": 45
+    },
+    {
+      "id": "packages/coding-agent/src/utils/clipboard-image.ts::convertToPng",
+      "type": "function",
+      "label": "convertToPng (clipboard-image)",
+      "path": "packages/coding-agent/src/utils/clipboard-image.ts",
+      "description": "使用 Photon 将不支持的图片格式转换为 PNG。",
+      "lineCount": 16,
+      "startLine": 71
+    },
+    {
+      "id": "packages/coding-agent/src/utils/clipboard-image.ts::runCommand",
+      "type": "function",
+      "label": "runCommand",
+      "path": "packages/coding-agent/src/utils/clipboard-image.ts",
+      "description": "同步执行外部命令并返回 stdout 和成功状态，支持超时和缓冲区限制。",
+      "lineCount": 27,
+      "startLine": 89
+    },
+    {
+      "id": "packages/coding-agent/src/utils/clipboard-image.ts::readClipboardImageViaWlPaste",
+      "type": "function",
+      "label": "readClipboardImageViaWlPaste",
+      "path": "packages/coding-agent/src/utils/clipboard-image.ts",
+      "description": "通过 wl-paste 命令从 Wayland 剪贴板读取图片数据。",
+      "lineCount": 23,
+      "startLine": 118
+    },
+    {
+      "id": "packages/coding-agent/src/utils/clipboard-image.ts::isWSL",
+      "type": "function",
+      "label": "isWSL",
+      "path": "packages/coding-agent/src/utils/clipboard-image.ts",
+      "description": "检测当前环境是否为 WSL (Windows Subsystem for Linux)。",
+      "lineCount": 11,
+      "startLine": 143
+    },
+    {
+      "id": "packages/coding-agent/src/utils/clipboard-image.ts::readClipboardImageViaPowerShell",
+      "type": "function",
+      "label": "readClipboardImageViaPowerShell",
+      "path": "packages/coding-agent/src/utils/clipboard-image.ts",
+      "description": "通过 PowerShell 从 Windows 剪贴板读取图片（WSL 回退方案）。",
+      "lineCount": 50,
+      "startLine": 161
+    },
+    {
+      "id": "packages/coding-agent/src/utils/clipboard-image.ts::readClipboardImageViaXclip",
+      "type": "function",
+      "label": "readClipboardImageViaXclip",
+      "path": "packages/coding-agent/src/utils/clipboard-image.ts",
+      "description": "通过 xclip 命令从 X11 剪贴板读取图片数据。",
+      "lineCount": 25,
+      "startLine": 213
+    },
+    {
+      "id": "packages/coding-agent/src/utils/clipboard-image.ts::readClipboardImageViaNativeClipboard",
+      "type": "function",
+      "label": "readClipboardImageViaNativeClipboard",
+      "path": "packages/coding-agent/src/utils/clipboard-image.ts",
+      "description": "通过原生 clipboard addon 读取剪贴板图片。",
+      "lineCount": 13,
+      "startLine": 240
+    },
+    {
+      "id": "packages/coding-agent/src/utils/clipboard-image.ts::readClipboardImage",
+      "type": "function",
+      "label": "readClipboardImage",
+      "path": "packages/coding-agent/src/utils/clipboard-image.ts",
+      "description": "跨平台剪贴板图片读取入口：按平台选择 Wayland/WSL/X11/native 后端，并将不支持格式转为 PNG。",
+      "lineCount": 47,
+      "startLine": 254
+    },
+    {
+      "id": "packages/coding-agent/src/utils/clipboard.ts::readClipboardText",
+      "type": "function",
+      "label": "readClipboardText",
+      "path": "packages/coding-agent/src/utils/clipboard.ts",
+      "description": "从系统剪贴板读取纯文本，支持 Wayland 优先读取和 native addon 回退。",
+      "lineCount": 19,
+      "startLine": 53
+    },
+    {
+      "id": "packages/coding-agent/src/utils/clipboard.ts::copyToClipboard",
+      "type": "function",
+      "label": "copyToClipboard",
+      "path": "packages/coding-agent/src/utils/clipboard.ts",
+      "description": "将文本复制到系统剪贴板：native addon → 平台工具 (pbcopy/clip/wl-copy/xclip) → OSC 52 回退链。",
+      "lineCount": 103,
+      "startLine": 73
+    },
+    {
+      "id": "packages/coding-agent/src/utils/exif-orientation.ts::readOrientationFromTiff",
+      "type": "function",
+      "label": "readOrientationFromTiff",
+      "path": "packages/coding-agent/src/utils/exif-orientation.ts",
+      "description": "从 TIFF 结构的 IFD 条目中读取 EXIF 方向值 (0x0112)。",
+      "lineCount": 32,
+      "startLine": 5
+    },
+    {
+      "id": "packages/coding-agent/src/utils/exif-orientation.ts::findJpegTiffOffset",
+      "type": "function",
+      "label": "findJpegTiffOffset",
+      "path": "packages/coding-agent/src/utils/exif-orientation.ts",
+      "description": "在 JPEG 数据中定位 EXIF APP1 段的 TIFF 头偏移。",
+      "lineCount": 24,
+      "startLine": 39
+    },
+    {
+      "id": "packages/coding-agent/src/utils/exif-orientation.ts::findWebpTiffOffset",
+      "type": "function",
+      "label": "findWebpTiffOffset",
+      "path": "packages/coding-agent/src/utils/exif-orientation.ts",
+      "description": "在 WebP RIFF 结构中定位 EXIF chunk 的 TIFF 头偏移。",
+      "lineCount": 20,
+      "startLine": 65
+    },
+    {
+      "id": "packages/coding-agent/src/utils/exif-orientation.ts::hasExifHeader",
+      "type": "function",
+      "label": "hasExifHeader",
+      "path": "packages/coding-agent/src/utils/exif-orientation.ts",
+      "description": "检查指定偏移处是否有 Exif\\0\\0 头标记。",
+      "lineCount": 10,
+      "startLine": 87
+    },
+    {
+      "id": "packages/coding-agent/src/utils/exif-orientation.ts::getExifOrientation",
+      "type": "function",
+      "label": "getExifOrientation",
+      "path": "packages/coding-agent/src/utils/exif-orientation.ts",
+      "description": "从图片字节中获取 EXIF 方向值，支持 JPEG 和 WebP 格式。",
+      "lineCount": 24,
+      "startLine": 98
+    },
+    {
+      "id": "packages/coding-agent/src/utils/exif-orientation.ts::rotate90",
+      "type": "function",
+      "label": "rotate90",
+      "path": "packages/coding-agent/src/utils/exif-orientation.ts",
+      "description": "使用像素重映射实现 90 度旋转，返回新的 PhotonImage。",
+      "lineCount": 19,
+      "startLine": 126
+    },
+    {
+      "id": "packages/coding-agent/src/utils/exif-orientation.ts::applyExifOrientation",
+      "type": "function",
+      "label": "applyExifOrientation",
+      "path": "packages/coding-agent/src/utils/exif-orientation.ts",
+      "description": "根据 EXIF 方向值应用旋转/翻转操作，支持全部 8 种方向。",
+      "lineCount": 36,
+      "startLine": 147
+    },
+    {
+      "id": "packages/coding-agent/src/utils/image-convert.ts::convertImageBytesToPng",
+      "type": "function",
+      "label": "convertImageBytesToPng",
+      "path": "packages/coding-agent/src/utils/image-convert.ts",
+      "description": "将原始图片字节转换为 PNG 格式，包含 EXIF 方向校正。",
+      "lineCount": 20,
+      "startLine": 4
+    },
+    {
+      "id": "packages/coding-agent/src/utils/image-convert.ts::convertToPng",
+      "type": "function",
+      "label": "convertToPng (image-convert)",
+      "path": "packages/coding-agent/src/utils/image-convert.ts",
+      "description": "将 base64 编码的图片转换为 PNG，用于 Kitty 图形协议显示。",
+      "lineCount": 19,
+      "startLine": 30
+    },
+    {
+      "id": "packages/coding-agent/src/utils/image-process.ts::normalizeImage",
+      "type": "function",
+      "label": "normalizeImage",
+      "path": "packages/coding-agent/src/utils/image-process.ts",
+      "description": "归一化图片格式，将不支持的 MIME 类型转换为 PNG。",
+      "lineCount": 16,
+      "startLine": 49
+    },
+    {
+      "id": "packages/coding-agent/src/utils/image-process.ts::processImage",
+      "type": "function",
+      "label": "processImage",
+      "path": "packages/coding-agent/src/utils/image-process.ts",
+      "description": "图片处理管线入口：归一化格式 → 可选自动缩放 → 返回 base64 数据和提示。",
+      "lineCount": 47,
+      "startLine": 72
+    },
+    {
+      "id": "packages/coding-agent/src/utils/image-resize-core.ts::resizeImageInProcess",
+      "type": "function",
+      "label": "resizeImageInProcess",
+      "path": "packages/coding-agent/src/utils/image-resize-core.ts",
+      "description": "进程内图片缩放：使用 Photon WASM，渐进式降质策略（多格式竞争、多质量等级、逐步缩小）以满足 maxBytes 限制。",
+      "lineCount": 105,
+      "startLine": 59
+    },
+    {
+      "id": "packages/coding-agent/src/utils/image-resize.ts::resizeImageInWorker",
+      "type": "function",
+      "label": "resizeImageInWorker",
+      "path": "packages/coding-agent/src/utils/image-resize.ts",
+      "description": "在 Worker 线程中执行图片缩放，通过 postMessage 传递结果。",
+      "lineCount": 51,
+      "startLine": 25
+    },
+    {
+      "id": "packages/coding-agent/src/utils/image-resize.ts::resizeImage",
+      "type": "function",
+      "label": "resizeImage",
+      "path": "packages/coding-agent/src/utils/image-resize.ts",
+      "description": "图片缩放入口：优先 Worker 线程执行，失败时回退到进程内处理，支持 Bun 编译布局。",
+      "lineCount": 25,
+      "startLine": 85
+    },
+    {
+      "id": "packages/coding-agent/src/utils/image-resize.ts::formatDimensionNote",
+      "type": "function",
+      "label": "formatDimensionNote",
+      "path": "packages/coding-agent/src/utils/image-resize.ts",
+      "description": "为缩放后的图片生成坐标映射提示文本。",
+      "lineCount": 12,
+      "startLine": 116
+    },
+    {
+      "id": "packages/coding-agent/src/utils/mime.ts::detectSupportedImageMimeType",
+      "type": "function",
+      "label": "detectSupportedImageMimeType",
+      "path": "packages/coding-agent/src/utils/mime.ts",
+      "description": "通过魔数字节检测缓冲区中的图片 MIME 类型（JPEG/PNG/GIF/WebP/BMP）。",
+      "lineCount": 16,
+      "startLine": 6
+    },
+    {
+      "id": "packages/coding-agent/src/utils/mime.ts::detectSupportedImageMimeTypeFromFile",
+      "type": "function",
+      "label": "detectSupportedImageMimeTypeFromFile",
+      "path": "packages/coding-agent/src/utils/mime.ts",
+      "description": "从文件路径异步检测图片 MIME 类型，读取前 4100 字节进行魔数匹配。",
+      "lineCount": 10,
+      "startLine": 25
+    },
+    {
+      "id": "packages/coding-agent/src/utils/mime.ts::isAnimatedPng",
+      "type": "function",
+      "label": "isAnimatedPng",
+      "path": "packages/coding-agent/src/utils/mime.ts",
+      "description": "检测 PNG 是否为动画格式（检查 acTL chunk）。",
+      "lineCount": 13,
+      "startLine": 42
+    },
+    {
+      "id": "packages/coding-agent/src/utils/mime.ts::isBmp",
+      "type": "function",
+      "label": "isBmp",
+      "path": "packages/coding-agent/src/utils/mime.ts",
+      "description": "验证 BMP 文件结构的完整性（文件大小、像素偏移、颜色平面、位深度）。",
+      "lineCount": 24,
+      "startLine": 57
+    },
+    {
+      "id": "packages/coding-agent/src/utils/photon.ts::patchPhotonWasmRead",
+      "type": "function",
+      "label": "patchPhotonWasmRead",
+      "path": "packages/coding-agent/src/utils/photon.ts",
+      "description": "补丁 fs.readFileSync 以重定向缺失的 photon_rs_bg.wasm 读取到回退路径。",
+      "lineCount": 56,
+      "startLine": 54
+    },
+    {
+      "id": "packages/coding-agent/src/utils/photon.ts::loadPhoton",
+      "type": "function",
+      "label": "loadPhoton",
+      "path": "packages/coding-agent/src/utils/photon.ts",
+      "description": "异步加载 Photon 模块，缓存结果，首次加载时临时补丁 WASM 读取路径。",
+      "lineCount": 24,
+      "startLine": 116
+    }
+  ],
+  "edges": [
+    {
+      "source": "packages/coding-agent/src/cli/file-processor.ts",
+      "target": "packages/coding-agent/src/core/tools/path-utils.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/src/cli/file-processor.ts",
+      "target": "packages/coding-agent/src/utils/image-process.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/src/cli/file-processor.ts",
+      "target": "packages/coding-agent/src/utils/mime.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard-image.ts",
+      "target": "packages/coding-agent/src/utils/clipboard-native.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard-image.ts",
+      "target": "packages/coding-agent/src/utils/photon.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard.ts",
+      "target": "packages/coding-agent/src/utils/clipboard-image.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard.ts",
+      "target": "packages/coding-agent/src/utils/clipboard-native.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/exif-orientation.ts",
+      "target": "packages/coding-agent/src/utils/photon.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/image-convert.ts",
+      "target": "packages/coding-agent/src/utils/exif-orientation.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/image-convert.ts",
+      "target": "packages/coding-agent/src/utils/photon.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/image-process.ts",
+      "target": "packages/coding-agent/src/utils/image-convert.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/image-process.ts",
+      "target": "packages/coding-agent/src/utils/image-resize.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/image-resize-core.ts",
+      "target": "packages/coding-agent/src/utils/exif-orientation.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/image-resize-core.ts",
+      "target": "packages/coding-agent/src/utils/photon.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/image-resize-worker.ts",
+      "target": "packages/coding-agent/src/utils/image-resize-core.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/image-resize.ts",
+      "target": "packages/coding-agent/src/utils/image-resize-core.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/tool-result-images.ts",
+      "target": "packages/coding-agent/src/utils/image-process.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/clipboard-native.test.ts",
+      "target": "packages/coding-agent/src/utils/clipboard-native.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/clipboard.test.ts",
+      "target": "packages/coding-agent/src/utils/clipboard.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/image-process.test.ts",
+      "target": "packages/coding-agent/src/utils/image-process.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/image-process.test.ts",
+      "target": "packages/coding-agent/src/utils/mime.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/image-processing.test.ts",
+      "target": "packages/coding-agent/src/utils/image-convert.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/image-processing.test.ts",
+      "target": "packages/coding-agent/src/utils/image-resize.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/image-resize-callers.test.ts",
+      "target": "packages/coding-agent/src/cli/file-processor.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/image-resize-callers.test.ts",
+      "target": "packages/coding-agent/src/core/tools/read.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/image-resize-callers.test.ts",
+      "target": "packages/coding-agent/src/utils/image-resize.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/tool-result-images.test.ts",
+      "target": "packages/coding-agent/src/utils/tool-result-images.ts",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/src/cli/file-processor.ts",
+      "target": "packages/coding-agent/src/cli/file-processor.ts::processFileArguments",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard-image.ts",
+      "target": "packages/coding-agent/src/utils/clipboard-image.ts::extensionForImageMimeType",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard-image.ts",
+      "target": "packages/coding-agent/src/utils/clipboard-image.ts::selectPreferredImageMimeType",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard-image.ts",
+      "target": "packages/coding-agent/src/utils/clipboard-image.ts::convertToPng",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard-image.ts",
+      "target": "packages/coding-agent/src/utils/clipboard-image.ts::runCommand",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard-image.ts",
+      "target": "packages/coding-agent/src/utils/clipboard-image.ts::readClipboardImageViaWlPaste",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard-image.ts",
+      "target": "packages/coding-agent/src/utils/clipboard-image.ts::isWSL",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard-image.ts",
+      "target": "packages/coding-agent/src/utils/clipboard-image.ts::readClipboardImageViaPowerShell",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard-image.ts",
+      "target": "packages/coding-agent/src/utils/clipboard-image.ts::readClipboardImageViaXclip",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard-image.ts",
+      "target": "packages/coding-agent/src/utils/clipboard-image.ts::readClipboardImageViaNativeClipboard",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard-image.ts",
+      "target": "packages/coding-agent/src/utils/clipboard-image.ts::readClipboardImage",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard.ts",
+      "target": "packages/coding-agent/src/utils/clipboard.ts::readClipboardText",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard.ts",
+      "target": "packages/coding-agent/src/utils/clipboard.ts::copyToClipboard",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/exif-orientation.ts",
+      "target": "packages/coding-agent/src/utils/exif-orientation.ts::readOrientationFromTiff",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/exif-orientation.ts",
+      "target": "packages/coding-agent/src/utils/exif-orientation.ts::findJpegTiffOffset",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/exif-orientation.ts",
+      "target": "packages/coding-agent/src/utils/exif-orientation.ts::findWebpTiffOffset",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/exif-orientation.ts",
+      "target": "packages/coding-agent/src/utils/exif-orientation.ts::hasExifHeader",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/exif-orientation.ts",
+      "target": "packages/coding-agent/src/utils/exif-orientation.ts::getExifOrientation",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/exif-orientation.ts",
+      "target": "packages/coding-agent/src/utils/exif-orientation.ts::rotate90",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/exif-orientation.ts",
+      "target": "packages/coding-agent/src/utils/exif-orientation.ts::applyExifOrientation",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/image-convert.ts",
+      "target": "packages/coding-agent/src/utils/image-convert.ts::convertImageBytesToPng",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/image-convert.ts",
+      "target": "packages/coding-agent/src/utils/image-convert.ts::convertToPng",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/image-process.ts",
+      "target": "packages/coding-agent/src/utils/image-process.ts::normalizeImage",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/image-process.ts",
+      "target": "packages/coding-agent/src/utils/image-process.ts::processImage",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/image-resize-core.ts",
+      "target": "packages/coding-agent/src/utils/image-resize-core.ts::resizeImageInProcess",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/image-resize.ts",
+      "target": "packages/coding-agent/src/utils/image-resize.ts::resizeImageInWorker",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/image-resize.ts",
+      "target": "packages/coding-agent/src/utils/image-resize.ts::resizeImage",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/image-resize.ts",
+      "target": "packages/coding-agent/src/utils/image-resize.ts::formatDimensionNote",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/mime.ts",
+      "target": "packages/coding-agent/src/utils/mime.ts::detectSupportedImageMimeType",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/mime.ts",
+      "target": "packages/coding-agent/src/utils/mime.ts::detectSupportedImageMimeTypeFromFile",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/mime.ts",
+      "target": "packages/coding-agent/src/utils/mime.ts::isAnimatedPng",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/mime.ts",
+      "target": "packages/coding-agent/src/utils/mime.ts::isBmp",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/photon.ts",
+      "target": "packages/coding-agent/src/utils/photon.ts::patchPhotonWasmRead",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/photon.ts",
+      "target": "packages/coding-agent/src/utils/photon.ts::loadPhoton",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard-image.ts::readClipboardImageViaWlPaste",
+      "target": "packages/coding-agent/src/utils/clipboard-image.ts::runCommand",
+      "label": "calls"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard-image.ts::readClipboardImageViaWlPaste",
+      "target": "packages/coding-agent/src/utils/clipboard-image.ts::selectPreferredImageMimeType",
+      "label": "calls"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard-image.ts::readClipboardImageViaPowerShell",
+      "target": "packages/coding-agent/src/utils/clipboard-image.ts::runCommand",
+      "label": "calls"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard-image.ts::readClipboardImageViaXclip",
+      "target": "packages/coding-agent/src/utils/clipboard-image.ts::runCommand",
+      "label": "calls"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard-image.ts::readClipboardImageViaXclip",
+      "target": "packages/coding-agent/src/utils/clipboard-image.ts::selectPreferredImageMimeType",
+      "label": "calls"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard-image.ts::readClipboardImage",
+      "target": "packages/coding-agent/src/utils/clipboard-image.ts::isWSL",
+      "label": "calls"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard-image.ts::readClipboardImage",
+      "target": "packages/coding-agent/src/utils/clipboard-image.ts::readClipboardImageViaWlPaste",
+      "label": "calls"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard-image.ts::readClipboardImage",
+      "target": "packages/coding-agent/src/utils/clipboard-image.ts::readClipboardImageViaXclip",
+      "label": "calls"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard-image.ts::readClipboardImage",
+      "target": "packages/coding-agent/src/utils/clipboard-image.ts::readClipboardImageViaPowerShell",
+      "label": "calls"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard-image.ts::readClipboardImage",
+      "target": "packages/coding-agent/src/utils/clipboard-image.ts::readClipboardImageViaNativeClipboard",
+      "label": "calls"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/clipboard-image.ts::readClipboardImage",
+      "target": "packages/coding-agent/src/utils/clipboard-image.ts::convertToPng",
+      "label": "calls"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/exif-orientation.ts::findJpegTiffOffset",
+      "target": "packages/coding-agent/src/utils/exif-orientation.ts::hasExifHeader",
+      "label": "calls"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/exif-orientation.ts::findWebpTiffOffset",
+      "target": "packages/coding-agent/src/utils/exif-orientation.ts::hasExifHeader",
+      "label": "calls"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/exif-orientation.ts::getExifOrientation",
+      "target": "packages/coding-agent/src/utils/exif-orientation.ts::findJpegTiffOffset",
+      "label": "calls"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/exif-orientation.ts::getExifOrientation",
+      "target": "packages/coding-agent/src/utils/exif-orientation.ts::findWebpTiffOffset",
+      "label": "calls"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/exif-orientation.ts::getExifOrientation",
+      "target": "packages/coding-agent/src/utils/exif-orientation.ts::readOrientationFromTiff",
+      "label": "calls"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/exif-orientation.ts::applyExifOrientation",
+      "target": "packages/coding-agent/src/utils/exif-orientation.ts::getExifOrientation",
+      "label": "calls"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/exif-orientation.ts::applyExifOrientation",
+      "target": "packages/coding-agent/src/utils/exif-orientation.ts::rotate90",
+      "label": "calls"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/image-convert.ts::convertToPng",
+      "target": "packages/coding-agent/src/utils/image-convert.ts::convertImageBytesToPng",
+      "label": "calls"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/image-process.ts::processImage",
+      "target": "packages/coding-agent/src/utils/image-process.ts::normalizeImage",
+      "label": "calls"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/image-resize.ts::resizeImage",
+      "target": "packages/coding-agent/src/utils/image-resize.ts::resizeImageInWorker",
+      "label": "calls"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/mime.ts::detectSupportedImageMimeType",
+      "target": "packages/coding-agent/src/utils/mime.ts::isAnimatedPng",
+      "label": "calls"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/mime.ts::detectSupportedImageMimeType",
+      "target": "packages/coding-agent/src/utils/mime.ts::isBmp",
+      "label": "calls"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/mime.ts::detectSupportedImageMimeTypeFromFile",
+      "target": "packages/coding-agent/src/utils/mime.ts::detectSupportedImageMimeType",
+      "label": "calls"
+    },
+    {
+      "source": "packages/coding-agent/src/utils/photon.ts::loadPhoton",
+      "target": "packages/coding-agent/src/utils/photon.ts::patchPhotonWasmRead",
+      "label": "calls"
+    }
+  ]
+}

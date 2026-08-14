@@ -1,0 +1,905 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 24,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "packages/coding-agent/test/suite/regressions/3686-session-name-event.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 61,
+      "nonEmptyLines": 50,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/3688-tree-cancel-compacting.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 29,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/3982-message-end-cost-override.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 56,
+      "nonEmptyLines": 49,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/5109-exclude-tools.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 81,
+      "nonEmptyLines": 75,
+      "functions": [
+        {
+          "name": "toolNames",
+          "startLine": 6,
+          "endLine": 8,
+          "params": [
+            "tools"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "toolNames",
+          "callee": "tools.map((tool) => tool.name).sort",
+          "lineNumber": 7
+        },
+        {
+          "caller": "toolNames",
+          "callee": "tools.map",
+          "lineNumber": 7
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/5217-compaction-reason.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 95,
+      "nonEmptyLines": 80,
+      "functions": [
+        {
+          "name": "recordingExtension",
+          "startLine": 16,
+          "endLine": 33,
+          "params": [
+            "recorded"
+          ]
+        },
+        {
+          "name": "createCompactionHarness",
+          "startLine": 35,
+          "endLine": 44,
+          "params": [
+            "recorded"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "recordingExtension",
+          "callee": "pi.on",
+          "lineNumber": 18
+        },
+        {
+          "caller": "recordingExtension",
+          "callee": "recorded.push",
+          "lineNumber": 19
+        },
+        {
+          "caller": "recordingExtension",
+          "callee": "pi.on",
+          "lineNumber": 29
+        },
+        {
+          "caller": "recordingExtension",
+          "callee": "recorded.push",
+          "lineNumber": 30
+        },
+        {
+          "caller": "createCompactionHarness",
+          "callee": "createHarness",
+          "lineNumber": 36
+        },
+        {
+          "caller": "createCompactionHarness",
+          "callee": "recordingExtension",
+          "lineNumber": 38
+        },
+        {
+          "caller": "createCompactionHarness",
+          "callee": "harness.setResponses",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createCompactionHarness",
+          "callee": "fauxAssistantMessage",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createCompactionHarness",
+          "callee": "fauxAssistantMessage",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createCompactionHarness",
+          "callee": "harness.session.prompt",
+          "lineNumber": 41
+        },
+        {
+          "caller": "createCompactionHarness",
+          "callee": "harness.session.prompt",
+          "lineNumber": 42
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/5943-session-start-notify.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 519,
+      "nonEmptyLines": 478,
+      "functions": [
+        {
+          "name": "createUiContext",
+          "startLine": 10,
+          "endLine": 45,
+          "params": [
+            "onNotify"
+          ]
+        },
+        {
+          "name": "createReloadCommandContext",
+          "startLine": 156,
+          "endLine": 205,
+          "params": [
+            "overrides"
+          ]
+        },
+        {
+          "name": "getMessageText",
+          "startLine": 209,
+          "endLine": 222,
+          "params": [
+            "event"
+          ]
+        },
+        {
+          "name": "createLoadedResourcesContext",
+          "startLine": 224,
+          "endLine": 253,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createReloadCommandContext",
+          "callee": "options?.beforeSessionStart",
+          "lineNumber": 164
+        },
+        {
+          "caller": "getMessageText",
+          "callee": "content\n\t\t.filter((part): part is { type: \"text\"; text: string } => part.type === \"text\")\n\t\t.map((part) => part.text)\n\t\t.join",
+          "lineNumber": 218
+        },
+        {
+          "caller": "getMessageText",
+          "callee": "content\n\t\t.filter((part): part is { type: \"text\"; text: string } => part.type === \"text\")\n\t\t.map",
+          "lineNumber": 218
+        },
+        {
+          "caller": "getMessageText",
+          "callee": "content\n\t\t.filter",
+          "lineNumber": 218
+        },
+        {
+          "caller": "createLoadedResourcesContext",
+          "callee": "resourcePath.replace",
+          "lineNumber": 250
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/5996-session-name-newlines.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 40,
+      "nonEmptyLines": 32,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/5998-blocked-tool-terminate.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 53,
+      "nonEmptyLines": 48,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/6019-explicit-provider-retry-message.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 27,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/6162-extension-active-tools-next-turn.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 192,
+      "nonEmptyLines": 172,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/6260-inline-extension-naming.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 119,
+      "nonEmptyLines": 98,
+      "functions": [
+        {
+          "name": "noop",
+          "startLine": 8,
+          "endLine": 8,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fixture",
+          "callee": "join",
+          "lineNumber": 14
+        },
+        {
+          "caller": "fixture",
+          "callee": "tmpdir",
+          "lineNumber": 14
+        },
+        {
+          "caller": "fixture",
+          "callee": "Date.now",
+          "lineNumber": 14
+        },
+        {
+          "caller": "fixture",
+          "callee": "Math.random().toString(36).slice",
+          "lineNumber": 14
+        },
+        {
+          "caller": "fixture",
+          "callee": "Math.random().toString",
+          "lineNumber": 14
+        },
+        {
+          "caller": "fixture",
+          "callee": "Math.random",
+          "lineNumber": 14
+        },
+        {
+          "caller": "fixture",
+          "callee": "join",
+          "lineNumber": 15
+        },
+        {
+          "caller": "fixture",
+          "callee": "join",
+          "lineNumber": 16
+        },
+        {
+          "caller": "fixture",
+          "callee": "mkdirSync",
+          "lineNumber": 17
+        },
+        {
+          "caller": "fixture",
+          "callee": "mkdirSync",
+          "lineNumber": 18
+        },
+        {
+          "caller": "fixture",
+          "callee": "roots.push",
+          "lineNumber": 19
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/6324-branch-summary-ambient-auth.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 54,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/6363-agent-settled-event.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 158,
+      "nonEmptyLines": 145,
+      "functions": [
+        {
+          "name": "createWaitTool",
+          "startLine": 7,
+          "endLine": 18,
+          "params": [
+            "released"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createWaitTool",
+          "callee": "Type.Object",
+          "lineNumber": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/6647-compaction-retries-transient-stream-drop.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 192,
+      "nonEmptyLines": 170,
+      "callGraph": [
+        {
+          "caller": "seedCompactableSession",
+          "callee": "harness.settingsManager.applyOverrides",
+          "lineNumber": 34
+        },
+        {
+          "caller": "seedCompactableSession",
+          "callee": "Date.now",
+          "lineNumber": 35
+        },
+        {
+          "caller": "seedCompactableSession",
+          "callee": "harness.sessionManager.appendMessage",
+          "lineNumber": 36
+        },
+        {
+          "caller": "seedCompactableSession",
+          "callee": "harness.getModel",
+          "lineNumber": 41
+        },
+        {
+          "caller": "seedCompactableSession",
+          "callee": "fauxAssistantMessage",
+          "lineNumber": 43
+        },
+        {
+          "caller": "seedCompactableSession",
+          "callee": "createUsage",
+          "lineNumber": 47
+        },
+        {
+          "caller": "seedCompactableSession",
+          "callee": "harness.sessionManager.appendMessage",
+          "lineNumber": 50
+        },
+        {
+          "caller": "seedCompactableSession",
+          "callee": "harness.sessionManager.buildSessionContext",
+          "lineNumber": 51
+        },
+        {
+          "caller": "streamFunction",
+          "callee": "createAssistantMessageEventStream",
+          "lineNumber": 60
+        },
+        {
+          "caller": "streamFunction",
+          "callee": "queueMicrotask",
+          "lineNumber": 61
+        },
+        {
+          "caller": "streamFunction",
+          "callee": "stream.push",
+          "lineNumber": 69
+        },
+        {
+          "caller": "streamFunction",
+          "callee": "stream.push",
+          "lineNumber": 71
+        },
+        {
+          "caller": "streamFunction",
+          "callee": "stream.push",
+          "lineNumber": 73
+        },
+        {
+          "caller": "error",
+          "callee": "fauxAssistantMessage",
+          "lineNumber": 90
+        },
+        {
+          "caller": "error",
+          "callee": "createUsage",
+          "lineNumber": 91
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/6768-copilot-compaction-base-url.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 114,
+      "nonEmptyLines": 105,
+      "functions": [
+        {
+          "name": "seedCompactableSession",
+          "startLine": 14,
+          "endLine": 39,
+          "params": [
+            "harness"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "seedCompactableSession",
+          "callee": "harness.settingsManager.applyOverrides",
+          "lineNumber": 15
+        },
+        {
+          "caller": "seedCompactableSession",
+          "callee": "Date.now",
+          "lineNumber": 16
+        },
+        {
+          "caller": "seedCompactableSession",
+          "callee": "harness.sessionManager.appendMessage",
+          "lineNumber": 17
+        },
+        {
+          "caller": "seedCompactableSession",
+          "callee": "harness.getModel",
+          "lineNumber": 22
+        },
+        {
+          "caller": "seedCompactableSession",
+          "callee": "fauxAssistantMessage",
+          "lineNumber": 24
+        },
+        {
+          "caller": "seedCompactableSession",
+          "callee": "harness.sessionManager.appendMessage",
+          "lineNumber": 37
+        },
+        {
+          "caller": "seedCompactableSession",
+          "callee": "harness.sessionManager.buildSessionContext",
+          "lineNumber": 38
+        },
+        {
+          "caller": "respond",
+          "callee": "createAssistantMessageEventStream",
+          "lineNumber": 58
+        },
+        {
+          "caller": "respond",
+          "callee": "stream.push",
+          "lineNumber": 59
+        },
+        {
+          "caller": "respond",
+          "callee": "fauxAssistantMessage",
+          "lineNumber": 63
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/6904-dns-transport-retry.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 24,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/7150-rpc-prompt-during-compaction.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 91,
+      "nonEmptyLines": 82,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/7253-manual-compact-during-response.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 67,
+      "functions": [
+        {
+          "name": "createNoopTool",
+          "startLine": 7,
+          "endLine": 15,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createNoopTool",
+          "callee": "Type.Object",
+          "lineNumber": 12
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/7290-json-stream-linear.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 44,
+      "nonEmptyLines": 36,
+      "callGraph": [
+        {
+          "caller": "measureUpdateBytes",
+          "callee": "createHarness",
+          "lineNumber": 16
+        },
+        {
+          "caller": "measureUpdateBytes",
+          "callee": "harnesses.push",
+          "lineNumber": 17
+        },
+        {
+          "caller": "measureUpdateBytes",
+          "callee": "harness.setResponses",
+          "lineNumber": 18
+        },
+        {
+          "caller": "measureUpdateBytes",
+          "callee": "fauxAssistantMessage",
+          "lineNumber": 18
+        },
+        {
+          "caller": "measureUpdateBytes",
+          "callee": "harness.session.prompt",
+          "lineNumber": 20
+        },
+        {
+          "caller": "measureUpdateBytes",
+          "callee": "harness.eventsOfType",
+          "lineNumber": 22
+        },
+        {
+          "caller": "measureUpdateBytes",
+          "callee": "expect(update).toHaveProperty",
+          "lineNumber": 24
+        },
+        {
+          "caller": "measureUpdateBytes",
+          "callee": "expect",
+          "lineNumber": 24
+        },
+        {
+          "caller": "measureUpdateBytes",
+          "callee": "expect(update.assistantMessageEvent).toHaveProperty",
+          "lineNumber": 25
+        },
+        {
+          "caller": "measureUpdateBytes",
+          "callee": "expect",
+          "lineNumber": 25
+        },
+        {
+          "caller": "measureUpdateBytes",
+          "callee": "sessionUpdates.map",
+          "lineNumber": 28
+        },
+        {
+          "caller": "measureUpdateBytes",
+          "callee": "toJsonEvent",
+          "lineNumber": 28
+        },
+        {
+          "caller": "measureUpdateBytes",
+          "callee": "expect(updates.length).toBeGreaterThan",
+          "lineNumber": 29
+        },
+        {
+          "caller": "measureUpdateBytes",
+          "callee": "expect",
+          "lineNumber": 29
+        },
+        {
+          "caller": "measureUpdateBytes",
+          "callee": "expect(update).not.toHaveProperty",
+          "lineNumber": 31
+        },
+        {
+          "caller": "measureUpdateBytes",
+          "callee": "expect",
+          "lineNumber": 31
+        },
+        {
+          "caller": "measureUpdateBytes",
+          "callee": "expect(update.assistantMessageEvent).not.toHaveProperty",
+          "lineNumber": 32
+        },
+        {
+          "caller": "measureUpdateBytes",
+          "callee": "expect",
+          "lineNumber": 32
+        },
+        {
+          "caller": "measureUpdateBytes",
+          "callee": "updates.reduce",
+          "lineNumber": 34
+        },
+        {
+          "caller": "measureUpdateBytes",
+          "callee": "Buffer.byteLength",
+          "lineNumber": 34
+        },
+        {
+          "caller": "measureUpdateBytes",
+          "callee": "JSON.stringify",
+          "lineNumber": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/7301-stalled-availability-refresh.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 133,
+      "nonEmptyLines": 114,
+      "functions": [
+        {
+          "name": "createDeferred",
+          "startLine": 18,
+          "endLine": 26,
+          "params": []
+        },
+        {
+          "name": "stallNextCredentialList",
+          "startLine": 28,
+          "endLine": 51,
+          "params": [
+            "harness"
+          ]
+        },
+        {
+          "name": "waitForRecoveryRefresh",
+          "startLine": 53,
+          "endLine": 57,
+          "params": [
+            "stalledList",
+            "harness"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "stallNextCredentialList",
+          "callee": "harness.authStorage.list.bind",
+          "lineNumber": 29
+        },
+        {
+          "caller": "stallNextCredentialList",
+          "callee": "createDeferred",
+          "lineNumber": 30
+        },
+        {
+          "caller": "stallNextCredentialList",
+          "callee": "createDeferred",
+          "lineNumber": 31
+        },
+        {
+          "caller": "stallNextCredentialList",
+          "callee": "originalList",
+          "lineNumber": 36
+        },
+        {
+          "caller": "stallNextCredentialList",
+          "callee": "started.resolve",
+          "lineNumber": 40
+        },
+        {
+          "caller": "waitForRecoveryRefresh",
+          "callee": "harness.session.modelRuntime.refresh",
+          "lineNumber": 54
+        },
+        {
+          "caller": "waitForRecoveryRefresh",
+          "callee": "vi.waitFor",
+          "lineNumber": 55
+        },
+        {
+          "caller": "waitForRecoveryRefresh",
+          "callee": "expect(stalledList.getCallCount()).toBe",
+          "lineNumber": 55
+        },
+        {
+          "caller": "waitForRecoveryRefresh",
+          "callee": "expect",
+          "lineNumber": 55
+        },
+        {
+          "caller": "waitForRecoveryRefresh",
+          "callee": "stalledList.getCallCount",
+          "lineNumber": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/7443-model-command-cached-match.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 37,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/7911-json-stream-usage.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 26,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/pre-prompt-compaction-no-continue.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 68,
+      "functions": [
+        {
+          "name": "createUsage",
+          "startLine": 5,
+          "endLine": 14,
+          "params": [
+            "totalTokens"
+          ]
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/tree-during-streaming.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 32,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

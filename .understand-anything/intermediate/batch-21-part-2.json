@@ -1,0 +1,550 @@
+{
+  "nodes": [
+    {
+      "id": "packages/session-backends/sqlite-node/test/adapter.test.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/test/adapter.test.ts",
+        "language": "typescript",
+        "summary": "Node.js SQLite 适配器测试，验证 wrapNodeSqliteDatabase 和 createNodeSqliteFactory 的基本行为",
+        "tags": [
+          "test",
+          "vitest",
+          "session-backend",
+          "sqlite"
+        ],
+        "sizeLines": 57,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/test/branch-cache.test.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/test/branch-cache.test.ts",
+        "language": "typescript",
+        "summary": "分支缓存功能测试，验证缓存构建、追加、重建和删除操作",
+        "tags": [
+          "test",
+          "vitest",
+          "session-backend",
+          "sqlite"
+        ],
+        "sizeLines": 220,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/test/branch-query.test.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/test/branch-query.test.ts",
+        "language": "typescript",
+        "summary": "分支查询测试，验证 findEntriesOnBranch 在不同分支拓扑下的正确性",
+        "tags": [
+          "test",
+          "vitest",
+          "session-backend",
+          "sqlite"
+        ],
+        "sizeLines": 139,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/test/conformance.test.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/test/conformance.test.ts",
+        "language": "typescript",
+        "summary": "会话后端规范一致性测试，确保 SQLite 后端符合 pi-agent-core 定义的接口契约",
+        "tags": [
+          "test",
+          "vitest",
+          "session-backend",
+          "sqlite"
+        ],
+        "sizeLines": 54,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/test/facts-query.test.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/test/facts-query.test.ts",
+        "language": "typescript",
+        "summary": "事实查询测试，验证会话名称和条目标签的读写操作",
+        "tags": [
+          "test",
+          "vitest",
+          "session-backend",
+          "sqlite"
+        ],
+        "sizeLines": 31,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/test/log-query.test.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/test/log-query.test.ts",
+        "language": "typescript",
+        "summary": "日志查询测试，验证 getLog 返回按序列号排序的混合事件流",
+        "tags": [
+          "test",
+          "vitest",
+          "session-backend",
+          "sqlite"
+        ],
+        "sizeLines": 35,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/test/migrations.test.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/test/migrations.test.ts",
+        "language": "typescript",
+        "summary": "数据库迁移测试，验证迁移执行和幂等性",
+        "tags": [
+          "test",
+          "vitest",
+          "session-backend",
+          "sqlite"
+        ],
+        "sizeLines": 61,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/test/repository.test.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/test/repository.test.ts",
+        "language": "typescript",
+        "summary": "会话仓储综合测试，验证 CRUD 操作、并发安全、错误处理和资源清理",
+        "tags": [
+          "test",
+          "vitest",
+          "session-backend",
+          "sqlite"
+        ],
+        "sizeLines": 496,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/test/search.test.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/test/search.test.ts",
+        "language": "typescript",
+        "summary": "全文搜索测试，验证 FTS5 搜索引擎的查询、排序和过滤功能",
+        "tags": [
+          "test",
+          "vitest",
+          "session-backend",
+          "sqlite"
+        ],
+        "sizeLines": 314,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/test/sql.test.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/test/sql.test.ts",
+        "language": "typescript",
+        "summary": "SQL 查询构建器测试，验证模板标签函数和查询组合",
+        "tags": [
+          "test",
+          "vitest",
+          "session-backend",
+          "sqlite"
+        ],
+        "sizeLines": 39,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/test/test-utils.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/test/test-utils.ts",
+        "language": "typescript",
+        "summary": "测试工具集，提供临时目录管理、消息创建辅助、压缩条目追加和分支查询辅助函数",
+        "tags": [
+          "test",
+          "vitest",
+          "session-backend",
+          "sqlite"
+        ],
+        "sizeLines": 144,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/test/writer-leases.test.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/test/writer-leases.test.ts",
+        "language": "typescript",
+        "summary": "写入者租约测试，验证租约获取、续约、释放和超时抢占机制",
+        "tags": [
+          "test",
+          "vitest",
+          "session-backend",
+          "sqlite"
+        ],
+        "sizeLines": 217,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/test/conformance.test.ts::requireSqliteMetadata",
+      "type": "function",
+      "attributes": {
+        "name": "requireSqliteMetadata",
+        "file": "packages/session-backends/sqlite-node/test/conformance.test.ts",
+        "lineRange": [
+          12,
+          22
+        ],
+        "summary": "requireSqliteMetadata 函数 — 位于 conformance.test.ts",
+        "tags": [
+          "test",
+          "vitest",
+          "session-backend",
+          "sqlite"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/test/repository.test.ts::createCloseCountingSqliteFactory",
+      "type": "function",
+      "attributes": {
+        "name": "createCloseCountingSqliteFactory",
+        "file": "packages/session-backends/sqlite-node/test/repository.test.ts",
+        "lineRange": [
+          67,
+          91
+        ],
+        "summary": "createCloseCountingSqliteFactory 函数 — 位于 repository.test.ts",
+        "tags": [
+          "test",
+          "vitest",
+          "session-backend",
+          "sqlite"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/test/repository.test.ts::ThrowingStatement",
+      "type": "class",
+      "attributes": {
+        "name": "ThrowingStatement",
+        "file": "packages/session-backends/sqlite-node/test/repository.test.ts",
+        "lineRange": [
+          22,
+          42
+        ],
+        "methods": [
+          "constructor",
+          "run",
+          "get",
+          "all",
+          "iterate"
+        ],
+        "summary": "ThrowingStatement 类 — 位于 repository.test.ts",
+        "tags": [
+          "test",
+          "vitest",
+          "session-backend",
+          "sqlite"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/test/repository.test.ts::CountingDatabase",
+      "type": "class",
+      "attributes": {
+        "name": "CountingDatabase",
+        "file": "packages/session-backends/sqlite-node/test/repository.test.ts",
+        "lineRange": [
+          44,
+          65
+        ],
+        "methods": [
+          "constructor",
+          "exec",
+          "prepare",
+          "transaction",
+          "close"
+        ],
+        "summary": "CountingDatabase 类 — 位于 repository.test.ts",
+        "tags": [
+          "test",
+          "vitest",
+          "session-backend",
+          "sqlite"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/test/test-utils.ts::createSetupFailureSqlite",
+      "type": "function",
+      "attributes": {
+        "name": "createSetupFailureSqlite",
+        "file": "packages/session-backends/sqlite-node/test/test-utils.ts",
+        "lineRange": [
+          29,
+          55
+        ],
+        "summary": "createSetupFailureSqlite 函数 — 位于 test-utils.ts",
+        "tags": [
+          "test",
+          "vitest",
+          "session-backend",
+          "sqlite"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/test/test-utils.ts::createAssistantMessage",
+      "type": "function",
+      "attributes": {
+        "name": "createAssistantMessage",
+        "file": "packages/session-backends/sqlite-node/test/test-utils.ts",
+        "lineRange": [
+          65,
+          83
+        ],
+        "summary": "createAssistantMessage 函数 — 位于 test-utils.ts",
+        "tags": [
+          "test",
+          "vitest",
+          "session-backend",
+          "sqlite"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/test/test-utils.ts::appendSqliteCompaction",
+      "type": "function",
+      "attributes": {
+        "name": "appendSqliteCompaction",
+        "file": "packages/session-backends/sqlite-node/test/test-utils.ts",
+        "lineRange": [
+          88,
+          107
+        ],
+        "summary": "appendSqliteCompaction 函数 — 位于 test-utils.ts",
+        "tags": [
+          "test",
+          "vitest",
+          "session-backend",
+          "sqlite"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/test/test-utils.ts::moveSqliteMainLane",
+      "type": "function",
+      "attributes": {
+        "name": "moveSqliteMainLane",
+        "file": "packages/session-backends/sqlite-node/test/test-utils.ts",
+        "lineRange": [
+          109,
+          126
+        ],
+        "summary": "moveSqliteMainLane 函数 — 位于 test-utils.ts",
+        "tags": [
+          "test",
+          "vitest",
+          "session-backend",
+          "sqlite"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/test/test-utils.ts::getSqliteEntries",
+      "type": "function",
+      "attributes": {
+        "name": "getSqliteEntries",
+        "file": "packages/session-backends/sqlite-node/test/test-utils.ts",
+        "lineRange": [
+          135,
+          144
+        ],
+        "summary": "getSqliteEntries 函数 — 位于 test-utils.ts",
+        "tags": [
+          "test",
+          "vitest",
+          "session-backend",
+          "sqlite"
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/test/adapter.test.ts",
+      "target": "packages/session-backends/sqlite-node/src/index.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/test/branch-cache.test.ts",
+      "target": "packages/session-backends/sqlite-node/src/index.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/test/branch-cache.test.ts",
+      "target": "packages/session-backends/sqlite-node/test/test-utils.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/test/branch-query.test.ts",
+      "target": "packages/session-backends/sqlite-node/src/index.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/test/branch-query.test.ts",
+      "target": "packages/session-backends/sqlite-node/test/test-utils.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/test/conformance.test.ts",
+      "target": "packages/session-backends/sqlite-node/src/index.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/test/conformance.test.ts",
+      "target": "packages/session-backends/sqlite-node/test/test-utils.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/test/facts-query.test.ts",
+      "target": "packages/session-backends/sqlite-node/src/index.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/test/facts-query.test.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/facts.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/test/facts-query.test.ts",
+      "target": "packages/session-backends/sqlite-node/test/test-utils.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/test/log-query.test.ts",
+      "target": "packages/session-backends/sqlite-node/src/index.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/test/log-query.test.ts",
+      "target": "packages/session-backends/sqlite-node/test/test-utils.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/test/migrations.test.ts",
+      "target": "packages/session-backends/sqlite-node/src/index.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/test/migrations.test.ts",
+      "target": "packages/session-backends/sqlite-node/test/test-utils.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/test/repository.test.ts",
+      "target": "packages/session-backends/sqlite-node/src/index.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/test/repository.test.ts",
+      "target": "packages/session-backends/sqlite-node/test/test-utils.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/test/search.test.ts",
+      "target": "packages/session-backends/sqlite-node/src/index.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/test/search.test.ts",
+      "target": "packages/session-backends/sqlite-node/test/test-utils.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/test/sql.test.ts",
+      "target": "packages/session-backends/sqlite-node/src/index.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/test/test-utils.ts",
+      "target": "packages/session-backends/sqlite-node/src/index.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/test/writer-leases.test.ts",
+      "target": "packages/session-backends/sqlite-node/src/index.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/test/writer-leases.test.ts",
+      "target": "packages/session-backends/sqlite-node/test/test-utils.ts"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/test/conformance.test.ts",
+      "target": "packages/session-backends/sqlite-node/test/conformance.test.ts::requireSqliteMetadata"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/test/repository.test.ts",
+      "target": "packages/session-backends/sqlite-node/test/repository.test.ts::createCloseCountingSqliteFactory"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/test/repository.test.ts",
+      "target": "packages/session-backends/sqlite-node/test/repository.test.ts::ThrowingStatement"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/test/repository.test.ts",
+      "target": "packages/session-backends/sqlite-node/test/repository.test.ts::CountingDatabase"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/test/test-utils.ts",
+      "target": "packages/session-backends/sqlite-node/test/test-utils.ts::createSetupFailureSqlite"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/test/test-utils.ts",
+      "target": "packages/session-backends/sqlite-node/test/test-utils.ts::createAssistantMessage"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/test/test-utils.ts",
+      "target": "packages/session-backends/sqlite-node/test/test-utils.ts::appendSqliteCompaction"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/test/test-utils.ts",
+      "target": "packages/session-backends/sqlite-node/test/test-utils.ts::moveSqliteMainLane"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/test/test-utils.ts",
+      "target": "packages/session-backends/sqlite-node/test/test-utils.ts::getSqliteEntries"
+    }
+  ]
+}

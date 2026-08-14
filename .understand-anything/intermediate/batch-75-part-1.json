@@ -1,0 +1,332 @@
+{
+  "nodes": [
+    {
+      "id": "scripts/generate-coding-agent-install-lock.mjs",
+      "type": "file",
+      "label": "generate-coding-agent-install-lock.mjs",
+      "language": "javascript",
+      "summary": "生成 coding-agent 的安装锁文件（install-lock/）。从根 package-lock.json 遍历依赖图，解析内部 workspace 包和外部 registry 包，生成自包含的 installer package.json 和 package-lock.json，支持离线安装。支持 --check 模式验证现有文件一致性。",
+      "metadata": { "lines": 439, "category": "build-scripts" }
+    },
+    {
+      "id": "scripts/generate-coding-agent-install-lock.mjs::packageDependencies",
+      "type": "function",
+      "label": "packageDependencies",
+      "summary": "合并包的 dependencies 和 optionalDependencies，返回统一依赖映射",
+      "metadata": { "startLine": 35, "endLine": 40, "params": ["entry"] }
+    },
+    {
+      "id": "scripts/generate-coding-agent-install-lock.mjs::sortedPackageEntry",
+      "type": "function",
+      "label": "sortedPackageEntry",
+      "summary": "按预定义字段顺序（name/version/resolved/integrity/license/deps/bin/engines 等）规范化 lock 条目字段，确保输出确定性",
+      "metadata": { "startLine": 46, "endLine": 80, "params": ["entry"] }
+    },
+    {
+      "id": "scripts/generate-coding-agent-install-lock.mjs::copyLockEntry",
+      "type": "function",
+      "label": "copyLockEntry",
+      "summary": "从源 lock 条目复制关键字段（resolved/integrity/license/deps 等）到输出条目",
+      "metadata": { "startLine": 82, "endLine": 89, "params": ["entry"] }
+    },
+    {
+      "id": "scripts/generate-coding-agent-install-lock.mjs::copyPackageJsonEntry",
+      "type": "function",
+      "label": "copyPackageJsonEntry",
+      "summary": "从 package.json 条目提取关键字段构建 lock 条目，处理 bin/engines/os/cpu 等字段",
+      "metadata": { "startLine": 91, "endLine": 114, "params": ["packageJson", "options"] }
+    },
+    {
+      "id": "scripts/generate-coding-agent-install-lock.mjs::packageNameFromLockPath",
+      "type": "function",
+      "label": "packageNameFromLockPath",
+      "summary": "从 lock 文件的 packages 路径中提取包名（处理 node_modules 嵌套路径和 scope 包名）",
+      "metadata": { "startLine": 116, "endLine": 128, "params": ["lockPath"] }
+    },
+    {
+      "id": "scripts/generate-coding-agent-install-lock.mjs::getInternalWorkspaces",
+      "type": "function",
+      "label": "getInternalWorkspaces",
+      "summary": "扫描 lock 文件中所有 @earendil-works/pi-* 前缀的内部 workspace 包，构建名称到条目的映射",
+      "metadata": { "startLine": 139, "endLine": 157, "params": ["lockPackages"] }
+    },
+    {
+      "id": "scripts/generate-coding-agent-install-lock.mjs::resolveExternalDependency",
+      "type": "function",
+      "label": "resolveExternalDependency",
+      "summary": "解析外部依赖包在根 lock 文件中的实际条目，处理 npm: 别名前缀和版本规范匹配",
+      "metadata": { "startLine": 159, "endLine": 200, "params": ["lockPackages", "packageName", "fromLockPath"] }
+    },
+    {
+      "id": "scripts/generate-coding-agent-install-lock.mjs::addInternalWorkspace",
+      "type": "function",
+      "label": "addInternalWorkspace",
+      "summary": "将内部 workspace 包添加到输出 lock，并递归将其依赖加入处理队列",
+      "metadata": { "startLine": 202, "endLine": 214, "params": ["installLockPackages", "addedPaths", "queue", "name", "workspace"] }
+    },
+    {
+      "id": "scripts/generate-coding-agent-install-lock.mjs::addExternalPackage",
+      "type": "function",
+      "label": "addExternalPackage",
+      "summary": "解析外部依赖并将其添加到输出 lock，递归处理传递依赖",
+      "metadata": { "startLine": 216, "endLine": 229, "params": ["lockPackages", "installLockPackages", "addedPaths", "queue", "name", "from"] }
+    },
+    {
+      "id": "scripts/generate-coding-agent-install-lock.mjs::createInstallerPackageJson",
+      "type": "function",
+      "label": "createInstallerPackageJson",
+      "summary": "基于 coding-agent package.json 创建 installer 包描述，替换名称为 install 包名并保留核心字段",
+      "metadata": { "startLine": 231, "endLine": 248, "params": ["codingAgentPackage"] }
+    },
+    {
+      "id": "scripts/generate-coding-agent-install-lock.mjs::createRootLockEntry",
+      "type": "function",
+      "label": "createRootLockEntry",
+      "summary": "创建 installer lock 文件的根条目（空路径 ''），包含名称/版本/依赖信息",
+      "metadata": { "startLine": 250, "endLine": 260, "params": ["installerPackageJson"] }
+    },
+    {
+      "id": "scripts/generate-coding-agent-install-lock.mjs::validateGeneratedFiles",
+      "type": "function",
+      "label": "validateGeneratedFiles",
+      "summary": "验证生成的 installer package.json 和 install-lock/package-lock.json 的完整性：检查所有内部包已包含、外部包有 resolved/integrity、无未预期的 install scripts",
+      "metadata": { "startLine": 262, "endLine": 356, "params": ["installerPackageJson", "installLock", "internalNames"] }
+    },
+    {
+      "id": "scripts/generate-coding-agent-install-lock.mjs::generateInstallLock",
+      "type": "function",
+      "label": "generateInstallLock",
+      "summary": "主生成函数：读取根 lock 文件，BFS 遍历所有依赖，构建 installer package.json 和 install-lock/package-lock.json，验证后返回结果",
+      "metadata": { "startLine": 358, "endLine": 404, "params": [] }
+    },
+    {
+      "id": "scripts/generate-coding-agent-shrinkwrap.mjs",
+      "type": "file",
+      "label": "generate-coding-agent-shrinkwrap.mjs",
+      "language": "javascript",
+      "summary": "生成 coding-agent 的 npm-shrinkwrap.json。与 install-lock 脚本结构相似，但输出 shrinkwrap 文件用于锁定发布时的依赖版本。支持 --check 模式验证现有 shrinkwrap 一致性。",
+      "metadata": { "lines": 365, "category": "build-scripts" }
+    },
+    {
+      "id": "scripts/generate-coding-agent-shrinkwrap.mjs::sortedPackageEntry",
+      "type": "function",
+      "label": "sortedPackageEntry",
+      "summary": "按预定义字段顺序规范化 shrinkwrap 条目字段，确保输出确定性",
+      "metadata": { "startLine": 43, "endLine": 77, "params": ["entry"] }
+    },
+    {
+      "id": "scripts/generate-coding-agent-shrinkwrap.mjs::copyPackageJsonEntry",
+      "type": "function",
+      "label": "copyPackageJsonEntry",
+      "summary": "从 package.json 条目提取关键字段构建 shrinkwrap 条目",
+      "metadata": { "startLine": 88, "endLine": 111, "params": ["packageJson", "options"] }
+    },
+    {
+      "id": "scripts/generate-coding-agent-shrinkwrap.mjs::getInternalWorkspaces",
+      "type": "function",
+      "label": "getInternalWorkspaces",
+      "summary": "扫描 lock 文件中的内部 workspace 包（@earendil-works/pi-* 前缀）",
+      "metadata": { "startLine": 132, "endLine": 150, "params": ["lockPackages"] }
+    },
+    {
+      "id": "scripts/generate-coding-agent-shrinkwrap.mjs::resolveExternalDependency",
+      "type": "function",
+      "label": "resolveExternalDependency",
+      "summary": "解析外部依赖在根 lock 文件中的实际条目，处理 npm: 别名前缀",
+      "metadata": { "startLine": 152, "endLine": 193, "params": ["lockPackages", "packageName", "fromLockPath"] }
+    },
+    {
+      "id": "scripts/generate-coding-agent-shrinkwrap.mjs::validateShrinkwrap",
+      "type": "function",
+      "label": "validateShrinkwrap",
+      "summary": "验证生成的 shrinkwrap 文件完整性：确保所有内部包已包含、外部包有 resolved/integrity、无未预期的 install scripts",
+      "metadata": { "startLine": 224, "endLine": 288, "params": ["shrinkwrap", "internalNames"] }
+    },
+    {
+      "id": "scripts/generate-coding-agent-shrinkwrap.mjs::generateShrinkwrap",
+      "type": "function",
+      "label": "generateShrinkwrap",
+      "summary": "主生成函数：读取根 lock 文件，BFS 遍历依赖，构建 npm-shrinkwrap.json 并验证",
+      "metadata": { "startLine": 290, "endLine": 335, "params": [] }
+    },
+    {
+      "id": "scripts/local-release.mjs",
+      "type": "file",
+      "label": "local-release.mjs",
+      "language": "javascript",
+      "summary": "本地发布测试脚本。构建所有可发布包的 tarball，用 Bun 编译平台二进制文件，在隔离的输出目录中组装完整的安装环境，用于本地发布验证。支持跳过检查/测试、指定平台等选项。",
+      "metadata": { "lines": 295, "category": "build-scripts" }
+    },
+    {
+      "id": "scripts/local-release.mjs::parseArgs",
+      "type": "function",
+      "label": "parseArgs",
+      "summary": "解析命令行参数：--out（输出目录）、--force（强制清理）、--skip-check/test/build、--platform、--no-binary 等选项",
+      "metadata": { "startLine": 37, "endLine": 86, "params": [] }
+    },
+    {
+      "id": "scripts/local-release.mjs::prepareOutputDirectory",
+      "type": "function",
+      "label": "prepareOutputDirectory",
+      "summary": "准备输出目录：创建目录结构，可选强制清理已存在目录，创建 archive 和 tarball 子目录",
+      "metadata": { "startLine": 117, "endLine": 137, "params": ["options", "repoRoot"] }
+    },
+    {
+      "id": "scripts/local-release.mjs::currentBinaryPlatform",
+      "type": "function",
+      "label": "currentBinaryPlatform",
+      "summary": "检测当前平台的二进制标识（如 darwin-arm64、linux-x64）",
+      "metadata": { "startLine": 144, "endLine": 149, "params": [] }
+    },
+    {
+      "id": "scripts/local-release.mjs::buildBunBinaryRelease",
+      "type": "function",
+      "label": "buildBunBinaryRelease",
+      "summary": "使用 Bun 编译 coding-agent 为平台二进制文件，打包到目标目录的 archive 中",
+      "metadata": { "startLine": 151, "endLine": 171, "params": ["targetDirectory", "archiveDirectory"] }
+    },
+    {
+      "id": "scripts/local-release.mjs::createPiShim",
+      "type": "function",
+      "label": "createPiShim",
+      "summary": "在安装目录创建 pi shim 脚本，作为 coding-agent 的启动入口代理",
+      "metadata": { "startLine": 173, "endLine": 186, "params": ["installDirectory"] }
+    },
+    {
+      "id": "scripts/local-release.mjs::packPackage",
+      "type": "function",
+      "label": "packPackage",
+      "summary": "对指定包目录执行 npm pack，将生成的 tarball 移动到目标目录",
+      "metadata": { "startLine": 188, "endLine": 202, "params": ["pkg", "tarballDirectory"] }
+    },
+    {
+      "id": "scripts/profile-coding-agent-node.mjs",
+      "type": "file",
+      "label": "profile-coding-agent-node.mjs",
+      "language": "javascript",
+      "summary": "coding-agent 性能分析脚本。支持 TUI 和 RPC 两种基准测试模式，可在 Node.js 和 Bun 运行时下测量启动时间、内存使用和 CPU 性能。生成 profile 文件供进一步分析，支持多次运行取统计值。",
+      "metadata": { "lines": 641, "category": "build-scripts" }
+    },
+    {
+      "id": "scripts/profile-coding-agent-node.mjs::parseArgs",
+      "type": "function",
+      "label": "parseArgs",
+      "summary": "解析命令行参数：运行时选择（node/bun）、模式（tui/rpc）、运行次数、profile 目录、CPU profile 开关等",
+      "metadata": { "startLine": 73, "endLine": 168, "params": ["argv"] }
+    },
+    {
+      "id": "scripts/profile-coding-agent-node.mjs::parseStartupTimings",
+      "type": "function",
+      "label": "parseStartupTimings",
+      "summary": "从 stderr 输出中解析启动时间数据（PI_STARTUP_BENCHMARK JSON 行），提取各阶段耗时",
+      "metadata": { "startLine": 218, "endLine": 242, "params": ["stderr"] }
+    },
+    {
+      "id": "scripts/profile-coding-agent-node.mjs::summarizeTimingMaps",
+      "type": "function",
+      "label": "summarizeTimingMaps",
+      "summary": "对多次运行的启动时间数据计算中位数和统计摘要",
+      "metadata": { "startLine": 244, "endLine": 262, "params": ["runs"] }
+    },
+    {
+      "id": "scripts/profile-coding-agent-node.mjs::runBuild",
+      "type": "function",
+      "label": "runBuild",
+      "summary": "执行 coding-agent 的 TypeScript 构建（npm run build），确保 dist/cli.js 可用",
+      "metadata": { "startLine": 281, "endLine": 331, "params": [] }
+    },
+    {
+      "id": "scripts/profile-coding-agent-node.mjs::getRuntimeCommand",
+      "type": "function",
+      "label": "getRuntimeCommand",
+      "summary": "根据运行时类型（node/bun）和模式（tui/rpc）构建执行命令和参数",
+      "metadata": { "startLine": 333, "endLine": 360, "params": ["runtime", "mode", "profileDir", "profileName", "cpuProfile"] }
+    },
+    {
+      "id": "scripts/profile-coding-agent-node.mjs::createBenchmarkEnv",
+      "type": "function",
+      "label": "createBenchmarkEnv",
+      "summary": "创建隔离的基准测试环境目录，复制必要配置避免污染主会话数据",
+      "metadata": { "startLine": 362, "endLine": 377, "params": ["options", "isolatedAgentDir"] }
+    },
+    {
+      "id": "scripts/profile-coding-agent-node.mjs::runTuiBenchmarkRun",
+      "type": "function",
+      "label": "runTuiBenchmarkRun",
+      "summary": "执行单次 TUI 模式基准测试：启动 coding-agent TUI，收集启动时间和资源使用数据",
+      "metadata": { "startLine": 379, "endLine": 423, "params": [] }
+    },
+    {
+      "id": "scripts/profile-coding-agent-node.mjs::runRpcBenchmarkRun",
+      "type": "function",
+      "label": "runRpcBenchmarkRun",
+      "summary": "执行单次 RPC 模式基准测试：通过 JSON-RPC 接口启动 agent，发送请求并测量响应时间和吞吐量",
+      "metadata": { "startLine": 438, "endLine": 525, "params": [] }
+    },
+    {
+      "id": "scripts/profile-coding-agent-node.mjs::main",
+      "type": "function",
+      "label": "main",
+      "summary": "主入口函数：解析参数、执行构建、运行多次基准测试、汇总统计数据并输出结果",
+      "metadata": { "startLine": 534, "endLine": 635, "params": [] }
+    },
+    {
+      "id": "scripts/publish-model-catalog.mjs",
+      "type": "file",
+      "label": "publish-model-catalog.mjs",
+      "language": "javascript",
+      "summary": "发布模型目录到 S3 存储桶。验证输入目录中的模型 bundle 完整性（provider 覆盖、schema 版本、最小模型数），下载现有 index.json，比较版本后构建新索引并上传，使用不可变缓存策略。",
+      "metadata": { "lines": 308, "category": "build-scripts" }
+    },
+    {
+      "id": "scripts/publish-model-catalog.mjs::parseArgs",
+      "type": "function",
+      "label": "parseArgs",
+      "summary": "解析命令行参数：输入目录、S3 桶名、endpoint、dry-run 模式等",
+      "metadata": { "startLine": 27, "endLine": 62, "params": ["args"] }
+    },
+    {
+      "id": "scripts/publish-model-catalog.mjs::validateBundle",
+      "type": "function",
+      "label": "validateBundle",
+      "summary": "验证输入目录中的模型 bundle：检查必需 provider 存在、schema 版本匹配、模型数量达标、元数据格式正确",
+      "metadata": { "startLine": 68, "endLine": 134, "params": ["inputDir"] }
+    },
+    {
+      "id": "scripts/publish-model-catalog.mjs::downloadIndex",
+      "type": "function",
+      "label": "downloadIndex",
+      "summary": "从 S3 下载现有的模型目录 index.json，不存在时返回空索引",
+      "metadata": { "startLine": 158, "endLine": 171, "params": ["bucket", "endpoint", "outputPath"] }
+    },
+    {
+      "id": "scripts/publish-model-catalog.mjs::uploadJson",
+      "type": "function",
+      "label": "uploadJson",
+      "summary": "将 JSON 文件上传到 S3，设置内容类型和缓存控制头",
+      "metadata": { "startLine": 173, "endLine": 187, "params": ["bucket", "endpoint", "sourcePath", "key", "cacheControl"] }
+    },
+    {
+      "id": "scripts/publish-model-catalog.mjs::validateIndex",
+      "type": "function",
+      "label": "validateIndex",
+      "summary": "验证模型目录索引结构：检查 schema 版本、必需字段、条目格式",
+      "metadata": { "startLine": 189, "endLine": 211, "params": ["index"] }
+    },
+    {
+      "id": "scripts/publish-model-catalog.mjs::buildIndex",
+      "type": "function",
+      "label": "buildIndex",
+      "summary": "基于现有索引和新的发布信息构建更新后的模型目录索引",
+      "metadata": { "startLine": 223, "endLine": 241, "params": ["existingIndex", "publication"] }
+    },
+    {
+      "id": "scripts/publish-model-catalog.mjs::main",
+      "type": "function",
+      "label": "main",
+      "summary": "主入口：验证 bundle、下载现有索引、构建新索引、上传到 S3，支持 dry-run 预览",
+      "metadata": { "startLine": 243, "endLine": 303, "params": [] }
+    }
+  ],
+  "edges": []
+}

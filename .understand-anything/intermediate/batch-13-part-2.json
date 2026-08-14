@@ -1,0 +1,2137 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/coding-agent/src/cli/initial-message.ts",
+      "type": "file",
+      "name": "initial-message.ts",
+      "filePath": "packages/coding-agent/src/cli/initial-message.ts",
+      "summary": "根据解析的参数、文件内容和标准输入构建 agent 的初始消息。",
+      "tags": [
+        "cli",
+        "message-builder",
+        "initialization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/cli/list-models.ts",
+      "type": "file",
+      "name": "list-models.ts",
+      "filePath": "packages/coding-agent/src/cli/list-models.ts",
+      "summary": "列出所有可用的 LLM 模型，支持按搜索模式过滤，并显示 token 上下文窗口等信息。",
+      "tags": [
+        "cli",
+        "model-listing",
+        "llm",
+        "search"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/src/cli/project-trust.ts",
+      "type": "file",
+      "name": "project-trust.ts",
+      "filePath": "packages/coding-agent/src/cli/project-trust.ts",
+      "summary": "创建项目信任上下文，检查项目是否被标记为受信任，管理项目信任设置。",
+      "tags": [
+        "cli",
+        "project-trust",
+        "security",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/src/cli/session-picker.ts",
+      "type": "file",
+      "name": "session-picker.ts",
+      "filePath": "packages/coding-agent/src/cli/session-picker.ts",
+      "summary": "提供交互式会话选择器，允许用户从当前或所有会话列表中选择要恢复的会话。",
+      "tags": [
+        "cli",
+        "session",
+        "interactive-ui",
+        "selector"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "type": "file",
+      "name": "startup-ui.ts",
+      "filePath": "packages/coding-agent/src/cli/startup-ui.ts",
+      "summary": "管理启动时的终端 UI 初始化，包括主题加载、首次设置向导和交互式输入组件。",
+      "tags": [
+        "cli",
+        "startup",
+        "interactive-ui",
+        "theme",
+        "initialization"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/src/config.ts",
+      "type": "file",
+      "name": "config.ts",
+      "filePath": "packages/coding-agent/src/config.ts",
+      "summary": "全局配置模块，提供包目录、路径解析、自更新命令检测、安装方法识别等核心配置功能。",
+      "tags": [
+        "config",
+        "paths",
+        "self-update",
+        "installation",
+        "core"
+      ],
+      "complexity": "complex",
+      "languageNotes": "包含大量路径解析函数和自更新逻辑，支持 npm/bun 等多种安装方式检测。"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "type": "file",
+      "name": "agent-session-runtime.ts",
+      "filePath": "packages/coding-agent/src/core/agent-session-runtime.ts",
+      "summary": "Agent 会话运行时管理器，负责会话的创建、切换、分支、导入和销毁，协调服务层与底层 AgentSession。",
+      "tags": [
+        "runtime",
+        "session-management",
+        "core",
+        "agent"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/agent-session-services.ts",
+      "type": "file",
+      "name": "agent-session-services.ts",
+      "filePath": "packages/coding-agent/src/core/agent-session-services.ts",
+      "summary": "创建和管理 AgentSession 所需的服务层，包括模型运行时、资源加载器、会话管理器和扩展运行时的初始化。",
+      "tags": [
+        "service",
+        "session",
+        "factory",
+        "core",
+        "agent"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/agent-session.ts",
+      "type": "file",
+      "name": "agent-session.ts",
+      "filePath": "packages/coding-agent/src/core/agent-session.ts",
+      "summary": "Agent 会话核心实现，管理完整的 agent 交互生命周期，包括消息发送、工具调用、模型切换、压缩、分支、重试、bash 执行和扩展绑定等功能。",
+      "tags": [
+        "core",
+        "agent",
+        "session",
+        "lifecycle",
+        "tool-execution"
+      ],
+      "complexity": "complex",
+      "languageNotes": "超大型类（3000+ 行），包含 100+ 方法，是整个编码 agent 的核心枢纽。"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/auth-guidance.ts",
+      "type": "file",
+      "name": "auth-guidance.ts",
+      "filePath": "packages/coding-agent/src/core/auth-guidance.ts",
+      "summary": "提供认证相关的用户引导信息，包括登录帮助和缺失 API key/模型时的错误消息格式化。",
+      "tags": [
+        "auth",
+        "guidance",
+        "error-message",
+        "core"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "file",
+      "name": "auth-storage.ts",
+      "filePath": "packages/coding-agent/src/core/auth-storage.ts",
+      "summary": "认证凭据存储模块，提供文件级和内存级存储后端，支持文件锁、并发安全读写和多种存储后端切换。",
+      "tags": [
+        "auth",
+        "storage",
+        "file-lock",
+        "credential",
+        "core"
+      ],
+      "complexity": "complex",
+      "languageNotes": "使用文件锁实现并发安全，支持同步和异步两种锁模式。"
+    },
+    {
+      "id": "function:packages/coding-agent/src/cli/initial-message.ts:buildInitialMessage",
+      "type": "function",
+      "name": "buildInitialMessage",
+      "filePath": "packages/coding-agent/src/cli/initial-message.ts",
+      "lineRange": [
+        20,
+        43
+      ],
+      "summary": "根据解析参数、文件内容和标准输入构建 agent 初始消息。",
+      "tags": [
+        "cli",
+        "message-builder",
+        "initialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/cli/list-models.ts:listModels",
+      "type": "function",
+      "name": "listModels",
+      "filePath": "packages/coding-agent/src/cli/list-models.ts",
+      "lineRange": [
+        29,
+        115
+      ],
+      "summary": "列出所有可用 LLM 模型，支持搜索过滤和 token 上下文窗口显示。",
+      "tags": [
+        "cli",
+        "model-listing",
+        "llm",
+        "search"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/cli/project-trust.ts:createProjectTrustContext",
+      "type": "function",
+      "name": "createProjectTrustContext",
+      "filePath": "packages/coding-agent/src/cli/project-trust.ts",
+      "lineRange": [
+        7,
+        62
+      ],
+      "summary": "创建项目信任上下文，检查项目信任状态并构建信任管理选项。",
+      "tags": [
+        "cli",
+        "project-trust",
+        "security",
+        "context"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/cli/session-picker.ts:selectSession",
+      "type": "function",
+      "name": "selectSession",
+      "filePath": "packages/coding-agent/src/cli/session-picker.ts",
+      "lineRange": [
+        15,
+        55
+      ],
+      "summary": "显示交互式会话选择器，允许用户选择当前或历史会话。",
+      "tags": [
+        "cli",
+        "session",
+        "interactive-ui",
+        "selector"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/cli/startup-ui.ts:shouldRunFirstTimeSetup",
+      "type": "function",
+      "name": "shouldRunFirstTimeSetup",
+      "filePath": "packages/coding-agent/src/cli/startup-ui.ts",
+      "lineRange": [
+        115,
+        132
+      ],
+      "summary": "检查是否需要运行首次设置向导，基于设置文件是否存在判断。",
+      "tags": [
+        "cli",
+        "startup",
+        "first-time-setup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/cli/startup-ui.ts:showStartupSelector",
+      "type": "function",
+      "name": "showStartupSelector",
+      "filePath": "packages/coding-agent/src/cli/startup-ui.ts",
+      "lineRange": [
+        134,
+        163
+      ],
+      "summary": "显示启动时的交互式选择器组件，返回用户选择结果。",
+      "tags": [
+        "cli",
+        "startup",
+        "interactive-ui",
+        "selector"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/cli/startup-ui.ts:showFirstTimeSetup",
+      "type": "function",
+      "name": "showFirstTimeSetup",
+      "filePath": "packages/coding-agent/src/cli/startup-ui.ts",
+      "lineRange": [
+        166,
+        205
+      ],
+      "summary": "显示首次设置向导，引导用户完成初始配置。",
+      "tags": [
+        "cli",
+        "startup",
+        "first-time-setup",
+        "interactive-ui"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/cli/startup-ui.ts:showStartupInput",
+      "type": "function",
+      "name": "showStartupInput",
+      "filePath": "packages/coding-agent/src/cli/startup-ui.ts",
+      "lineRange": [
+        207,
+        239
+      ],
+      "summary": "显示启动时的交互式输入组件，支持占位符文本。",
+      "tags": [
+        "cli",
+        "startup",
+        "interactive-ui",
+        "input"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/config.ts:detectInstallMethod",
+      "type": "function",
+      "name": "detectInstallMethod",
+      "filePath": "packages/coding-agent/src/config.ts",
+      "lineRange": [
+        73,
+        94
+      ],
+      "summary": "检测当前安装方式（npm global、bun 等），返回安装方法枚举。",
+      "tags": [
+        "config",
+        "installation",
+        "detection"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/config.ts:getSelfUpdateCommandForMethod",
+      "type": "function",
+      "name": "getSelfUpdateCommandForMethod",
+      "filePath": "packages/coding-agent/src/config.ts",
+      "lineRange": [
+        115,
+        187
+      ],
+      "summary": "根据安装方式返回相应的自更新命令和参数。",
+      "tags": [
+        "config",
+        "self-update",
+        "installation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/config.ts:getGlobalPackageRoots",
+      "type": "function",
+      "name": "getGlobalPackageRoots",
+      "filePath": "packages/coding-agent/src/config.ts",
+      "lineRange": [
+        206,
+        249
+      ],
+      "summary": "获取全局包安装根目录列表，用于路径比较和安装方式检测。",
+      "tags": [
+        "config",
+        "paths",
+        "global-installation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/config.ts:getSelfUpdateCommand",
+      "type": "function",
+      "name": "getSelfUpdateCommand",
+      "filePath": "packages/coding-agent/src/config.ts",
+      "lineRange": [
+        315,
+        326
+      ],
+      "summary": "获取当前安装的自更新命令，整合安装方法检测和命令生成逻辑。",
+      "tags": [
+        "config",
+        "self-update",
+        "command"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/config.ts:getPackageDir",
+      "type": "function",
+      "name": "getPackageDir",
+      "filePath": "packages/coding-agent/src/config.ts",
+      "lineRange": [
+        367,
+        388
+      ],
+      "summary": "获取当前包的根目录路径。",
+      "tags": [
+        "config",
+        "paths",
+        "package"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/config.ts:getAgentDir",
+      "type": "function",
+      "name": "getAgentDir",
+      "filePath": "packages/coding-agent/src/config.ts",
+      "lineRange": [
+        515,
+        521
+      ],
+      "summary": "获取 agent 配置目录路径。",
+      "tags": [
+        "config",
+        "paths",
+        "agent-dir"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/coding-agent/src/core/agent-session-runtime.ts:AgentSessionRuntime",
+      "type": "class",
+      "name": "AgentSessionRuntime",
+      "filePath": "packages/coding-agent/src/core/agent-session-runtime.ts",
+      "lineRange": [
+        74,
+        406
+      ],
+      "summary": "Agent 会话运行时管理器，负责会话的创建、切换、分支、导入和销毁，协调服务层与底层 AgentSession。",
+      "tags": [
+        "runtime",
+        "session-management",
+        "core",
+        "agent"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/agent-session-runtime.ts:createAgentSessionRuntime",
+      "type": "function",
+      "name": "createAgentSessionRuntime",
+      "filePath": "packages/coding-agent/src/core/agent-session-runtime.ts",
+      "lineRange": [
+        414,
+        432
+      ],
+      "summary": "创建 AgentSessionRuntime 实例的工厂函数。",
+      "tags": [
+        "factory",
+        "runtime",
+        "session"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/coding-agent/src/core/agent-session-runtime.ts:SessionImportFileNotFoundError",
+      "type": "class",
+      "name": "SessionImportFileNotFoundError",
+      "filePath": "packages/coding-agent/src/core/agent-session-runtime.ts",
+      "lineRange": [
+        46,
+        54
+      ],
+      "summary": "会话导入文件未找到时抛出的错误类。",
+      "tags": [
+        "error",
+        "session",
+        "import"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/agent-session-services.ts:applyExtensionFlagValues",
+      "type": "function",
+      "name": "applyExtensionFlagValues",
+      "filePath": "packages/coding-agent/src/core/agent-session-services.ts",
+      "lineRange": [
+        82,
+        128
+      ],
+      "summary": "将扩展 flag 值应用到资源加载器，处理扩展配置覆盖。",
+      "tags": [
+        "extension",
+        "config",
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/agent-session-services.ts:createAgentSessionServices",
+      "type": "function",
+      "name": "createAgentSessionServices",
+      "filePath": "packages/coding-agent/src/core/agent-session-services.ts",
+      "lineRange": [
+        135,
+        193
+      ],
+      "summary": "创建 AgentSession 所需的全部服务，包括模型运行时、资源加载器、会话管理器和扩展运行时。",
+      "tags": [
+        "factory",
+        "service",
+        "session",
+        "core"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/agent-session-services.ts:createAgentSessionFromServices",
+      "type": "function",
+      "name": "createAgentSessionFromServices",
+      "filePath": "packages/coding-agent/src/core/agent-session-services.ts",
+      "lineRange": [
+        202,
+        221
+      ],
+      "summary": "基于已创建的服务实例化 AgentSession。",
+      "tags": [
+        "factory",
+        "session",
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:packages/coding-agent/src/core/agent-session.ts:AgentSession",
+      "type": "class",
+      "name": "AgentSession",
+      "filePath": "packages/coding-agent/src/core/agent-session.ts",
+      "lineRange": [
+        305,
+        3344
+      ],
+      "summary": "Agent 会话核心实现类，管理完整的 agent 交互生命周期，包括消息发送、工具调用、模型切换、压缩、分支、重试和扩展绑定。",
+      "tags": [
+        "core",
+        "agent",
+        "session",
+        "lifecycle"
+      ],
+      "complexity": "complex",
+      "languageNotes": "超大型类（3000+ 行），100+ 方法，是编码 agent 的核心枢纽。"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/agent-session.ts:parseSkillBlock",
+      "type": "function",
+      "name": "parseSkillBlock",
+      "filePath": "packages/coding-agent/src/core/agent-session.ts",
+      "lineRange": [
+        129,
+        138
+      ],
+      "summary": "从文本中解析 skill 块，提取 skill 调用信息。",
+      "tags": [
+        "parsing",
+        "skill",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/auth-guidance.ts:getProviderLoginHelp",
+      "type": "function",
+      "name": "getProviderLoginHelp",
+      "filePath": "packages/coding-agent/src/core/auth-guidance.ts",
+      "lineRange": [
+        6,
+        12
+      ],
+      "summary": "返回供应商登录帮助文本。",
+      "tags": [
+        "auth",
+        "guidance",
+        "provider"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/auth-guidance.ts:formatNoApiKeyFoundMessage",
+      "type": "function",
+      "name": "formatNoApiKeyFoundMessage",
+      "filePath": "packages/coding-agent/src/core/auth-guidance.ts",
+      "lineRange": [
+        22,
+        25
+      ],
+      "summary": "格式化未找到 API key 的错误消息。",
+      "tags": [
+        "auth",
+        "error-message",
+        "formatting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/coding-agent/src/core/auth-storage.ts:FileAuthStorageBackend",
+      "type": "class",
+      "name": "FileAuthStorageBackend",
+      "filePath": "packages/coding-agent/src/core/auth-storage.ts",
+      "lineRange": [
+        47,
+        202
+      ],
+      "summary": "文件级认证存储后端，使用文件锁实现并发安全的读写操作。",
+      "tags": [
+        "auth",
+        "storage",
+        "file-lock",
+        "backend"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:packages/coding-agent/src/core/auth-storage.ts:ReadOnlyAuthStorage",
+      "type": "class",
+      "name": "ReadOnlyAuthStorage",
+      "filePath": "packages/coding-agent/src/core/auth-storage.ts",
+      "lineRange": [
+        204,
+        291
+      ],
+      "summary": "只读认证存储，支持加载、读取和列举凭据但不允许修改。",
+      "tags": [
+        "auth",
+        "storage",
+        "readonly"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:packages/coding-agent/src/core/auth-storage.ts:InMemoryAuthStorageBackend",
+      "type": "class",
+      "name": "InMemoryAuthStorageBackend",
+      "filePath": "packages/coding-agent/src/core/auth-storage.ts",
+      "lineRange": [
+        293,
+        323
+      ],
+      "summary": "内存级认证存储后端，用于测试和临时存储场景。",
+      "tags": [
+        "auth",
+        "storage",
+        "in-memory",
+        "backend"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/coding-agent/src/core/auth-storage.ts:AuthStorage",
+      "type": "class",
+      "name": "AuthStorage",
+      "filePath": "packages/coding-agent/src/core/auth-storage.ts",
+      "lineRange": [
+        328,
+        491
+      ],
+      "summary": "认证存储统一接口，封装不同存储后端，提供凭据的 CRUD 操作。",
+      "tags": [
+        "auth",
+        "storage",
+        "interface",
+        "core"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/auth-storage.ts:readStoredCredential",
+      "type": "function",
+      "name": "readStoredCredential",
+      "filePath": "packages/coding-agent/src/core/auth-storage.ts",
+      "lineRange": [
+        497,
+        507
+      ],
+      "summary": "从存储中读取指定供应商的凭据。",
+      "tags": [
+        "auth",
+        "credential",
+        "storage",
+        "utility"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/coding-agent/src/cli/initial-message.ts",
+      "target": "function:packages/coding-agent/src/cli/initial-message.ts:buildInitialMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/list-models.ts",
+      "target": "function:packages/coding-agent/src/cli/list-models.ts:listModels",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/project-trust.ts",
+      "target": "function:packages/coding-agent/src/cli/project-trust.ts:createProjectTrustContext",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/session-picker.ts",
+      "target": "function:packages/coding-agent/src/cli/session-picker.ts:selectSession",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "target": "function:packages/coding-agent/src/cli/startup-ui.ts:shouldRunFirstTimeSetup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "target": "function:packages/coding-agent/src/cli/startup-ui.ts:showStartupSelector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "target": "function:packages/coding-agent/src/cli/startup-ui.ts:showFirstTimeSetup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "target": "function:packages/coding-agent/src/cli/startup-ui.ts:showStartupInput",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "function:packages/coding-agent/src/config.ts:detectInstallMethod",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "function:packages/coding-agent/src/config.ts:getSelfUpdateCommandForMethod",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "function:packages/coding-agent/src/config.ts:getGlobalPackageRoots",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "function:packages/coding-agent/src/config.ts:getSelfUpdateCommand",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "function:packages/coding-agent/src/config.ts:getPackageDir",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "function:packages/coding-agent/src/config.ts:getAgentDir",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "class:packages/coding-agent/src/core/agent-session-runtime.ts:AgentSessionRuntime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "function:packages/coding-agent/src/core/agent-session-runtime.ts:createAgentSessionRuntime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "class:packages/coding-agent/src/core/agent-session-runtime.ts:SessionImportFileNotFoundError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-services.ts",
+      "target": "function:packages/coding-agent/src/core/agent-session-services.ts:applyExtensionFlagValues",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-services.ts",
+      "target": "function:packages/coding-agent/src/core/agent-session-services.ts:createAgentSessionServices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-services.ts",
+      "target": "function:packages/coding-agent/src/core/agent-session-services.ts:createAgentSessionFromServices",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "class:packages/coding-agent/src/core/agent-session.ts:AgentSession",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "function:packages/coding-agent/src/core/agent-session.ts:parseSkillBlock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-guidance.ts",
+      "target": "function:packages/coding-agent/src/core/auth-guidance.ts:getProviderLoginHelp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-guidance.ts",
+      "target": "function:packages/coding-agent/src/core/auth-guidance.ts:formatNoApiKeyFoundMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "class:packages/coding-agent/src/core/auth-storage.ts:FileAuthStorageBackend",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "class:packages/coding-agent/src/core/auth-storage.ts:ReadOnlyAuthStorage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "class:packages/coding-agent/src/core/auth-storage.ts:InMemoryAuthStorageBackend",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "class:packages/coding-agent/src/core/auth-storage.ts:AuthStorage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "function:packages/coding-agent/src/core/auth-storage.ts:readStoredCredential",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/initial-message.ts",
+      "target": "function:packages/coding-agent/src/cli/initial-message.ts:buildInitialMessage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/list-models.ts",
+      "target": "function:packages/coding-agent/src/cli/list-models.ts:listModels",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/project-trust.ts",
+      "target": "function:packages/coding-agent/src/cli/project-trust.ts:createProjectTrustContext",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/session-picker.ts",
+      "target": "function:packages/coding-agent/src/cli/session-picker.ts:selectSession",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "target": "function:packages/coding-agent/src/cli/startup-ui.ts:shouldRunFirstTimeSetup",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "target": "function:packages/coding-agent/src/cli/startup-ui.ts:showStartupSelector",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "target": "function:packages/coding-agent/src/cli/startup-ui.ts:showFirstTimeSetup",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "target": "function:packages/coding-agent/src/cli/startup-ui.ts:showStartupInput",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "function:packages/coding-agent/src/config.ts:detectInstallMethod",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "function:packages/coding-agent/src/config.ts:getSelfUpdateCommand",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "function:packages/coding-agent/src/config.ts:getPackageDir",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "function:packages/coding-agent/src/config.ts:getAgentDir",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "class:packages/coding-agent/src/core/agent-session-runtime.ts:AgentSessionRuntime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "function:packages/coding-agent/src/core/agent-session-runtime.ts:createAgentSessionRuntime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "class:packages/coding-agent/src/core/agent-session-runtime.ts:SessionImportFileNotFoundError",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-services.ts",
+      "target": "function:packages/coding-agent/src/core/agent-session-services.ts:createAgentSessionServices",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-services.ts",
+      "target": "function:packages/coding-agent/src/core/agent-session-services.ts:createAgentSessionFromServices",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "class:packages/coding-agent/src/core/agent-session.ts:AgentSession",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "function:packages/coding-agent/src/core/agent-session.ts:parseSkillBlock",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-guidance.ts",
+      "target": "function:packages/coding-agent/src/core/auth-guidance.ts:getProviderLoginHelp",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-guidance.ts",
+      "target": "function:packages/coding-agent/src/core/auth-guidance.ts:formatNoApiKeyFoundMessage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "class:packages/coding-agent/src/core/auth-storage.ts:FileAuthStorageBackend",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "class:packages/coding-agent/src/core/auth-storage.ts:ReadOnlyAuthStorage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "class:packages/coding-agent/src/core/auth-storage.ts:InMemoryAuthStorageBackend",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "class:packages/coding-agent/src/core/auth-storage.ts:AuthStorage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "function:packages/coding-agent/src/core/auth-storage.ts:readStoredCredential",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/initial-message.ts",
+      "target": "file:packages/coding-agent/src/cli/args.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/list-models.ts",
+      "target": "file:packages/coding-agent/src/core/auth-guidance.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/list-models.ts",
+      "target": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/project-trust.ts",
+      "target": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/project-trust.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/project-trust.ts",
+      "target": "file:packages/coding-agent/src/core/project-trust.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/project-trust.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/session-picker.ts",
+      "target": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/session-picker.ts",
+      "target": "file:packages/coding-agent/src/core/keybindings.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/session-picker.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/session-picker.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/session-picker.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/session-selector.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "target": "file:packages/coding-agent/src/core/experimental.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "target": "file:packages/coding-agent/src/core/keybindings.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "target": "file:packages/coding-agent/src/core/package-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/extension-input.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/extension-selector.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/first-time-setup.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "file:packages/coding-agent/src/utils/child-process.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "file:packages/coding-agent/src/utils/paths.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "file:packages/coding-agent/src/core/agent-session-services.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "file:packages/coding-agent/src/core/agent-session.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/runner.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "file:packages/coding-agent/src/core/sdk.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "file:packages/coding-agent/src/core/session-cwd.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "file:packages/coding-agent/src/utils/paths.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-services.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-services.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-services.ts",
+      "target": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-services.ts",
+      "target": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-services.ts",
+      "target": "file:packages/coding-agent/src/core/sdk.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-services.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-services.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-services.ts",
+      "target": "file:packages/coding-agent/src/utils/paths.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/core/auth-guidance.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/core/bash-executor.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/core/compaction/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/core/defaults.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/core/export-html/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/core/export-html/tool-renderer.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/runner.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/core/messages.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/core/model-registry.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/core/prompt-templates.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/core/slash-commands.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/core/source-info.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/core/system-prompt.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/core/tools/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/core/tools/tool-definition-wrapper.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/core/usage-totals.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/utils/frontmatter.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/utils/paths.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/utils/sleep.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/src/utils/tool-result-images.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-guidance.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/src/core/resolve-config-value.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/src/utils/abort.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/src/utils/paths.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/initial-message.ts",
+      "target": "file:packages/coding-agent/test/initial-message.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "target": "file:packages/coding-agent/test/first-time-setup-fork.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "target": "file:packages/coding-agent/test/first-time-setup.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "file:packages/coding-agent/test/package-command-paths.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "file:packages/coding-agent/test/tool-execution-component.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/5661-uppercase-header-values.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "file:packages/coding-agent/test/config-value-migration.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "file:packages/coding-agent/test/first-time-setup.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "file:packages/coding-agent/test/format-resume-command.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "file:packages/coding-agent/test/keybindings-migration.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/5080-signal-shutdown-extension-cleanup.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "file:packages/coding-agent/test/prompt-templates.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "file:packages/coding-agent/test/remote-catalog-provider.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "file:packages/coding-agent/test/stdout-cleanliness.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/7497-session-discovery-symlink.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "file:packages/coding-agent/test/config.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "file:packages/coding-agent/test/session-file-invalid.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "file:packages/coding-agent/test/session-id-readonly.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "file:packages/coding-agent/test/startup-session-name.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "file:packages/coding-agent/test/agent-session-branching.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "file:packages/coding-agent/test/agent-session-runtime-events.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "file:packages/coding-agent/test/interactive-mode-import-command.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "file:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "file:packages/coding-agent/test/session-cwd.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "file:packages/coding-agent/test/suite/agent-session-runtime.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/2753-reload-stale-resource-settings.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/2860-replaced-session-context.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/5868-rpc-unknown-command-id.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-services.ts",
+      "target": "file:packages/coding-agent/test/default-tools-setting.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-services.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/3592-no-builtin-tools-keeps-extension-tools.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/test/suite/harness.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/test/utilities.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/test/compaction-extensions.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/5596-missing-theme-export.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/test/test-harness.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/test/agent-session-compaction.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/test/agent-session-concurrent.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/test/agent-session-stats.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/test/agent-session-auto-compaction-queue.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/test/agent-session-retry.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/2860-replaced-session-context.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/4167-thinking-toggle-pending-tool-render.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/test/agent-session-branching.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/test/footer-width.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/5943-session-start-notify.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/agent-session-auto-compaction-queue.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/agent-session-branching.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/agent-session-compaction.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/agent-session-concurrent.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/agent-session-dynamic-provider.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/agent-session-retry.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/agent-session-runtime-events.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/agent-session-stats.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/auth-check.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/auth-storage.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/compaction-extensions.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/config-value-migration.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/credential-print.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/extensions-input-event.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/extensions-runner.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/model-registry.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/model-runtime-auth-options.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/model-runtime-cloudflare-compat.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/model-runtime-credential-sync.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/model-runtime-modify-models-compat.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/radius.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/resource-loader.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/rpc-prompt-response-semantics.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/runtime-credentials.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/sdk-openrouter-attribution.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/sdk-stream-options.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/suite/agent-session-runtime.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/suite/harness.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/2753-reload-stale-resource-settings.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/2860-replaced-session-context.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/5596-missing-theme-export.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/5661-uppercase-header-values.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/6999-models-json-hot-reload.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/7027-credential-refresh-hang.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/test-harness.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/utilities.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

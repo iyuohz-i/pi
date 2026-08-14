@@ -1,0 +1,1443 @@
+{
+  "nodes": [
+    {
+      "id": "packages/tui/src/components/alt-screen-flash.ts",
+      "type": "file",
+      "label": "alt-screen-flash.ts",
+      "summary": "备用屏幕闪烁消息容器。AltScreenFlashContainer 管理临时显示的消息，支持自动定时消失和反色渲染样式。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 51
+    },
+    {
+      "id": "packages/tui/src/components/box.ts",
+      "type": "file",
+      "label": "box.ts",
+      "summary": "盒子容器组件。Box 为子组件提供内边距和背景色填充，带有渲染缓存优化，避免重复计算。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 137
+    },
+    {
+      "id": "packages/tui/src/components/cancellable-loader.ts",
+      "type": "file",
+      "label": "cancellable-loader.ts",
+      "summary": "可取消加载器。CancellableLoader 继承 Loader，在 Escape 键触发时通过 AbortController 发出中止信号，用于取消异步操作。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 40
+    },
+    {
+      "id": "packages/tui/src/components/editor.ts",
+      "type": "file",
+      "label": "editor.ts",
+      "summary": "多行编辑器组件。Editor 是 TUI 系统中最复杂的组件（2363行），支持多行文本编辑、可视行映射、自动补全、历史记录、Emacs 风格快捷键、粘贴标记处理、撤销/重做和斜杠命令。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 2363
+    },
+    {
+      "id": "packages/tui/src/components/h-stack.ts",
+      "type": "file",
+      "label": "h-stack.ts",
+      "summary": "水平栈布局组件。HStack 将子组件水平排列，支持 flex 布局属性（basis/grow/shrink）和对齐方式。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 44
+    },
+    {
+      "id": "packages/tui/src/components/image.ts",
+      "type": "file",
+      "label": "image.ts",
+      "summary": "终端图像渲染组件。Image 支持 Kitty 图形协议和 iTerm2 内联图像，自动检测终端能力并提供降级文本回退。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 127
+    },
+    {
+      "id": "packages/tui/src/components/input.ts",
+      "type": "file",
+      "label": "input.ts",
+      "summary": "单行文本输入组件。Input 支持光标移动、Emacs 风格快捷键（kill/yank/undo）、括号粘贴模式和单词级别导航。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 447
+    },
+    {
+      "id": "packages/tui/src/components/loader.ts",
+      "type": "file",
+      "label": "loader.ts",
+      "summary": "加载动画组件。Loader 继承 Text，提供旋转指示器动画和可配置的消息文本，支持自定义帧和间隔。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 92
+    },
+    {
+      "id": "packages/tui/src/components/markdown.ts",
+      "type": "file",
+      "label": "markdown.ts",
+      "summary": "Markdown 渲染组件。Markdown 使用 marked 库解析并渲染到终端，支持代码高亮、表格、LaTeX 数学公式、图像超链接和严格删除线。1010行，含自定义 LaTeX tokenizer。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 1010
+    },
+    {
+      "id": "packages/tui/src/components/scroll-view.ts",
+      "type": "file",
+      "label": "scroll-view.ts",
+      "summary": "滚动视图容器。ScrollView 管理垂直滚动、自动跟随底部、可配置滚动条样式和布局节点集成。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 216
+    },
+    {
+      "id": "packages/tui/src/components/select-list.ts",
+      "type": "file",
+      "label": "select-list.ts",
+      "summary": "选择列表组件。SelectList 提供可过滤的选项列表，支持键盘导航、主题化和双列布局（主列+描述列）。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 229
+    },
+    {
+      "id": "packages/tui/src/components/settings-list.ts",
+      "type": "file",
+      "label": "settings-list.ts",
+      "summary": "设置列表组件。SettingsList 用于交互式配置界面，支持值循环切换、模糊搜索过滤和嵌套子菜单。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 249
+    },
+    {
+      "id": "packages/tui/src/components/spacer.ts",
+      "type": "file",
+      "label": "spacer.ts",
+      "summary": "空白间距组件。Spacer 渲染指定数量的空行，用于布局中的间距控制。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 28
+    },
+    {
+      "id": "packages/tui/src/components/stack.ts",
+      "type": "file",
+      "label": "stack.ts",
+      "summary": "栈布局抽象基类。Stack 实现 FlexBox 风格的布局算法，包括 distribute 空间分配策略，被 HStack 和 VStack 继承。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 154
+    },
+    {
+      "id": "packages/tui/src/components/text.ts",
+      "type": "file",
+      "label": "text.ts",
+      "summary": "文本显示组件。Text 支持自动换行、内边距、自定义背景色和渲染缓存。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 106
+    },
+    {
+      "id": "packages/tui/src/components/truncated-text.ts",
+      "type": "file",
+      "label": "truncated-text.ts",
+      "summary": "截断文本组件。TruncatedText 将文本截断为单行以适应视口宽度，支持水平/垂直内边距。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 65
+    },
+    {
+      "id": "packages/tui/src/components/v-stack.ts",
+      "type": "file",
+      "label": "v-stack.ts",
+      "summary": "垂直栈布局组件。VStack 将子组件垂直排列，支持 gap 间距和 flex 布局属性。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 33
+    },
+    {
+      "id": "packages/tui/src/components/alt-screen-flash.ts::AltScreenFlashContainer",
+      "type": "class",
+      "label": "AltScreenFlashContainer",
+      "summary": "备用屏幕闪烁消息容器。管理带超时的临时消息条目，使用反色 ANSI 样式渲染。"
+    },
+    {
+      "id": "packages/tui/src/components/box.ts::Box",
+      "type": "class",
+      "label": "Box",
+      "summary": "盒子容器组件。为子组件应用内边距和背景色，带渲染缓存机制避免重复计算。"
+    },
+    {
+      "id": "packages/tui/src/components/cancellable-loader.ts::CancellableLoader",
+      "type": "class",
+      "label": "CancellableLoader",
+      "summary": "可取消加载器。扩展 Loader 组件，Escape 键触发 AbortController 中止异步操作。"
+    },
+    {
+      "id": "packages/tui/src/components/editor.ts::segmentWithMarkers",
+      "type": "function",
+      "label": "segmentWithMarkers",
+      "summary": "将粘贴标记合并为原子段，使光标移动和删除操作将标记视为单个单位。包装 Intl.Segmenter 并合并标记内的字符。"
+    },
+    {
+      "id": "packages/tui/src/components/editor.ts::wordWrapLine",
+      "type": "function",
+      "label": "wordWrapLine",
+      "summary": "将长文本行按单词边界换行，支持 CJK 字符断点和粘贴标记原子段处理。"
+    },
+    {
+      "id": "packages/tui/src/components/editor.ts::createScrollBorder",
+      "type": "function",
+      "label": "createScrollBorder",
+      "summary": "创建滚动边界回调，在编辑器内容到达顶部或底部时触发边界效果。"
+    },
+    {
+      "id": "packages/tui/src/components/editor.ts::Editor",
+      "type": "class",
+      "label": "Editor",
+      "summary": "多行文本编辑器（~2093行实现）。TUI 核心交互组件，支持可视行映射、自动补全下拉、Emacs 快捷键、kill ring、undo 栈、历史记录导航、粘贴标记处理和斜杠命令。"
+    },
+    {
+      "id": "packages/tui/src/components/h-stack.ts::HStack",
+      "type": "class",
+      "label": "HStack",
+      "summary": "水平栈布局。继承 Stack 抽象类，使用 compositeTuiLine 水平合成子组件渲染输出。"
+    },
+    {
+      "id": "packages/tui/src/components/image.ts::Image",
+      "type": "class",
+      "label": "Image",
+      "summary": "终端图像组件。支持 Kitty 图形协议和 iTerm2 内联图像渲染，自动检测终端能力并提供文本回退。带渲染缓存。"
+    },
+    {
+      "id": "packages/tui/src/components/input.ts::Input",
+      "type": "class",
+      "label": "Input",
+      "summary": "单行文本输入组件。支持光标移动、Emacs kill/yank、括号粘贴模式、kill ring 和 undo 栈。"
+    },
+    {
+      "id": "packages/tui/src/components/loader.ts::Loader",
+      "type": "class",
+      "label": "Loader",
+      "summary": "加载动画组件。继承 Text，提供旋转指示器帧动画，支持自定义帧序列和间隔时间。"
+    },
+    {
+      "id": "packages/tui/src/components/markdown.ts::tokenizeInlineLatex",
+      "type": "function",
+      "label": "tokenizeInlineLatex",
+      "summary": "解析行内 LaTeX 数学表达式（$...$ 或 \\(...\\) 语法），处理转义和嵌套。"
+    },
+    {
+      "id": "packages/tui/src/components/markdown.ts::tokenizeBlockLatex",
+      "type": "function",
+      "label": "tokenizeBlockLatex",
+      "summary": "解析块级 LaTeX 数学表达式（$$...$$ 或 \\[...\\] 语法）。"
+    },
+    {
+      "id": "packages/tui/src/components/markdown.ts::trimPartialClosingFences",
+      "type": "function",
+      "label": "trimPartialClosingFences",
+      "summary": "修剪流式渲染中不完整代码块结尾围栏的部分行。"
+    },
+    {
+      "id": "packages/tui/src/components/markdown.ts::StrictStrikethroughTokenizer",
+      "type": "class",
+      "label": "StrictStrikethroughTokenizer",
+      "summary": "严格删除线 tokenizer。扩展 marked 的 Tokenizer，使用更严格的正则避免将非删除线的 ~~ 误匹配。"
+    },
+    {
+      "id": "packages/tui/src/components/markdown.ts::Markdown",
+      "type": "class",
+      "label": "Markdown",
+      "summary": "Markdown 终端渲染器（~774行实现）。解析 Markdown token 树并渲染为 ANSI 格式化终端输出，支持标题、列表、表格、代码块、LaTeX 和图像超链接。"
+    },
+    {
+      "id": "packages/tui/src/components/scroll-view.ts::ScrollView",
+      "type": "class",
+      "label": "ScrollView",
+      "summary": "滚动视图容器。管理垂直滚动位置、自动跟随底部、可配置滚动条（hidden/auto/always）和瞬态滚动条显隐。集成布局节点系统。"
+    },
+    {
+      "id": "packages/tui/src/components/select-list.ts::SelectList",
+      "type": "class",
+      "label": "SelectList",
+      "summary": "可选择列表组件。提供带过滤的选项列表，支持键盘导航、主题化、双列布局和滚动指示。"
+    },
+    {
+      "id": "packages/tui/src/components/settings-list.ts::SettingsList",
+      "type": "class",
+      "label": "SettingsList",
+      "summary": "设置列表组件。用于交互式配置界面，支持值循环切换、模糊搜索、子菜单导航和主题化渲染。"
+    },
+    {
+      "id": "packages/tui/src/components/spacer.ts::Spacer",
+      "type": "class",
+      "label": "Spacer",
+      "summary": "空白间距组件。渲染指定数量的空行用于布局间距。"
+    },
+    {
+      "id": "packages/tui/src/components/stack.ts::distribute",
+      "type": "function",
+      "label": "distribute",
+      "summary": "FlexBox 风格的空间分配算法。根据 basis/grow/shrink/minSize/maxSize 约束在可见条目间分配可用空间。"
+    },
+    {
+      "id": "packages/tui/src/components/stack.ts::allocateStackSizes",
+      "type": "function",
+      "label": "allocateStackSizes",
+      "summary": "计算栈布局中每个条目的最终尺寸，整合内在尺寸和弹性增长/收缩。"
+    },
+    {
+      "id": "packages/tui/src/components/stack.ts::Stack",
+      "type": "class",
+      "label": "Stack",
+      "summary": "栈布局抽象基类。实现 FlexBox 风格的空间分配算法，管理 StackEntry 列表和可见性条件。被 HStack 和 VStack 继承。"
+    },
+    {
+      "id": "packages/tui/src/components/text.ts::Text",
+      "type": "class",
+      "label": "Text",
+      "summary": "文本显示组件。支持自动单词换行、内边距和自定义背景色，带渲染缓存。"
+    },
+    {
+      "id": "packages/tui/src/components/truncated-text.ts::TruncatedText",
+      "type": "class",
+      "label": "TruncatedText",
+      "summary": "截断文本组件。将多行文本截断为单行以适应视口宽度，支持 ANSI 感知的宽度截断。"
+    },
+    {
+      "id": "packages/tui/src/components/v-stack.ts::VStack",
+      "type": "class",
+      "label": "VStack",
+      "summary": "垂直栈布局。继承 Stack 抽象类，垂直排列子组件并支持 gap 间距。"
+    },
+    {
+      "id": "packages/coding-agent/test/custom-editor-history-keybindings.test.ts",
+      "type": "file",
+      "label": "custom-editor-history-keybindings.test.ts",
+      "summary": "自定义编辑器历史键绑定测试。验证 CustomEditor 组件在自定义键绑定配置下的历史记录导航行为，包括上/下箭头键遍历历史条目。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 34
+    },
+    {
+      "id": "packages/coding-agent/test/interactive-mode-status.test.ts",
+      "type": "file",
+      "label": "interactive-mode-status.test.ts",
+      "summary": "交互模式状态栏测试。全面测试交互模式下的状态栏渲染，包括模式指示器、主题颜色、扩展状态、OAuth 选择器和焦点组件的显示逻辑。1227行大型测试文件。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 1227
+    },
+    {
+      "id": "packages/coding-agent/test/interactive-tui.test.ts",
+      "type": "file",
+      "label": "interactive-tui.test.ts",
+      "summary": "交互模式 TUI 集成测试。验证交互式 TUI 的创建、初始化和基本交互流程，使用 RecordingTerminal 模拟终端输入输出。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 263
+    },
+    {
+      "id": "packages/tui/src/alt-screen-search.ts",
+      "type": "file",
+      "label": "alt-screen-search.ts",
+      "summary": "备用屏幕搜索功能。实现终端备用屏幕内容的文本搜索，包括语料库构建、正则匹配和搜索结果组件。AltScreenSearchComponent 提供带结果计数的搜索输入框。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 157
+    },
+    {
+      "id": "packages/tui/src/autocomplete.ts",
+      "type": "file",
+      "label": "autocomplete.ts",
+      "summary": "自动补全系统。实现路径补全、斜杠命令补全和组合自动补全提供者。CombinedAutocompleteProvider 协调多种补全源，支持 fd 工具快速文件搜索和模糊匹配。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 786
+    },
+    {
+      "id": "packages/tui/src/editor-component.ts",
+      "type": "file",
+      "label": "editor-component.ts",
+      "summary": "编辑器组件接口定义。EditorComponent 定义了自定义编辑器实现的接口契约，包括文本操作、回调、历史记录、自动补全和外观配置。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 74
+    },
+    {
+      "id": "packages/tui/src/fuzzy.ts",
+      "type": "file",
+      "label": "fuzzy.ts",
+      "summary": "模糊匹配工具库。fuzzyMatch 实现基于子序列的模糊匹配评分算法，fuzzyFilter 支持多 token 过滤和排序。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 137
+    },
+    {
+      "id": "packages/tui/src/index.ts",
+      "type": "file",
+      "label": "index.ts",
+      "summary": "TUI 包公共导出入口。重新导出所有组件、接口、工具和键盘相关类型，是外部消费者使用 TUI 包的唯一入口点。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 147
+    },
+    {
+      "id": "packages/tui/src/keybindings.ts",
+      "type": "file",
+      "label": "keybindings.ts",
+      "summary": "键绑定管理系统。KeybindingsManager 管理默认和用户自定义键绑定，支持冲突检测、声明合并和动态重载。定义了编辑器、输入、选择和备用屏幕的键绑定标识符。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 320
+    },
+    {
+      "id": "packages/tui/src/keys.ts",
+      "type": "file",
+      "label": "keys.ts",
+      "summary": "键盘输入解析引擎。支持传统终端序列和 Kitty 键盘协议的键位解析，提供类型安全的 KeyId 标识符、matchesKey 匹配和 parseKey 解析。1401行，涵盖完整的键盘协议实现。",
+      "language": "typescript",
+      "fileCategory": "code",
+      "sizeLines": 1401
+    },
+    {
+      "id": "packages/coding-agent/test/interactive-mode-status.test.ts::TestFocusableComponent",
+      "type": "class",
+      "label": "TestFocusableComponent",
+      "summary": "测试用可聚焦组件。模拟 Focusable 接口用于测试焦点管理和状态栏渲染逻辑。"
+    },
+    {
+      "id": "packages/coding-agent/test/interactive-tui.test.ts::RecordingTerminal",
+      "type": "class",
+      "label": "RecordingTerminal",
+      "summary": "录制终端模拟器。记录所有写入的终端输出用于测试断言，实现 Terminal 接口的 start/write/stop 方法。"
+    },
+    {
+      "id": "packages/tui/src/alt-screen-search.ts::buildSearchCorpus",
+      "type": "function",
+      "label": "buildSearchCorpus",
+      "summary": "构建搜索语料库，将多行文本展平为字符级映射表，每个字符关联其在原始行/列中的位置，用于跨行搜索匹配。"
+    },
+    {
+      "id": "packages/tui/src/alt-screen-search.ts::findAltScreenSearchMatches",
+      "type": "function",
+      "label": "findAltScreenSearchMatches",
+      "summary": "在备用屏幕行中查找搜索匹配项，使用正则表达式在构建的语料库上执行全局匹配，返回带行列坐标的结果。"
+    },
+    {
+      "id": "packages/tui/src/alt-screen-search.ts::AltScreenSearchComponent",
+      "type": "class",
+      "label": "AltScreenSearchComponent",
+      "summary": "备用屏幕搜索 UI 组件。包含搜索输入框和结果计数显示（如 '1/5'），实现 Focusable 接口支持焦点切换。"
+    },
+    {
+      "id": "packages/tui/src/autocomplete.ts::buildFdPathQuery",
+      "type": "function",
+      "label": "buildFdPathQuery",
+      "summary": "将用户输入的路径前缀转换为 fd 搜索工具的正则查询模式，处理路径分隔符和转义。"
+    },
+    {
+      "id": "packages/tui/src/autocomplete.ts::findUnclosedQuoteStart",
+      "type": "function",
+      "label": "findUnclosedQuoteStart",
+      "summary": "扫描文本查找未闭合的引号起始位置，用于解析引号内的路径补全。"
+    },
+    {
+      "id": "packages/tui/src/autocomplete.ts::extractQuotedPrefix",
+      "type": "function",
+      "label": "extractQuotedPrefix",
+      "summary": "提取文本中未闭合引号内的前缀内容，支持 @scope/ 前缀的引号路径。"
+    },
+    {
+      "id": "packages/tui/src/autocomplete.ts::parsePathPrefix",
+      "type": "function",
+      "label": "parsePathPrefix",
+      "summary": "从输入文本中解析路径前缀，识别 @scope/ 包名前缀和普通文件路径前缀。"
+    },
+    {
+      "id": "packages/tui/src/autocomplete.ts::buildCompletionValue",
+      "type": "function",
+      "label": "buildCompletionValue",
+      "summary": "根据补全上下文构建最终补全值，处理路径前缀替换和引号包裹。"
+    },
+    {
+      "id": "packages/tui/src/autocomplete.ts::walkDirectoryWithFd",
+      "type": "function",
+      "label": "walkDirectoryWithFd",
+      "summary": "使用 fd 工具递归搜索目录中的文件，支持路径前缀过滤和结果数量限制。通过子进程调用 fd 命令。"
+    },
+    {
+      "id": "packages/tui/src/autocomplete.ts::CombinedAutocompleteProvider",
+      "type": "class",
+      "label": "CombinedAutocompleteProvider",
+      "summary": "组合自动补全提供者（~513行）。协调斜杠命令、文件路径和 @ 作用域补全，管理 fd 搜索、模糊匹配和补全应用逻辑。"
+    },
+    {
+      "id": "packages/tui/src/fuzzy.ts::fuzzyMatch",
+      "type": "function",
+      "label": "fuzzyMatch",
+      "summary": "模糊匹配核心算法。检查查询字符是否按顺序出现在文本中，基于连续匹配、词边界、位置等因素计算评分。支持字母/数字交换匹配。"
+    },
+    {
+      "id": "packages/tui/src/fuzzy.ts::fuzzyFilter",
+      "type": "function",
+      "label": "fuzzyFilter",
+      "summary": "模糊过滤函数。对 items 列表执行多 token 模糊匹配，返回按总分排序的结果。支持空格和斜杠分隔的多 token 查询。"
+    },
+    {
+      "id": "packages/tui/src/keybindings.ts::normalizeKeys",
+      "type": "function",
+      "label": "normalizeKeys",
+      "summary": "将键绑定配置中的键值标准化为数组格式，兼容单键和多键配置。"
+    },
+    {
+      "id": "packages/tui/src/keybindings.ts::KeybindingsManager",
+      "type": "class",
+      "label": "KeybindingsManager",
+      "summary": "键绑定管理器。管理默认键绑定（TUI_KEYBINDINGS）和用户自定义键绑定的合并、匹配查询和冲突检测。支持声明合并扩展。"
+    },
+    {
+      "id": "packages/tui/src/keys.ts::matchesKey",
+      "type": "function",
+      "label": "matchesKey",
+      "summary": "核心键匹配函数（~384行）。检查终端输入数据是否匹配指定的 KeyId，支持传统序列、Kitty 协议序列和 modifyOtherKeys 序列。"
+    },
+    {
+      "id": "packages/tui/src/keys.ts::parseKey",
+      "type": "function",
+      "label": "parseKey",
+      "summary": "解析终端输入数据并返回对应的 KeyId。按优先级尝试 Kitty 序列、modifyOtherKeys、原始控制字符和传统序列。"
+    },
+    {
+      "id": "packages/tui/src/keys.ts::parseKittySequence",
+      "type": "function",
+      "label": "parseKittySequence",
+      "summary": "解析 Kitty 键盘协议转义序列（CSI 格式），提取键码、修饰符和事件类型。"
+    },
+    {
+      "id": "packages/tui/src/keys.ts::matchesKittySequence",
+      "type": "function",
+      "label": "matchesKittySequence",
+      "summary": "检查输入数据是否匹配指定的 Kitty 键盘协议序列。"
+    },
+    {
+      "id": "packages/tui/src/keys.ts::decodeKittyPrintable",
+      "type": "function",
+      "label": "decodeKittyPrintable",
+      "summary": "从 Kitty 协议的可打印键码中解码实际字符，处理 Unicode codepoint 和 shift 修饰符。"
+    },
+    {
+      "id": "packages/tui/src/keys.ts::isKeyRelease",
+      "type": "function",
+      "label": "isKeyRelease",
+      "summary": "检测输入数据是否为键释放事件（Kitty 协议事件类型 2）。"
+    },
+    {
+      "id": "packages/tui/src/keys.ts::isKeyRepeat",
+      "type": "function",
+      "label": "isKeyRepeat",
+      "summary": "检测输入数据是否为键重复事件（Kitty 协议事件类型 3）。"
+    },
+    {
+      "id": "packages/tui/src/keys.ts::parseKeyId",
+      "type": "function",
+      "label": "parseKeyId",
+      "summary": "将键标识符字符串解析为类型安全的 KeyId 对象。"
+    }
+  ],
+  "edges": [
+    {
+      "source": "packages/tui/src/components/alt-screen-flash.ts",
+      "target": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/alt-screen-flash.ts",
+      "target": "packages/tui/src/utils.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/box.ts",
+      "target": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/box.ts",
+      "target": "packages/tui/src/utils.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/cancellable-loader.ts",
+      "target": "packages/tui/src/components/loader.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/cancellable-loader.ts",
+      "target": "packages/tui/src/keybindings.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/editor.ts",
+      "target": "packages/tui/src/autocomplete.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/editor.ts",
+      "target": "packages/tui/src/components/select-list.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/editor.ts",
+      "target": "packages/tui/src/keybindings.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/editor.ts",
+      "target": "packages/tui/src/keys.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/editor.ts",
+      "target": "packages/tui/src/kill-ring.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/editor.ts",
+      "target": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/editor.ts",
+      "target": "packages/tui/src/undo-stack.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/editor.ts",
+      "target": "packages/tui/src/utils.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/editor.ts",
+      "target": "packages/tui/src/word-navigation.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/h-stack.ts",
+      "target": "packages/tui/src/components/stack.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/h-stack.ts",
+      "target": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/h-stack.ts",
+      "target": "packages/tui/src/utils.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/image.ts",
+      "target": "packages/tui/src/terminal-image.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/image.ts",
+      "target": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/image.ts",
+      "target": "packages/tui/src/utils.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/input.ts",
+      "target": "packages/tui/src/keybindings.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/input.ts",
+      "target": "packages/tui/src/keys.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/input.ts",
+      "target": "packages/tui/src/kill-ring.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/input.ts",
+      "target": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/input.ts",
+      "target": "packages/tui/src/undo-stack.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/input.ts",
+      "target": "packages/tui/src/utils.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/input.ts",
+      "target": "packages/tui/src/word-navigation.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/loader.ts",
+      "target": "packages/tui/src/components/text.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/loader.ts",
+      "target": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/markdown.ts",
+      "target": "packages/tui/src/latex.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/markdown.ts",
+      "target": "packages/tui/src/terminal-image.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/markdown.ts",
+      "target": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/markdown.ts",
+      "target": "packages/tui/src/utils.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/scroll-view.ts",
+      "target": "packages/tui/src/layout-node.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/scroll-view.ts",
+      "target": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/select-list.ts",
+      "target": "packages/tui/src/keybindings.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/select-list.ts",
+      "target": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/select-list.ts",
+      "target": "packages/tui/src/utils.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/settings-list.ts",
+      "target": "packages/tui/src/components/input.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/settings-list.ts",
+      "target": "packages/tui/src/fuzzy.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/settings-list.ts",
+      "target": "packages/tui/src/keybindings.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/settings-list.ts",
+      "target": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/settings-list.ts",
+      "target": "packages/tui/src/utils.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/spacer.ts",
+      "target": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/stack.ts",
+      "target": "packages/tui/src/layout-node.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/stack.ts",
+      "target": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/text.ts",
+      "target": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/text.ts",
+      "target": "packages/tui/src/utils.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/truncated-text.ts",
+      "target": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/truncated-text.ts",
+      "target": "packages/tui/src/utils.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/v-stack.ts",
+      "target": "packages/tui/src/components/stack.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/components/alt-screen-flash.ts",
+      "target": "packages/tui/src/components/alt-screen-flash.ts::AltScreenFlashContainer",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/components/box.ts",
+      "target": "packages/tui/src/components/box.ts::Box",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/components/cancellable-loader.ts",
+      "target": "packages/tui/src/components/cancellable-loader.ts::CancellableLoader",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/components/editor.ts",
+      "target": "packages/tui/src/components/editor.ts::segmentWithMarkers",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/components/editor.ts",
+      "target": "packages/tui/src/components/editor.ts::wordWrapLine",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/components/editor.ts",
+      "target": "packages/tui/src/components/editor.ts::createScrollBorder",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/components/editor.ts",
+      "target": "packages/tui/src/components/editor.ts::Editor",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/components/h-stack.ts",
+      "target": "packages/tui/src/components/h-stack.ts::HStack",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/components/image.ts",
+      "target": "packages/tui/src/components/image.ts::Image",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/components/input.ts",
+      "target": "packages/tui/src/components/input.ts::Input",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/components/loader.ts",
+      "target": "packages/tui/src/components/loader.ts::Loader",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/components/markdown.ts",
+      "target": "packages/tui/src/components/markdown.ts::tokenizeInlineLatex",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/components/markdown.ts",
+      "target": "packages/tui/src/components/markdown.ts::tokenizeBlockLatex",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/components/markdown.ts",
+      "target": "packages/tui/src/components/markdown.ts::trimPartialClosingFences",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/components/markdown.ts",
+      "target": "packages/tui/src/components/markdown.ts::StrictStrikethroughTokenizer",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/components/markdown.ts",
+      "target": "packages/tui/src/components/markdown.ts::Markdown",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/components/scroll-view.ts",
+      "target": "packages/tui/src/components/scroll-view.ts::ScrollView",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/components/select-list.ts",
+      "target": "packages/tui/src/components/select-list.ts::SelectList",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/components/settings-list.ts",
+      "target": "packages/tui/src/components/settings-list.ts::SettingsList",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/components/spacer.ts",
+      "target": "packages/tui/src/components/spacer.ts::Spacer",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/components/stack.ts",
+      "target": "packages/tui/src/components/stack.ts::distribute",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/components/stack.ts",
+      "target": "packages/tui/src/components/stack.ts::allocateStackSizes",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/components/stack.ts",
+      "target": "packages/tui/src/components/stack.ts::Stack",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/components/text.ts",
+      "target": "packages/tui/src/components/text.ts::Text",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/components/truncated-text.ts",
+      "target": "packages/tui/src/components/truncated-text.ts::TruncatedText",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/components/v-stack.ts",
+      "target": "packages/tui/src/components/v-stack.ts::VStack",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/components/editor.ts::Editor",
+      "target": "packages/tui/src/autocomplete.ts::CombinedAutocompleteProvider",
+      "type": "uses",
+      "label": "自动补全"
+    },
+    {
+      "source": "packages/tui/src/components/editor.ts::Editor",
+      "target": "packages/tui/src/components/select-list.ts::SelectList",
+      "type": "uses",
+      "label": "补全下拉列表"
+    },
+    {
+      "source": "packages/tui/src/components/editor.ts::wordWrapLine",
+      "target": "packages/tui/src/components/editor.ts::segmentWithMarkers",
+      "type": "uses",
+      "label": "段落标记感知换行"
+    },
+    {
+      "source": "packages/tui/src/components/settings-list.ts::SettingsList",
+      "target": "packages/tui/src/components/input.ts::Input",
+      "type": "uses",
+      "label": "搜索输入框"
+    },
+    {
+      "source": "packages/tui/src/components/settings-list.ts::SettingsList",
+      "target": "packages/tui/src/fuzzy.ts::fuzzyFilter",
+      "type": "uses",
+      "label": "设置项模糊过滤"
+    },
+    {
+      "source": "packages/tui/src/components/h-stack.ts::HStack",
+      "target": "packages/tui/src/components/stack.ts::Stack",
+      "type": "extends",
+      "label": "继承"
+    },
+    {
+      "source": "packages/tui/src/components/v-stack.ts::VStack",
+      "target": "packages/tui/src/components/stack.ts::Stack",
+      "type": "extends",
+      "label": "继承"
+    },
+    {
+      "source": "packages/tui/src/components/cancellable-loader.ts::CancellableLoader",
+      "target": "packages/tui/src/components/loader.ts::Loader",
+      "type": "extends",
+      "label": "继承"
+    },
+    {
+      "source": "packages/tui/src/components/loader.ts::Loader",
+      "target": "packages/tui/src/components/text.ts::Text",
+      "type": "extends",
+      "label": "继承"
+    },
+    {
+      "source": "packages/tui/src/components/input.ts::Input",
+      "target": "packages/tui/src/keybindings.ts::KeybindingsManager",
+      "type": "uses",
+      "label": "快捷键查询"
+    },
+    {
+      "source": "packages/tui/src/components/editor.ts::Editor",
+      "target": "packages/tui/src/keybindings.ts::KeybindingsManager",
+      "type": "uses",
+      "label": "快捷键查询"
+    },
+    {
+      "source": "packages/tui/src/components/select-list.ts::SelectList",
+      "target": "packages/tui/src/keybindings.ts::KeybindingsManager",
+      "type": "uses",
+      "label": "快捷键查询"
+    },
+    {
+      "source": "packages/tui/src/components/markdown.ts::Markdown",
+      "target": "packages/tui/src/components/markdown.ts::tokenizeInlineLatex",
+      "type": "uses",
+      "label": "LaTeX tokenizer"
+    },
+    {
+      "source": "packages/tui/src/components/markdown.ts::Markdown",
+      "target": "packages/tui/src/components/markdown.ts::tokenizeBlockLatex",
+      "type": "uses",
+      "label": "块级 LaTeX tokenizer"
+    },
+    {
+      "source": "packages/tui/src/components/scroll-view.ts::ScrollView",
+      "target": "packages/tui/src/layout-node.ts::LAYOUT_NODE",
+      "type": "uses",
+      "label": "布局节点"
+    },
+    {
+      "source": "packages/tui/src/components/stack.ts::Stack",
+      "target": "packages/tui/src/layout-node.ts::LAYOUT_NODE",
+      "type": "uses",
+      "label": "布局节点"
+    },
+    {
+      "source": "packages/tui/src/components/stack.ts::allocateStackSizes",
+      "target": "packages/tui/src/components/stack.ts::distribute",
+      "type": "uses",
+      "label": "空间分配"
+    },
+    {
+      "source": "packages/coding-agent/test/custom-editor-history-keybindings.test.ts",
+      "target": "packages/coding-agent/src/core/keybindings.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/custom-editor-history-keybindings.test.ts",
+      "target": "packages/coding-agent/src/modes/interactive/components/custom-editor.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/custom-editor-history-keybindings.test.ts",
+      "target": "packages/tui/test/test-themes.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/custom-editor-history-keybindings.test.ts",
+      "target": "packages/tui/test/virtual-terminal.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/interactive-mode-status.test.ts",
+      "target": "packages/coding-agent/src/core/extensions/types.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/interactive-mode-status.test.ts",
+      "target": "packages/coding-agent/src/core/source-info.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/interactive-mode-status.test.ts",
+      "target": "packages/coding-agent/src/modes/interactive/components/oauth-selector.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/interactive-mode-status.test.ts",
+      "target": "packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/interactive-mode-status.test.ts",
+      "target": "packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/interactive-mode-status.test.ts",
+      "target": "packages/tui/src/tui-main-screen.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/interactive-mode-status.test.ts",
+      "target": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/interactive-mode-status.test.ts",
+      "target": "packages/tui/test/virtual-terminal.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/interactive-tui.test.ts",
+      "target": "packages/coding-agent/src/core/settings-manager.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/interactive-tui.test.ts",
+      "target": "packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/interactive-tui.test.ts",
+      "target": "packages/tui/test/virtual-terminal.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/alt-screen-search.ts",
+      "target": "packages/tui/src/components/input.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/alt-screen-search.ts",
+      "target": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/alt-screen-search.ts",
+      "target": "packages/tui/src/utils.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/autocomplete.ts",
+      "target": "packages/tui/src/fuzzy.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/editor-component.ts",
+      "target": "packages/tui/src/autocomplete.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/editor-component.ts",
+      "target": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/tui/src/keybindings.ts",
+      "target": "packages/tui/src/keys.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/test/interactive-mode-status.test.ts",
+      "target": "packages/coding-agent/test/interactive-mode-status.test.ts::TestFocusableComponent",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/test/interactive-tui.test.ts",
+      "target": "packages/coding-agent/test/interactive-tui.test.ts::RecordingTerminal",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/alt-screen-search.ts",
+      "target": "packages/tui/src/alt-screen-search.ts::buildSearchCorpus",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/alt-screen-search.ts",
+      "target": "packages/tui/src/alt-screen-search.ts::findAltScreenSearchMatches",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/alt-screen-search.ts",
+      "target": "packages/tui/src/alt-screen-search.ts::AltScreenSearchComponent",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/autocomplete.ts",
+      "target": "packages/tui/src/autocomplete.ts::buildFdPathQuery",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/autocomplete.ts",
+      "target": "packages/tui/src/autocomplete.ts::findUnclosedQuoteStart",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/autocomplete.ts",
+      "target": "packages/tui/src/autocomplete.ts::extractQuotedPrefix",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/autocomplete.ts",
+      "target": "packages/tui/src/autocomplete.ts::parsePathPrefix",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/autocomplete.ts",
+      "target": "packages/tui/src/autocomplete.ts::buildCompletionValue",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/autocomplete.ts",
+      "target": "packages/tui/src/autocomplete.ts::walkDirectoryWithFd",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/autocomplete.ts",
+      "target": "packages/tui/src/autocomplete.ts::CombinedAutocompleteProvider",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/fuzzy.ts",
+      "target": "packages/tui/src/fuzzy.ts::fuzzyMatch",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/fuzzy.ts",
+      "target": "packages/tui/src/fuzzy.ts::fuzzyFilter",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/keybindings.ts",
+      "target": "packages/tui/src/keybindings.ts::normalizeKeys",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/keybindings.ts",
+      "target": "packages/tui/src/keybindings.ts::KeybindingsManager",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/keys.ts",
+      "target": "packages/tui/src/keys.ts::matchesKey",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/keys.ts",
+      "target": "packages/tui/src/keys.ts::parseKey",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/keys.ts",
+      "target": "packages/tui/src/keys.ts::parseKittySequence",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/keys.ts",
+      "target": "packages/tui/src/keys.ts::matchesKittySequence",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/keys.ts",
+      "target": "packages/tui/src/keys.ts::decodeKittyPrintable",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/keys.ts",
+      "target": "packages/tui/src/keys.ts::isKeyRelease",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/keys.ts",
+      "target": "packages/tui/src/keys.ts::isKeyRepeat",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/keys.ts",
+      "target": "packages/tui/src/keys.ts::parseKeyId",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/tui/src/autocomplete.ts::CombinedAutocompleteProvider",
+      "target": "packages/tui/src/fuzzy.ts::fuzzyFilter",
+      "type": "uses",
+      "label": "模糊文件匹配"
+    },
+    {
+      "source": "packages/tui/src/autocomplete.ts::CombinedAutocompleteProvider",
+      "target": "packages/tui/src/fuzzy.ts::fuzzyMatch",
+      "type": "uses",
+      "label": "模糊评分"
+    },
+    {
+      "source": "packages/tui/src/alt-screen-search.ts::AltScreenSearchComponent",
+      "target": "packages/tui/src/components/input.ts::Input",
+      "type": "uses",
+      "label": "搜索输入"
+    },
+    {
+      "source": "packages/tui/src/alt-screen-search.ts::findAltScreenSearchMatches",
+      "target": "packages/tui/src/alt-screen-search.ts::buildSearchCorpus",
+      "type": "uses",
+      "label": "语料库构建"
+    },
+    {
+      "source": "packages/tui/src/keybindings.ts::KeybindingsManager",
+      "target": "packages/tui/src/keys.ts::matchesKey",
+      "type": "uses",
+      "label": "键位匹配"
+    },
+    {
+      "source": "packages/tui/src/fuzzy.ts::fuzzyFilter",
+      "target": "packages/tui/src/fuzzy.ts::fuzzyMatch",
+      "type": "uses",
+      "label": "多 token 匹配"
+    },
+    {
+      "source": "packages/tui/src/keys.ts::parseKey",
+      "target": "packages/tui/src/keys.ts::parseKittySequence",
+      "type": "uses",
+      "label": "Kitty 协议解析"
+    },
+    {
+      "source": "packages/tui/src/keys.ts::matchesKey",
+      "target": "packages/tui/src/keys.ts::parseKittySequence",
+      "type": "uses",
+      "label": "Kitty 序列匹配"
+    }
+  ]
+}

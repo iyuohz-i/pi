@@ -1,0 +1,662 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/coding-agent/test/auth-storage.test.ts",
+      "type": "file",
+      "name": "auth-storage.test.ts",
+      "filePath": "packages/coding-agent/test/auth-storage.test.ts",
+      "summary": "测试认证存储模块，验证凭证的持久化、读取和多种存储后端的行为。",
+      "tags": [
+        "test",
+        "auth",
+        "storage"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/test/bash-close-hang-windows.test.ts",
+      "type": "file",
+      "name": "bash-close-hang-windows.test.ts",
+      "filePath": "packages/coding-agent/test/bash-close-hang-windows.test.ts",
+      "summary": "测试 Windows 平台 bash 进程关闭挂起问题，验证进程清理和超时处理。",
+      "tags": [
+        "test",
+        "bash",
+        "windows",
+        "process-cleanup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/block-images.test.ts",
+      "type": "file",
+      "name": "block-images.test.ts",
+      "filePath": "packages/coding-agent/test/block-images.test.ts",
+      "summary": "测试图片阻止功能，验证文件处理器对内嵌图片的过滤和阻止行为。",
+      "tags": [
+        "test",
+        "images",
+        "file-processor",
+        "filtering"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/cache-stats.test.ts",
+      "type": "file",
+      "name": "cache-stats.test.ts",
+      "filePath": "packages/coding-agent/test/cache-stats.test.ts",
+      "summary": "测试缓存统计功能，验证缓存命中率和使用量统计的准确性。",
+      "tags": [
+        "test",
+        "cache",
+        "stats"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/compaction-extensions-example.test.ts",
+      "type": "file",
+      "name": "compaction-extensions-example.test.ts",
+      "filePath": "packages/coding-agent/test/compaction-extensions-example.test.ts",
+      "summary": "测试扩展系统的压缩示例，验证扩展在上下文压缩时的行为。",
+      "tags": [
+        "test",
+        "compaction",
+        "extensions"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/compaction-extensions.test.ts",
+      "type": "file",
+      "name": "compaction-extensions.test.ts",
+      "filePath": "packages/coding-agent/test/compaction-extensions.test.ts",
+      "summary": "测试扩展系统的压缩功能，验证扩展与上下文压缩机制的交互行为。",
+      "tags": [
+        "test",
+        "compaction",
+        "extensions"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/test/config-value-migration.test.ts",
+      "type": "file",
+      "name": "config-value-migration.test.ts",
+      "filePath": "packages/coding-agent/test/config-value-migration.test.ts",
+      "summary": "测试配置值迁移逻辑，验证旧配置格式到新格式的自动迁移行为。",
+      "tags": [
+        "test",
+        "config",
+        "migration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/config.test.ts",
+      "type": "file",
+      "name": "config.test.ts",
+      "filePath": "packages/coding-agent/test/config.test.ts",
+      "summary": "测试配置模块，验证安装方式检测、路径解析和包管理器识别逻辑。",
+      "tags": [
+        "test",
+        "config",
+        "installation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/test/credential-print.test.ts",
+      "type": "file",
+      "name": "credential-print.test.ts",
+      "filePath": "packages/coding-agent/test/credential-print.test.ts",
+      "summary": "测试凭证打印功能，验证 CLI 中凭证显示和格式化逻辑。",
+      "tags": [
+        "test",
+        "credential",
+        "cli"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/default-tools-setting.test.ts",
+      "type": "file",
+      "name": "default-tools-setting.test.ts",
+      "filePath": "packages/coding-agent/test/default-tools-setting.test.ts",
+      "summary": "测试默认工具设置功能，验证工具配置加载和默认工具集合的初始化。",
+      "tags": [
+        "test",
+        "tools",
+        "default-settings"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/edit-tool-legacy-input.test.ts",
+      "type": "file",
+      "name": "edit-tool-legacy-input.test.ts",
+      "filePath": "packages/coding-agent/test/edit-tool-legacy-input.test.ts",
+      "summary": "测试编辑工具的旧版输入格式兼容性，验证遗留输入格式的解析和处理。",
+      "tags": [
+        "test",
+        "edit-tool",
+        "legacy",
+        "compatibility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/edit-tool-no-full-redraw.test.ts",
+      "type": "file",
+      "name": "edit-tool-no-full-redraw.test.ts",
+      "filePath": "packages/coding-agent/test/edit-tool-no-full-redraw.test.ts",
+      "summary": "测试编辑工具的增量渲染功能，验证大文件编辑时避免全量重绘的优化行为。",
+      "tags": [
+        "test",
+        "edit-tool",
+        "rendering",
+        "optimization"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/test/experimental-tool-strict-mode.test.ts",
+      "type": "file",
+      "name": "experimental-tool-strict-mode.test.ts",
+      "filePath": "packages/coding-agent/test/experimental-tool-strict-mode.test.ts",
+      "summary": "测试实验性工具的严格模式，验证严格模式下工具行为的约束。",
+      "tags": [
+        "test",
+        "experimental",
+        "tools",
+        "strict-mode"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/test/experimental.test.ts",
+      "type": "file",
+      "name": "experimental.test.ts",
+      "filePath": "packages/coding-agent/test/experimental.test.ts",
+      "summary": "测试实验性功能开关模块，验证功能标志的读取和启用逻辑。",
+      "tags": [
+        "test",
+        "experimental",
+        "feature-flags"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/test/extensions-discovery.test.ts",
+      "type": "file",
+      "name": "extensions-discovery.test.ts",
+      "filePath": "packages/coding-agent/test/extensions-discovery.test.ts",
+      "summary": "测试扩展发现机制，验证扩展加载器的目录扫描、缓存和错误处理行为。",
+      "tags": [
+        "test",
+        "extensions",
+        "discovery",
+        "loader"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/test/extensions-input-event.test.ts",
+      "type": "file",
+      "name": "extensions-input-event.test.ts",
+      "filePath": "packages/coding-agent/test/extensions-input-event.test.ts",
+      "summary": "测试扩展输入事件处理，验证扩展运行时对用户输入事件的响应机制。",
+      "tags": [
+        "test",
+        "extensions",
+        "input-event",
+        "runner"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/coding-agent/test/auth-storage.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/bash-close-hang-windows.test.ts",
+      "target": "file:packages/coding-agent/src/core/bash-executor.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/bash-close-hang-windows.test.ts",
+      "target": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/block-images.test.ts",
+      "target": "file:packages/coding-agent/src/cli/file-processor.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/block-images.test.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/block-images.test.ts",
+      "target": "file:packages/coding-agent/src/core/tools/read.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/cache-stats.test.ts",
+      "target": "file:packages/coding-agent/src/core/cache-stats.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/cache-stats.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/compaction-extensions-example.test.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/compaction-extensions.test.ts",
+      "target": "file:packages/coding-agent/src/core/agent-session.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/compaction-extensions.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/compaction-extensions.test.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/compaction-extensions.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/compaction-extensions.test.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/compaction-extensions.test.ts",
+      "target": "file:packages/coding-agent/src/core/source-info.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/compaction-extensions.test.ts",
+      "target": "file:packages/coding-agent/src/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/compaction-extensions.test.ts",
+      "target": "file:packages/coding-agent/test/model-runtime-test-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/compaction-extensions.test.ts",
+      "target": "file:packages/coding-agent/test/utilities.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/config-value-migration.test.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/config-value-migration.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/config-value-migration.test.ts",
+      "target": "file:packages/coding-agent/src/migrations.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/config-value-migration.test.ts",
+      "target": "file:packages/coding-agent/test/model-runtime-test-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/config.test.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/credential-print.test.ts",
+      "target": "file:packages/coding-agent/src/cli/args.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/credential-print.test.ts",
+      "target": "file:packages/coding-agent/src/cli/auth-command.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/credential-print.test.ts",
+      "target": "file:packages/coding-agent/src/cli/credential-print.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/credential-print.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/credential-print.test.ts",
+      "target": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/credential-print.test.ts",
+      "target": "file:packages/coding-agent/src/main.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/default-tools-setting.test.ts",
+      "target": "file:packages/coding-agent/src/core/agent-session-services.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/default-tools-setting.test.ts",
+      "target": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/default-tools-setting.test.ts",
+      "target": "file:packages/coding-agent/src/core/sdk.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/default-tools-setting.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/default-tools-setting.test.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/edit-tool-legacy-input.test.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/edit-tool-legacy-input.test.ts",
+      "target": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/edit-tool-no-full-redraw.test.ts",
+      "target": "file:packages/coding-agent/src/core/tools/edit-diff.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/edit-tool-no-full-redraw.test.ts",
+      "target": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/edit-tool-no-full-redraw.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/tool-execution.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/edit-tool-no-full-redraw.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/experimental-tool-strict-mode.test.ts",
+      "target": "file:packages/coding-agent/src/core/tools/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/experimental.test.ts",
+      "target": "file:packages/coding-agent/src/core/experimental.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/extensions-discovery.test.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/extensions-input-event.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/extensions-input-event.test.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/extensions-input-event.test.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/runner.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/extensions-input-event.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/extensions-input-event.test.ts",
+      "target": "file:packages/coding-agent/test/model-runtime-test-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "target": "file:packages/coding-agent/test/auth-storage.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "target": "file:packages/coding-agent/test/bash-close-hang-windows.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/file-processor.ts",
+      "target": "file:packages/coding-agent/test/block-images.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/cache-stats.ts",
+      "target": "file:packages/coding-agent/test/cache-stats.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/index.ts",
+      "target": "file:packages/coding-agent/test/compaction-extensions-example.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/index.ts",
+      "target": "file:packages/coding-agent/test/compaction-extensions.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/migrations.ts",
+      "target": "file:packages/coding-agent/test/config-value-migration.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/config.ts",
+      "target": "file:packages/coding-agent/test/config.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/credential-print.ts",
+      "target": "file:packages/coding-agent/test/credential-print.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "target": "file:packages/coding-agent/test/edit-tool-legacy-input.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "target": "file:packages/coding-agent/test/edit-tool-no-full-redraw.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/index.ts",
+      "target": "file:packages/coding-agent/test/experimental-tool-strict-mode.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/experimental.ts",
+      "target": "file:packages/coding-agent/test/experimental.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "file:packages/coding-agent/test/extensions-discovery.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/runner.ts",
+      "target": "file:packages/coding-agent/test/extensions-input-event.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

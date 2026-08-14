@@ -1,0 +1,325 @@
+import { writeFileSync, appendFileSync } from 'fs';
+
+const out = '/Users/zhouyi/AiHub/pi/.understand-anything/intermediate/batch-8.json';
+const parts = [];
+
+parts.push('{\n  "nodes": [');
+
+// 1. branch-summarization.ts
+parts.push(JSON.stringify({
+  id: "file:packages/coding-agent/src/core/compaction/branch-summarization.ts",
+  type: "file", name: "branch-summarization.ts",
+  filePath: "packages/coding-agent/src/core/compaction/branch-summarization.ts",
+  summary: "处理对话分支的摘要生成，收集分支条目并通过 LLM 生成结构化的分支总结。",
+  tags: ["compaction","summarization","branch","llm"], complexity: "complex",
+  languageNotes: "使用 token 预算策略控制分支条目的序列化长度。"
+}));
+parts.push(JSON.stringify({
+  id: "function:packages/coding-agent/src/core/compaction/branch-summarization.ts:collectEntriesForBranchSummary",
+  type: "function", name: "collectEntriesForBranchSummary",
+  filePath: "packages/coding-agent/src/core/compaction/branch-summarization.ts",
+  lineRange: [108,146],
+  summary: "从会话中收集需要生成分支摘要的条目，定位旧叶子节点到目标节点之间的对话片段。",
+  tags: ["compaction","session","branch"], complexity: "moderate"
+}));
+parts.push(JSON.stringify({
+  id: "function:packages/coding-agent/src/core/compaction/branch-summarization.ts:prepareBranchEntries",
+  type: "function", name: "prepareBranchEntries",
+  filePath: "packages/coding-agent/src/core/compaction/branch-summarization.ts",
+  lineRange: [195,247],
+  summary: "在 token 预算内准备分支条目，截断过长的序列化对话内容。",
+  tags: ["compaction","token-budget","preparation"], complexity: "moderate"
+}));
+parts.push(JSON.stringify({
+  id: "function:packages/coding-agent/src/core/compaction/branch-summarization.ts:generateBranchSummary",
+  type: "function", name: "generateBranchSummary",
+  filePath: "packages/coding-agent/src/core/compaction/branch-summarization.ts",
+  lineRange: [293,376],
+  summary: "调用 LLM 为分支条目生成分支摘要，支持自定义指令和流式回调。",
+  tags: ["compaction","llm","summarization","streaming"], complexity: "complex"
+}));
+
+// 2. compaction.ts
+parts.push(JSON.stringify({
+  id: "file:packages/coding-agent/src/core/compaction/compaction.ts",
+  type: "file", name: "compaction.ts",
+  filePath: "packages/coding-agent/src/core/compaction/compaction.ts",
+  summary: "核心上下文压缩模块，负责 token 估算、对话截断点选择、摘要生成与会话压缩的完整流程。",
+  tags: ["compaction","context-management","token-estimation","llm"], complexity: "complex",
+  languageNotes: "包含多阶段压缩策略：截断点查找、摘要生成与用量计算。"
+}));
+parts.push(JSON.stringify({
+  id: "function:packages/coding-agent/src/core/compaction/compaction.ts:estimateTokens",
+  type: "function", name: "estimateTokens",
+  filePath: "packages/coding-agent/src/core/compaction/compaction.ts",
+  lineRange: [266,306],
+  summary: "估算消息的 token 数量，考虑文本和图片内容的字符数。",
+  tags: ["token-estimation","utility"], complexity: "moderate"
+}));
+parts.push(JSON.stringify({
+  id: "function:packages/coding-agent/src/core/compaction/compaction.ts:findCutPoint",
+  type: "function", name: "findCutPoint",
+  filePath: "packages/coding-agent/src/core/compaction/compaction.ts",
+  lineRange: [403,461],
+  summary: "在对话条目中查找最佳压缩截断点，保留最近的 token 数量并寻找有效的回合起始点。",
+  tags: ["compaction","cut-point","algorithm"], complexity: "complex"
+}));
+parts.push(JSON.stringify({
+  id: "function:packages/coding-agent/src/core/compaction/compaction.ts:generateSummary",
+  type: "function", name: "generateSummary",
+  filePath: "packages/coding-agent/src/core/compaction/compaction.ts",
+  lineRange: [587,619],
+  summary: "调用 LLM 为当前对话上下文生成摘要，支持自定义指令、思考级别和流式回调。",
+  tags: ["compaction","llm","summarization"], complexity: "moderate"
+}));
+parts.push(JSON.stringify({
+  id: "function:packages/coding-agent/src/core/compaction/compaction.ts:prepareCompaction",
+  type: "function", name: "prepareCompaction",
+  filePath: "packages/coding-agent/src/core/compaction/compaction.ts",
+  lineRange: [710,789],
+  summary: "准备压缩操作，计算上下文 token、查找截断点并提取文件操作记录。",
+  tags: ["compaction","preparation","context-management"], complexity: "complex"
+}));
+parts.push(JSON.stringify({
+  id: "function:packages/coding-agent/src/core/compaction/compaction.ts:compact",
+  type: "function", name: "compact",
+  filePath: "packages/coding-agent/src/core/compaction/compaction.ts",
+  lineRange: [817,919],
+  summary: "执行完整的压缩流程：生成摘要、构建压缩消息并更新会话条目。",
+  tags: ["compaction","core","session"], complexity: "complex"
+}));
+parts.push(JSON.stringify({
+  id: "function:packages/coding-agent/src/core/compaction/compaction.ts:generateSummaryWithUsage",
+  type: "function", name: "generateSummaryWithUsage",
+  filePath: "packages/coding-agent/src/core/compaction/compaction.ts",
+  lineRange: [622,686],
+  summary: "生成摘要并返回 token 用量信息，支持重试和流式回调。",
+  tags: ["compaction","llm","usage-tracking"], complexity: "complex"
+}));
+
+// 3. utils.ts
+parts.push(JSON.stringify({
+  id: "file:packages/coding-agent/src/core/compaction/utils.ts",
+  type: "file", name: "utils.ts",
+  filePath: "packages/coding-agent/src/core/compaction/utils.ts",
+  summary: "提供压缩模块的实用工具函数，包括文件操作提取、对话序列化和摘要系统提示。",
+  tags: ["compaction","utility","serialization"], complexity: "moderate"
+}));
+parts.push(JSON.stringify({
+  id: "function:packages/coding-agent/src/core/compaction/utils.ts:extractFileOpsFromMessage",
+  type: "function", name: "extractFileOpsFromMessage",
+  filePath: "packages/coding-agent/src/core/compaction/utils.ts",
+  lineRange: [29,56],
+  summary: "从消息中提取文件读写操作记录，累积到文件操作对象中。",
+  tags: ["compaction","file-operations","extraction"], complexity: "moderate"
+}));
+parts.push(JSON.stringify({
+  id: "function:packages/coding-agent/src/core/compaction/utils.ts:serializeConversation",
+  type: "function", name: "serializeConversation",
+  filePath: "packages/coding-agent/src/core/compaction/utils.ts",
+  lineRange: [109,150],
+  summary: "将消息数组序列化为文本格式，保留角色信息和文件操作上下文供 LLM 摘要使用。",
+  tags: ["compaction","serialization","conversation"], complexity: "moderate"
+}));
+
+// 4. ansi-to-html.ts
+parts.push(JSON.stringify({
+  id: "file:packages/coding-agent/src/core/export-html/ansi-to-html.ts",
+  type: "file", name: "ansi-to-html.ts",
+  filePath: "packages/coding-agent/src/core/export-html/ansi-to-html.ts",
+  summary: "将 ANSI 终端颜色转义码转换为带内联 CSS 样式的 HTML，支持 256 色和 SGR 参数解析。",
+  tags: ["export-html","ansi","html","conversion"], complexity: "complex",
+  languageNotes: "实现了完整的 SGR (Select Graphic Rendition) 参数解析。"
+}));
+parts.push(JSON.stringify({
+  id: "function:packages/coding-agent/src/core/export-html/ansi-to-html.ts:ansiToHtml",
+  type: "function", name: "ansiToHtml",
+  filePath: "packages/coding-agent/src/core/export-html/ansi-to-html.ts",
+  lineRange: [198,250],
+  summary: "将包含 ANSI 转义码的文本转换为带内联 CSS 样式的 HTML 字符串。",
+  tags: ["export-html","ansi","html"], complexity: "complex"
+}));
+parts.push(JSON.stringify({
+  id: "function:packages/coding-agent/src/core/export-html/ansi-to-html.ts:applySgrCode",
+  type: "function", name: "applySgrCode",
+  filePath: "packages/coding-agent/src/core/export-html/ansi-to-html.ts",
+  lineRange: [110,190],
+  summary: "解析并应用 SGR (Select Graphic Rendition) 参数，设置文本颜色、背景色和样式。",
+  tags: ["ansi","sgr","style-parsing"], complexity: "complex"
+}));
+
+// 5. tool-renderer.ts
+parts.push(JSON.stringify({
+  id: "file:packages/coding-agent/src/core/export-html/tool-renderer.ts",
+  type: "file", name: "tool-renderer.ts",
+  filePath: "packages/coding-agent/src/core/export-html/tool-renderer.ts",
+  summary: "为 HTML 导出功能渲染工具调用结果，将各种工具输出格式化为可展示的 HTML。",
+  tags: ["export-html","tool-renderer","html"], complexity: "moderate"
+}));
+parts.push(JSON.stringify({
+  id: "function:packages/coding-agent/src/core/export-html/tool-renderer.ts:createToolHtmlRenderer",
+  type: "function", name: "createToolHtmlRenderer",
+  filePath: "packages/coding-agent/src/core/export-html/tool-renderer.ts",
+  lineRange: [58,172],
+  summary: "创建工具 HTML 渲染器工厂函数，根据工具类型生成对应的 HTML 输出。",
+  tags: ["export-html","tool-renderer","factory"], complexity: "complex"
+}));
+
+// 6. keybindings.ts
+parts.push(JSON.stringify({
+  id: "file:packages/coding-agent/src/core/keybindings.ts",
+  type: "file", name: "keybindings.ts",
+  filePath: "packages/coding-agent/src/core/keybindings.ts",
+  summary: "管理键绑定配置，包括默认键映射、配置迁移、加载和 KeybindingsManager 类。",
+  tags: ["keybindings","config","input-handling"], complexity: "complex",
+  languageNotes: "支持从旧版键绑定格式迁移到新格式。"
+}));
+parts.push(JSON.stringify({
+  id: "function:packages/coding-agent/src/core/keybindings.ts:migrateKeybindingsConfig",
+  type: "function", name: "migrateKeybindingsConfig",
+  filePath: "packages/coding-agent/src/core/keybindings.ts",
+  lineRange: [289,309],
+  summary: "将旧版键绑定配置迁移到新格式，处理已弃用的键名。",
+  tags: ["keybindings","migration","config"], complexity: "moderate"
+}));
+parts.push(JSON.stringify({
+  id: "class:packages/coding-agent/src/core/keybindings.ts:KeybindingsManager",
+  type: "class", name: "KeybindingsManager",
+  filePath: "packages/coding-agent/src/core/keybindings.ts",
+  lineRange: [340,368],
+  summary: "管理键绑定配置的加载、创建和重载，提供有效配置查询接口。",
+  tags: ["keybindings","manager","config"], complexity: "moderate"
+}));
+
+// 7. messages.ts
+parts.push(JSON.stringify({
+  id: "file:packages/coding-agent/src/core/messages.ts",
+  type: "file", name: "messages.ts",
+  filePath: "packages/coding-agent/src/core/messages.ts",
+  summary: "定义消息类型和构造函数，包括分支摘要、压缩摘要、自定义消息的创建以及 LLM 格式转换。",
+  tags: ["messages","data-model","serialization"], complexity: "moderate"
+}));
+parts.push(JSON.stringify({
+  id: "function:packages/coding-agent/src/core/messages.ts:convertToLlm",
+  type: "function", name: "convertToLlm",
+  filePath: "packages/coding-agent/src/core/messages.ts",
+  lineRange: [148,195],
+  summary: "将内部消息格式转换为 LLM API 所需的消息格式，处理工具调用和内容提取。",
+  tags: ["messages","llm","conversion"], complexity: "moderate"
+}));
+parts.push(JSON.stringify({
+  id: "function:packages/coding-agent/src/core/messages.ts:createCompactionSummaryMessage",
+  type: "function", name: "createCompactionSummaryMessage",
+  filePath: "packages/coding-agent/src/core/messages.ts",
+  lineRange: [109,120],
+  summary: "创建压缩摘要消息，包含摘要文本和压缩前的 token 数量。",
+  tags: ["messages","compaction","factory"], complexity: "simple"
+}));
+
+// 8. llama/client.ts
+parts.push(JSON.stringify({
+  id: "file:packages/coding-agent/src/extensions/llama/client.ts",
+  type: "file", name: "client.ts",
+  filePath: "packages/coding-agent/src/extensions/llama/client.ts",
+  summary: "Llama 本地推理服务器的 HTTP 客户端，负责模型加载/卸载、下载和推理请求。",
+  tags: ["llama","client","http","inference"], complexity: "complex",
+  languageNotes: "支持 AbortSignal 取消和加载/下载进度解析。"
+}));
+parts.push(JSON.stringify({
+  id: "class:packages/coding-agent/src/extensions/llama/client.ts:LlamaClient",
+  type: "class", name: "LlamaClient",
+  filePath: "packages/coding-agent/src/extensions/llama/client.ts",
+  lineRange: [156,332],
+  summary: "封装 Llama 服务器的 HTTP API，提供模型列表、加载、卸载、下载和推理功能。",
+  tags: ["llama","client","http","api"], complexity: "complex"
+}));
+
+// 9. huggingface.ts
+parts.push(JSON.stringify({
+  id: "file:packages/coding-agent/src/extensions/llama/huggingface.ts",
+  type: "file", name: "huggingface.ts",
+  filePath: "packages/coding-agent/src/extensions/llama/huggingface.ts",
+  summary: "HuggingFace Hub API 客户端，用于搜索模型和获取模型详情，支持 token 认证和速率限制处理。",
+  tags: ["huggingface","client","model-search"], complexity: "moderate"
+}));
+parts.push(JSON.stringify({
+  id: "class:packages/coding-agent/src/extensions/llama/huggingface.ts:HuggingFaceClient",
+  type: "class", name: "HuggingFaceClient",
+  filePath: "packages/coding-agent/src/extensions/llama/huggingface.ts",
+  lineRange: [63,158],
+  summary: "封装 HuggingFace Hub API，提供模型搜索和详情查询功能，自动处理速率限制。",
+  tags: ["huggingface","client","api"], complexity: "moderate"
+}));
+
+// 10. index.ts (llama)
+parts.push(JSON.stringify({
+  id: "file:packages/coding-agent/src/extensions/llama/index.ts",
+  type: "file", name: "index.ts",
+  filePath: "packages/coding-agent/src/extensions/llama/index.ts",
+  summary: "Llama 扩展入口模块，注册本地 Llama 推理 provider 和管理命令。",
+  tags: ["llama","extension","entry-point","provider"], complexity: "complex"
+}));
+parts.push(JSON.stringify({
+  id: "function:packages/coding-agent/src/extensions/llama/index.ts:llamaExtension",
+  type: "function", name: "llamaExtension",
+  filePath: "packages/coding-agent/src/extensions/llama/index.ts",
+  lineRange: [42,228],
+  summary: "Llama 扩展主函数，注册 provider、管理命令和 UI 交互，处理模型加载和连接错误。",
+  tags: ["llama","extension","provider-registration"], complexity: "complex"
+}));
+
+// 11. provider.ts (llama)
+parts.push(JSON.stringify({
+  id: "file:packages/coding-agent/src/extensions/llama/provider.ts",
+  type: "file", name: "provider.ts",
+  filePath: "packages/coding-agent/src/extensions/llama/provider.ts",
+  summary: "创建 Llama 模型 provider，将本地 Llama 服务器模型注册到 Pi 的模型运行时。",
+  tags: ["llama","provider","model-runtime"], complexity: "moderate"
+}));
+parts.push(JSON.stringify({
+  id: "function:packages/coding-agent/src/extensions/llama/provider.ts:createLlamaProvider",
+  type: "function", name: "createLlamaProvider",
+  filePath: "packages/coding-agent/src/extensions/llama/provider.ts",
+  lineRange: [58,150],
+  summary: "创建 Llama provider 实例，定义模型列表获取和推理请求转发的逻辑。",
+  tags: ["llama","provider","factory"], complexity: "complex"
+}));
+
+// 12. ui.ts (llama)
+parts.push(JSON.stringify({
+  id: "file:packages/coding-agent/src/extensions/llama/ui.ts",
+  type: "file", name: "ui.ts",
+  filePath: "packages/coding-agent/src/extensions/llama/ui.ts",
+  summary: "Llama 扩展的终端 UI 组件，提供 HuggingFace 模型搜索界面和 Llama 管理视图。",
+  tags: ["llama","ui","tui","model-search"], complexity: "complex"
+}));
+parts.push(JSON.stringify({
+  id: "class:packages/coding-agent/src/extensions/llama/ui.ts:HuggingFaceSearch",
+  type: "class", name: "HuggingFaceSearch",
+  filePath: "packages/coding-agent/src/extensions/llama/ui.ts",
+  lineRange: [96,274],
+  summary: "HuggingFace 模型搜索 TUI 组件，提供输入过滤、防抖搜索和结果选择功能。",
+  tags: ["llama","ui","search","tui"], complexity: "complex"
+}));
+parts.push(JSON.stringify({
+  id: "class:packages/coding-agent/src/extensions/llama/ui.ts:LlamaView",
+  type: "class", name: "LlamaView",
+  filePath: "packages/coding-agent/src/extensions/llama/ui.ts",
+  lineRange: [276,478],
+  summary: "Llama 管理视图 TUI 组件，展示模型列表、加载状态和进度信息。",
+  tags: ["llama","ui","tui","model-management"], complexity: "complex"
+}));
+parts.push(JSON.stringify({
+  id: "function:packages/coding-agent/src/extensions/llama/ui.ts:runWithProgress",
+  type: "function", name: "runWithProgress",
+  filePath: "packages/coding-agent/src/extensions/llama/ui.ts",
+  lineRange: [494,542],
+  summary: "在 Llama UI 中以进度条形式执行异步操作，显示加载或下载进度。",
+  tags: ["llama","ui","progress"], complexity: "moderate"
+}));
+
+parts.push('],\n  "edges": [');
+parts.push(']\n}');
+
+writeFileSync(out, parts.join('\n'));
+console.log('Step 1 done: nodes written, edges placeholder added');

@@ -1,0 +1,1800 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/coding-agent/test/extensions-runner.test.ts",
+      "type": "file",
+      "name": "extensions-runner.test.ts",
+      "filePath": "packages/coding-agent/test/extensions-runner.test.ts",
+      "summary": "测试扩展运行器的生命周期管理、事件分发和工具注册功能，覆盖 shutdown、project trust、session 等核心事件场景。",
+      "tags": [
+        "test",
+        "extensions",
+        "event-handler",
+        "runner"
+      ],
+      "complexity": "complex",
+      "languageNotes": "使用 Vitest 测试框架，覆盖 1000+ 行扩展运行器集成测试。"
+    },
+    {
+      "id": "file:packages/coding-agent/test/file-mutation-queue.test.ts",
+      "type": "file",
+      "name": "file-mutation-queue.test.ts",
+      "filePath": "packages/coding-agent/test/file-mutation-queue.test.ts",
+      "summary": "测试文件变更队列的并发控制和顺序执行机制，确保 edit/write 工具操作互斥执行。",
+      "tags": [
+        "test",
+        "file-mutation",
+        "concurrency",
+        "tools"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/first-time-setup-fork.test.ts",
+      "type": "file",
+      "name": "first-time-setup-fork.test.ts",
+      "filePath": "packages/coding-agent/test/first-time-setup-fork.test.ts",
+      "summary": "测试首次安装流程的 fork 场景，验证 startup UI 在子进程环境中的行为。",
+      "tags": [
+        "test",
+        "startup",
+        "fork"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/test/first-time-setup.test.ts",
+      "type": "file",
+      "name": "first-time-setup.test.ts",
+      "filePath": "packages/coding-agent/test/first-time-setup.test.ts",
+      "summary": "测试首次安装配置流程，验证 startup UI 与 settings manager 的交互。",
+      "tags": [
+        "test",
+        "startup",
+        "setup"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/footer-data-provider.test.ts",
+      "type": "file",
+      "name": "footer-data-provider.test.ts",
+      "filePath": "packages/coding-agent/test/footer-data-provider.test.ts",
+      "summary": "测试 footer 数据提供器的 git 路径发现和状态收集功能，使用临时 git worktree 进行集成测试。",
+      "tags": [
+        "test",
+        "footer",
+        "git",
+        "data-provider"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/footer-width.test.ts",
+      "type": "file",
+      "name": "footer-width.test.ts",
+      "filePath": "packages/coding-agent/test/footer-width.test.ts",
+      "summary": "测试 footer 组件的宽度计算和 token/cwd 格式化逻辑，验证多 provider 场景下的布局正确性。",
+      "tags": [
+        "test",
+        "footer",
+        "width",
+        "ui"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/format-resume-command.test.ts",
+      "type": "file",
+      "name": "format-resume-command.test.ts",
+      "filePath": "packages/coding-agent/test/format-resume-command.test.ts",
+      "summary": "测试 resume 命令格式化逻辑，验证从 session 管理器恢复会话时的命令构建。",
+      "tags": [
+        "test",
+        "session",
+        "resume",
+        "formatting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/frontmatter.test.ts",
+      "type": "file",
+      "name": "frontmatter.test.ts",
+      "filePath": "packages/coding-agent/test/frontmatter.test.ts",
+      "summary": "测试 frontmatter 解析和剥离功能，验证 markdown 文件元数据的提取。",
+      "tags": [
+        "test",
+        "frontmatter",
+        "parsing",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/test/git-merge-and-resolve-extension.test.ts",
+      "type": "file",
+      "name": "git-merge-and-resolve-extension.test.ts",
+      "filePath": "packages/coding-agent/test/git-merge-and-resolve-extension.test.ts",
+      "summary": "测试 git-merge-and-resolve 扩展的合并冲突解决流程，模拟 exec 调用验证扩展 API 交互。",
+      "tags": [
+        "test",
+        "extensions",
+        "git",
+        "merge"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/git-update.test.ts",
+      "type": "file",
+      "name": "git-update.test.ts",
+      "filePath": "packages/coding-agent/test/git-update.test.ts",
+      "summary": "测试 git 自更新流程，验证 package manager 在 git 仓库环境中的安装、更新和回滚行为。",
+      "tags": [
+        "test",
+        "git",
+        "package-manager",
+        "update"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/test/http-dispatcher.test.ts",
+      "type": "file",
+      "name": "http-dispatcher.test.ts",
+      "filePath": "packages/coding-agent/test/http-dispatcher.test.ts",
+      "summary": "测试 HTTP 调度器的超时配置、代理设置和请求分发功能。",
+      "tags": [
+        "test",
+        "http",
+        "dispatcher",
+        "network"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/initial-message.test.ts",
+      "type": "file",
+      "name": "initial-message.test.ts",
+      "filePath": "packages/coding-agent/test/initial-message.test.ts",
+      "summary": "测试初始消息构建逻辑，验证从命令行参数到首条用户消息的转换流程。",
+      "tags": [
+        "test",
+        "cli",
+        "initial-message"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/test/input-transform-streaming-example.test.ts",
+      "type": "file",
+      "name": "input-transform-streaming-example.test.ts",
+      "filePath": "packages/coding-agent/test/input-transform-streaming-example.test.ts",
+      "summary": "测试 input-transform-streaming 扩展示例，验证输入流转换功能的扩展 API 调用。",
+      "tags": [
+        "test",
+        "extensions",
+        "streaming",
+        "input-transform"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/keybindings-migration.test.ts",
+      "type": "file",
+      "name": "keybindings-migration.test.ts",
+      "filePath": "packages/coding-agent/test/keybindings-migration.test.ts",
+      "summary": "测试快捷键配置迁移逻辑，验证旧版 keybindings 格式到新格式的自动转换。",
+      "tags": [
+        "test",
+        "keybindings",
+        "migration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/max-thinking.test.ts",
+      "type": "file",
+      "name": "max-thinking.test.ts",
+      "filePath": "packages/coding-agent/test/max-thinking.test.ts",
+      "summary": "测试最大 thinking 级别配置，验证命令行参数与 settings 的交互。",
+      "tags": [
+        "test",
+        "thinking",
+        "config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/test/mermaid.test.ts",
+      "type": "file",
+      "name": "mermaid.test.ts",
+      "filePath": "packages/coding-agent/test/mermaid.test.ts",
+      "summary": "测试 Mermaid 图表 markdown 转换器，验证代码块到 Mermaid 渲染的转换逻辑。",
+      "tags": [
+        "test",
+        "mermaid",
+        "markdown",
+        "transformer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/model-registry.test.ts",
+      "type": "file",
+      "name": "model-registry.test.ts",
+      "filePath": "packages/coding-agent/test/model-registry.test.ts",
+      "summary": "测试模型注册表的核心功能，包括 provider 配置、模型列表管理、API key 缓存和 models.json 文件读写。",
+      "tags": [
+        "test",
+        "model-registry",
+        "provider",
+        "config"
+      ],
+      "complexity": "complex",
+      "languageNotes": "近 2000 行的大型测试文件，覆盖 ModelRegistry 的完整功能矩阵。"
+    },
+    {
+      "id": "file:packages/coding-agent/test/model-resolver.test.ts",
+      "type": "file",
+      "name": "model-resolver.test.ts",
+      "filePath": "packages/coding-agent/test/model-resolver.test.ts",
+      "summary": "测试模型解析器的模型匹配、scope 解析和 CLI 模型选择逻辑，覆盖精确匹配和模糊匹配场景。",
+      "tags": [
+        "test",
+        "model-resolver",
+        "resolution",
+        "matching"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/test/model-runtime-auth-options.test.ts",
+      "type": "file",
+      "name": "model-runtime-auth-options.test.ts",
+      "filePath": "packages/coding-agent/test/model-runtime-auth-options.test.ts",
+      "summary": "测试模型运行时的认证选项管理，验证不同 provider 的 auth 类型配置和凭据获取。",
+      "tags": [
+        "test",
+        "model-runtime",
+        "auth",
+        "credentials"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/model-runtime-cloudflare-compat.test.ts",
+      "type": "file",
+      "name": "model-runtime-cloudflare-compat.test.ts",
+      "filePath": "packages/coding-agent/test/model-runtime-cloudflare-compat.test.ts",
+      "summary": "测试模型运行时在 Cloudflare Workers 环境中的兼容性，验证受限 API 下的运行时创建。",
+      "tags": [
+        "test",
+        "model-runtime",
+        "cloudflare",
+        "compatibility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/model-runtime-credential-sync.test.ts",
+      "type": "file",
+      "name": "model-runtime-credential-sync.test.ts",
+      "filePath": "packages/coding-agent/test/model-runtime-credential-sync.test.ts",
+      "summary": "测试模型运行时的凭据同步机制，验证 OAuth 登录流程和 native provider 的凭据刷新。",
+      "tags": [
+        "test",
+        "model-runtime",
+        "credentials",
+        "oauth"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/model-runtime-modify-models-compat.test.ts",
+      "type": "file",
+      "name": "model-runtime-modify-models-compat.test.ts",
+      "filePath": "packages/coding-agent/test/model-runtime-modify-models-compat.test.ts",
+      "summary": "测试模型运行时在动态修改模型列表时的兼容性，验证 add/remove 模型后的状态一致性。",
+      "tags": [
+        "test",
+        "model-runtime",
+        "models",
+        "compatibility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/model-runtime-test-utils.ts",
+      "type": "file",
+      "name": "model-runtime-test-utils.ts",
+      "filePath": "packages/coding-agent/test/model-runtime-test-utils.ts",
+      "summary": "模型运行时测试工具模块，提供 createModelRegistry 和 getModelRuntime 等共享测试辅助函数。",
+      "tags": [
+        "test",
+        "test-utils",
+        "model-runtime",
+        "factory"
+      ],
+      "complexity": "simple",
+      "languageNotes": "测试辅助文件，被多个 model-runtime 相关测试共享导入。"
+    },
+    {
+      "id": "file:packages/coding-agent/test/models-store.test.ts",
+      "type": "file",
+      "name": "models-store.test.ts",
+      "filePath": "packages/coding-agent/test/models-store.test.ts",
+      "summary": "测试模型存储的文件读写和内存操作，验证 models.json 的持久化和加载逻辑。",
+      "tags": [
+        "test",
+        "models-store",
+        "persistence"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/package-command-paths.test.ts",
+      "type": "file",
+      "name": "package-command-paths.test.ts",
+      "filePath": "packages/coding-agent/test/package-command-paths.test.ts",
+      "summary": "测试 package 命令的路径解析和配置选择功能，覆盖 config selector、trust manager 等交互。",
+      "tags": [
+        "test",
+        "package-manager",
+        "paths",
+        "config"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/test/package-manager-ssh.test.ts",
+      "type": "file",
+      "name": "package-manager-ssh.test.ts",
+      "filePath": "packages/coding-agent/test/package-manager-ssh.test.ts",
+      "summary": "测试 package manager 在 SSH 环境中的行为，验证远程安装和路径处理。",
+      "tags": [
+        "test",
+        "package-manager",
+        "ssh"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/package-manager.test.ts",
+      "type": "file",
+      "name": "package-manager.test.ts",
+      "filePath": "packages/coding-agent/test/package-manager.test.ts",
+      "summary": "测试 package manager 的核心功能，覆盖扩展安装、卸载、启用/禁用、spawn 进程模拟等完整流程。",
+      "tags": [
+        "test",
+        "package-manager",
+        "extensions",
+        "integration"
+      ],
+      "complexity": "complex",
+      "languageNotes": "超过 2500 行的超大型测试文件，使用 MockSpawnedProcess 模拟子进程行为。"
+    },
+    {
+      "id": "file:packages/coding-agent/test/path-utils.test.ts",
+      "type": "file",
+      "name": "path-utils.test.ts",
+      "filePath": "packages/coding-agent/test/path-utils.test.ts",
+      "summary": "测试路径工具函数，验证路径展开、解析和 cwd 相对路径转换。",
+      "tags": [
+        "test",
+        "path-utils",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/paths.test.ts",
+      "type": "file",
+      "name": "paths.test.ts",
+      "filePath": "packages/coding-agent/test/paths.test.ts",
+      "summary": "测试路径处理工具，验证路径规范化、本地路径检测和文件修订版本获取。",
+      "tags": [
+        "test",
+        "paths",
+        "utility",
+        "normalization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/prompt-templates.test.ts",
+      "type": "file",
+      "name": "prompt-templates.test.ts",
+      "filePath": "packages/coding-agent/test/prompt-templates.test.ts",
+      "summary": "测试提示模板系统，验证模板加载、参数替换和命令行参数解析功能。",
+      "tags": [
+        "test",
+        "prompt-templates",
+        "templating"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/test/radius.test.ts",
+      "type": "file",
+      "name": "radius.test.ts",
+      "filePath": "packages/coding-agent/test/radius.test.ts",
+      "summary": "测试 Radius provider 的认证和模型运行时集成，验证 OAuth 凭据和配置解析。",
+      "tags": [
+        "test",
+        "radius",
+        "auth",
+        "model-runtime"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/resolve-config-value.test.ts",
+      "type": "file",
+      "name": "resolve-config-value.test.ts",
+      "filePath": "packages/coding-agent/test/resolve-config-value.test.ts",
+      "summary": "测试配置值解析功能，验证环境变量、命令行和配置文件的值合并与缓存逻辑。",
+      "tags": [
+        "test",
+        "config",
+        "resolution",
+        "caching"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/resource-loader.test.ts",
+      "type": "file",
+      "name": "resource-loader.test.ts",
+      "filePath": "packages/coding-agent/test/resource-loader.test.ts",
+      "summary": "测试资源加载器的项目上下文文件加载、skills 发现和 source info 构建，覆盖 worktree 和扩展场景。",
+      "tags": [
+        "test",
+        "resource-loader",
+        "context",
+        "skills"
+      ],
+      "complexity": "complex",
+      "languageNotes": "超过 1100 行的大型集成测试，覆盖资源加载的多种场景。"
+    },
+    {
+      "id": "function:packages/coding-agent/test/footer-data-provider.test.ts:createReftableWorktree",
+      "type": "function",
+      "name": "createReftableWorktree",
+      "filePath": "packages/coding-agent/test/footer-data-provider.test.ts",
+      "lineRange": [
+        61,
+        78
+      ],
+      "summary": "创建临时 reftable git worktree 用于测试 footer 数据提供器的 git 路径发现。",
+      "tags": [
+        "test-helper",
+        "git",
+        "worktree"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/test/footer-width.test.ts:createSession",
+      "type": "function",
+      "name": "createSession",
+      "filePath": "packages/coding-agent/test/footer-width.test.ts",
+      "lineRange": [
+        17,
+        88
+      ],
+      "summary": "创建模拟会话数据，包含多条 session entries 用于 footer 宽度计算测试。",
+      "tags": [
+        "test-helper",
+        "session",
+        "mock"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/test/footer-width.test.ts:createFooterData",
+      "type": "function",
+      "name": "createFooterData",
+      "filePath": "packages/coding-agent/test/footer-width.test.ts",
+      "lineRange": [
+        90,
+        102
+      ],
+      "summary": "根据 provider 数量创建 footer 数据，用于测试不同 provider 数量下的宽度计算。",
+      "tags": [
+        "test-helper",
+        "footer",
+        "mock"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/format-resume-command.test.ts:createSessionManager",
+      "type": "function",
+      "name": "createSessionManager",
+      "filePath": "packages/coding-agent/test/format-resume-command.test.ts",
+      "lineRange": [
+        36,
+        50
+      ],
+      "summary": "创建临时会话管理器实例，用于测试 resume 命令格式化。",
+      "tags": [
+        "test-helper",
+        "session-manager",
+        "mock"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/git-merge-and-resolve-extension.test.ts:setup",
+      "type": "function",
+      "name": "setup",
+      "filePath": "packages/coding-agent/test/git-merge-and-resolve-extension.test.ts",
+      "lineRange": [
+        23,
+        49
+      ],
+      "summary": "初始化 git-merge-and-resolve 扩展测试环境，模拟 exec 调用返回预设结果。",
+      "tags": [
+        "test-helper",
+        "extensions",
+        "git",
+        "mock"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/test/git-update.test.ts:git",
+      "type": "function",
+      "name": "git",
+      "filePath": "packages/coding-agent/test/git-update.test.ts",
+      "lineRange": [
+        19,
+        28
+      ],
+      "summary": "执行 git 命令的辅助函数，封装 spawnSync 调用并返回 stdout。",
+      "tags": [
+        "test-helper",
+        "git",
+        "shell"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/input-transform-streaming-example.test.ts:setup",
+      "type": "function",
+      "name": "setup",
+      "filePath": "packages/coding-agent/test/input-transform-streaming-example.test.ts",
+      "lineRange": [
+        13,
+        34
+      ],
+      "summary": "初始化 input-transform-streaming 扩展测试环境，模拟 exec 调用并触发 handler。",
+      "tags": [
+        "test-helper",
+        "extensions",
+        "mock"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/test/mermaid.test.ts:transformMermaid",
+      "type": "function",
+      "name": "transformMermaid",
+      "filePath": "packages/coding-agent/test/mermaid.test.ts",
+      "lineRange": [
+        15,
+        25
+      ],
+      "summary": "使用 Mermaid markdown 转换器处理输入文本，验证图表代码块的转换结果。",
+      "tags": [
+        "test",
+        "mermaid",
+        "transformer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/model-runtime-auth-options.test.ts:authOptions",
+      "type": "function",
+      "name": "authOptions",
+      "filePath": "packages/coding-agent/test/model-runtime-auth-options.test.ts",
+      "lineRange": [
+        6,
+        21
+      ],
+      "summary": "从模型运行时获取所有 provider 的认证选项列表，用于验证 auth 类型配置。",
+      "tags": [
+        "test-helper",
+        "auth",
+        "model-runtime"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/model-runtime-auth-options.test.ts:testModel",
+      "type": "function",
+      "name": "testModel",
+      "filePath": "packages/coding-agent/test/model-runtime-auth-options.test.ts",
+      "lineRange": [
+        23,
+        33
+      ],
+      "summary": "创建测试用模型配置对象，包含指定 ID 和默认参数。",
+      "tags": [
+        "test-helper",
+        "model",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/model-runtime-cloudflare-compat.test.ts:createCloudflareRuntime",
+      "type": "function",
+      "name": "createCloudflareRuntime",
+      "filePath": "packages/coding-agent/test/model-runtime-cloudflare-compat.test.ts",
+      "lineRange": [
+        45,
+        57
+      ],
+      "summary": "创建模拟 Cloudflare 环境下的模型运行时实例，使用内存认证存储。",
+      "tags": [
+        "test-helper",
+        "model-runtime",
+        "cloudflare"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/test/model-runtime-credential-sync.test.ts:model",
+      "type": "function",
+      "name": "model",
+      "filePath": "packages/coding-agent/test/model-runtime-credential-sync.test.ts",
+      "lineRange": [
+        6,
+        19
+      ],
+      "summary": "创建测试用模型配置，指定 provider 和模型 ID。",
+      "tags": [
+        "test-helper",
+        "model",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/model-runtime-credential-sync.test.ts:provider",
+      "type": "function",
+      "name": "provider",
+      "filePath": "packages/coding-agent/test/model-runtime-credential-sync.test.ts",
+      "lineRange": [
+        21,
+        50
+      ],
+      "summary": "创建完整的 provider 配置，包含登录选项和凭据，用于测试凭据同步。",
+      "tags": [
+        "test-helper",
+        "provider",
+        "oauth"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/test/model-runtime-modify-models-compat.test.ts:model",
+      "type": "function",
+      "name": "model",
+      "filePath": "packages/coding-agent/test/model-runtime-modify-models-compat.test.ts",
+      "lineRange": [
+        17,
+        30
+      ],
+      "summary": "创建测试用模型配置对象，用于验证模型列表动态修改的兼容性。",
+      "tags": [
+        "test-helper",
+        "model",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/model-runtime-test-utils.ts:createModelRegistry",
+      "type": "function",
+      "name": "createModelRegistry",
+      "filePath": "packages/coding-agent/test/model-runtime-test-utils.ts",
+      "lineRange": [
+        15,
+        24
+      ],
+      "summary": "创建模型注册表和运行时实例，封装认证存储和 models.json 路径配置，供多个测试文件共享使用。",
+      "tags": [
+        "test-utils",
+        "factory",
+        "model-runtime"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/model-runtime-test-utils.ts:getModelRuntime",
+      "type": "function",
+      "name": "getModelRuntime",
+      "filePath": "packages/coding-agent/test/model-runtime-test-utils.ts",
+      "lineRange": [
+        30,
+        34
+      ],
+      "summary": "根据模型注册表获取对应的模型运行时实例，供测试调用。",
+      "tags": [
+        "test-utils",
+        "model-runtime",
+        "lookup"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/models-store.test.ts:model",
+      "type": "function",
+      "name": "model",
+      "filePath": "packages/coding-agent/test/models-store.test.ts",
+      "lineRange": [
+        24,
+        37
+      ],
+      "summary": "创建测试用模型配置对象，包含 provider 和模型 ID。",
+      "tags": [
+        "test-helper",
+        "model",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/radius.test.ts:radiusConfig",
+      "type": "function",
+      "name": "radiusConfig",
+      "filePath": "packages/coding-agent/test/radius.test.ts",
+      "lineRange": [
+        21,
+        36
+      ],
+      "summary": "创建 Radius provider 配置对象，包含 base URL 和认证信息。",
+      "tags": [
+        "test-helper",
+        "radius",
+        "config"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/coding-agent/test/footer-data-provider.test.ts",
+      "target": "function:packages/coding-agent/test/footer-data-provider.test.ts:createReftableWorktree",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/footer-width.test.ts",
+      "target": "function:packages/coding-agent/test/footer-width.test.ts:createSession",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/footer-width.test.ts",
+      "target": "function:packages/coding-agent/test/footer-width.test.ts:createFooterData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/format-resume-command.test.ts",
+      "target": "function:packages/coding-agent/test/format-resume-command.test.ts:createSessionManager",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/git-merge-and-resolve-extension.test.ts",
+      "target": "function:packages/coding-agent/test/git-merge-and-resolve-extension.test.ts:setup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/git-update.test.ts",
+      "target": "function:packages/coding-agent/test/git-update.test.ts:git",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/input-transform-streaming-example.test.ts",
+      "target": "function:packages/coding-agent/test/input-transform-streaming-example.test.ts:setup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/mermaid.test.ts",
+      "target": "function:packages/coding-agent/test/mermaid.test.ts:transformMermaid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-runtime-auth-options.test.ts",
+      "target": "function:packages/coding-agent/test/model-runtime-auth-options.test.ts:authOptions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-runtime-auth-options.test.ts",
+      "target": "function:packages/coding-agent/test/model-runtime-auth-options.test.ts:testModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-runtime-cloudflare-compat.test.ts",
+      "target": "function:packages/coding-agent/test/model-runtime-cloudflare-compat.test.ts:createCloudflareRuntime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-runtime-credential-sync.test.ts",
+      "target": "function:packages/coding-agent/test/model-runtime-credential-sync.test.ts:model",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-runtime-credential-sync.test.ts",
+      "target": "function:packages/coding-agent/test/model-runtime-credential-sync.test.ts:provider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-runtime-modify-models-compat.test.ts",
+      "target": "function:packages/coding-agent/test/model-runtime-modify-models-compat.test.ts:model",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-runtime-test-utils.ts",
+      "target": "function:packages/coding-agent/test/model-runtime-test-utils.ts:createModelRegistry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-runtime-test-utils.ts",
+      "target": "function:packages/coding-agent/test/model-runtime-test-utils.ts:getModelRuntime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/models-store.test.ts",
+      "target": "function:packages/coding-agent/test/models-store.test.ts:model",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/radius.test.ts",
+      "target": "function:packages/coding-agent/test/radius.test.ts:radiusConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-runtime-test-utils.ts",
+      "target": "function:packages/coding-agent/test/model-runtime-test-utils.ts:createModelRegistry",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-runtime-test-utils.ts",
+      "target": "function:packages/coding-agent/test/model-runtime-test-utils.ts:getModelRuntime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/test/extensions-runner.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/extensions-runner.test.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/extensions-runner.test.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/runner.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/extensions-runner.test.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/extensions-runner.test.ts",
+      "target": "file:packages/coding-agent/src/core/keybindings.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/extensions-runner.test.ts",
+      "target": "file:packages/coding-agent/src/core/model-registry.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/extensions-runner.test.ts",
+      "target": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/extensions-runner.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/extensions-runner.test.ts",
+      "target": "file:packages/coding-agent/test/model-runtime-test-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/file-mutation-queue.test.ts",
+      "target": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/file-mutation-queue.test.ts",
+      "target": "file:packages/coding-agent/src/core/tools/file-mutation-queue.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/file-mutation-queue.test.ts",
+      "target": "file:packages/coding-agent/src/core/tools/write.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/first-time-setup-fork.test.ts",
+      "target": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/first-time-setup.test.ts",
+      "target": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/first-time-setup.test.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/first-time-setup.test.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/footer-data-provider.test.ts",
+      "target": "file:packages/coding-agent/src/core/footer-data-provider.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/footer-width.test.ts",
+      "target": "file:packages/coding-agent/src/core/agent-session.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/footer-width.test.ts",
+      "target": "file:packages/coding-agent/src/core/footer-data-provider.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/footer-width.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/footer.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/footer-width.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/footer-width.test.ts",
+      "target": "file:packages/coding-agent/src/utils/ansi.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/format-resume-command.test.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/format-resume-command.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/format-resume-command.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/frontmatter.test.ts",
+      "target": "file:packages/coding-agent/src/utils/frontmatter.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/git-merge-and-resolve-extension.test.ts",
+      "target": "file:packages/coding-agent/examples/extensions/git-merge-and-resolve.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/git-merge-and-resolve-extension.test.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/git-update.test.ts",
+      "target": "file:packages/coding-agent/src/core/package-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/git-update.test.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/git-update.test.ts",
+      "target": "file:packages/coding-agent/test/test-network-env.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/http-dispatcher.test.ts",
+      "target": "file:packages/coding-agent/src/core/http-dispatcher.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/initial-message.test.ts",
+      "target": "file:packages/coding-agent/src/cli/args.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/initial-message.test.ts",
+      "target": "file:packages/coding-agent/src/cli/initial-message.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/input-transform-streaming-example.test.ts",
+      "target": "file:packages/coding-agent/examples/extensions/input-transform-streaming.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/input-transform-streaming-example.test.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/keybindings-migration.test.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/keybindings-migration.test.ts",
+      "target": "file:packages/coding-agent/src/core/keybindings.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/keybindings-migration.test.ts",
+      "target": "file:packages/coding-agent/src/migrations.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/max-thinking.test.ts",
+      "target": "file:packages/coding-agent/src/cli/args.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/max-thinking.test.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/max-thinking.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/mermaid.test.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/mermaid.test.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/mermaid.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/mermaid.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/mermaid.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-registry.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-registry.test.ts",
+      "target": "file:packages/coding-agent/src/core/model-registry.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-registry.test.ts",
+      "target": "file:packages/coding-agent/test/model-runtime-test-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-resolver.test.ts",
+      "target": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-runtime-auth-options.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-runtime-auth-options.test.ts",
+      "target": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-runtime-cloudflare-compat.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-runtime-cloudflare-compat.test.ts",
+      "target": "file:packages/coding-agent/src/core/model-registry.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-runtime-cloudflare-compat.test.ts",
+      "target": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-runtime-credential-sync.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-runtime-credential-sync.test.ts",
+      "target": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-runtime-modify-models-compat.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-runtime-modify-models-compat.test.ts",
+      "target": "file:packages/coding-agent/src/core/model-registry.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-runtime-modify-models-compat.test.ts",
+      "target": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-runtime-test-utils.ts",
+      "target": "file:packages/coding-agent/src/core/model-registry.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-runtime-test-utils.ts",
+      "target": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/model-runtime-test-utils.ts",
+      "target": "file:packages/coding-agent/src/core/models-store.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/models-store.test.ts",
+      "target": "file:packages/coding-agent/src/core/models-store.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/package-command-paths.test.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/package-command-paths.test.ts",
+      "target": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/package-command-paths.test.ts",
+      "target": "file:packages/coding-agent/src/core/package-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/package-command-paths.test.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/package-command-paths.test.ts",
+      "target": "file:packages/coding-agent/src/core/trust-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/package-command-paths.test.ts",
+      "target": "file:packages/coding-agent/src/main.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/package-command-paths.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/config-selector.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/package-command-paths.test.ts",
+      "target": "file:packages/coding-agent/src/package-manager-cli.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/package-command-paths.test.ts",
+      "target": "file:packages/coding-agent/test/test-network-env.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/package-manager-ssh.test.ts",
+      "target": "file:packages/coding-agent/src/core/package-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/package-manager-ssh.test.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/package-manager.test.ts",
+      "target": "file:packages/coding-agent/src/core/package-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/package-manager.test.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/path-utils.test.ts",
+      "target": "file:packages/coding-agent/src/core/tools/path-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/paths.test.ts",
+      "target": "file:packages/coding-agent/src/utils/paths.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/prompt-templates.test.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/prompt-templates.test.ts",
+      "target": "file:packages/coding-agent/src/core/prompt-templates.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/radius.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/radius.test.ts",
+      "target": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/radius.test.ts",
+      "target": "file:packages/coding-agent/src/core/radius.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/radius.test.ts",
+      "target": "file:packages/coding-agent/test/test-network-env.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/resolve-config-value.test.ts",
+      "target": "file:packages/coding-agent/src/core/resolve-config-value.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/resolve-config-value.test.ts",
+      "target": "file:packages/coding-agent/src/utils/shell.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/resource-loader.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/resource-loader.test.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/runner.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/resource-loader.test.ts",
+      "target": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/resource-loader.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/resource-loader.test.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/resource-loader.test.ts",
+      "target": "file:packages/coding-agent/src/core/skills.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/resource-loader.test.ts",
+      "target": "file:packages/coding-agent/src/core/source-info.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/resource-loader.test.ts",
+      "target": "file:packages/coding-agent/test/model-runtime-test-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/runner.ts",
+      "target": "file:packages/coding-agent/test/extensions-runner.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/file-mutation-queue.ts",
+      "target": "file:packages/coding-agent/test/file-mutation-queue.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "target": "file:packages/coding-agent/test/first-time-setup-fork.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "target": "file:packages/coding-agent/test/first-time-setup.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/footer-data-provider.ts",
+      "target": "file:packages/coding-agent/test/footer-data-provider.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/footer-data-provider.ts",
+      "target": "file:packages/coding-agent/test/footer-width.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/session-manager.ts",
+      "target": "file:packages/coding-agent/test/format-resume-command.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/frontmatter.ts",
+      "target": "file:packages/coding-agent/test/frontmatter.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/index.ts",
+      "target": "file:packages/coding-agent/test/git-merge-and-resolve-extension.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/package-manager.ts",
+      "target": "file:packages/coding-agent/test/git-update.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/http-dispatcher.ts",
+      "target": "file:packages/coding-agent/test/http-dispatcher.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/initial-message.ts",
+      "target": "file:packages/coding-agent/test/initial-message.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/index.ts",
+      "target": "file:packages/coding-agent/test/input-transform-streaming-example.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/keybindings.ts",
+      "target": "file:packages/coding-agent/test/keybindings-migration.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/args.ts",
+      "target": "file:packages/coding-agent/test/max-thinking.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/mermaid.ts",
+      "target": "file:packages/coding-agent/test/mermaid.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-registry.ts",
+      "target": "file:packages/coding-agent/test/model-registry.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "target": "file:packages/coding-agent/test/model-resolver.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "target": "file:packages/coding-agent/test/model-runtime-auth-options.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "target": "file:packages/coding-agent/test/model-runtime-cloudflare-compat.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "target": "file:packages/coding-agent/test/model-runtime-credential-sync.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "target": "file:packages/coding-agent/test/model-runtime-modify-models-compat.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/models-store.ts",
+      "target": "file:packages/coding-agent/test/models-store.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/package-manager.ts",
+      "target": "file:packages/coding-agent/test/package-command-paths.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/package-manager.ts",
+      "target": "file:packages/coding-agent/test/package-manager-ssh.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/package-manager.ts",
+      "target": "file:packages/coding-agent/test/package-manager.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/path-utils.ts",
+      "target": "file:packages/coding-agent/test/path-utils.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/paths.ts",
+      "target": "file:packages/coding-agent/test/paths.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/prompt-templates.ts",
+      "target": "file:packages/coding-agent/test/prompt-templates.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/radius.ts",
+      "target": "file:packages/coding-agent/test/radius.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/resolve-config-value.ts",
+      "target": "file:packages/coding-agent/test/resolve-config-value.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "target": "file:packages/coding-agent/test/resource-loader.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

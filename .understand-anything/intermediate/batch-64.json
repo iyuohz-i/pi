@@ -1,0 +1,179 @@
+{
+  "batchIndex": 64,
+  "nodes": [
+    {
+      "id": "packages/telemetry/CHANGELOG.md",
+      "type": "file",
+      "label": "CHANGELOG.md",
+      "description": "telemetry 包的变更日志，记录版本发布历史，当前版本 0.84.1",
+      "fileInfo": { "path": "packages/telemetry/CHANGELOG.md", "language": "markdown", "lines": 11, "category": "docs" }
+    },
+    {
+      "id": "packages/telemetry/README.md",
+      "type": "file",
+      "label": "README.md",
+      "description": "telemetry 包的完整 API 文档，涵盖 TelemetryContext/TelemetrySpan 契约、no-op 上下文、内存参考适配器、类型化 schema 定义、适配器一致性测试套件，以及 pi 包集成指南",
+      "fileInfo": { "path": "packages/telemetry/README.md", "language": "markdown", "lines": 464, "category": "docs" }
+    },
+    {
+      "id": "packages/telemetry/package.json",
+      "type": "file",
+      "label": "package.json",
+      "description": "@earendil-works/pi-telemetry 包配置，版本 0.84.1，ESM 模块，导出 . 和 ./testing 两个子路径，使用 tsgo 构建和 vitest 测试",
+      "fileInfo": { "path": "packages/telemetry/package.json", "language": "json", "lines": 47, "category": "config" }
+    },
+    {
+      "id": "packages/telemetry/tsconfig.build.json",
+      "type": "file",
+      "label": "tsconfig.build.json",
+      "description": "telemetry 包的 TypeScript 构建配置，继承 tsconfig.base.json，输出到 dist 目录，源码位于 src",
+      "fileInfo": { "path": "packages/telemetry/tsconfig.build.json", "language": "json", "lines": 9, "category": "config" }
+    },
+    {
+      "id": "packages/telemetry",
+      "type": "module",
+      "label": "@earendil-works/pi-telemetry",
+      "description": "供应商中立的可观测性契约与类型化 schema 工具包。提供 TelemetryContext/TelemetrySpan 显式回调契约、NOOP_TELEMETRY_CONTEXT 空操作上下文、InMemoryTelemetryContext 内存参考适配器、可序列化 schema 定义及适配器一致性测试套件。不依赖任何遥测后端，无全局上下文状态"
+    },
+    {
+      "id": "packages/telemetry::TelemetryContext",
+      "type": "interface",
+      "label": "TelemetryContext",
+      "description": "核心遥测上下文接口。通过 startSpan() 方法以回调方式创建子 span，回调接收 TelemetrySpan 同时作为显式父上下文。无公开 end() 方法，startSpan 负责 span 生命周期管理"
+    },
+    {
+      "id": "packages/telemetry::TelemetrySpan",
+      "type": "interface",
+      "label": "TelemetrySpan",
+      "description": "遥测 span 接口，用于记录属性(setAttributes)、事件(addEvent)和状态(setStatus)。同时作为子 span 的显式父上下文。记录方法同步、被动、不抛异常"
+    },
+    {
+      "id": "packages/telemetry::NOOP_TELEMETRY_CONTEXT",
+      "type": "constant",
+      "label": "NOOP_TELEMETRY_CONTEXT",
+      "description": "共享的空操作遥测上下文。同步调用回调，保留返回值和异步拒绝，使用单一的冻结惰性 span，不检查或保留任何名称/属性/事件/状态。用于遥测可选场景"
+    },
+    {
+      "id": "packages/telemetry::InMemoryTelemetryContext",
+      "type": "class",
+      "label": "InMemoryTelemetryContext",
+      "description": "后端中立的内存参考适配器实现。提供 getSpans() 返回按 span 启动顺序排列的分离快照(RecordedTelemetrySpan)，每个快照包含确定性数字 ID、父 ID、合并属性、有序事件、最终状态。存储无界且进程本地，适用于测试和本地诊断"
+    },
+    {
+      "id": "packages/telemetry::defineTelemetrySchema",
+      "type": "function",
+      "label": "defineTelemetrySchema()",
+      "description": "类型化恒等函数，接收可序列化的 schema 定义并原样返回。schema 定义包含版本号、span 定义(含 description、parents、startAttributes、endAttributes、events、status)。无运行时验证或父规则执行"
+    },
+    {
+      "id": "packages/telemetry::createTypedSpanStarter",
+      "type": "function",
+      "label": "createTypedSpanStarter()",
+      "description": "将父上下文绑定到一个或多个 schema 词汇表，创建类型化 span 启动器。每个 span 名称有独立的重载，编译时检查名称和属性。回调接收子启动器，已绑定到回调 span 并继承相同 schema"
+    },
+    {
+      "id": "packages/telemetry::RecordedTelemetrySpan",
+      "type": "type",
+      "label": "RecordedTelemetrySpan",
+      "description": "标准化的捕获 span 快照类型。包含确定性数字 ID、父 ID、合并属性、有序事件、最终状态、结算状态和确定性结束序列。不记录时间戳"
+    },
+    {
+      "id": "packages/telemetry::createTelemetryAdapterConformance",
+      "type": "function",
+      "label": "createTelemetryAdapterConformance()",
+      "description": "通过 @earendil-works/pi-telemetry/testing 子路径导出。创建与测试运行器无关的适配器一致性测试用例。fixture 提供新鲜上下文并将后端的已完成 span 转换为标准化的 RecordedTelemetrySpan 快照"
+    }
+  ],
+  "edges": [
+    {
+      "source": "packages/telemetry/package.json",
+      "target": "packages/telemetry",
+      "type": "defines",
+      "label": "定义包元数据"
+    },
+    {
+      "source": "packages/telemetry/README.md",
+      "target": "packages/telemetry",
+      "type": "documents",
+      "label": "API 文档"
+    },
+    {
+      "source": "packages/telemetry/CHANGELOG.md",
+      "target": "packages/telemetry",
+      "type": "documents",
+      "label": "变更日志"
+    },
+    {
+      "source": "packages/telemetry/tsconfig.build.json",
+      "target": "packages/telemetry",
+      "type": "configures",
+      "label": "构建配置"
+    },
+    {
+      "source": "packages/telemetry",
+      "target": "packages/telemetry::TelemetryContext",
+      "type": "exports",
+      "label": "导出核心上下文接口"
+    },
+    {
+      "source": "packages/telemetry",
+      "target": "packages/telemetry::TelemetrySpan",
+      "type": "exports",
+      "label": "导出 span 接口"
+    },
+    {
+      "source": "packages/telemetry",
+      "target": "packages/telemetry::NOOP_TELEMETRY_CONTEXT",
+      "type": "exports",
+      "label": "导出空操作上下文"
+    },
+    {
+      "source": "packages/telemetry",
+      "target": "packages/telemetry::InMemoryTelemetryContext",
+      "type": "exports",
+      "label": "导出内存参考适配器"
+    },
+    {
+      "source": "packages/telemetry",
+      "target": "packages/telemetry::defineTelemetrySchema",
+      "type": "exports",
+      "label": "导出 schema 定义函数"
+    },
+    {
+      "source": "packages/telemetry",
+      "target": "packages/telemetry::createTypedSpanStarter",
+      "type": "exports",
+      "label": "导出类型化 span 启动器工厂"
+    },
+    {
+      "source": "packages/telemetry",
+      "target": "packages/telemetry::RecordedTelemetrySpan",
+      "type": "exports",
+      "label": "导出 span 快照类型"
+    },
+    {
+      "source": "packages/telemetry::InMemoryTelemetryContext",
+      "target": "packages/telemetry::TelemetryContext",
+      "type": "implements",
+      "label": "实现 TelemetryContext 接口"
+    },
+    {
+      "source": "packages/telemetry::NOOP_TELEMETRY_CONTEXT",
+      "target": "packages/telemetry::TelemetryContext",
+      "type": "implements",
+      "label": "实现 TelemetryContext 接口(空操作)"
+    },
+    {
+      "source": "packages/telemetry::createTypedSpanStarter",
+      "target": "packages/telemetry::defineTelemetrySchema",
+      "type": "uses",
+      "label": "消费 schema 定义创建类型化启动器"
+    },
+    {
+      "source": "packages/telemetry::createTypedSpanStarter",
+      "target": "packages/telemetry::TelemetryContext",
+      "type": "uses",
+      "label": "绑定上下文创建启动器"
+    }
+  ]
+}

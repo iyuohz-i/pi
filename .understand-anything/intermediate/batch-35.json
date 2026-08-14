@@ -1,0 +1,319 @@
+{
+  "nodes": [
+    {
+      "id": "packages/ai/scripts/check-model-data.ts",
+      "type": "file",
+      "label": "check-model-data.ts",
+      "language": "typescript",
+      "summary": "CLI 入口脚本：调用 validateGeneratedModelData 校验已生成的模型数据文件，失败时提示用户运行 hydrate:model-data。",
+      "metadata": { "lines": 16, "category": "code" }
+    },
+    {
+      "id": "packages/ai/scripts/generate-models.ts",
+      "type": "file",
+      "label": "generate-models.ts",
+      "language": "typescript",
+      "summary": "模型目录生成主脚本。从 models.dev、OpenRouter、AI Gateway 三个源拉取模型元数据，应用 provider 特化的兼容性与 thinking-level 规则，输出按 provider 分片的 TypeScript 目录文件与 JSON 数据文件，并执行结构校验与原子替换。",
+      "metadata": { "lines": 2948, "category": "code" }
+    },
+    {
+      "id": "packages/ai/scripts/model-data.ts",
+      "type": "file",
+      "label": "model-data.ts",
+      "language": "typescript",
+      "summary": "模型数据的结构读取、manifest 生成与目录校验工具集。定义 schema 版本、文件哈希、provider→model→API 分组结构，提供 validateModelDataDirectory 作为生成后数据完整性的最终守门人。",
+      "metadata": { "lines": 280, "category": "code" }
+    },
+    {
+      "id": "packages/ai/scripts/models-dev-reasoning-options.ts",
+      "type": "file",
+      "label": "models-dev-reasoning-options.ts",
+      "language": "typescript",
+      "summary": "将 models.dev 的 verified reasoning_options（effort 值列表）映射为 Pi 内部的 ThinkingLevelMap；忽略无 Pi 等价值的 default/null。",
+      "metadata": { "lines": 30, "category": "code" }
+    },
+    {
+      "id": "packages/ai/src/api/cloudflare.ts",
+      "type": "file",
+      "label": "cloudflare.ts",
+      "language": "typescript",
+      "summary": "Cloudflare 端点常量：Workers AI 直连 URL、AI Gateway 统一 API /compat、以及 AI Gateway 到 OpenAI / Anthropic 的 passthrough URL 模板。",
+      "metadata": { "lines": 15, "category": "code" }
+    },
+    {
+      "id": "packages/ai/test/model-data-validation.test.ts",
+      "type": "file",
+      "label": "model-data-validation.test.ts",
+      "language": "typescript",
+      "summary": "model-data 工具的 Vitest 测试：覆盖 assertExactModelIds 集合差异、readModelDataStructure 结构读取、validateModelDataDirectory 的 schema/哈希/API 分组/重复 ID/时间戳等校验路径。",
+      "metadata": { "lines": 177, "category": "test" }
+    },
+    {
+      "id": "packages/ai/test/reasoning-options.test.ts",
+      "type": "file",
+      "label": "reasoning-options.test.ts",
+      "language": "typescript",
+      "summary": "getEffortThinkingLevelMap 单元测试：验证 effort 列表到 ThinkingLevelMap 的映射、none 的 off 处理、toggle/budget_tokens 的 undefined 返回。",
+      "metadata": { "lines": 36, "category": "test" }
+    },
+    {
+      "id": "packages/ai/scripts/generate-models.ts::readGeneratorOptions",
+      "type": "function",
+      "label": "readGeneratorOptions",
+      "summary": "解析 CLI 参数（--strict / --data-only / --json-only / --json-output / --pretty），返回生成选项配置对象。",
+      "metadata": { "startLine": 36, "endLine": 79, "params": ["args"] }
+    },
+    {
+      "id": "packages/ai/scripts/generate-models.ts::withOpenAiLongContextPricing",
+      "type": "function",
+      "label": "withOpenAiLongContextPricing",
+      "summary": "为 OpenAI 长上下文模型追加分层定价：超过输入阈值时 input/cache 翻倍、output × 1.5。",
+      "metadata": { "startLine": 382, "endLine": 395, "params": ["cost"] }
+    },
+    {
+      "id": "packages/ai/scripts/generate-models.ts::detectOpenAICompletionsCompat",
+      "type": "function",
+      "label": "detectOpenAICompletionsCompat",
+      "summary": "根据模型元数据与 baseUrl 检测 OpenAI completions API 的兼容格式：thinkingFormat（openai/anthropic/none）、supportsReasoningEffort、temperatureLock 等。用于决定如何将 thinking level 与 reasoning effort 适配到不同 provider。",
+      "metadata": { "startLine": 614, "endLine": 707, "params": ["model"] }
+    },
+    {
+      "id": "packages/ai/scripts/generate-models.ts::isAnthropicAdaptiveThinkingModel",
+      "type": "function",
+      "label": "isAnthropicAdaptiveThinkingModel",
+      "summary": "判断给定 modelId 是否为 Anthropic 自适应 thinking 模型（Claude 3.7+ 系列），通过 includes 匹配大量已知 model 片段。",
+      "metadata": { "startLine": 550, "endLine": 566, "params": ["modelId"] }
+    },
+    {
+      "id": "packages/ai/scripts/generate-models.ts::isAnthropicTemperatureUnsupportedModel",
+      "type": "function",
+      "label": "isAnthropicTemperatureUnsupportedModel",
+      "summary": "判断模型是否不支持 Anthropic temperature 参数（部分 Claude 4/5 模型）。",
+      "metadata": { "startLine": 568, "endLine": 578, "params": ["modelId"] }
+    },
+    {
+      "id": "packages/ai/scripts/generate-models.ts::applyThinkingLevelMetadata",
+      "type": "function",
+      "label": "applyThinkingLevelMetadata",
+      "summary": "生成器中最大的函数（~130 行）。为每个 model 按 provider/API/modelId 规则计算 thinkingLevelMap：OpenAI responses/completions、Anthropic adaptive/non-adaptive、Google Gemini/Gemma、Together、xAI 等分支各自合并不同的 level→level 映射，并处理 Anthropic messages 兼容与 temperature 不支持标记。",
+      "metadata": { "startLine": 813, "endLine": 945, "params": ["model"] }
+    },
+    {
+      "id": "packages/ai/scripts/generate-models.ts::getModelsDevCost",
+      "type": "function",
+      "label": "getModelsDevCost",
+      "summary": "从 models.dev 的 cost 结构中提取 input/output/cacheRead/cacheWrite，优先使用顶层值；处理 tier 定价的兜底逻辑。",
+      "metadata": { "startLine": 972, "endLine": 994, "params": ["cost"] }
+    },
+    {
+      "id": "packages/ai/scripts/generate-models.ts::fetchNvidiaNimModelIds",
+      "type": "function",
+      "label": "fetchNvidiaNimModelIds",
+      "summary": "从 NVIDIA NIM 开放 API 拉取可用模型 ID 列表，返回规范化后的 modelId → 原始 id 映射，用于后续替换 NIM 端点上的 display name。",
+      "metadata": { "startLine": 996, "endLine": 1016, "params": [] }
+    },
+    {
+      "id": "packages/ai/scripts/generate-models.ts::fetchOpenRouterModels",
+      "type": "function",
+      "label": "fetchOpenRouterModels",
+      "summary": "从 OpenRouter API 拉取模型列表，过滤非 text→text 与不支持 tool_call 的模型，计算成本，标记 reasoning 能力，生成 Model 对象数组。",
+      "metadata": { "startLine": 1018, "endLine": 1078, "params": [] }
+    },
+    {
+      "id": "packages/ai/scripts/generate-models.ts::fetchAiGatewayModels",
+      "type": "function",
+      "label": "fetchAiGatewayModels",
+      "summary": "从 Cloudflare AI Gateway 统一 API 拉取模型列表，按 tags 区分 reasoning/capabilities，规范化成本字段，输出 Model 对象数组。",
+      "metadata": { "startLine": 1080, "endLine": 1138, "params": [] }
+    },
+    {
+      "id": "packages/ai/scripts/generate-models.ts::processBasetenModels",
+      "type": "function",
+      "label": "processBasetenModels",
+      "summary": "处理 Baseten provider 的模型列表，识别 reasoning_options、输入模态、thinking level 映射，生成 Model 数组。",
+      "metadata": { "startLine": 1140, "endLine": 1232, "params": ["provider"] }
+    },
+    {
+      "id": "packages/ai/scripts/generate-models.ts::processFireworksModels",
+      "type": "function",
+      "label": "processFireworksModels",
+      "summary": "处理 Fireworks provider 的模型列表，按模型 ID 模式分类到不同 API（fireworks-*），并记录 reasoning options。",
+      "metadata": { "startLine": 1234, "endLine": 1310, "params": ["provider"] }
+    },
+    {
+      "id": "packages/ai/scripts/generate-models.ts::loadModelsDevData",
+      "type": "function",
+      "label": "loadModelsDevData",
+      "summary": "生成器的核心数据加载函数（~970 行）。从 models.dev JSON 读取所有 provider 的模型定义，按 provider 分支处理：Anthropic（含 Bedrock/Vertex 别名）、OpenAI、Google、Groq、Cerebras、Mistral、Perplexity、Azure、NVIDIA NIM、Together、Baseten、Fireworks、OpenCode、xAI、DeepSeek、ZAI、Moonshot/Kimi、Qwen、MiniMax 等，每个分支处理各自的 ID 规范、baseUrl、modality、reasoning 与成本。",
+      "metadata": { "startLine": 1312, "endLine": 2280, "params": [] }
+    },
+    {
+      "id": "packages/ai/scripts/generate-models.ts::generateModels",
+      "type": "function",
+      "label": "generateModels",
+      "summary": "生成器的主入口函数（~660 行）。串联 loadModelsDevData + fetchOpenRouterModels + fetchAiGatewayModels，应用 provider 特化的覆盖（contextWindow、maxTokens、长上下文定价、thinking level、tool compat 等），去重后按 provider 分片写入 JSON 数据文件与 TypeScript shard 文件，原子替换旧数据，运行 validateGeneratedModelData 最终校验。",
+      "metadata": { "startLine": 2282, "endLine": 2942, "params": [] }
+    },
+    {
+      "id": "packages/ai/scripts/generate-models.ts::supportsDirectReasoningEffort",
+      "type": "function",
+      "label": "supportsDirectReasoningEffort",
+      "summary": "判断模型是否支持直接的 reasoning_effort 参数：responses 类 API 原生支持，openai-completions 需检查 thinkingFormat 与 supportsReasoningEffort 兼容位。",
+      "metadata": { "startLine": 482, "endLine": 498, "params": ["model"] }
+    },
+    {
+      "id": "packages/ai/scripts/generate-models.ts::applyModelsDevReasoningOptionMetadata",
+      "type": "function",
+      "label": "applyModelsDevReasoningOptionMetadata",
+      "summary": "将已记录的 models.dev reasoning_options 通过 getEffortThinkingLevelMap 转换后合并到模型的 thinkingLevelMap。",
+      "metadata": { "startLine": 500, "endLine": 505, "params": ["model"] }
+    },
+    {
+      "id": "packages/ai/scripts/generate-models.ts::getAnthropicMessagesCompat",
+      "type": "function",
+      "label": "getAnthropicMessagesCompat",
+      "summary": "根据 provider 与 modelId 返回 AnthropicMessagesCompat 标记（如 eager tool input streaming 不支持的模型集合）。",
+      "metadata": { "startLine": 947, "endLine": 956, "params": ["provider", "modelId"] }
+    },
+    {
+      "id": "packages/ai/scripts/generate-models.ts::applyStrictToolCompatMetadata",
+      "type": "function",
+      "label": "applyStrictToolCompatMetadata",
+      "summary": "为需要 Anthropic messages 严格 tool 兼容的模型打上 forceStrictToolCompat 标记。",
+      "metadata": { "startLine": 738, "endLine": 747, "params": ["model"] }
+    },
+    {
+      "id": "packages/ai/scripts/generate-models.ts::applyOpenAICompletionsCompatMetadata",
+      "type": "function",
+      "label": "applyOpenAICompletionsCompatMetadata",
+      "summary": "将 detectOpenAICompletionsCompat 的结果作为 compat 元数据应用到 openai-completions 模型上。",
+      "metadata": { "startLine": 729, "endLine": 736, "params": ["model"] }
+    },
+    {
+      "id": "packages/ai/scripts/generate-models.ts::applyOpenAIGrammarToolCompatMetadata",
+      "type": "function",
+      "label": "applyOpenAIGrammarToolCompatMetadata",
+      "summary": "为 GPT 模型启用 grammar tool 兼容标记（按 model ID 或 provider 白名单）。",
+      "metadata": { "startLine": 767, "endLine": 772, "params": ["model"] }
+    },
+    {
+      "id": "packages/ai/scripts/generate-models.ts::applyOpenAIToolSearchMetadata",
+      "type": "function",
+      "label": "applyOpenAIToolSearchMetadata",
+      "summary": "为支持 web_search / file_search / code_interpreter 等额外工具的 OpenAI 模型打上对应 metadata 标记。",
+      "metadata": { "startLine": 774, "endLine": 786, "params": ["model"] }
+    },
+    {
+      "id": "packages/ai/scripts/generate-models.ts::applyOpenAIExplicitPromptCacheMetadata",
+      "type": "function",
+      "label": "applyOpenAIExplicitPromptCacheMetadata",
+      "summary": "为显式支持 prompt caching 的 OpenAI 模型打上 supportsExplicitPromptCache 标记。",
+      "metadata": { "startLine": 791, "endLine": 798, "params": ["model"] }
+    },
+    {
+      "id": "packages/ai/scripts/model-data.ts::readModelDataStructure",
+      "type": "function",
+      "label": "readModelDataStructure",
+      "summary": "扫描 packageRoot 下 src/models.generated.ts 的 import 语句提取 provider ID，校验 shard 文件一致性，然后读取每个 provider 的 JSON 数据文件构建 provider→model→API 的结构映射。",
+      "metadata": { "startLine": 96, "endLine": 116, "params": ["packageRoot"] }
+    },
+    {
+      "id": "packages/ai/scripts/model-data.ts::createModelDataManifest",
+      "type": "function",
+      "label": "createModelDataManifest",
+      "summary": "生成 model data 的 manifest 对象：schema 版本、生成时间、结构哈希、各文件内容 SHA-256。",
+      "metadata": { "startLine": 127, "endLine": 138, "params": ["structure", "fileContents", "generatedAt"] }
+    },
+    {
+      "id": "packages/ai/scripts/model-data.ts::validateModelDataDirectory",
+      "type": "function",
+      "label": "validateModelDataDirectory",
+      "summary": "校验已生成的 model data 目录：文件清单与结构匹配、manifest schema 版本与哈希一致、时间戳有效、每个 model 值的字段正确（id/provider/api/name/baseUrl/reasoning/input/contextWindow/maxTokens/cost），收集最多 30 条错误后抛出。",
+      "metadata": { "startLine": 193, "endLine": 275, "params": ["structure", "dataDir"] }
+    },
+    {
+      "id": "packages/ai/scripts/model-data.ts::validateModelValue",
+      "type": "function",
+      "label": "validateModelValue",
+      "summary": "校验单个 model 数据对象的字段完整性：id/provider/api 精确匹配、name 非空、baseUrl 字符串、reasoning 布尔、input 模态数组、contextWindow/maxTokens 正数、cost 四项均为有限数字。",
+      "metadata": { "startLine": 140, "endLine": 185, "params": ["value", "providerId", "modelId", "expectedApi", "errors"] }
+    },
+    {
+      "id": "packages/ai/scripts/model-data.ts::readModelDataProviderIds",
+      "type": "function",
+      "label": "readModelDataProviderIds",
+      "summary": "从 models.generated.ts 聚合文件中用正则提取所有 provider 的 import 语句，返回去重排序后的 provider ID 列表。",
+      "metadata": { "startLine": 85, "endLine": 94, "params": ["packageRoot"] }
+    },
+    {
+      "id": "packages/ai/scripts/models-dev-reasoning-options.ts::getEffortThinkingLevelMap",
+      "type": "function",
+      "label": "getEffortThinkingLevelMap",
+      "summary": "将 models.dev 的 effort reasoning options 转换为 Pi 的 ThinkingLevelMap：仅保留在 THINKING_LEVELS 中出现的值，none 映射到 off，其余为 null。若 effort 列表不含任何可用 level 则返回 undefined。",
+      "metadata": { "startLine": 18, "endLine": 30, "params": ["options"] }
+    }
+  ],
+  "edges": [
+    { "source": "packages/ai/scripts/check-model-data.ts", "target": "packages/ai/scripts/model-data.ts", "type": "imports", "label": "imports" },
+    { "source": "packages/ai/scripts/generate-models.ts", "target": "packages/ai/scripts/model-data.ts", "type": "imports", "label": "imports" },
+    { "source": "packages/ai/scripts/generate-models.ts", "target": "packages/ai/scripts/models-dev-reasoning-options.ts", "type": "imports", "label": "imports" },
+    { "source": "packages/ai/scripts/generate-models.ts", "target": "packages/ai/src/api/cloudflare.ts", "type": "imports", "label": "imports" },
+    { "source": "packages/ai/scripts/generate-models.ts", "target": "packages/ai/src/types.ts", "type": "imports", "label": "imports" },
+    { "source": "packages/ai/scripts/models-dev-reasoning-options.ts", "target": "packages/ai/src/types.ts", "type": "imports", "label": "imports" },
+    { "source": "packages/ai/test/model-data-validation.test.ts", "target": "packages/ai/scripts/model-data.ts", "type": "imports", "label": "imports" },
+    { "source": "packages/ai/test/reasoning-options.test.ts", "target": "packages/ai/scripts/models-dev-reasoning-options.ts", "type": "imports", "label": "imports" },
+    { "source": "packages/ai/scripts/generate-models.ts", "target": "packages/ai/scripts/generate-models.ts::readGeneratorOptions", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/generate-models.ts", "target": "packages/ai/scripts/generate-models.ts::withOpenAiLongContextPricing", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/generate-models.ts", "target": "packages/ai/scripts/generate-models.ts::detectOpenAICompletionsCompat", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/generate-models.ts", "target": "packages/ai/scripts/generate-models.ts::isAnthropicAdaptiveThinkingModel", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/generate-models.ts", "target": "packages/ai/scripts/generate-models.ts::isAnthropicTemperatureUnsupportedModel", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/generate-models.ts", "target": "packages/ai/scripts/generate-models.ts::applyThinkingLevelMetadata", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/generate-models.ts", "target": "packages/ai/scripts/generate-models.ts::getModelsDevCost", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/generate-models.ts", "target": "packages/ai/scripts/generate-models.ts::fetchNvidiaNimModelIds", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/generate-models.ts", "target": "packages/ai/scripts/generate-models.ts::fetchOpenRouterModels", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/generate-models.ts", "target": "packages/ai/scripts/generate-models.ts::fetchAiGatewayModels", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/generate-models.ts", "target": "packages/ai/scripts/generate-models.ts::processBasetenModels", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/generate-models.ts", "target": "packages/ai/scripts/generate-models.ts::processFireworksModels", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/generate-models.ts", "target": "packages/ai/scripts/generate-models.ts::loadModelsDevData", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/generate-models.ts", "target": "packages/ai/scripts/generate-models.ts::generateModels", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/generate-models.ts", "target": "packages/ai/scripts/generate-models.ts::supportsDirectReasoningEffort", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/generate-models.ts", "target": "packages/ai/scripts/generate-models.ts::applyModelsDevReasoningOptionMetadata", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/generate-models.ts", "target": "packages/ai/scripts/generate-models.ts::getAnthropicMessagesCompat", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/generate-models.ts", "target": "packages/ai/scripts/generate-models.ts::applyStrictToolCompatMetadata", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/generate-models.ts", "target": "packages/ai/scripts/generate-models.ts::applyOpenAICompletionsCompatMetadata", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/generate-models.ts", "target": "packages/ai/scripts/generate-models.ts::applyOpenAIGrammarToolCompatMetadata", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/generate-models.ts", "target": "packages/ai/scripts/generate-models.ts::applyOpenAIToolSearchMetadata", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/generate-models.ts", "target": "packages/ai/scripts/generate-models.ts::applyOpenAIExplicitPromptCacheMetadata", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/model-data.ts", "target": "packages/ai/scripts/model-data.ts::readModelDataStructure", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/model-data.ts", "target": "packages/ai/scripts/model-data.ts::createModelDataManifest", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/model-data.ts", "target": "packages/ai/scripts/model-data.ts::validateModelDataDirectory", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/model-data.ts", "target": "packages/ai/scripts/model-data.ts::validateModelValue", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/model-data.ts", "target": "packages/ai/scripts/model-data.ts::readModelDataProviderIds", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/models-dev-reasoning-options.ts", "target": "packages/ai/scripts/models-dev-reasoning-options.ts::getEffortThinkingLevelMap", "type": "contains", "label": "contains" },
+    { "source": "packages/ai/scripts/generate-models.ts::generateModels", "target": "packages/ai/scripts/generate-models.ts::loadModelsDevData", "type": "calls", "label": "calls" },
+    { "source": "packages/ai/scripts/generate-models.ts::generateModels", "target": "packages/ai/scripts/generate-models.ts::fetchOpenRouterModels", "type": "calls", "label": "calls" },
+    { "source": "packages/ai/scripts/generate-models.ts::generateModels", "target": "packages/ai/scripts/generate-models.ts::fetchAiGatewayModels", "type": "calls", "label": "calls" },
+    { "source": "packages/ai/scripts/generate-models.ts::generateModels", "target": "packages/ai/scripts/generate-models.ts::withOpenAiLongContextPricing", "type": "calls", "label": "calls" },
+    { "source": "packages/ai/scripts/generate-models.ts::generateModels", "target": "packages/ai/scripts/generate-models.ts::applyOpenAICompletionsCompatMetadata", "type": "calls", "label": "calls" },
+    { "source": "packages/ai/scripts/generate-models.ts::generateModels", "target": "packages/ai/scripts/generate-models.ts::applyModelsDevReasoningOptionMetadata", "type": "calls", "label": "calls" },
+    { "source": "packages/ai/scripts/generate-models.ts::generateModels", "target": "packages/ai/scripts/generate-models.ts::applyThinkingLevelMetadata", "type": "calls", "label": "calls" },
+    { "source": "packages/ai/scripts/generate-models.ts::generateModels", "target": "packages/ai/scripts/generate-models.ts::applyStrictToolCompatMetadata", "type": "calls", "label": "calls" },
+    { "source": "packages/ai/scripts/generate-models.ts::generateModels", "target": "packages/ai/scripts/generate-models.ts::applyOpenAIGrammarToolCompatMetadata", "type": "calls", "label": "calls" },
+    { "source": "packages/ai/scripts/generate-models.ts::generateModels", "target": "packages/ai/scripts/generate-models.ts::applyOpenAIToolSearchMetadata", "type": "calls", "label": "calls" },
+    { "source": "packages/ai/scripts/generate-models.ts::generateModels", "target": "packages/ai/scripts/generate-models.ts::applyOpenAIExplicitPromptCacheMetadata", "type": "calls", "label": "calls" },
+    { "source": "packages/ai/scripts/generate-models.ts::loadModelsDevData", "target": "packages/ai/scripts/generate-models.ts::fetchNvidiaNimModelIds", "type": "calls", "label": "calls" },
+    { "source": "packages/ai/scripts/generate-models.ts::loadModelsDevData", "target": "packages/ai/scripts/generate-models.ts::processBasetenModels", "type": "calls", "label": "calls" },
+    { "source": "packages/ai/scripts/generate-models.ts::loadModelsDevData", "target": "packages/ai/scripts/generate-models.ts::processFireworksModels", "type": "calls", "label": "calls" },
+    { "source": "packages/ai/scripts/generate-models.ts::loadModelsDevData", "target": "packages/ai/scripts/generate-models.ts::getModelsDevCost", "type": "calls", "label": "calls" },
+    { "source": "packages/ai/scripts/generate-models.ts::loadModelsDevData", "target": "packages/ai/scripts/generate-models.ts::getAnthropicMessagesCompat", "type": "calls", "label": "calls" },
+    { "source": "packages/ai/scripts/generate-models.ts::applyThinkingLevelMetadata", "target": "packages/ai/scripts/generate-models.ts::isAnthropicAdaptiveThinkingModel", "type": "calls", "label": "calls" },
+    { "source": "packages/ai/scripts/generate-models.ts::applyThinkingLevelMetadata", "target": "packages/ai/scripts/generate-models.ts::isAnthropicTemperatureUnsupportedModel", "type": "calls", "label": "calls" },
+    { "source": "packages/ai/scripts/generate-models.ts::applyModelsDevReasoningOptionMetadata", "target": "packages/ai/scripts/generate-models.ts::supportsDirectReasoningEffort", "type": "calls", "label": "calls" },
+    { "source": "packages/ai/scripts/generate-models.ts::applyModelsDevReasoningOptionMetadata", "target": "packages/ai/scripts/models-dev-reasoning-options.ts::getEffortThinkingLevelMap", "type": "calls", "label": "calls" },
+    { "source": "packages/ai/scripts/generate-models.ts::supportsDirectReasoningEffort", "target": "packages/ai/scripts/generate-models.ts::detectOpenAICompletionsCompat", "type": "calls", "label": "calls" },
+    { "source": "packages/ai/scripts/generate-models.ts::applyOpenAICompletionsCompatMetadata", "target": "packages/ai/scripts/generate-models.ts::detectOpenAICompletionsCompat", "type": "calls", "label": "calls" },
+    { "source": "packages/ai/scripts/model-data.ts::validateModelDataDirectory", "target": "packages/ai/scripts/model-data.ts::validateModelValue", "type": "calls", "label": "calls" },
+    { "source": "packages/ai/scripts/model-data.ts::readModelDataStructure", "target": "packages/ai/scripts/model-data.ts::readModelDataProviderIds", "type": "calls", "label": "calls" },
+    { "source": "packages/ai/scripts/check-model-data.ts", "target": "packages/ai/scripts/model-data.ts::validateModelDataDirectory", "type": "calls", "label": "calls" }
+  ]
+}

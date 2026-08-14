@@ -1,0 +1,992 @@
+{
+  "nodes": [
+    {
+      "id": "packages/server/test/protocol.test.ts",
+      "type": "file",
+      "label": "protocol.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "服务器协议模块的测试文件。验证 toProtocolJsonValue、sanitizeProtocolDetails、toProtocolUsage、toProtocolModelMetadata 等协议序列化函数生成的服务端负载符合 wire protocol 规范，确保编码后的消息可被正确解析。",
+      "sizeLines": 301,
+      "functions": [
+        {
+          "name": "assertValidServerPayload",
+          "startLine": 31,
+          "endLine": 78,
+          "description": "断言协议转录项可被成功编码为服务端消息负载。构造 hello 与 session_snapshot 两种事件类型，调用 encodeServerMessage 验证不抛出异常，覆盖模型元数据、用户消息、助手消息、工具结果消息等场景。"
+        }
+      ]
+    },
+    {
+      "id": "packages/server/vitest.config.ts",
+      "type": "file",
+      "label": "vitest.config.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "server 包的 Vitest 测试配置文件，定义测试运行环境、覆盖范围、测试匹配模式等。",
+      "sizeLines": 15
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/scripts/prepare-dist.mjs",
+      "type": "file",
+      "label": "prepare-dist.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "description": "SQLite Node 后端包的构建准备脚本。清理 dist 目录并将 SQL 迁移文件复制到输出目录，确保构建产物包含数据库 schema 迁移资源。",
+      "sizeLines": 35,
+      "functions": [
+        {
+          "name": "clean",
+          "startLine": 13,
+          "endLine": 15,
+          "description": "删除 dist 目录以清理旧构建产物。"
+        },
+        {
+          "name": "copySqliteMigrations",
+          "startLine": 17,
+          "endLine": 20,
+          "description": "创建 dist/migrations 目录并复制 SQL 迁移文件。"
+        }
+      ]
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/index.ts",
+      "type": "file",
+      "label": "index.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "SQLite 会话后端包的公共入口模块。统一重新导出 SqliteSessionRepository 及其相关类型（选项、数据库接口、会话元数据、SQL 语句等），供外部消费者通过单一入口访问。",
+      "sizeLines": 18,
+      "exports": [
+        "SqliteSessionRepository",
+        "SqliteSessionRepositoryOptions",
+        "SqliteWriterLeaseOptions",
+        "SqliteDatabase",
+        "SqliteDatabaseFactory",
+        "SqliteRunResult",
+        "SqliteSessionCreateOptions",
+        "SqliteSessionListOptions",
+        "SqliteSessionMetadata",
+        "SqliteSessionRepositoryEnv",
+        "SqliteStatement"
+      ]
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/vitest.config.ts",
+      "type": "file",
+      "label": "vitest.config.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "SQLite Node 会话后端包的 Vitest 测试配置文件，包含原生 SQLite 模块的测试环境配置。",
+      "sizeLines": 33
+    },
+    {
+      "id": "packages/tui/native/darwin/build.sh",
+      "type": "file",
+      "label": "build.sh",
+      "language": "shell",
+      "fileCategory": "script",
+      "description": "macOS 原生 TUI 预构建脚本。使用 clang 编译 darwin-modifiers.c 为 Node.js N-API 原生模块，支持 x86_64 和 arm64 架构的交叉编译，输出 .node 预构建产物。",
+      "sizeLines": 62,
+      "functions": [
+        {
+          "name": "build",
+          "startLine": 36,
+          "endLine": 59,
+          "description": "编译 macOS 原生修饰键检测模块。根据目标架构选择正确的 SDK 和 clang 参数，生成 N-API 兼容的 .node 共享库文件。"
+        }
+      ]
+    },
+    {
+      "id": "packages/tui/native/darwin/prebuilds/darwin-arm64/darwin-modifiers.node",
+      "type": "file",
+      "label": "darwin-modifiers.node",
+      "language": "binary",
+      "fileCategory": "code",
+      "description": "macOS ARM64 架构的预编译原生模块二进制产物。提供 isModifierPressed 函数用于检测 macOS 修饰键（shift、command、control、option）的按下状态。",
+      "sizeLines": 3
+    },
+    {
+      "id": "packages/tui/native/darwin/prebuilds/darwin-x64/darwin-modifiers.node",
+      "type": "file",
+      "label": "darwin-modifiers.node",
+      "language": "binary",
+      "fileCategory": "code",
+      "description": "macOS x64 架构的预编译原生模块二进制产物。提供与 ARM64 版本相同的 isModifierPressed 修饰键检测功能。",
+      "sizeLines": 1
+    },
+    {
+      "id": "packages/tui/native/darwin/README.md",
+      "type": "file",
+      "label": "README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "description": "macOS 原生预构建模块的文档。说明 darwin-modifiers.node 的用途（检测修饰键状态）和构建方式。",
+      "sizeLines": 20,
+      "sections": [
+        "Darwin native prebuilds"
+      ]
+    },
+    {
+      "id": "packages/tui/native/darwin/src/darwin-modifiers.c",
+      "type": "file",
+      "label": "darwin-modifiers.c",
+      "language": "c",
+      "fileCategory": "code",
+      "description": "macOS 原生修饰键检测模块的 C 源代码。通过 CoreGraphics API 读取当前修饰键状态，并以 Node.js N-API 原生模块的形式暴露 isModifierPressed 函数给 JavaScript 层调用。",
+      "sizeLines": 70,
+      "functions": [
+        {
+          "name": "modifier_mask_for_name",
+          "startLine": 23,
+          "endLine": 29,
+          "description": "将修饰键名称（shift、command、control、option）映射为对应的 CGEventFlags 位掩码。"
+        },
+        {
+          "name": "is_modifier_pressed",
+          "startLine": 31,
+          "endLine": 56,
+          "description": "N-API 回调函数。解析 JavaScript 传入的修饰键名称，通过 CoreGraphics 的 CGEventSourceFlagsState 查询当前按键状态并返回布尔值。"
+        },
+        {
+          "name": "napi_register_module_v1",
+          "startLine": 58,
+          "endLine": 70,
+          "description": "N-API 模块注册入口。将 isModifierPressed 函数绑定到模块导出对象。"
+        }
+      ]
+    },
+    {
+      "id": "packages/tui/native/win32/build.mjs",
+      "type": "file",
+      "label": "build.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "description": "Windows 原生 TUI 模块的构建脚本。支持 MSVC（Visual Studio）和 MinGW 两种编译工具链，为 x64 和 arm64 目标架构编译 win32-console-mode.c 为 .node 预构建产物。",
+      "sizeLines": 229,
+      "functions": [
+        {
+          "name": "removeTemporaryDir",
+          "startLine": 28,
+          "endLine": 30,
+          "description": "清理临时构建目录。"
+        },
+        {
+          "name": "commandExists",
+          "startLine": 38,
+          "endLine": 41,
+          "description": "检测指定命令是否在 PATH 中可用。"
+        },
+        {
+          "name": "run",
+          "startLine": 43,
+          "endLine": 47,
+          "description": "同步执行外部命令并返回结果。"
+        },
+        {
+          "name": "quoteBatch",
+          "startLine": 49,
+          "endLine": 51,
+          "description": "对字符串进行 Windows 批处理脚本的引号转义。"
+        },
+        {
+          "name": "msvcHostArch",
+          "startLine": 53,
+          "endLine": 55,
+          "description": "检测当前主机的 MSVC 编译架构标识。"
+        },
+        {
+          "name": "findVisualStudioDevCmd",
+          "startLine": 57,
+          "endLine": 91,
+          "description": "通过 vswhere 工具在系统中搜索 Visual Studio 的 DevEnv 命令行路径。支持多个 VS 版本和安装位置的发现。"
+        },
+        {
+          "name": "canUseMsvc",
+          "startLine": 93,
+          "endLine": 108,
+          "description": "验证 MSVC 工具链是否可用。通过创建临时批处理文件测试 DevCmd 环境初始化和 cl.exe 编译器的可访问性。"
+        },
+        {
+          "name": "resolveMingwCompiler",
+          "startLine": 110,
+          "endLine": 119,
+          "description": "根据目标架构解析 MinGW 编译器路径，检测 x86_64-w64-mingw32-gcc 或 aarch64-w64-mingw32-gcc。"
+        },
+        {
+          "name": "installOutput",
+          "startLine": 121,
+          "endLine": 128,
+          "description": "将编译产物复制到预构建输出目录并设置可执行权限。"
+        },
+        {
+          "name": "buildWithMsvc",
+          "startLine": 130,
+          "endLine": 166,
+          "description": "使用 MSVC 编译原生模块。生成批处理脚本设置编译环境，调用 cl.exe 编译 C 源码为 DLL，处理 x64/arm64 目标架构差异。"
+        },
+        {
+          "name": "buildWithMingw",
+          "startLine": 168,
+          "endLine": 198,
+          "description": "使用 MinGW 交叉编译原生模块。配置 GCC 编译器和链接参数，生成 Windows DLL 格式的原生模块。"
+        }
+      ]
+    },
+    {
+      "id": "packages/tui/native/win32/prebuilds/win32-arm64/win32-console-mode.node",
+      "type": "file",
+      "label": "win32-console-mode.node",
+      "language": "binary",
+      "fileCategory": "code",
+      "description": "Windows ARM64 架构的预编译原生模块二进制产物。提供 enableVirtualTerminalInput 和 isModifierPressed 函数。",
+      "sizeLines": 8
+    },
+    {
+      "id": "packages/tui/native/win32/prebuilds/win32-x64/win32-console-mode.node",
+      "type": "file",
+      "label": "win32-console-mode.node",
+      "language": "binary",
+      "fileCategory": "code",
+      "description": "Windows x64 架构的预编译原生模块二进制产物。提供与 ARM64 版本相同的控制台模式和修饰键检测功能。",
+      "sizeLines": 12
+    },
+    {
+      "id": "packages/tui/native/win32/README.md",
+      "type": "file",
+      "label": "README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "description": "Windows 原生预构建模块的文档。说明 win32-console-mode.node 的用途（启用虚拟终端输入和检测修饰键状态）和构建方式。",
+      "sizeLines": 22,
+      "sections": [
+        "Windows native prebuilds"
+      ]
+    },
+    {
+      "id": "packages/tui/native/win32/src/win32-console-mode.c",
+      "type": "file",
+      "label": "win32-console-mode.c",
+      "language": "c",
+      "fileCategory": "code",
+      "description": "Windows 原生控制台模式模块的 C 源代码。通过 Windows API（GetAsyncKeyState、SetConsoleMode）实现修饰键检测（shift、ctrl、alt、meta）和虚拟终端输入模式启用，以 N-API 原生模块形式暴露给 JavaScript 层。",
+      "sizeLines": 119,
+      "functions": [
+        {
+          "name": "string_equals",
+          "startLine": 30,
+          "endLine": 36,
+          "description": "手动实现的字符串相等比较函数，避免依赖 C 标准库的 strcmp。"
+        },
+        {
+          "name": "get_async_key_state_symbol",
+          "startLine": 38,
+          "endLine": 50,
+          "description": "延迟加载 user32.dll 中的 GetAsyncKeyState 函数符号。使用静态变量缓存加载结果。"
+        },
+        {
+          "name": "is_key_pressed",
+          "startLine": 52,
+          "endLine": 55,
+          "description": "检测指定虚拟键码是否处于按下状态，通过 GetAsyncKeyState 的高位判断。"
+        },
+        {
+          "name": "is_modifier_name_pressed",
+          "startLine": 57,
+          "endLine": 63,
+          "description": "根据修饰键名称（shift、ctrl、alt、meta）检测对应的按键是否按下。处理左右修饰键的 OR 逻辑。"
+        },
+        {
+          "name": "enable_virtual_terminal_input",
+          "startLine": 65,
+          "endLine": 78,
+          "description": "启用 Windows 控制台的虚拟终端输入模式（ENABLE_VIRTUAL_TERMINAL_INPUT），使终端能正确处理 ANSI 转义序列。"
+        },
+        {
+          "name": "is_modifier_pressed",
+          "startLine": 80,
+          "endLine": 101,
+          "description": "N-API 回调函数。解析 JavaScript 传入的修饰键名称，调用 is_modifier_name_pressed 返回按键状态。"
+        },
+        {
+          "name": "set_function_export",
+          "startLine": 103,
+          "endLine": 113,
+          "description": "辅助函数。创建 N-API 函数对象并将其设置为模块导出对象的命名属性。"
+        },
+        {
+          "name": "napi_register_module_v1",
+          "startLine": 115,
+          "endLine": 119,
+          "description": "N-API 模块注册入口。导出 enableVirtualTerminalInput 和 isModifierPressed 两个函数。"
+        }
+      ]
+    },
+    {
+      "id": "packages/tui/test/bug-regression-isimageline-startswith-bug.test.ts",
+      "type": "file",
+      "label": "bug-regression-isimageline-startswith-bug.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "TUI 模块的 bug 回归测试文件。测试 isImageLine 函数的 startsWith 相关 bug，确保图像行检测逻辑在边界条件下正确工作。包含新旧实现的对比验证。",
+      "sizeLines": 237
+    },
+    {
+      "id": "scripts/agent-treeshake-smoke-entry.ts",
+      "type": "file",
+      "label": "agent-treeshake-smoke-entry.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "Agent 模块 tree-shaking 烟雾测试入口文件。用于验证构建工具的 tree-shaking 能力，确保未使用的 agent 导出可以被正确消除。",
+      "sizeLines": 13,
+      "exports": ["agent"]
+    },
+    {
+      "id": "scripts/browser-smoke-entry.ts",
+      "type": "file",
+      "label": "browser-smoke-entry.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "浏览器环境烟雾测试入口文件。包含浏览器相关功能的导入和使用，用于验证浏览器构建产物的完整性和功能正确性。",
+      "sizeLines": 66
+    },
+    {
+      "id": "scripts/check-browser-smoke.mjs",
+      "type": "file",
+      "label": "check-browser-smoke.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "description": "浏览器烟雾测试的 esbuild 插件检查脚本。定义 esbuild 插件拦截模块解析和加载，验证浏览器构建不会意外引入 Node.js 专有依赖（如 node:fs、node:child_process）。",
+      "sizeLines": 128,
+      "functions": [
+        {
+          "name": "normalizePath",
+          "startLine": 27,
+          "endLine": 29,
+          "description": "将路径中的反斜杠规范化为正斜杠，统一跨平台路径格式。"
+        },
+        {
+          "name": "findInput",
+          "startLine": 31,
+          "endLine": 36,
+          "description": "在 esbuild 输入映射中查找匹配指定后缀的文件路径。"
+        },
+        {
+          "name": "includesNodePackage",
+          "startLine": 38,
+          "endLine": 41,
+          "description": "检查输入映射中是否包含指定的 Node.js 内建包依赖。"
+        }
+      ]
+    },
+    {
+      "id": "scripts/check-lockfile-commit.mjs",
+      "type": "file",
+      "label": "check-lockfile-commit.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "description": "检查 package-lock.json 提交内容的脚本。对比 HEAD 和暂存区的锁文件差异，识别依赖包版本变化，验证变更是否仅限于工作区包（workspace packages），防止意外提交非预期的依赖更新。",
+      "sizeLines": 120,
+      "functions": [
+        {
+          "name": "git",
+          "startLine": 8,
+          "endLine": 10,
+          "description": "执行 git 命令并返回标准输出。"
+        },
+        {
+          "name": "readJsonFromGit",
+          "startLine": 12,
+          "endLine": 18,
+          "description": "通过 git show 读取指定引用的 JSON 文件内容并解析。"
+        },
+        {
+          "name": "packageNameFromLockPath",
+          "startLine": 20,
+          "endLine": 26,
+          "description": "从锁文件中的包路径提取包名，正确处理 scoped 包（@scope/name）格式。"
+        },
+        {
+          "name": "packageLabel",
+          "startLine": 28,
+          "endLine": 31,
+          "description": "生成包的显示标签，包含包名和版本信息。"
+        },
+        {
+          "name": "getLockfilePackageChanges",
+          "startLine": 33,
+          "endLine": 48,
+          "description": "对比 HEAD 和暂存区的 package-lock.json，提取包级别的变化列表（新增、删除、版本变更）。"
+        },
+        {
+          "name": "isWorkspacePackagePath",
+          "startLine": 50,
+          "endLine": 52,
+          "description": "判断锁文件路径是否指向工作区包（packages/ 目录下）。"
+        },
+        {
+          "name": "hasOnlyWorkspacePackageChanges",
+          "startLine": 54,
+          "endLine": 56,
+          "description": "验证所有锁文件变更是否都仅涉及工作区包。"
+        },
+        {
+          "name": "summarizeLockfileChange",
+          "startLine": 58,
+          "endLine": 75,
+          "description": "生成锁文件变更的可读摘要，分类显示新增、删除和版本变化的包。"
+        }
+      ]
+    },
+    {
+      "id": "scripts/check-pinned-deps.mjs",
+      "type": "file",
+      "label": "check-pinned-deps.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "description": "检查 package.json 中的依赖是否使用固定版本号。遍历工作区包，验证依赖声明不使用范围版本号（如 ^、~），确保依赖版本的确定性和可重现构建。",
+      "sizeLines": 63,
+      "functions": [
+        {
+          "name": "collectPackageJsonFiles",
+          "startLine": 9,
+          "endLine": 22,
+          "description": "递归收集工作区中所有 package.json 文件路径，跳过 node_modules 等忽略目录。"
+        },
+        {
+          "name": "isInternalWorkspaceDependency",
+          "startLine": 24,
+          "endLine": 26,
+          "description": "判断依赖是否为内部工作区包（以 @earendil-works/ 前缀开头）。"
+        },
+        {
+          "name": "isNonRegistrySpecifier",
+          "startLine": 28,
+          "endLine": 30,
+          "description": "判断依赖版本说明符是否指向非 npm registry 源（如 git、file:、workspace:、https: 等）。"
+        },
+        {
+          "name": "getVersionSpecifier",
+          "startLine": 32,
+          "endLine": 38,
+          "description": "从版本说明符中提取实际版本号，处理 npm: 别名格式的依赖。"
+        }
+      ]
+    },
+    {
+      "id": "scripts/check-ts-relative-imports.mjs",
+      "type": "file",
+      "label": "check-ts-relative-imports.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "description": "检查 TypeScript 文件中的相对导入是否使用了 .js 扩展名。使用 TypeScript 编译器 API 遍历 AST，验证所有相对路径的 import/export/import() 语句都包含 .js 后缀，确保 ESM 兼容性。",
+      "sizeLines": 74,
+      "functions": [
+        {
+          "name": "collectTypescriptFiles",
+          "startLine": 8,
+          "endLine": 21,
+          "description": "递归收集目录中的所有 TypeScript 文件（.ts、.tsx、.mts、.cts）。"
+        },
+        {
+          "name": "isRelativeJavaScriptSpecifier",
+          "startLine": 23,
+          "endLine": 25,
+          "description": "判断模块说明符是否为相对路径且使用 .js 扩展名（以 ./ 或 ../ 开头，以 .js 结尾）。"
+        },
+        {
+          "name": "getImportTypeSpecifier",
+          "startLine": 27,
+          "endLine": 31,
+          "description": "从 TypeScript 的 ImportTypeNode AST 节点中提取模块说明符字面量。"
+        }
+      ]
+    },
+    {
+      "id": "scripts/cost.ts",
+      "type": "file",
+      "label": "cost.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "description": "会话成本追踪脚本。扫描指定目录对应的会话记录，计算过去 N 天的 API 使用成本（输入 token、输出 token、缓存读写），生成成本报告。将会话目录路径编码为文件夹名称以匹配 Pi agent 的会话存储格式。",
+      "sizeLines": 183,
+      "functions": [
+        {
+          "name": "encodeSessionDir",
+          "startLine": 32,
+          "endLine": 36,
+          "description": "将目录路径编码为 Pi agent 会话存储格式。移除开头的斜杠，将其余斜杠替换为短横线，并添加前后缀 --。"
+        }
+      ]
+    },
+    {
+      "id": "scripts/diff-model-catalog.mjs",
+      "type": "file",
+      "label": "diff-model-catalog.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "description": "模型目录差异对比工具。在 HEAD 和当前工作树分别生成模型目录 JSON，然后对比两者的差异。支持 --thinking 选项比较各工作树的有效思维级别（thinking levels）实现，帮助审查模型配置变更。",
+      "sizeLines": 241,
+      "functions": [
+        {
+          "name": "printUsage",
+          "startLine": 8,
+          "endLine": 21,
+          "description": "打印命令行使用帮助信息。"
+        },
+        {
+          "name": "run",
+          "startLine": 23,
+          "endLine": 34,
+          "description": "执行命令并捕获输出，失败时抛出包含 stdout/stderr 详情的错误。"
+        },
+        {
+          "name": "runDiff",
+          "startLine": 36,
+          "endLine": 42,
+          "description": "执行 git diff 命令并返回差异输出。"
+        },
+        {
+          "name": "generateCatalog",
+          "startLine": 65,
+          "endLine": 69,
+          "description": "在指定工作目录执行模型目录生成命令，输出到临时目录。"
+        },
+        {
+          "name": "formatProviderCatalogs",
+          "startLine": 71,
+          "endLine": 79,
+          "description": "将目录下的多个 provider JSON 文件合并为一个格式化的单一 JSON 文件。"
+        },
+        {
+          "name": "readProviderCatalog",
+          "startLine": 81,
+          "endLine": 84,
+          "description": "读取指定 provider 的模型目录 JSON 文件。"
+        },
+        {
+          "name": "generateThinkingCatalog",
+          "startLine": 86,
+          "endLine": 91,
+          "description": "生成思维级别目录，使用工作树自身的 getSupportedThinkingLevels() 实现。"
+        },
+        {
+          "name": "sortJsonKeys",
+          "startLine": 96,
+          "endLine": 103,
+          "description": "递归排序 JSON 对象的键，确保稳定排序便于 diff 比较。对 thinking levels 使用特殊排序规则。"
+        },
+        {
+          "name": "canonicalizeJson",
+          "startLine": 105,
+          "endLine": 114,
+          "description": "规范化 JSON 值用于比较。排序数组和对象键，消除因顺序不同导致的假阳性差异。"
+        },
+        {
+          "name": "formatJsonForDiff",
+          "startLine": 116,
+          "endLine": 130,
+          "description": "将 JSON 值格式化为多行可读格式，用于 diff 输出显示。"
+        },
+        {
+          "name": "writeModelSnapshot",
+          "startLine": 132,
+          "endLine": 134,
+          "description": "将模型数据规范化后写入快照文件。"
+        },
+        {
+          "name": "writeChangedLines",
+          "startLine": 136,
+          "endLine": 145,
+          "description": "从 diff 输出中提取并打印变更行（+、-、@@ 开头的行），过滤掉颜色代码。"
+        }
+      ]
+    },
+    {
+      "id": "scripts/edit-tool-stats.mjs",
+      "type": "file",
+      "label": "edit-tool-stats.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "description": "编辑工具使用统计分析脚本。扫描 Pi agent 会话记录文件，分析 Edit 工具的使用模式：替换大小、文件扩展名分布、错误分类、同文件集群编辑、膨胀率（写入字节/净变更字节）等。支持 JSON 和人类可读报告输出，用于评估 AI 编码效率。",
+      "sizeLines": 834,
+      "functions": [
+        {
+          "name": "parseArgs",
+          "startLine": 13,
+          "endLine": 62,
+          "description": "解析命令行参数。支持 --sessions-dir、--json、--include-records、--failed-only、--model、--ext、--top、--all-sessions、--since、--auto-since-path 等选项。"
+        },
+        {
+          "name": "printHelp",
+          "startLine": 64,
+          "endLine": 80,
+          "description": "打印命令行帮助信息，列出所有可用选项及其说明。"
+        },
+        {
+          "name": "parseSessionFileTimestamp",
+          "startLine": 82,
+          "endLine": 90,
+          "description": "从会话文件名中解析时间戳，转换为毫秒级 Unix 时间戳。"
+        },
+        {
+          "name": "formatIso",
+          "startLine": 92,
+          "endLine": 94,
+          "description": "将毫秒时间戳格式化为 ISO 8601 日期时间字符串。"
+        },
+        {
+          "name": "resolveAutoSinceMs",
+          "startLine": 96,
+          "endLine": 114,
+          "description": "自动推断 --since 时间。优先解析日期字符串，否则从 edit.ts 扩展文件的修改时间推断。"
+        },
+        {
+          "name": "getPathExtension",
+          "startLine": 130,
+          "endLine": 137,
+          "description": "提取文件路径的扩展名，处理无扩展名、隐藏文件和复合扩展名（如 .test.ts）的情况。"
+        },
+        {
+          "name": "utf8Bytes",
+          "startLine": 139,
+          "endLine": 141,
+          "description": "计算字符串的 UTF-8 编码字节长度。"
+        },
+        {
+          "name": "longestCommonPrefixLength",
+          "startLine": 143,
+          "endLine": 148,
+          "description": "计算两个字符串的最长公共前缀长度。"
+        },
+        {
+          "name": "longestCommonSuffixLength",
+          "startLine": 150,
+          "endLine": 155,
+          "description": "计算两个字符串的最长公共后缀长度。"
+        },
+        {
+          "name": "analyzeReplacement",
+          "startLine": 157,
+          "endLine": 193,
+          "description": "分析单次文本替换操作。通过最长公共前后缀算法计算实际变更区域，统计 old_bytes、new_bytes、delta_bytes、old_lines、new_lines 等指标。"
+        },
+        {
+          "name": "median",
+          "startLine": 195,
+          "endLine": 197,
+          "description": "计算数字数组的中位数。"
+        },
+        {
+          "name": "quantile",
+          "startLine": 199,
+          "endLine": 209,
+          "description": "计算数字数组的指定分位数。过滤非有限值后排序，使用线性插值。"
+        },
+        {
+          "name": "formatInt",
+          "startLine": 211,
+          "endLine": 213,
+          "description": "将数字格式化为千分位分隔的整数字符串。"
+        },
+        {
+          "name": "formatPercent",
+          "startLine": 215,
+          "endLine": 218,
+          "description": "将部分/总数格式化为百分比字符串。"
+        },
+        {
+          "name": "formatRatio",
+          "startLine": 220,
+          "endLine": 226,
+          "description": "将数值格式化为保留指定小数位的比率字符串。"
+        },
+        {
+          "name": "formatBytes",
+          "startLine": 228,
+          "endLine": 232,
+          "description": "将字节数格式化为人类可读的 KB/MB 字符串。"
+        },
+        {
+          "name": "extractTextContent",
+          "startLine": 234,
+          "endLine": 241,
+          "description": "从消息内容中提取文本部分。处理字符串和 content block 数组两种格式。"
+        },
+        {
+          "name": "classifyErrorKind",
+          "startLine": 243,
+          "endLine": 257,
+          "description": "根据错误文本分类错误类型。识别 Edit 工具常见错误：file_not_found、match_not_found、multiple_matches、empty_input、match_too_short 等。"
+        },
+        {
+          "name": "getArgStyle",
+          "startLine": 259,
+          "endLine": 268,
+          "description": "分析 Edit 工具参数的风格：inline（单行）、multiline（多行）、empty（空）或 unknown（未知）。"
+        },
+        {
+          "name": "analyzeToolArguments",
+          "startLine": 270,
+          "endLine": 337,
+          "description": "深入分析 Edit 工具的参数结构。提取 old_text/new_text、file_path、参数风格，统计替换大小和行变更。"
+        },
+        {
+          "name": "groupCounts",
+          "startLine": 339,
+          "endLine": 346,
+          "description": "按指定键函数对记录分组并统计各组数量。"
+        },
+        {
+          "name": "collectInflations",
+          "startLine": 348,
+          "endLine": 350,
+          "description": "收集膨胀率（写入字节/净变更字节）大于阈值的记录。"
+        },
+        {
+          "name": "summarizeGroups",
+          "startLine": 352,
+          "endLine": 382,
+          "description": "对分组记录生成汇总统计，包括计数、总字节数、中位数和 P95 值。"
+        },
+        {
+          "name": "buildSameFileClusterStats",
+          "startLine": 384,
+          "endLine": 410,
+          "description": "统计同文件集群编辑情况。识别在短时间内对同一文件进行多次编辑的模式。"
+        },
+        {
+          "name": "buildInflationBuckets",
+          "startLine": 412,
+          "endLine": 434,
+          "description": "将膨胀率记录按区间分桶（5x-10x、10x-50x、50x-100x、100x+），统计各桶数量。"
+        },
+        {
+          "name": "buildHugeReplacementStats",
+          "startLine": 436,
+          "endLine": 442,
+          "description": "统计超大替换操作（old_text 或 new_text 超过阈值字节数）的数量和示例。"
+        },
+        {
+          "name": "buildWorstExamples",
+          "startLine": 444,
+          "endLine": 466,
+          "description": "构建最差示例列表。按膨胀率或替换大小排序，提取 top N 条记录用于报告。"
+        },
+        {
+          "name": "buildSummary",
+          "startLine": 468,
+          "endLine": 573,
+          "description": "构建完整的统计摘要对象。聚合所有分析维度：总记录数、文件扩展名分布、错误分类、参数风格、膨胀率、同文件集群、超大替换等。"
+        },
+        {
+          "name": "printGroupTable",
+          "startLine": 575,
+          "endLine": 581,
+          "description": "打印分组统计表格。接受标题、分组数据和格式化函数，输出对齐的文本表格。"
+        },
+        {
+          "name": "printHumanReport",
+          "startLine": 583,
+          "endLine": 696,
+          "description": "生成人类可读的统计报告。按章节输出概览、错误分析、文件类型分布、参数风格、膨胀率、同文件集群、超大替换和最差示例。"
+        },
+        {
+          "name": "scanSessions",
+          "startLine": 698,
+          "endLine": 790,
+          "description": "扫描会话目录，读取所有会话 JSONL 文件，提取 Edit 工具调用记录。解析每条消息的工具参数和结果，构建分析记录数组。"
+        },
+        {
+          "name": "applyFilters",
+          "startLine": 792,
+          "endLine": 805,
+          "description": "根据命令行选项过滤记录。支持按模型名称、文件扩展名和失败状态过滤。"
+        },
+        {
+          "name": "main",
+          "startLine": 807,
+          "endLine": 829,
+          "description": "主函数。解析参数、扫描会话、应用过滤、构建摘要并输出报告（JSON 或人类可读格式）。"
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "source": "packages/server/test/protocol.test.ts",
+      "target": "packages/server/src/protocol.ts",
+      "type": "import",
+      "label": "测试 → 被测模块",
+      "description": "导入协议序列化函数进行单元测试验证"
+    },
+    {
+      "source": "packages/session-backends/sqlite-node/src/sqlite/index.ts",
+      "target": "packages/session-backends/sqlite-node",
+      "type": "module_entry",
+      "label": "包入口",
+      "description": "SQLite 会话后端的公共 API 入口"
+    },
+    {
+      "source": "packages/session-backends/sqlite-node/scripts/prepare-dist.mjs",
+      "target": "packages/session-backends/sqlite-node",
+      "type": "builds",
+      "label": "构建准备",
+      "description": "为 SQLite 后端包准备构建产物"
+    },
+    {
+      "source": "packages/tui/native/darwin/build.sh",
+      "target": "packages/tui/native/darwin/src/darwin-modifiers.c",
+      "type": "builds",
+      "label": "编译",
+      "description": "编译 C 源码为 macOS 原生模块"
+    },
+    {
+      "source": "packages/tui/native/darwin/build.sh",
+      "target": "packages/tui/native/darwin/prebuilds/darwin-arm64/darwin-modifiers.node",
+      "type": "produces",
+      "label": "生成产物",
+      "description": "生成 ARM64 架构的预构建产物"
+    },
+    {
+      "source": "packages/tui/native/darwin/build.sh",
+      "target": "packages/tui/native/darwin/prebuilds/darwin-x64/darwin-modifiers.node",
+      "type": "produces",
+      "label": "生成产物",
+      "description": "生成 x64 架构的预构建产物"
+    },
+    {
+      "source": "packages/tui/native/win32/build.mjs",
+      "target": "packages/tui/native/win32/src/win32-console-mode.c",
+      "type": "builds",
+      "label": "编译",
+      "description": "编译 C 源码为 Windows 原生模块"
+    },
+    {
+      "source": "packages/tui/native/win32/build.mjs",
+      "target": "packages/tui/native/win32/prebuilds/win32-arm64/win32-console-mode.node",
+      "type": "produces",
+      "label": "生成产物",
+      "description": "生成 ARM64 架构的预构建产物"
+    },
+    {
+      "source": "packages/tui/native/win32/build.mjs",
+      "target": "packages/tui/native/win32/prebuilds/win32-x64/win32-console-mode.node",
+      "type": "produces",
+      "label": "生成产物",
+      "description": "生成 x64 架构的预构建产物"
+    },
+    {
+      "source": "packages/tui/native/darwin/prebuilds/darwin-arm64/darwin-modifiers.node",
+      "target": "packages/tui/native/darwin/src/darwin-modifiers.c",
+      "type": "compiled_from",
+      "label": "编译自",
+      "description": "ARM64 预构建模块编译自 C 源码"
+    },
+    {
+      "source": "packages/tui/native/darwin/prebuilds/darwin-x64/darwin-modifiers.node",
+      "target": "packages/tui/native/darwin/src/darwin-modifiers.c",
+      "type": "compiled_from",
+      "label": "编译自",
+      "description": "x64 预构建模块编译自 C 源码"
+    },
+    {
+      "source": "packages/tui/native/win32/prebuilds/win32-arm64/win32-console-mode.node",
+      "target": "packages/tui/native/win32/src/win32-console-mode.c",
+      "type": "compiled_from",
+      "label": "编译自",
+      "description": "ARM64 预构建模块编译自 C 源码"
+    },
+    {
+      "source": "packages/tui/native/win32/prebuilds/win32-x64/win32-console-mode.node",
+      "target": "packages/tui/native/win32/src/win32-console-mode.c",
+      "type": "compiled_from",
+      "label": "编译自",
+      "description": "x64 预构建模块编译自 C 源码"
+    },
+    {
+      "source": "packages/tui/native/darwin/README.md",
+      "target": "packages/tui/native/darwin/src/darwin-modifiers.c",
+      "type": "documents",
+      "label": "文档",
+      "description": "文档说明 darwin-modifiers 模块的用途"
+    },
+    {
+      "source": "packages/tui/native/win32/README.md",
+      "target": "packages/tui/native/win32/src/win32-console-mode.c",
+      "type": "documents",
+      "label": "文档",
+      "description": "文档说明 win32-console-mode 模块的用途"
+    },
+    {
+      "source": "packages/tui/test/bug-regression-isimageline-startswith-bug.test.ts",
+      "target": "packages/tui",
+      "type": "tests",
+      "label": "回归测试",
+      "description": "TUI 模块 isImageLine 函数的 bug 回归测试"
+    },
+    {
+      "source": "scripts/agent-treeshake-smoke-entry.ts",
+      "target": "scripts",
+      "type": "smoke_test",
+      "label": "烟雾测试",
+      "description": "Agent 模块 tree-shaking 烟雾测试入口"
+    },
+    {
+      "source": "scripts/browser-smoke-entry.ts",
+      "target": "scripts",
+      "type": "smoke_test",
+      "label": "烟雾测试",
+      "description": "浏览器构建烟雾测试入口"
+    },
+    {
+      "source": "scripts/check-browser-smoke.mjs",
+      "target": "scripts/browser-smoke-entry.ts",
+      "type": "validates",
+      "label": "验证",
+      "description": "验证浏览器烟雾测试入口不包含 Node.js 专有依赖"
+    },
+    {
+      "source": "scripts/cost.ts",
+      "target": "scripts",
+      "type": "utility",
+      "label": "工具脚本",
+      "description": "会话成本追踪工具"
+    },
+    {
+      "source": "scripts/diff-model-catalog.mjs",
+      "target": "scripts",
+      "type": "utility",
+      "label": "工具脚本",
+      "description": "模型目录差异对比工具"
+    },
+    {
+      "source": "scripts/edit-tool-stats.mjs",
+      "target": "scripts",
+      "type": "utility",
+      "label": "工具脚本",
+      "description": "Edit 工具使用统计分析"
+    },
+    {
+      "source": "scripts/check-lockfile-commit.mjs",
+      "target": "scripts",
+      "type": "utility",
+      "label": "工具脚本",
+      "description": "锁文件提交检查工具"
+    },
+    {
+      "source": "scripts/check-pinned-deps.mjs",
+      "target": "scripts",
+      "type": "utility",
+      "label": "工具脚本",
+      "description": "依赖版本固定检查工具"
+    },
+    {
+      "source": "scripts/check-ts-relative-imports.mjs",
+      "target": "scripts",
+      "type": "utility",
+      "label": "工具脚本",
+      "description": "TypeScript 相对导入检查工具"
+    }
+  ]
+}

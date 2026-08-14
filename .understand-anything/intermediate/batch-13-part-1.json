@@ -1,0 +1,722 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/coding-agent/examples/extensions/git-merge-and-resolve.ts",
+      "type": "file",
+      "name": "git-merge-and-resolve.ts",
+      "filePath": "packages/coding-agent/examples/extensions/git-merge-and-resolve.ts",
+      "summary": "示例扩展，演示如何通过扩展 API 实现 Git 合并冲突检测与格式化输出。",
+      "tags": [
+        "extension",
+        "git",
+        "example",
+        "merge-conflict"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/examples/extensions/input-transform-streaming.ts",
+      "type": "file",
+      "name": "input-transform-streaming.ts",
+      "filePath": "packages/coding-agent/examples/extensions/input-transform-streaming.ts",
+      "summary": "示例扩展，演示流式输入转换功能，通过扩展 API 对用户输入进行实时变换。",
+      "tags": [
+        "extension",
+        "input-transform",
+        "streaming",
+        "example"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/examples/extensions/trigger-compact.ts",
+      "type": "file",
+      "name": "trigger-compact.ts",
+      "filePath": "packages/coding-agent/examples/extensions/trigger-compact.ts",
+      "summary": "示例扩展，演示如何通过扩展 API 触发会话压缩（compact）操作。",
+      "tags": [
+        "extension",
+        "compact",
+        "example",
+        "session"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/bun/cli.ts",
+      "type": "file",
+      "name": "cli.ts",
+      "filePath": "packages/coding-agent/src/bun/cli.ts",
+      "summary": "Bun 运行时的 CLI 入口，恢复沙箱环境变量后启动主程序。",
+      "tags": [
+        "entry-point",
+        "bun",
+        "cli",
+        "sandbox"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/bun/restore-sandbox-env.ts",
+      "type": "file",
+      "name": "restore-sandbox-env.ts",
+      "filePath": "packages/coding-agent/src/bun/restore-sandbox-env.ts",
+      "summary": "恢复 Bun 沙箱环境中被清除的环境变量，确保子进程能继承正确的 PATH 等配置。",
+      "tags": [
+        "bun",
+        "sandbox",
+        "environment",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/cli.ts",
+      "type": "file",
+      "name": "cli.ts",
+      "filePath": "packages/coding-agent/src/cli.ts",
+      "summary": "CLI 主入口点，初始化配置并调用 main 函数启动编码 agent。",
+      "tags": [
+        "entry-point",
+        "cli",
+        "bootstrap"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/cli/args.ts",
+      "type": "file",
+      "name": "args.ts",
+      "filePath": "packages/coding-agent/src/cli/args.ts",
+      "summary": "解析命令行参数，处理 thinking level、模型选择、会话管理等所有 CLI 选项，并提供帮助信息输出。",
+      "tags": [
+        "cli",
+        "argument-parsing",
+        "configuration",
+        "validation"
+      ],
+      "complexity": "complex",
+      "languageNotes": "使用手动参数解析，支持大量 flag 和子命令。"
+    },
+    {
+      "id": "file:packages/coding-agent/src/cli/auth-check.ts",
+      "type": "file",
+      "name": "auth-check.ts",
+      "filePath": "packages/coding-agent/src/cli/auth-check.ts",
+      "summary": "检查各 LLM 供应商的认证状态，验证 API key 是否有效并返回凭据信息。",
+      "tags": [
+        "cli",
+        "auth",
+        "authentication",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/src/cli/auth-command.ts",
+      "type": "file",
+      "name": "auth-command.ts",
+      "filePath": "packages/coding-agent/src/cli/auth-command.ts",
+      "summary": "处理 auth 子命令的解析与验证逻辑，支持 login/logout 等认证命令的参数处理。",
+      "tags": [
+        "cli",
+        "auth",
+        "command-parsing",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/src/cli/config-selector.ts",
+      "type": "file",
+      "name": "config-selector.ts",
+      "filePath": "packages/coding-agent/src/cli/config-selector.ts",
+      "summary": "提供配置选择器的交互式 UI，允许用户从可用配置列表中选择配置项。",
+      "tags": [
+        "cli",
+        "config",
+        "interactive-ui",
+        "selector"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/src/cli/credential-print.ts",
+      "type": "file",
+      "name": "credential-print.ts",
+      "filePath": "packages/coding-agent/src/cli/credential-print.ts",
+      "summary": "解析并打印指定供应商的认证凭据信息，支持 token 过期检查和刷新。",
+      "tags": [
+        "cli",
+        "credential",
+        "auth",
+        "printing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/examples/extensions/git-merge-and-resolve.ts:findConflicts",
+      "type": "function",
+      "name": "findConflicts",
+      "filePath": "packages/coding-agent/examples/extensions/git-merge-and-resolve.ts",
+      "lineRange": [
+        27,
+        54
+      ],
+      "summary": "在指定目录中查找 Git 合并冲突标记，返回冲突块列表。",
+      "tags": [
+        "git",
+        "merge-conflict",
+        "detection",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/examples/extensions/git-merge-and-resolve.ts:formatConflicts",
+      "type": "function",
+      "name": "formatConflicts",
+      "filePath": "packages/coding-agent/examples/extensions/git-merge-and-resolve.ts",
+      "lineRange": [
+        62,
+        71
+      ],
+      "summary": "将检测到的冲突块格式化为可读的文本输出。",
+      "tags": [
+        "git",
+        "formatting",
+        "merge-conflict"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/bun/restore-sandbox-env.ts:restoreSandboxEnv",
+      "type": "function",
+      "name": "restoreSandboxEnv",
+      "filePath": "packages/coding-agent/src/bun/restore-sandbox-env.ts",
+      "lineRange": [
+        19,
+        36
+      ],
+      "summary": "恢复 Bun 沙箱环境中被清除的环境变量，确保子进程能继承正确的 PATH 等配置。",
+      "tags": [
+        "bun",
+        "sandbox",
+        "environment",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/cli/args.ts:parseArgs",
+      "type": "function",
+      "name": "parseArgs",
+      "filePath": "packages/coding-agent/src/cli/args.ts",
+      "lineRange": [
+        66,
+        235
+      ],
+      "summary": "解析命令行参数数组，返回包含所有选项的解析结果对象，处理模型、会话、工具等配置。",
+      "tags": [
+        "cli",
+        "argument-parsing",
+        "configuration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/cli/args.ts:printHelp",
+      "type": "function",
+      "name": "printHelp",
+      "filePath": "packages/coding-agent/src/cli/args.ts",
+      "lineRange": [
+        237,
+        428
+      ],
+      "summary": "输出 CLI 帮助信息，展示所有可用选项、标志和子命令的用法说明。",
+      "tags": [
+        "cli",
+        "help",
+        "documentation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/cli/auth-check.ts:checkProviderAuth",
+      "type": "function",
+      "name": "checkProviderAuth",
+      "filePath": "packages/coding-agent/src/cli/auth-check.ts",
+      "lineRange": [
+        22,
+        53
+      ],
+      "summary": "检查指定供应商的认证状态，验证 API key 有效性并返回认证结果。",
+      "tags": [
+        "cli",
+        "auth",
+        "validation",
+        "provider"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/cli/auth-command.ts:parseAuthCommand",
+      "type": "function",
+      "name": "parseAuthCommand",
+      "filePath": "packages/coding-agent/src/cli/auth-command.ts",
+      "lineRange": [
+        47,
+        95
+      ],
+      "summary": "解析 auth 子命令参数，识别 login/logout 操作并提取相关选项。",
+      "tags": [
+        "cli",
+        "auth",
+        "command-parsing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/cli/auth-command.ts:validateAuthCommandArgs",
+      "type": "function",
+      "name": "validateAuthCommandArgs",
+      "filePath": "packages/coding-agent/src/cli/auth-command.ts",
+      "lineRange": [
+        97,
+        117
+      ],
+      "summary": "验证 auth 子命令参数的合法性和完整性。",
+      "tags": [
+        "cli",
+        "auth",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/coding-agent/src/cli/auth-command.ts:AuthCommandError",
+      "type": "class",
+      "name": "AuthCommandError",
+      "filePath": "packages/coding-agent/src/cli/auth-command.ts",
+      "lineRange": [
+        15,
+        15
+      ],
+      "summary": "auth 命令解析过程中抛出的错误类。",
+      "tags": [
+        "error",
+        "auth",
+        "cli"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/cli/config-selector.ts:selectConfig",
+      "type": "function",
+      "name": "selectConfig",
+      "filePath": "packages/coding-agent/src/cli/config-selector.ts",
+      "lineRange": [
+        20,
+        56
+      ],
+      "summary": "显示交互式配置选择器，返回用户选择的配置项。",
+      "tags": [
+        "cli",
+        "config",
+        "interactive-ui"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/cli/credential-print.ts:resolveCredentialForPrint",
+      "type": "function",
+      "name": "resolveCredentialForPrint",
+      "filePath": "packages/coding-agent/src/cli/credential-print.ts",
+      "lineRange": [
+        17,
+        87
+      ],
+      "summary": "解析指定供应商的凭据用于打印，支持 token 过期检查和自动刷新。",
+      "tags": [
+        "cli",
+        "credential",
+        "auth",
+        "resolution"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/coding-agent/examples/extensions/git-merge-and-resolve.ts",
+      "target": "function:packages/coding-agent/examples/extensions/git-merge-and-resolve.ts:findConflicts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/examples/extensions/git-merge-and-resolve.ts",
+      "target": "function:packages/coding-agent/examples/extensions/git-merge-and-resolve.ts:formatConflicts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/bun/restore-sandbox-env.ts",
+      "target": "function:packages/coding-agent/src/bun/restore-sandbox-env.ts:restoreSandboxEnv",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/args.ts",
+      "target": "function:packages/coding-agent/src/cli/args.ts:parseArgs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/args.ts",
+      "target": "function:packages/coding-agent/src/cli/args.ts:printHelp",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/auth-check.ts",
+      "target": "function:packages/coding-agent/src/cli/auth-check.ts:checkProviderAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/auth-command.ts",
+      "target": "function:packages/coding-agent/src/cli/auth-command.ts:parseAuthCommand",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/auth-command.ts",
+      "target": "function:packages/coding-agent/src/cli/auth-command.ts:validateAuthCommandArgs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/auth-command.ts",
+      "target": "class:packages/coding-agent/src/cli/auth-command.ts:AuthCommandError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/config-selector.ts",
+      "target": "function:packages/coding-agent/src/cli/config-selector.ts:selectConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/credential-print.ts",
+      "target": "function:packages/coding-agent/src/cli/credential-print.ts:resolveCredentialForPrint",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/bun/restore-sandbox-env.ts",
+      "target": "function:packages/coding-agent/src/bun/restore-sandbox-env.ts:restoreSandboxEnv",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/args.ts",
+      "target": "function:packages/coding-agent/src/cli/args.ts:parseArgs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/args.ts",
+      "target": "function:packages/coding-agent/src/cli/args.ts:printHelp",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/auth-check.ts",
+      "target": "function:packages/coding-agent/src/cli/auth-check.ts:checkProviderAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/auth-command.ts",
+      "target": "function:packages/coding-agent/src/cli/auth-command.ts:parseAuthCommand",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/auth-command.ts",
+      "target": "function:packages/coding-agent/src/cli/auth-command.ts:validateAuthCommandArgs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/auth-command.ts",
+      "target": "class:packages/coding-agent/src/cli/auth-command.ts:AuthCommandError",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/config-selector.ts",
+      "target": "function:packages/coding-agent/src/cli/config-selector.ts:selectConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/credential-print.ts",
+      "target": "function:packages/coding-agent/src/cli/credential-print.ts:resolveCredentialForPrint",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/bun/cli.ts",
+      "target": "file:packages/coding-agent/src/bun/restore-sandbox-env.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/bun/cli.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli.ts",
+      "target": "file:packages/coding-agent/src/core/http-dispatcher.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli.ts",
+      "target": "file:packages/coding-agent/src/main.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/args.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/args.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/args.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/auth-check.ts",
+      "target": "file:packages/coding-agent/src/cli/args.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/auth-check.ts",
+      "target": "file:packages/coding-agent/src/cli/auth-command.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/auth-check.ts",
+      "target": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/auth-check.ts",
+      "target": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/auth-check.ts",
+      "target": "file:packages/coding-agent/src/core/models-store.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/auth-command.ts",
+      "target": "file:packages/coding-agent/src/cli/args.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/config-selector.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/config-selector.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/config-selector.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/config-selector.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/credential-print.ts",
+      "target": "file:packages/coding-agent/src/cli/args.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/credential-print.ts",
+      "target": "file:packages/coding-agent/src/cli/auth-command.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/credential-print.ts",
+      "target": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/credential-print.ts",
+      "target": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/examples/extensions/git-merge-and-resolve.ts",
+      "target": "file:packages/coding-agent/test/git-merge-and-resolve-extension.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/examples/extensions/input-transform-streaming.ts",
+      "target": "file:packages/coding-agent/test/input-transform-streaming-example.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/examples/extensions/trigger-compact.ts",
+      "target": "file:packages/coding-agent/test/trigger-compact-extension.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/args.ts",
+      "target": "file:packages/coding-agent/test/args.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/args.ts",
+      "target": "file:packages/coding-agent/test/auth-check.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/args.ts",
+      "target": "file:packages/coding-agent/test/credential-print.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/args.ts",
+      "target": "file:packages/coding-agent/test/initial-message.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/args.ts",
+      "target": "file:packages/coding-agent/test/max-thinking.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/auth-check.ts",
+      "target": "file:packages/coding-agent/test/auth-check.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/auth-command.ts",
+      "target": "file:packages/coding-agent/test/auth-check.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/auth-command.ts",
+      "target": "file:packages/coding-agent/test/credential-print.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/credential-print.ts",
+      "target": "file:packages/coding-agent/test/credential-print.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

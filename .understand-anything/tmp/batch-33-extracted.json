@@ -1,0 +1,675 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 8,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "packages/coding-agent/src/core/remote-catalog-provider.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 132,
+      "nonEmptyLines": 125,
+      "functions": [
+        {
+          "name": "mergeModels",
+          "startLine": 9,
+          "endLine": 17,
+          "params": [
+            "baseline",
+            "dynamic"
+          ]
+        },
+        {
+          "name": "parseCatalog",
+          "startLine": 19,
+          "endLine": 31,
+          "params": [
+            "providerId",
+            "value"
+          ]
+        },
+        {
+          "name": "remoteModels",
+          "startLine": 33,
+          "endLine": 42,
+          "params": [
+            "entry",
+            "localGeneratedAt"
+          ]
+        },
+        {
+          "name": "withRemoteCatalog",
+          "startLine": 45,
+          "endLine": 132,
+          "params": [
+            "provider",
+            "catalogBaseUrl",
+            "localGeneratedAt"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "REMOTE_CATALOG_REFRESH_INTERVAL_MS",
+          "line": 7,
+          "isDefault": false
+        },
+        {
+          "name": "withRemoteCatalog",
+          "line": 45,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "mergeModels",
+          "callee": "merged.findIndex",
+          "lineNumber": 12
+        },
+        {
+          "caller": "mergeModels",
+          "callee": "merged.push",
+          "lineNumber": 14
+        },
+        {
+          "caller": "parseCatalog",
+          "callee": "Array.isArray",
+          "lineNumber": 20
+        },
+        {
+          "caller": "parseCatalog",
+          "callee": "Array.isArray",
+          "lineNumber": 22
+        },
+        {
+          "caller": "parseCatalog",
+          "callee": "Object.values",
+          "lineNumber": 25
+        },
+        {
+          "caller": "parseCatalog",
+          "callee": "entries\n\t\t.filter((entry): entry is Model<Api> => typeof entry === \"object\" && entry !== null && \"id\" in entry)\n\t\t.map",
+          "lineNumber": 28
+        },
+        {
+          "caller": "parseCatalog",
+          "callee": "entries\n\t\t.filter",
+          "lineNumber": 28
+        },
+        {
+          "caller": "withRemoteCatalog",
+          "callee": "mergeModels",
+          "lineNumber": 54
+        },
+        {
+          "caller": "withRemoteCatalog",
+          "callee": "provider.getModels",
+          "lineNumber": 54
+        },
+        {
+          "caller": "withRemoteCatalog",
+          "callee": "remoteModels(stored, localGeneratedAt).filter",
+          "lineNumber": 57
+        },
+        {
+          "caller": "withRemoteCatalog",
+          "callee": "remoteModels",
+          "lineNumber": 57
+        },
+        {
+          "caller": "withRemoteCatalog",
+          "callee": "context.publish",
+          "lineNumber": 59
+        },
+        {
+          "caller": "withRemoteCatalog",
+          "callee": "Date.now",
+          "lineNumber": 72
+        },
+        {
+          "caller": "withRemoteCatalog",
+          "callee": "encodeURIComponent",
+          "lineNumber": 80
+        },
+        {
+          "caller": "withRemoteCatalog",
+          "callee": "fetchWithRetry",
+          "lineNumber": 81
+        },
+        {
+          "caller": "withRemoteCatalog",
+          "callee": "getPiUserAgent",
+          "lineNumber": 84
+        },
+        {
+          "caller": "withRemoteCatalog",
+          "callee": "Date.now",
+          "lineNumber": 90
+        },
+        {
+          "caller": "withRemoteCatalog",
+          "callee": "context.publish",
+          "lineNumber": 94
+        },
+        {
+          "caller": "withRemoteCatalog",
+          "callee": "context.publish",
+          "lineNumber": 98
+        },
+        {
+          "caller": "withRemoteCatalog",
+          "callee": "context.publish",
+          "lineNumber": 111
+        },
+        {
+          "caller": "withRemoteCatalog",
+          "callee": "parseCatalog",
+          "lineNumber": 114
+        },
+        {
+          "caller": "withRemoteCatalog",
+          "callee": "response.json",
+          "lineNumber": 114
+        },
+        {
+          "caller": "withRemoteCatalog",
+          "callee": "Date.parse",
+          "lineNumber": 115
+        },
+        {
+          "caller": "withRemoteCatalog",
+          "callee": "response.headers.get",
+          "lineNumber": 115
+        },
+        {
+          "caller": "withRemoteCatalog",
+          "callee": "Number.isNaN",
+          "lineNumber": 120
+        },
+        {
+          "caller": "withRemoteCatalog",
+          "callee": "response.headers.get",
+          "lineNumber": 121
+        },
+        {
+          "caller": "withRemoteCatalog",
+          "callee": "remoteModels",
+          "lineNumber": 123
+        },
+        {
+          "caller": "withRemoteCatalog",
+          "callee": "context.publish",
+          "lineNumber": 124
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 2,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/src/utils/management-http.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 68,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "fetchWithRetry",
+          "startLine": 25,
+          "endLine": 68,
+          "params": [
+            "input",
+            "init",
+            "options"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "fetchWithRetry",
+          "line": 25,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fetchWithRetry",
+          "callee": "Number.isFinite",
+          "lineNumber": 31
+        },
+        {
+          "caller": "fetchWithRetry",
+          "callee": "Math.max",
+          "lineNumber": 33
+        },
+        {
+          "caller": "fetchWithRetry",
+          "callee": "Math.floor",
+          "lineNumber": 33
+        },
+        {
+          "caller": "fetchWithRetry",
+          "callee": "AbortSignal.timeout",
+          "lineNumber": 37
+        },
+        {
+          "caller": "fetchWithRetry",
+          "callee": "AbortSignal.any",
+          "lineNumber": 40
+        },
+        {
+          "caller": "fetchWithRetry",
+          "callee": "signal?.throwIfAborted",
+          "lineNumber": 45
+        },
+        {
+          "caller": "fetchWithRetry",
+          "callee": "fetch",
+          "lineNumber": 48
+        },
+        {
+          "caller": "fetchWithRetry",
+          "callee": "RETRYABLE_STATUS_CODES.has",
+          "lineNumber": 49
+        },
+        {
+          "caller": "fetchWithRetry",
+          "callee": "response.body?.cancel",
+          "lineNumber": 52
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/src/utils/pi-user-agent.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "functions": [
+        {
+          "name": "getPiUserAgent",
+          "startLine": 1,
+          "endLine": 4,
+          "params": [
+            "version"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getPiUserAgent",
+          "line": 1,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/src/utils/version-check.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 109,
+      "nonEmptyLines": 97,
+      "functions": [
+        {
+          "name": "formatVersionCheckError",
+          "startLine": 15,
+          "endLine": 32,
+          "params": [
+            "error"
+          ]
+        },
+        {
+          "name": "comparePackageVersions",
+          "startLine": 34,
+          "endLine": 41,
+          "params": [
+            "leftVersion",
+            "rightVersion"
+          ]
+        },
+        {
+          "name": "isNewerPackageVersion",
+          "startLine": 43,
+          "endLine": 49,
+          "params": [
+            "candidateVersion",
+            "currentVersion"
+          ]
+        },
+        {
+          "name": "getLatestPiRelease",
+          "startLine": 51,
+          "endLine": 88,
+          "params": [
+            "currentVersion",
+            "options"
+          ]
+        },
+        {
+          "name": "getLatestPiVersion",
+          "startLine": 90,
+          "endLine": 95,
+          "params": [
+            "currentVersion",
+            "options"
+          ]
+        },
+        {
+          "name": "checkForNewPiVersion",
+          "startLine": 97,
+          "endLine": 109,
+          "params": [
+            "currentVersion"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "formatVersionCheckError",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "comparePackageVersions",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "isNewerPackageVersion",
+          "line": 43,
+          "isDefault": false
+        },
+        {
+          "name": "getLatestPiRelease",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "getLatestPiVersion",
+          "line": 90,
+          "isDefault": false
+        },
+        {
+          "name": "checkForNewPiVersion",
+          "line": 97,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "formatVersionCheckError",
+          "callee": "String",
+          "lineNumber": 16
+        },
+        {
+          "caller": "formatVersionCheckError",
+          "callee": "causes\n\t\t.map((value) =>\n\t\t\ttypeof value === \"object\" && value !== null && \"code\" in value && typeof value.code === \"string\"\n\t\t\t\t? value.code\n\t\t\t\t: undefined,\n\t\t)\n\t\t.filter",
+          "lineNumber": 19
+        },
+        {
+          "caller": "formatVersionCheckError",
+          "callee": "causes\n\t\t.map",
+          "lineNumber": 19
+        },
+        {
+          "caller": "formatVersionCheckError",
+          "callee": "[...new Set(codes)].join",
+          "lineNumber": 27
+        },
+        {
+          "caller": "formatVersionCheckError",
+          "callee": "causes.find",
+          "lineNumber": 28
+        },
+        {
+          "caller": "formatVersionCheckError",
+          "callee": "Boolean",
+          "lineNumber": 29
+        },
+        {
+          "caller": "comparePackageVersions",
+          "callee": "valid",
+          "lineNumber": 35
+        },
+        {
+          "caller": "comparePackageVersions",
+          "callee": "leftVersion.trim",
+          "lineNumber": 35
+        },
+        {
+          "caller": "comparePackageVersions",
+          "callee": "valid",
+          "lineNumber": 36
+        },
+        {
+          "caller": "comparePackageVersions",
+          "callee": "rightVersion.trim",
+          "lineNumber": 36
+        },
+        {
+          "caller": "comparePackageVersions",
+          "callee": "compare",
+          "lineNumber": 40
+        },
+        {
+          "caller": "isNewerPackageVersion",
+          "callee": "comparePackageVersions",
+          "lineNumber": 44
+        },
+        {
+          "caller": "isNewerPackageVersion",
+          "callee": "candidateVersion.trim",
+          "lineNumber": 48
+        },
+        {
+          "caller": "isNewerPackageVersion",
+          "callee": "currentVersion.trim",
+          "lineNumber": 48
+        },
+        {
+          "caller": "getLatestPiRelease",
+          "callee": "fetchWithRetry",
+          "lineNumber": 57
+        },
+        {
+          "caller": "getLatestPiRelease",
+          "callee": "getPiUserAgent",
+          "lineNumber": 61
+        },
+        {
+          "caller": "getLatestPiRelease",
+          "callee": "response.json",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getLatestPiRelease",
+          "callee": "data.version.trim",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getLatestPiRelease",
+          "callee": "data.packageName.trim",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getLatestPiRelease",
+          "callee": "data.packageName.trim",
+          "lineNumber": 81
+        },
+        {
+          "caller": "getLatestPiRelease",
+          "callee": "data.note.trim",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getLatestPiRelease",
+          "callee": "data.note.trim",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getLatestPiRelease",
+          "callee": "data.version.trim",
+          "lineNumber": 84
+        },
+        {
+          "caller": "getLatestPiVersion",
+          "callee": "getLatestPiRelease",
+          "lineNumber": 94
+        },
+        {
+          "caller": "checkForNewPiVersion",
+          "callee": "getLatestPiRelease",
+          "lineNumber": 101
+        },
+        {
+          "caller": "checkForNewPiVersion",
+          "callee": "isNewerPackageVersion",
+          "lineNumber": 102
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/management-http.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 52,
+      "nonEmptyLines": 43,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/pi-user-agent.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 12,
+      "nonEmptyLines": 10,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/remote-catalog-provider.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 241,
+      "nonEmptyLines": 214,
+      "functions": [
+        {
+          "name": "model",
+          "startLine": 16,
+          "endLine": 29,
+          "params": [
+            "id"
+          ]
+        },
+        {
+          "name": "testProvider",
+          "startLine": 31,
+          "endLine": 49,
+          "params": [
+            "localGeneratedAt"
+          ]
+        },
+        {
+          "name": "refreshProvider",
+          "startLine": 51,
+          "endLine": 70,
+          "params": [
+            "provider",
+            "store",
+            "overrides"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testProvider",
+          "callee": "withRemoteCatalog",
+          "lineNumber": 32
+        },
+        {
+          "caller": "testProvider",
+          "callee": "createProvider",
+          "lineNumber": 33
+        },
+        {
+          "caller": "testProvider",
+          "callee": "model",
+          "lineNumber": 36
+        },
+        {
+          "caller": "publish",
+          "callee": "store.delete",
+          "lineNumber": 57
+        },
+        {
+          "caller": "publish",
+          "callee": "store.write",
+          "lineNumber": 58
+        },
+        {
+          "caller": "publish",
+          "callee": "publication.update",
+          "lineNumber": 59
+        },
+        {
+          "caller": "refreshProvider",
+          "callee": "provider.refreshModels",
+          "lineNumber": 62
+        },
+        {
+          "caller": "refreshProvider",
+          "callee": "store.read",
+          "lineNumber": 64
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/version-check.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 131,
+      "nonEmptyLines": 109,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

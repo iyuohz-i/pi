@@ -1,0 +1,110 @@
+[
+  {
+    "order": 1,
+    "title": "项目总览与入口",
+    "description": "从根 README 与 coding-agent 的 main.ts 出发,了解 pi 是一个面向 AI coding 的 monorepo,由多个 package 组成,main.ts 是 CLI 的真正启动入口,负责解析命令行参数并初始化运行时。",
+    "nodeIds": [
+      "file:packages/tui/README.md",
+      "file:packages/coding-agent/src/main.ts"
+    ]
+  },
+  {
+    "order": 2,
+    "title": "AI 抽象层",
+    "description": "packages/ai 是所有 LLM provider 的统一抽象。types.ts 定义核心类型契约,models.ts 维护模型目录,compat.ts 处理向后兼容。这一层屏蔽了不同 provider 的差异。",
+    "nodeIds": [
+      "file:packages/ai/src/types.ts",
+      "file:packages/ai/src/models.ts",
+      "file:packages/ai/src/compat.ts"
+    ]
+  },
+  {
+    "order": 3,
+    "title": "Provider 注册机制",
+    "description": "providers/all.ts 集中注册所有 AI provider,采用 barrel 模式统一导出。这是理解如何接入新 LLM 的关键入口。",
+    "nodeIds": [
+      "file:packages/ai/src/providers/all.ts"
+    ]
+  },
+  {
+    "order": 4,
+    "title": "Agent 会话核心",
+    "description": "agent-session.ts 是 coding-agent 的心脏,编排一次完整的 agent 运行循环;它依赖 session-manager 管理多会话生命周期,并消费 ai 层提供的模型能力。",
+    "nodeIds": [
+      "file:packages/coding-agent/src/core/agent-session.ts",
+      "file:packages/coding-agent/src/core/session-manager.ts"
+    ]
+  },
+  {
+    "order": 5,
+    "title": "配置与设置管理",
+    "description": "settings-manager.ts 负责用户级与项目级设置的合并与持久化,config.ts 定义运行时配置结构。理解配置流是定制 agent 行为的基础。",
+    "nodeIds": [
+      "file:packages/coding-agent/src/core/settings-manager.ts",
+      "file:packages/coding-agent/src/config.ts"
+    ]
+  },
+  {
+    "order": 6,
+    "title": "交互式终端界面",
+    "description": "interactive-mode.ts 实现交互式 TUI 的主循环,是 fan-out 最高的文件之一。它整合主题系统、输入处理与渲染管道,呈现 agent 的交互体验。",
+    "nodeIds": [
+      "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts"
+    ]
+  },
+  {
+    "order": 7,
+    "title": "Agent Harness 与工具代理",
+    "description": "packages/agent 提供 agent harness 与工具调用代理(proxy.ts)。node.ts 是 Node.js 运行时入口。harness 负责工具注册、事件分发与执行沙箱。",
+    "nodeIds": [
+      "file:packages/agent/src/proxy.ts",
+      "file:packages/agent/src/node.ts"
+    ]
+  },
+  {
+    "order": 8,
+    "title": "会话存储后端",
+    "description": "packages/session-backends 抽象会话的持久化后端,支持多种存储策略。它与 session-manager 协作,保证会话状态的可恢复性。",
+    "nodeIds": [
+      "file:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql",
+      "table:packages/session-backends/sqlite-node/src/sqlite/migrations/001_initial.sql:sessions"
+    ]
+  },
+  {
+    "order": 9,
+    "title": "TUI 渲染框架",
+    "description": "packages/tui 提供终端 UI 的底层渲染框架,被 interactive 模式复用。其 README 说明组件模型与事件驱动机制。",
+    "nodeIds": [
+      "file:packages/tui/src/tui.ts",
+      "file:packages/tui/src/tui-main-screen.ts"
+    ]
+  },
+  {
+    "order": 10,
+    "title": "类型系统与共享契约",
+    "description": "ai/src/types.ts 是全仓 fan-in 最高的文件(被 161 处引用),定义了贯穿各 package 的共享类型契约。这是理解跨包协作的基石。",
+    "languageLesson": "在 monorepo 中,共享类型文件(types.ts)往往具有最高 fan-in;将其识别为核心契约,有助于快速定位系统边界。",
+    "nodeIds": [
+      "file:packages/ai/src/types.ts",
+      "file:packages/ai/src/models.ts"
+    ]
+  },
+  {
+    "order": 11,
+    "title": "扩展机制",
+    "description": "coding-agent 的 extensions/types.ts 定义扩展接口,允许通过 .pi/extensions 注入自定义行为。主题系统(theme.ts)同样采用可插拔设计,fan-in 仅次于 types.ts。",
+    "nodeIds": [
+      "file:packages/coding-agent/src/core/extensions/types.ts",
+      "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts"
+    ]
+  },
+  {
+    "order": 12,
+    "title": "测试与质量保障",
+    "description": "harness.ts 作为测试套件基础(被 45 处引用),配合各 package 的 vitest 配置,构建了覆盖核心路径的回归网。这是理解代码预期行为的可靠途径。",
+    "nodeIds": [
+      "file:packages/coding-agent/test/suite/harness.ts",
+      "file:packages/agent/src/harness/agent-harness.ts"
+    ]
+  }
+]

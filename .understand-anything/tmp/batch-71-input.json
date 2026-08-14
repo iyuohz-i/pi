@@ -1,0 +1,30 @@
+{
+  "projectRoot": "/Users/zhouyi/AiHub/pi",
+  "batchFiles": [
+    {"path": "packages/coding-agent/examples/extensions/summarize.ts", "language": "typescript"},
+    {"path": "packages/coding-agent/examples/extensions/system-prompt-header.ts", "language": "typescript"},
+    {"path": "packages/coding-agent/examples/extensions/tic-tac-toe.ts", "language": "typescript"},
+    {"path": "packages/coding-agent/examples/extensions/timed-confirm.ts", "language": "typescript"},
+    {"path": "packages/coding-agent/examples/extensions/titlebar-spinner.ts", "language": "typescript"},
+    {"path": "packages/coding-agent/examples/extensions/todo.ts", "language": "typescript"},
+    {"path": "packages/coding-agent/examples/extensions/tool-override.ts", "language": "typescript"},
+    {"path": "packages/coding-agent/examples/extensions/tools.ts", "language": "typescript"},
+    {"path": "packages/coding-agent/examples/extensions/truncated-tool.ts", "language": "typescript"},
+    {"path": "packages/coding-agent/examples/extensions/widget-placement.ts", "language": "typescript"},
+    {"path": "packages/coding-agent/examples/extensions/with-deps/index.ts", "language": "typescript"},
+    {"path": "packages/coding-agent/examples/extensions/with-deps/package.json", "language": "json"},
+    {"path": "packages/coding-agent/examples/extensions/working-indicator.ts", "language": "typescript"},
+    {"path": "packages/coding-agent/examples/extensions/working-message-test.ts", "language": "typescript"},
+    {"path": "packages/coding-agent/examples/README.md", "language": "markdown"},
+    {"path": "packages/coding-agent/examples/rpc-extension-ui.ts", "language": "typescript"},
+    {"path": "packages/coding-agent/examples/sdk/01-minimal.ts", "language": "typescript"},
+    {"path": "packages/coding-agent/examples/sdk/02-custom-model.ts", "language": "typescript"},
+    {"path": "packages/coding-agent/examples/sdk/03-custom-prompt.ts", "language": "typescript"},
+    {"path": "packages/coding-agent/examples/sdk/04-skills.ts", "language": "typescript"},
+    {"path": "packages/coding-agent/examples/sdk/05-tools.ts", "language": "typescript"},
+    {"path": "packages/coding-agent/examples/sdk/06-extensions.ts", "language": "typescript"},
+    {"path": "packages/coding-agent/examples/sdk/07-context-files.ts", "language": "typescript"},
+    {"path": "packages/coding-agent/examples/sdk/08-prompt-templates.ts", "language": "typescript"},
+    {"path": "packages/coding-agent/examples/sdk/09-api-keys-and-oauth.ts", "language": "typescript"}
+  ]
+}

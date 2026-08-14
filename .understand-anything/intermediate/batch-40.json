@@ -1,0 +1,127 @@
+{
+  "nodes": [
+    {
+      "id": "vitest.base.ts",
+      "type": "file",
+      "label": "vitest.base.ts",
+      "language": "typescript",
+      "summary": "Monorepo 根级 Vitest 基础配置。导出 workspaceSourcePaths 映射表（telemetry、ai、agent、coding-agent、tui 等子包的源码入口路径），以及默认 resolve.alias 配置，将 @earendil-works/* 包名解析到对应源码路径，供各子包 vitest 配置继承。",
+      "properties": {
+        "sizeLines": 32,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/coding-agent/vitest.config.ts",
+      "type": "file",
+      "label": "coding-agent/vitest.config.ts",
+      "language": "typescript",
+      "summary": "coding-agent 子包的 Vitest 测试配置。继承根级 vitest.base.ts，配置 Node 环境、30s 超时、离线模式（PI_OFFLINE=1）、dot 报告器，以及针对 photon-node 的外部依赖设置。设置 resolve.alias 将 @earendil-works/pi-client 和 pi-protocol 解析到源码，并复用 workspaceSourcePaths 中的 ai、agent、tui 路径。",
+      "properties": {
+        "sizeLines": 40,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/evals/vitest.config.ts",
+      "type": "file",
+      "label": "evals/vitest.config.ts",
+      "language": "typescript",
+      "summary": "evals 子包的 Vitest 评估运行配置。继承根级 vitest.base.ts，配置 Node 环境、禁用文件并行、包含 src/**/*.eval.ts 评估文件、120s 超时、30s hook 超时。设置自定义 setup 文件和报告器，并将 @earendil-works/pi-coding-agent 解析到源码路径。",
+      "properties": {
+        "sizeLines": 20,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/evals/vitest.test.config.ts",
+      "type": "file",
+      "label": "evals/vitest.test.config.ts",
+      "language": "typescript",
+      "summary": "evals 子包的 Vitest 单元测试配置。继承根级 vitest.base.ts，仅包含 test/**/*.test.ts 测试文件。将 @earendil-works/pi-coding-agent 解析到源码路径。",
+      "properties": {
+        "sizeLines": 14,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "workspaceSourcePaths",
+      "type": "constant",
+      "label": "workspaceSourcePaths",
+      "language": "typescript",
+      "summary": "Monorepo 各子包源码入口路径映射常量。使用 fileURLToPath 和 import.meta.url 计算绝对路径，包含 telemetry（index + testing）、ai（index + compat + oauth + providers）、agent、coding-agent、tui 共 9 个路径键。",
+      "properties": {
+        "file": "vitest.base.ts",
+        "lines": "5-15"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "packages/coding-agent/vitest.config.ts",
+      "target": "vitest.base.ts",
+      "type": "import",
+      "label": "import",
+      "properties": {}
+    },
+    {
+      "source": "packages/evals/vitest.config.ts",
+      "target": "vitest.base.ts",
+      "type": "import",
+      "label": "import",
+      "properties": {}
+    },
+    {
+      "source": "packages/evals/vitest.test.config.ts",
+      "target": "vitest.base.ts",
+      "type": "import",
+      "label": "import",
+      "properties": {}
+    },
+    {
+      "source": "packages/coding-agent/vitest.config.ts",
+      "target": "workspaceSourcePaths",
+      "type": "reference",
+      "label": "uses",
+      "properties": {
+        "description": "引用 workspaceSourcePaths 中的 aiIndex、aiOAuth、agentIndex、tuiIndex 路径用于 resolve.alias 配置"
+      }
+    },
+    {
+      "source": "packages/evals/vitest.config.ts",
+      "target": "workspaceSourcePaths",
+      "type": "reference",
+      "label": "uses",
+      "properties": {
+        "description": "引用 workspaceSourcePaths 中的 codingAgentIndex 路径用于 resolve.alias 配置"
+      }
+    },
+    {
+      "source": "packages/evals/vitest.test.config.ts",
+      "target": "workspaceSourcePaths",
+      "type": "reference",
+      "label": "uses",
+      "properties": {
+        "description": "引用 workspaceSourcePaths 中的 codingAgentIndex 路径用于 resolve.alias 配置"
+      }
+    },
+    {
+      "source": "vitest.base.ts",
+      "target": "workspaceSourcePaths",
+      "type": "defines",
+      "label": "exports",
+      "properties": {
+        "description": "定义并导出 workspaceSourcePaths 常量"
+      }
+    },
+    {
+      "source": "packages/coding-agent/vitest.config.ts",
+      "target": "packages/evals/vitest.config.ts",
+      "type": "related",
+      "label": "related",
+      "properties": {
+        "description": "同为子包 Vitest 配置，共享继承模式"
+      }
+    }
+  ]
+}

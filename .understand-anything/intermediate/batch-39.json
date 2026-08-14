@@ -1,0 +1,215 @@
+{
+  "batchIndex": 39,
+  "nodes": [
+    {
+      "id": "packages/coding-agent/examples/extensions/plan-mode/index.ts",
+      "type": "file",
+      "label": "plan-mode/index.ts",
+      "language": "typescript",
+      "summary": "Plan Mode 扩展的主入口文件。实现了一个只读探索模式，通过 /plan 命令或 Ctrl+Alt+P 切换启用。启用后禁用 edit/write 等写入工具，限制 bash 为只读命令白名单。从助手消息的 'Plan:' 部分提取编号计划步骤，支持 [DONE:n] 标记追踪执行进度，并在 UI 中显示进度 widget。通过 ExtensionAPI 注册命令、快捷键和事件处理器（tool_call、context、before_agent_start、turn_end、agent_end、session_start）实现完整的计划模式生命周期管理。",
+      "lineCount": 390,
+      "category": "code"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/plan-mode/utils.ts",
+      "type": "file",
+      "label": "plan-mode/utils.ts",
+      "language": "typescript",
+      "summary": "Plan Mode 的纯工具函数模块，独立提取以提升可测试性。包含：(1) DESTRUCTIVE_PATTERNS 和 SAFE_PATTERNS 两组正则表达式用于 bash 命令安全分类；(2) isSafeCommand 判断命令是否在只读白名单中；(3) extractTodoItems 从 'Plan:' 标记后的文本中提取编号待办步骤；(4) cleanStepText 清理步骤文本（移除 markdown 格式、动作前缀、截断长文本）；(5) extractDoneSteps 解析 [DONE:n] 完成标记；(6) markCompletedSteps 将完成标记应用到 TodoItem 列表。导出 TodoItem 接口定义。",
+      "lineCount": 168,
+      "category": "code"
+    },
+    {
+      "id": "packages/coding-agent/test/plan-mode-extension.test.ts",
+      "type": "file",
+      "label": "plan-mode-extension.test.ts",
+      "language": "typescript",
+      "summary": "Plan Mode 扩展的集成测试文件。使用 Vitest 框架，通过 setup 辅助函数构建 mock 的 ExtensionAPI 和 ExtensionContext 对象。测试覆盖：(1) 切换 plan mode 时保留自定义活动工具；(2) 助手响应无计划内容时不触发 UI 提示；(3) 计划细化流程——通过 editor 输入追加为用户 follow-up 消息；(4) 计划执行流程——恢复完整工具集并发送 plan-mode-execute 自定义消息。验证了工具列表管理、消息队列和 UI 交互的正确性。",
+      "lineCount": 167,
+      "category": "test"
+    },
+    {
+      "id": "packages/coding-agent/test/plan-mode-utils.test.ts",
+      "type": "file",
+      "label": "plan-mode-utils.test.ts",
+      "language": "typescript",
+      "summary": "Plan Mode 工具函数的单元测试文件。使用 Vitest 框架对 utils.ts 中每个导出函数进行全面测试。测试覆盖：(1) isSafeCommand——安全命令白名单（ls/cat/grep/find 等）、危险命令拦截（rm/mv/cp/git write 等）、重定向和编辑器命令阻断、边界情况处理；(2) cleanStepText——markdown 格式清除、动作前缀剥离、首字母大写、长文本截断、空白规范化；(3) extractTodoItems——Plan 头部解析、编号格式兼容、短项和代码项过滤；(4) extractDoneSteps——单/多标记提取、大小写不敏感、畸形标记忽略；(5) markCompletedSteps——完成状态更新、计数返回、不存在步骤处理、重复完成防护。",
+      "lineCount": 261,
+      "category": "test"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/plan-mode/index.ts::planModeExtension",
+      "type": "function",
+      "label": "planModeExtension",
+      "summary": "Plan Mode 扩展的默认导出工厂函数。接收 ExtensionAPI 实例，注册 'plan' flag、'plan' 和 'todos' 命令、Ctrl+Alt+P 快捷键，以及 tool_call/context/before_agent_start/turn_end/agent_end/session_start 六个事件处理器。内部管理 planModeEnabled、executionMode、todoItems、toolsBeforePlanMode 四个闭包状态变量。实现了完整的计划模式生命周期：启用→限制工具→提取计划→选择操作→执行追踪→完成清理→状态持久化与恢复。",
+      "lineCount": 343,
+      "startLine": 47,
+      "endLine": 390,
+      "parentFile": "packages/coding-agent/examples/extensions/plan-mode/index.ts"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/plan-mode/index.ts::updateStatus",
+      "type": "function",
+      "label": "updateStatus",
+      "summary": "更新 Plan Mode 的 UI 状态显示。在执行模式下显示完成进度（completed/total）和 todo 列表 widget（已完成项加删除线），在计划模式下显示 '⏸ plan' 状态指示，非活动状态下清除所有 UI 元素。使用 ExtensionContext 的 theme API 进行颜色渲染。",
+      "lineCount": 26,
+      "startLine": 59,
+      "endLine": 84,
+      "parentFile": "packages/coding-agent/examples/extensions/plan-mode/index.ts"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/plan-mode/index.ts::togglePlanMode",
+      "type": "function",
+      "label": "togglePlanMode",
+      "summary": "切换 Plan Mode 的启用状态。翻转 planModeEnabled 标志，重置执行模式和待办列表。启用时调用 enablePlanModeTools 禁用写入工具并显示通知，禁用时调用 restoreNormalModeTools 恢复完整工具集。最后更新 UI 状态并持久化到 session。",
+      "lineCount": 15,
+      "startLine": 125,
+      "endLine": 139,
+      "parentFile": "packages/coding-agent/examples/extensions/plan-mode/index.ts"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/plan-mode/utils.ts::cleanStepText",
+      "type": "function",
+      "label": "cleanStepText",
+      "summary": "清理计划步骤文本的显示格式。移除 markdown 粗体/斜体标记和行内代码标记，剥离常见动作前缀（Use/Run/Execute/Create 等），规范化空白字符，首字母大写，超过 50 字符时截断并添加省略号。",
+      "lineCount": 19,
+      "startLine": 109,
+      "endLine": 127,
+      "parentFile": "packages/coding-agent/examples/extensions/plan-mode/utils.ts"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/plan-mode/utils.ts::extractTodoItems",
+      "type": "function",
+      "label": "extractTodoItems",
+      "summary": "从助手消息文本中提取编号计划步骤。首先匹配 'Plan:' 头部（支持 markdown 粗体变体），然后使用正则提取 '数字. 文本' 或 '数字) 文本' 格式的编号项。过滤掉过短（≤5字符）、以代码/斜杠/连字符开头的项。对每个有效项调用 cleanStepText 清理后生成 TodoItem 对象，自动分配递增步骤编号。",
+      "lineCount": 22,
+      "startLine": 129,
+      "endLine": 150,
+      "parentFile": "packages/coding-agent/examples/extensions/plan-mode/utils.ts"
+    },
+    {
+      "id": "packages/coding-agent/test/plan-mode-extension.test.ts::createAssistantMessage",
+      "type": "function",
+      "label": "createAssistantMessage",
+      "summary": "测试辅助函数，构建符合 AssistantMessage 类型的 mock 助手消息对象。设置 role='assistant'，包含指定文本的 TextContent 块，以及零值的 usage/cost 信息和 'stop' 停止原因。用于在测试中模拟 agent 响应。",
+      "lineCount": 19,
+      "startLine": 13,
+      "endLine": 31,
+      "parentFile": "packages/coding-agent/test/plan-mode-extension.test.ts"
+    },
+    {
+      "id": "packages/coding-agent/test/plan-mode-extension.test.ts::setup",
+      "type": "function",
+      "label": "setup",
+      "summary": "测试辅助函数，构建完整的 mock ExtensionAPI 和 ExtensionContext 环境。创建可追踪的 vi.fn() mock 用于 sendMessage、sendUserMessage、setActiveTools、appendEntry 等 API 方法。内部维护 activeTools 状态和 commands 注册表。调用 planModeExtension(api) 初始化扩展，捕获 agent_end 事件处理器。返回包含 activeTools 查询、runCommand、triggerAgentEnd 等便捷方法的测试夹具对象。",
+      "lineCount": 71,
+      "startLine": 33,
+      "endLine": 103,
+      "parentFile": "packages/coding-agent/test/plan-mode-extension.test.ts"
+    }
+  ],
+  "edges": [
+    {
+      "source": "packages/coding-agent/examples/extensions/plan-mode/index.ts",
+      "target": "packages/coding-agent/examples/extensions/plan-mode/utils.ts",
+      "type": "imports",
+      "label": "导入 extractTodoItems, isSafeCommand, markCompletedSteps, TodoItem"
+    },
+    {
+      "source": "packages/coding-agent/test/plan-mode-extension.test.ts",
+      "target": "packages/coding-agent/examples/extensions/plan-mode/index.ts",
+      "type": "imports",
+      "label": "导入 planModeExtension 默认导出"
+    },
+    {
+      "source": "packages/coding-agent/test/plan-mode-extension.test.ts",
+      "target": "packages/coding-agent/src/core/extensions/index.ts",
+      "type": "imports",
+      "label": "导入 ExtensionAPI, ExtensionContext 类型"
+    },
+    {
+      "source": "packages/coding-agent/test/plan-mode-utils.test.ts",
+      "target": "packages/coding-agent/examples/extensions/plan-mode/utils.ts",
+      "type": "imports",
+      "label": "导入 cleanStepText, extractDoneSteps, extractTodoItems, isSafeCommand, markCompletedSteps, TodoItem"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/plan-mode/index.ts",
+      "target": "packages/coding-agent/examples/extensions/plan-mode/index.ts::planModeExtension",
+      "type": "contains",
+      "label": "定义"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/plan-mode/index.ts",
+      "target": "packages/coding-agent/examples/extensions/plan-mode/index.ts::updateStatus",
+      "type": "contains",
+      "label": "定义"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/plan-mode/index.ts",
+      "target": "packages/coding-agent/examples/extensions/plan-mode/index.ts::togglePlanMode",
+      "type": "contains",
+      "label": "定义"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/plan-mode/utils.ts",
+      "target": "packages/coding-agent/examples/extensions/plan-mode/utils.ts::cleanStepText",
+      "type": "contains",
+      "label": "定义"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/plan-mode/utils.ts",
+      "target": "packages/coding-agent/examples/extensions/plan-mode/utils.ts::extractTodoItems",
+      "type": "contains",
+      "label": "定义"
+    },
+    {
+      "source": "packages/coding-agent/test/plan-mode-extension.test.ts",
+      "target": "packages/coding-agent/test/plan-mode-extension.test.ts::createAssistantMessage",
+      "type": "contains",
+      "label": "定义"
+    },
+    {
+      "source": "packages/coding-agent/test/plan-mode-extension.test.ts",
+      "target": "packages/coding-agent/test/plan-mode-extension.test.ts::setup",
+      "type": "contains",
+      "label": "定义"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/plan-mode/index.ts::planModeExtension",
+      "target": "packages/coding-agent/examples/extensions/plan-mode/utils.ts::extractTodoItems",
+      "type": "calls",
+      "label": "调用 extractTodoItems 提取计划步骤"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/plan-mode/index.ts::planModeExtension",
+      "target": "packages/coding-agent/examples/extensions/plan-mode/utils.ts::cleanStepText",
+      "type": "calls",
+      "label": "间接调用（通过 extractTodoItems）"
+    },
+    {
+      "source": "packages/coding-agent/test/plan-mode-extension.test.ts::setup",
+      "target": "packages/coding-agent/examples/extensions/plan-mode/index.ts::planModeExtension",
+      "type": "calls",
+      "label": "调用 planModeExtension(api) 初始化扩展"
+    },
+    {
+      "source": "packages/coding-agent/test/plan-mode-utils.test.ts",
+      "target": "packages/coding-agent/examples/extensions/plan-mode/utils.ts::isSafeCommand",
+      "type": "tests",
+      "label": "测试命令安全检查"
+    },
+    {
+      "source": "packages/coding-agent/test/plan-mode-utils.test.ts",
+      "target": "packages/coding-agent/examples/extensions/plan-mode/utils.ts::cleanStepText",
+      "type": "tests",
+      "label": "测试步骤文本清理"
+    },
+    {
+      "source": "packages/coding-agent/test/plan-mode-utils.test.ts",
+      "target": "packages/coding-agent/examples/extensions/plan-mode/utils.ts::extractTodoItems",
+      "type": "tests",
+      "label": "测试计划步骤提取"
+    }
+  ]
+}

@@ -1,0 +1,4410 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "packages/coding-agent/src/core/compaction/index.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/src/index.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 408,
+      "nonEmptyLines": 406,
+      "exports": [
+        {
+          "name": "Args",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "parseArgs",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "CONFIG_DIR_NAME",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "getAgentDir",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "getDocsPath",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "getExamplesPath",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "getPackageDir",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "getReadmePath",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "VERSION",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "AgentSession",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "AgentSessionConfig",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "AgentSessionEvent",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "AgentSessionEventListener",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "ModelCycleResult",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "ParsedSkillBlock",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "PromptOptions",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "parseSkillBlock",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "SessionStats",
+          "line": 15,
+          "isDefault": false
+        },
+        {
+          "name": "readStoredCredential",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "BranchPreparation",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "BranchSummaryResult",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "CollectEntriesResult",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "CompactionResult",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "CutPointResult",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "calculateContextTokens",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "collectEntriesForBranchSummary",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "compact",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_COMPACTION_SETTINGS",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "estimateTokens",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "FileOperations",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "findCutPoint",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "findTurnStartIndex",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "GenerateBranchSummaryOptions",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "generateBranchSummary",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "generateSummary",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "generateSummaryWithUsage",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "getLastAssistantUsage",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "prepareBranchEntries",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "serializeConversation",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "shouldCompact",
+          "line": 28,
+          "isDefault": false
+        },
+        {
+          "name": "createEventBus",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "EventBus",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "EventBusController",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "AgentEndEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "AgentSettledEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "AgentStartEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "AgentToolResult",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "AgentToolUpdateCallback",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "AppKeybinding",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "AutocompleteProviderFactory",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "BashToolCallEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "BeforeAgentStartEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "BeforeAgentStartEventResult",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "BeforeProviderHeadersEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "BeforeProviderRequestEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "BeforeProviderRequestEventResult",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "BuildSystemPromptOptions",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "CompactOptions",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ContextEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ContextUsage",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "CustomToolCallEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "EditToolCallEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "EntryRenderer",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "EntryRenderOptions",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ExecOptions",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ExecResult",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "Extension",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ExtensionActions",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ExtensionAPI",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ExtensionCommandContext",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ExtensionCommandContextActions",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ExtensionContext",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ExtensionContextActions",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ExtensionError",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ExtensionEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ExtensionFactory",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ExtensionFlag",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ExtensionHandler",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ExtensionRuntime",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ExtensionShortcut",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ExtensionUIContext",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ExtensionUIDialogOptions",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ExtensionWidgetOptions",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "FindToolCallEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "GrepToolCallEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "InlineExtension",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "InputEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "InputEventResult",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "InputSource",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "KeybindingsManager",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "LoadExtensionsResult",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "LsToolCallEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "MarkdownTransformContext",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "MarkdownTransformer",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "MessageEndEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "MessageRenderer",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "MessageRenderOptions",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "MessageStartEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "MessageUpdateEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ProjectTrustContext",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ProjectTrustEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ProjectTrustEventDecision",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ProjectTrustEventResult",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ProjectTrustHandler",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ProviderConfig",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ProviderModelConfig",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ReadToolCallEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "RegisteredCommand",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "RegisteredTool",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ResolvedCommand",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "SessionBeforeCompactEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "SessionBeforeForkEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "SessionBeforeSwitchEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "SessionBeforeTreeEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "SessionCompactEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "SessionInfoChangedEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "SessionShutdownEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "SessionStartEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "SessionTreeEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "SlashCommandInfo",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "SlashCommandSource",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "SourceInfo",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "TerminalInputHandler",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ToolCallEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ToolCallEventResult",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ToolDefinition",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ToolExecutionEndEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ToolExecutionMode",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ToolExecutionStartEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ToolExecutionUpdateEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ToolInfo",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ToolRenderResultOptions",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "ToolResultEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "TurnEndEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "TurnStartEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "UserBashEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "UserBashEventResult",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "WidgetPlacement",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "WorkingIndicatorOptions",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "WriteToolCallEvent",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "createExtensionRuntime",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "defineTool",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "discoverAndLoadExtensions",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "ExtensionRunner",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "isBashToolResult",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "isEditToolResult",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "isFindToolResult",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "isGrepToolResult",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "isLsToolResult",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "isReadToolResult",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "isToolCallEventType",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "isWriteToolResult",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "wrapRegisteredTool",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "wrapRegisteredTools",
+          "line": 152,
+          "isDefault": false
+        },
+        {
+          "name": "ReadonlyFooterDataProvider",
+          "line": 169,
+          "isDefault": false
+        },
+        {
+          "name": "convertToLlm",
+          "line": 170,
+          "isDefault": false
+        },
+        {
+          "name": "ModelRegistry",
+          "line": 171,
+          "isDefault": false
+        },
+        {
+          "name": "ModelScopeDiagnostic",
+          "line": 172,
+          "isDefault": false
+        },
+        {
+          "name": "ResolveCliModelResult",
+          "line": 172,
+          "isDefault": false
+        },
+        {
+          "name": "ResolveModelScopeResult",
+          "line": 172,
+          "isDefault": false
+        },
+        {
+          "name": "resolveCliModel",
+          "line": 172,
+          "isDefault": false
+        },
+        {
+          "name": "resolveModelScopeWithDiagnostics",
+          "line": 172,
+          "isDefault": false
+        },
+        {
+          "name": "ScopedModel",
+          "line": 172,
+          "isDefault": false
+        },
+        {
+          "name": "CreateModelRuntimeOptions",
+          "line": 180,
+          "isDefault": false
+        },
+        {
+          "name": "CredentialSynchronizationError",
+          "line": 180,
+          "isDefault": false
+        },
+        {
+          "name": "CredentialSynchronizationOperation",
+          "line": 180,
+          "isDefault": false
+        },
+        {
+          "name": "ModelRuntime",
+          "line": 180,
+          "isDefault": false
+        },
+        {
+          "name": "ModelRuntimeAuthOverrides",
+          "line": 180,
+          "isDefault": false
+        },
+        {
+          "name": "PackageManager",
+          "line": 187,
+          "isDefault": false
+        },
+        {
+          "name": "PathMetadata",
+          "line": 187,
+          "isDefault": false
+        },
+        {
+          "name": "ProgressCallback",
+          "line": 187,
+          "isDefault": false
+        },
+        {
+          "name": "ProgressEvent",
+          "line": 187,
+          "isDefault": false
+        },
+        {
+          "name": "ResolvedPaths",
+          "line": 187,
+          "isDefault": false
+        },
+        {
+          "name": "ResolvedResource",
+          "line": 187,
+          "isDefault": false
+        },
+        {
+          "name": "DefaultPackageManager",
+          "line": 195,
+          "isDefault": false
+        },
+        {
+          "name": "ResourceCollision",
+          "line": 196,
+          "isDefault": false
+        },
+        {
+          "name": "ResourceDiagnostic",
+          "line": 196,
+          "isDefault": false
+        },
+        {
+          "name": "ResourceLoader",
+          "line": 196,
+          "isDefault": false
+        },
+        {
+          "name": "DefaultResourceLoader",
+          "line": 197,
+          "isDefault": false
+        },
+        {
+          "name": "loadProjectContextFiles",
+          "line": 197,
+          "isDefault": false
+        },
+        {
+          "name": "AgentSessionRuntime",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "AgentSessionRuntimeDiagnostic",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "AgentSessionServices",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "CreateAgentSessionFromServicesOptions",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "CreateAgentSessionOptions",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "CreateAgentSessionResult",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "CreateAgentSessionRuntimeFactory",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "CreateAgentSessionRuntimeResult",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "CreateAgentSessionServicesOptions",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "createAgentSession",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "createAgentSessionFromServices",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "createAgentSessionRuntime",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "createAgentSessionServices",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "createBashTool",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "createCodingTools",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "createEditTool",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "createFindTool",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "createGrepTool",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "createLsTool",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "createReadOnlyTools",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "createReadTool",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "createWriteTool",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "PromptTemplate",
+          "line": 199,
+          "isDefault": false
+        },
+        {
+          "name": "BranchSummaryEntry",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "buildContextEntries",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "buildSessionContext",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "CompactionEntry",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "CURRENT_SESSION_VERSION",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "CustomEntry",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "CustomMessageEntry",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "FileEntry",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "getLatestCompactionEntry",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "ModelChangeEntry",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "migrateSessionEntries",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "NewSessionOptions",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "parseSessionEntries",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "SessionContext",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "SessionEntry",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "SessionEntryBase",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "SessionHeader",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "SessionInfo",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "SessionInfoEntry",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "SessionManager",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "SessionMessageEntry",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "SessionTreeNode",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "sessionEntryToContextMessages",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "ThinkingLevelChangeEntry",
+          "line": 226,
+          "isDefault": false
+        },
+        {
+          "name": "CompactionSettings",
+          "line": 252,
+          "isDefault": false
+        },
+        {
+          "name": "DefaultProjectTrust",
+          "line": 252,
+          "isDefault": false
+        },
+        {
+          "name": "FullscreenExitOutput",
+          "line": 252,
+          "isDefault": false
+        },
+        {
+          "name": "ImageSettings",
+          "line": 252,
+          "isDefault": false
+        },
+        {
+          "name": "PackageSource",
+          "line": 252,
+          "isDefault": false
+        },
+        {
+          "name": "RetrySettings",
+          "line": 252,
+          "isDefault": false
+        },
+        {
+          "name": "SettingsManager",
+          "line": 252,
+          "isDefault": false
+        },
+        {
+          "name": "SettingsManagerCreateOptions",
+          "line": 252,
+          "isDefault": false
+        },
+        {
+          "name": "TuiMode",
+          "line": 252,
+          "isDefault": false
+        },
+        {
+          "name": "formatSkillsForPrompt",
+          "line": 264,
+          "isDefault": false
+        },
+        {
+          "name": "LoadSkillsFromDirOptions",
+          "line": 264,
+          "isDefault": false
+        },
+        {
+          "name": "LoadSkillsResult",
+          "line": 264,
+          "isDefault": false
+        },
+        {
+          "name": "loadSkills",
+          "line": 264,
+          "isDefault": false
+        },
+        {
+          "name": "loadSkillsFromDir",
+          "line": 264,
+          "isDefault": false
+        },
+        {
+          "name": "Skill",
+          "line": 264,
+          "isDefault": false
+        },
+        {
+          "name": "SkillFrontmatter",
+          "line": 264,
+          "isDefault": false
+        },
+        {
+          "name": "createSyntheticSourceInfo",
+          "line": 273,
+          "isDefault": false
+        },
+        {
+          "name": "EditDiffResult",
+          "line": 274,
+          "isDefault": false
+        },
+        {
+          "name": "generateDiffString",
+          "line": 274,
+          "isDefault": false
+        },
+        {
+          "name": "generateUnifiedPatch",
+          "line": 274,
+          "isDefault": false
+        },
+        {
+          "name": "BashOperations",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "BashSpawnContext",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "BashSpawnHook",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "BashToolDetails",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "BashToolInput",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "BashToolOptions",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "createBashToolDefinition",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "createEditToolDefinition",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "createFindToolDefinition",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "createGrepToolDefinition",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "createLocalBashOperations",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "createLsToolDefinition",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "createReadToolDefinition",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "createWriteToolDefinition",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_MAX_BYTES",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "DEFAULT_MAX_LINES",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "EditOperations",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "EditToolDetails",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "EditToolInput",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "EditToolOptions",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "FindOperations",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "FindToolDetails",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "FindToolInput",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "FindToolOptions",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "formatSize",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "GrepOperations",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "GrepToolDetails",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "GrepToolInput",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "GrepToolOptions",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "LsOperations",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "LsToolDetails",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "LsToolInput",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "LsToolOptions",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "ReadOperations",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "ReadToolDetails",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "ReadToolInput",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "ReadToolOptions",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "ToolsOptions",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "TruncationOptions",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "TruncationResult",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "truncateHead",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "truncateLine",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "truncateTail",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "WriteOperations",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "WriteToolInput",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "WriteToolOptions",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "withFileMutationQueue",
+          "line": 276,
+          "isDefault": false
+        },
+        {
+          "name": "hasTrustRequiringProjectResources",
+          "line": 325,
+          "isDefault": false
+        },
+        {
+          "name": "ProjectTrustDecision",
+          "line": 325,
+          "isDefault": false
+        },
+        {
+          "name": "ProjectTrustStore",
+          "line": 325,
+          "isDefault": false
+        },
+        {
+          "name": "ProjectTrustStoreEntry",
+          "line": 325,
+          "isDefault": false
+        },
+        {
+          "name": "ProjectTrustUpdate",
+          "line": 325,
+          "isDefault": false
+        },
+        {
+          "name": "MainOptions",
+          "line": 333,
+          "isDefault": false
+        },
+        {
+          "name": "main",
+          "line": 333,
+          "isDefault": false
+        },
+        {
+          "name": "InteractiveMode",
+          "line": 335,
+          "isDefault": false
+        },
+        {
+          "name": "InteractiveModeOptions",
+          "line": 335,
+          "isDefault": false
+        },
+        {
+          "name": "JsonAgentSessionEvent",
+          "line": 335,
+          "isDefault": false
+        },
+        {
+          "name": "ModelInfo",
+          "line": 335,
+          "isDefault": false
+        },
+        {
+          "name": "PrintModeOptions",
+          "line": 335,
+          "isDefault": false
+        },
+        {
+          "name": "RpcClient",
+          "line": 335,
+          "isDefault": false
+        },
+        {
+          "name": "RpcClientOptions",
+          "line": 335,
+          "isDefault": false
+        },
+        {
+          "name": "RpcCommand",
+          "line": 335,
+          "isDefault": false
+        },
+        {
+          "name": "RpcEventListener",
+          "line": 335,
+          "isDefault": false
+        },
+        {
+          "name": "RpcExtensionUIRequest",
+          "line": 335,
+          "isDefault": false
+        },
+        {
+          "name": "RpcExtensionUIResponse",
+          "line": 335,
+          "isDefault": false
+        },
+        {
+          "name": "RpcResponse",
+          "line": 335,
+          "isDefault": false
+        },
+        {
+          "name": "RpcSessionState",
+          "line": 335,
+          "isDefault": false
+        },
+        {
+          "name": "runPrintMode",
+          "line": 335,
+          "isDefault": false
+        },
+        {
+          "name": "runRpcMode",
+          "line": 335,
+          "isDefault": false
+        },
+        {
+          "name": "ArminComponent",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "AssistantMessageComponent",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "BashExecutionComponent",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "BorderedLoader",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "BranchSummaryMessageComponent",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "CompactionSummaryMessageComponent",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "CustomEditor",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "CustomMessageComponent",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "DynamicBorder",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "ExtensionEditorComponent",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "ExtensionInputComponent",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "ExtensionSelectorComponent",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "FooterComponent",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "keyHint",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "keyText",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "LoginDialogComponent",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "ModelSelectorComponent",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "OAuthSelectorComponent",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "RenderDiffOptions",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "rawKeyHint",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "renderDiff",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "SessionSelectorComponent",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "SettingsCallbacks",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "SettingsConfig",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "SettingsSelectorComponent",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "ShowImagesSelectorComponent",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "SkillInvocationMessageComponent",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "ThemeSelectorComponent",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "ThinkingSelectorComponent",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "ToolExecutionComponent",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "ToolExecutionOptions",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "TreeSelectorComponent",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "truncateToVisualLines",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "UserMessageComponent",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "UserMessageSelectorComponent",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "VisualTruncateResult",
+          "line": 353,
+          "isDefault": false
+        },
+        {
+          "name": "getLanguageFromPath",
+          "line": 392,
+          "isDefault": false
+        },
+        {
+          "name": "getMarkdownTheme",
+          "line": 392,
+          "isDefault": false
+        },
+        {
+          "name": "getSelectListTheme",
+          "line": 392,
+          "isDefault": false
+        },
+        {
+          "name": "getSettingsListTheme",
+          "line": 392,
+          "isDefault": false
+        },
+        {
+          "name": "highlightCode",
+          "line": 392,
+          "isDefault": false
+        },
+        {
+          "name": "initTheme",
+          "line": 392,
+          "isDefault": false
+        },
+        {
+          "name": "Theme",
+          "line": 392,
+          "isDefault": false
+        },
+        {
+          "name": "ThemeColor",
+          "line": 392,
+          "isDefault": false
+        },
+        {
+          "name": "copyToClipboard",
+          "line": 403,
+          "isDefault": false
+        },
+        {
+          "name": "parseFrontmatter",
+          "line": 404,
+          "isDefault": false
+        },
+        {
+          "name": "stripFrontmatter",
+          "line": 404,
+          "isDefault": false
+        },
+        {
+          "name": "convertToPng",
+          "line": 405,
+          "isDefault": false
+        },
+        {
+          "name": "formatDimensionNote",
+          "line": 406,
+          "isDefault": false
+        },
+        {
+          "name": "ResizedImage",
+          "line": 406,
+          "isDefault": false
+        },
+        {
+          "name": "resizeImage",
+          "line": 406,
+          "isDefault": false
+        },
+        {
+          "name": "getShellConfig",
+          "line": 408,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 368,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/src/modes/json-event.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 46,
+      "nonEmptyLines": 39,
+      "functions": [
+        {
+          "name": "toJsonEvent",
+          "startLine": 31,
+          "endLine": 46,
+          "params": [
+            "event"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "toJsonEvent",
+          "line": 31,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/src/modes/print-mode.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 169,
+      "nonEmptyLines": 152,
+      "functions": [
+        {
+          "name": "runPrintMode",
+          "startLine": 33,
+          "endLine": 169,
+          "params": [
+            "runtimeHost",
+            "options"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "runPrintMode",
+          "line": 33,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "disposeRuntime",
+          "callee": "unsubscribe",
+          "lineNumber": 45
+        },
+        {
+          "caller": "disposeRuntime",
+          "callee": "unsubscribeBackpressure",
+          "lineNumber": 46
+        },
+        {
+          "caller": "disposeRuntime",
+          "callee": "runtimeHost.dispose",
+          "lineNumber": 47
+        },
+        {
+          "caller": "registerSignalHandlers",
+          "callee": "signals.push",
+          "lineNumber": 53
+        },
+        {
+          "caller": "handler",
+          "callee": "killTrackedDetachedChildren",
+          "lineNumber": 58
+        },
+        {
+          "caller": "handler",
+          "callee": "disposeRuntime().finally",
+          "lineNumber": 59
+        },
+        {
+          "caller": "handler",
+          "callee": "disposeRuntime",
+          "lineNumber": 59
+        },
+        {
+          "caller": "handler",
+          "callee": "process.exit",
+          "lineNumber": 60
+        },
+        {
+          "caller": "registerSignalHandlers",
+          "callee": "process.on",
+          "lineNumber": 63
+        },
+        {
+          "caller": "registerSignalHandlers",
+          "callee": "signalCleanupHandlers.push",
+          "lineNumber": 64
+        },
+        {
+          "caller": "registerSignalHandlers",
+          "callee": "process.off",
+          "lineNumber": 64
+        },
+        {
+          "caller": "runPrintMode",
+          "callee": "registerSignalHandlers",
+          "lineNumber": 68
+        },
+        {
+          "caller": "runPrintMode",
+          "callee": "runtimeHost.setRebindSession",
+          "lineNumber": 70
+        },
+        {
+          "caller": "runPrintMode",
+          "callee": "rebindSession",
+          "lineNumber": 71
+        },
+        {
+          "caller": "rebindSession",
+          "callee": "session.bindExtensions",
+          "lineNumber": 76
+        },
+        {
+          "caller": "rebindSession",
+          "callee": "session.waitForIdle",
+          "lineNumber": 79
+        },
+        {
+          "caller": "rebindSession",
+          "callee": "runtimeHost.newSession",
+          "lineNumber": 80
+        },
+        {
+          "caller": "rebindSession",
+          "callee": "runtimeHost.fork",
+          "lineNumber": 82
+        },
+        {
+          "caller": "rebindSession",
+          "callee": "session.navigateTree",
+          "lineNumber": 86
+        },
+        {
+          "caller": "rebindSession",
+          "callee": "runtimeHost.switchSession",
+          "lineNumber": 95
+        },
+        {
+          "caller": "rebindSession",
+          "callee": "session.reload",
+          "lineNumber": 98
+        },
+        {
+          "caller": "rebindSession",
+          "callee": "console.error",
+          "lineNumber": 102
+        },
+        {
+          "caller": "rebindSession",
+          "callee": "unsubscribe",
+          "lineNumber": 106
+        },
+        {
+          "caller": "rebindSession",
+          "callee": "unsubscribeBackpressure",
+          "lineNumber": 107
+        },
+        {
+          "caller": "rebindSession",
+          "callee": "session.subscribe",
+          "lineNumber": 108
+        },
+        {
+          "caller": "rebindSession",
+          "callee": "writeRawStdout",
+          "lineNumber": 110
+        },
+        {
+          "caller": "rebindSession",
+          "callee": "JSON.stringify",
+          "lineNumber": 110
+        },
+        {
+          "caller": "rebindSession",
+          "callee": "toJsonEvent",
+          "lineNumber": 110
+        },
+        {
+          "caller": "rebindSession",
+          "callee": "session.agent.subscribe",
+          "lineNumber": 115
+        },
+        {
+          "caller": "rebindSession",
+          "callee": "waitForRawStdoutBackpressure",
+          "lineNumber": 116
+        },
+        {
+          "caller": "runPrintMode",
+          "callee": "session.sessionManager.getHeader",
+          "lineNumber": 123
+        },
+        {
+          "caller": "runPrintMode",
+          "callee": "writeRawStdout",
+          "lineNumber": 125
+        },
+        {
+          "caller": "runPrintMode",
+          "callee": "JSON.stringify",
+          "lineNumber": 125
+        },
+        {
+          "caller": "runPrintMode",
+          "callee": "rebindSession",
+          "lineNumber": 129
+        },
+        {
+          "caller": "runPrintMode",
+          "callee": "session.prompt",
+          "lineNumber": 132
+        },
+        {
+          "caller": "runPrintMode",
+          "callee": "session.prompt",
+          "lineNumber": 136
+        },
+        {
+          "caller": "runPrintMode",
+          "callee": "console.error",
+          "lineNumber": 146
+        },
+        {
+          "caller": "runPrintMode",
+          "callee": "writeRawStdout",
+          "lineNumber": 151
+        },
+        {
+          "caller": "runPrintMode",
+          "callee": "console.error",
+          "lineNumber": 160
+        },
+        {
+          "caller": "runPrintMode",
+          "callee": "String",
+          "lineNumber": 160
+        },
+        {
+          "caller": "runPrintMode",
+          "callee": "cleanup",
+          "lineNumber": 164
+        },
+        {
+          "caller": "runPrintMode",
+          "callee": "disposeRuntime",
+          "lineNumber": 166
+        },
+        {
+          "caller": "runPrintMode",
+          "callee": "flushRawStdout",
+          "lineNumber": 167
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/src/modes/rpc/jsonl.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 49,
+      "functions": [
+        {
+          "name": "serializeJsonLine",
+          "startLine": 10,
+          "endLine": 12,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "attachJsonlLineReader",
+          "startLine": 21,
+          "endLine": 58,
+          "params": [
+            "stream",
+            "onLine"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "serializeJsonLine",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "attachJsonlLineReader",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "serializeJsonLine",
+          "callee": "JSON.stringify",
+          "lineNumber": 11
+        },
+        {
+          "caller": "emitLine",
+          "callee": "onLine",
+          "lineNumber": 26
+        },
+        {
+          "caller": "emitLine",
+          "callee": "line.endsWith",
+          "lineNumber": 26
+        },
+        {
+          "caller": "emitLine",
+          "callee": "line.slice",
+          "lineNumber": 26
+        },
+        {
+          "caller": "onData",
+          "callee": "decoder.write",
+          "lineNumber": 30
+        },
+        {
+          "caller": "onData",
+          "callee": "buffer.indexOf",
+          "lineNumber": 33
+        },
+        {
+          "caller": "onData",
+          "callee": "emitLine",
+          "lineNumber": 38
+        },
+        {
+          "caller": "onData",
+          "callee": "buffer.slice",
+          "lineNumber": 38
+        },
+        {
+          "caller": "onData",
+          "callee": "buffer.slice",
+          "lineNumber": 39
+        },
+        {
+          "caller": "onEnd",
+          "callee": "decoder.end",
+          "lineNumber": 44
+        },
+        {
+          "caller": "onEnd",
+          "callee": "emitLine",
+          "lineNumber": 46
+        },
+        {
+          "caller": "attachJsonlLineReader",
+          "callee": "stream.on",
+          "lineNumber": 51
+        },
+        {
+          "caller": "attachJsonlLineReader",
+          "callee": "stream.on",
+          "lineNumber": 52
+        },
+        {
+          "caller": "attachJsonlLineReader",
+          "callee": "stream.off",
+          "lineNumber": 55
+        },
+        {
+          "caller": "attachJsonlLineReader",
+          "callee": "stream.off",
+          "lineNumber": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/src/modes/rpc/rpc-client.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 601,
+      "nonEmptyLines": 523,
+      "classes": [
+        {
+          "name": "RpcClient",
+          "startLine": 56,
+          "endLine": 601,
+          "methods": [
+            "constructor",
+            "start",
+            "stop",
+            "onEvent",
+            "getStderr",
+            "prompt",
+            "steer",
+            "followUp",
+            "abort",
+            "newSession",
+            "getState",
+            "setModel",
+            "cycleModel",
+            "getAvailableModels",
+            "setThinkingLevel",
+            "cycleThinkingLevel",
+            "getAvailableThinkingLevels",
+            "setSteeringMode",
+            "setFollowUpMode",
+            "compact",
+            "setAutoCompaction",
+            "setAutoRetry",
+            "abortRetry",
+            "bash",
+            "abortBash",
+            "getSessionStats",
+            "exportHtml",
+            "switchSession",
+            "fork",
+            "clone",
+            "getForkMessages",
+            "getEntries",
+            "getTree",
+            "getLastAssistantText",
+            "setSessionName",
+            "getMessages",
+            "getCommands",
+            "waitForIdle",
+            "collectEvents",
+            "promptAndWait",
+            "handleLine",
+            "createProcessExitError",
+            "rejectPendingRequests",
+            "send",
+            "getData"
+          ],
+          "properties": [
+            "process",
+            "stopReadingStdout",
+            "eventListeners",
+            "pendingRequests",
+            "requestId",
+            "stderr",
+            "exitError",
+            "options"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "RpcClient",
+          "line": 56,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "start",
+          "callee": "args.push",
+          "lineNumber": 85
+        },
+        {
+          "caller": "start",
+          "callee": "args.push",
+          "lineNumber": 88
+        },
+        {
+          "caller": "start",
+          "callee": "args.push",
+          "lineNumber": 91
+        },
+        {
+          "caller": "start",
+          "callee": "spawn",
+          "lineNumber": 94
+        },
+        {
+          "caller": "start",
+          "callee": "childProcess.stderr?.on",
+          "lineNumber": 102
+        },
+        {
+          "caller": "start",
+          "callee": "data.toString",
+          "lineNumber": 103
+        },
+        {
+          "caller": "start",
+          "callee": "process.stderr.write",
+          "lineNumber": 104
+        },
+        {
+          "caller": "start",
+          "callee": "childProcess.once",
+          "lineNumber": 107
+        },
+        {
+          "caller": "start",
+          "callee": "this.createProcessExitError",
+          "lineNumber": 109
+        },
+        {
+          "caller": "start",
+          "callee": "this.rejectPendingRequests",
+          "lineNumber": 111
+        },
+        {
+          "caller": "start",
+          "callee": "childProcess.once",
+          "lineNumber": 113
+        },
+        {
+          "caller": "start",
+          "callee": "this.rejectPendingRequests",
+          "lineNumber": 117
+        },
+        {
+          "caller": "start",
+          "callee": "childProcess.stdin?.on",
+          "lineNumber": 119
+        },
+        {
+          "caller": "start",
+          "callee": "this.rejectPendingRequests",
+          "lineNumber": 124
+        },
+        {
+          "caller": "start",
+          "callee": "attachJsonlLineReader",
+          "lineNumber": 128
+        },
+        {
+          "caller": "start",
+          "callee": "this.handleLine",
+          "lineNumber": 129
+        },
+        {
+          "caller": "start",
+          "callee": "setTimeout",
+          "lineNumber": 133
+        },
+        {
+          "caller": "start",
+          "callee": "this.createProcessExitError",
+          "lineNumber": 136
+        },
+        {
+          "caller": "stop",
+          "callee": "this.stopReadingStdout",
+          "lineNumber": 148
+        },
+        {
+          "caller": "stop",
+          "callee": "this.process.kill",
+          "lineNumber": 150
+        },
+        {
+          "caller": "stop",
+          "callee": "setTimeout",
+          "lineNumber": 154
+        },
+        {
+          "caller": "stop",
+          "callee": "this.process?.kill",
+          "lineNumber": 155
+        },
+        {
+          "caller": "stop",
+          "callee": "resolve",
+          "lineNumber": 156
+        },
+        {
+          "caller": "stop",
+          "callee": "this.process?.on",
+          "lineNumber": 159
+        },
+        {
+          "caller": "stop",
+          "callee": "clearTimeout",
+          "lineNumber": 160
+        },
+        {
+          "caller": "stop",
+          "callee": "resolve",
+          "lineNumber": 161
+        },
+        {
+          "caller": "stop",
+          "callee": "this.pendingRequests.clear",
+          "lineNumber": 166
+        },
+        {
+          "caller": "onEvent",
+          "callee": "this.eventListeners.push",
+          "lineNumber": 173
+        },
+        {
+          "caller": "onEvent",
+          "callee": "this.eventListeners.indexOf",
+          "lineNumber": 175
+        },
+        {
+          "caller": "onEvent",
+          "callee": "this.eventListeners.splice",
+          "lineNumber": 177
+        },
+        {
+          "caller": "prompt",
+          "callee": "this.send",
+          "lineNumber": 199
+        },
+        {
+          "caller": "steer",
+          "callee": "this.send",
+          "lineNumber": 206
+        },
+        {
+          "caller": "followUp",
+          "callee": "this.send",
+          "lineNumber": 213
+        },
+        {
+          "caller": "abort",
+          "callee": "this.send",
+          "lineNumber": 220
+        },
+        {
+          "caller": "newSession",
+          "callee": "this.send",
+          "lineNumber": 229
+        },
+        {
+          "caller": "newSession",
+          "callee": "this.getData",
+          "lineNumber": 230
+        },
+        {
+          "caller": "getState",
+          "callee": "this.send",
+          "lineNumber": 237
+        },
+        {
+          "caller": "getState",
+          "callee": "this.getData",
+          "lineNumber": 238
+        },
+        {
+          "caller": "setModel",
+          "callee": "this.send",
+          "lineNumber": 245
+        },
+        {
+          "caller": "setModel",
+          "callee": "this.getData",
+          "lineNumber": 246
+        },
+        {
+          "caller": "cycleModel",
+          "callee": "this.send",
+          "lineNumber": 257
+        },
+        {
+          "caller": "cycleModel",
+          "callee": "this.getData",
+          "lineNumber": 258
+        },
+        {
+          "caller": "getAvailableModels",
+          "callee": "this.send",
+          "lineNumber": 265
+        },
+        {
+          "caller": "getAvailableModels",
+          "callee": "this.getData",
+          "lineNumber": 266
+        },
+        {
+          "caller": "setThinkingLevel",
+          "callee": "this.send",
+          "lineNumber": 273
+        },
+        {
+          "caller": "cycleThinkingLevel",
+          "callee": "this.send",
+          "lineNumber": 280
+        },
+        {
+          "caller": "cycleThinkingLevel",
+          "callee": "this.getData",
+          "lineNumber": 281
+        },
+        {
+          "caller": "getAvailableThinkingLevels",
+          "callee": "this.send",
+          "lineNumber": 288
+        },
+        {
+          "caller": "getAvailableThinkingLevels",
+          "callee": "this.getData",
+          "lineNumber": 289
+        },
+        {
+          "caller": "setSteeringMode",
+          "callee": "this.send",
+          "lineNumber": 296
+        },
+        {
+          "caller": "setFollowUpMode",
+          "callee": "this.send",
+          "lineNumber": 303
+        },
+        {
+          "caller": "compact",
+          "callee": "this.send",
+          "lineNumber": 310
+        },
+        {
+          "caller": "compact",
+          "callee": "this.getData",
+          "lineNumber": 311
+        },
+        {
+          "caller": "setAutoCompaction",
+          "callee": "this.send",
+          "lineNumber": 318
+        },
+        {
+          "caller": "setAutoRetry",
+          "callee": "this.send",
+          "lineNumber": 325
+        },
+        {
+          "caller": "abortRetry",
+          "callee": "this.send",
+          "lineNumber": 332
+        },
+        {
+          "caller": "bash",
+          "callee": "this.send",
+          "lineNumber": 339
+        },
+        {
+          "caller": "bash",
+          "callee": "this.getData",
+          "lineNumber": 340
+        },
+        {
+          "caller": "abortBash",
+          "callee": "this.send",
+          "lineNumber": 347
+        },
+        {
+          "caller": "getSessionStats",
+          "callee": "this.send",
+          "lineNumber": 354
+        },
+        {
+          "caller": "getSessionStats",
+          "callee": "this.getData",
+          "lineNumber": 355
+        },
+        {
+          "caller": "exportHtml",
+          "callee": "this.send",
+          "lineNumber": 362
+        },
+        {
+          "caller": "exportHtml",
+          "callee": "this.getData",
+          "lineNumber": 363
+        },
+        {
+          "caller": "switchSession",
+          "callee": "this.send",
+          "lineNumber": 371
+        },
+        {
+          "caller": "switchSession",
+          "callee": "this.getData",
+          "lineNumber": 372
+        },
+        {
+          "caller": "fork",
+          "callee": "this.send",
+          "lineNumber": 380
+        },
+        {
+          "caller": "fork",
+          "callee": "this.getData",
+          "lineNumber": 381
+        },
+        {
+          "caller": "clone",
+          "callee": "this.send",
+          "lineNumber": 389
+        },
+        {
+          "caller": "clone",
+          "callee": "this.getData",
+          "lineNumber": 390
+        },
+        {
+          "caller": "getForkMessages",
+          "callee": "this.send",
+          "lineNumber": 397
+        },
+        {
+          "caller": "getForkMessages",
+          "callee": "this.getData",
+          "lineNumber": 398
+        },
+        {
+          "caller": "getEntries",
+          "callee": "this.send",
+          "lineNumber": 405
+        },
+        {
+          "caller": "getEntries",
+          "callee": "this.getData",
+          "lineNumber": 406
+        },
+        {
+          "caller": "getTree",
+          "callee": "this.send",
+          "lineNumber": 413
+        },
+        {
+          "caller": "getTree",
+          "callee": "this.getData",
+          "lineNumber": 414
+        },
+        {
+          "caller": "getLastAssistantText",
+          "callee": "this.send",
+          "lineNumber": 421
+        },
+        {
+          "caller": "getLastAssistantText",
+          "callee": "this.getData",
+          "lineNumber": 422
+        },
+        {
+          "caller": "setSessionName",
+          "callee": "this.send",
+          "lineNumber": 429
+        },
+        {
+          "caller": "getMessages",
+          "callee": "this.send",
+          "lineNumber": 436
+        },
+        {
+          "caller": "getMessages",
+          "callee": "this.getData",
+          "lineNumber": 437
+        },
+        {
+          "caller": "getCommands",
+          "callee": "this.send",
+          "lineNumber": 444
+        },
+        {
+          "caller": "getCommands",
+          "callee": "this.getData",
+          "lineNumber": 445
+        },
+        {
+          "caller": "waitForIdle",
+          "callee": "setTimeout",
+          "lineNumber": 458
+        },
+        {
+          "caller": "waitForIdle",
+          "callee": "unsubscribe",
+          "lineNumber": 459
+        },
+        {
+          "caller": "waitForIdle",
+          "callee": "reject",
+          "lineNumber": 460
+        },
+        {
+          "caller": "waitForIdle",
+          "callee": "this.onEvent",
+          "lineNumber": 463
+        },
+        {
+          "caller": "waitForIdle",
+          "callee": "clearTimeout",
+          "lineNumber": 465
+        },
+        {
+          "caller": "waitForIdle",
+          "callee": "unsubscribe",
+          "lineNumber": 466
+        },
+        {
+          "caller": "waitForIdle",
+          "callee": "resolve",
+          "lineNumber": 467
+        },
+        {
+          "caller": "collectEvents",
+          "callee": "setTimeout",
+          "lineNumber": 479
+        },
+        {
+          "caller": "collectEvents",
+          "callee": "unsubscribe",
+          "lineNumber": 480
+        },
+        {
+          "caller": "collectEvents",
+          "callee": "reject",
+          "lineNumber": 481
+        },
+        {
+          "caller": "collectEvents",
+          "callee": "this.onEvent",
+          "lineNumber": 484
+        },
+        {
+          "caller": "collectEvents",
+          "callee": "events.push",
+          "lineNumber": 485
+        },
+        {
+          "caller": "collectEvents",
+          "callee": "clearTimeout",
+          "lineNumber": 487
+        },
+        {
+          "caller": "collectEvents",
+          "callee": "unsubscribe",
+          "lineNumber": 488
+        },
+        {
+          "caller": "collectEvents",
+          "callee": "resolve",
+          "lineNumber": 489
+        },
+        {
+          "caller": "promptAndWait",
+          "callee": "this.collectEvents",
+          "lineNumber": 499
+        },
+        {
+          "caller": "promptAndWait",
+          "callee": "this.prompt",
+          "lineNumber": 500
+        },
+        {
+          "caller": "handleLine",
+          "callee": "JSON.parse",
+          "lineNumber": 510
+        },
+        {
+          "caller": "handleLine",
+          "callee": "this.pendingRequests.has",
+          "lineNumber": 513
+        },
+        {
+          "caller": "handleLine",
+          "callee": "this.pendingRequests.get",
+          "lineNumber": 514
+        },
+        {
+          "caller": "handleLine",
+          "callee": "this.pendingRequests.delete",
+          "lineNumber": 515
+        },
+        {
+          "caller": "handleLine",
+          "callee": "pending.resolve",
+          "lineNumber": 516
+        },
+        {
+          "caller": "handleLine",
+          "callee": "listener",
+          "lineNumber": 522
+        },
+        {
+          "caller": "rejectPendingRequests",
+          "callee": "this.pendingRequests.values",
+          "lineNumber": 534
+        },
+        {
+          "caller": "rejectPendingRequests",
+          "callee": "pending.reject",
+          "lineNumber": 535
+        },
+        {
+          "caller": "rejectPendingRequests",
+          "callee": "this.pendingRequests.clear",
+          "lineNumber": 537
+        },
+        {
+          "caller": "send",
+          "callee": "this.createProcessExitError",
+          "lineNumber": 550
+        },
+        {
+          "caller": "send",
+          "callee": "setTimeout",
+          "lineNumber": 564
+        },
+        {
+          "caller": "send",
+          "callee": "this.pendingRequests.delete",
+          "lineNumber": 565
+        },
+        {
+          "caller": "send",
+          "callee": "reject",
+          "lineNumber": 566
+        },
+        {
+          "caller": "send",
+          "callee": "this.pendingRequests.set",
+          "lineNumber": 569
+        },
+        {
+          "caller": "send",
+          "callee": "clearTimeout",
+          "lineNumber": 571
+        },
+        {
+          "caller": "send",
+          "callee": "resolve",
+          "lineNumber": 572
+        },
+        {
+          "caller": "send",
+          "callee": "clearTimeout",
+          "lineNumber": 575
+        },
+        {
+          "caller": "send",
+          "callee": "reject",
+          "lineNumber": 576
+        },
+        {
+          "caller": "send",
+          "callee": "stdin.write",
+          "lineNumber": 581
+        },
+        {
+          "caller": "send",
+          "callee": "serializeJsonLine",
+          "lineNumber": 581
+        },
+        {
+          "caller": "send",
+          "callee": "String",
+          "lineNumber": 583
+        },
+        {
+          "caller": "send",
+          "callee": "this.pendingRequests.get",
+          "lineNumber": 584
+        },
+        {
+          "caller": "send",
+          "callee": "this.pendingRequests.delete",
+          "lineNumber": 585
+        },
+        {
+          "caller": "send",
+          "callee": "pending?.reject",
+          "lineNumber": 586
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/branch-summary-extensions.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 48,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/compaction-summary-reasoning.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 167,
+      "nonEmptyLines": 147,
+      "functions": [
+        {
+          "name": "createModel",
+          "startLine": 23,
+          "endLine": 36,
+          "params": [
+            "reasoning",
+            "maxTokens"
+          ]
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/compaction.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 596,
+      "nonEmptyLines": 514,
+      "functions": [
+        {
+          "name": "loadLargeSessionEntries",
+          "startLine": 34,
+          "endLine": 40,
+          "params": []
+        },
+        {
+          "name": "createMockUsage",
+          "startLine": 42,
+          "endLine": 51,
+          "params": [
+            "input",
+            "output",
+            "cacheRead",
+            "cacheWrite"
+          ]
+        },
+        {
+          "name": "createUserMessage",
+          "startLine": 53,
+          "endLine": 55,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "createAssistantMessage",
+          "startLine": 57,
+          "endLine": 68,
+          "params": [
+            "text",
+            "usage"
+          ]
+        },
+        {
+          "name": "resetEntryCounter",
+          "startLine": 73,
+          "endLine": 76,
+          "params": []
+        },
+        {
+          "name": "createMessageEntry",
+          "startLine": 83,
+          "endLine": 94,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "createCompactionEntry",
+          "startLine": 96,
+          "endLine": 109,
+          "params": [
+            "summary",
+            "firstKeptEntryId"
+          ]
+        },
+        {
+          "name": "createModelChangeEntry",
+          "startLine": 111,
+          "endLine": 123,
+          "params": [
+            "provider",
+            "modelId"
+          ]
+        },
+        {
+          "name": "createThinkingLevelEntry",
+          "startLine": 125,
+          "endLine": 136,
+          "params": [
+            "thinkingLevel"
+          ]
+        },
+        {
+          "name": "createCustomMessageEntry",
+          "startLine": 138,
+          "endLine": 151,
+          "params": [
+            "content"
+          ]
+        },
+        {
+          "name": "extractText",
+          "startLine": 153,
+          "endLine": 187,
+          "params": [
+            "messages"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "loadLargeSessionEntries",
+          "callee": "join",
+          "lineNumber": 35
+        },
+        {
+          "caller": "loadLargeSessionEntries",
+          "callee": "readFileSync",
+          "lineNumber": 36
+        },
+        {
+          "caller": "loadLargeSessionEntries",
+          "callee": "parseSessionEntries",
+          "lineNumber": 37
+        },
+        {
+          "caller": "loadLargeSessionEntries",
+          "callee": "migrateSessionEntries",
+          "lineNumber": 38
+        },
+        {
+          "caller": "loadLargeSessionEntries",
+          "callee": "entries.filter",
+          "lineNumber": 39
+        },
+        {
+          "caller": "createUserMessage",
+          "callee": "Date.now",
+          "lineNumber": 54
+        },
+        {
+          "caller": "createAssistantMessage",
+          "callee": "createMockUsage",
+          "lineNumber": 61
+        },
+        {
+          "caller": "createAssistantMessage",
+          "callee": "Date.now",
+          "lineNumber": 63
+        },
+        {
+          "caller": "createMessageEntry",
+          "callee": "new Date().toISOString",
+          "lineNumber": 89
+        },
+        {
+          "caller": "createCompactionEntry",
+          "callee": "new Date().toISOString",
+          "lineNumber": 102
+        },
+        {
+          "caller": "createModelChangeEntry",
+          "callee": "new Date().toISOString",
+          "lineNumber": 117
+        },
+        {
+          "caller": "createThinkingLevelEntry",
+          "callee": "new Date().toISOString",
+          "lineNumber": 131
+        },
+        {
+          "caller": "createCustomMessageEntry",
+          "callee": "new Date().toISOString",
+          "lineNumber": 144
+        },
+        {
+          "caller": "extractText",
+          "callee": "messages\n\t\t.map((message) => {\n\t\t\tswitch (message.role) {\n\t\t\t\tcase \"user\":\n\t\t\t\t\treturn typeof message.content === \"string\"\n\t\t\t\t\t\t? message.content\n\t\t\t\t\t\t: message.content\n\t\t\t\t\t\t\t\t.filter((block): block is { type: \"text\"; text: string } => block.type === \"text\")\n\t\t\t\t\t\t\t\t.map((block) => block.text)\n\t\t\t\t\t\t\t\t.join(\" \");\n\t\t\t\tcase \"assistant\":\n\t\t\t\t\treturn message.content\n\t\t\t\t\t\t.filter((block): block is { type: \"text\"; text: string } => block.type === \"text\")\n\t\t\t\t\t\t.map((block) => block.text)\n\t\t\t\t\t\t.join(\" \");\n\t\t\t\tcase \"branchSummary\":\n\t\t\t\tcase \"compactionSummary\":\n\t\t\t\t\treturn message.summary;\n\t\t\t\tcase \"custom\":\n\t\t\t\tcase \"toolResult\":\n\t\t\t\t\treturn typeof message.content === \"string\"\n\t\t\t\t\t\t? message.content\n\t\t\t\t\t\t: message.content\n\t\t\t\t\t\t\t\t.filter((block): block is { type: \"text\"; text: string } => block.type === \"text\")\n\t\t\t\t\t\t\t\t.map((block) => block.text)\n\t\t\t\t\t\t\t\t.join(\" \");\n\t\t\t\tcase \"bashExecution\":\n\t\t\t\t\treturn `${message.command}\\n${message.output}`;\n\t\t\t\tdefault:\n\t\t\t\t\treturn \"\";\n\t\t\t}\n\t\t})\n\t\t.join",
+          "lineNumber": 154
+        },
+        {
+          "caller": "extractText",
+          "callee": "messages\n\t\t.map",
+          "lineNumber": 154
+        },
+        {
+          "caller": "extractText",
+          "callee": "message.content\n\t\t\t\t\t\t\t\t.filter((block): block is { type: \"text\"; text: string } => block.type === \"text\")\n\t\t\t\t\t\t\t\t.map((block) => block.text)\n\t\t\t\t\t\t\t\t.join",
+          "lineNumber": 160
+        },
+        {
+          "caller": "extractText",
+          "callee": "message.content\n\t\t\t\t\t\t\t\t.filter((block): block is { type: \"text\"; text: string } => block.type === \"text\")\n\t\t\t\t\t\t\t\t.map",
+          "lineNumber": 160
+        },
+        {
+          "caller": "extractText",
+          "callee": "message.content\n\t\t\t\t\t\t\t\t.filter",
+          "lineNumber": 160
+        },
+        {
+          "caller": "extractText",
+          "callee": "message.content\n\t\t\t\t\t\t.filter((block): block is { type: \"text\"; text: string } => block.type === \"text\")\n\t\t\t\t\t\t.map((block) => block.text)\n\t\t\t\t\t\t.join",
+          "lineNumber": 165
+        },
+        {
+          "caller": "extractText",
+          "callee": "message.content\n\t\t\t\t\t\t.filter((block): block is { type: \"text\"; text: string } => block.type === \"text\")\n\t\t\t\t\t\t.map",
+          "lineNumber": 165
+        },
+        {
+          "caller": "extractText",
+          "callee": "message.content\n\t\t\t\t\t\t.filter",
+          "lineNumber": 165
+        },
+        {
+          "caller": "extractText",
+          "callee": "message.content\n\t\t\t\t\t\t\t\t.filter((block): block is { type: \"text\"; text: string } => block.type === \"text\")\n\t\t\t\t\t\t\t\t.map((block) => block.text)\n\t\t\t\t\t\t\t\t.join",
+          "lineNumber": 176
+        },
+        {
+          "caller": "extractText",
+          "callee": "message.content\n\t\t\t\t\t\t\t\t.filter((block): block is { type: \"text\"; text: string } => block.type === \"text\")\n\t\t\t\t\t\t\t\t.map",
+          "lineNumber": 176
+        },
+        {
+          "caller": "extractText",
+          "callee": "message.content\n\t\t\t\t\t\t\t\t.filter",
+          "lineNumber": 176
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/print-mode.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 142,
+      "nonEmptyLines": 123,
+      "functions": [
+        {
+          "name": "createAssistantMessage",
+          "startLine": 33,
+          "endLine": 56,
+          "params": [
+            "options"
+          ]
+        },
+        {
+          "name": "createRuntimeHost",
+          "startLine": 58,
+          "endLine": 87,
+          "params": [
+            "assistantMessage"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createAssistantMessage",
+          "callee": "Date.now",
+          "lineNumber": 54
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "vi.fn",
+          "lineNumber": 61
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "vi.fn",
+          "lineNumber": 68
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "vi.fn",
+          "lineNumber": 71
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "vi.fn",
+          "lineNumber": 72
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "vi.fn",
+          "lineNumber": 73
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "vi.fn",
+          "lineNumber": 74
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "vi.fn",
+          "lineNumber": 79
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "vi.fn",
+          "lineNumber": 80
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "vi.fn",
+          "lineNumber": 81
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "vi.fn",
+          "lineNumber": 82
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "session.extensionRunner.emit",
+          "lineNumber": 83
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "vi.fn",
+          "lineNumber": 85
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/rpc-client-clone.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 25,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/rpc-client-process-exit.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 38,
+      "nonEmptyLines": 32,
+      "functions": [
+        {
+          "name": "writeChildScript",
+          "startLine": 9,
+          "endLine": 15,
+          "params": [
+            "contents"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "writeChildScript",
+          "callee": "mkdtempSync",
+          "lineNumber": 10
+        },
+        {
+          "caller": "writeChildScript",
+          "callee": "join",
+          "lineNumber": 10
+        },
+        {
+          "caller": "writeChildScript",
+          "callee": "tmpdir",
+          "lineNumber": 10
+        },
+        {
+          "caller": "writeChildScript",
+          "callee": "tempDirs.push",
+          "lineNumber": 11
+        },
+        {
+          "caller": "writeChildScript",
+          "callee": "join",
+          "lineNumber": 12
+        },
+        {
+          "caller": "writeChildScript",
+          "callee": "writeFileSync",
+          "lineNumber": 13
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/rpc-example.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 86,
+      "nonEmptyLines": 70,
+      "functions": [
+        {
+          "name": "main",
+          "startLine": 13,
+          "endLine": 84,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "main",
+          "callee": "join",
+          "lineNumber": 15
+        },
+        {
+          "caller": "main",
+          "callee": "client.onEvent",
+          "lineNumber": 22
+        },
+        {
+          "caller": "main",
+          "callee": "process.stdout.write",
+          "lineNumber": 26
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 31
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 35
+        },
+        {
+          "caller": "main",
+          "callee": "JSON.stringify(event.result).slice",
+          "lineNumber": 35
+        },
+        {
+          "caller": "main",
+          "callee": "JSON.stringify",
+          "lineNumber": 35
+        },
+        {
+          "caller": "main",
+          "callee": "client.start",
+          "lineNumber": 39
+        },
+        {
+          "caller": "main",
+          "callee": "client.getState",
+          "lineNumber": 41
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 42
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 43
+        },
+        {
+          "caller": "main",
+          "callee": "readline.createInterface",
+          "lineNumber": 46
+        },
+        {
+          "caller": "prompt",
+          "callee": "process.stdout.write",
+          "lineNumber": 55
+        },
+        {
+          "caller": "main",
+          "callee": "rl.on",
+          "lineNumber": 58
+        },
+        {
+          "caller": "main",
+          "callee": "line.trim",
+          "lineNumber": 60
+        },
+        {
+          "caller": "main",
+          "callee": "client.stop",
+          "lineNumber": 61
+        },
+        {
+          "caller": "main",
+          "callee": "process.exit",
+          "lineNumber": 62
+        },
+        {
+          "caller": "main",
+          "callee": "client.promptAndWait",
+          "lineNumber": 66
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 67
+        },
+        {
+          "caller": "main",
+          "callee": "prompt",
+          "lineNumber": 69
+        },
+        {
+          "caller": "main",
+          "callee": "rl.on",
+          "lineNumber": 72
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 74
+        },
+        {
+          "caller": "main",
+          "callee": "client.abort",
+          "lineNumber": 75
+        },
+        {
+          "caller": "main",
+          "callee": "client.stop",
+          "lineNumber": 77
+        },
+        {
+          "caller": "main",
+          "callee": "process.exit",
+          "lineNumber": 78
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 82
+        },
+        {
+          "caller": "main",
+          "callee": "prompt",
+          "lineNumber": 83
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/rpc-jsonl.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 48,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/rpc.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 399,
+      "nonEmptyLines": 312,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/agent-session-compaction.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 633,
+      "nonEmptyLines": 556,
+      "functions": [
+        {
+          "name": "createUsage",
+          "startLine": 16,
+          "endLine": 25,
+          "params": [
+            "totalTokens"
+          ]
+        },
+        {
+          "name": "createAssistant",
+          "startLine": 27,
+          "endLine": 48,
+          "params": [
+            "harness",
+            "options"
+          ]
+        },
+        {
+          "name": "useSummaryStreamFn",
+          "startLine": 50,
+          "endLine": 68,
+          "params": [
+            "harness",
+            "summary"
+          ]
+        },
+        {
+          "name": "seedCompactableSession",
+          "startLine": 70,
+          "endLine": 86,
+          "params": [
+            "harness"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createAssistant",
+          "callee": "harness.getModel",
+          "lineNumber": 36
+        },
+        {
+          "caller": "createAssistant",
+          "callee": "fauxAssistantMessage",
+          "lineNumber": 38
+        },
+        {
+          "caller": "createAssistant",
+          "callee": "createUsage",
+          "lineNumber": 46
+        },
+        {
+          "caller": "useSummaryStreamFn",
+          "callee": "createAssistantMessageEventStream",
+          "lineNumber": 54
+        },
+        {
+          "caller": "useSummaryStreamFn",
+          "callee": "queueMicrotask",
+          "lineNumber": 55
+        },
+        {
+          "caller": "useSummaryStreamFn",
+          "callee": "fauxAssistantMessage",
+          "lineNumber": 57
+        },
+        {
+          "caller": "useSummaryStreamFn",
+          "callee": "createUsage",
+          "lineNumber": 61
+        },
+        {
+          "caller": "useSummaryStreamFn",
+          "callee": "stream.push",
+          "lineNumber": 63
+        },
+        {
+          "caller": "seedCompactableSession",
+          "callee": "harness.settingsManager.applyOverrides",
+          "lineNumber": 71
+        },
+        {
+          "caller": "seedCompactableSession",
+          "callee": "Date.now",
+          "lineNumber": 72
+        },
+        {
+          "caller": "seedCompactableSession",
+          "callee": "harness.sessionManager.appendMessage",
+          "lineNumber": 73
+        },
+        {
+          "caller": "seedCompactableSession",
+          "callee": "createAssistant",
+          "lineNumber": 78
+        },
+        {
+          "caller": "seedCompactableSession",
+          "callee": "harness.sessionManager.appendMessage",
+          "lineNumber": 84
+        },
+        {
+          "caller": "seedCompactableSession",
+          "callee": "harness.sessionManager.buildSessionContext",
+          "lineNumber": 85
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/agent-session-model-extension.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 397,
+      "nonEmptyLines": 362,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/agent-session-queue.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 445,
+      "nonEmptyLines": 386,
+      "functions": [
+        {
+          "name": "createWaitingHarness",
+          "startLine": 8,
+          "endLine": 58,
+          "params": [
+            "options"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createWaitingHarness",
+          "callee": "Type.Object",
+          "lineNumber": 29
+        },
+        {
+          "caller": "createWaitingHarness",
+          "callee": "createHarness",
+          "lineNumber": 38
+        },
+        {
+          "caller": "createWaitingHarness",
+          "callee": "harness.session.subscribe",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createWaitingHarness",
+          "callee": "unsubscribe",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createWaitingHarness",
+          "callee": "resolve",
+          "lineNumber": 47
+        },
+        {
+          "caller": "createWaitingHarness",
+          "callee": "releaseToolExecution",
+          "lineNumber": 54
+        },
+        {
+          "caller": "createWaitingHarness",
+          "callee": "harness.session.prompt",
+          "lineNumber": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/agent-session-retry-events.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 364,
+      "nonEmptyLines": 314,
+      "functions": [
+        {
+          "name": "normalizeEventOrder",
+          "startLine": 7,
+          "endLine": 22,
+          "params": [
+            "events"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "normalizeEventOrder",
+          "callee": "normalized.push",
+          "lineNumber": 19
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/agent-session-tool-result-images.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 109,
+      "nonEmptyLines": 95,
+      "functions": [
+        {
+          "name": "pngChunk",
+          "startLine": 9,
+          "endLine": 16,
+          "params": [
+            "type",
+            "body"
+          ]
+        },
+        {
+          "name": "createPng",
+          "startLine": 19,
+          "endLine": 35,
+          "params": [
+            "width",
+            "height"
+          ]
+        },
+        {
+          "name": "readPngDimensions",
+          "startLine": 37,
+          "endLine": 40,
+          "params": [
+            "base64Data"
+          ]
+        },
+        {
+          "name": "getToolResultImages",
+          "startLine": 59,
+          "endLine": 64,
+          "params": [
+            "harness"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "pngChunk",
+          "callee": "Buffer.alloc",
+          "lineNumber": 10
+        },
+        {
+          "caller": "pngChunk",
+          "callee": "header.writeUInt32BE",
+          "lineNumber": 11
+        },
+        {
+          "caller": "pngChunk",
+          "callee": "header.write",
+          "lineNumber": 12
+        },
+        {
+          "caller": "pngChunk",
+          "callee": "Buffer.alloc",
+          "lineNumber": 13
+        },
+        {
+          "caller": "pngChunk",
+          "callee": "checksum.writeUInt32BE",
+          "lineNumber": 14
+        },
+        {
+          "caller": "pngChunk",
+          "callee": "crc32",
+          "lineNumber": 14
+        },
+        {
+          "caller": "pngChunk",
+          "callee": "Buffer.concat",
+          "lineNumber": 14
+        },
+        {
+          "caller": "pngChunk",
+          "callee": "header.subarray",
+          "lineNumber": 14
+        },
+        {
+          "caller": "pngChunk",
+          "callee": "Buffer.concat",
+          "lineNumber": 15
+        },
+        {
+          "caller": "createPng",
+          "callee": "Buffer.alloc",
+          "lineNumber": 20
+        },
+        {
+          "caller": "createPng",
+          "callee": "ihdr.writeUInt32BE",
+          "lineNumber": 21
+        },
+        {
+          "caller": "createPng",
+          "callee": "ihdr.writeUInt32BE",
+          "lineNumber": 22
+        },
+        {
+          "caller": "createPng",
+          "callee": "Buffer.alloc",
+          "lineNumber": 25
+        },
+        {
+          "caller": "createPng",
+          "callee": "raw.fill",
+          "lineNumber": 27
+        },
+        {
+          "caller": "createPng",
+          "callee": "Buffer.concat",
+          "lineNumber": 29
+        },
+        {
+          "caller": "createPng",
+          "callee": "Buffer.from",
+          "lineNumber": 30
+        },
+        {
+          "caller": "createPng",
+          "callee": "pngChunk",
+          "lineNumber": 31
+        },
+        {
+          "caller": "createPng",
+          "callee": "pngChunk",
+          "lineNumber": 32
+        },
+        {
+          "caller": "createPng",
+          "callee": "deflateSync",
+          "lineNumber": 32
+        },
+        {
+          "caller": "createPng",
+          "callee": "pngChunk",
+          "lineNumber": 33
+        },
+        {
+          "caller": "createPng",
+          "callee": "Buffer.alloc",
+          "lineNumber": 33
+        },
+        {
+          "caller": "readPngDimensions",
+          "callee": "Buffer.from",
+          "lineNumber": 38
+        },
+        {
+          "caller": "readPngDimensions",
+          "callee": "buffer.readUInt32BE",
+          "lineNumber": 39
+        },
+        {
+          "caller": "readPngDimensions",
+          "callee": "buffer.readUInt32BE",
+          "lineNumber": 39
+        },
+        {
+          "caller": "getToolResultImages",
+          "callee": "harness.session.messages\n\t\t.filter((message) => message.role === \"toolResult\")\n\t\t.flatMap((message) => message.content)\n\t\t.filter",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getToolResultImages",
+          "callee": "harness.session.messages\n\t\t.filter((message) => message.role === \"toolResult\")\n\t\t.flatMap",
+          "lineNumber": 60
+        },
+        {
+          "caller": "getToolResultImages",
+          "callee": "harness.session.messages\n\t\t.filter",
+          "lineNumber": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/harness.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 225,
+      "nonEmptyLines": 210,
+      "functions": [
+        {
+          "name": "getMessageText",
+          "startLine": 34,
+          "endLine": 49,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "getUserTexts",
+          "startLine": 51,
+          "endLine": 55,
+          "params": [
+            "harness"
+          ]
+        },
+        {
+          "name": "getAssistantTexts",
+          "startLine": 57,
+          "endLine": 61,
+          "params": [
+            "harness"
+          ]
+        },
+        {
+          "name": "createTempDir",
+          "startLine": 95,
+          "endLine": 99,
+          "params": []
+        },
+        {
+          "name": "createHarness",
+          "startLine": 101,
+          "endLine": 225,
+          "params": [
+            "options"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getMessageText",
+          "line": 34,
+          "isDefault": false
+        },
+        {
+          "name": "getUserTexts",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "getAssistantTexts",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "createHarness",
+          "line": 101,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getMessageText",
+          "callee": "content\n\t\t.filter((part): part is MessageTextPart => part.type === \"text\")\n\t\t.map((part) => part.text)\n\t\t.join",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getMessageText",
+          "callee": "content\n\t\t.filter((part): part is MessageTextPart => part.type === \"text\")\n\t\t.map",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getMessageText",
+          "callee": "content\n\t\t.filter",
+          "lineNumber": 45
+        },
+        {
+          "caller": "getUserTexts",
+          "callee": "harness.session.messages\n\t\t.filter((message) => message.role === \"user\")\n\t\t.map",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getUserTexts",
+          "callee": "harness.session.messages\n\t\t.filter",
+          "lineNumber": 52
+        },
+        {
+          "caller": "getUserTexts",
+          "callee": "getMessageText",
+          "lineNumber": 54
+        },
+        {
+          "caller": "getAssistantTexts",
+          "callee": "harness.session.messages\n\t\t.filter((message) => message.role === \"assistant\")\n\t\t.map",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getAssistantTexts",
+          "callee": "harness.session.messages\n\t\t.filter",
+          "lineNumber": 58
+        },
+        {
+          "caller": "getAssistantTexts",
+          "callee": "getMessageText",
+          "lineNumber": 60
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "join",
+          "lineNumber": 96
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "tmpdir",
+          "lineNumber": 96
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "Date.now",
+          "lineNumber": 96
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "Math.random().toString(36).slice",
+          "lineNumber": 96
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "Math.random().toString",
+          "lineNumber": 96
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "Math.random",
+          "lineNumber": 96
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "mkdirSync",
+          "lineNumber": 97
+        },
+        {
+          "caller": "createHarness",
+          "callee": "createTempDir",
+          "lineNumber": 102
+        },
+        {
+          "caller": "createHarness",
+          "callee": "registerFauxProvider",
+          "lineNumber": 103
+        },
+        {
+          "caller": "createHarness",
+          "callee": "fauxProvider.setResponses",
+          "lineNumber": 106
+        },
+        {
+          "caller": "createHarness",
+          "callee": "fauxProvider.getModel",
+          "lineNumber": 107
+        },
+        {
+          "caller": "createHarness",
+          "callee": "Object.fromEntries",
+          "lineNumber": 108
+        },
+        {
+          "caller": "createHarness",
+          "callee": "options.tools.map",
+          "lineNumber": 108
+        },
+        {
+          "caller": "createHarness",
+          "callee": "SessionManager.inMemory",
+          "lineNumber": 112
+        },
+        {
+          "caller": "createHarness",
+          "callee": "SettingsManager.inMemory",
+          "lineNumber": 113
+        },
+        {
+          "caller": "createHarness",
+          "callee": "AuthStorage.inMemory",
+          "lineNumber": 115
+        },
+        {
+          "caller": "createHarness",
+          "callee": "authStorage.modify",
+          "lineNumber": 117
+        },
+        {
+          "caller": "createHarness",
+          "callee": "join",
+          "lineNumber": 119
+        },
+        {
+          "caller": "createHarness",
+          "callee": "writeFileSync",
+          "lineNumber": 120
+        },
+        {
+          "caller": "createHarness",
+          "callee": "JSON.stringify",
+          "lineNumber": 120
+        },
+        {
+          "caller": "createHarness",
+          "callee": "createModelRegistry",
+          "lineNumber": 122
+        },
+        {
+          "caller": "createHarness",
+          "callee": "createInMemoryModelRegistry",
+          "lineNumber": 123
+        },
+        {
+          "caller": "createHarness",
+          "callee": "modelRegistry.registerProvider",
+          "lineNumber": 125
+        },
+        {
+          "caller": "createHarness",
+          "callee": "fauxProvider.models.map",
+          "lineNumber": 129
+        },
+        {
+          "caller": "createHarness",
+          "callee": "runner?.hasHandlers",
+          "lineNumber": 154
+        },
+        {
+          "caller": "createHarness",
+          "callee": "runner.emitBeforeProviderRequest",
+          "lineNumber": 157
+        },
+        {
+          "caller": "createHarness",
+          "callee": "runner?.hasHandlers",
+          "lineNumber": 161
+        },
+        {
+          "caller": "createHarness",
+          "callee": "runner.emit",
+          "lineNumber": 164
+        },
+        {
+          "caller": "createHarness",
+          "callee": "runner.emitContext",
+          "lineNumber": 173
+        },
+        {
+          "caller": "createHarness",
+          "callee": "createTestExtensionsResult",
+          "lineNumber": 177
+        },
+        {
+          "caller": "createHarness",
+          "callee": "createTestResourceLoader",
+          "lineNumber": 180
+        },
+        {
+          "caller": "createHarness",
+          "callee": "getModelRuntime",
+          "lineNumber": 187
+        },
+        {
+          "caller": "createHarness",
+          "callee": "session.subscribe",
+          "lineNumber": 197
+        },
+        {
+          "caller": "createHarness",
+          "callee": "events.push",
+          "lineNumber": 198
+        },
+        {
+          "caller": "eventsOfType",
+          "callee": "events.filter",
+          "lineNumber": 214
+        },
+        {
+          "caller": "cleanup",
+          "callee": "session.dispose",
+          "lineNumber": 218
+        },
+        {
+          "caller": "cleanup",
+          "callee": "fauxProvider.unregister",
+          "lineNumber": 219
+        },
+        {
+          "caller": "cleanup",
+          "callee": "existsSync",
+          "lineNumber": 220
+        },
+        {
+          "caller": "cleanup",
+          "callee": "rmSync",
+          "lineNumber": 221
+        }
+      ],
+      "metrics": {
+        "importCount": 9,
+        "exportCount": 4,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/lax-message-content.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 162,
+      "nonEmptyLines": 145,
+      "functions": [
+        {
+          "name": "messageEntry",
+          "startLine": 18,
+          "endLine": 26,
+          "params": [
+            "message"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "messageEntry",
+          "callee": "new Date().toISOString",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/1717-2113-agent-session-event-settlement.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 95,
+      "nonEmptyLines": 87,
+      "functions": [
+        {
+          "name": "createEchoTool",
+          "startLine": 7,
+          "endLine": 18,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createEchoTool",
+          "callee": "Type.Object",
+          "lineNumber": 12
+        },
+        {
+          "caller": "createEchoTool",
+          "callee": "Type.String",
+          "lineNumber": 12
+        },
+        {
+          "caller": "createEchoTool",
+          "callee": "String",
+          "lineNumber": 14
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/2023-queued-slash-command-followup.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 80,
+      "nonEmptyLines": 72,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/3317-network-connection-lost-retry.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 28,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

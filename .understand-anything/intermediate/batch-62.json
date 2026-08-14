@@ -1,0 +1,62 @@
+{
+  "batchIndex": 62,
+  "totalBatches": 75,
+  "nodes": [
+    {
+      "id": "packages/server/CHANGELOG.md",
+      "nodeType": "file",
+      "label": "Server 变更日志",
+      "summary": "记录 @earendil-works/pi-server 包的版本变更历史，涵盖 v0.80.3 至 v0.84.1 的破坏性变更、修复及重构。关键变更包括 toProtocolToolResultMessage() 签名变更、listSessions() 返回持久化 SessionMetadata、协议适配器加固、错误响应净化、以及 orchestrator 到 server 的重命名。",
+      "metadata": {
+        "language": "markdown",
+        "fileCategory": "docs",
+        "sizeLines": 47
+      }
+    },
+    {
+      "id": "packages/server/README.md",
+      "nodeType": "file",
+      "label": "Server 包文档",
+      "summary": "@earendil-works/pi-server 包的说明文档。描述 PiServer 会话服务器核心、PiServerService 接口（listSessions/listModels/createSession/openSession）、Unix socket 传输层（createUnixServer/createUnixListener）、CBOR 长度前缀消息协议、传输测试工具（createTestServer/ProtocolTestClient/WireChannel）、以及 pi-ai 到 pi-protocol 的协议桥接适配器（toProtocolModelMetadata/toProtocolAssistantMessage/toProtocolUserMessage/toProtocolToolResultMessage）。",
+      "metadata": {
+        "language": "markdown",
+        "fileCategory": "docs",
+        "sizeLines": 50
+      }
+    },
+    {
+      "id": "packages/server/package.json",
+      "nodeType": "file",
+      "label": "Server 包配置",
+      "summary": "@earendil-works/pi-server v0.84.1 的 npm 包清单。定义三个导出入口（主入口 .、测试入口 ./testing、Unix 传输入口 ./unix），依赖 @earendil-works/pi-ai 和 @earendil-works/pi-protocol，使用 tsgo 构建、vitest 测试，要求 Node.js >= 22.19.0。",
+      "metadata": {
+        "language": "json",
+        "fileCategory": "config",
+        "sizeLines": 57
+      }
+    },
+    {
+      "id": "packages/server/tsconfig.build.json",
+      "nodeType": "file",
+      "label": "Server 构建 TypeScript 配置",
+      "summary": "Server 包的构建用 TypeScript 配置，继承 tsconfig.base.json，将 src/ 下的 .ts 文件编译输出到 dist/，排除声明文件和 node_modules。",
+      "metadata": {
+        "language": "json",
+        "fileCategory": "config",
+        "sizeLines": 9
+      }
+    },
+    {
+      "id": "packages/server/tsconfig.test.json",
+      "nodeType": "file",
+      "label": "Server 测试 TypeScript 配置",
+      "summary": "Server 包的测试用 TypeScript 配置，继承 tsconfig.base.json，启用 noEmit，使用 NodeNext 模块解析，包含 src 和 test 目录的类型检查，并通过 paths 映射将 @earendil-works/pi-protocol 指向源码以便类型推断。",
+      "metadata": {
+        "language": "json",
+        "fileCategory": "config",
+        "sizeLines": 13
+      }
+    }
+  ],
+  "edges": []
+}

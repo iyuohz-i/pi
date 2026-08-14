@@ -1,0 +1,2068 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 12,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "packages/evals/src/extensions.eval.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 140,
+      "nonEmptyLines": 132,
+      "functions": [
+        {
+          "name": "createExtensionAuthoringHarness",
+          "startLine": 18,
+          "endLine": 39,
+          "params": [
+            "name",
+            "transformSystemPrompt"
+          ]
+        },
+        {
+          "name": "excludeGuidelinesAndDocumentation",
+          "startLine": 41,
+          "endLine": 45,
+          "params": [
+            "defaultPrompt"
+          ]
+        },
+        {
+          "name": "prepareDefaultPromptOverride",
+          "startLine": 47,
+          "endLine": 51,
+          "params": [
+            "defaultPrompt"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createExtensionAuthoringHarness",
+          "callee": "createPiCodingAgentHarness",
+          "lineNumber": 19
+        },
+        {
+          "caller": "createExtensionAuthoringHarness",
+          "callee": "session.resourceLoader.getExtensions",
+          "lineNumber": 23
+        },
+        {
+          "caller": "createExtensionAuthoringHarness",
+          "callee": "join",
+          "lineNumber": 24
+        },
+        {
+          "caller": "createExtensionAuthoringHarness",
+          "callee": "session.sessionManager.getCwd",
+          "lineNumber": 24
+        },
+        {
+          "caller": "createExtensionAuthoringHarness",
+          "callee": "existsSync",
+          "lineNumber": 25
+        },
+        {
+          "caller": "createExtensionAuthoringHarness",
+          "callee": "readFileSync",
+          "lineNumber": 25
+        },
+        {
+          "caller": "createExtensionAuthoringHarness",
+          "callee": "session.systemPrompt.includes",
+          "lineNumber": 28
+        },
+        {
+          "caller": "createExtensionAuthoringHarness",
+          "callee": "session.systemPrompt.includes",
+          "lineNumber": 29
+        },
+        {
+          "caller": "createExtensionAuthoringHarness",
+          "callee": "extensions.extensions.map",
+          "lineNumber": 31
+        },
+        {
+          "caller": "createExtensionAuthoringHarness",
+          "callee": "tools.keys",
+          "lineNumber": 33
+        },
+        {
+          "caller": "excludeGuidelinesAndDocumentation",
+          "callee": "defaultPrompt.indexOf",
+          "lineNumber": 42
+        },
+        {
+          "caller": "excludeGuidelinesAndDocumentation",
+          "callee": "defaultPrompt.slice",
+          "lineNumber": 44
+        },
+        {
+          "caller": "prepareDefaultPromptOverride",
+          "callee": "defaultPrompt.lastIndexOf",
+          "lineNumber": 48
+        },
+        {
+          "caller": "prepareDefaultPromptOverride",
+          "callee": "defaultPrompt.slice",
+          "lineNumber": 50
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/evals/src/pi-harness.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 257,
+      "nonEmptyLines": 244,
+      "functions": [
+        {
+          "name": "resolveModelSelection",
+          "startLine": 46,
+          "endLine": 56,
+          "params": [
+            "explicitModel",
+            "environment"
+          ]
+        },
+        {
+          "name": "toTranscriptEvents",
+          "startLine": 58,
+          "endLine": 88,
+          "params": [
+            "messages"
+          ]
+        },
+        {
+          "name": "promptAgent",
+          "startLine": 90,
+          "endLine": 107,
+          "params": [
+            "session",
+            "input",
+            "signal"
+          ]
+        },
+        {
+          "name": "runPiCodingAgent",
+          "startLine": 109,
+          "endLine": 244,
+          "params": [
+            "input",
+            "signal",
+            "setArtifact",
+            "options"
+          ]
+        },
+        {
+          "name": "createPiCodingAgentHarness",
+          "startLine": 250,
+          "endLine": 257,
+          "params": [
+            "options"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "resolveModelSelection",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "createPiCodingAgentHarness",
+          "line": 250,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resolveModelSelection",
+          "callee": "(explicitModel?.provider ?? environment.PI_PROVIDER)?.trim",
+          "lineNumber": 50
+        },
+        {
+          "caller": "resolveModelSelection",
+          "callee": "(explicitModel?.id ?? environment.PI_MODEL)?.trim",
+          "lineNumber": 51
+        },
+        {
+          "caller": "toTranscriptEvents",
+          "callee": "events.push",
+          "lineNumber": 62
+        },
+        {
+          "caller": "toTranscriptEvents",
+          "callee": "contentText",
+          "lineNumber": 62
+        },
+        {
+          "caller": "toTranscriptEvents",
+          "callee": "contentText",
+          "lineNumber": 64
+        },
+        {
+          "caller": "toTranscriptEvents",
+          "callee": "events.push",
+          "lineNumber": 65
+        },
+        {
+          "caller": "toTranscriptEvents",
+          "callee": "events.push",
+          "lineNumber": 68
+        },
+        {
+          "caller": "toTranscriptEvents",
+          "callee": "normalizeRecord",
+          "lineNumber": 72
+        },
+        {
+          "caller": "toTranscriptEvents",
+          "callee": "contentText",
+          "lineNumber": 77
+        },
+        {
+          "caller": "toTranscriptEvents",
+          "callee": "events.push",
+          "lineNumber": 78
+        },
+        {
+          "caller": "toTranscriptEvents",
+          "callee": "message.content.every",
+          "lineNumber": 82
+        },
+        {
+          "caller": "toTranscriptEvents",
+          "callee": "toJsonValue",
+          "lineNumber": 82
+        },
+        {
+          "caller": "promptAgent",
+          "callee": "signal?.throwIfAborted",
+          "lineNumber": 91
+        },
+        {
+          "caller": "promptAgent",
+          "callee": "session.prompt",
+          "lineNumber": 93
+        },
+        {
+          "caller": "promptAgent",
+          "callee": "session.messages\n\t\t.slice(previousMessageCount)\n\t\t.reverse()\n\t\t.find",
+          "lineNumber": 94
+        },
+        {
+          "caller": "promptAgent",
+          "callee": "session.messages\n\t\t.slice(previousMessageCount)\n\t\t.reverse",
+          "lineNumber": 94
+        },
+        {
+          "caller": "promptAgent",
+          "callee": "session.messages\n\t\t.slice",
+          "lineNumber": 94
+        },
+        {
+          "caller": "promptAgent",
+          "callee": "session.getLastAssistantText",
+          "lineNumber": 104
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "performance.now",
+          "lineNumber": 115
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "signal?.throwIfAborted",
+          "lineNumber": 116
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "resolveModelSelection",
+          "lineNumber": 117
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "ModelRuntime.create",
+          "lineNumber": 118
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "modelRuntime.getModel",
+          "lineNumber": 119
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "mkdtemp",
+          "lineNumber": 122
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "join",
+          "lineNumber": 122
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "tmpdir",
+          "lineNumber": 122
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "join",
+          "lineNumber": 123
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "join",
+          "lineNumber": 124
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "Promise.all",
+          "lineNumber": 130
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "mkdir",
+          "lineNumber": 130
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "mkdir",
+          "lineNumber": 130
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "createAgentSessionServices",
+          "lineNumber": 131
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "SettingsManager.inMemory",
+          "lineNumber": 135
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "signal?.throwIfAborted",
+          "lineNumber": 140
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "SessionManager.create",
+          "lineNumber": 141
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "join",
+          "lineNumber": 141
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "setArtifact",
+          "lineNumber": 142
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "sessionManager.getSessionId",
+          "lineNumber": 142
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "createAgentSessionFromServices",
+          "lineNumber": 144
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "options.transformSystemPrompt",
+          "lineNumber": 155
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "transformedSystemPrompt.trim",
+          "lineNumber": 156
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "evalSession.reload",
+          "lineNumber": 157
+        },
+        {
+          "caller": "abort",
+          "callee": "evalSession.abort",
+          "lineNumber": 161
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "signal?.addEventListener",
+          "lineNumber": 163
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "signal?.throwIfAborted",
+          "lineNumber": 165
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "evalSession.extensionRunner.getExtensionPaths",
+          "lineNumber": 166
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "promptAgent",
+          "lineNumber": 173
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "evalSession.reload",
+          "lineNumber": 175
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "options.output",
+          "lineNumber": 179
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "evalSession.getSessionStats",
+          "lineNumber": 180
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "[model.cost, ...(model.cost.tiers ?? [])].some",
+          "lineNumber": 181
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "toTranscriptEvents",
+          "lineNumber": 188
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "signal?.removeEventListener",
+          "lineNumber": 205
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "sessionManager.getSessionFile",
+          "lineNumber": 215
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "existsSync",
+          "lineNumber": 216
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "setArtifact",
+          "lineNumber": 217
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "readFile",
+          "lineNumber": 217
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "cleanupErrors.push",
+          "lineNumber": 220
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "session?.dispose",
+          "lineNumber": 224
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "cleanupErrors.push",
+          "lineNumber": 226
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "rm",
+          "lineNumber": 229
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "cleanupErrors.push",
+          "lineNumber": 231
+        },
+        {
+          "caller": "runPiCodingAgent",
+          "callee": "performance.now",
+          "lineNumber": 242
+        },
+        {
+          "caller": "createPiCodingAgentHarness",
+          "callee": "createHarness",
+          "lineNumber": 253
+        },
+        {
+          "caller": "createPiCodingAgentHarness",
+          "callee": "runPiCodingAgent",
+          "lineNumber": 255
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/evals/src/smoke.eval.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 17,
+      "nonEmptyLines": 14,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/evals/src/vitest-evals/artifacts.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 113,
+      "nonEmptyLines": 103,
+      "functions": [
+        {
+          "name": "recordEvalSessionArtifact",
+          "startLine": 51,
+          "endLine": 73,
+          "params": [
+            "task",
+            "run"
+          ]
+        },
+        {
+          "name": "recordEvalSourceArtifact",
+          "startLine": 75,
+          "endLine": 85,
+          "params": [
+            "task",
+            "runId",
+            "attachment"
+          ]
+        },
+        {
+          "name": "persistEvalArtifactReferences",
+          "startLine": 87,
+          "endLine": 113,
+          "params": [
+            "artifacts",
+            "runId",
+            "artifactDirectory"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PI_SESSION_SNAPSHOT_ARTIFACT",
+          "line": 13,
+          "isDefault": false
+        },
+        {
+          "name": "recordEvalSessionArtifact",
+          "line": 51,
+          "isDefault": false
+        },
+        {
+          "name": "recordEvalSourceArtifact",
+          "line": 75,
+          "isDefault": false
+        },
+        {
+          "name": "persistEvalArtifactReferences",
+          "line": 87,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "recordEvalSessionArtifact",
+          "callee": "recordArtifact",
+          "lineNumber": 61
+        },
+        {
+          "caller": "recordEvalSourceArtifact",
+          "callee": "recordArtifact",
+          "lineNumber": 80
+        },
+        {
+          "caller": "persistEvalArtifactReferences",
+          "callee": "basename",
+          "lineNumber": 103
+        },
+        {
+          "caller": "persistEvalArtifactReferences",
+          "callee": "join",
+          "lineNumber": 105
+        },
+        {
+          "caller": "persistEvalArtifactReferences",
+          "callee": "createHash(\"sha256\").update(runId).digest",
+          "lineNumber": 105
+        },
+        {
+          "caller": "persistEvalArtifactReferences",
+          "callee": "createHash(\"sha256\").update",
+          "lineNumber": 105
+        },
+        {
+          "caller": "persistEvalArtifactReferences",
+          "callee": "createHash",
+          "lineNumber": 105
+        },
+        {
+          "caller": "persistEvalArtifactReferences",
+          "callee": "mkdir",
+          "lineNumber": 106
+        },
+        {
+          "caller": "persistEvalArtifactReferences",
+          "callee": "join",
+          "lineNumber": 107
+        },
+        {
+          "caller": "persistEvalArtifactReferences",
+          "callee": "writeFile",
+          "lineNumber": 108
+        },
+        {
+          "caller": "persistEvalArtifactReferences",
+          "callee": "references.push",
+          "lineNumber": 109
+        },
+        {
+          "caller": "persistEvalArtifactReferences",
+          "callee": "relative",
+          "lineNumber": 109
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/evals/src/vitest-evals/harness-table.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 193,
+      "nonEmptyLines": 177,
+      "functions": [
+        {
+          "name": "parseEvalHarnessIterationArtifact",
+          "startLine": 46,
+          "endLine": 64,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "canonicalizeJson",
+          "startLine": 66,
+          "endLine": 98,
+          "params": [
+            "value",
+            "ancestors"
+          ]
+        },
+        {
+          "name": "deriveInputKey",
+          "startLine": 100,
+          "endLine": 108,
+          "params": [
+            "input"
+          ]
+        },
+        {
+          "name": "deriveEvalGroupKey",
+          "startLine": 110,
+          "endLine": 112,
+          "params": [
+            "input",
+            "repetition"
+          ]
+        },
+        {
+          "name": "validateOptions",
+          "startLine": 114,
+          "endLine": 128,
+          "params": [
+            "evalSet",
+            "baseline",
+            "candidates",
+            "repetitions"
+          ]
+        },
+        {
+          "name": "withIterationArtifact",
+          "startLine": 130,
+          "endLine": 155,
+          "params": [
+            "harness",
+            "plan"
+          ]
+        },
+        {
+          "name": "evalHarnessTable",
+          "startLine": 165,
+          "endLine": 193,
+          "params": [
+            "evalSet",
+            "options"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "EVAL_HARNESS_ITERATION_ARTIFACT",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "parseEvalHarnessIterationArtifact",
+          "line": 46,
+          "isDefault": false
+        },
+        {
+          "name": "deriveEvalGroupKey",
+          "line": 110,
+          "isDefault": false
+        },
+        {
+          "name": "evalHarnessTable",
+          "line": 165,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parseEvalHarnessIterationArtifact",
+          "callee": "Array.isArray",
+          "lineNumber": 49
+        },
+        {
+          "caller": "parseEvalHarnessIterationArtifact",
+          "callee": "Array.isArray",
+          "lineNumber": 57
+        },
+        {
+          "caller": "parseEvalHarnessIterationArtifact",
+          "callee": "candidates.every",
+          "lineNumber": 58
+        },
+        {
+          "caller": "canonicalizeJson",
+          "callee": "Number.isFinite",
+          "lineNumber": 69
+        },
+        {
+          "caller": "canonicalizeJson",
+          "callee": "ancestors.has",
+          "lineNumber": 73
+        },
+        {
+          "caller": "canonicalizeJson",
+          "callee": "ancestors.add",
+          "lineNumber": 75
+        },
+        {
+          "caller": "canonicalizeJson",
+          "callee": "Array.isArray",
+          "lineNumber": 77
+        },
+        {
+          "caller": "canonicalizeJson",
+          "callee": "Object.hasOwn",
+          "lineNumber": 80
+        },
+        {
+          "caller": "canonicalizeJson",
+          "callee": "result.push",
+          "lineNumber": 81
+        },
+        {
+          "caller": "canonicalizeJson",
+          "callee": "canonicalizeJson",
+          "lineNumber": 81
+        },
+        {
+          "caller": "canonicalizeJson",
+          "callee": "Object.getPrototypeOf",
+          "lineNumber": 85
+        },
+        {
+          "caller": "canonicalizeJson",
+          "callee": "Object.entries",
+          "lineNumber": 89
+        },
+        {
+          "caller": "canonicalizeJson",
+          "callee": "Object.fromEntries",
+          "lineNumber": 90
+        },
+        {
+          "caller": "canonicalizeJson",
+          "callee": "entries\n\t\t\t\t.sort(([left], [right]) => (left < right ? -1 : left > right ? 1 : 0))\n\t\t\t\t.map",
+          "lineNumber": 91
+        },
+        {
+          "caller": "canonicalizeJson",
+          "callee": "entries\n\t\t\t\t.sort",
+          "lineNumber": 91
+        },
+        {
+          "caller": "canonicalizeJson",
+          "callee": "canonicalizeJson",
+          "lineNumber": 93
+        },
+        {
+          "caller": "canonicalizeJson",
+          "callee": "ancestors.delete",
+          "lineNumber": 96
+        },
+        {
+          "caller": "deriveInputKey",
+          "callee": "Array.isArray",
+          "lineNumber": 101
+        },
+        {
+          "caller": "deriveInputKey",
+          "callee": "id.trim",
+          "lineNumber": 103
+        },
+        {
+          "caller": "deriveInputKey",
+          "callee": "id.trim",
+          "lineNumber": 103
+        },
+        {
+          "caller": "deriveInputKey",
+          "callee": "JSON.stringify",
+          "lineNumber": 105
+        },
+        {
+          "caller": "deriveInputKey",
+          "callee": "canonicalizeJson",
+          "lineNumber": 105
+        },
+        {
+          "caller": "deriveInputKey",
+          "callee": "createHash(\"sha256\").update(canonicalInput).digest",
+          "lineNumber": 107
+        },
+        {
+          "caller": "deriveInputKey",
+          "callee": "createHash(\"sha256\").update",
+          "lineNumber": 107
+        },
+        {
+          "caller": "deriveInputKey",
+          "callee": "createHash",
+          "lineNumber": 107
+        },
+        {
+          "caller": "deriveEvalGroupKey",
+          "callee": "JSON.stringify",
+          "lineNumber": 111
+        },
+        {
+          "caller": "deriveEvalGroupKey",
+          "callee": "deriveInputKey",
+          "lineNumber": 111
+        },
+        {
+          "caller": "validateOptions",
+          "callee": "evalSet.trim",
+          "lineNumber": 120
+        },
+        {
+          "caller": "validateOptions",
+          "callee": "harnesses.map",
+          "lineNumber": 123
+        },
+        {
+          "caller": "validateOptions",
+          "callee": "Number.isSafeInteger",
+          "lineNumber": 125
+        },
+        {
+          "caller": "run",
+          "callee": "deriveEvalGroupKey",
+          "lineNumber": 137
+        },
+        {
+          "caller": "run",
+          "callee": "context.setArtifact",
+          "lineNumber": 139
+        },
+        {
+          "caller": "run",
+          "callee": "attachIterationArtifact",
+          "lineNumber": 145
+        },
+        {
+          "caller": "run",
+          "callee": "harness.run",
+          "lineNumber": 145
+        },
+        {
+          "caller": "run",
+          "callee": "getHarnessRunFromError",
+          "lineNumber": 147
+        },
+        {
+          "caller": "run",
+          "callee": "attachHarnessRunToError",
+          "lineNumber": 149
+        },
+        {
+          "caller": "run",
+          "callee": "attachIterationArtifact",
+          "lineNumber": 149
+        },
+        {
+          "caller": "evalHarnessTable",
+          "callee": "validateOptions",
+          "lineNumber": 171
+        },
+        {
+          "caller": "evalHarnessTable",
+          "callee": "candidates.map",
+          "lineNumber": 182
+        },
+        {
+          "caller": "evalHarnessTable",
+          "callee": "rows.push",
+          "lineNumber": 185
+        },
+        {
+          "caller": "evalHarnessTable",
+          "callee": "withIterationArtifact",
+          "lineNumber": 186
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/evals/src/vitest-evals/reporter.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 111,
+      "nonEmptyLines": 103,
+      "functions": [
+        {
+          "name": "readFiniteNumber",
+          "startLine": 10,
+          "endLine": 12,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "appendHarnessRunReport",
+          "startLine": 14,
+          "endLine": 49,
+          "params": [
+            "test"
+          ]
+        },
+        {
+          "name": "collectHarnessObservations",
+          "startLine": 51,
+          "endLine": 85,
+          "params": [
+            "modules"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "EvalHarnessReporter",
+          "startLine": 87,
+          "endLine": 111,
+          "methods": [
+            "onInit",
+            "onTestCaseResult",
+            "onTestRunEnd"
+          ],
+          "properties": [
+            "vitest"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "default",
+          "line": 87,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "readFiniteNumber",
+          "callee": "Number.isFinite",
+          "lineNumber": 11
+        },
+        {
+          "caller": "appendHarnessRunReport",
+          "callee": "process.env.PI_EVAL_ARTIFACT_DIR?.trim",
+          "lineNumber": 15
+        },
+        {
+          "caller": "appendHarnessRunReport",
+          "callee": "test.meta",
+          "lineNumber": 17
+        },
+        {
+          "caller": "appendHarnessRunReport",
+          "callee": "isHarnessRun",
+          "lineNumber": 18
+        },
+        {
+          "caller": "appendHarnessRunReport",
+          "callee": "randomUUID",
+          "lineNumber": 22
+        },
+        {
+          "caller": "appendHarnessRunReport",
+          "callee": "Object.fromEntries",
+          "lineNumber": 23
+        },
+        {
+          "caller": "appendHarnessRunReport",
+          "callee": "Object.entries(run.artifacts ?? {}).filter",
+          "lineNumber": 24
+        },
+        {
+          "caller": "appendHarnessRunReport",
+          "callee": "Object.entries",
+          "lineNumber": 24
+        },
+        {
+          "caller": "appendHarnessRunReport",
+          "callee": "test.result",
+          "lineNumber": 34
+        },
+        {
+          "caller": "appendHarnessRunReport",
+          "callee": "persistEvalArtifactReferences",
+          "lineNumber": 40
+        },
+        {
+          "caller": "appendHarnessRunReport",
+          "callee": "test.artifacts",
+          "lineNumber": 40
+        },
+        {
+          "caller": "appendHarnessRunReport",
+          "callee": "Object.keys",
+          "lineNumber": 41
+        },
+        {
+          "caller": "appendHarnessRunReport",
+          "callee": "mkdir",
+          "lineNumber": 43
+        },
+        {
+          "caller": "appendHarnessRunReport",
+          "callee": "appendFile",
+          "lineNumber": 44
+        },
+        {
+          "caller": "appendHarnessRunReport",
+          "callee": "join",
+          "lineNumber": 44
+        },
+        {
+          "caller": "appendHarnessRunReport",
+          "callee": "JSON.stringify",
+          "lineNumber": 44
+        },
+        {
+          "caller": "collectHarnessObservations",
+          "callee": "module.children.allTests",
+          "lineNumber": 54
+        },
+        {
+          "caller": "collectHarnessObservations",
+          "callee": "test.meta",
+          "lineNumber": 55
+        },
+        {
+          "caller": "collectHarnessObservations",
+          "callee": "isHarnessRun",
+          "lineNumber": 56
+        },
+        {
+          "caller": "collectHarnessObservations",
+          "callee": "parseEvalHarnessIterationArtifact",
+          "lineNumber": 58
+        },
+        {
+          "caller": "collectHarnessObservations",
+          "callee": "readFiniteNumber",
+          "lineNumber": 60
+        },
+        {
+          "caller": "collectHarnessObservations",
+          "callee": "test.meta",
+          "lineNumber": 60
+        },
+        {
+          "caller": "collectHarnessObservations",
+          "callee": "readFiniteNumber",
+          "lineNumber": 61
+        },
+        {
+          "caller": "collectHarnessObservations",
+          "callee": "observations.push",
+          "lineNumber": 75
+        },
+        {
+          "caller": "collectHarnessObservations",
+          "callee": "observations.push",
+          "lineNumber": 76
+        },
+        {
+          "caller": "collectHarnessObservations",
+          "callee": "test.result",
+          "lineNumber": 78
+        },
+        {
+          "caller": "collectHarnessObservations",
+          "callee": "observations.push",
+          "lineNumber": 80
+        },
+        {
+          "caller": "onTestCaseResult",
+          "callee": "appendHarnessRunReport",
+          "lineNumber": 95
+        },
+        {
+          "caller": "onTestRunEnd",
+          "callee": "this.vitest?.logger.log",
+          "lineNumber": 104
+        },
+        {
+          "caller": "onTestRunEnd",
+          "callee": "summarizeHarnessComparisons",
+          "lineNumber": 107
+        },
+        {
+          "caller": "onTestRunEnd",
+          "callee": "collectHarnessObservations",
+          "lineNumber": 107
+        },
+        {
+          "caller": "onTestRunEnd",
+          "callee": "formatHarnessComparisonReport",
+          "lineNumber": 108
+        },
+        {
+          "caller": "onTestRunEnd",
+          "callee": "this.vitest?.logger.log",
+          "lineNumber": 109
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "packages/evals/src/vitest-evals/setup.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 8,
+      "nonEmptyLines": 7,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/evals/src/vitest-evals/summary.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 438,
+      "nonEmptyLines": 399,
+      "functions": [
+        {
+          "name": "getOrCreate",
+          "startLine": 96,
+          "endLine": 102,
+          "params": [
+            "map",
+            "key",
+            "create"
+          ]
+        },
+        {
+          "name": "mean",
+          "startLine": 104,
+          "endLine": 106,
+          "params": [
+            "values"
+          ]
+        },
+        {
+          "name": "preciseDifference",
+          "startLine": 108,
+          "endLine": 110,
+          "params": [
+            "left",
+            "right"
+          ]
+        },
+        {
+          "name": "groupObservations",
+          "startLine": 112,
+          "endLine": 141,
+          "params": [
+            "observations"
+          ]
+        },
+        {
+          "name": "orderedHarnesses",
+          "startLine": 143,
+          "endLine": 150,
+          "params": [
+            "evalSet"
+          ]
+        },
+        {
+          "name": "orderedCandidates",
+          "startLine": 152,
+          "endLine": 156,
+          "params": [
+            "evalSet"
+          ]
+        },
+        {
+          "name": "orderedGroups",
+          "startLine": 158,
+          "endLine": 162,
+          "params": [
+            "evalSet"
+          ]
+        },
+        {
+          "name": "collectDiagnostics",
+          "startLine": 164,
+          "endLine": 194,
+          "params": [
+            "harnesses",
+            "groups"
+          ]
+        },
+        {
+          "name": "pairObservations",
+          "startLine": 196,
+          "endLine": 210,
+          "params": [
+            "groups",
+            "baselineHarness",
+            "candidateHarness"
+          ]
+        },
+        {
+          "name": "summarizeMetric",
+          "startLine": 212,
+          "endLine": 245,
+          "params": [
+            "pairs",
+            "select",
+            "totalPairs"
+          ]
+        },
+        {
+          "name": "summarizeCorrectness",
+          "startLine": 247,
+          "endLine": 282,
+          "params": [
+            "pairs",
+            "totalPairs"
+          ]
+        },
+        {
+          "name": "compareHarnesses",
+          "startLine": 284,
+          "endLine": 298,
+          "params": [
+            "baseline",
+            "candidate",
+            "groups"
+          ]
+        },
+        {
+          "name": "summarizeHarnessComparisons",
+          "startLine": 300,
+          "endLine": 328,
+          "params": [
+            "observations"
+          ]
+        },
+        {
+          "name": "formatPercentage",
+          "startLine": 330,
+          "endLine": 332,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "formatSigned",
+          "startLine": 334,
+          "endLine": 336,
+          "params": [
+            "value",
+            "fractionDigits"
+          ]
+        },
+        {
+          "name": "formatCoverage",
+          "startLine": 338,
+          "endLine": 340,
+          "params": [
+            "eligiblePairs",
+            "totalPairs"
+          ]
+        },
+        {
+          "name": "formatReportLine",
+          "startLine": 342,
+          "endLine": 344,
+          "params": [
+            "label",
+            "value"
+          ]
+        },
+        {
+          "name": "colorDelta",
+          "startLine": 346,
+          "endLine": 350,
+          "params": [
+            "value",
+            "formatted",
+            "positiveIsBetter"
+          ]
+        },
+        {
+          "name": "formatMetric",
+          "startLine": 352,
+          "endLine": 372,
+          "params": [
+            "label",
+            "metric",
+            "formatValue",
+            "formatDelta",
+            "comparisonPairs"
+          ]
+        },
+        {
+          "name": "formatHarnessComparisonReport",
+          "startLine": 374,
+          "endLine": 438,
+          "params": [
+            "report"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "summarizeHarnessComparisons",
+          "line": 300,
+          "isDefault": false
+        },
+        {
+          "name": "formatHarnessComparisonReport",
+          "line": 374,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getOrCreate",
+          "callee": "map.get",
+          "lineNumber": 97
+        },
+        {
+          "caller": "getOrCreate",
+          "callee": "create",
+          "lineNumber": 99
+        },
+        {
+          "caller": "getOrCreate",
+          "callee": "map.set",
+          "lineNumber": 100
+        },
+        {
+          "caller": "mean",
+          "callee": "values.reduce",
+          "lineNumber": 105
+        },
+        {
+          "caller": "preciseDifference",
+          "callee": "Number",
+          "lineNumber": 109
+        },
+        {
+          "caller": "preciseDifference",
+          "callee": "(left - right).toPrecision",
+          "lineNumber": 109
+        },
+        {
+          "caller": "groupObservations",
+          "callee": "getOrCreate",
+          "lineNumber": 115
+        },
+        {
+          "caller": "groupObservations",
+          "callee": "observation.candidates.entries",
+          "lineNumber": 121
+        },
+        {
+          "caller": "groupObservations",
+          "callee": "evalSet.candidatesByName.get",
+          "lineNumber": 122
+        },
+        {
+          "caller": "groupObservations",
+          "callee": "evalSet.candidatesByName.set",
+          "lineNumber": 123
+        },
+        {
+          "caller": "groupObservations",
+          "callee": "getOrCreate",
+          "lineNumber": 126
+        },
+        {
+          "caller": "groupObservations",
+          "callee": "JSON.stringify",
+          "lineNumber": 128
+        },
+        {
+          "caller": "groupObservations",
+          "callee": "getOrCreate(group.observationsByHarness, observation.harness, (): HarnessObservation[] => []).push",
+          "lineNumber": 138
+        },
+        {
+          "caller": "groupObservations",
+          "callee": "getOrCreate",
+          "lineNumber": 138
+        },
+        {
+          "caller": "orderedHarnesses",
+          "callee": "[...evalSet.candidatesByName.values()].sort",
+          "lineNumber": 146
+        },
+        {
+          "caller": "orderedHarnesses",
+          "callee": "evalSet.candidatesByName.values",
+          "lineNumber": 146
+        },
+        {
+          "caller": "orderedHarnesses",
+          "callee": "left.name.localeCompare",
+          "lineNumber": 147
+        },
+        {
+          "caller": "orderedCandidates",
+          "callee": "[...evalSet.candidatesByName.values()].sort",
+          "lineNumber": 153
+        },
+        {
+          "caller": "orderedCandidates",
+          "callee": "evalSet.candidatesByName.values",
+          "lineNumber": 153
+        },
+        {
+          "caller": "orderedCandidates",
+          "callee": "left.name.localeCompare",
+          "lineNumber": 154
+        },
+        {
+          "caller": "orderedGroups",
+          "callee": "[...evalSet.groupsByKey.values()].sort",
+          "lineNumber": 159
+        },
+        {
+          "caller": "orderedGroups",
+          "callee": "evalSet.groupsByKey.values",
+          "lineNumber": 159
+        },
+        {
+          "caller": "orderedGroups",
+          "callee": "left.groupKey.localeCompare",
+          "lineNumber": 160
+        },
+        {
+          "caller": "collectDiagnostics",
+          "callee": "group.observationsByHarness.get",
+          "lineNumber": 171
+        },
+        {
+          "caller": "collectDiagnostics",
+          "callee": "diagnostics.push",
+          "lineNumber": 182
+        },
+        {
+          "caller": "pairObservations",
+          "callee": "group.observationsByHarness.get",
+          "lineNumber": 203
+        },
+        {
+          "caller": "pairObservations",
+          "callee": "group.observationsByHarness.get",
+          "lineNumber": 204
+        },
+        {
+          "caller": "pairObservations",
+          "callee": "pairs.push",
+          "lineNumber": 206
+        },
+        {
+          "caller": "summarizeMetric",
+          "callee": "select",
+          "lineNumber": 221
+        },
+        {
+          "caller": "summarizeMetric",
+          "callee": "select",
+          "lineNumber": 222
+        },
+        {
+          "caller": "summarizeMetric",
+          "callee": "Number.isFinite",
+          "lineNumber": 226
+        },
+        {
+          "caller": "summarizeMetric",
+          "callee": "Number.isFinite",
+          "lineNumber": 227
+        },
+        {
+          "caller": "summarizeMetric",
+          "callee": "baselineValues.push",
+          "lineNumber": 231
+        },
+        {
+          "caller": "summarizeMetric",
+          "callee": "candidateValues.push",
+          "lineNumber": 232
+        },
+        {
+          "caller": "summarizeMetric",
+          "callee": "mean",
+          "lineNumber": 235
+        },
+        {
+          "caller": "summarizeMetric",
+          "callee": "mean",
+          "lineNumber": 236
+        },
+        {
+          "caller": "summarizeMetric",
+          "callee": "preciseDifference",
+          "lineNumber": 243
+        },
+        {
+          "caller": "summarizeCorrectness",
+          "callee": "preciseDifference",
+          "lineNumber": 277
+        },
+        {
+          "caller": "compareHarnesses",
+          "callee": "pairObservations",
+          "lineNumber": 289
+        },
+        {
+          "caller": "compareHarnesses",
+          "callee": "summarizeCorrectness",
+          "lineNumber": 293
+        },
+        {
+          "caller": "compareHarnesses",
+          "callee": "summarizeMetric",
+          "lineNumber": 294
+        },
+        {
+          "caller": "compareHarnesses",
+          "callee": "summarizeMetric",
+          "lineNumber": 295
+        },
+        {
+          "caller": "compareHarnesses",
+          "callee": "summarizeMetric",
+          "lineNumber": 296
+        },
+        {
+          "caller": "summarizeHarnessComparisons",
+          "callee": "[...groupObservations(observations)].sort",
+          "lineNumber": 303
+        },
+        {
+          "caller": "summarizeHarnessComparisons",
+          "callee": "groupObservations",
+          "lineNumber": 303
+        },
+        {
+          "caller": "summarizeHarnessComparisons",
+          "callee": "left.localeCompare",
+          "lineNumber": 304
+        },
+        {
+          "caller": "summarizeHarnessComparisons",
+          "callee": "orderedHarnesses",
+          "lineNumber": 306
+        },
+        {
+          "caller": "summarizeHarnessComparisons",
+          "callee": "orderedCandidates",
+          "lineNumber": 307
+        },
+        {
+          "caller": "summarizeHarnessComparisons",
+          "callee": "orderedGroups",
+          "lineNumber": 308
+        },
+        {
+          "caller": "summarizeHarnessComparisons",
+          "callee": "evalSets.push",
+          "lineNumber": 309
+        },
+        {
+          "caller": "summarizeHarnessComparisons",
+          "callee": "candidates.map",
+          "lineNumber": 311
+        },
+        {
+          "caller": "summarizeHarnessComparisons",
+          "callee": "compareHarnesses",
+          "lineNumber": 311
+        },
+        {
+          "caller": "summarizeHarnessComparisons",
+          "callee": "diagnostics.push",
+          "lineNumber": 313
+        },
+        {
+          "caller": "summarizeHarnessComparisons",
+          "callee": "collectDiagnostics",
+          "lineNumber": 313
+        },
+        {
+          "caller": "summarizeHarnessComparisons",
+          "callee": "diagnostics.sort",
+          "lineNumber": 319
+        },
+        {
+          "caller": "summarizeHarnessComparisons",
+          "callee": "left.evalSet.localeCompare",
+          "lineNumber": 321
+        },
+        {
+          "caller": "summarizeHarnessComparisons",
+          "callee": "left.file.localeCompare",
+          "lineNumber": 322
+        },
+        {
+          "caller": "summarizeHarnessComparisons",
+          "callee": "left.groupKey.localeCompare",
+          "lineNumber": 323
+        },
+        {
+          "caller": "summarizeHarnessComparisons",
+          "callee": "left.harness.localeCompare",
+          "lineNumber": 325
+        },
+        {
+          "caller": "formatPercentage",
+          "callee": "(value * 100).toFixed",
+          "lineNumber": 331
+        },
+        {
+          "caller": "formatSigned",
+          "callee": "value.toFixed",
+          "lineNumber": 335
+        },
+        {
+          "caller": "formatCoverage",
+          "callee": "styleText",
+          "lineNumber": 339
+        },
+        {
+          "caller": "formatReportLine",
+          "callee": "styleText",
+          "lineNumber": 343
+        },
+        {
+          "caller": "formatReportLine",
+          "callee": "label.padStart",
+          "lineNumber": 343
+        },
+        {
+          "caller": "colorDelta",
+          "callee": "styleText",
+          "lineNumber": 347
+        },
+        {
+          "caller": "colorDelta",
+          "callee": "styleText",
+          "lineNumber": 349
+        },
+        {
+          "caller": "formatMetric",
+          "callee": "formatCoverage",
+          "lineNumber": 362
+        },
+        {
+          "caller": "formatMetric",
+          "callee": "formatReportLine",
+          "lineNumber": 364
+        },
+        {
+          "caller": "formatMetric",
+          "callee": "styleText",
+          "lineNumber": 364
+        },
+        {
+          "caller": "formatMetric",
+          "callee": "colorDelta",
+          "lineNumber": 366
+        },
+        {
+          "caller": "formatMetric",
+          "callee": "formatDelta",
+          "lineNumber": 366
+        },
+        {
+          "caller": "formatMetric",
+          "callee": "styleText",
+          "lineNumber": 367
+        },
+        {
+          "caller": "formatMetric",
+          "callee": "formatValue",
+          "lineNumber": 369
+        },
+        {
+          "caller": "formatMetric",
+          "callee": "formatValue",
+          "lineNumber": 369
+        },
+        {
+          "caller": "formatMetric",
+          "callee": "formatReportLine",
+          "lineNumber": 371
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "report.evalSets.every",
+          "lineNumber": 375
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "styleText",
+          "lineNumber": 376
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "lines.push",
+          "lineNumber": 378
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "evalSet.comparisons.entries",
+          "lineNumber": 379
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "lines.push",
+          "lineNumber": 380
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "lines.push",
+          "lineNumber": 382
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "formatReportLine",
+          "lineNumber": 382
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "lines.push",
+          "lineNumber": 383
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "formatReportLine",
+          "lineNumber": 384
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "formatCoverage",
+          "lineNumber": 386
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "lines.push",
+          "lineNumber": 390
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "formatReportLine",
+          "lineNumber": 390
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "styleText",
+          "lineNumber": 390
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "colorDelta",
+          "lineNumber": 393
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "formatSigned",
+          "lineNumber": 393
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "styleText",
+          "lineNumber": 394
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "formatPercentage",
+          "lineNumber": 396
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "formatPercentage",
+          "lineNumber": 396
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "lines.push",
+          "lineNumber": 398
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "formatReportLine",
+          "lineNumber": 398
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "lines.push",
+          "lineNumber": 400
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "formatMetric",
+          "lineNumber": 401
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "value.toFixed",
+          "lineNumber": 404
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "formatSigned",
+          "lineNumber": 405
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "lines.push",
+          "lineNumber": 409
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "formatMetric",
+          "lineNumber": 410
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "value.toFixed",
+          "lineNumber": 413
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "formatSigned",
+          "lineNumber": 414
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "lines.push",
+          "lineNumber": 418
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "formatMetric",
+          "lineNumber": 419
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "value.toFixed",
+          "lineNumber": 422
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "Math.abs(value).toFixed",
+          "lineNumber": 423
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "Math.abs",
+          "lineNumber": 423
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "lines.push",
+          "lineNumber": 430
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "styleText",
+          "lineNumber": 430
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "lines.push",
+          "lineNumber": 432
+        },
+        {
+          "caller": "formatHarnessComparisonReport",
+          "callee": "lines.join",
+          "lineNumber": 437
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 20,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/evals/test/pi-harness.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 34,
+      "nonEmptyLines": 31,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/evals/test/vitest-evals/artifacts.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 103,
+      "nonEmptyLines": 100,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/evals/test/vitest-evals/harness-table.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 94,
+      "nonEmptyLines": 84,
+      "functions": [
+        {
+          "name": "createFakeHarness",
+          "startLine": 33,
+          "endLine": 44,
+          "params": [
+            "name"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createFakeHarness",
+          "callee": "createHarness",
+          "lineNumber": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/evals/test/vitest-evals/summary.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 232,
+      "nonEmptyLines": 211,
+      "functions": [
+        {
+          "name": "observation",
+          "startLine": 11,
+          "endLine": 34,
+          "params": [
+            "harness",
+            "testName",
+            "result",
+            "metrics",
+            "baseline",
+            "candidates"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "observation",
+          "callee": "JSON.stringify",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

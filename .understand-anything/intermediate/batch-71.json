@@ -1,0 +1,838 @@
+{
+  "batchIndex": 71,
+  "nodes": [
+    {
+      "id": "packages/coding-agent/examples/extensions/summarize.ts",
+      "type": "file",
+      "name": "summarize.ts",
+      "path": "packages/coding-agent/examples/extensions/summarize.ts",
+      "language": "typescript",
+      "sizeLines": 199,
+      "summary": "示例扩展：演示自定义会话摘要功能，通过 /summarize 命令触发 LLM 生成对话摘要",
+      "category": "示例代码",
+      "keyConcepts": [
+        "ExtensionAPI",
+        "会话摘要",
+        "DynamicBorder",
+        "Markdown 渲染"
+      ]
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/system-prompt-header.ts",
+      "type": "file",
+      "name": "system-prompt-header.ts",
+      "path": "packages/coding-agent/examples/extensions/system-prompt-header.ts",
+      "language": "typescript",
+      "sizeLines": 17,
+      "summary": "示例扩展：在状态栏显示当前系统提示词长度，演示 ctx.getSystemPrompt() 用法",
+      "category": "示例代码",
+      "keyConcepts": [
+        "ExtensionAPI",
+        "系统提示词",
+        "状态栏组件"
+      ]
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "type": "file",
+      "name": "tic-tac-toe.ts",
+      "path": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "language": "typescript",
+      "sizeLines": 1008,
+      "summary": "示例扩展：井字棋游戏，演示 executionMode: 'sequential' 工具串行执行模式，包含 TUI 组件和 AI 代理交互",
+      "category": "示例代码",
+      "keyConcepts": [
+        "ToolExecutionMode",
+        "Component 接口",
+        "TUI 渲染",
+        "串行执行",
+        "状态管理"
+      ]
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/timed-confirm.ts",
+      "type": "file",
+      "name": "timed-confirm.ts",
+      "path": "packages/coding-agent/examples/extensions/timed-confirm.ts",
+      "language": "typescript",
+      "sizeLines": 70,
+      "summary": "示例扩展：演示带超时自动取消的对话框（confirm/select），支持 timeout 选项和 AbortSignal 两种方式",
+      "category": "示例代码",
+      "keyConcepts": [
+        "ctx.ui.confirm",
+        "ctx.ui.select",
+        "超时控制",
+        "AbortSignal"
+      ]
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/titlebar-spinner.ts",
+      "type": "file",
+      "name": "titlebar-spinner.ts",
+      "path": "packages/coding-agent/examples/extensions/titlebar-spinner.ts",
+      "language": "typescript",
+      "sizeLines": 58,
+      "summary": "示例扩展：在终端标题栏显示 Braille 动画 spinner，演示 ctx.ui.setTitle() 用法",
+      "category": "示例代码",
+      "keyConcepts": [
+        "ExtensionAPI",
+        "终端标题",
+        "动画效果"
+      ]
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/todo.ts",
+      "type": "file",
+      "name": "todo.ts",
+      "path": "packages/coding-agent/examples/extensions/todo.ts",
+      "language": "typescript",
+      "sizeLines": 297,
+      "summary": "示例扩展：待办事项管理，演示通过 session entries 实现状态持久化，注册 todo 工具和 /todos 命令",
+      "category": "示例代码",
+      "keyConcepts": [
+        "session entries",
+        "状态持久化",
+        "registerTool",
+        "registerCommand",
+        "分支兼容"
+      ]
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/tool-override.ts",
+      "type": "file",
+      "name": "tool-override.ts",
+      "path": "packages/coding-agent/examples/extensions/tool-override.ts",
+      "language": "typescript",
+      "sizeLines": 144,
+      "summary": "示例扩展：演示覆盖内置工具（read），实现文件访问审计和敏感路径拦截",
+      "category": "示例代码",
+      "keyConcepts": [
+        "工具覆盖",
+        "文件访问控制",
+        "审计日志",
+        "withFileMutationQueue"
+      ]
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/tools.ts",
+      "type": "file",
+      "name": "tools.ts",
+      "path": "packages/coding-agent/examples/extensions/tools.ts",
+      "language": "typescript",
+      "sizeLines": 146,
+      "summary": "示例扩展：提供 /tools 命令实现交互式工具启用/禁用选择器，状态持久化到 session",
+      "category": "示例代码",
+      "keyConcepts": [
+        "ToolInfo",
+        "SettingsList",
+        "状态持久化",
+        "交互式选择"
+      ]
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/truncated-tool.ts",
+      "type": "file",
+      "name": "truncated-tool.ts",
+      "path": "packages/coding-agent/examples/extensions/truncated-tool.ts",
+      "language": "typescript",
+      "sizeLines": 195,
+      "summary": "示例扩展：演示自定义工具输出截断处理，封装 rg (ripgrep) 工具并正确处理 50KB/2000 行限制",
+      "category": "示例代码",
+      "keyConcepts": [
+        "DEFAULT_MAX_BYTES",
+        "DEFAULT_MAX_LINES",
+        "truncateHead",
+        "TruncationResult",
+        "临时文件"
+      ]
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/widget-placement.ts",
+      "type": "file",
+      "name": "widget-placement.ts",
+      "path": "packages/coding-agent/examples/extensions/widget-placement.ts",
+      "language": "typescript",
+      "sizeLines": 9,
+      "summary": "示例扩展：演示 setWidget API 在编辑器上方和下方放置自定义 widget",
+      "category": "示例代码",
+      "keyConcepts": [
+        "setWidget",
+        "placement",
+        "编辑器 widget"
+      ]
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/with-deps/index.ts",
+      "type": "file",
+      "name": "with-deps/index.ts",
+      "path": "packages/coding-agent/examples/extensions/with-deps/index.ts",
+      "language": "typescript",
+      "sizeLines": 32,
+      "summary": "示例扩展：展示带自有 npm 依赖的扩展，通过 parse_duration 工具演示 jiti 从扩展自身 node_modules 解析模块",
+      "category": "示例代码",
+      "keyConcepts": [
+        "npm 依赖",
+        "jiti 模块解析",
+        "registerTool",
+        "typebox"
+      ]
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/with-deps/package.json",
+      "type": "file",
+      "name": "with-deps/package.json",
+      "path": "packages/coding-agent/examples/extensions/with-deps/package.json",
+      "language": "json",
+      "sizeLines": 22,
+      "summary": "带依赖扩展的包配置，声明 ms 和 typebox 依赖",
+      "category": "配置文件",
+      "keyConcepts": [
+        "包管理",
+        "依赖声明"
+      ]
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/working-indicator.ts",
+      "type": "file",
+      "name": "working-indicator.ts",
+      "path": "packages/coding-agent/examples/extensions/working-indicator.ts",
+      "language": "typescript",
+      "sizeLines": 123,
+      "summary": "示例扩展：演示 ctx.ui.setWorkingIndicator() 自定义流式响应时的工作指示器动画（dot/pulse/spinner/none）",
+      "category": "示例代码",
+      "keyConcepts": [
+        "WorkingIndicatorOptions",
+        "动画帧",
+        "Pastel 彩虹色"
+      ]
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/working-message-test.ts",
+      "type": "file",
+      "name": "working-message-test.ts",
+      "path": "packages/coding-agent/examples/extensions/working-message-test.ts",
+      "language": "typescript",
+      "sizeLines": 25,
+      "summary": "测试扩展：验证自定义工作消息和指示器在 loader 重建时能正确持久化",
+      "category": "示例代码",
+      "keyConcepts": [
+        "setWorkingMessage",
+        "setWorkingIndicator",
+        "持久化测试"
+      ]
+    },
+    {
+      "id": "packages/coding-agent/examples/README.md",
+      "type": "file",
+      "name": "examples/README.md",
+      "path": "packages/coding-agent/examples/README.md",
+      "language": "markdown",
+      "sizeLines": 25,
+      "summary": "示例目录文档：索引 sdk/ 和 extensions/ 两个示例子目录的内容和用途",
+      "category": "文档",
+      "keyConcepts": [
+        "SDK 示例",
+        "扩展示例",
+        "文档索引"
+      ]
+    },
+    {
+      "id": "packages/coding-agent/examples/rpc-extension-ui.ts",
+      "type": "file",
+      "name": "rpc-extension-ui.ts",
+      "path": "packages/coding-agent/examples/rpc-extension-ui.ts",
+      "language": "typescript",
+      "sizeLines": 641,
+      "summary": "RPC 扩展 UI 示例：轻量级 TUI 聊天客户端，通过 RPC 协议启动代理，处理扩展 UI 请求（select/confirm/input/editor）",
+      "category": "示例代码",
+      "keyConcepts": [
+        "RPC 协议",
+        "ProcessTerminal",
+        "TuiMainScreen",
+        "对话框组件",
+        "agent 进程管理"
+      ]
+    },
+    {
+      "id": "packages/coding-agent/examples/sdk/01-minimal.ts",
+      "type": "file",
+      "name": "sdk/01-minimal.ts",
+      "path": "packages/coding-agent/examples/sdk/01-minimal.ts",
+      "language": "typescript",
+      "sizeLines": 26,
+      "summary": "SDK 最简用法示例：使用 createAgentSession 默认配置发现技能、扩展和工具",
+      "category": "示例代码",
+      "keyConcepts": [
+        "createAgentSession",
+        "session.subscribe",
+        "session.prompt"
+      ]
+    },
+    {
+      "id": "packages/coding-agent/examples/sdk/02-custom-model.ts",
+      "type": "file",
+      "name": "sdk/02-custom-model.ts",
+      "path": "packages/coding-agent/examples/sdk/02-custom-model.ts",
+      "language": "typescript",
+      "sizeLines": 49,
+      "summary": "SDK 自定义模型示例：通过 ModelRuntime 选择特定模型和思考级别",
+      "category": "示例代码",
+      "keyConcepts": [
+        "ModelRuntime",
+        "getModel",
+        "getAvailable",
+        "thinkingLevel"
+      ]
+    },
+    {
+      "id": "packages/coding-agent/examples/sdk/03-custom-prompt.ts",
+      "type": "file",
+      "name": "sdk/03-custom-prompt.ts",
+      "path": "packages/coding-agent/examples/sdk/03-custom-prompt.ts",
+      "language": "typescript",
+      "sizeLines": 75,
+      "summary": "SDK 自定义提示词示例：演示替换或追加默认系统提示词的两种方式",
+      "category": "示例代码",
+      "keyConcepts": [
+        "DefaultResourceLoader",
+        "systemPromptOverride",
+        "appendSystemPromptOverride"
+      ]
+    },
+    {
+      "id": "packages/coding-agent/examples/sdk/04-skills.ts",
+      "type": "file",
+      "name": "sdk/04-skills.ts",
+      "path": "packages/coding-agent/examples/sdk/04-skills.ts",
+      "language": "typescript",
+      "sizeLines": 55,
+      "summary": "SDK 技能配置示例：演示发现、过滤、合并和替换技能",
+      "category": "示例代码",
+      "keyConcepts": [
+        "Skill 接口",
+        "skillsOverride",
+        "createSyntheticSourceInfo"
+      ]
+    },
+    {
+      "id": "packages/coding-agent/examples/sdk/05-tools.ts",
+      "type": "file",
+      "name": "sdk/05-tools.ts",
+      "path": "packages/coding-agent/examples/sdk/05-tools.ts",
+      "language": "typescript",
+      "sizeLines": 48,
+      "summary": "SDK 工具配置示例：演示通过工具名称选择启用的内置工具（只读模式、自定义组合）",
+      "category": "示例代码",
+      "keyConcepts": [
+        "tools 配置",
+        "SessionManager.inMemory",
+        "自定义 cwd"
+      ]
+    },
+    {
+      "id": "packages/coding-agent/examples/sdk/06-extensions.ts",
+      "type": "file",
+      "name": "sdk/06-extensions.ts",
+      "path": "packages/coding-agent/examples/sdk/06-extensions.ts",
+      "language": "typescript",
+      "sizeLines": 99,
+      "summary": "SDK 扩展配置示例：演示通过 DefaultResourceLoader 加载扩展文件和内联扩展工厂",
+      "category": "示例代码",
+      "keyConcepts": [
+        "additionalExtensionPaths",
+        "extensionFactories",
+        "扩展发现"
+      ]
+    },
+    {
+      "id": "packages/coding-agent/examples/sdk/07-context-files.ts",
+      "type": "file",
+      "name": "sdk/07-context-files.ts",
+      "path": "packages/coding-agent/examples/sdk/07-context-files.ts",
+      "language": "typescript",
+      "sizeLines": 47,
+      "summary": "SDK 上下文文件示例：演示通过 agentsFilesOverride 添加虚拟 AGENTS.md 文件",
+      "category": "示例代码",
+      "keyConcepts": [
+        "AGENTS.md",
+        "agentsFilesOverride",
+        "上下文注入"
+      ]
+    },
+    {
+      "id": "packages/coding-agent/examples/sdk/08-prompt-templates.ts",
+      "type": "file",
+      "name": "sdk/08-prompt-templates.ts",
+      "path": "packages/coding-agent/examples/sdk/08-prompt-templates.ts",
+      "language": "typescript",
+      "sizeLines": 51,
+      "summary": "SDK 提示模板示例：演示定义和注册可通过 /templatename 调用的文件模板",
+      "category": "示例代码",
+      "keyConcepts": [
+        "PromptTemplate",
+        "promptsOverride",
+        "模板发现"
+      ]
+    },
+    {
+      "id": "packages/coding-agent/examples/sdk/09-api-keys-and-oauth.ts",
+      "type": "file",
+      "name": "sdk/09-api-keys-and-oauth.ts",
+      "path": "packages/coding-agent/examples/sdk/09-api-keys-and-oauth.ts",
+      "language": "typescript",
+      "sizeLines": 34,
+      "summary": "SDK API 密钥与 OAuth 示例：演示通过 ModelRuntime 配置提供商认证",
+      "category": "示例代码",
+      "keyConcepts": [
+        "ModelRuntime.create",
+        "authPath",
+        "modelsPath",
+        "setRuntimeApiKey"
+      ]
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/summarize.ts::extractTextParts",
+      "type": "function",
+      "name": "extractTextParts",
+      "path": "packages/coding-agent/examples/extensions/summarize.ts",
+      "startLine": 21,
+      "endLine": 43,
+      "summary": "从消息 content 中提取所有文本部分，支持字符串和数组格式的 content block"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/summarize.ts::extractToolCallLines",
+      "type": "function",
+      "name": "extractToolCallLines",
+      "path": "packages/coding-agent/examples/extensions/summarize.ts",
+      "startLine": 45,
+      "endLine": 66,
+      "summary": "从 content block 数组中提取工具调用信息，格式化为 '工具名(参数摘要)' 行"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/summarize.ts::buildConversationText",
+      "type": "function",
+      "name": "buildConversationText",
+      "path": "packages/coding-agent/examples/extensions/summarize.ts",
+      "startLine": 68,
+      "endLine": 104,
+      "summary": "从 session entries 构建完整对话文本，区分用户消息、助手回复和工具调用"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/summarize.ts::showSummaryUi",
+      "type": "function",
+      "name": "showSummaryUi",
+      "path": "packages/coding-agent/examples/extensions/summarize.ts",
+      "startLine": 117,
+      "endLine": 143,
+      "summary": "创建摘要 UI 覆盖层，使用 DynamicBorder 容器和 Markdown 渲染显示对话摘要"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/tic-tac-toe.ts::createInitialState",
+      "type": "function",
+      "name": "createInitialState",
+      "path": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "startLine": 79,
+      "endLine": 95,
+      "summary": "创建井字棋初始游戏状态，包含 3x3 空棋盘和双方光标位置"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/tic-tac-toe.ts::getWinLine",
+      "type": "function",
+      "name": "getWinLine",
+      "path": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "startLine": 97,
+      "endLine": 147,
+      "summary": "检查棋盘是否有获胜方，返回获胜线路坐标或 null"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/tic-tac-toe.ts::checkWin",
+      "type": "function",
+      "name": "checkWin",
+      "path": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "startLine": 149,
+      "endLine": 159,
+      "summary": "检查指定玩家在棋盘上是否获胜，返回布尔值"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/tic-tac-toe.ts::boardToAscii",
+      "type": "function",
+      "name": "boardToAscii",
+      "path": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "startLine": 161,
+      "endLine": 176,
+      "summary": "将棋盘状态转换为 ASCII 字符串表示，用于日志和调试"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/tic-tac-toe.ts::buildCellContent",
+      "type": "function",
+      "name": "buildCellContent",
+      "path": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "startLine": 219,
+      "endLine": 232,
+      "summary": "构建棋盘单元格的显示内容，处理光标、棋子和空白状态的渲染"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/tic-tac-toe.ts::renderBoard",
+      "type": "function",
+      "name": "renderBoard",
+      "path": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "startLine": 252,
+      "endLine": 342,
+      "summary": "渲染完整的井字棋棋盘 TUI 组件，包含边框、单元格、光标和颜色"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/tic-tac-toe.ts::renderVisualBoard",
+      "type": "function",
+      "name": "renderVisualBoard",
+      "path": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "startLine": 345,
+      "endLine": 356,
+      "summary": "渲染可视化棋盘，组合棋盘渲染和横幅消息组件"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/tic-tac-toe.ts::reconstructState",
+      "type": "function",
+      "name": "reconstructState",
+      "path": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "startLine": 627,
+      "endLine": 646,
+      "summary": "从工具调用历史重建游戏状态，用于恢复和回放"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/tool-override.ts::logAccess",
+      "type": "function",
+      "name": "logAccess",
+      "path": "packages/coding-agent/examples/extensions/tool-override.ts",
+      "startLine": 47,
+      "endLine": 60,
+      "summary": "记录文件访问日志到 read-access.log，包含时间戳、路径和操作者信息"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/tools.ts::toolsExtension",
+      "type": "function",
+      "name": "toolsExtension",
+      "path": "packages/coding-agent/examples/extensions/tools.ts",
+      "startLine": 21,
+      "endLine": 146,
+      "summary": "工具管理扩展主函数：注册 /tools 命令，实现交互式工具启用/禁用选择器，状态持久化到 session entries"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/working-indicator.ts::getIndicator",
+      "type": "function",
+      "name": "getIndicator",
+      "path": "packages/coding-agent/examples/extensions/working-indicator.ts",
+      "startLine": 41,
+      "endLine": 69,
+      "summary": "根据模式（dot/pulse/spinner/none/default）返回对应的工作指示器配置"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/working-indicator.ts::describeMode",
+      "type": "function",
+      "name": "describeMode",
+      "path": "packages/coding-agent/examples/extensions/working-indicator.ts",
+      "startLine": 71,
+      "endLine": 84,
+      "summary": "将指示器模式枚举转换为人可读的描述字符串"
+    },
+    {
+      "id": "packages/coding-agent/examples/rpc-extension-ui.ts::main",
+      "type": "function",
+      "name": "main",
+      "path": "packages/coding-agent/examples/rpc-extension-ui.ts",
+      "startLine": 255,
+      "endLine": 636,
+      "summary": "RPC UI 主函数：启动 agent 子进程，管理 TUI 屏幕、消息交互、对话框处理和 slash 命令"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/tic-tac-toe.ts::TicTacToeComponent",
+      "type": "class",
+      "name": "TicTacToeComponent",
+      "path": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "startLine": 367,
+      "endLine": 506,
+      "summary": "井字棋主 TUI 组件：处理键盘输入（方向键/Enter）、游戏逻辑、AI 代理移动和棋盘渲染"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/tic-tac-toe.ts::BannerMessageComponent",
+      "type": "class",
+      "name": "BannerMessageComponent",
+      "path": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "startLine": 513,
+      "endLine": 544,
+      "summary": "横幅消息组件：在棋盘下方显示居中的提示文本"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/tic-tac-toe.ts::GameOverMessageComponent",
+      "type": "class",
+      "name": "GameOverMessageComponent",
+      "path": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "startLine": 548,
+      "endLine": 605,
+      "summary": "游戏结束消息组件：显示获胜/平局结果和重新开始提示"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/todo.ts::TodoListComponent",
+      "type": "class",
+      "name": "TodoListComponent",
+      "path": "packages/coding-agent/examples/extensions/todo.ts",
+      "startLine": 40,
+      "endLine": 103,
+      "summary": "待办列表 TUI 组件：渲染待办项列表，支持选中高亮、完成标记和空状态显示"
+    },
+    {
+      "id": "packages/coding-agent/examples/rpc-extension-ui.ts::OutputLog",
+      "type": "class",
+      "name": "OutputLog",
+      "path": "packages/coding-agent/examples/rpc-extension-ui.ts",
+      "startLine": 72,
+      "endLine": 103,
+      "summary": "输出日志组件：管理并渲染聊天消息历史，支持自动滚动"
+    },
+    {
+      "id": "packages/coding-agent/examples/rpc-extension-ui.ts::LoadingIndicator",
+      "type": "class",
+      "name": "LoadingIndicator",
+      "path": "packages/coding-agent/examples/rpc-extension-ui.ts",
+      "startLine": 109,
+      "endLine": 135,
+      "summary": "加载指示器组件：在 agent 处理请求时显示动画加载状态"
+    },
+    {
+      "id": "packages/coding-agent/examples/rpc-extension-ui.ts::PromptInput",
+      "type": "class",
+      "name": "PromptInput",
+      "path": "packages/coding-agent/examples/rpc-extension-ui.ts",
+      "startLine": 141,
+      "endLine": 164,
+      "summary": "提示输入组件：处理用户文本输入和提交"
+    },
+    {
+      "id": "packages/coding-agent/examples/rpc-extension-ui.ts::SelectDialog",
+      "type": "class",
+      "name": "SelectDialog",
+      "path": "packages/coding-agent/examples/rpc-extension-ui.ts",
+      "startLine": 170,
+      "endLine": 205,
+      "summary": "选择对话框组件：渲染选项列表并处理键盘选择"
+    },
+    {
+      "id": "packages/coding-agent/examples/rpc-extension-ui.ts::InputDialog",
+      "type": "class",
+      "name": "InputDialog",
+      "path": "packages/coding-agent/examples/rpc-extension-ui.ts",
+      "startLine": 207,
+      "endLine": 249,
+      "summary": "输入对话框组件：处理多行文本输入和确认/取消操作"
+    }
+  ],
+  "edges": [
+    {
+      "source": "packages/coding-agent/examples/extensions/summarize.ts",
+      "target": "packages/coding-agent/examples/extensions/summarize.ts::extractTextParts",
+      "type": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/summarize.ts",
+      "target": "packages/coding-agent/examples/extensions/summarize.ts::extractToolCallLines",
+      "type": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/summarize.ts",
+      "target": "packages/coding-agent/examples/extensions/summarize.ts::buildConversationText",
+      "type": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/summarize.ts",
+      "target": "packages/coding-agent/examples/extensions/summarize.ts::showSummaryUi",
+      "type": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "target": "packages/coding-agent/examples/extensions/tic-tac-toe.ts::createInitialState",
+      "type": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "target": "packages/coding-agent/examples/extensions/tic-tac-toe.ts::getWinLine",
+      "type": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "target": "packages/coding-agent/examples/extensions/tic-tac-toe.ts::checkWin",
+      "type": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "target": "packages/coding-agent/examples/extensions/tic-tac-toe.ts::boardToAscii",
+      "type": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "target": "packages/coding-agent/examples/extensions/tic-tac-toe.ts::buildCellContent",
+      "type": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "target": "packages/coding-agent/examples/extensions/tic-tac-toe.ts::renderBoard",
+      "type": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "target": "packages/coding-agent/examples/extensions/tic-tac-toe.ts::renderVisualBoard",
+      "type": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "target": "packages/coding-agent/examples/extensions/tic-tac-toe.ts::reconstructState",
+      "type": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "target": "packages/coding-agent/examples/extensions/tic-tac-toe.ts::TicTacToeComponent",
+      "type": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "target": "packages/coding-agent/examples/extensions/tic-tac-toe.ts::BannerMessageComponent",
+      "type": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "target": "packages/coding-agent/examples/extensions/tic-tac-toe.ts::GameOverMessageComponent",
+      "type": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/tool-override.ts",
+      "target": "packages/coding-agent/examples/extensions/tool-override.ts::logAccess",
+      "type": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/tools.ts",
+      "target": "packages/coding-agent/examples/extensions/tools.ts::toolsExtension",
+      "type": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/working-indicator.ts",
+      "target": "packages/coding-agent/examples/extensions/working-indicator.ts::getIndicator",
+      "type": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/working-indicator.ts",
+      "target": "packages/coding-agent/examples/extensions/working-indicator.ts::describeMode",
+      "type": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/rpc-extension-ui.ts",
+      "target": "packages/coding-agent/examples/rpc-extension-ui.ts::OutputLog",
+      "type": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/rpc-extension-ui.ts",
+      "target": "packages/coding-agent/examples/rpc-extension-ui.ts::LoadingIndicator",
+      "type": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/rpc-extension-ui.ts",
+      "target": "packages/coding-agent/examples/rpc-extension-ui.ts::PromptInput",
+      "type": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/rpc-extension-ui.ts",
+      "target": "packages/coding-agent/examples/rpc-extension-ui.ts::SelectDialog",
+      "type": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/rpc-extension-ui.ts",
+      "target": "packages/coding-agent/examples/rpc-extension-ui.ts::InputDialog",
+      "type": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/rpc-extension-ui.ts",
+      "target": "packages/coding-agent/examples/rpc-extension-ui.ts::main",
+      "type": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/todo.ts",
+      "target": "packages/coding-agent/examples/extensions/todo.ts::TodoListComponent",
+      "type": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/sdk/01-minimal.ts",
+      "target": "packages/coding-agent/examples/sdk/06-extensions.ts",
+      "type": "related_example",
+      "description": "同属 SDK 示例系列"
+    },
+    {
+      "source": "packages/coding-agent/examples/sdk/02-custom-model.ts",
+      "target": "packages/coding-agent/examples/sdk/09-api-keys-and-oauth.ts",
+      "type": "related_example",
+      "description": "模型配置相关"
+    },
+    {
+      "source": "packages/coding-agent/examples/sdk/03-custom-prompt.ts",
+      "target": "packages/coding-agent/examples/sdk/07-context-files.ts",
+      "type": "related_example",
+      "description": "提示词与上下文配置"
+    },
+    {
+      "source": "packages/coding-agent/examples/sdk/04-skills.ts",
+      "target": "packages/coding-agent/examples/sdk/08-prompt-templates.ts",
+      "type": "related_example",
+      "description": "技能与模板系统"
+    },
+    {
+      "source": "packages/coding-agent/examples/sdk/05-tools.ts",
+      "target": "packages/coding-agent/examples/sdk/06-extensions.ts",
+      "type": "related_example",
+      "description": "工具与扩展系统"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "target": "packages/coding-agent/examples/extensions/todo.ts",
+      "type": "related_example",
+      "description": "均演示有状态 TUI 组件"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/tool-override.ts",
+      "target": "packages/coding-agent/examples/extensions/truncated-tool.ts",
+      "type": "related_example",
+      "description": "均演示自定义工具实现"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/working-indicator.ts",
+      "target": "packages/coding-agent/examples/extensions/working-message-test.ts",
+      "type": "related_example",
+      "description": "均演示工作指示器 API"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/titlebar-spinner.ts",
+      "target": "packages/coding-agent/examples/extensions/widget-placement.ts",
+      "type": "related_example",
+      "description": "均演示 UI 定制 API"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/summarize.ts",
+      "target": "packages/coding-agent/examples/extensions/system-prompt-header.ts",
+      "type": "related_example",
+      "description": "均涉及系统提示词处理"
+    },
+    {
+      "source": "packages/coding-agent/examples/README.md",
+      "target": "packages/coding-agent/examples/sdk/01-minimal.ts",
+      "type": "documents",
+      "description": "文档索引 SDK 示例"
+    },
+    {
+      "source": "packages/coding-agent/examples/README.md",
+      "target": "packages/coding-agent/examples/extensions/tic-tac-toe.ts",
+      "type": "documents",
+      "description": "文档索引扩展示例"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/with-deps/package.json",
+      "target": "packages/coding-agent/examples/extensions/with-deps/index.ts",
+      "type": "configures",
+      "description": "声明扩展的 npm 依赖"
+    }
+  ]
+}

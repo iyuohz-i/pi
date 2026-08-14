@@ -1,0 +1,796 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/ai/src/providers/minimax.models.ts",
+      "type": "file",
+      "name": "minimax.models.ts",
+      "filePath": "packages/ai/src/providers/minimax.models.ts",
+      "summary": "自动生成的MiniMax模型目录文件，从 JSON 数据导入并通过 flattenModelCatalog 导出 MINIMAX_MODELS 常量。",
+      "tags": [
+        "data-model",
+        "model-catalog",
+        "auto-generated"
+      ],
+      "complexity": "simple",
+      "languageNotes": "由 scripts/generate-models.ts 自动生成，使用 JSON import 与 flattenModelCatalog 模式。"
+    },
+    {
+      "id": "file:packages/ai/src/providers/mistral.models.ts",
+      "type": "file",
+      "name": "mistral.models.ts",
+      "filePath": "packages/ai/src/providers/mistral.models.ts",
+      "summary": "自动生成的Mistral模型目录文件，从 JSON 数据导入并通过 flattenModelCatalog 导出 MISTRAL_MODELS 常量。",
+      "tags": [
+        "data-model",
+        "model-catalog",
+        "auto-generated"
+      ],
+      "complexity": "simple",
+      "languageNotes": "由 scripts/generate-models.ts 自动生成，使用 JSON import 与 flattenModelCatalog 模式。"
+    },
+    {
+      "id": "file:packages/ai/src/providers/moonshotai-cn.models.ts",
+      "type": "file",
+      "name": "moonshotai-cn.models.ts",
+      "filePath": "packages/ai/src/providers/moonshotai-cn.models.ts",
+      "summary": "自动生成的Moonshot AI 中国模型目录文件，从 JSON 数据导入并通过 flattenModelCatalog 导出 MOONSHOTAI_CN_MODELS 常量。",
+      "tags": [
+        "data-model",
+        "model-catalog",
+        "auto-generated"
+      ],
+      "complexity": "simple",
+      "languageNotes": "由 scripts/generate-models.ts 自动生成，使用 JSON import 与 flattenModelCatalog 模式。"
+    },
+    {
+      "id": "file:packages/ai/src/providers/moonshotai.models.ts",
+      "type": "file",
+      "name": "moonshotai.models.ts",
+      "filePath": "packages/ai/src/providers/moonshotai.models.ts",
+      "summary": "自动生成的Moonshot AI模型目录文件，从 JSON 数据导入并通过 flattenModelCatalog 导出 MOONSHOTAI_MODELS 常量。",
+      "tags": [
+        "data-model",
+        "model-catalog",
+        "auto-generated"
+      ],
+      "complexity": "simple",
+      "languageNotes": "由 scripts/generate-models.ts 自动生成，使用 JSON import 与 flattenModelCatalog 模式。"
+    },
+    {
+      "id": "file:packages/ai/src/providers/nvidia.models.ts",
+      "type": "file",
+      "name": "nvidia.models.ts",
+      "filePath": "packages/ai/src/providers/nvidia.models.ts",
+      "summary": "自动生成的NVIDIA模型目录文件，从 JSON 数据导入并通过 flattenModelCatalog 导出 NVIDIA_MODELS 常量。",
+      "tags": [
+        "data-model",
+        "model-catalog",
+        "auto-generated"
+      ],
+      "complexity": "simple",
+      "languageNotes": "由 scripts/generate-models.ts 自动生成，使用 JSON import 与 flattenModelCatalog 模式。"
+    },
+    {
+      "id": "file:packages/ai/src/providers/openai-codex.models.ts",
+      "type": "file",
+      "name": "openai-codex.models.ts",
+      "filePath": "packages/ai/src/providers/openai-codex.models.ts",
+      "summary": "自动生成的OpenAI Codex模型目录文件，从 JSON 数据导入并通过 flattenModelCatalog 导出 OPENAI_CODEX_MODELS 常量。",
+      "tags": [
+        "data-model",
+        "model-catalog",
+        "auto-generated"
+      ],
+      "complexity": "simple",
+      "languageNotes": "由 scripts/generate-models.ts 自动生成，使用 JSON import 与 flattenModelCatalog 模式。"
+    },
+    {
+      "id": "file:packages/ai/src/providers/openai.models.ts",
+      "type": "file",
+      "name": "openai.models.ts",
+      "filePath": "packages/ai/src/providers/openai.models.ts",
+      "summary": "自动生成的OpenAI模型目录文件，从 JSON 数据导入并通过 flattenModelCatalog 导出 OPENAI_MODELS 常量。",
+      "tags": [
+        "data-model",
+        "model-catalog",
+        "auto-generated"
+      ],
+      "complexity": "simple",
+      "languageNotes": "由 scripts/generate-models.ts 自动生成，使用 JSON import 与 flattenModelCatalog 模式。"
+    },
+    {
+      "id": "file:packages/ai/src/providers/opencode-go.models.ts",
+      "type": "file",
+      "name": "opencode-go.models.ts",
+      "filePath": "packages/ai/src/providers/opencode-go.models.ts",
+      "summary": "自动生成的OpenCode Go模型目录文件，从 JSON 数据导入并通过 flattenModelCatalog 导出 OPENCODE_GO_MODELS 常量。",
+      "tags": [
+        "data-model",
+        "model-catalog",
+        "auto-generated"
+      ],
+      "complexity": "simple",
+      "languageNotes": "由 scripts/generate-models.ts 自动生成，使用 JSON import 与 flattenModelCatalog 模式。"
+    },
+    {
+      "id": "file:packages/ai/src/providers/opencode.models.ts",
+      "type": "file",
+      "name": "opencode.models.ts",
+      "filePath": "packages/ai/src/providers/opencode.models.ts",
+      "summary": "自动生成的OpenCode模型目录文件，从 JSON 数据导入并通过 flattenModelCatalog 导出 OPENCODE_MODELS 常量。",
+      "tags": [
+        "data-model",
+        "model-catalog",
+        "auto-generated"
+      ],
+      "complexity": "simple",
+      "languageNotes": "由 scripts/generate-models.ts 自动生成，使用 JSON import 与 flattenModelCatalog 模式。"
+    },
+    {
+      "id": "file:packages/ai/src/providers/minimax.ts",
+      "type": "file",
+      "name": "minimax.ts",
+      "filePath": "packages/ai/src/providers/minimax.ts",
+      "summary": "MiniMax 供应商实现，使用 createProvider 创建 Provider 实例，支持 anthropic-messages API。",
+      "tags": [
+        "api-handler",
+        "provider",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/providers/minimax.ts:minimaxProvider",
+      "type": "function",
+      "name": "minimaxProvider",
+      "filePath": "packages/ai/src/providers/minimax.ts",
+      "lineRange": [
+        6,
+        15
+      ],
+      "summary": "创建 MiniMax 供应商的 Provider 实例，配置 API 类型、认证方式和模型列表。",
+      "tags": [
+        "api-handler",
+        "provider",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/mistral.ts",
+      "type": "file",
+      "name": "mistral.ts",
+      "filePath": "packages/ai/src/providers/mistral.ts",
+      "summary": "Mistral 供应商实现，使用 createProvider 创建 Provider 实例，支持 mistral-conversations API。",
+      "tags": [
+        "api-handler",
+        "provider",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/providers/mistral.ts:mistralProvider",
+      "type": "function",
+      "name": "mistralProvider",
+      "filePath": "packages/ai/src/providers/mistral.ts",
+      "lineRange": [
+        6,
+        15
+      ],
+      "summary": "创建 Mistral 供应商的 Provider 实例，配置 API 类型、认证方式和模型列表。",
+      "tags": [
+        "api-handler",
+        "provider",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/moonshotai-cn.ts",
+      "type": "file",
+      "name": "moonshotai-cn.ts",
+      "filePath": "packages/ai/src/providers/moonshotai-cn.ts",
+      "summary": "Moonshot AI 中国 供应商实现，使用 createProvider 创建 Provider 实例，支持 openai-completions API。",
+      "tags": [
+        "api-handler",
+        "provider",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/providers/moonshotai-cn.ts:moonshotaiCnProvider",
+      "type": "function",
+      "name": "moonshotaiCnProvider",
+      "filePath": "packages/ai/src/providers/moonshotai-cn.ts",
+      "lineRange": [
+        6,
+        15
+      ],
+      "summary": "创建 Moonshot AI 中国 供应商的 Provider 实例，配置 API 类型、认证方式和模型列表。",
+      "tags": [
+        "api-handler",
+        "provider",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/moonshotai.ts",
+      "type": "file",
+      "name": "moonshotai.ts",
+      "filePath": "packages/ai/src/providers/moonshotai.ts",
+      "summary": "Moonshot AI 供应商实现，使用 createProvider 创建 Provider 实例，支持 openai-completions API。",
+      "tags": [
+        "api-handler",
+        "provider",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/providers/moonshotai.ts:moonshotaiProvider",
+      "type": "function",
+      "name": "moonshotaiProvider",
+      "filePath": "packages/ai/src/providers/moonshotai.ts",
+      "lineRange": [
+        6,
+        15
+      ],
+      "summary": "创建 Moonshot AI 供应商的 Provider 实例，配置 API 类型、认证方式和模型列表。",
+      "tags": [
+        "api-handler",
+        "provider",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/nvidia.ts",
+      "type": "file",
+      "name": "nvidia.ts",
+      "filePath": "packages/ai/src/providers/nvidia.ts",
+      "summary": "NVIDIA 供应商实现，使用 createProvider 创建 Provider 实例，支持 openai-completions API。",
+      "tags": [
+        "api-handler",
+        "provider",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/providers/nvidia.ts:nvidiaProvider",
+      "type": "function",
+      "name": "nvidiaProvider",
+      "filePath": "packages/ai/src/providers/nvidia.ts",
+      "lineRange": [
+        6,
+        15
+      ],
+      "summary": "创建 NVIDIA 供应商的 Provider 实例，配置 API 类型、认证方式和模型列表。",
+      "tags": [
+        "api-handler",
+        "provider",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/openai-codex.ts",
+      "type": "file",
+      "name": "openai-codex.ts",
+      "filePath": "packages/ai/src/providers/openai-codex.ts",
+      "summary": "OpenAI Codex 供应商实现，使用 createProvider 创建 Provider 实例，支持 openai-codex-responses API。",
+      "tags": [
+        "api-handler",
+        "provider",
+        "factory",
+        "oauth"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/providers/openai-codex.ts:openaiCodexProvider",
+      "type": "function",
+      "name": "openaiCodexProvider",
+      "filePath": "packages/ai/src/providers/openai-codex.ts",
+      "lineRange": [
+        7,
+        22
+      ],
+      "summary": "创建 OpenAI Codex 供应商的 Provider 实例，配置 API 类型、认证方式和模型列表。",
+      "tags": [
+        "api-handler",
+        "provider",
+        "factory",
+        "oauth"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/openai.ts",
+      "type": "file",
+      "name": "openai.ts",
+      "filePath": "packages/ai/src/providers/openai.ts",
+      "summary": "OpenAI 供应商实现，使用 createProvider 创建 Provider 实例，支持 openai-responses API。",
+      "tags": [
+        "api-handler",
+        "provider",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/providers/openai.ts:openaiProvider",
+      "type": "function",
+      "name": "openaiProvider",
+      "filePath": "packages/ai/src/providers/openai.ts",
+      "lineRange": [
+        6,
+        15
+      ],
+      "summary": "创建 OpenAI 供应商的 Provider 实例，配置 API 类型、认证方式和模型列表。",
+      "tags": [
+        "api-handler",
+        "provider",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/opencode-go.ts",
+      "type": "file",
+      "name": "opencode-go.ts",
+      "filePath": "packages/ai/src/providers/opencode-go.ts",
+      "summary": "OpenCode Go 供应商实现，使用 createProvider 创建 Provider 实例，支持 multi-api API。",
+      "tags": [
+        "api-handler",
+        "provider",
+        "factory",
+        "multi-api"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/providers/opencode-go.ts:opencodeGoProvider",
+      "type": "function",
+      "name": "opencodeGoProvider",
+      "filePath": "packages/ai/src/providers/opencode-go.ts",
+      "lineRange": [
+        8,
+        20
+      ],
+      "summary": "创建 OpenCode Go 供应商的 Provider 实例，配置 API 类型、认证方式和模型列表。",
+      "tags": [
+        "api-handler",
+        "provider",
+        "factory",
+        "multi-api"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/ai/src/providers/minimax.ts",
+      "target": "function:packages/ai/src/providers/minimax.ts:minimaxProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/minimax.ts",
+      "target": "function:packages/ai/src/providers/minimax.ts:minimaxProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/mistral.ts",
+      "target": "function:packages/ai/src/providers/mistral.ts:mistralProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/mistral.ts",
+      "target": "function:packages/ai/src/providers/mistral.ts:mistralProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/moonshotai-cn.ts",
+      "target": "function:packages/ai/src/providers/moonshotai-cn.ts:moonshotaiCnProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/moonshotai-cn.ts",
+      "target": "function:packages/ai/src/providers/moonshotai-cn.ts:moonshotaiCnProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/moonshotai.ts",
+      "target": "function:packages/ai/src/providers/moonshotai.ts:moonshotaiProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/moonshotai.ts",
+      "target": "function:packages/ai/src/providers/moonshotai.ts:moonshotaiProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/nvidia.ts",
+      "target": "function:packages/ai/src/providers/nvidia.ts:nvidiaProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/nvidia.ts",
+      "target": "function:packages/ai/src/providers/nvidia.ts:nvidiaProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/openai-codex.ts",
+      "target": "function:packages/ai/src/providers/openai-codex.ts:openaiCodexProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/openai-codex.ts",
+      "target": "function:packages/ai/src/providers/openai-codex.ts:openaiCodexProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/openai.ts",
+      "target": "function:packages/ai/src/providers/openai.ts:openaiProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/openai.ts",
+      "target": "function:packages/ai/src/providers/openai.ts:openaiProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/opencode-go.ts",
+      "target": "function:packages/ai/src/providers/opencode-go.ts:opencodeGoProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/opencode-go.ts",
+      "target": "function:packages/ai/src/providers/opencode-go.ts:opencodeGoProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/minimax.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/minimax.ts",
+      "target": "file:packages/ai/src/api/anthropic-messages.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/minimax.ts",
+      "target": "file:packages/ai/src/auth/helpers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/minimax.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/minimax.ts",
+      "target": "file:packages/ai/src/providers/minimax.models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/mistral.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/mistral.ts",
+      "target": "file:packages/ai/src/api/mistral-conversations.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/mistral.ts",
+      "target": "file:packages/ai/src/auth/helpers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/mistral.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/mistral.ts",
+      "target": "file:packages/ai/src/providers/mistral.models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/moonshotai-cn.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/moonshotai-cn.ts",
+      "target": "file:packages/ai/src/api/openai-completions.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/moonshotai-cn.ts",
+      "target": "file:packages/ai/src/auth/helpers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/moonshotai-cn.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/moonshotai-cn.ts",
+      "target": "file:packages/ai/src/providers/moonshotai-cn.models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/moonshotai.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/moonshotai.ts",
+      "target": "file:packages/ai/src/api/openai-completions.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/moonshotai.ts",
+      "target": "file:packages/ai/src/auth/helpers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/moonshotai.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/moonshotai.ts",
+      "target": "file:packages/ai/src/providers/moonshotai.models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/nvidia.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/nvidia.ts",
+      "target": "file:packages/ai/src/api/openai-completions.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/nvidia.ts",
+      "target": "file:packages/ai/src/auth/helpers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/nvidia.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/nvidia.ts",
+      "target": "file:packages/ai/src/providers/nvidia.models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/openai-codex.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/openai-codex.ts",
+      "target": "file:packages/ai/src/api/openai-codex-responses.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/openai-codex.ts",
+      "target": "file:packages/ai/src/auth/helpers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/openai-codex.ts",
+      "target": "file:packages/ai/src/auth/oauth/load.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/openai-codex.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/openai-codex.ts",
+      "target": "file:packages/ai/src/providers/openai-codex.models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/openai.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/openai.ts",
+      "target": "file:packages/ai/src/api/openai-responses.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/openai.ts",
+      "target": "file:packages/ai/src/auth/helpers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/openai.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/openai.ts",
+      "target": "file:packages/ai/src/providers/openai.models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/opencode-go.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/opencode-go.ts",
+      "target": "file:packages/ai/src/api/anthropic-messages.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/opencode-go.ts",
+      "target": "file:packages/ai/src/api/openai-completions.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/opencode-go.ts",
+      "target": "file:packages/ai/src/api/openai-responses.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/opencode-go.ts",
+      "target": "file:packages/ai/src/auth/helpers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/opencode-go.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/opencode-go.ts",
+      "target": "file:packages/ai/src/providers/opencode-go.models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/opencode.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

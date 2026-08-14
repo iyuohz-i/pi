@@ -1,0 +1,3784 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 22,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "packages/server/src/connection.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 29,
+      "functions": [
+        {
+          "name": "isTerminalConnection",
+          "startLine": 34,
+          "endLine": 36,
+          "params": [
+            "state"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "isTerminalConnection",
+          "line": 34,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/server/src/errors.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 49,
+      "classes": [
+        {
+          "name": "PiServerError",
+          "startLine": 12,
+          "endLine": 22,
+          "methods": [
+            "constructor"
+          ],
+          "properties": [
+            "code",
+            "details"
+          ]
+        },
+        {
+          "name": "SessionBusyError",
+          "startLine": 24,
+          "endLine": 29,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        },
+        {
+          "name": "SessionLockedError",
+          "startLine": 31,
+          "endLine": 36,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        },
+        {
+          "name": "SessionNotFoundError",
+          "startLine": 38,
+          "endLine": 43,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        },
+        {
+          "name": "NotImplementedError",
+          "startLine": 45,
+          "endLine": 50,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        },
+        {
+          "name": "InternalServerError",
+          "startLine": 53,
+          "endLine": 58,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "INTERNAL_SERVER_ERROR_MESSAGE",
+          "line": 8,
+          "isDefault": false
+        },
+        {
+          "name": "NOT_IMPLEMENTED_MESSAGE",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "PiServerError",
+          "line": 12,
+          "isDefault": false
+        },
+        {
+          "name": "SessionBusyError",
+          "line": 24,
+          "isDefault": false
+        },
+        {
+          "name": "SessionLockedError",
+          "line": 31,
+          "isDefault": false
+        },
+        {
+          "name": "SessionNotFoundError",
+          "line": 38,
+          "isDefault": false
+        },
+        {
+          "name": "NotImplementedError",
+          "line": 45,
+          "isDefault": false
+        },
+        {
+          "name": "InternalServerError",
+          "line": 53,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 17
+        },
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 26
+        },
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 33
+        },
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 40
+        },
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 47
+        },
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 55
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 8,
+        "functionCount": 0,
+        "classCount": 6
+      }
+    },
+    {
+      "path": "packages/server/src/index.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 5,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/server/src/listener.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 10,
+      "nonEmptyLines": 9,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/server/src/server.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 396,
+      "nonEmptyLines": 367,
+      "functions": [
+        {
+          "name": "resolveOptions",
+          "startLine": 380,
+          "endLine": 396,
+          "params": [
+            "options"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PiServer",
+          "startLine": 39,
+          "endLine": 378,
+          "methods": [
+            "constructor",
+            "addresses",
+            "start",
+            "startInternal",
+            "accept",
+            "close",
+            "closeInternal",
+            "receive",
+            "dispatchMessage",
+            "finishHandshake",
+            "handleRequest",
+            "transportClosed",
+            "disconnect",
+            "sendMessage",
+            "failProtocol",
+            "closeServerState",
+            "closeConnection",
+            "toProtocolError",
+            "reportError"
+          ],
+          "properties": [
+            "id",
+            "listeners",
+            "maxFrameLength",
+            "handshakeTimeoutMs",
+            "onError",
+            "connections",
+            "sessions",
+            "snapshots",
+            "closing",
+            "closePromise",
+            "startPromise",
+            "started"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "PiServer",
+          "line": 39,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "resolveOptions",
+          "lineNumber": 55
+        },
+        {
+          "caller": "constructor",
+          "callee": "randomUUID",
+          "lineNumber": 57
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.sendMessage",
+          "lineNumber": 64
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.closeConnection",
+          "lineNumber": 65
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.disconnect",
+          "lineNumber": 66
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.snapshots.broadcast",
+          "lineNumber": 67
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.reportError",
+          "lineNumber": 68
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.sessions.listMetadata",
+          "lineNumber": 75
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.sendMessage",
+          "lineNumber": 76
+        },
+        {
+          "caller": "constructor",
+          "callee": "this.reportError",
+          "lineNumber": 77
+        },
+        {
+          "caller": "addresses",
+          "callee": "this.listeners.flatMap",
+          "lineNumber": 82
+        },
+        {
+          "caller": "start",
+          "callee": "Promise.reject",
+          "lineNumber": 86
+        },
+        {
+          "caller": "start",
+          "callee": "Promise.reject",
+          "lineNumber": 87
+        },
+        {
+          "caller": "start",
+          "callee": "Promise.reject",
+          "lineNumber": 88
+        },
+        {
+          "caller": "start",
+          "callee": "this.startInternal",
+          "lineNumber": 89
+        },
+        {
+          "caller": "startInternal",
+          "callee": "listener.start",
+          "lineNumber": 97
+        },
+        {
+          "caller": "startInternal",
+          "callee": "this.accept",
+          "lineNumber": 97
+        },
+        {
+          "caller": "startInternal",
+          "callee": "started.push",
+          "lineNumber": 98
+        },
+        {
+          "caller": "startInternal",
+          "callee": "Promise.allSettled",
+          "lineNumber": 104
+        },
+        {
+          "caller": "startInternal",
+          "callee": "started.map",
+          "lineNumber": 104
+        },
+        {
+          "caller": "startInternal",
+          "callee": "listener.close",
+          "lineNumber": 104
+        },
+        {
+          "caller": "startInternal",
+          "callee": "this.closeServerState",
+          "lineNumber": 105
+        },
+        {
+          "caller": "accept",
+          "callee": "this.closeConnection",
+          "lineNumber": 114
+        },
+        {
+          "caller": "accept",
+          "callee": "this.reportError",
+          "lineNumber": 118
+        },
+        {
+          "caller": "accept",
+          "callee": "setTimeout",
+          "lineNumber": 123
+        },
+        {
+          "caller": "accept",
+          "callee": "this.failProtocol",
+          "lineNumber": 124
+        },
+        {
+          "caller": "accept",
+          "callee": "handshakeTimeout.unref",
+          "lineNumber": 129
+        },
+        {
+          "caller": "accept",
+          "callee": "randomUUID",
+          "lineNumber": 131
+        },
+        {
+          "caller": "accept",
+          "callee": "this.connections.add",
+          "lineNumber": 140
+        },
+        {
+          "caller": "accept",
+          "callee": "this.receive",
+          "lineNumber": 143
+        },
+        {
+          "caller": "accept",
+          "callee": "this.transportClosed",
+          "lineNumber": 144
+        },
+        {
+          "caller": "accept",
+          "callee": "this.reportError",
+          "lineNumber": 146
+        },
+        {
+          "caller": "accept",
+          "callee": "this.closeConnection(connection).then",
+          "lineNumber": 147
+        },
+        {
+          "caller": "accept",
+          "callee": "this.closeConnection",
+          "lineNumber": 147
+        },
+        {
+          "caller": "accept",
+          "callee": "this.disconnect",
+          "lineNumber": 147
+        },
+        {
+          "caller": "close",
+          "callee": "this.closeInternal",
+          "lineNumber": 155
+        },
+        {
+          "caller": "closeInternal",
+          "callee": "starting.catch",
+          "lineNumber": 161
+        },
+        {
+          "caller": "closeInternal",
+          "callee": "Promise.all",
+          "lineNumber": 163
+        },
+        {
+          "caller": "closeInternal",
+          "callee": "this.listeners.map",
+          "lineNumber": 163
+        },
+        {
+          "caller": "closeInternal",
+          "callee": "listener.close",
+          "lineNumber": 163
+        },
+        {
+          "caller": "closeInternal",
+          "callee": "this.closeServerState",
+          "lineNumber": 165
+        },
+        {
+          "caller": "receive",
+          "callee": "isTerminalConnection",
+          "lineNumber": 171
+        },
+        {
+          "caller": "receive",
+          "callee": "state.decoder.push",
+          "lineNumber": 174
+        },
+        {
+          "caller": "receive",
+          "callee": "this.failProtocol",
+          "lineNumber": 176
+        },
+        {
+          "caller": "receive",
+          "callee": "this.toProtocolError",
+          "lineNumber": 176
+        },
+        {
+          "caller": "receive",
+          "callee": "isTerminalConnection",
+          "lineNumber": 180
+        },
+        {
+          "caller": "receive",
+          "callee": "this.dispatchMessage",
+          "lineNumber": 181
+        },
+        {
+          "caller": "dispatchMessage",
+          "callee": "this.failProtocol",
+          "lineNumber": 188
+        },
+        {
+          "caller": "dispatchMessage",
+          "callee": "this.finishHandshake(state, message).catch",
+          "lineNumber": 195
+        },
+        {
+          "caller": "dispatchMessage",
+          "callee": "this.finishHandshake",
+          "lineNumber": 195
+        },
+        {
+          "caller": "dispatchMessage",
+          "callee": "this.failProtocol",
+          "lineNumber": 196
+        },
+        {
+          "caller": "dispatchMessage",
+          "callee": "this.toProtocolError",
+          "lineNumber": 196
+        },
+        {
+          "caller": "dispatchMessage",
+          "callee": "this.failProtocol",
+          "lineNumber": 202
+        },
+        {
+          "caller": "dispatchMessage",
+          "callee": "this.handleRequest",
+          "lineNumber": 210
+        },
+        {
+          "caller": "dispatchMessage",
+          "callee": "handshake.then",
+          "lineNumber": 216
+        },
+        {
+          "caller": "dispatchMessage",
+          "callee": "this.handleRequest",
+          "lineNumber": 217
+        },
+        {
+          "caller": "finishHandshake",
+          "callee": "isSupportedProtocolVersion",
+          "lineNumber": 222
+        },
+        {
+          "caller": "finishHandshake",
+          "callee": "this.failProtocol",
+          "lineNumber": 223
+        },
+        {
+          "caller": "finishHandshake",
+          "callee": "this.snapshots.get",
+          "lineNumber": 230
+        },
+        {
+          "caller": "finishHandshake",
+          "callee": "this.sendMessage",
+          "lineNumber": 232
+        },
+        {
+          "caller": "finishHandshake",
+          "callee": "clearTimeout",
+          "lineNumber": 241
+        },
+        {
+          "caller": "finishHandshake",
+          "callee": "this.snapshots.get",
+          "lineNumber": 243
+        },
+        {
+          "caller": "finishHandshake",
+          "callee": "this.sendMessage",
+          "lineNumber": 244
+        },
+        {
+          "caller": "handleRequest",
+          "callee": "this.sessions.executeCommand",
+          "lineNumber": 254
+        },
+        {
+          "caller": "handleRequest",
+          "callee": "this.sendMessage",
+          "lineNumber": 255
+        },
+        {
+          "caller": "handleRequest",
+          "callee": "this.sendMessage",
+          "lineNumber": 262
+        },
+        {
+          "caller": "handleRequest",
+          "callee": "this.toProtocolError",
+          "lineNumber": 266
+        },
+        {
+          "caller": "transportClosed",
+          "callee": "connection.decoder.end",
+          "lineNumber": 274
+        },
+        {
+          "caller": "transportClosed",
+          "callee": "this.reportError",
+          "lineNumber": 276
+        },
+        {
+          "caller": "transportClosed",
+          "callee": "this.disconnect",
+          "lineNumber": 279
+        },
+        {
+          "caller": "disconnect",
+          "callee": "clearTimeout",
+          "lineNumber": 287
+        },
+        {
+          "caller": "disconnect",
+          "callee": "this.connections.delete",
+          "lineNumber": 288
+        },
+        {
+          "caller": "disconnect",
+          "callee": "this.sessions.disconnect",
+          "lineNumber": 289
+        },
+        {
+          "caller": "disconnect",
+          "callee": "this.snapshots.broadcast",
+          "lineNumber": 290
+        },
+        {
+          "caller": "sendMessage",
+          "callee": "encodeServerMessage",
+          "lineNumber": 297
+        },
+        {
+          "caller": "sendMessage",
+          "callee": "this.reportError",
+          "lineNumber": 299
+        },
+        {
+          "caller": "sendMessage",
+          "callee": "this.closeConnection",
+          "lineNumber": 300
+        },
+        {
+          "caller": "sendMessage",
+          "callee": "this.disconnect",
+          "lineNumber": 301
+        },
+        {
+          "caller": "sendMessage",
+          "callee": "connection.connection.send",
+          "lineNumber": 305
+        },
+        {
+          "caller": "sendMessage",
+          "callee": "this.reportError",
+          "lineNumber": 308
+        },
+        {
+          "caller": "sendMessage",
+          "callee": "this.closeConnection",
+          "lineNumber": 309
+        },
+        {
+          "caller": "sendMessage",
+          "callee": "this.disconnect",
+          "lineNumber": 310
+        },
+        {
+          "caller": "failProtocol",
+          "callee": "clearTimeout",
+          "lineNumber": 318
+        },
+        {
+          "caller": "failProtocol",
+          "callee": "encodeServerMessage",
+          "lineNumber": 322
+        },
+        {
+          "caller": "failProtocol",
+          "callee": "this.reportError",
+          "lineNumber": 324
+        },
+        {
+          "caller": "failProtocol",
+          "callee": "this.closeConnection",
+          "lineNumber": 326
+        },
+        {
+          "caller": "failProtocol",
+          "callee": "this.disconnect",
+          "lineNumber": 327
+        },
+        {
+          "caller": "closeServerState",
+          "callee": "clearTimeout",
+          "lineNumber": 334
+        },
+        {
+          "caller": "closeServerState",
+          "callee": "Promise.all",
+          "lineNumber": 336
+        },
+        {
+          "caller": "closeServerState",
+          "callee": "connections.map",
+          "lineNumber": 336
+        },
+        {
+          "caller": "closeServerState",
+          "callee": "this.closeConnection",
+          "lineNumber": 336
+        },
+        {
+          "caller": "closeServerState",
+          "callee": "Promise.all",
+          "lineNumber": 337
+        },
+        {
+          "caller": "closeServerState",
+          "callee": "connections.map",
+          "lineNumber": 337
+        },
+        {
+          "caller": "closeServerState",
+          "callee": "this.disconnect",
+          "lineNumber": 337
+        },
+        {
+          "caller": "closeServerState",
+          "callee": "this.sessions.close",
+          "lineNumber": 339
+        },
+        {
+          "caller": "closeServerState",
+          "callee": "this.connections.clear",
+          "lineNumber": 340
+        },
+        {
+          "caller": "closeConnection",
+          "callee": "connection.close",
+          "lineNumber": 345
+        },
+        {
+          "caller": "closeConnection",
+          "callee": "this.reportError",
+          "lineNumber": 347
+        },
+        {
+          "caller": "toProtocolError",
+          "callee": "this.reportError",
+          "lineNumber": 353
+        },
+        {
+          "caller": "toProtocolError",
+          "callee": "this.reportError",
+          "lineNumber": 367
+        },
+        {
+          "caller": "reportError",
+          "callee": "this.onError",
+          "lineNumber": 373
+        },
+        {
+          "caller": "reportError",
+          "callee": "String",
+          "lineNumber": 373
+        },
+        {
+          "caller": "resolveOptions",
+          "callee": "Array.isArray",
+          "lineNumber": 381
+        },
+        {
+          "caller": "resolveOptions",
+          "callee": "Number.isSafeInteger",
+          "lineNumber": 384
+        },
+        {
+          "caller": "resolveOptions",
+          "callee": "Number.isSafeInteger",
+          "lineNumber": 389
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "packages/server/src/sessions.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 346,
+      "nonEmptyLines": 325,
+      "functions": [
+        {
+          "name": "toMetadata",
+          "startLine": 28,
+          "endLine": 36,
+          "params": [
+            "snapshot"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "LiveSessionManager",
+          "startLine": 38,
+          "endLine": 346,
+          "methods": [
+            "constructor",
+            "executeCommand",
+            "disconnect",
+            "listMetadata",
+            "close",
+            "runOperation",
+            "acquire",
+            "create",
+            "handleRuntimeEvent",
+            "terminate",
+            "normalizedSnapshot",
+            "forConnection",
+            "broadcastSnapshot",
+            "attach",
+            "requireAttached",
+            "scheduleMaybeDispose",
+            "maybeDispose"
+          ],
+          "properties": [
+            "options",
+            "liveSessions",
+            "openingSessions"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "LiveSessionManager",
+          "line": 38,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "executeCommand",
+          "callee": "this.listMetadata",
+          "lineNumber": 50
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "randomUUID",
+          "lineNumber": 52
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "this.acquire",
+          "lineNumber": 60
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "this.options.service.createSession",
+          "lineNumber": 60
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "this.attach",
+          "lineNumber": 61
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "this.forConnection",
+          "lineNumber": 62
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "this.broadcastSnapshot",
+          "lineNumber": 62
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "this.options.broadcastServerSnapshot",
+          "lineNumber": 63
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "this.acquire",
+          "lineNumber": 67
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "this.options.service.openSession",
+          "lineNumber": 68
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "this.attach",
+          "lineNumber": 70
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "this.forConnection",
+          "lineNumber": 71
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "this.broadcastSnapshot",
+          "lineNumber": 71
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "this.options.broadcastServerSnapshot",
+          "lineNumber": 72
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "this.liveSessions.get",
+          "lineNumber": 76
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "connection.sessionIds.has",
+          "lineNumber": 77
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "connection.sessionIds.delete",
+          "lineNumber": 78
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "live.connections.delete",
+          "lineNumber": 80
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "this.broadcastSnapshot",
+          "lineNumber": 82
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "this.maybeDispose",
+          "lineNumber": 84
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "this.options.broadcastServerSnapshot",
+          "lineNumber": 86
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "this.requireAttached",
+          "lineNumber": 91
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "this.runOperation",
+          "lineNumber": 92
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "live.runtime.prompt",
+          "lineNumber": 93
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "this.requireAttached",
+          "lineNumber": 98
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "this.runOperation",
+          "lineNumber": 99
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "live.runtime.steer",
+          "lineNumber": 99
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "this.requireAttached",
+          "lineNumber": 103
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "this.runOperation",
+          "lineNumber": 104
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "live.runtime.abort",
+          "lineNumber": 104
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "this.requireAttached",
+          "lineNumber": 108
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "this.runOperation",
+          "lineNumber": 109
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "live.runtime.setModel",
+          "lineNumber": 109
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "this.requireAttached",
+          "lineNumber": 113
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "this.runOperation",
+          "lineNumber": 114
+        },
+        {
+          "caller": "executeCommand",
+          "callee": "live.runtime.setThinking",
+          "lineNumber": 115
+        },
+        {
+          "caller": "disconnect",
+          "callee": "[...connection.sessionIds]\n\t\t\t.map((id) => this.liveSessions.get(id))\n\t\t\t.filter",
+          "lineNumber": 123
+        },
+        {
+          "caller": "disconnect",
+          "callee": "[...connection.sessionIds]\n\t\t\t.map",
+          "lineNumber": 123
+        },
+        {
+          "caller": "disconnect",
+          "callee": "this.liveSessions.get",
+          "lineNumber": 124
+        },
+        {
+          "caller": "disconnect",
+          "callee": "connection.sessionIds.clear",
+          "lineNumber": 126
+        },
+        {
+          "caller": "disconnect",
+          "callee": "live.connections.delete",
+          "lineNumber": 127
+        },
+        {
+          "caller": "disconnect",
+          "callee": "Promise.allSettled",
+          "lineNumber": 128
+        },
+        {
+          "caller": "disconnect",
+          "callee": "sessions.map",
+          "lineNumber": 128
+        },
+        {
+          "caller": "disconnect",
+          "callee": "this.maybeDispose",
+          "lineNumber": 128
+        },
+        {
+          "caller": "disconnect",
+          "callee": "this.options.reportError",
+          "lineNumber": 130
+        },
+        {
+          "caller": "listMetadata",
+          "callee": "this.options.service.listSessions",
+          "lineNumber": 135
+        },
+        {
+          "caller": "listMetadata",
+          "callee": "Promise.all",
+          "lineNumber": 136
+        },
+        {
+          "caller": "listMetadata",
+          "callee": "[...this.liveSessions.values()]\n\t\t\t\t.filter((live) => !live.disposing)\n\t\t\t\t.map",
+          "lineNumber": 137
+        },
+        {
+          "caller": "listMetadata",
+          "callee": "[...this.liveSessions.values()]\n\t\t\t\t.filter",
+          "lineNumber": 137
+        },
+        {
+          "caller": "listMetadata",
+          "callee": "this.liveSessions.values",
+          "lineNumber": 137
+        },
+        {
+          "caller": "listMetadata",
+          "callee": "this.normalizedSnapshot",
+          "lineNumber": 139
+        },
+        {
+          "caller": "listMetadata",
+          "callee": "stored.map",
+          "lineNumber": 142
+        },
+        {
+          "caller": "listMetadata",
+          "callee": "liveById.get",
+          "lineNumber": 143
+        },
+        {
+          "caller": "listMetadata",
+          "callee": "liveById.delete",
+          "lineNumber": 145
+        },
+        {
+          "caller": "listMetadata",
+          "callee": "toMetadata",
+          "lineNumber": 146
+        },
+        {
+          "caller": "listMetadata",
+          "callee": "liveById.values",
+          "lineNumber": 148
+        },
+        {
+          "caller": "listMetadata",
+          "callee": "metadata.push",
+          "lineNumber": 148
+        },
+        {
+          "caller": "listMetadata",
+          "callee": "toMetadata",
+          "lineNumber": 148
+        },
+        {
+          "caller": "close",
+          "callee": "Promise.allSettled",
+          "lineNumber": 153
+        },
+        {
+          "caller": "close",
+          "callee": "this.openingSessions.values",
+          "lineNumber": 153
+        },
+        {
+          "caller": "close",
+          "callee": "this.options.reportError",
+          "lineNumber": 155
+        },
+        {
+          "caller": "close",
+          "callee": "this.liveSessions.values",
+          "lineNumber": 157
+        },
+        {
+          "caller": "close",
+          "callee": "this.liveSessions.clear",
+          "lineNumber": 158
+        },
+        {
+          "caller": "close",
+          "callee": "Promise.all",
+          "lineNumber": 159
+        },
+        {
+          "caller": "close",
+          "callee": "sessions.map",
+          "lineNumber": 160
+        },
+        {
+          "caller": "close",
+          "callee": "live.unsubscribe",
+          "lineNumber": 165
+        },
+        {
+          "caller": "close",
+          "callee": "live.runtime.dispose",
+          "lineNumber": 166
+        },
+        {
+          "caller": "runOperation",
+          "callee": "operation",
+          "lineNumber": 178
+        },
+        {
+          "caller": "runOperation",
+          "callee": "this.forConnection",
+          "lineNumber": 179
+        },
+        {
+          "caller": "runOperation",
+          "callee": "this.broadcastSnapshot",
+          "lineNumber": 179
+        },
+        {
+          "caller": "runOperation",
+          "callee": "this.scheduleMaybeDispose",
+          "lineNumber": 182
+        },
+        {
+          "caller": "acquire",
+          "callee": "this.liveSessions.get",
+          "lineNumber": 188
+        },
+        {
+          "caller": "acquire",
+          "callee": "this.openingSessions.get",
+          "lineNumber": 197
+        },
+        {
+          "caller": "acquire",
+          "callee": "this.create",
+          "lineNumber": 199
+        },
+        {
+          "caller": "acquire",
+          "callee": "this.openingSessions.set",
+          "lineNumber": 200
+        },
+        {
+          "caller": "acquire",
+          "callee": "this.openingSessions.get",
+          "lineNumber": 204
+        },
+        {
+          "caller": "acquire",
+          "callee": "this.openingSessions.delete",
+          "lineNumber": 204
+        },
+        {
+          "caller": "create",
+          "callee": "acquireRuntime",
+          "lineNumber": 210
+        },
+        {
+          "caller": "create",
+          "callee": "this.options.isClosing",
+          "lineNumber": 211
+        },
+        {
+          "caller": "create",
+          "callee": "runtime.dispose",
+          "lineNumber": 212
+        },
+        {
+          "caller": "create",
+          "callee": "runtime.snapshot",
+          "lineNumber": 217
+        },
+        {
+          "caller": "create",
+          "callee": "runtime.subscribe",
+          "lineNumber": 233
+        },
+        {
+          "caller": "create",
+          "callee": "this.handleRuntimeEvent",
+          "lineNumber": 233
+        },
+        {
+          "caller": "create",
+          "callee": "this.liveSessions.set",
+          "lineNumber": 234
+        },
+        {
+          "caller": "create",
+          "callee": "live.unsubscribe",
+          "lineNumber": 238
+        },
+        {
+          "caller": "create",
+          "callee": "runtime.dispose",
+          "lineNumber": 240
+        },
+        {
+          "caller": "create",
+          "callee": "this.options.reportError",
+          "lineNumber": 242
+        },
+        {
+          "caller": "handleRuntimeEvent",
+          "callee": "this.terminate(live, event.error).catch",
+          "lineNumber": 250
+        },
+        {
+          "caller": "handleRuntimeEvent",
+          "callee": "this.terminate",
+          "lineNumber": 250
+        },
+        {
+          "caller": "handleRuntimeEvent",
+          "callee": "this.options.reportError",
+          "lineNumber": 250
+        },
+        {
+          "caller": "handleRuntimeEvent",
+          "callee": "this.options.sendMessage",
+          "lineNumber": 258
+        },
+        {
+          "caller": "handleRuntimeEvent",
+          "callee": "this.broadcastSnapshot(live).catch",
+          "lineNumber": 260
+        },
+        {
+          "caller": "handleRuntimeEvent",
+          "callee": "this.broadcastSnapshot",
+          "lineNumber": 260
+        },
+        {
+          "caller": "handleRuntimeEvent",
+          "callee": "this.options.reportError",
+          "lineNumber": 260
+        },
+        {
+          "caller": "handleRuntimeEvent",
+          "callee": "this.scheduleMaybeDispose",
+          "lineNumber": 262
+        },
+        {
+          "caller": "terminate",
+          "callee": "this.options.reportError",
+          "lineNumber": 268
+        },
+        {
+          "caller": "terminate",
+          "callee": "live.unsubscribe",
+          "lineNumber": 269
+        },
+        {
+          "caller": "terminate",
+          "callee": "Promise.all",
+          "lineNumber": 271
+        },
+        {
+          "caller": "terminate",
+          "callee": "connections.map",
+          "lineNumber": 271
+        },
+        {
+          "caller": "terminate",
+          "callee": "this.options.closeConnection",
+          "lineNumber": 271
+        },
+        {
+          "caller": "terminate",
+          "callee": "Promise.all",
+          "lineNumber": 272
+        },
+        {
+          "caller": "terminate",
+          "callee": "connections.map",
+          "lineNumber": 272
+        },
+        {
+          "caller": "terminate",
+          "callee": "this.options.disconnect",
+          "lineNumber": 272
+        },
+        {
+          "caller": "terminate",
+          "callee": "this.maybeDispose",
+          "lineNumber": 273
+        },
+        {
+          "caller": "normalizedSnapshot",
+          "callee": "live.runtime.snapshot",
+          "lineNumber": 277
+        },
+        {
+          "caller": "normalizedSnapshot",
+          "callee": "live.runtime.getPhase",
+          "lineNumber": 283
+        },
+        {
+          "caller": "forConnection",
+          "callee": "connection.sessionIds.has",
+          "lineNumber": 290
+        },
+        {
+          "caller": "broadcastSnapshot",
+          "callee": "this.normalizedSnapshot",
+          "lineNumber": 294
+        },
+        {
+          "caller": "broadcastSnapshot",
+          "callee": "this.options.sendMessage",
+          "lineNumber": 296
+        },
+        {
+          "caller": "attach",
+          "callee": "this.maybeDispose",
+          "lineNumber": 302
+        },
+        {
+          "caller": "attach",
+          "callee": "connection.sessionIds.add",
+          "lineNumber": 305
+        },
+        {
+          "caller": "attach",
+          "callee": "live.connections.add",
+          "lineNumber": 306
+        },
+        {
+          "caller": "requireAttached",
+          "callee": "connection.sessionIds.has",
+          "lineNumber": 310
+        },
+        {
+          "caller": "requireAttached",
+          "callee": "this.liveSessions.get",
+          "lineNumber": 313
+        },
+        {
+          "caller": "scheduleMaybeDispose",
+          "callee": "this.maybeDispose(live).catch",
+          "lineNumber": 321
+        },
+        {
+          "caller": "scheduleMaybeDispose",
+          "callee": "this.maybeDispose",
+          "lineNumber": 321
+        },
+        {
+          "caller": "scheduleMaybeDispose",
+          "callee": "this.options.reportError",
+          "lineNumber": 321
+        },
+        {
+          "caller": "maybeDispose",
+          "callee": "this.options.isClosing",
+          "lineNumber": 326
+        },
+        {
+          "caller": "maybeDispose",
+          "callee": "live.runtime.getPhase",
+          "lineNumber": 331
+        },
+        {
+          "caller": "maybeDispose",
+          "callee": "live.unsubscribe",
+          "lineNumber": 335
+        },
+        {
+          "caller": "maybeDispose",
+          "callee": "(async () => {\n\t\t\ttry {\n\t\t\t\tawait live.runtime.dispose();\n\t\t\t} finally {\n\t\t\t\tif (this.liveSessions.get(live.id) === live) this.liveSessions.delete(live.id);\n\t\t\t}\n\t\t})",
+          "lineNumber": 336
+        },
+        {
+          "caller": "maybeDispose",
+          "callee": "live.runtime.dispose",
+          "lineNumber": 338
+        },
+        {
+          "caller": "maybeDispose",
+          "callee": "this.liveSessions.get",
+          "lineNumber": 340
+        },
+        {
+          "caller": "maybeDispose",
+          "callee": "this.liveSessions.delete",
+          "lineNumber": 340
+        },
+        {
+          "caller": "maybeDispose",
+          "callee": "this.options.isClosing",
+          "lineNumber": 344
+        },
+        {
+          "caller": "maybeDispose",
+          "callee": "this.options.broadcastServerSnapshot",
+          "lineNumber": 344
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "packages/server/src/snapshots.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 62,
+      "nonEmptyLines": 55,
+      "classes": [
+        {
+          "name": "ServerSnapshotPublisher",
+          "startLine": 21,
+          "endLine": 62,
+          "methods": [
+            "constructor",
+            "currentRevision",
+            "get",
+            "broadcast",
+            "performBroadcast"
+          ],
+          "properties": [
+            "options",
+            "revision",
+            "broadcastQueue"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ServerSnapshotPublisher",
+          "line": 21,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "get",
+          "callee": "this.options.listSessions",
+          "lineNumber": 39
+        },
+        {
+          "caller": "get",
+          "callee": "this.options.service.listModels",
+          "lineNumber": 40
+        },
+        {
+          "caller": "broadcast",
+          "callee": "this.broadcastQueue.then",
+          "lineNumber": 45
+        },
+        {
+          "caller": "broadcast",
+          "callee": "this.performBroadcast",
+          "lineNumber": 45
+        },
+        {
+          "caller": "broadcast",
+          "callee": "broadcast.catch",
+          "lineNumber": 46
+        },
+        {
+          "caller": "broadcast",
+          "callee": "this.options.reportError",
+          "lineNumber": 46
+        },
+        {
+          "caller": "performBroadcast",
+          "callee": "[...this.options.connections].filter",
+          "lineNumber": 51
+        },
+        {
+          "caller": "performBroadcast",
+          "callee": "this.options.isClosing",
+          "lineNumber": 54
+        },
+        {
+          "caller": "performBroadcast",
+          "callee": "this.options.service.listModels",
+          "lineNumber": 56
+        },
+        {
+          "caller": "performBroadcast",
+          "callee": "this.get",
+          "lineNumber": 57
+        },
+        {
+          "caller": "performBroadcast",
+          "callee": "this.options.sendMessage",
+          "lineNumber": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "packages/server/src/testing/client.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 147,
+      "nonEmptyLines": 128,
+      "functions": [
+        {
+          "name": "connectUnixTestClient",
+          "startLine": 116,
+          "endLine": 138,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "writeSocket",
+          "startLine": 140,
+          "endLine": 147,
+          "params": [
+            "socket",
+            "chunk"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ProtocolTestClient",
+          "startLine": 26,
+          "endLine": 114,
+          "methods": [
+            "constructor",
+            "closed",
+            "hello",
+            "request",
+            "sendMessage",
+            "sendBytes",
+            "sendFragmentedMessage",
+            "next",
+            "nextFrom",
+            "waitForClose",
+            "close",
+            "receive",
+            "markClosed",
+            "fail"
+          ],
+          "properties": [
+            "messages",
+            "channel",
+            "decoder",
+            "waiters",
+            "closedDeferred",
+            "requestSequence",
+            "closedValue"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "ProtocolTestClient",
+          "line": 26,
+          "isDefault": false
+        },
+        {
+          "name": "connectUnixTestClient",
+          "line": 116,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "hello",
+          "callee": "this.next",
+          "lineNumber": 44
+        },
+        {
+          "caller": "hello",
+          "callee": "this.sendMessage",
+          "lineNumber": 45
+        },
+        {
+          "caller": "request",
+          "callee": "this.next",
+          "lineNumber": 50
+        },
+        {
+          "caller": "request",
+          "callee": "this.sendMessage",
+          "lineNumber": 53
+        },
+        {
+          "caller": "sendMessage",
+          "callee": "this.channel.send",
+          "lineNumber": 58
+        },
+        {
+          "caller": "sendMessage",
+          "callee": "encodeClientMessage",
+          "lineNumber": 58
+        },
+        {
+          "caller": "sendBytes",
+          "callee": "this.channel.send",
+          "lineNumber": 62
+        },
+        {
+          "caller": "sendFragmentedMessage",
+          "callee": "this.channel.sendFragmented",
+          "lineNumber": 66
+        },
+        {
+          "caller": "sendFragmentedMessage",
+          "callee": "encodeClientMessage",
+          "lineNumber": 66
+        },
+        {
+          "caller": "next",
+          "callee": "this.nextFrom",
+          "lineNumber": 70
+        },
+        {
+          "caller": "nextFrom",
+          "callee": "this.messages.slice(index).find",
+          "lineNumber": 74
+        },
+        {
+          "caller": "nextFrom",
+          "callee": "this.messages.slice",
+          "lineNumber": 74
+        },
+        {
+          "caller": "nextFrom",
+          "callee": "Promise.resolve",
+          "lineNumber": 75
+        },
+        {
+          "caller": "nextFrom",
+          "callee": "Promise.reject",
+          "lineNumber": 76
+        },
+        {
+          "caller": "nextFrom",
+          "callee": "this.waiters.add",
+          "lineNumber": 77
+        },
+        {
+          "caller": "waitForClose",
+          "callee": "Promise.resolve",
+          "lineNumber": 81
+        },
+        {
+          "caller": "close",
+          "callee": "this.channel.close",
+          "lineNumber": 85
+        },
+        {
+          "caller": "receive",
+          "callee": "this.decoder.push",
+          "lineNumber": 90
+        },
+        {
+          "caller": "receive",
+          "callee": "this.messages.push",
+          "lineNumber": 91
+        },
+        {
+          "caller": "receive",
+          "callee": "waiter.predicate",
+          "lineNumber": 93
+        },
+        {
+          "caller": "receive",
+          "callee": "this.waiters.delete",
+          "lineNumber": 94
+        },
+        {
+          "caller": "receive",
+          "callee": "waiter.resolve",
+          "lineNumber": 95
+        },
+        {
+          "caller": "receive",
+          "callee": "this.fail",
+          "lineNumber": 99
+        },
+        {
+          "caller": "receive",
+          "callee": "String",
+          "lineNumber": 99
+        },
+        {
+          "caller": "markClosed",
+          "callee": "this.closedDeferred.resolve",
+          "lineNumber": 106
+        },
+        {
+          "caller": "markClosed",
+          "callee": "this.fail",
+          "lineNumber": 107
+        },
+        {
+          "caller": "fail",
+          "callee": "waiter.reject",
+          "lineNumber": 111
+        },
+        {
+          "caller": "fail",
+          "callee": "this.waiters.clear",
+          "lineNumber": 112
+        },
+        {
+          "caller": "connectUnixTestClient",
+          "callee": "createConnection",
+          "lineNumber": 117
+        },
+        {
+          "caller": "connectUnixTestClient",
+          "callee": "once",
+          "lineNumber": 118
+        },
+        {
+          "caller": "connectUnixTestClient",
+          "callee": "writeSocket",
+          "lineNumber": 120
+        },
+        {
+          "caller": "sendFragmented",
+          "callee": "writeSocket",
+          "lineNumber": 122
+        },
+        {
+          "caller": "sendFragmented",
+          "callee": "chunk.subarray",
+          "lineNumber": 122
+        },
+        {
+          "caller": "sendFragmented",
+          "callee": "writeSocket",
+          "lineNumber": 123
+        },
+        {
+          "caller": "sendFragmented",
+          "callee": "chunk.subarray",
+          "lineNumber": 123
+        },
+        {
+          "caller": "close",
+          "callee": "once",
+          "lineNumber": 127
+        },
+        {
+          "caller": "close",
+          "callee": "socket.destroy",
+          "lineNumber": 128
+        },
+        {
+          "caller": "connectUnixTestClient",
+          "callee": "socket.on",
+          "lineNumber": 132
+        },
+        {
+          "caller": "connectUnixTestClient",
+          "callee": "client.receive",
+          "lineNumber": 133
+        },
+        {
+          "caller": "connectUnixTestClient",
+          "callee": "socket.on",
+          "lineNumber": 135
+        },
+        {
+          "caller": "connectUnixTestClient",
+          "callee": "client.fail",
+          "lineNumber": 135
+        },
+        {
+          "caller": "connectUnixTestClient",
+          "callee": "socket.once",
+          "lineNumber": 136
+        },
+        {
+          "caller": "connectUnixTestClient",
+          "callee": "client.markClosed",
+          "lineNumber": 136
+        },
+        {
+          "caller": "writeSocket",
+          "callee": "socket.write",
+          "lineNumber": 142
+        },
+        {
+          "caller": "writeSocket",
+          "callee": "reject",
+          "lineNumber": 143
+        },
+        {
+          "caller": "writeSocket",
+          "callee": "resolve",
+          "lineNumber": 144
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "packages/server/src/testing/index.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 5,
+      "nonEmptyLines": 5,
+      "exports": [
+        {
+          "name": "WireChannel",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "connectUnixTestClient",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "ProtocolTestClient",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "TestServer",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "TestServerOptions",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "createTestServer",
+          "line": 4,
+          "isDefault": false
+        },
+        {
+          "name": "Deferred",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "TEST_MODEL",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "TestServerService",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "TestSessionRuntime",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 10,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/server/src/testing/server.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 27,
+      "nonEmptyLines": 24,
+      "functions": [
+        {
+          "name": "createTestServer",
+          "startLine": 15,
+          "endLine": 27,
+          "params": [
+            "options"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createTestServer",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/server/src/testing/service.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 287,
+      "nonEmptyLines": 255,
+      "classes": [
+        {
+          "name": "Deferred",
+          "startLine": 33,
+          "endLine": 46,
+          "methods": [
+            "constructor",
+            "resolve"
+          ],
+          "properties": [
+            "promise",
+            "resolvePromise"
+          ]
+        },
+        {
+          "name": "TestSessionRuntime",
+          "startLine": 52,
+          "endLine": 191,
+          "methods": [
+            "constructor",
+            "snapshot",
+            "getPhase",
+            "prompt",
+            "steer",
+            "abort",
+            "setModel",
+            "setThinking",
+            "subscribe",
+            "dispose",
+            "setPhase",
+            "finishPrompt",
+            "emitProgress",
+            "emitError",
+            "emitSnapshot",
+            "update"
+          ],
+          "properties": [
+            "disposed",
+            "disposeCount",
+            "steers",
+            "stored",
+            "onDispose",
+            "listeners",
+            "pendingPrompt"
+          ]
+        },
+        {
+          "name": "TestServerService",
+          "startLine": 198,
+          "endLine": 287,
+          "methods": [
+            "listSessions",
+            "listModels",
+            "createSession",
+            "openSession",
+            "seed",
+            "delayNextList",
+            "latestRuntime",
+            "acquire"
+          ],
+          "properties": [
+            "sessions",
+            "runtimes",
+            "locked",
+            "lastCreatedId",
+            "nextListDelay"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "TEST_MODEL",
+          "line": 19,
+          "isDefault": false
+        },
+        {
+          "name": "Deferred",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "TestSessionRuntime",
+          "line": 52,
+          "isDefault": false
+        },
+        {
+          "name": "TestServerService",
+          "line": 198,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "resolve",
+          "callee": "this.resolvePromise",
+          "lineNumber": 44
+        },
+        {
+          "caller": "snapshot",
+          "callee": "structuredClone",
+          "lineNumber": 67
+        },
+        {
+          "caller": "prompt",
+          "callee": "this.getPhase",
+          "lineNumber": 75
+        },
+        {
+          "caller": "prompt",
+          "callee": "this.update",
+          "lineNumber": 78
+        },
+        {
+          "caller": "prompt",
+          "callee": "this.update",
+          "lineNumber": 111
+        },
+        {
+          "caller": "steer",
+          "callee": "this.getPhase",
+          "lineNumber": 119
+        },
+        {
+          "caller": "steer",
+          "callee": "this.steers.push",
+          "lineNumber": 120
+        },
+        {
+          "caller": "steer",
+          "callee": "this.update",
+          "lineNumber": 121
+        },
+        {
+          "caller": "abort",
+          "callee": "this.pendingPrompt.done.resolve",
+          "lineNumber": 137
+        },
+        {
+          "caller": "setModel",
+          "callee": "this.getPhase",
+          "lineNumber": 141
+        },
+        {
+          "caller": "setModel",
+          "callee": "this.update",
+          "lineNumber": 142
+        },
+        {
+          "caller": "setThinking",
+          "callee": "this.getPhase",
+          "lineNumber": 146
+        },
+        {
+          "caller": "setThinking",
+          "callee": "this.update",
+          "lineNumber": 147
+        },
+        {
+          "caller": "subscribe",
+          "callee": "this.listeners.add",
+          "lineNumber": 151
+        },
+        {
+          "caller": "subscribe",
+          "callee": "this.listeners.delete",
+          "lineNumber": 152
+        },
+        {
+          "caller": "dispose",
+          "callee": "this.onDispose",
+          "lineNumber": 157
+        },
+        {
+          "caller": "dispose",
+          "callee": "this.disposed.resolve",
+          "lineNumber": 158
+        },
+        {
+          "caller": "finishPrompt",
+          "callee": "this.pendingPrompt.done.resolve",
+          "lineNumber": 167
+        },
+        {
+          "caller": "emitProgress",
+          "callee": "listener",
+          "lineNumber": 171
+        },
+        {
+          "caller": "emitError",
+          "callee": "listener",
+          "lineNumber": 175
+        },
+        {
+          "caller": "emitSnapshot",
+          "callee": "listener",
+          "lineNumber": 179
+        },
+        {
+          "caller": "update",
+          "callee": "this.emitSnapshot",
+          "lineNumber": 189
+        },
+        {
+          "caller": "listSessions",
+          "callee": "delay.entered.resolve",
+          "lineNumber": 209
+        },
+        {
+          "caller": "listSessions",
+          "callee": "[...this.sessions.values()].map",
+          "lineNumber": 212
+        },
+        {
+          "caller": "listSessions",
+          "callee": "this.sessions.values",
+          "lineNumber": 212
+        },
+        {
+          "caller": "createSession",
+          "callee": "this.sessions.has",
+          "lineNumber": 227
+        },
+        {
+          "caller": "createSession",
+          "callee": "this.seed",
+          "lineNumber": 228
+        },
+        {
+          "caller": "createSession",
+          "callee": "this.acquire",
+          "lineNumber": 229
+        },
+        {
+          "caller": "openSession",
+          "callee": "this.sessions.has",
+          "lineNumber": 233
+        },
+        {
+          "caller": "openSession",
+          "callee": "this.locked.has",
+          "lineNumber": 234
+        },
+        {
+          "caller": "openSession",
+          "callee": "this.acquire",
+          "lineNumber": 235
+        },
+        {
+          "caller": "seed",
+          "callee": "this.sessions.set",
+          "lineNumber": 245
+        },
+        {
+          "caller": "latestRuntime",
+          "callee": "this.runtimes.get",
+          "lineNumber": 272
+        },
+        {
+          "caller": "latestRuntime",
+          "callee": "runtimes.at",
+          "lineNumber": 274
+        },
+        {
+          "caller": "acquire",
+          "callee": "this.sessions.get",
+          "lineNumber": 278
+        },
+        {
+          "caller": "acquire",
+          "callee": "this.locked.add",
+          "lineNumber": 280
+        },
+        {
+          "caller": "acquire",
+          "callee": "this.locked.delete",
+          "lineNumber": 281
+        },
+        {
+          "caller": "acquire",
+          "callee": "this.runtimes.get",
+          "lineNumber": 282
+        },
+        {
+          "caller": "acquire",
+          "callee": "runtimes.push",
+          "lineNumber": 283
+        },
+        {
+          "caller": "acquire",
+          "callee": "this.runtimes.set",
+          "lineNumber": 284
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 3
+      }
+    },
+    {
+      "path": "packages/server/src/transports/unix/index.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 3,
+      "nonEmptyLines": 3,
+      "exports": [
+        {
+          "name": "createUnixListener",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "createUnixServer",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "UnixListenerOptions",
+          "line": 3,
+          "isDefault": false
+        },
+        {
+          "name": "UnixServerOptions",
+          "line": 3,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/server/src/transports/unix/listener.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 434,
+      "nonEmptyLines": 402,
+      "functions": [
+        {
+          "name": "validateUnixSocketPath",
+          "startLine": 18,
+          "endLine": 23,
+          "params": [
+            "path",
+            "description"
+          ]
+        },
+        {
+          "name": "getOwnedBindPath",
+          "startLine": 307,
+          "endLine": 310,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "removeStaleSocket",
+          "startLine": 312,
+          "endLine": 341,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "removePath",
+          "startLine": 343,
+          "endLine": 349,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "isSocketLive",
+          "startLine": 351,
+          "endLine": 376,
+          "params": [
+            "path"
+          ]
+        },
+        {
+          "name": "setSocketMode",
+          "startLine": 378,
+          "endLine": 385,
+          "params": [
+            "path",
+            "mode"
+          ]
+        },
+        {
+          "name": "closeNetServer",
+          "startLine": 387,
+          "endLine": 395,
+          "params": [
+            "server",
+            "reportError"
+          ]
+        },
+        {
+          "name": "isErrorCode",
+          "startLine": 397,
+          "endLine": 399,
+          "params": [
+            "error",
+            "code"
+          ]
+        },
+        {
+          "name": "createUnixListener",
+          "startLine": 401,
+          "endLine": 403,
+          "params": [
+            "options"
+          ]
+        },
+        {
+          "name": "resolveUnixListenerOptions",
+          "startLine": 405,
+          "endLine": 434,
+          "params": [
+            "options"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "UnixListener",
+          "startLine": 37,
+          "endLine": 201,
+          "methods": [
+            "constructor",
+            "address",
+            "start",
+            "close",
+            "acceptSocket",
+            "closeInternal",
+            "closeServerAndCleanup",
+            "cleanupOwnedSocket",
+            "reportError"
+          ],
+          "properties": [
+            "options",
+            "path",
+            "mode",
+            "connections",
+            "server",
+            "socketIdentity",
+            "ownedBindPath",
+            "boundPath",
+            "closing",
+            "closePromise",
+            "accept"
+          ]
+        },
+        {
+          "name": "UnixByteConnection",
+          "startLine": 204,
+          "endLine": 305,
+          "methods": [
+            "constructor",
+            "closed",
+            "send",
+            "close",
+            "markClosed",
+            "write"
+          ],
+          "properties": [
+            "socket",
+            "gracefulCloseTimeoutMs",
+            "maxPendingBytes",
+            "pendingBytes",
+            "closedValue",
+            "closing",
+            "writeTail",
+            "closePromise",
+            "resolveClose"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "validateUnixSocketPath",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "UnixByteConnection",
+          "line": 204,
+          "isDefault": false
+        },
+        {
+          "name": "createUnixListener",
+          "line": 401,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "validateUnixSocketPath",
+          "callee": "Buffer.byteLength",
+          "lineNumber": 20
+        },
+        {
+          "caller": "constructor",
+          "callee": "resolveUnixListenerOptions",
+          "lineNumber": 51
+        },
+        {
+          "caller": "start",
+          "callee": "getOwnedBindPath",
+          "lineNumber": 65
+        },
+        {
+          "caller": "start",
+          "callee": "validateUnixSocketPath",
+          "lineNumber": 66
+        },
+        {
+          "caller": "start",
+          "callee": "mkdir",
+          "lineNumber": 67
+        },
+        {
+          "caller": "start",
+          "callee": "dirname",
+          "lineNumber": 67
+        },
+        {
+          "caller": "start",
+          "callee": "removeStaleSocket",
+          "lineNumber": 68
+        },
+        {
+          "caller": "start",
+          "callee": "removeStaleSocket",
+          "lineNumber": 69
+        },
+        {
+          "caller": "start",
+          "callee": "createServer",
+          "lineNumber": 71
+        },
+        {
+          "caller": "start",
+          "callee": "this.acceptSocket",
+          "lineNumber": 71
+        },
+        {
+          "caller": "start",
+          "callee": "server.on",
+          "lineNumber": 72
+        },
+        {
+          "caller": "start",
+          "callee": "this.reportError",
+          "lineNumber": 72
+        },
+        {
+          "caller": "onError",
+          "callee": "server.off",
+          "lineNumber": 77
+        },
+        {
+          "caller": "onError",
+          "callee": "reject",
+          "lineNumber": 78
+        },
+        {
+          "caller": "onListening",
+          "callee": "server.off",
+          "lineNumber": 81
+        },
+        {
+          "caller": "onListening",
+          "callee": "resolve",
+          "lineNumber": 82
+        },
+        {
+          "caller": "start",
+          "callee": "server.once",
+          "lineNumber": 84
+        },
+        {
+          "caller": "start",
+          "callee": "server.once",
+          "lineNumber": 85
+        },
+        {
+          "caller": "start",
+          "callee": "server.listen",
+          "lineNumber": 86
+        },
+        {
+          "caller": "start",
+          "callee": "lstat",
+          "lineNumber": 88
+        },
+        {
+          "caller": "start",
+          "callee": "stats.isSocket",
+          "lineNumber": 89
+        },
+        {
+          "caller": "start",
+          "callee": "link",
+          "lineNumber": 91
+        },
+        {
+          "caller": "start",
+          "callee": "setSocketMode",
+          "lineNumber": 92
+        },
+        {
+          "caller": "start",
+          "callee": "this.closeServerAndCleanup",
+          "lineNumber": 95
+        },
+        {
+          "caller": "close",
+          "callee": "this.closeInternal",
+          "lineNumber": 104
+        },
+        {
+          "caller": "acceptSocket",
+          "callee": "socket.destroy",
+          "lineNumber": 110
+        },
+        {
+          "caller": "acceptSocket",
+          "callee": "this.connections.add",
+          "lineNumber": 118
+        },
+        {
+          "caller": "acceptSocket",
+          "callee": "socket.destroy",
+          "lineNumber": 121
+        },
+        {
+          "caller": "acceptSocket",
+          "callee": "accept",
+          "lineNumber": 124
+        },
+        {
+          "caller": "acceptSocket",
+          "callee": "socket.on",
+          "lineNumber": 125
+        },
+        {
+          "caller": "acceptSocket",
+          "callee": "handler.onData",
+          "lineNumber": 126
+        },
+        {
+          "caller": "acceptSocket",
+          "callee": "socket.on",
+          "lineNumber": 128
+        },
+        {
+          "caller": "acceptSocket",
+          "callee": "handler.onError",
+          "lineNumber": 129
+        },
+        {
+          "caller": "acceptSocket",
+          "callee": "socket.destroy",
+          "lineNumber": 130
+        },
+        {
+          "caller": "acceptSocket",
+          "callee": "socket.once",
+          "lineNumber": 132
+        },
+        {
+          "caller": "acceptSocket",
+          "callee": "connection.markClosed",
+          "lineNumber": 133
+        },
+        {
+          "caller": "acceptSocket",
+          "callee": "this.connections.delete",
+          "lineNumber": 134
+        },
+        {
+          "caller": "acceptSocket",
+          "callee": "handler.onClose",
+          "lineNumber": 135
+        },
+        {
+          "caller": "closeInternal",
+          "callee": "this.closeServerAndCleanup",
+          "lineNumber": 141
+        },
+        {
+          "caller": "closeInternal",
+          "callee": "this.cleanupOwnedSocket",
+          "lineNumber": 141
+        },
+        {
+          "caller": "closeInternal",
+          "callee": "Promise.all",
+          "lineNumber": 142
+        },
+        {
+          "caller": "closeInternal",
+          "callee": "[...this.connections].map",
+          "lineNumber": 142
+        },
+        {
+          "caller": "closeInternal",
+          "callee": "connection.close",
+          "lineNumber": 142
+        },
+        {
+          "caller": "closeInternal",
+          "callee": "removePath",
+          "lineNumber": 144
+        },
+        {
+          "caller": "closeInternal",
+          "callee": "this.connections.clear",
+          "lineNumber": 146
+        },
+        {
+          "caller": "closeServerAndCleanup",
+          "callee": "closeNetServer",
+          "lineNumber": 152
+        },
+        {
+          "caller": "closeServerAndCleanup",
+          "callee": "this.reportError",
+          "lineNumber": 152
+        },
+        {
+          "caller": "closeServerAndCleanup",
+          "callee": "this.cleanupOwnedSocket",
+          "lineNumber": 154
+        },
+        {
+          "caller": "closeServerAndCleanup",
+          "callee": "removePath",
+          "lineNumber": 155
+        },
+        {
+          "caller": "cleanupOwnedSocket",
+          "callee": "lstat",
+          "lineNumber": 166
+        },
+        {
+          "caller": "cleanupOwnedSocket",
+          "callee": "isErrorCode",
+          "lineNumber": 168
+        },
+        {
+          "caller": "cleanupOwnedSocket",
+          "callee": "current.isSocket",
+          "lineNumber": 171
+        },
+        {
+          "caller": "cleanupOwnedSocket",
+          "callee": "join",
+          "lineNumber": 173
+        },
+        {
+          "caller": "cleanupOwnedSocket",
+          "callee": "dirname",
+          "lineNumber": 173
+        },
+        {
+          "caller": "cleanupOwnedSocket",
+          "callee": "randomUUID().slice",
+          "lineNumber": 173
+        },
+        {
+          "caller": "cleanupOwnedSocket",
+          "callee": "randomUUID",
+          "lineNumber": 173
+        },
+        {
+          "caller": "cleanupOwnedSocket",
+          "callee": "rename",
+          "lineNumber": 175
+        },
+        {
+          "caller": "cleanupOwnedSocket",
+          "callee": "isErrorCode",
+          "lineNumber": 177
+        },
+        {
+          "caller": "cleanupOwnedSocket",
+          "callee": "lstat",
+          "lineNumber": 180
+        },
+        {
+          "caller": "cleanupOwnedSocket",
+          "callee": "moved.isSocket",
+          "lineNumber": 181
+        },
+        {
+          "caller": "cleanupOwnedSocket",
+          "callee": "removePath",
+          "lineNumber": 182
+        },
+        {
+          "caller": "cleanupOwnedSocket",
+          "callee": "lstat",
+          "lineNumber": 186
+        },
+        {
+          "caller": "cleanupOwnedSocket",
+          "callee": "isErrorCode",
+          "lineNumber": 188
+        },
+        {
+          "caller": "cleanupOwnedSocket",
+          "callee": "rename",
+          "lineNumber": 188
+        },
+        {
+          "caller": "reportError",
+          "callee": "this.options.onError",
+          "lineNumber": 196
+        },
+        {
+          "caller": "reportError",
+          "callee": "String",
+          "lineNumber": 196
+        },
+        {
+          "caller": "send",
+          "callee": "Promise.reject",
+          "lineNumber": 227
+        },
+        {
+          "caller": "send",
+          "callee": "Promise.reject",
+          "lineNumber": 229
+        },
+        {
+          "caller": "send",
+          "callee": "Promise.reject",
+          "lineNumber": 231
+        },
+        {
+          "caller": "send",
+          "callee": "chunk.slice",
+          "lineNumber": 234
+        },
+        {
+          "caller": "send",
+          "callee": "this.writeTail.then",
+          "lineNumber": 235
+        },
+        {
+          "caller": "send",
+          "callee": "this.write",
+          "lineNumber": 235
+        },
+        {
+          "caller": "send",
+          "callee": "write.finally",
+          "lineNumber": 236
+        },
+        {
+          "caller": "send",
+          "callee": "tracked.catch",
+          "lineNumber": 239
+        },
+        {
+          "caller": "close",
+          "callee": "this.markClosed",
+          "lineNumber": 245
+        },
+        {
+          "caller": "close",
+          "callee": "Promise.resolve",
+          "lineNumber": 246
+        },
+        {
+          "caller": "close",
+          "callee": "finalChunk?.slice",
+          "lineNumber": 250
+        },
+        {
+          "caller": "close",
+          "callee": "setTimeout",
+          "lineNumber": 253
+        },
+        {
+          "caller": "close",
+          "callee": "this.socket.destroy",
+          "lineNumber": 254
+        },
+        {
+          "caller": "close",
+          "callee": "this.markClosed",
+          "lineNumber": 255
+        },
+        {
+          "caller": "close",
+          "callee": "timer.unref",
+          "lineNumber": 257
+        },
+        {
+          "caller": "close",
+          "callee": "this.socket.once",
+          "lineNumber": 258
+        },
+        {
+          "caller": "close",
+          "callee": "clearTimeout",
+          "lineNumber": 258
+        },
+        {
+          "caller": "close",
+          "callee": "this.writeTail.then",
+          "lineNumber": 259
+        },
+        {
+          "caller": "close",
+          "callee": "this.markClosed",
+          "lineNumber": 261
+        },
+        {
+          "caller": "close",
+          "callee": "this.socket.end",
+          "lineNumber": 265
+        },
+        {
+          "caller": "close",
+          "callee": "this.socket.end",
+          "lineNumber": 266
+        },
+        {
+          "caller": "close",
+          "callee": "this.socket.destroy",
+          "lineNumber": 268
+        },
+        {
+          "caller": "markClosed",
+          "callee": "this.resolveClose",
+          "lineNumber": 279
+        },
+        {
+          "caller": "write",
+          "callee": "Promise.reject",
+          "lineNumber": 285
+        },
+        {
+          "caller": "onClose",
+          "callee": "finish",
+          "lineNumber": 289
+        },
+        {
+          "caller": "finish",
+          "callee": "this.socket.off",
+          "lineNumber": 293
+        },
+        {
+          "caller": "finish",
+          "callee": "reject",
+          "lineNumber": 294
+        },
+        {
+          "caller": "finish",
+          "callee": "resolve",
+          "lineNumber": 295
+        },
+        {
+          "caller": "write",
+          "callee": "this.socket.once",
+          "lineNumber": 297
+        },
+        {
+          "caller": "write",
+          "callee": "this.socket.write",
+          "lineNumber": 299
+        },
+        {
+          "caller": "write",
+          "callee": "finish",
+          "lineNumber": 301
+        },
+        {
+          "caller": "write",
+          "callee": "String",
+          "lineNumber": 301
+        },
+        {
+          "caller": "getOwnedBindPath",
+          "callee": "createHash(\"sha256\").update(path).digest(\"hex\").slice",
+          "lineNumber": 308
+        },
+        {
+          "caller": "getOwnedBindPath",
+          "callee": "createHash(\"sha256\").update(path).digest",
+          "lineNumber": 308
+        },
+        {
+          "caller": "getOwnedBindPath",
+          "callee": "createHash(\"sha256\").update",
+          "lineNumber": 308
+        },
+        {
+          "caller": "getOwnedBindPath",
+          "callee": "createHash",
+          "lineNumber": 308
+        },
+        {
+          "caller": "getOwnedBindPath",
+          "callee": "join",
+          "lineNumber": 309
+        },
+        {
+          "caller": "getOwnedBindPath",
+          "callee": "dirname",
+          "lineNumber": 309
+        },
+        {
+          "caller": "removeStaleSocket",
+          "callee": "lstat",
+          "lineNumber": 315
+        },
+        {
+          "caller": "removeStaleSocket",
+          "callee": "isErrorCode",
+          "lineNumber": 317
+        },
+        {
+          "caller": "removeStaleSocket",
+          "callee": "original.isSocket",
+          "lineNumber": 320
+        },
+        {
+          "caller": "removeStaleSocket",
+          "callee": "isSocketLive",
+          "lineNumber": 321
+        },
+        {
+          "caller": "removeStaleSocket",
+          "callee": "join",
+          "lineNumber": 323
+        },
+        {
+          "caller": "removeStaleSocket",
+          "callee": "dirname",
+          "lineNumber": 323
+        },
+        {
+          "caller": "removeStaleSocket",
+          "callee": "randomUUID().slice",
+          "lineNumber": 323
+        },
+        {
+          "caller": "removeStaleSocket",
+          "callee": "randomUUID",
+          "lineNumber": 323
+        },
+        {
+          "caller": "removeStaleSocket",
+          "callee": "rename",
+          "lineNumber": 325
+        },
+        {
+          "caller": "removeStaleSocket",
+          "callee": "isErrorCode",
+          "lineNumber": 327
+        },
+        {
+          "caller": "removeStaleSocket",
+          "callee": "lstat",
+          "lineNumber": 330
+        },
+        {
+          "caller": "removeStaleSocket",
+          "callee": "current.isSocket",
+          "lineNumber": 331
+        },
+        {
+          "caller": "removeStaleSocket",
+          "callee": "lstat",
+          "lineNumber": 333
+        },
+        {
+          "caller": "removeStaleSocket",
+          "callee": "isErrorCode",
+          "lineNumber": 335
+        },
+        {
+          "caller": "removeStaleSocket",
+          "callee": "rename",
+          "lineNumber": 335
+        },
+        {
+          "caller": "removeStaleSocket",
+          "callee": "removePath",
+          "lineNumber": 340
+        },
+        {
+          "caller": "removePath",
+          "callee": "unlink",
+          "lineNumber": 345
+        },
+        {
+          "caller": "removePath",
+          "callee": "isErrorCode",
+          "lineNumber": 347
+        },
+        {
+          "caller": "isSocketLive",
+          "callee": "createConnection",
+          "lineNumber": 353
+        },
+        {
+          "caller": "finish",
+          "callee": "clearTimeout",
+          "lineNumber": 359
+        },
+        {
+          "caller": "finish",
+          "callee": "socket.removeAllListeners",
+          "lineNumber": 360
+        },
+        {
+          "caller": "finish",
+          "callee": "socket.destroy",
+          "lineNumber": 361
+        },
+        {
+          "caller": "finish",
+          "callee": "reject",
+          "lineNumber": 362
+        },
+        {
+          "caller": "finish",
+          "callee": "resolve",
+          "lineNumber": 363
+        },
+        {
+          "caller": "isSocketLive",
+          "callee": "socket.once",
+          "lineNumber": 365
+        },
+        {
+          "caller": "isSocketLive",
+          "callee": "finish",
+          "lineNumber": 365
+        },
+        {
+          "caller": "isSocketLive",
+          "callee": "socket.once",
+          "lineNumber": 366
+        },
+        {
+          "caller": "isSocketLive",
+          "callee": "[\"ECONNREFUSED\", \"ENOENT\", \"EPIPE\", \"ECONNRESET\"].includes",
+          "lineNumber": 367
+        },
+        {
+          "caller": "isSocketLive",
+          "callee": "finish",
+          "lineNumber": 368
+        },
+        {
+          "caller": "isSocketLive",
+          "callee": "finish",
+          "lineNumber": 371
+        },
+        {
+          "caller": "isSocketLive",
+          "callee": "setTimeout",
+          "lineNumber": 373
+        },
+        {
+          "caller": "isSocketLive",
+          "callee": "finish",
+          "lineNumber": 373
+        },
+        {
+          "caller": "isSocketLive",
+          "callee": "timer.unref",
+          "lineNumber": 374
+        },
+        {
+          "caller": "setSocketMode",
+          "callee": "chmod",
+          "lineNumber": 381
+        },
+        {
+          "caller": "setSocketMode",
+          "callee": "isErrorCode",
+          "lineNumber": 383
+        },
+        {
+          "caller": "setSocketMode",
+          "callee": "isErrorCode",
+          "lineNumber": 383
+        },
+        {
+          "caller": "closeNetServer",
+          "callee": "Promise.resolve",
+          "lineNumber": 388
+        },
+        {
+          "caller": "closeNetServer",
+          "callee": "server.close",
+          "lineNumber": 390
+        },
+        {
+          "caller": "closeNetServer",
+          "callee": "reportError",
+          "lineNumber": 391
+        },
+        {
+          "caller": "closeNetServer",
+          "callee": "resolve",
+          "lineNumber": 392
+        },
+        {
+          "caller": "resolveUnixListenerOptions",
+          "callee": "validateUnixSocketPath",
+          "lineNumber": 406
+        },
+        {
+          "caller": "resolveUnixListenerOptions",
+          "callee": "Number.isInteger",
+          "lineNumber": 408
+        },
+        {
+          "caller": "resolveUnixListenerOptions",
+          "callee": "Number.isSafeInteger",
+          "lineNumber": 412
+        },
+        {
+          "caller": "resolveUnixListenerOptions",
+          "callee": "Number.isSafeInteger",
+          "lineNumber": 416
+        },
+        {
+          "caller": "resolveUnixListenerOptions",
+          "callee": "Number.isSafeInteger",
+          "lineNumber": 421
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 3,
+        "functionCount": 10,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "packages/server/src/transports/unix/preset.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 22,
+      "functions": [
+        {
+          "name": "createUnixServer",
+          "startLine": 7,
+          "endLine": 23,
+          "params": [
+            "service",
+            "options"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "createUnixServer",
+          "line": 7,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createUnixServer",
+          "callee": "createUnixListener",
+          "lineNumber": 8
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/server/src/transports/unix/types.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 13,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/server/src/types.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 63,
+      "nonEmptyLines": 55,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/server/test/conformance.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 378,
+      "nonEmptyLines": 342,
+      "functions": [
+        {
+          "name": "startServer",
+          "startLine": 14,
+          "endLine": 27,
+          "params": [
+            "service",
+            "overrides"
+          ]
+        },
+        {
+          "name": "connect",
+          "startLine": 29,
+          "endLine": 33,
+          "params": [
+            "server"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "startServer",
+          "callee": "mkdtemp",
+          "lineNumber": 18
+        },
+        {
+          "caller": "startServer",
+          "callee": "join",
+          "lineNumber": 18
+        },
+        {
+          "caller": "startServer",
+          "callee": "tmpdir",
+          "lineNumber": 18
+        },
+        {
+          "caller": "startServer",
+          "callee": "tempDirectories.add",
+          "lineNumber": 19
+        },
+        {
+          "caller": "startServer",
+          "callee": "createUnixServer",
+          "lineNumber": 20
+        },
+        {
+          "caller": "startServer",
+          "callee": "join",
+          "lineNumber": 21
+        },
+        {
+          "caller": "startServer",
+          "callee": "servers.add",
+          "lineNumber": 24
+        },
+        {
+          "caller": "startServer",
+          "callee": "server.start",
+          "lineNumber": 25
+        },
+        {
+          "caller": "connect",
+          "callee": "connectUnixTestClient",
+          "lineNumber": 30
+        },
+        {
+          "caller": "connect",
+          "callee": "clients.add",
+          "lineNumber": 31
+        },
+        {
+          "caller": "listSessions",
+          "callee": "super.listSessions",
+          "lineNumber": 133
+        },
+        {
+          "caller": "listSessions",
+          "callee": "this.entered.resolve",
+          "lineNumber": 135
+        },
+        {
+          "caller": "listSessions",
+          "callee": "super.listSessions",
+          "lineNumber": 258
+        },
+        {
+          "caller": "listSessions",
+          "callee": "super.listSessions",
+          "lineNumber": 285
+        },
+        {
+          "caller": "listSessions",
+          "callee": "super.listSessions",
+          "lineNumber": 305
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/server/test/listener.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 57,
+      "nonEmptyLines": 48,
+      "classes": [
+        {
+          "name": "TestListener",
+          "startLine": 6,
+          "endLine": 28,
+          "methods": [
+            "constructor",
+            "start",
+            "close"
+          ],
+          "properties": [
+            "address",
+            "accept",
+            "startCount",
+            "closeCount",
+            "startError"
+          ]
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "packages/server/test/server.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 100,
+      "nonEmptyLines": 85,
+      "functions": [
+        {
+          "name": "makeSocketPath",
+          "startLine": 16,
+          "endLine": 19,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "makeSocketPath",
+          "callee": "mkdtemp",
+          "lineNumber": 17
+        },
+        {
+          "caller": "makeSocketPath",
+          "callee": "join",
+          "lineNumber": 17
+        },
+        {
+          "caller": "makeSocketPath",
+          "callee": "tmpdir",
+          "lineNumber": 17
+        },
+        {
+          "caller": "makeSocketPath",
+          "callee": "join",
+          "lineNumber": 18
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/server/test/sessions.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 429,
+      "nonEmptyLines": 394,
+      "functions": [
+        {
+          "name": "startServer",
+          "startLine": 46,
+          "endLine": 56,
+          "params": [
+            "service",
+            "options"
+          ]
+        },
+        {
+          "name": "connect",
+          "startLine": 58,
+          "endLine": 62,
+          "params": [
+            "server"
+          ]
+        },
+        {
+          "name": "attach",
+          "startLine": 64,
+          "endLine": 68,
+          "params": [
+            "client",
+            "sessionId"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "MemoryService",
+          "startLine": 18,
+          "endLine": 18,
+          "methods": [],
+          "properties": []
+        },
+        {
+          "name": "OrderedSnapshotService",
+          "startLine": 20,
+          "endLine": 40,
+          "methods": [
+            "listModels"
+          ],
+          "properties": [
+            "firstStarted",
+            "secondStarted",
+            "firstRelease",
+            "secondRelease",
+            "controlled",
+            "startedCount"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "listModels",
+          "callee": "super.listModels",
+          "lineNumber": 29
+        },
+        {
+          "caller": "listModels",
+          "callee": "this.firstStarted.resolve",
+          "lineNumber": 32
+        },
+        {
+          "caller": "listModels",
+          "callee": "this.secondStarted.resolve",
+          "lineNumber": 35
+        },
+        {
+          "caller": "startServer",
+          "callee": "mkdtemp",
+          "lineNumber": 47
+        },
+        {
+          "caller": "startServer",
+          "callee": "join",
+          "lineNumber": 47
+        },
+        {
+          "caller": "startServer",
+          "callee": "tmpdir",
+          "lineNumber": 47
+        },
+        {
+          "caller": "startServer",
+          "callee": "tempDirectories.add",
+          "lineNumber": 48
+        },
+        {
+          "caller": "startServer",
+          "callee": "createUnixServer",
+          "lineNumber": 49
+        },
+        {
+          "caller": "startServer",
+          "callee": "join",
+          "lineNumber": 50
+        },
+        {
+          "caller": "startServer",
+          "callee": "servers.add",
+          "lineNumber": 53
+        },
+        {
+          "caller": "startServer",
+          "callee": "server.start",
+          "lineNumber": 54
+        },
+        {
+          "caller": "connect",
+          "callee": "connectUnixTestClient",
+          "lineNumber": 59
+        },
+        {
+          "caller": "connect",
+          "callee": "clients.add",
+          "lineNumber": 60
+        },
+        {
+          "caller": "attach",
+          "callee": "client.request",
+          "lineNumber": 65
+        },
+        {
+          "caller": "listSessions",
+          "callee": "(await super.listSessions()).map",
+          "lineNumber": 157
+        },
+        {
+          "caller": "listSessions",
+          "callee": "super.listSessions",
+          "lineNumber": 157
+        },
+        {
+          "caller": "createSession",
+          "callee": "super.createSession",
+          "lineNumber": 405
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 2
+      }
+    },
+    {
+      "path": "packages/server/test/unix-connection.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 56,
+      "classes": [
+        {
+          "name": "ControlledSocket",
+          "startLine": 7,
+          "endLine": 42,
+          "methods": [
+            "write",
+            "end",
+            "destroy",
+            "completeWrite"
+          ],
+          "properties": [
+            "destroyed",
+            "writable",
+            "writableLength",
+            "ended",
+            "finalChunk",
+            "writeCallback"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "end",
+          "callee": "chunk?.slice",
+          "lineNumber": 23
+        },
+        {
+          "caller": "destroy",
+          "callee": "this.emit",
+          "lineNumber": 31
+        },
+        {
+          "caller": "completeWrite",
+          "callee": "callback",
+          "lineNumber": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "packages/server/test/unix.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 117,
+      "nonEmptyLines": 103,
+      "functions": [
+        {
+          "name": "makeSocketPath",
+          "startLine": 16,
+          "endLine": 20,
+          "params": [
+            "nested"
+          ]
+        },
+        {
+          "name": "makeServer",
+          "startLine": 22,
+          "endLine": 26,
+          "params": [
+            "path"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "makeSocketPath",
+          "callee": "mkdtemp",
+          "lineNumber": 17
+        },
+        {
+          "caller": "makeSocketPath",
+          "callee": "join",
+          "lineNumber": 17
+        },
+        {
+          "caller": "makeSocketPath",
+          "callee": "tmpdir",
+          "lineNumber": 17
+        },
+        {
+          "caller": "makeSocketPath",
+          "callee": "tempDirectories.add",
+          "lineNumber": 18
+        },
+        {
+          "caller": "makeSocketPath",
+          "callee": "join",
+          "lineNumber": 19
+        },
+        {
+          "caller": "makeSocketPath",
+          "callee": "join",
+          "lineNumber": 19
+        },
+        {
+          "caller": "makeServer",
+          "callee": "createUnixServer",
+          "lineNumber": 23
+        },
+        {
+          "caller": "makeServer",
+          "callee": "servers.add",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    }
+  ]
+}

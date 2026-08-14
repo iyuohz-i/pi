@@ -1,0 +1,311 @@
+{
+  "nodes": [
+    {
+      "id": "scripts/read-tool-stats.mjs",
+      "type": "file",
+      "label": "read-tool-stats.mjs",
+      "language": "javascript",
+      "summary": "分析 coding-agent 会话中 Read 工具的使用统计。扫描 ~/.pi/agent/sessions 中的 JSONL 会话文件，按时间桶、模型、工具分类统计使用频次和耗时，输出 HTML 或文本报告。支持时间范围过滤、模型前缀过滤等选项。",
+      "metadata": { "lines": 505, "category": "analysis-scripts" }
+    },
+    {
+      "id": "scripts/read-tool-stats.mjs::parseArgs",
+      "type": "function",
+      "label": "parseArgs",
+      "summary": "解析命令行参数：会话目录、输出格式（json/text/html）、模型过滤、top N、时间范围等",
+      "metadata": { "startLine": 15, "endLine": 53, "params": ["argv"] }
+    },
+    {
+      "id": "scripts/read-tool-stats.mjs::printHelp",
+      "type": "function",
+      "label": "printHelp",
+      "summary": "输出命令行帮助信息，列出所有可用选项和用法说明",
+      "metadata": { "startLine": 55, "endLine": 71, "params": [] }
+    },
+    {
+      "id": "scripts/read-tool-stats.mjs::resolveAutoSinceMs",
+      "type": "function",
+      "label": "resolveAutoSinceMs",
+      "summary": "解析 --since 参数为毫秒时间戳，支持 'auto' 值自动推断起始时间",
+      "metadata": { "startLine": 122, "endLine": 137, "params": ["options"] }
+    },
+    {
+      "id": "scripts/read-tool-stats.mjs::classifyRead",
+      "type": "function",
+      "label": "classifyRead",
+      "summary": "根据 Read 工具的参数分类读取操作类型（单文件/目录/图片/PDF/笔记本等）",
+      "metadata": { "startLine": 182, "endLine": 192, "params": ["args"] }
+    },
+    {
+      "id": "scripts/read-tool-stats.mjs::summarizeNormalizedTimeBucketsByKey",
+      "type": "function",
+      "label": "summarizeNormalizedTimeBucketsByKey",
+      "summary": "按指定键函数对记录进行分组，统计每个组在各时间桶中的归一化使用量",
+      "metadata": { "startLine": 202, "endLine": 240, "params": ["records", "keyFn"] }
+    },
+    {
+      "id": "scripts/read-tool-stats.mjs::summarizeGroups",
+      "type": "function",
+      "label": "summarizeGroups",
+      "summary": "按指定键函数对记录分组，计算每组的总计和占比统计",
+      "metadata": { "startLine": 242, "endLine": 257, "params": ["records", "keyFn"] }
+    },
+    {
+      "id": "scripts/read-tool-stats.mjs::buildSummary",
+      "type": "function",
+      "label": "buildSummary",
+      "summary": "构建完整的统计摘要：包含按模型、工具类型、时间桶、小时分布等多维度统计",
+      "metadata": { "startLine": 259, "endLine": 314, "params": ["records", "meta", "options"] }
+    },
+    {
+      "id": "scripts/read-tool-stats.mjs::buildHumanReport",
+      "type": "function",
+      "label": "buildHumanReport",
+      "summary": "将统计摘要格式化为人类可读的文本报告",
+      "metadata": { "startLine": 316, "endLine": 326, "params": ["summary"] }
+    },
+    {
+      "id": "scripts/read-tool-stats.mjs::printHtmlReport",
+      "type": "function",
+      "label": "printHtmlReport",
+      "summary": "将统计摘要渲染为 HTML 报告并输出到 stdout",
+      "metadata": { "startLine": 332, "endLine": 342, "params": ["summary"] }
+    },
+    {
+      "id": "scripts/read-tool-stats.mjs::printHumanReport",
+      "type": "function",
+      "label": "printHumanReport",
+      "summary": "输出格式化的文本报告：包含总计、按模型分布、按工具类型分布、时间趋势和小时分布的柱状图",
+      "metadata": { "startLine": 344, "endLine": 423, "params": ["summary"] }
+    },
+    {
+      "id": "scripts/read-tool-stats.mjs::scanSessions",
+      "type": "function",
+      "label": "scanSessions",
+      "summary": "递归扫描会话目录中的 JSONL 文件，解析每条消息提取 Read 工具调用记录和时间戳",
+      "metadata": { "startLine": 425, "endLine": 473, "params": ["sessionsDir", "since"] }
+    },
+    {
+      "id": "scripts/read-tool-stats.mjs::main",
+      "type": "function",
+      "label": "main",
+      "summary": "主入口：解析参数、扫描会话、过滤记录、构建摘要并按格式输出报告",
+      "metadata": { "startLine": 479, "endLine": 500, "params": [] }
+    },
+    {
+      "id": "scripts/release-notes.mjs",
+      "type": "file",
+      "label": "release-notes.mjs",
+      "language": "javascript",
+      "summary": "发布注释管理脚本。从 CHANGELOG.md 提取指定版本的发布说明，将相对路径链接规范化为 GitHub 绝对链接，支持提取和修复 GitHub Release 内容。处理旧仓库 URL 迁移。",
+      "metadata": { "lines": 364, "category": "build-scripts" }
+    },
+    {
+      "id": "scripts/release-notes.mjs::printUsage",
+      "type": "function",
+      "label": "printUsage",
+      "summary": "输出命令行帮助信息，列出 extract 和 fix-github-releases 两个子命令的用法",
+      "metadata": { "startLine": 16, "endLine": 38, "params": [] }
+    },
+    {
+      "id": "scripts/release-notes.mjs::parseOptions",
+      "type": "function",
+      "label": "parseOptions",
+      "summary": "解析命令行选项：--repo/--changelog/--version/--tag/--out/--base-path/--since-tag 等",
+      "metadata": { "startLine": 60, "endLine": 103, "params": ["args"] }
+    },
+    {
+      "id": "scripts/release-notes.mjs::compareVersions",
+      "type": "function",
+      "label": "compareVersions",
+      "summary": "比较两个 semver 版本号，返回 -1/0/1 用于排序",
+      "metadata": { "startLine": 116, "endLine": 128, "params": ["a", "b"] }
+    },
+    {
+      "id": "scripts/release-notes.mjs::extractChangelogSection",
+      "type": "function",
+      "label": "extractChangelogSection",
+      "summary": "从 CHANGELOG 内容中提取指定版本对应的章节文本",
+      "metadata": { "startLine": 134, "endLine": 147, "params": ["changelog", "version"] }
+    },
+    {
+      "id": "scripts/release-notes.mjs::splitLocalTarget",
+      "type": "function",
+      "label": "splitLocalTarget",
+      "summary": "将本地链接目标拆分为路径部分、查询参数和 hash 片段",
+      "metadata": { "startLine": 149, "endLine": 164, "params": ["target"] }
+    },
+    {
+      "id": "scripts/release-notes.mjs::resolveRepositoryPath",
+      "type": "function",
+      "label": "resolveRepositoryPath",
+      "summary": "将目标路径相对于 base path 解析为仓库内的规范路径，拒绝路径逃逸",
+      "metadata": { "startLine": 175, "endLine": 186, "params": ["targetPath", "basePath"] }
+    },
+    {
+      "id": "scripts/release-notes.mjs::normalizeLinkTarget",
+      "type": "function",
+      "label": "normalizeLinkTarget",
+      "summary": "将 Markdown 链接目标规范化为 GitHub 绝对 URL：处理旧仓库 URL 迁移、浮动分支引用固定到 tag、相对路径转换为 blob/tree 链接",
+      "metadata": { "startLine": 197, "endLine": 226, "params": ["target", "options"] }
+    },
+    {
+      "id": "scripts/release-notes.mjs::normalizeReleaseNoteLinks",
+      "type": "function",
+      "label": "normalizeReleaseNoteLinks",
+      "summary": "遍历 Markdown 中所有内联链接，将每个链接目标规范化并记录变更",
+      "metadata": { "startLine": 228, "endLine": 239, "params": ["markdown", "options"] }
+    },
+    {
+      "id": "scripts/release-notes.mjs::extractReleaseNotes",
+      "type": "function",
+      "label": "extractReleaseNotes",
+      "summary": "从 CHANGELOG 提取指定版本的发布说明，规范化链接后输出到文件或 stdout",
+      "metadata": { "startLine": 250, "endLine": 266, "params": ["options"] }
+    },
+    {
+      "id": "scripts/release-notes.mjs::listGithubReleases",
+      "type": "function",
+      "label": "listGithubReleases",
+      "summary": "通过 gh CLI 列出仓库的所有 GitHub Release（分页获取）",
+      "metadata": { "startLine": 268, "endLine": 277, "params": ["repo"] }
+    },
+    {
+      "id": "scripts/release-notes.mjs::uniqueChanges",
+      "type": "function",
+      "label": "uniqueChanges",
+      "summary": "对链接变更列表去重，避免同一链接被重复修复",
+      "metadata": { "startLine": 279, "endLine": 291, "params": ["changes"] }
+    },
+    {
+      "id": "scripts/release-notes.mjs::updateGithubRelease",
+      "type": "function",
+      "label": "updateGithubRelease",
+      "summary": "通过 gh CLI 更新指定 tag 的 GitHub Release 说明内容",
+      "metadata": { "startLine": 293, "endLine": 302, "params": ["repo", "tag", "body"] }
+    },
+    {
+      "id": "scripts/release-notes.mjs::fixGithubReleases",
+      "type": "function",
+      "label": "fixGithubReleases",
+      "summary": "批量修复 GitHub Release 中的链接：列出所有 release，对每个版本规范化链接并更新",
+      "metadata": { "startLine": 304, "endLine": 344, "params": ["options"] }
+    },
+    {
+      "id": "scripts/session-context-stats.mjs",
+      "type": "file",
+      "label": "session-context-stats.mjs",
+      "language": "javascript",
+      "summary": "分析 agent 会话的上下文窗口使用统计。扫描会话 JSONL 文件，从 models.generated.ts 和 models.json 加载模型上下文窗口配置，按模型和上下文窗口 ID 统计 token 消耗分布，输出文本或 HTML 报告。",
+      "metadata": { "lines": 405, "category": "analysis-scripts" }
+    },
+    {
+      "id": "scripts/session-context-stats.mjs::parseArgs",
+      "type": "function",
+      "label": "parseArgs",
+      "summary": "解析命令行参数：会话目录、输出格式、模型过滤、bash 命令过滤、cwd 过滤等",
+      "metadata": { "startLine": 15, "endLine": 34, "params": ["argv"] }
+    },
+    {
+      "id": "scripts/session-context-stats.mjs::printHelp",
+      "type": "function",
+      "label": "printHelp",
+      "summary": "输出命令行帮助信息",
+      "metadata": { "startLine": 36, "endLine": 53, "params": [] }
+    },
+    {
+      "id": "scripts/session-context-stats.mjs::loadContextWindows",
+      "type": "function",
+      "label": "loadContextWindows",
+      "summary": "从 models.generated.ts 和 ~/.pi/agent/models.json 加载模型到上下文窗口大小的映射，支持正则解析和配置覆盖",
+      "metadata": { "startLine": 112, "endLine": 154, "params": [] }
+    },
+    {
+      "id": "scripts/session-context-stats.mjs::contextTokens",
+      "type": "function",
+      "label": "contextTokens",
+      "summary": "从 usage 对象中提取上下文 token 总数",
+      "metadata": { "startLine": 156, "endLine": 166, "params": ["usage"] }
+    },
+    {
+      "id": "scripts/session-context-stats.mjs::scanSessions",
+      "type": "function",
+      "label": "scanSessions",
+      "summary": "递归扫描会话目录，解析 JSONL 文件提取每条 assistant 消息的 token 使用量和模型信息",
+      "metadata": { "startLine": 168, "endLine": 261, "params": ["sessionsDir", "sinceMs", "contextWindows", "cwdFilter"] }
+    },
+    {
+      "id": "scripts/session-context-stats.mjs::summarizeSessionGroup",
+      "type": "function",
+      "label": "summarizeSessionGroup",
+      "summary": "对一组会话计算统计摘要：会话数、消息数、token 中位数、上下文窗口分布",
+      "metadata": { "startLine": 273, "endLine": 300, "params": ["key", "group"] }
+    },
+    {
+      "id": "scripts/session-context-stats.mjs::buildSummary",
+      "type": "function",
+      "label": "buildSummary",
+      "summary": "构建完整的上下文统计摘要：按模型和上下文窗口 ID 分组统计",
+      "metadata": { "startLine": 302, "endLine": 329, "params": ["sessions", "meta", "options"] }
+    },
+    {
+      "id": "scripts/session-context-stats.mjs::buildTextReport",
+      "type": "function",
+      "label": "buildTextReport",
+      "summary": "将统计摘要格式化为文本报告，包含按模型和上下文窗口的分布表格",
+      "metadata": { "startLine": 335, "endLine": 368, "params": ["summary"] }
+    },
+    {
+      "id": "scripts/session-context-stats.mjs::printHtmlReport",
+      "type": "function",
+      "label": "printHtmlReport",
+      "summary": "将统计摘要渲染为 HTML 报告并输出到 stdout",
+      "metadata": { "startLine": 374, "endLine": 383, "params": ["summary"] }
+    },
+    {
+      "id": "scripts/session-context-stats.mjs::main",
+      "type": "function",
+      "label": "main",
+      "summary": "主入口：加载上下文窗口配置、扫描会话、构建摘要并输出报告",
+      "metadata": { "startLine": 385, "endLine": 400, "params": [] }
+    },
+    {
+      "id": "scripts/stats.ts",
+      "type": "file",
+      "label": "stats.ts",
+      "language": "typescript",
+      "summary": "TypeScript 使用成本统计脚本。扫描 agent 会话目录，按天聚合 token 使用量和成本数据，支持按 provider 细分，输出每日和总计的统计报告。使用严格的 TypeScript 类型定义。",
+      "metadata": { "lines": 233, "category": "analysis-scripts" }
+    },
+    {
+      "id": "scripts/stats.ts::createTotals",
+      "type": "function",
+      "label": "createTotals",
+      "summary": "创建初始化的 Totals 对象，包含所有 token 计数和成本字段归零",
+      "metadata": { "startLine": 62, "endLine": 77, "params": [] }
+    },
+    {
+      "id": "scripts/stats.ts::parseArgs",
+      "type": "function",
+      "label": "parseArgs",
+      "summary": "解析命令行参数：--days（统计天数）、--cwd（工作目录过滤）、--sessions-base（会话目录路径）",
+      "metadata": { "startLine": 114, "endLine": 145, "params": [] }
+    },
+    {
+      "id": "scripts/sync-versions.test.mjs",
+      "type": "file",
+      "label": "sync-versions.test.mjs",
+      "language": "javascript",
+      "summary": "sync-versions.js 脚本的测试文件。使用 node:test 框架验证版本同步逻辑：确保私有依赖版本更新不影响 npm 别名、生成的 manifest 文件和 lockstep 发布的包。",
+      "metadata": { "lines": 75, "category": "test" }
+    },
+    {
+      "id": "scripts/sync-versions.test.mjs::runSyncVersions",
+      "type": "function",
+      "label": "runSyncVersions",
+      "summary": "在指定的临时目录中执行 sync-versions.js 脚本并返回执行结果",
+      "metadata": { "startLine": 21, "endLine": 26, "params": ["root"] }
+    }
+  ],
+  "edges": []
+}

@@ -1,0 +1,468 @@
+{
+  "nodes": [
+    {
+      "id": "packages/coding-agent/docs/index.md",
+      "type": "file",
+      "label": "文档首页",
+      "description": "Pi 文档的主入口页面，提供快速开始指南、核心功能文档链接和平台设置说明",
+      "metadata": {
+        "language": "markdown",
+        "sizeLines": 84,
+        "fileCategory": "docs",
+        "path": "packages/coding-agent/docs/index.md"
+      }
+    },
+    {
+      "id": "packages/coding-agent/docs/quickstart.md",
+      "type": "file",
+      "label": "快速开始指南",
+      "description": "Pi 的安装、认证和首次会话运行的完整流程指南",
+      "metadata": {
+        "language": "markdown",
+        "sizeLines": 167,
+        "fileCategory": "docs",
+        "path": "packages/coding-agent/docs/quickstart.md"
+      }
+    },
+    {
+      "id": "packages/coding-agent/docs/extensions.md",
+      "type": "file",
+      "label": "扩展系统文档",
+      "description": "TypeScript 扩展模块的完整文档，涵盖事件订阅、自定义工具、命令注册、UI 组件和状态管理",
+      "metadata": {
+        "language": "markdown",
+        "sizeLines": 2992,
+        "fileCategory": "docs",
+        "path": "packages/coding-agent/docs/extensions.md"
+      }
+    },
+    {
+      "id": "packages/coding-agent/docs/compaction.md",
+      "type": "file",
+      "label": "上下文压缩文档",
+      "description": "LLM 上下文窗口管理策略，包括自动压缩触发条件、工作原理、分支摘要和消息序列化",
+      "metadata": {
+        "language": "markdown",
+        "sizeLines": 401,
+        "fileCategory": "docs",
+        "path": "packages/coding-agent/docs/compaction.md"
+      }
+    },
+    {
+      "id": "packages/coding-agent/docs/models.md",
+      "type": "file",
+      "label": "自定义模型配置",
+      "description": "通过 models.json 添加自定义提供商和模型（Ollama、vLLM、LM Studio 等）的配置指南",
+      "metadata": {
+        "language": "markdown",
+        "sizeLines": 565,
+        "fileCategory": "docs",
+        "path": "packages/coding-agent/docs/models.md"
+      }
+    },
+    {
+      "id": "packages/coding-agent/docs/providers.md",
+      "type": "file",
+      "label": "提供商配置",
+      "description": "Pi 支持的订阅制提供商（OAuth）和 API Key 提供商的配置方法，包括认证流程和凭据管理",
+      "metadata": {
+        "language": "markdown",
+        "sizeLines": 317,
+        "fileCategory": "docs",
+        "path": "packages/coding-agent/docs/providers.md"
+      }
+    },
+    {
+      "id": "packages/coding-agent/docs/custom-provider.md",
+      "type": "file",
+      "label": "自定义提供商实现",
+      "description": "实现自定义 API 和 OAuth 流程的详细指南，用于集成非标准模型提供商",
+      "metadata": {
+        "language": "markdown",
+        "sizeLines": 774,
+        "fileCategory": "docs",
+        "path": "packages/coding-agent/docs/custom-provider.md"
+      }
+    },
+    {
+      "id": "packages/coding-agent/docs/sdk.md",
+      "type": "file",
+      "label": "SDK 文档",
+      "description": "程序化访问 Pi agent 能力的 SDK 文档，包括 createAgentSession、事件订阅和会话管理",
+      "metadata": {
+        "language": "markdown",
+        "sizeLines": 1214,
+        "fileCategory": "docs",
+        "path": "packages/coding-agent/docs/sdk.md"
+      }
+    },
+    {
+      "id": "packages/coding-agent/docs/rpc.md",
+      "type": "file",
+      "label": "RPC 模式文档",
+      "description": "通过 stdin/stdout JSON 协议实现无头操作的 RPC 模式，用于嵌入其他应用或 IDE",
+      "metadata": {
+        "language": "markdown",
+        "sizeLines": 1589,
+        "fileCategory": "docs",
+        "path": "packages/coding-agent/docs/rpc.md"
+      }
+    },
+    {
+      "id": "packages/coding-agent/docs/session-format.md",
+      "type": "file",
+      "label": "会话格式规范",
+      "description": "JSONL 会话文件格式、条目类型（CompactionEntry、BranchSummaryEntry）和 SessionManager API",
+      "metadata": {
+        "language": "markdown",
+        "sizeLines": 438,
+        "fileCategory": "docs",
+        "path": "packages/coding-agent/docs/session-format.md"
+      }
+    },
+    {
+      "id": "packages/coding-agent/docs/environment-variables.md",
+      "type": "file",
+      "label": "环境变量参考",
+      "description": "Pi 进程配置和会话元数据的环境变量列表，包括 bash 工具可用的变量",
+      "metadata": {
+        "language": "markdown",
+        "sizeLines": 94,
+        "fileCategory": "docs",
+        "path": "packages/coding-agent/docs/environment-variables.md"
+      }
+    },
+    {
+      "id": "packages/coding-agent/docs/security.md",
+      "type": "file",
+      "label": "安全指南",
+      "description": "项目信任机制、沙箱边界和漏洞报告的安全文档",
+      "metadata": {
+        "language": "markdown",
+        "sizeLines": 59,
+        "fileCategory": "docs",
+        "path": "packages/coding-agent/docs/security.md"
+      }
+    },
+    {
+      "id": "packages/coding-agent/docs/containerization.md",
+      "type": "file",
+      "label": "容器化文档",
+      "description": "使用 Gondolin、Docker 或 OpenShell 沙箱化 Pi 的配置指南",
+      "metadata": {
+        "language": "markdown",
+        "sizeLines": 111,
+        "fileCategory": "docs",
+        "path": "packages/coding-agent/docs/containerization.md"
+      }
+    },
+    {
+      "id": "packages/coding-agent/docs/keybindings.md",
+      "type": "file",
+      "label": "快捷键配置",
+      "description": "默认快捷键和自定义键绑定配置的文档",
+      "metadata": {
+        "language": "markdown",
+        "sizeLines": 236,
+        "fileCategory": "docs",
+        "path": "packages/coding-agent/docs/keybindings.md"
+      }
+    },
+    {
+      "id": "packages/coding-agent/docs/prompt-templates.md",
+      "type": "file",
+      "label": "提示模板文档",
+      "description": "可复用提示模板的创建和使用，通过斜杠命令展开",
+      "metadata": {
+        "language": "markdown",
+        "sizeLines": 96,
+        "fileCategory": "docs",
+        "path": "packages/coding-agent/docs/prompt-templates.md"
+      }
+    },
+    {
+      "id": "packages/coding-agent/docs/packages.md",
+      "type": "file",
+      "label": "Pi 包管理",
+      "description": "打包和分享扩展、技能、提示和主题的 Pi 包系统文档",
+      "metadata": {
+        "language": "markdown",
+        "sizeLines": 228,
+        "fileCategory": "docs",
+        "path": "packages/coding-agent/docs/packages.md"
+      }
+    },
+    {
+      "id": "packages/coding-agent/docs/llama-cpp.md",
+      "type": "file",
+      "label": "llama.cpp 集成",
+      "description": "运行本地 llama.cpp 路由器和使用 /llama 命令管理模型的文档",
+      "metadata": {
+        "language": "markdown",
+        "sizeLines": 99,
+        "fileCategory": "docs",
+        "path": "packages/coding-agent/docs/llama-cpp.md"
+      }
+    },
+    {
+      "id": "packages/coding-agent/docs/json.md",
+      "type": "file",
+      "label": "JSON 事件流模式",
+      "description": "打印模式下的结构化事件流输出格式文档",
+      "metadata": {
+        "language": "markdown",
+        "sizeLines": 93,
+        "fileCategory": "docs",
+        "path": "packages/coding-agent/docs/json.md"
+      }
+    },
+    {
+      "id": "packages/coding-agent/docs/development.md",
+      "type": "file",
+      "label": "开发指南",
+      "description": "本地开发环境设置、项目结构和调试方法的开发文档",
+      "metadata": {
+        "language": "markdown",
+        "sizeLines": 71,
+        "fileCategory": "docs",
+        "path": "packages/coding-agent/docs/development.md"
+      }
+    },
+    {
+      "id": "packages/coding-agent/docs/docs.json",
+      "type": "file",
+      "label": "文档配置",
+      "description": "文档站点的 JSON 配置文件，定义导航结构和文档元数据",
+      "metadata": {
+        "language": "json",
+        "sizeLines": 156,
+        "fileCategory": "config",
+        "path": "packages/coding-agent/docs/docs.json"
+      }
+    },
+    {
+      "id": "topic:context-management",
+      "type": "topic",
+      "label": "上下文管理",
+      "description": "LLM 上下文窗口管理策略，包括压缩、分支摘要和 token 预算控制"
+    },
+    {
+      "id": "topic:extension-system",
+      "type": "topic",
+      "label": "扩展系统",
+      "description": "TypeScript 扩展模块的架构，包括事件订阅、自定义工具、命令注册和生命周期管理"
+    },
+    {
+      "id": "topic:model-integration",
+      "type": "topic",
+      "label": "模型集成",
+      "description": "LLM 提供商和模型的配置、认证和管理系统"
+    },
+    {
+      "id": "topic:programmatic-access",
+      "type": "topic",
+      "label": "程序化访问",
+      "description": "通过 SDK、RPC 和 JSON 事件流实现 Pi 的程序化集成"
+    },
+    {
+      "id": "topic:session-management",
+      "type": "topic",
+      "label": "会话管理",
+      "description": "会话持久化、格式、分支导航和状态恢复机制"
+    },
+    {
+      "id": "topic:security-sandbox",
+      "type": "topic",
+      "label": "安全与沙箱",
+      "description": "项目信任、权限控制、沙箱隔离和漏洞防护"
+    },
+    {
+      "id": "topic:customization",
+      "type": "topic",
+      "label": "定制化",
+      "description": "提示模板、主题、包管理和用户界面定制"
+    },
+    {
+      "id": "topic:getting-started",
+      "type": "topic",
+      "label": "快速入门",
+      "description": "安装、认证和首次使用 Pi 的入门指南"
+    }
+  ],
+  "edges": [
+    {
+      "source": "packages/coding-agent/docs/index.md",
+      "target": "topic:getting-started",
+      "type": "covers",
+      "label": "覆盖"
+    },
+    {
+      "source": "packages/coding-agent/docs/quickstart.md",
+      "target": "topic:getting-started",
+      "type": "covers",
+      "label": "覆盖"
+    },
+    {
+      "source": "packages/coding-agent/docs/extensions.md",
+      "target": "topic:extension-system",
+      "type": "covers",
+      "label": "覆盖"
+    },
+    {
+      "source": "packages/coding-agent/docs/compaction.md",
+      "target": "topic:context-management",
+      "type": "covers",
+      "label": "覆盖"
+    },
+    {
+      "source": "packages/coding-agent/docs/compaction.md",
+      "target": "topic:session-management",
+      "type": "covers",
+      "label": "覆盖"
+    },
+    {
+      "source": "packages/coding-agent/docs/models.md",
+      "target": "topic:model-integration",
+      "type": "covers",
+      "label": "覆盖"
+    },
+    {
+      "source": "packages/coding-agent/docs/providers.md",
+      "target": "topic:model-integration",
+      "type": "covers",
+      "label": "覆盖"
+    },
+    {
+      "source": "packages/coding-agent/docs/custom-provider.md",
+      "target": "topic:model-integration",
+      "type": "covers",
+      "label": "覆盖"
+    },
+    {
+      "source": "packages/coding-agent/docs/llama-cpp.md",
+      "target": "topic:model-integration",
+      "type": "covers",
+      "label": "覆盖"
+    },
+    {
+      "source": "packages/coding-agent/docs/sdk.md",
+      "target": "topic:programmatic-access",
+      "type": "covers",
+      "label": "覆盖"
+    },
+    {
+      "source": "packages/coding-agent/docs/rpc.md",
+      "target": "topic:programmatic-access",
+      "type": "covers",
+      "label": "覆盖"
+    },
+    {
+      "source": "packages/coding-agent/docs/json.md",
+      "target": "topic:programmatic-access",
+      "type": "covers",
+      "label": "覆盖"
+    },
+    {
+      "source": "packages/coding-agent/docs/session-format.md",
+      "target": "topic:session-management",
+      "type": "covers",
+      "label": "覆盖"
+    },
+    {
+      "source": "packages/coding-agent/docs/environment-variables.md",
+      "target": "topic:customization",
+      "type": "covers",
+      "label": "覆盖"
+    },
+    {
+      "source": "packages/coding-agent/docs/security.md",
+      "target": "topic:security-sandbox",
+      "type": "covers",
+      "label": "覆盖"
+    },
+    {
+      "source": "packages/coding-agent/docs/containerization.md",
+      "target": "topic:security-sandbox",
+      "type": "covers",
+      "label": "覆盖"
+    },
+    {
+      "source": "packages/coding-agent/docs/keybindings.md",
+      "target": "topic:customization",
+      "type": "covers",
+      "label": "覆盖"
+    },
+    {
+      "source": "packages/coding-agent/docs/prompt-templates.md",
+      "target": "topic:customization",
+      "type": "covers",
+      "label": "覆盖"
+    },
+    {
+      "source": "packages/coding-agent/docs/packages.md",
+      "target": "topic:customization",
+      "type": "covers",
+      "label": "覆盖"
+    },
+    {
+      "source": "packages/coding-agent/docs/development.md",
+      "target": "topic:getting-started",
+      "type": "covers",
+      "label": "覆盖"
+    },
+    {
+      "source": "packages/coding-agent/docs/docs.json",
+      "target": "topic:getting-started",
+      "type": "supports",
+      "label": "支持"
+    },
+    {
+      "source": "packages/coding-agent/docs/extensions.md",
+      "target": "packages/coding-agent/docs/packages.md",
+      "type": "references",
+      "label": "引用"
+    },
+    {
+      "source": "packages/coding-agent/docs/index.md",
+      "target": "packages/coding-agent/docs/quickstart.md",
+      "type": "references",
+      "label": "引用"
+    },
+    {
+      "source": "packages/coding-agent/docs/index.md",
+      "target": "packages/coding-agent/docs/extensions.md",
+      "type": "references",
+      "label": "引用"
+    },
+    {
+      "source": "packages/coding-agent/docs/index.md",
+      "target": "packages/coding-agent/docs/providers.md",
+      "type": "references",
+      "label": "引用"
+    },
+    {
+      "source": "packages/coding-agent/docs/index.md",
+      "target": "packages/coding-agent/docs/compaction.md",
+      "type": "references",
+      "label": "引用"
+    },
+    {
+      "source": "packages/coding-agent/docs/compaction.md",
+      "target": "packages/coding-agent/docs/session-format.md",
+      "type": "references",
+      "label": "引用"
+    },
+    {
+      "source": "packages/coding-agent/docs/sdk.md",
+      "target": "packages/coding-agent/docs/rpc.md",
+      "type": "references",
+      "label": "引用"
+    },
+    {
+      "source": "packages/coding-agent/docs/models.md",
+      "target": "packages/coding-agent/docs/providers.md",
+      "type": "references",
+      "label": "引用"
+    }
+  ]
+}

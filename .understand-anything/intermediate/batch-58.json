@@ -1,0 +1,66 @@
+{
+  "batchIndex": 58,
+  "nodes": [
+    {
+      "id": "packages/coding-agent/examples/extensions/subagent/prompts/implement-and-review.md",
+      "type": "file",
+      "label": "implement-and-review.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "metrics": {
+        "totalLines": 10,
+        "nonEmptyLines": 8,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      },
+      "description": "子代理工作流提示模板：实现并审查链式工作流。定义三步流程：worker 代理实现功能 → reviewer 代理审查实现 → worker 代理应用审查反馈。通过 {previous} 占位符在步骤间传递输出。",
+      "tags": ["subagent", "workflow", "prompt-template", "chain", "implementation", "review"]
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/subagent/prompts/implement.md",
+      "type": "file",
+      "label": "implement.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "metrics": {
+        "totalLines": 10,
+        "nonEmptyLines": 8,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      },
+      "description": "子代理工作流提示模板：完整实现工作流。定义三步流程：scout 代理收集相关代码上下文 → planner 代理创建实现计划 → worker 代理执行实现。通过 {previous} 占位符在步骤间传递输出。",
+      "tags": ["subagent", "workflow", "prompt-template", "chain", "scout", "planner", "implementation"]
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/subagent/prompts/scout-and-plan.md",
+      "type": "file",
+      "label": "scout-and-plan.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "metrics": {
+        "totalLines": 9,
+        "nonEmptyLines": 7,
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      },
+      "description": "子代理工作流提示模板：侦察与计划工作流（不执行实现）。定义两步流程：scout 代理收集相关代码上下文 → planner 代理创建实现计划。通过 {previous} 占位符传递输出，仅返回计划不执行实现。",
+      "tags": ["subagent", "workflow", "prompt-template", "chain", "scout", "planner", "planning-only"]
+    }
+  ],
+  "edges": [],
+  "summary": {
+    "totalNodes": 3,
+    "totalEdges": 0,
+    "fileNodes": 3,
+    "functionNodes": 0,
+    "classNodes": 0,
+    "importEdges": 0,
+    "semanticEdges": 0
+  }
+}

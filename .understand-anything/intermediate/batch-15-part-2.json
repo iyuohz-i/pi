@@ -1,0 +1,1538 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/coding-agent/src/core/tools/write.ts",
+      "type": "file",
+      "name": "write.ts",
+      "filePath": "packages/coding-agent/src/core/tools/write.ts",
+      "summary": "实现 write 工具定义，支持文件写入、语法高亮缓存和文件变更队列集成，为 agent 提供文件创建和编辑能力。",
+      "tags": [
+        "tool",
+        "file-write",
+        "syntax-highlighting",
+        "api-handler"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/trust-manager.ts",
+      "type": "file",
+      "name": "trust-manager.ts",
+      "filePath": "packages/coding-agent/src/core/trust-manager.ts",
+      "summary": "管理项目信任状态，实现信任文件读写、文件锁机制和信任资源检测，控制 agent 对项目目录的访问权限。",
+      "tags": [
+        "security",
+        "trust-management",
+        "file-lock",
+        "service"
+      ],
+      "complexity": "complex",
+      "languageNotes": "使用同步文件锁 acquireTrustLockSync 确保信任状态一致性。"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/usage-totals.ts",
+      "type": "file",
+      "name": "usage-totals.ts",
+      "filePath": "packages/coding-agent/src/core/usage-totals.ts",
+      "summary": "提供 token 用量统计和成本分解工具函数，汇总会话中的用量数据并按模型计算费用。",
+      "tags": [
+        "utility",
+        "usage-tracking",
+        "cost-calculation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/extensions/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "packages/coding-agent/src/extensions/index.ts",
+      "summary": "扩展模块 barrel 文件，汇总导出所有内置扩展（包括 llama 扩展）。",
+      "tags": [
+        "barrel",
+        "extensions",
+        "entry-point",
+        "exports"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/main.ts",
+      "type": "file",
+      "name": "main.ts",
+      "filePath": "packages/coding-agent/src/main.ts",
+      "summary": "应用主入口点，负责解析 CLI 参数、初始化会话管理器、构建会话选项并启动交互式/打印/RPC 模式。",
+      "tags": [
+        "entry-point",
+        "cli",
+        "session-management",
+        "orchestration"
+      ],
+      "complexity": "complex",
+      "languageNotes": "main 函数长达 409 行，集中处理 CLI 参数解析、会话恢复和模式选择逻辑。"
+    },
+    {
+      "id": "file:packages/coding-agent/src/migrations.ts",
+      "type": "file",
+      "name": "migrations.ts",
+      "filePath": "packages/coding-agent/src/migrations.ts",
+      "summary": "实现配置迁移逻辑，包括认证文件迁移、会话目录迁移、命令转 prompts 迁移和扩展系统迁移。",
+      "tags": [
+        "migration",
+        "configuration",
+        "data-migration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/src/modes/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "packages/coding-agent/src/modes/index.ts",
+      "summary": "模式模块 barrel 文件，汇总导出交互模式、打印模式和 RPC 模式的类型和函数。",
+      "tags": [
+        "barrel",
+        "modes",
+        "entry-point",
+        "exports"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/modes/interactive/components/config-selector.ts",
+      "type": "file",
+      "name": "config-selector.ts",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/config-selector.ts",
+      "summary": "实现配置选择器交互组件，支持资源和包级别的设置项浏览、搜索和切换，提供全局与项目级配置管理界面。",
+      "tags": [
+        "component",
+        "config-ui",
+        "interactive",
+        "settings"
+      ],
+      "complexity": "complex",
+      "languageNotes": "ResourceList 类含 30+ 方法，处理分组、过滤、覆盖状态等复杂 UI 逻辑。"
+    },
+    {
+      "id": "file:packages/coding-agent/src/modes/interactive/components/custom-entry.ts",
+      "type": "file",
+      "name": "custom-entry.ts",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/custom-entry.ts",
+      "summary": "实现自定义条目渲染组件，用于在交互界面中展示扩展提供的自定义内容块。",
+      "tags": [
+        "component",
+        "interactive",
+        "rendering"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/modes/interactive/components/footer.ts",
+      "type": "file",
+      "name": "footer.ts",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/footer.ts",
+      "summary": "实现终端底部状态栏组件，显示当前会话的 token 用量、工作目录和自动压缩状态等信息。",
+      "tags": [
+        "component",
+        "interactive",
+        "footer",
+        "status-display"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/src/modes/interactive/components/mermaid.ts",
+      "type": "file",
+      "name": "mermaid.ts",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/mermaid.ts",
+      "summary": "实现 Mermaid 图表 Markdown 转换器，在终端中以带样式的文本形式渲染 Mermaid 图形。",
+      "tags": [
+        "component",
+        "markdown",
+        "mermaid",
+        "rendering"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/write.ts:createWriteToolDefinition",
+      "type": "function",
+      "name": "createWriteToolDefinition",
+      "filePath": "packages/coding-agent/src/core/tools/write.ts",
+      "lineRange": [
+        187,
+        270
+      ],
+      "summary": "创建 write 工具定义，实现文件写入逻辑并集成文件变更队列确保并发安全。",
+      "tags": [
+        "tool-definition",
+        "file-write",
+        "concurrency"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/write.ts:formatWriteCall",
+      "type": "function",
+      "name": "formatWriteCall",
+      "filePath": "packages/coding-agent/src/core/tools/write.ts",
+      "lineRange": [
+        137,
+        168
+      ],
+      "summary": "格式化 write 工具调用的参数显示文本，包括语法高亮预览。",
+      "tags": [
+        "formatting",
+        "tool-rendering",
+        "syntax-highlighting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/write.ts:updateWriteHighlightCacheIncremental",
+      "type": "function",
+      "name": "updateWriteHighlightCacheIncremental",
+      "filePath": "packages/coding-agent/src/core/tools/write.ts",
+      "lineRange": [
+        96,
+        127
+      ],
+      "summary": "增量更新写入高亮缓存，避免对未变内容重复计算语法高亮。",
+      "tags": [
+        "optimization",
+        "syntax-highlighting",
+        "cache"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/tools/write.ts:rebuildWriteHighlightCacheFull",
+      "type": "function",
+      "name": "rebuildWriteHighlightCacheFull",
+      "filePath": "packages/coding-agent/src/core/tools/write.ts",
+      "lineRange": [
+        82,
+        94
+      ],
+      "summary": "完整重建写入高亮缓存，对整个文件内容重新计算语法高亮。",
+      "tags": [
+        "syntax-highlighting",
+        "cache"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/trust-manager.ts:getProjectTrustOptions",
+      "type": "function",
+      "name": "getProjectTrustOptions",
+      "filePath": "packages/coding-agent/src/core/trust-manager.ts",
+      "lineRange": [
+        65,
+        95
+      ],
+      "summary": "获取项目信任选项，检查全局和项目级信任配置并返回当前信任状态。",
+      "tags": [
+        "security",
+        "trust-management"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/trust-manager.ts:acquireTrustLockSync",
+      "type": "function",
+      "name": "acquireTrustLockSync",
+      "filePath": "packages/coding-agent/src/core/trust-manager.ts",
+      "lineRange": [
+        136,
+        166
+      ],
+      "summary": "同步获取信任文件锁，使用 O_EXCL 标志创建锁文件以防止并发写入冲突。",
+      "tags": [
+        "file-lock",
+        "concurrency",
+        "security"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/trust-manager.ts:readTrustFile",
+      "type": "function",
+      "name": "readTrustFile",
+      "filePath": "packages/coding-agent/src/core/trust-manager.ts",
+      "lineRange": [
+        97,
+        122
+      ],
+      "summary": "读取信任文件内容并解析为 JSON，处理文件不存在和解析错误情况。",
+      "tags": [
+        "file-operations",
+        "trust-management",
+        "parsing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/trust-manager.ts:hasTrustRequiringProjectResources",
+      "type": "function",
+      "name": "hasTrustRequiringProjectResources",
+      "filePath": "packages/coding-agent/src/core/trust-manager.ts",
+      "lineRange": [
+        184,
+        206
+      ],
+      "summary": "检查项目目录中是否存在需要信任的资源文件（如 .env、密钥文件等）。",
+      "tags": [
+        "security",
+        "detection",
+        "trust-management"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:packages/coding-agent/src/core/trust-manager.ts:ProjectTrustStore",
+      "type": "class",
+      "name": "ProjectTrustStore",
+      "filePath": "packages/coding-agent/src/core/trust-manager.ts",
+      "lineRange": [
+        208,
+        244
+      ],
+      "summary": "项目信任存储类，封装信任文件的读取、写入和条目管理操作。",
+      "tags": [
+        "trust-management",
+        "storage",
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/usage-totals.ts:getUsageCostBreakdown",
+      "type": "function",
+      "name": "getUsageCostBreakdown",
+      "filePath": "packages/coding-agent/src/core/usage-totals.ts",
+      "lineRange": [
+        37,
+        70
+      ],
+      "summary": "根据会话条目计算 token 用量成本分解，按模型统计输入/输出 token 费用。",
+      "tags": [
+        "cost-calculation",
+        "usage-tracking"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/usage-totals.ts:addUsageToTotals",
+      "type": "function",
+      "name": "addUsageToTotals",
+      "filePath": "packages/coding-agent/src/core/usage-totals.ts",
+      "lineRange": [
+        22,
+        28
+      ],
+      "summary": "将单次用量数据累加到总计对象中。",
+      "tags": [
+        "usage-tracking",
+        "aggregation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/main.ts:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "packages/coding-agent/src/main.ts",
+      "lineRange": [
+        569,
+        977
+      ],
+      "summary": "应用主函数，解析 CLI 参数、初始化配置、创建会话管理器、构建会话选项并启动对应运行模式。",
+      "tags": [
+        "entry-point",
+        "cli",
+        "orchestration"
+      ],
+      "complexity": "complex",
+      "languageNotes": "409 行的主函数，集中处理参数解析、认证检查、会话恢复和模式分发。"
+    },
+    {
+      "id": "function:packages/coding-agent/src/main.ts:createSessionManager",
+      "type": "function",
+      "name": "createSessionManager",
+      "filePath": "packages/coding-agent/src/main.ts",
+      "lineRange": [
+        360,
+        451
+      ],
+      "summary": "根据解析的参数创建会话管理器，配置会话目录、信任状态和设置管理器。",
+      "tags": [
+        "session-management",
+        "factory"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/main.ts:buildSessionOptions",
+      "type": "function",
+      "name": "buildSessionOptions",
+      "filePath": "packages/coding-agent/src/main.ts",
+      "lineRange": [
+        453,
+        549
+      ],
+      "summary": "构建会话选项对象，配置模型运行时、工具集和系统提示词等参数。",
+      "tags": [
+        "session-management",
+        "configuration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/main.ts:runAuthCommand",
+      "type": "function",
+      "name": "runAuthCommand",
+      "filePath": "packages/coding-agent/src/main.ts",
+      "lineRange": [
+        139,
+        215
+      ],
+      "summary": "处理认证子命令，支持登录、登出和凭证查看操作。",
+      "tags": [
+        "authentication",
+        "cli"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/main.ts:resolveAppMode",
+      "type": "function",
+      "name": "resolveAppMode",
+      "filePath": "packages/coding-agent/src/main.ts",
+      "lineRange": [
+        118,
+        129
+      ],
+      "summary": "根据 CLI 参数和终端 TTY 状态解析应用运行模式（交互/打印/RPC）。",
+      "tags": [
+        "cli",
+        "mode-resolution"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/main.ts:resolveSessionPath",
+      "type": "function",
+      "name": "resolveSessionPath",
+      "filePath": "packages/coding-agent/src/main.ts",
+      "lineRange": [
+        259,
+        285
+      ],
+      "summary": "解析会话路径参数，支持会话 ID 查找和文件路径直接指定。",
+      "tags": [
+        "session-management",
+        "path-resolution"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/main.ts:prepareInitialMessage",
+      "type": "function",
+      "name": "prepareInitialMessage",
+      "filePath": "packages/coding-agent/src/main.ts",
+      "lineRange": [
+        217,
+        236
+      ],
+      "summary": "准备初始消息，合并管道输入和文件参数为会话的首次用户消息。",
+      "tags": [
+        "cli",
+        "message-preparation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/migrations.ts:runMigrations",
+      "type": "function",
+      "name": "runMigrations",
+      "filePath": "packages/coding-agent/src/migrations.ts",
+      "lineRange": [
+        305,
+        315
+      ],
+      "summary": "运行所有配置迁移函数的入口点，按顺序执行各迁移步骤。",
+      "tags": [
+        "migration",
+        "entry-point"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/migrations.ts:migrateAuthToAuthJson",
+      "type": "function",
+      "name": "migrateAuthToAuthJson",
+      "filePath": "packages/coding-agent/src/migrations.ts",
+      "lineRange": [
+        21,
+        73
+      ],
+      "summary": "将旧版认证配置迁移到 auth.json 格式。",
+      "tags": [
+        "migration",
+        "authentication"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/migrations.ts:migrateSessionsFromAgentRoot",
+      "type": "function",
+      "name": "migrateSessionsFromAgentRoot",
+      "filePath": "packages/coding-agent/src/migrations.ts",
+      "lineRange": [
+        84,
+        131
+      ],
+      "summary": "将会话文件从旧的 agent 根目录迁移到新的会话目录结构。",
+      "tags": [
+        "migration",
+        "session-management"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/migrations.ts:migrateToolsToBin",
+      "type": "function",
+      "name": "migrateToolsToBin",
+      "filePath": "packages/coding-agent/src/migrations.ts",
+      "lineRange": [
+        177,
+        216
+      ],
+      "summary": "将工具脚本迁移到 bin 目录并更新执行权限。",
+      "tags": [
+        "migration",
+        "tools"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/migrations.ts:migrateExtensionSystem",
+      "type": "function",
+      "name": "migrateExtensionSystem",
+      "filePath": "packages/coding-agent/src/migrations.ts",
+      "lineRange": [
+        257,
+        272
+      ],
+      "summary": "迁移旧版扩展系统配置到新格式。",
+      "tags": [
+        "migration",
+        "extensions"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:packages/coding-agent/src/modes/interactive/components/config-selector.ts:ConfigSelectorComponent",
+      "type": "class",
+      "name": "ConfigSelectorComponent",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/config-selector.ts",
+      "lineRange": [
+        866,
+        942
+      ],
+      "summary": "配置选择器顶层组件，管理写入范围切换和资源列表组件的交互。",
+      "tags": [
+        "component",
+        "config-ui",
+        "interactive"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:packages/coding-agent/src/modes/interactive/components/config-selector.ts:ResourceList",
+      "type": "class",
+      "name": "ResourceList",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/config-selector.ts",
+      "lineRange": [
+        222,
+        864
+      ],
+      "summary": "资源列表组件，处理资源和包级别的浏览、搜索、过滤和覆盖状态管理。",
+      "tags": [
+        "component",
+        "config-ui",
+        "interactive",
+        "list"
+      ],
+      "complexity": "complex",
+      "languageNotes": "643 行的大型组件类，含 30+ 方法处理分组、过滤和覆盖状态逻辑。"
+    },
+    {
+      "id": "class:packages/coding-agent/src/modes/interactive/components/config-selector.ts:ConfigSelectorHeader",
+      "type": "class",
+      "name": "ConfigSelectorHeader",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/config-selector.ts",
+      "lineRange": [
+        187,
+        220
+      ],
+      "summary": "配置选择器头部组件，显示写入范围和标题信息。",
+      "tags": [
+        "component",
+        "config-ui",
+        "header"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/components/config-selector.ts:buildGroups",
+      "type": "function",
+      "name": "buildGroups",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/config-selector.ts",
+      "lineRange": [
+        99,
+        180
+      ],
+      "summary": "构建配置资源的分组结构，按作用域和包进行组织。",
+      "tags": [
+        "utility",
+        "grouping",
+        "config-ui"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:packages/coding-agent/src/modes/interactive/components/custom-entry.ts:CustomEntryComponent",
+      "type": "class",
+      "name": "CustomEntryComponent",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/custom-entry.ts",
+      "lineRange": [
+        11,
+        62
+      ],
+      "summary": "自定义条目渲染组件，展示扩展提供的自定义内容块，支持展开/折叠状态。",
+      "tags": [
+        "component",
+        "interactive",
+        "rendering"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:packages/coding-agent/src/modes/interactive/components/footer.ts:FooterComponent",
+      "type": "class",
+      "name": "FooterComponent",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/footer.ts",
+      "lineRange": [
+        50,
+        245
+      ],
+      "summary": "底部状态栏组件，显示会话 token 用量、工作目录和自动压缩状态，实时更新会话信息。",
+      "tags": [
+        "component",
+        "footer",
+        "status-display",
+        "interactive"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/components/footer.ts:formatCwdForFooter",
+      "type": "function",
+      "name": "formatCwdForFooter",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/footer.ts",
+      "lineRange": [
+        32,
+        44
+      ],
+      "summary": "格式化当前工作目录为底部状态栏显示格式，缩短 home 路径。",
+      "tags": [
+        "formatting",
+        "footer"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/components/mermaid.ts:createMermaidMarkdownTransformer",
+      "type": "function",
+      "name": "createMermaidMarkdownTransformer",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/mermaid.ts",
+      "lineRange": [
+        60,
+        89
+      ],
+      "summary": "创建 Mermaid Markdown 转换器，将 Mermaid 代码块转换为带样式的终端文本渲染。",
+      "tags": [
+        "markdown",
+        "mermaid",
+        "transformer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/modes/interactive/components/mermaid.ts:codeSpan",
+      "type": "function",
+      "name": "codeSpan",
+      "filePath": "packages/coding-agent/src/modes/interactive/components/mermaid.ts",
+      "lineRange": [
+        18,
+        36
+      ],
+      "summary": "将单行文本转换为带样式的代码 span 元素。",
+      "tags": [
+        "rendering",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/coding-agent/src/core/tools/write.ts",
+      "target": "file:packages/coding-agent/src/core/experimental.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/write.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/write.ts",
+      "target": "file:packages/coding-agent/src/core/tools/file-mutation-queue.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/write.ts",
+      "target": "file:packages/coding-agent/src/core/tools/path-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/write.ts",
+      "target": "file:packages/coding-agent/src/core/tools/render-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/write.ts",
+      "target": "file:packages/coding-agent/src/core/tools/tool-definition-wrapper.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/write.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/keybinding-hints.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/write.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/trust-manager.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/trust-manager.ts",
+      "target": "file:packages/coding-agent/src/utils/paths.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/usage-totals.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/extensions/index.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/extensions/index.ts",
+      "target": "file:packages/coding-agent/src/extensions/llama/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/cli/args.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/cli/auth-check.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/cli/auth-command.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/cli/credential-print.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/cli/file-processor.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/cli/initial-message.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/cli/list-models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/cli/project-trust.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/cli/session-picker.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/cli/startup-ui.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/core/agent-session-services.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/core/auth-guidance.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/core/export-html/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/core/http-dispatcher.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/core/output-guard.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/core/project-trust.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/core/sdk.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/core/session-cwd.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/core/timings.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/core/trust-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/extensions/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/migrations.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/modes/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/package-manager-cli.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/utils/paths.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "file:packages/coding-agent/src/utils/windows-self-update.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/migrations.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/migrations.ts",
+      "target": "file:packages/coding-agent/src/core/keybindings.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/config-selector.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/config-selector.ts",
+      "target": "file:packages/coding-agent/src/core/package-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/config-selector.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/config-selector.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/dynamic-border.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/config-selector.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/keybinding-hints.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/config-selector.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/config-selector.ts",
+      "target": "file:packages/coding-agent/src/utils/paths.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/custom-entry.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/custom-entry.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/custom-entry.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/footer.ts",
+      "target": "file:packages/coding-agent/src/core/agent-session.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/footer.ts",
+      "target": "file:packages/coding-agent/src/core/experimental.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/footer.ts",
+      "target": "file:packages/coding-agent/src/core/footer-data-provider.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/footer.ts",
+      "target": "file:packages/coding-agent/src/core/usage-totals.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/footer.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/mermaid.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/mermaid.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/mermaid.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/write.ts",
+      "target": "function:packages/coding-agent/src/core/tools/write.ts:createWriteToolDefinition",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/write.ts",
+      "target": "function:packages/coding-agent/src/core/tools/write.ts:formatWriteCall",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/write.ts",
+      "target": "function:packages/coding-agent/src/core/tools/write.ts:updateWriteHighlightCacheIncremental",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/write.ts",
+      "target": "function:packages/coding-agent/src/core/tools/write.ts:rebuildWriteHighlightCacheFull",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/tools/write.ts",
+      "target": "function:packages/coding-agent/src/core/tools/write.ts:createWriteToolDefinition",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/trust-manager.ts",
+      "target": "function:packages/coding-agent/src/core/trust-manager.ts:getProjectTrustOptions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/trust-manager.ts",
+      "target": "function:packages/coding-agent/src/core/trust-manager.ts:acquireTrustLockSync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/trust-manager.ts",
+      "target": "function:packages/coding-agent/src/core/trust-manager.ts:readTrustFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/trust-manager.ts",
+      "target": "function:packages/coding-agent/src/core/trust-manager.ts:hasTrustRequiringProjectResources",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/trust-manager.ts",
+      "target": "class:packages/coding-agent/src/core/trust-manager.ts:ProjectTrustStore",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/trust-manager.ts",
+      "target": "function:packages/coding-agent/src/core/trust-manager.ts:getProjectTrustOptions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/trust-manager.ts",
+      "target": "function:packages/coding-agent/src/core/trust-manager.ts:hasTrustRequiringProjectResources",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/trust-manager.ts",
+      "target": "class:packages/coding-agent/src/core/trust-manager.ts:ProjectTrustStore",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/usage-totals.ts",
+      "target": "function:packages/coding-agent/src/core/usage-totals.ts:getUsageCostBreakdown",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/usage-totals.ts",
+      "target": "function:packages/coding-agent/src/core/usage-totals.ts:addUsageToTotals",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/usage-totals.ts",
+      "target": "function:packages/coding-agent/src/core/usage-totals.ts:getUsageCostBreakdown",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/usage-totals.ts",
+      "target": "function:packages/coding-agent/src/core/usage-totals.ts:addUsageToTotals",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "function:packages/coding-agent/src/main.ts:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "function:packages/coding-agent/src/main.ts:createSessionManager",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "function:packages/coding-agent/src/main.ts:buildSessionOptions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "function:packages/coding-agent/src/main.ts:runAuthCommand",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "function:packages/coding-agent/src/main.ts:resolveAppMode",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "function:packages/coding-agent/src/main.ts:resolveSessionPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "function:packages/coding-agent/src/main.ts:prepareInitialMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/main.ts",
+      "target": "function:packages/coding-agent/src/main.ts:main",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/migrations.ts",
+      "target": "function:packages/coding-agent/src/migrations.ts:runMigrations",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/migrations.ts",
+      "target": "function:packages/coding-agent/src/migrations.ts:migrateAuthToAuthJson",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/migrations.ts",
+      "target": "function:packages/coding-agent/src/migrations.ts:migrateSessionsFromAgentRoot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/migrations.ts",
+      "target": "function:packages/coding-agent/src/migrations.ts:migrateToolsToBin",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/migrations.ts",
+      "target": "function:packages/coding-agent/src/migrations.ts:migrateExtensionSystem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/migrations.ts",
+      "target": "function:packages/coding-agent/src/migrations.ts:runMigrations",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/migrations.ts",
+      "target": "function:packages/coding-agent/src/migrations.ts:migrateAuthToAuthJson",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/config-selector.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/config-selector.ts:ConfigSelectorComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/config-selector.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/config-selector.ts:ResourceList",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/config-selector.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/config-selector.ts:ConfigSelectorHeader",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/config-selector.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/components/config-selector.ts:buildGroups",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/config-selector.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/config-selector.ts:ConfigSelectorComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/custom-entry.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/custom-entry.ts:CustomEntryComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/custom-entry.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/custom-entry.ts:CustomEntryComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/footer.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/footer.ts:FooterComponent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/footer.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/components/footer.ts:formatCwdForFooter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/footer.ts",
+      "target": "class:packages/coding-agent/src/modes/interactive/components/footer.ts:FooterComponent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/footer.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/components/footer.ts:formatCwdForFooter",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/mermaid.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/components/mermaid.ts:createMermaidMarkdownTransformer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/mermaid.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/components/mermaid.ts:codeSpan",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/modes/interactive/components/mermaid.ts",
+      "target": "function:packages/coding-agent/src/modes/interactive/components/mermaid.ts:createMermaidMarkdownTransformer",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/coding-agent/src/core/tools/write.ts:createWriteToolDefinition",
+      "target": "function:packages/coding-agent/src/core/tools/file-mutation-queue.ts:withFileMutationQueue",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/coding-agent/src/main.ts:main",
+      "target": "function:packages/coding-agent/src/core/trust-manager.ts:getProjectTrustOptions",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/coding-agent/src/main.ts:main",
+      "target": "function:packages/coding-agent/src/migrations.ts:runMigrations",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/coding-agent/src/main.ts:main",
+      "target": "function:packages/coding-agent/src/package-manager-cli.ts:handleConfigCommand",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/coding-agent/src/main.ts:main",
+      "target": "function:packages/coding-agent/src/package-manager-cli.ts:handlePackageCommand",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "class:packages/coding-agent/src/modes/interactive/components/footer.ts:FooterComponent",
+      "target": "function:packages/coding-agent/src/core/usage-totals.ts:getUsageCostBreakdown",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/coding-agent/src/main.ts:buildSessionOptions",
+      "target": "function:packages/coding-agent/src/server/create-harness.ts:createCodingAgentHarness",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

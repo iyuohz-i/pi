@@ -1,0 +1,1766 @@
+{
+  "nodes": [
+    {
+      "id": "packages/session-backends/sqlite-node/src/index.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/src/index.ts",
+        "language": "typescript",
+        "summary": "Node.js sqlite 模块的 SQLite 数据库适配层，将 Node.js 内置的 DatabaseSync 包装为 SqliteDatabase 接口，提供事务管理和参数化查询支持",
+        "tags": [
+          "sqlite",
+          "session-backend",
+          "persistence",
+          "typescript"
+        ],
+        "sizeLines": 114,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts",
+        "language": "typescript",
+        "summary": "分支缓存管理模块，维护从叶子节点到根的路径缓存，加速分支查询操作",
+        "tags": [
+          "sqlite",
+          "session-backend",
+          "persistence",
+          "typescript"
+        ],
+        "sizeLines": 101,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/migrations.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/src/sqlite/migrations.ts",
+        "language": "typescript",
+        "summary": "SQLite 数据库迁移系统，负责加载和按序执行 SQL 迁移文件，维护迁移记录表",
+        "tags": [
+          "sqlite",
+          "session-backend",
+          "persistence",
+          "typescript"
+        ],
+        "sizeLines": 49,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+        "language": "typescript",
+        "summary": "SQLite 会话仓储核心实现，包含 SqliteSessionStorage（会话存储）和 SqliteSessionRepository（仓储管理），提供完整的会话 CRUD、分支操作、记录追加、日志查询等功能，支持写入者租约机制实现并发安全",
+        "tags": [
+          "sqlite",
+          "session-backend",
+          "persistence",
+          "typescript"
+        ],
+        "sizeLines": 953,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/search-backend.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/src/sqlite/search-backend.ts",
+        "language": "typescript",
+        "summary": "基于 FTS5 全文搜索的会话搜索引擎，支持 trigram 分词和相关性排序",
+        "tags": [
+          "sqlite",
+          "session-backend",
+          "persistence",
+          "typescript"
+        ],
+        "sizeLines": 194,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/sql.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/src/sqlite/sql.ts",
+        "language": "typescript",
+        "summary": "参数化 SQL 查询构建器，提供模板字符串标签函数 sql，支持查询嵌套组合和安全参数绑定",
+        "tags": [
+          "sqlite",
+          "session-backend",
+          "persistence",
+          "typescript"
+        ],
+        "sizeLines": 66,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts",
+        "language": "typescript",
+        "summary": "分支条目存储操作，管理 branch_entries 表的增删改查，支持路径遍历和批量复制",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ],
+        "sizeLines": 174,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-tips.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-tips.ts",
+        "language": "typescript",
+        "summary": "分支尖端存储操作，维护 branch_tips 表记录每个缓存分支的最新条目",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ],
+        "sizeLines": 35,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/entries.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/src/sqlite/storage/entries.ts",
+        "language": "typescript",
+        "summary": "条目存储操作，管理 entries 表的增删改查，支持分页查询和类型过滤",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ],
+        "sizeLines": 78,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/facts.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/src/sqlite/storage/facts.ts",
+        "language": "typescript",
+        "summary": "事实存储操作，管理 facts 表存储会话名称和条目标签等键值事实",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ],
+        "sizeLines": 64,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/lanes.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/src/sqlite/storage/lanes.ts",
+        "language": "typescript",
+        "summary": "车道存储操作，管理 lanes 表跟踪分支泳道的头部和叶子节点",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ],
+        "sizeLines": 124,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/records.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/src/sqlite/storage/records.ts",
+        "language": "typescript",
+        "summary": "记录存储操作，管理 records 表存储操作记录和使用统计等车道记录",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ],
+        "sizeLines": 95,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/session-sequences.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/src/sqlite/storage/session-sequences.ts",
+        "language": "typescript",
+        "summary": "会话序列号存储操作，管理 session_sequences 表实现单调递增序列号分配",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ],
+        "sizeLines": 29,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/session-stats.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/src/sqlite/storage/session-stats.ts",
+        "language": "typescript",
+        "summary": "会话统计存储操作，管理 session_stats 表跟踪消息数量和 token 使用量",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ],
+        "sizeLines": 54,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts",
+        "language": "typescript",
+        "summary": "会话存储操作，管理 sessions 表的增删改查，包含元数据序列化和反序列化",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ],
+        "sizeLines": 131,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/writer-leases.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/src/sqlite/storage/writer-leases.ts",
+        "language": "typescript",
+        "summary": "写入者租约存储操作，通过心跳机制实现分布式写入互斥锁",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ],
+        "sizeLines": 58,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/types.ts",
+      "type": "file",
+      "attributes": {
+        "path": "packages/session-backends/sqlite-node/src/sqlite/types.ts",
+        "language": "typescript",
+        "summary": "SQLite 后端的核心类型定义，包括 SqliteDatabase、SqliteStatement、SqliteRunResult 等数据库抽象接口和会话元数据接口",
+        "tags": [
+          "sqlite",
+          "session-backend",
+          "persistence",
+          "typescript"
+        ],
+        "sizeLines": 52,
+        "fileCategory": "code"
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/index.ts::NodeSqliteStatement",
+      "type": "class",
+      "attributes": {
+        "name": "NodeSqliteStatement",
+        "file": "packages/session-backends/sqlite-node/src/index.ts",
+        "lineRange": [
+          16,
+          60
+        ],
+        "methods": [
+          "constructor",
+          "run",
+          "get",
+          "all",
+          "iterate"
+        ],
+        "summary": "NodeSqliteStatement 类 — 位于 index.ts",
+        "tags": [
+          "sqlite",
+          "session-backend",
+          "persistence",
+          "typescript"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/index.ts::NodeSqliteDatabase",
+      "type": "class",
+      "attributes": {
+        "name": "NodeSqliteDatabase",
+        "file": "packages/session-backends/sqlite-node/src/index.ts",
+        "lineRange": [
+          62,
+          99
+        ],
+        "methods": [
+          "constructor",
+          "exec",
+          "prepare",
+          "transaction",
+          "close"
+        ],
+        "summary": "NodeSqliteDatabase 类 — 位于 index.ts",
+        "tags": [
+          "sqlite",
+          "session-backend",
+          "persistence",
+          "typescript"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts::rebuildBranchCache",
+      "type": "function",
+      "attributes": {
+        "name": "rebuildBranchCache",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts",
+        "lineRange": [
+          19,
+          29
+        ],
+        "summary": "rebuildBranchCache 函数 — 位于 branch-cache.ts",
+        "tags": [
+          "sqlite",
+          "session-backend",
+          "persistence",
+          "typescript"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts::buildCachedBranch",
+      "type": "function",
+      "attributes": {
+        "name": "buildCachedBranch",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts",
+        "lineRange": [
+          31,
+          52
+        ],
+        "summary": "buildCachedBranch 函数 — 位于 branch-cache.ts",
+        "tags": [
+          "sqlite",
+          "session-backend",
+          "persistence",
+          "typescript"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts::extendBranch",
+      "type": "function",
+      "attributes": {
+        "name": "extendBranch",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts",
+        "lineRange": [
+          54,
+          68
+        ],
+        "summary": "extendBranch 函数 — 位于 branch-cache.ts",
+        "tags": [
+          "sqlite",
+          "session-backend",
+          "persistence",
+          "typescript"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts::appendEntryToBranchCache",
+      "type": "function",
+      "attributes": {
+        "name": "appendEntryToBranchCache",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts",
+        "lineRange": [
+          70,
+          101
+        ],
+        "summary": "appendEntryToBranchCache 函数 — 位于 branch-cache.ts",
+        "tags": [
+          "sqlite",
+          "session-backend",
+          "persistence",
+          "typescript"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/migrations.ts::applyMigrations",
+      "type": "function",
+      "attributes": {
+        "name": "applyMigrations",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/migrations.ts",
+        "lineRange": [
+          35,
+          49
+        ],
+        "summary": "applyMigrations 函数 — 位于 migrations.ts",
+        "tags": [
+          "sqlite",
+          "session-backend",
+          "persistence",
+          "typescript"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::decodeEntry",
+      "type": "function",
+      "attributes": {
+        "name": "decodeEntry",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+        "lineRange": [
+          190,
+          266
+        ],
+        "summary": "decodeEntry 函数 — 位于 repo.ts",
+        "tags": [
+          "sqlite",
+          "session-backend",
+          "persistence",
+          "typescript"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::decodeRecord",
+      "type": "function",
+      "attributes": {
+        "name": "decodeRecord",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+        "lineRange": [
+          276,
+          290
+        ],
+        "summary": "decodeRecord 函数 — 位于 repo.ts",
+        "tags": [
+          "sqlite",
+          "session-backend",
+          "persistence",
+          "typescript"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::validateCachedBranchRows",
+      "type": "function",
+      "attributes": {
+        "name": "validateCachedBranchRows",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+        "lineRange": [
+          292,
+          310
+        ],
+        "summary": "validateCachedBranchRows 函数 — 位于 repo.ts",
+        "tags": [
+          "sqlite",
+          "session-backend",
+          "persistence",
+          "typescript"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::claimStorage",
+      "type": "function",
+      "attributes": {
+        "name": "claimStorage",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+        "lineRange": [
+          647,
+          667
+        ],
+        "summary": "claimStorage 函数 — 位于 repo.ts",
+        "tags": [
+          "sqlite",
+          "session-backend",
+          "persistence",
+          "typescript"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SerialOperationQueue",
+      "type": "class",
+      "attributes": {
+        "name": "SerialOperationQueue",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+        "lineRange": [
+          139,
+          154
+        ],
+        "methods": [
+          "enqueue",
+          "drain"
+        ],
+        "summary": "SerialOperationQueue 类 — 位于 repo.ts",
+        "tags": [
+          "sqlite",
+          "session-backend",
+          "persistence",
+          "typescript"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionStorage",
+      "type": "class",
+      "attributes": {
+        "name": "SqliteSessionStorage",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+        "lineRange": [
+          333,
+          645
+        ],
+        "methods": [
+          "constructor",
+          "release",
+          "finishRelease",
+          "enqueueWrite",
+          "scheduleHeartbeat",
+          "getMetadata",
+          "isForSession",
+          "getLanes",
+          "createLane",
+          "moveLane",
+          "appendEntry",
+          "appendRecord",
+          "getEntry",
+          "findEntries",
+          "findEntriesOnBranch",
+          "findRecords",
+          "findOpenOperations",
+          "getLog",
+          "getName",
+          "setName",
+          "getLabel",
+          "setLabel",
+          "getStats"
+        ],
+        "summary": "SqliteSessionStorage 类 — 位于 repo.ts",
+        "tags": [
+          "sqlite",
+          "session-backend",
+          "persistence",
+          "typescript"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionRepository",
+      "type": "class",
+      "attributes": {
+        "name": "SqliteSessionRepository",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+        "lineRange": [
+          669,
+          953
+        ],
+        "methods": [
+          "constructor",
+          "releaseStoragesForSession",
+          "sessionFromLease",
+          "claimSession",
+          "create",
+          "open",
+          "repairBranchCache",
+          "list",
+          "delete",
+          "fork",
+          "close",
+          "getDatabasePath",
+          "getDatabase",
+          "openDatabase"
+        ],
+        "summary": "SqliteSessionRepository 类 — 位于 repo.ts",
+        "tags": [
+          "sqlite",
+          "session-backend",
+          "persistence",
+          "typescript"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/search-backend.ts::ensureSearchSchema",
+      "type": "function",
+      "attributes": {
+        "name": "ensureSearchSchema",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/search-backend.ts",
+        "lineRange": [
+          65,
+          89
+        ],
+        "summary": "ensureSearchSchema 函数 — 位于 search-backend.ts",
+        "tags": [
+          "sqlite",
+          "session-backend",
+          "persistence",
+          "typescript"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/search-backend.ts::SqliteSessionSearch",
+      "type": "class",
+      "attributes": {
+        "name": "SqliteSessionSearch",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/search-backend.ts",
+        "lineRange": [
+          98,
+          190
+        ],
+        "methods": [
+          "constructor",
+          "getDatabasePath",
+          "openDatabase",
+          "search"
+        ],
+        "summary": "SqliteSessionSearch 类 — 位于 search-backend.ts",
+        "tags": [
+          "sqlite",
+          "session-backend",
+          "persistence",
+          "typescript"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/sql.ts::sql",
+      "type": "function",
+      "attributes": {
+        "name": "sql",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/sql.ts",
+        "lineRange": [
+          38,
+          53
+        ],
+        "summary": "sql 函数 — 位于 sql.ts",
+        "tags": [
+          "sqlite",
+          "session-backend",
+          "persistence",
+          "typescript"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/sql.ts::joinSqlFragments",
+      "type": "function",
+      "attributes": {
+        "name": "joinSqlFragments",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/sql.ts",
+        "lineRange": [
+          56,
+          66
+        ],
+        "summary": "joinSqlFragments 函数 — 位于 sql.ts",
+        "tags": [
+          "sqlite",
+          "session-backend",
+          "persistence",
+          "typescript"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/sql.ts::SqlQuery",
+      "type": "class",
+      "attributes": {
+        "name": "SqlQuery",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/sql.ts",
+        "lineRange": [
+          6,
+          35
+        ],
+        "methods": [
+          "constructor",
+          "exec",
+          "run",
+          "get",
+          "all",
+          "iterate"
+        ],
+        "summary": "SqlQuery 类 — 位于 sql.ts",
+        "tags": [
+          "sqlite",
+          "session-backend",
+          "persistence",
+          "typescript"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts::queryCachedBranchRows",
+      "type": "function",
+      "attributes": {
+        "name": "queryCachedBranchRows",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts",
+        "lineRange": [
+          49,
+          94
+        ],
+        "summary": "queryCachedBranchRows 函数 — 位于 branch-entries.ts",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts::insertBranchEntry",
+      "type": "function",
+      "attributes": {
+        "name": "insertBranchEntry",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts",
+        "lineRange": [
+          100,
+          112
+        ],
+        "summary": "insertBranchEntry 函数 — 位于 branch-entries.ts",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts::customTypeFromPayload",
+      "type": "function",
+      "attributes": {
+        "name": "customTypeFromPayload",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts",
+        "lineRange": [
+          114,
+          131
+        ],
+        "summary": "customTypeFromPayload 函数 — 位于 branch-entries.ts",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts::insertBranchEntriesForPath",
+      "type": "function",
+      "attributes": {
+        "name": "insertBranchEntriesForPath",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts",
+        "lineRange": [
+          133,
+          152
+        ],
+        "summary": "insertBranchEntriesForPath 函数 — 位于 branch-entries.ts",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts::copyBranchEntriesThroughSeq",
+      "type": "function",
+      "attributes": {
+        "name": "copyBranchEntriesThroughSeq",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts",
+        "lineRange": [
+          163,
+          174
+        ],
+        "summary": "copyBranchEntriesThroughSeq 函数 — 位于 branch-entries.ts",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-tips.ts::updateBranchTip",
+      "type": "function",
+      "attributes": {
+        "name": "updateBranchTip",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-tips.ts",
+        "lineRange": [
+          21,
+          31
+        ],
+        "summary": "updateBranchTip 函数 — 位于 branch-tips.ts",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/entries.ts::readEntryRows",
+      "type": "function",
+      "attributes": {
+        "name": "readEntryRows",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/storage/entries.ts",
+        "lineRange": [
+          42,
+          68
+        ],
+        "summary": "readEntryRows 函数 — 位于 entries.ts",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/facts.ts::appendFact",
+      "type": "function",
+      "attributes": {
+        "name": "appendFact",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/storage/facts.ts",
+        "lineRange": [
+          12,
+          23
+        ],
+        "summary": "appendFact 函数 — 位于 facts.ts",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/facts.ts::readLatestLabelFacts",
+      "type": "function",
+      "attributes": {
+        "name": "readLatestLabelFacts",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/storage/facts.ts",
+        "lineRange": [
+          33,
+          47
+        ],
+        "summary": "readLatestLabelFacts 函数 — 位于 facts.ts",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/facts.ts::readFactRows",
+      "type": "function",
+      "attributes": {
+        "name": "readFactRows",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/storage/facts.ts",
+        "lineRange": [
+          49,
+          60
+        ],
+        "summary": "readFactRows 函数 — 位于 facts.ts",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/lanes.ts::readLanes",
+      "type": "function",
+      "attributes": {
+        "name": "readLanes",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/storage/lanes.ts",
+        "lineRange": [
+          24,
+          47
+        ],
+        "summary": "readLanes 函数 — 位于 lanes.ts",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/lanes.ts::readLaneHead",
+      "type": "function",
+      "attributes": {
+        "name": "readLaneHead",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/storage/lanes.ts",
+        "lineRange": [
+          55,
+          69
+        ],
+        "summary": "readLaneHead 函数 — 位于 lanes.ts",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/lanes.ts::readLaneMoveRows",
+      "type": "function",
+      "attributes": {
+        "name": "readLaneMoveRows",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/storage/lanes.ts",
+        "lineRange": [
+          102,
+          113
+        ],
+        "summary": "readLaneMoveRows 函数 — 位于 lanes.ts",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/records.ts::readRecordRows",
+      "type": "function",
+      "attributes": {
+        "name": "readRecordRows",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/storage/records.ts",
+        "lineRange": [
+          46,
+          71
+        ],
+        "summary": "readRecordRows 函数 — 位于 records.ts",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/records.ts::readOpenOperationRows",
+      "type": "function",
+      "attributes": {
+        "name": "readOpenOperationRows",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/storage/records.ts",
+        "lineRange": [
+          73,
+          95
+        ],
+        "summary": "readOpenOperationRows 函数 — 位于 records.ts",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/session-stats.ts::readStats",
+      "type": "function",
+      "attributes": {
+        "name": "readStats",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/storage/session-stats.ts",
+        "lineRange": [
+          21,
+          33
+        ],
+        "summary": "readStats 函数 — 位于 session-stats.ts",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts::parseMetadata",
+      "type": "function",
+      "attributes": {
+        "name": "parseMetadata",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts",
+        "lineRange": [
+          23,
+          39
+        ],
+        "summary": "parseMetadata 函数 — 位于 sessions.ts",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts::readSessionRow",
+      "type": "function",
+      "attributes": {
+        "name": "readSessionRow",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts",
+        "lineRange": [
+          61,
+          76
+        ],
+        "summary": "readSessionRow 函数 — 位于 sessions.ts",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts::readSessionRows",
+      "type": "function",
+      "attributes": {
+        "name": "readSessionRows",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts",
+        "lineRange": [
+          78,
+          95
+        ],
+        "summary": "readSessionRows 函数 — 位于 sessions.ts",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts::parseSessionName",
+      "type": "function",
+      "attributes": {
+        "name": "parseSessionName",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts",
+        "lineRange": [
+          101,
+          117
+        ],
+        "summary": "parseSessionName 函数 — 位于 sessions.ts",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts::decodeSessionMetadata",
+      "type": "function",
+      "attributes": {
+        "name": "decodeSessionMetadata",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts",
+        "lineRange": [
+          119,
+          131
+        ],
+        "summary": "decodeSessionMetadata 函数 — 位于 sessions.ts",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/writer-leases.ts::acquireWriterLease",
+      "type": "function",
+      "attributes": {
+        "name": "acquireWriterLease",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/storage/writer-leases.ts",
+        "lineRange": [
+          16,
+          32
+        ],
+        "summary": "acquireWriterLease 函数 — 位于 writer-leases.ts",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ]
+      }
+    },
+    {
+      "id": "packages/session-backends/sqlite-node/src/sqlite/storage/writer-leases.ts::renewWriterLease",
+      "type": "function",
+      "attributes": {
+        "name": "renewWriterLease",
+        "file": "packages/session-backends/sqlite-node/src/sqlite/storage/writer-leases.ts",
+        "lineRange": [
+          34,
+          49
+        ],
+        "summary": "renewWriterLease 函数 — 位于 writer-leases.ts",
+        "tags": [
+          "sqlite",
+          "storage",
+          "data-access",
+          "session-backend"
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/index.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/sql.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/index.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/types.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/sql.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-tips.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/types.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/migrations.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/sql.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/migrations.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/types.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/migrations.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/sql.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-tips.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/entries.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/facts.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/lanes.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/records.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/session-sequences.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/session-stats.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/writer-leases.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/types.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/search-backend.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/migrations.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/search-backend.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/sql.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/search-backend.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/search-backend.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/types.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/sql.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/types.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/sql.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/types.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-tips.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/sql.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-tips.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/types.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/entries.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/sql.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/entries.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/types.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/facts.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/sql.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/facts.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/types.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/lanes.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/sql.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/lanes.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/types.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/records.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/sql.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/records.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/types.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/session-sequences.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/sql.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/session-sequences.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/types.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/session-stats.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/sql.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/session-stats.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/types.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/sql.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/types.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/writer-leases.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/sql.ts"
+    },
+    {
+      "type": "imports",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/writer-leases.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/types.ts"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/index.ts",
+      "target": "packages/session-backends/sqlite-node/src/index.ts::NodeSqliteStatement"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/index.ts",
+      "target": "packages/session-backends/sqlite-node/src/index.ts::NodeSqliteDatabase"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts::rebuildBranchCache"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts::buildCachedBranch"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts::extendBranch"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts::appendEntryToBranchCache"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/migrations.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/migrations.ts::applyMigrations"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::decodeEntry"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::decodeRecord"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::validateCachedBranchRows"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::claimStorage"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SerialOperationQueue"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionStorage"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionRepository"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/search-backend.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/search-backend.ts::ensureSearchSchema"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/search-backend.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/search-backend.ts::SqliteSessionSearch"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/sql.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/sql.ts::sql"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/sql.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/sql.ts::joinSqlFragments"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/sql.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/sql.ts::SqlQuery"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts::queryCachedBranchRows"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts::insertBranchEntry"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts::customTypeFromPayload"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts::insertBranchEntriesForPath"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts::copyBranchEntriesThroughSeq"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-tips.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-tips.ts::updateBranchTip"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/entries.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/entries.ts::readEntryRows"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/facts.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/facts.ts::appendFact"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/facts.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/facts.ts::readLatestLabelFacts"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/facts.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/facts.ts::readFactRows"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/lanes.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/lanes.ts::readLanes"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/lanes.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/lanes.ts::readLaneHead"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/lanes.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/lanes.ts::readLaneMoveRows"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/records.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/records.ts::readRecordRows"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/records.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/records.ts::readOpenOperationRows"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/session-stats.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/session-stats.ts::readStats"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts::parseMetadata"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts::readSessionRow"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts::readSessionRows"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts::parseSessionName"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts::decodeSessionMetadata"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/writer-leases.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/writer-leases.ts::acquireWriterLease"
+    },
+    {
+      "type": "contains",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/storage/writer-leases.ts",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/writer-leases.ts::renewWriterLease"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionStorage",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/entries.ts::readEntryRows"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionStorage",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/writer-leases.ts::renewWriterLease"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionStorage",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts::appendEntryToBranchCache"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::claimStorage",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/lanes.ts::readLanes"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionRepository",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/migrations.ts::applyMigrations"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionStorage",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/lanes.ts::readLanes"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionRepository",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/facts.ts::readLatestLabelFacts"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::claimStorage",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts::decodeSessionMetadata"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionStorage",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts::decodeSessionMetadata"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionStorage",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/facts.ts::appendFact"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionStorage",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/facts.ts::readFactRows"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionStorage",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/lanes.ts::readLaneHead"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionRepository",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts::readSessionRows"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionRepository",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts::queryCachedBranchRows"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionRepository",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts::rebuildBranchCache"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionRepository",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/entries.ts::readEntryRows"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionStorage",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/session-stats.ts::readStats"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionStorage",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts::queryCachedBranchRows"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionStorage",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/records.ts::readRecordRows"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionRepository",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/lanes.ts::readLanes"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionStorage",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/lanes.ts::readLaneMoveRows"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionRepository",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts::decodeSessionMetadata"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionStorage",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/records.ts::readOpenOperationRows"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionRepository",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts::buildCachedBranch"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/repo.ts::SqliteSessionRepository",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/facts.ts::appendFact"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/search-backend.ts::ensureSearchSchema",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/sql.ts::sql"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/search-backend.ts::SqliteSessionSearch",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/sessions.ts::decodeSessionMetadata"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/search-backend.ts::SqliteSessionSearch",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/migrations.ts::applyMigrations"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts::buildCachedBranch",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/storage/branch-entries.ts::insertBranchEntriesForPath"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts::rebuildBranchCache",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/sql.ts::sql"
+    },
+    {
+      "type": "calls",
+      "source": "packages/session-backends/sqlite-node/src/sqlite/branch-cache.ts::buildCachedBranch",
+      "target": "packages/session-backends/sqlite-node/src/sqlite/sql.ts::sql"
+    }
+  ]
+}

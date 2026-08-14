@@ -1,0 +1,32 @@
+{
+  "nodes": [
+    {
+      "id": "scripts/build-binaries.sh",
+      "type": "file",
+      "label": "build-binaries.sh",
+      "language": "shell",
+      "fileCategory": "script",
+      "summary": "跨平台二进制构建脚本。镜像 GitHub Actions 工作流 build-binaries.yml，支持为 darwin/linux/windows 的 arm64/x64 平台编译 pi 可执行文件。处理依赖安装、原生模块跨平台拷贝、bun compile 编译、发布归档打包（tar.gz/zip）及解压测试。",
+      "sizeLines": 284
+    },
+    {
+      "id": "scripts/create-source-archive.sh",
+      "type": "file",
+      "label": "create-source-archive.sh",
+      "language": "shell",
+      "fileCategory": "script",
+      "summary": "创建确定性源码归档脚本，用于 GitHub Release 上传。通过 git archive 生成 tar.gz，验证归档包含必需路径、不含 node_modules/binaries，并运行 check-model-data.ts 校验模型数据完整性。支持 --version、--ref、--out 参数。",
+      "sizeLines": 150
+    },
+    {
+      "id": "scripts/update-source-imports-to-ts.sh",
+      "type": "file",
+      "label": "update-source-imports-to-ts.sh",
+      "language": "shell",
+      "fileCategory": "script",
+      "summary": "批量重写 TypeScript 源文件中的相对导入路径后缀，将 .js 改为 .ts。利用 find + perl 正则处理 from/import/declare module/importNodeOnlyProvider 三种导入模式，配合 TypeScript 的 rewriteRelativeImportExtensions 编译选项使用。",
+      "sizeLines": 10
+    }
+  ],
+  "edges": []
+}

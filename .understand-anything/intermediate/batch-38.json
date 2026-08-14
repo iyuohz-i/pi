@@ -1,0 +1,240 @@
+{
+  "nodes": [
+    {
+      "id": "packages/coding-agent/examples/extensions/doom-overlay/doom-component.ts",
+      "type": "file",
+      "label": "doom-component.ts",
+      "language": "typescript",
+      "lines": 132,
+      "summary": "DOOM 终端渲染组件。使用 Unicode 半块字符（▀）配合 24-bit ANSI 颜色码将 DOOM 帧缓冲区渲染到终端，以 35 FPS 游戏循环驱动引擎 tick 和 TUI 重绘，同时处理键盘输入映射和组件生命周期管理。"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/doom-overlay/doom-engine.ts",
+      "type": "file",
+      "label": "doom-engine.ts",
+      "language": "typescript",
+      "lines": 173,
+      "summary": "DOOM WebAssembly 引擎封装。负责加载和初始化 doomgeneric WASM 模块，通过 Emscripten 虚拟文件系统注入 WAD 文件，提供游戏 tick 推进、帧缓冲 RGBA 提取（ARGB→RGBA 转换）和按键事件推送等核心接口。"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/doom-overlay/doom-keys.ts",
+      "type": "file",
+      "label": "doom-keys.ts",
+      "language": "typescript",
+      "lines": 104,
+      "summary": "DOOM 键码常量定义与终端输入映射。定义 doomkeys.h 风格的虚拟键码表（DoomKeys），提供 mapKeyToDoom 函数将终端原始输入和 Kitty 协议序列转换为 DOOM 键码数组，支持 WASD 移动、射击、武器切换和作弊码输入。"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/doom-overlay/index.ts",
+      "type": "file",
+      "label": "index.ts",
+      "language": "typescript",
+      "lines": 74,
+      "summary": "DOOM Overlay 扩展入口。注册 /doom-overlay 斜杠命令，在 TUI 模式下以浮层形式运行 DOOM 游戏，管理引擎实例的创建/复用/暂停恢复，支持自动下载 shareware WAD 文件。"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/doom-overlay/wad-finder.ts",
+      "type": "file",
+      "label": "wad-finder.ts",
+      "language": "typescript",
+      "lines": 55,
+      "summary": "WAD 游戏数据文件查找与下载。按优先级搜索本地 WAD 文件（捆绑路径、默认路径列表），若不存在则从 gamers.org 自动下载 shareware doom1.wad 并解压验证 IWAD 格式。"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/doom-overlay/doom-component.ts::renderHalfBlock",
+      "type": "function",
+      "label": "renderHalfBlock",
+      "language": "typescript",
+      "lines": 33,
+      "summary": "将 RGBA 像素数据渲染为终端半块字符行。利用 ▀ 字符的上半前景色和下半背景色，将两行像素压缩为一个终端行，通过 scaleX/scaleY 采样实现分辨率缩放。"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/doom-overlay/doom-component.ts::DoomOverlayComponent",
+      "type": "class",
+      "label": "DoomOverlayComponent",
+      "language": "typescript",
+      "lines": 85,
+      "summary": "DOOM 终端覆盖层组件，实现 Component 接口。管理 35 FPS 游戏循环（setInterval），将 DOOM 帧渲染为半块字符终端输出，处理键盘输入（Q 键暂停退出），支持暂停恢复和引擎生命周期管理。"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/doom-overlay/doom-engine.ts::DoomEngine",
+      "type": "class",
+      "label": "DoomEngine",
+      "language": "typescript",
+      "lines": 146,
+      "summary": "DOOM WASM 引擎核心类。通过 Emscripten 加载 doomgeneric 模块，初始化 WAD 虚拟文件系统，在内存中构造 C 字符串参数调用 _doomgeneric_Create，提供 tick 推进、ARGB→RGBA 帧缓冲读取和按键事件注入接口。"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/doom-overlay/doom-keys.ts::mapKeyToDoom",
+      "type": "function",
+      "label": "mapKeyToDoom",
+      "language": "typescript",
+      "lines": 62,
+      "summary": "将终端输入序列映射为 DOOM 键码数组。支持方向键、WASD 移动（含 Shift 跑步）、空格使用、F 射击、数字武器切换、Ctrl 射击、+/- 屏幕缩放、Y/N 提示响应，兼容原始字符和 Kitty 键盘协议序列。"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/doom-overlay/index.ts::default",
+      "type": "function",
+      "label": "doom-overlay 扩展注册",
+      "language": "typescript",
+      "lines": 48,
+      "summary": "扩展入口函数，注册 doom-overlay 命令。验证 TUI 模式、自动下载 WAD、管理持久化引擎实例（同 WAD 复用/暂停恢复），通过 ctx.ui.custom 以 75% 宽度居中浮层展示游戏画面。"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/doom-overlay/wad-finder.ts::findWadFile",
+      "type": "function",
+      "label": "findWadFile",
+      "language": "typescript",
+      "lines": 20,
+      "summary": "按优先级搜索本地 WAD 文件。依次检查自定义路径、捆绑路径（doom/build/doom1.wad）、默认路径列表（当前目录、~/、~/.doom/），找到即返回绝对路径。"
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/doom-overlay/wad-finder.ts::ensureWadFile",
+      "type": "function",
+      "label": "ensureWadFile",
+      "language": "typescript",
+      "lines": 21,
+      "summary": "确保 WAD 文件可用。先调用 findWadFile 查找本地文件，若不存在则从 gamers.org 下载 doom-1.8.wad.gz，解压后验证 IWAD 魔数，写入捆绑路径并返回。"
+    }
+  ],
+  "edges": [
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/doom-component.ts",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/doom-engine.ts",
+      "type": "imports"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/doom-component.ts",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/doom-keys.ts",
+      "type": "imports"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/index.ts",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/doom-component.ts",
+      "type": "imports"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/index.ts",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/doom-engine.ts",
+      "type": "imports"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/index.ts",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/wad-finder.ts",
+      "type": "imports"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/doom-component.ts",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/doom-component.ts::renderHalfBlock",
+      "type": "has_member"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/doom-component.ts",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/doom-component.ts::DoomOverlayComponent",
+      "type": "has_member"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/doom-engine.ts",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/doom-engine.ts::DoomEngine",
+      "type": "has_member"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/doom-keys.ts",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/doom-keys.ts::mapKeyToDoom",
+      "type": "has_member"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/index.ts",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/index.ts::default",
+      "type": "has_member"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/wad-finder.ts",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/wad-finder.ts::findWadFile",
+      "type": "has_member"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/wad-finder.ts",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/wad-finder.ts::ensureWadFile",
+      "type": "has_member"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/doom-component.ts::DoomOverlayComponent",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/doom-engine.ts::DoomEngine",
+      "type": "calls",
+      "description": "构造函数持有引擎引用；startGameLoop 调用 tick()；render 调用 getFrameRGBA()；handleInput 调用 pushKey()"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/doom-component.ts::DoomOverlayComponent",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/doom-keys.ts::mapKeyToDoom",
+      "type": "calls",
+      "description": "handleInput 调用 mapKeyToDoom 将终端输入转换为 DOOM 键码"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/doom-component.ts::DoomOverlayComponent",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/doom-component.ts::renderHalfBlock",
+      "type": "calls",
+      "description": "render 方法调用 renderHalfBlock 将 RGBA 帧数据转换为终端半块字符行"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/index.ts::default",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/doom-component.ts::DoomOverlayComponent",
+      "type": "calls",
+      "description": "命令处理器创建 DoomOverlayComponent 实例传入 custom UI 回调"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/index.ts::default",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/doom-engine.ts::DoomEngine",
+      "type": "calls",
+      "description": "命令处理器创建 DoomEngine 实例并调用 init() 初始化 WASM 模块"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/index.ts::default",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/wad-finder.ts::ensureWadFile",
+      "type": "calls",
+      "description": "命令处理器调用 ensureWadFile 自动下载 shareware WAD 文件"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/wad-finder.ts::ensureWadFile",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/wad-finder.ts::findWadFile",
+      "type": "calls",
+      "description": "ensureWadFile 先调用 findWadFile 检查本地是否已有 WAD 文件"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/doom-engine.ts::DoomEngine",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/doom-component.ts::DoomOverlayComponent",
+      "type": "used_by",
+      "description": "DoomEngine 为 DoomOverlayComponent 提供底层游戏引擎能力（tick、渲染、输入）"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/doom-keys.ts",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/doom-component.ts",
+      "type": "used_by",
+      "description": "DoomKeys 常量和 mapKeyToDoom 函数被 doom-component 的输入处理使用"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/wad-finder.ts",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/index.ts",
+      "type": "used_by",
+      "description": "WAD 查找/下载功能被扩展入口的命令处理器调用"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/index.ts",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/doom-component.ts",
+      "type": "orchestrates",
+      "description": "扩展入口编排引擎初始化和组件创建的生命周期"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/doom-component.ts::DoomOverlayComponent",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/doom-engine.ts::DoomEngine",
+      "type": "depends_on",
+      "description": "组件依赖引擎提供游戏帧数据和输入处理"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/doom-overlay/doom-engine.ts::DoomEngine",
+      "target": "packages/coding-agent/examples/extensions/doom-overlay/doom-component.ts::DoomOverlayComponent",
+      "type": "provides_to",
+      "description": "引擎向组件提供 tick/getFrameRGBA/pushKey 等核心游戏接口"
+    }
+  ]
+}

@@ -1,0 +1,2480 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 33,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "packages/coding-agent/test/interactive-mode-compaction.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 77,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/interactive-mode-import-command.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 143,
+      "nonEmptyLines": 124,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/interactive-mode-startup-input.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 72,
+      "nonEmptyLines": 62,
+      "functions": [
+        {
+          "name": "createSubmitContext",
+          "startLine": 33,
+          "endLine": 49,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createSubmitContext",
+          "callee": "vi.fn",
+          "lineNumber": 37
+        },
+        {
+          "caller": "createSubmitContext",
+          "callee": "vi.fn",
+          "lineNumber": 38
+        },
+        {
+          "caller": "createSubmitContext",
+          "callee": "vi.fn",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createSubmitContext",
+          "callee": "vi.fn",
+          "lineNumber": 46
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/interactive-mode-suspend.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 149,
+      "nonEmptyLines": 129,
+      "functions": [
+        {
+          "name": "callHandleCtrlZ",
+          "startLine": 20,
+          "endLine": 22,
+          "params": [
+            "context"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "callHandleCtrlZ",
+          "callee": "(interactiveModePrototype as InteractiveModePrototypeWithHandleCtrlZ).handleCtrlZ.call",
+          "lineNumber": 21
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/llama-extension.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 295,
+      "nonEmptyLines": 275,
+      "functions": [
+        {
+          "name": "listen",
+          "startLine": 15,
+          "endLine": 22,
+          "params": [
+            "handler"
+          ]
+        },
+        {
+          "name": "json",
+          "startLine": 24,
+          "endLine": 27,
+          "params": [
+            "response",
+            "value"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "listen",
+          "callee": "createServer",
+          "lineNumber": 16
+        },
+        {
+          "caller": "listen",
+          "callee": "servers.push",
+          "lineNumber": 17
+        },
+        {
+          "caller": "listen",
+          "callee": "server.listen",
+          "lineNumber": 18
+        },
+        {
+          "caller": "listen",
+          "callee": "once",
+          "lineNumber": 19
+        },
+        {
+          "caller": "listen",
+          "callee": "server.address",
+          "lineNumber": 20
+        },
+        {
+          "caller": "json",
+          "callee": "response.writeHead",
+          "lineNumber": 25
+        },
+        {
+          "caller": "json",
+          "callee": "response.end",
+          "lineNumber": 26
+        },
+        {
+          "caller": "json",
+          "callee": "JSON.stringify",
+          "lineNumber": 26
+        },
+        {
+          "caller": "publish",
+          "callee": "structuredClone",
+          "lineNumber": 106
+        },
+        {
+          "caller": "publish",
+          "callee": "publication.update",
+          "lineNumber": 107
+        },
+        {
+          "caller": "send",
+          "callee": "response.write",
+          "lineNumber": 211
+        },
+        {
+          "caller": "send",
+          "callee": "JSON.stringify",
+          "lineNumber": 211
+        },
+        {
+          "caller": "send",
+          "callee": "response.write",
+          "lineNumber": 254
+        },
+        {
+          "caller": "send",
+          "callee": "JSON.stringify",
+          "lineNumber": 254
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/model-selector.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 49,
+      "nonEmptyLines": 42,
+      "functions": [
+        {
+          "name": "createFakeTui",
+          "startLine": 8,
+          "endLine": 10,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/oauth-selector.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 147,
+      "nonEmptyLines": 133,
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/scrollbar-theme.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 58,
+      "functions": [
+        {
+          "name": "loadDarkTheme",
+          "startLine": 9,
+          "endLine": 14,
+          "params": []
+        },
+        {
+          "name": "writeTheme",
+          "startLine": 16,
+          "endLine": 22,
+          "params": [
+            "theme"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "loadDarkTheme",
+          "callee": "JSON.parse",
+          "lineNumber": 10
+        },
+        {
+          "caller": "loadDarkTheme",
+          "callee": "readFileSync",
+          "lineNumber": 10
+        },
+        {
+          "caller": "writeTheme",
+          "callee": "mkdtempSync",
+          "lineNumber": 17
+        },
+        {
+          "caller": "writeTheme",
+          "callee": "join",
+          "lineNumber": 17
+        },
+        {
+          "caller": "writeTheme",
+          "callee": "tmpdir",
+          "lineNumber": 17
+        },
+        {
+          "caller": "writeTheme",
+          "callee": "tempDirs.push",
+          "lineNumber": 18
+        },
+        {
+          "caller": "writeTheme",
+          "callee": "join",
+          "lineNumber": 19
+        },
+        {
+          "caller": "writeTheme",
+          "callee": "writeFileSync",
+          "lineNumber": 20
+        },
+        {
+          "caller": "writeTheme",
+          "callee": "JSON.stringify",
+          "lineNumber": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/session-info-modified-timestamp.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 83,
+      "nonEmptyLines": 75,
+      "functions": [
+        {
+          "name": "createSessionFile",
+          "startLine": 10,
+          "endLine": 40,
+          "params": [
+            "path"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createSessionFile",
+          "callee": "new Date(0).toISOString",
+          "lineNumber": 15
+        },
+        {
+          "caller": "createSessionFile",
+          "callee": "writeFileSync",
+          "lineNumber": 18
+        },
+        {
+          "caller": "createSessionFile",
+          "callee": "JSON.stringify",
+          "lineNumber": 18
+        },
+        {
+          "caller": "createSessionFile",
+          "callee": "SessionManager.open",
+          "lineNumber": 22
+        },
+        {
+          "caller": "createSessionFile",
+          "callee": "mgr.appendMessage",
+          "lineNumber": 23
+        },
+        {
+          "caller": "createSessionFile",
+          "callee": "Date.now",
+          "lineNumber": 38
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/session-selector-path-delete.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 354,
+      "nonEmptyLines": 302,
+      "functions": [
+        {
+          "name": "createDeferred",
+          "startLine": 17,
+          "endLine": 25,
+          "params": []
+        },
+        {
+          "name": "flushPromises",
+          "startLine": 27,
+          "endLine": 31,
+          "params": []
+        },
+        {
+          "name": "stripAnsi",
+          "startLine": 33,
+          "endLine": 35,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "makeSession",
+          "startLine": 37,
+          "endLine": 50,
+          "params": [
+            "overrides"
+          ]
+        },
+        {
+          "name": "createSymlinkedSessionPaths",
+          "startLine": 52,
+          "endLine": 84,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "flushPromises",
+          "callee": "setImmediate",
+          "lineNumber": 29
+        },
+        {
+          "caller": "stripAnsi",
+          "callee": "text.replace",
+          "lineNumber": 34
+        },
+        {
+          "caller": "createSymlinkedSessionPaths",
+          "callee": "mkdtempSync",
+          "lineNumber": 58
+        },
+        {
+          "caller": "createSymlinkedSessionPaths",
+          "callee": "join",
+          "lineNumber": 58
+        },
+        {
+          "caller": "createSymlinkedSessionPaths",
+          "callee": "tmpdir",
+          "lineNumber": 58
+        },
+        {
+          "caller": "createSymlinkedSessionPaths",
+          "callee": "join",
+          "lineNumber": 59
+        },
+        {
+          "caller": "createSymlinkedSessionPaths",
+          "callee": "join",
+          "lineNumber": 60
+        },
+        {
+          "caller": "createSymlinkedSessionPaths",
+          "callee": "join",
+          "lineNumber": 61
+        },
+        {
+          "caller": "createSymlinkedSessionPaths",
+          "callee": "mkdirSync",
+          "lineNumber": 62
+        },
+        {
+          "caller": "createSymlinkedSessionPaths",
+          "callee": "mkdirSync",
+          "lineNumber": 63
+        },
+        {
+          "caller": "createSymlinkedSessionPaths",
+          "callee": "mkdirSync",
+          "lineNumber": 64
+        },
+        {
+          "caller": "createSymlinkedSessionPaths",
+          "callee": "join",
+          "lineNumber": 66
+        },
+        {
+          "caller": "createSymlinkedSessionPaths",
+          "callee": "mkdirSync",
+          "lineNumber": 67
+        },
+        {
+          "caller": "createSymlinkedSessionPaths",
+          "callee": "join",
+          "lineNumber": 68
+        },
+        {
+          "caller": "createSymlinkedSessionPaths",
+          "callee": "join",
+          "lineNumber": 69
+        },
+        {
+          "caller": "createSymlinkedSessionPaths",
+          "callee": "symlinkSync",
+          "lineNumber": 70
+        },
+        {
+          "caller": "createSymlinkedSessionPaths",
+          "callee": "symlinkSync",
+          "lineNumber": 71
+        },
+        {
+          "caller": "createSymlinkedSessionPaths",
+          "callee": "join",
+          "lineNumber": 73
+        },
+        {
+          "caller": "createSymlinkedSessionPaths",
+          "callee": "join",
+          "lineNumber": 74
+        },
+        {
+          "caller": "createSymlinkedSessionPaths",
+          "callee": "writeFileSync",
+          "lineNumber": 75
+        },
+        {
+          "caller": "createSymlinkedSessionPaths",
+          "callee": "writeFileSync",
+          "lineNumber": 76
+        },
+        {
+          "caller": "createSymlinkedSessionPaths",
+          "callee": "join",
+          "lineNumber": 80
+        },
+        {
+          "caller": "createSymlinkedSessionPaths",
+          "callee": "join",
+          "lineNumber": 81
+        },
+        {
+          "caller": "createSymlinkedSessionPaths",
+          "callee": "join",
+          "lineNumber": 82
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/session-selector-rename.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 111,
+      "nonEmptyLines": 96,
+      "functions": [
+        {
+          "name": "flushPromises",
+          "startLine": 8,
+          "endLine": 12,
+          "params": []
+        },
+        {
+          "name": "makeSession",
+          "startLine": 14,
+          "endLine": 26,
+          "params": [
+            "overrides"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "flushPromises",
+          "callee": "setImmediate",
+          "lineNumber": 10
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/settings-selector.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 43,
+      "nonEmptyLines": 39,
+      "callGraph": [
+        {
+          "caller": "cycle",
+          "callee": "new SettingsSelectorComponent(config, callbacks).getSettingsList",
+          "lineNumber": 33
+        },
+        {
+          "caller": "cycle",
+          "callee": "list.handleInput",
+          "lineNumber": 34
+        },
+        {
+          "caller": "cycle",
+          "callee": "list.handleInput",
+          "lineNumber": 35
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/status-indicator.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 26,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/streaming-render-debug.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 97,
+      "nonEmptyLines": 75,
+      "functions": [
+        {
+          "name": "sleep",
+          "startLine": 39,
+          "endLine": 41,
+          "params": [
+            "ms"
+          ]
+        },
+        {
+          "name": "main",
+          "startLine": 43,
+          "endLine": 95,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sleep",
+          "callee": "setTimeout",
+          "lineNumber": 40
+        },
+        {
+          "caller": "main",
+          "callee": "tui.addChild",
+          "lineNumber": 54
+        },
+        {
+          "caller": "main",
+          "callee": "tui.start",
+          "lineNumber": 55
+        },
+        {
+          "caller": "main",
+          "callee": "fullThinkingText.slice",
+          "lineNumber": 62
+        },
+        {
+          "caller": "main",
+          "callee": "component.updateContent",
+          "lineNumber": 70
+        },
+        {
+          "caller": "main",
+          "callee": "tui.requestRender",
+          "lineNumber": 71
+        },
+        {
+          "caller": "main",
+          "callee": "sleep",
+          "lineNumber": 73
+        },
+        {
+          "caller": "main",
+          "callee": "sleep",
+          "lineNumber": 77
+        },
+        {
+          "caller": "main",
+          "callee": "component.updateContent",
+          "lineNumber": 87
+        },
+        {
+          "caller": "main",
+          "callee": "tui.requestRender",
+          "lineNumber": 88
+        },
+        {
+          "caller": "main",
+          "callee": "sleep",
+          "lineNumber": 91
+        },
+        {
+          "caller": "main",
+          "callee": "tui.stop",
+          "lineNumber": 93
+        },
+        {
+          "caller": "main",
+          "callee": "process.exit",
+          "lineNumber": 94
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/3217-scoped-model-order.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 104,
+      "nonEmptyLines": 90,
+      "functions": [
+        {
+          "name": "createFakeTui",
+          "startLine": 10,
+          "endLine": 14,
+          "params": []
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/5433-extension-oauth-prompt-input.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 119,
+      "nonEmptyLines": 94,
+      "functions": [
+        {
+          "name": "createDialog",
+          "startLine": 12,
+          "endLine": 19,
+          "params": []
+        },
+        {
+          "name": "renderDialog",
+          "startLine": 21,
+          "endLine": 25,
+          "params": [
+            "dialog"
+          ]
+        },
+        {
+          "name": "countRenderedValue",
+          "startLine": 27,
+          "endLine": 29,
+          "params": [
+            "lines",
+            "value"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createDialog",
+          "callee": "vi.fn",
+          "lineNumber": 14
+        },
+        {
+          "caller": "renderDialog",
+          "callee": "stripAnsi(dialog.render(120).join(\"\\n\"))\n\t\t.split(\"\\n\")\n\t\t.map",
+          "lineNumber": 22
+        },
+        {
+          "caller": "renderDialog",
+          "callee": "stripAnsi(dialog.render(120).join(\"\\n\"))\n\t\t.split",
+          "lineNumber": 22
+        },
+        {
+          "caller": "renderDialog",
+          "callee": "stripAnsi",
+          "lineNumber": 22
+        },
+        {
+          "caller": "renderDialog",
+          "callee": "dialog.render(120).join",
+          "lineNumber": 22
+        },
+        {
+          "caller": "renderDialog",
+          "callee": "dialog.render",
+          "lineNumber": 22
+        },
+        {
+          "caller": "renderDialog",
+          "callee": "line.trimEnd",
+          "lineNumber": 24
+        },
+        {
+          "caller": "countRenderedValue",
+          "callee": "lines.filter",
+          "lineNumber": 28
+        },
+        {
+          "caller": "countRenderedValue",
+          "callee": "line.trim",
+          "lineNumber": 28
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/5724-sigterm-signal-exit.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 94,
+      "nonEmptyLines": 80,
+      "functions": [
+        {
+          "name": "deferred",
+          "startLine": 28,
+          "endLine": 37,
+          "params": []
+        },
+        {
+          "name": "callShutdown",
+          "startLine": 39,
+          "endLine": 45,
+          "params": [
+            "context",
+            "options"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ProcessExitError",
+          "startLine": 26,
+          "endLine": 26,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "deferred",
+          "callee": "resolve",
+          "lineNumber": 35
+        },
+        {
+          "caller": "callShutdown",
+          "callee": "(interactiveModePrototype as InteractiveModePrototypeWithShutdown).shutdown.call",
+          "lineNumber": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/6949-unavailable-scoped-model.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 160,
+      "nonEmptyLines": 143,
+      "functions": [
+        {
+          "name": "createInteractiveContext",
+          "startLine": 11,
+          "endLine": 40,
+          "params": [
+            "options"
+          ]
+        },
+        {
+          "name": "showModelsSelector",
+          "startLine": 42,
+          "endLine": 45,
+          "params": [
+            "context"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createInteractiveContext",
+          "callee": "vi.fn",
+          "lineNumber": 17
+        },
+        {
+          "caller": "createInteractiveContext",
+          "callee": "vi.fn",
+          "lineNumber": 18
+        },
+        {
+          "caller": "createInteractiveContext",
+          "callee": "vi.fn().mockResolvedValue",
+          "lineNumber": 22
+        },
+        {
+          "caller": "createInteractiveContext",
+          "callee": "vi.fn",
+          "lineNumber": 22
+        },
+        {
+          "caller": "createInteractiveContext",
+          "callee": "vi.fn",
+          "lineNumber": 30
+        },
+        {
+          "caller": "createInteractiveContext",
+          "callee": "vi.fn",
+          "lineNumber": 32
+        },
+        {
+          "caller": "createInteractiveContext",
+          "callee": "factory",
+          "lineNumber": 34
+        },
+        {
+          "caller": "createInteractiveContext",
+          "callee": "vi.fn",
+          "lineNumber": 36
+        },
+        {
+          "caller": "createInteractiveContext",
+          "callee": "vi.fn",
+          "lineNumber": 37
+        },
+        {
+          "caller": "showModelsSelector",
+          "callee": "Reflect.get",
+          "lineNumber": 43
+        },
+        {
+          "caller": "showModelsSelector",
+          "callee": "show.call",
+          "lineNumber": 44
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/6999-models-json-hot-reload.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 84,
+      "nonEmptyLines": 75,
+      "functions": [
+        {
+          "name": "observeRefreshRender",
+          "startLine": 14,
+          "endLine": 29,
+          "params": []
+        },
+        {
+          "name": "modelsJson",
+          "startLine": 31,
+          "endLine": 42,
+          "params": [
+            "provider",
+            "model"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "observeRefreshRender",
+          "callee": "resolveRefreshRender",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/7153-scoped-models-refresh.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 107,
+      "nonEmptyLines": 97,
+      "functions": [
+        {
+          "name": "openSelector",
+          "startLine": 13,
+          "endLine": 63,
+          "params": [
+            "harness",
+            "initialModels"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "openSelector",
+          "callee": "vi.fn",
+          "lineNumber": 19
+        },
+        {
+          "caller": "openSelector",
+          "callee": "vi.spyOn(harness.session.modelRuntime, \"getAvailableSnapshot\").mockImplementation",
+          "lineNumber": 20
+        },
+        {
+          "caller": "openSelector",
+          "callee": "vi.spyOn",
+          "lineNumber": 20
+        },
+        {
+          "caller": "openSelector",
+          "callee": "vi.spyOn(harness.session.modelRuntime, \"refresh\").mockImplementation",
+          "lineNumber": 21
+        },
+        {
+          "caller": "openSelector",
+          "callee": "vi.spyOn",
+          "lineNumber": 21
+        },
+        {
+          "caller": "close",
+          "callee": "dispose",
+          "lineNumber": 38
+        },
+        {
+          "caller": "close",
+          "callee": "done",
+          "lineNumber": 39
+        },
+        {
+          "caller": "openSelector",
+          "callee": "factory",
+          "lineNumber": 41
+        },
+        {
+          "caller": "openSelector",
+          "callee": "vi.fn",
+          "lineNumber": 45
+        },
+        {
+          "caller": "openSelector",
+          "callee": "vi.fn",
+          "lineNumber": 46
+        },
+        {
+          "caller": "openSelector",
+          "callee": "showModelsSelector.call",
+          "lineNumber": 49
+        },
+        {
+          "caller": "complete",
+          "callee": "finishRefresh",
+          "lineNumber": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/7209-model-selector-filter-resets-selection.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 128,
+      "nonEmptyLines": 108,
+      "functions": [
+        {
+          "name": "createFakeTui",
+          "startLine": 9,
+          "endLine": 11,
+          "params": []
+        },
+        {
+          "name": "selectedModelId",
+          "startLine": 14,
+          "endLine": 20,
+          "params": [
+            "rendered"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "selectedModelId",
+          "callee": "rendered.split(\"\\n\").find",
+          "lineNumber": 15
+        },
+        {
+          "caller": "selectedModelId",
+          "callee": "rendered.split",
+          "lineNumber": 15
+        },
+        {
+          "caller": "selectedModelId",
+          "callee": "l.startsWith",
+          "lineNumber": 15
+        },
+        {
+          "caller": "selectedModelId",
+          "callee": "line.replace",
+          "lineNumber": 17
+        },
+        {
+          "caller": "selectedModelId",
+          "callee": "rest.split",
+          "lineNumber": 18
+        },
+        {
+          "caller": "selectedModelId",
+          "callee": "id?.trim",
+          "lineNumber": 19
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/7731-tui-method-wrapping.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 31,
+      "nonEmptyLines": 26,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/startup-session-rebind-duplicate-subscription.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 77,
+      "nonEmptyLines": 63,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/syntax-highlight.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 76,
+      "nonEmptyLines": 66,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/test-theme-colors.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 249,
+      "nonEmptyLines": 212,
+      "functions": [
+        {
+          "name": "hexToRgb",
+          "startLine": 6,
+          "endLine": 9,
+          "params": [
+            "hex"
+          ]
+        },
+        {
+          "name": "rgbToHex",
+          "startLine": 11,
+          "endLine": 22,
+          "params": [
+            "r",
+            "g",
+            "b"
+          ]
+        },
+        {
+          "name": "rgbToHsl",
+          "startLine": 24,
+          "endLine": 49,
+          "params": [
+            "r",
+            "g",
+            "b"
+          ]
+        },
+        {
+          "name": "hslToRgb",
+          "startLine": 51,
+          "endLine": 71,
+          "params": [
+            "h",
+            "s",
+            "l"
+          ]
+        },
+        {
+          "name": "getLuminance",
+          "startLine": 73,
+          "endLine": 79,
+          "params": [
+            "r",
+            "g",
+            "b"
+          ]
+        },
+        {
+          "name": "getContrast",
+          "startLine": 81,
+          "endLine": 86,
+          "params": [
+            "rgb",
+            "bgLum"
+          ]
+        },
+        {
+          "name": "adjustColorToContrast",
+          "startLine": 88,
+          "endLine": 112,
+          "params": [
+            "hex",
+            "targetContrast",
+            "againstWhite"
+          ]
+        },
+        {
+          "name": "fgAnsi",
+          "startLine": 114,
+          "endLine": 117,
+          "params": [
+            "hex"
+          ]
+        },
+        {
+          "name": "cmdContrast",
+          "startLine": 123,
+          "endLine": 149,
+          "params": [
+            "targetContrast"
+          ]
+        },
+        {
+          "name": "cmdTest",
+          "startLine": 151,
+          "endLine": 173,
+          "params": [
+            "filePath"
+          ]
+        },
+        {
+          "name": "cmdTheme",
+          "startLine": 175,
+          "endLine": 232,
+          "params": [
+            "themeName"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "hexToRgb",
+          "callee": "/^#?([a-f\\d]{2})([a-f\\d]{2})([a-f\\d]{2})$/i.exec",
+          "lineNumber": 7
+        },
+        {
+          "caller": "hexToRgb",
+          "callee": "parseInt",
+          "lineNumber": 8
+        },
+        {
+          "caller": "hexToRgb",
+          "callee": "parseInt",
+          "lineNumber": 8
+        },
+        {
+          "caller": "hexToRgb",
+          "callee": "parseInt",
+          "lineNumber": 8
+        },
+        {
+          "caller": "rgbToHex",
+          "callee": "[r, g, b]\n\t\t\t.map((x) =>\n\t\t\t\tMath.round(Math.max(0, Math.min(255, x)))\n\t\t\t\t\t.toString(16)\n\t\t\t\t\t.padStart(2, \"0\"),\n\t\t\t)\n\t\t\t.join",
+          "lineNumber": 14
+        },
+        {
+          "caller": "rgbToHex",
+          "callee": "[r, g, b]\n\t\t\t.map",
+          "lineNumber": 14
+        },
+        {
+          "caller": "rgbToHex",
+          "callee": "Math.round(Math.max(0, Math.min(255, x)))\n\t\t\t\t\t.toString(16)\n\t\t\t\t\t.padStart",
+          "lineNumber": 16
+        },
+        {
+          "caller": "rgbToHex",
+          "callee": "Math.round(Math.max(0, Math.min(255, x)))\n\t\t\t\t\t.toString",
+          "lineNumber": 16
+        },
+        {
+          "caller": "rgbToHex",
+          "callee": "Math.round",
+          "lineNumber": 16
+        },
+        {
+          "caller": "rgbToHex",
+          "callee": "Math.max",
+          "lineNumber": 16
+        },
+        {
+          "caller": "rgbToHex",
+          "callee": "Math.min",
+          "lineNumber": 16
+        },
+        {
+          "caller": "rgbToHsl",
+          "callee": "Math.max",
+          "lineNumber": 28
+        },
+        {
+          "caller": "rgbToHsl",
+          "callee": "Math.min",
+          "lineNumber": 29
+        },
+        {
+          "caller": "hslToRgb",
+          "callee": "hue2rgb",
+          "lineNumber": 66
+        },
+        {
+          "caller": "hslToRgb",
+          "callee": "hue2rgb",
+          "lineNumber": 67
+        },
+        {
+          "caller": "hslToRgb",
+          "callee": "hue2rgb",
+          "lineNumber": 68
+        },
+        {
+          "caller": "hslToRgb",
+          "callee": "Math.round",
+          "lineNumber": 70
+        },
+        {
+          "caller": "hslToRgb",
+          "callee": "Math.round",
+          "lineNumber": 70
+        },
+        {
+          "caller": "hslToRgb",
+          "callee": "Math.round",
+          "lineNumber": 70
+        },
+        {
+          "caller": "getLuminance",
+          "callee": "lin",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getLuminance",
+          "callee": "lin",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getLuminance",
+          "callee": "lin",
+          "lineNumber": 78
+        },
+        {
+          "caller": "getContrast",
+          "callee": "getLuminance",
+          "lineNumber": 82
+        },
+        {
+          "caller": "getContrast",
+          "callee": "Math.max",
+          "lineNumber": 83
+        },
+        {
+          "caller": "getContrast",
+          "callee": "Math.min",
+          "lineNumber": 84
+        },
+        {
+          "caller": "adjustColorToContrast",
+          "callee": "hexToRgb",
+          "lineNumber": 89
+        },
+        {
+          "caller": "adjustColorToContrast",
+          "callee": "rgbToHsl",
+          "lineNumber": 90
+        },
+        {
+          "caller": "adjustColorToContrast",
+          "callee": "hslToRgb",
+          "lineNumber": 98
+        },
+        {
+          "caller": "adjustColorToContrast",
+          "callee": "getContrast",
+          "lineNumber": 99
+        },
+        {
+          "caller": "adjustColorToContrast",
+          "callee": "rgbToHex",
+          "lineNumber": 111
+        },
+        {
+          "caller": "adjustColorToContrast",
+          "callee": "hslToRgb",
+          "lineNumber": 111
+        },
+        {
+          "caller": "fgAnsi",
+          "callee": "hexToRgb",
+          "lineNumber": 115
+        },
+        {
+          "caller": "cmdContrast",
+          "callee": "console.log",
+          "lineNumber": 132
+        },
+        {
+          "caller": "cmdContrast",
+          "callee": "console.log",
+          "lineNumber": 134
+        },
+        {
+          "caller": "cmdContrast",
+          "callee": "Object.entries",
+          "lineNumber": 135
+        },
+        {
+          "caller": "cmdContrast",
+          "callee": "adjustColorToContrast",
+          "lineNumber": 136
+        },
+        {
+          "caller": "cmdContrast",
+          "callee": "hexToRgb",
+          "lineNumber": 137
+        },
+        {
+          "caller": "cmdContrast",
+          "callee": "getContrast",
+          "lineNumber": 138
+        },
+        {
+          "caller": "cmdContrast",
+          "callee": "console.log",
+          "lineNumber": 139
+        },
+        {
+          "caller": "cmdContrast",
+          "callee": "name.padEnd",
+          "lineNumber": 139
+        },
+        {
+          "caller": "cmdContrast",
+          "callee": "fgAnsi",
+          "lineNumber": 139
+        },
+        {
+          "caller": "cmdContrast",
+          "callee": "contrast.toFixed",
+          "lineNumber": 139
+        },
+        {
+          "caller": "cmdContrast",
+          "callee": "console.log",
+          "lineNumber": 142
+        },
+        {
+          "caller": "cmdContrast",
+          "callee": "Object.entries",
+          "lineNumber": 143
+        },
+        {
+          "caller": "cmdContrast",
+          "callee": "adjustColorToContrast",
+          "lineNumber": 144
+        },
+        {
+          "caller": "cmdContrast",
+          "callee": "hexToRgb",
+          "lineNumber": 145
+        },
+        {
+          "caller": "cmdContrast",
+          "callee": "getContrast",
+          "lineNumber": 146
+        },
+        {
+          "caller": "cmdContrast",
+          "callee": "console.log",
+          "lineNumber": 147
+        },
+        {
+          "caller": "cmdContrast",
+          "callee": "name.padEnd",
+          "lineNumber": 147
+        },
+        {
+          "caller": "cmdContrast",
+          "callee": "fgAnsi",
+          "lineNumber": 147
+        },
+        {
+          "caller": "cmdContrast",
+          "callee": "contrast.toFixed",
+          "lineNumber": 147
+        },
+        {
+          "caller": "cmdTest",
+          "callee": "fs.existsSync",
+          "lineNumber": 152
+        },
+        {
+          "caller": "cmdTest",
+          "callee": "console.error",
+          "lineNumber": 153
+        },
+        {
+          "caller": "cmdTest",
+          "callee": "process.exit",
+          "lineNumber": 154
+        },
+        {
+          "caller": "cmdTest",
+          "callee": "JSON.parse",
+          "lineNumber": 157
+        },
+        {
+          "caller": "cmdTest",
+          "callee": "fs.readFileSync",
+          "lineNumber": 157
+        },
+        {
+          "caller": "cmdTest",
+          "callee": "console.log",
+          "lineNumber": 160
+        },
+        {
+          "caller": "cmdTest",
+          "callee": "Object.entries",
+          "lineNumber": 162
+        },
+        {
+          "caller": "cmdTest",
+          "callee": "hex.startsWith",
+          "lineNumber": 163
+        },
+        {
+          "caller": "cmdTest",
+          "callee": "hexToRgb",
+          "lineNumber": 164
+        },
+        {
+          "caller": "cmdTest",
+          "callee": "getContrast",
+          "lineNumber": 165
+        },
+        {
+          "caller": "cmdTest",
+          "callee": "getContrast",
+          "lineNumber": 166
+        },
+        {
+          "caller": "cmdTest",
+          "callee": "console.log",
+          "lineNumber": 169
+        },
+        {
+          "caller": "cmdTest",
+          "callee": "name.padEnd",
+          "lineNumber": 170
+        },
+        {
+          "caller": "cmdTest",
+          "callee": "fgAnsi",
+          "lineNumber": 170
+        },
+        {
+          "caller": "cmdTest",
+          "callee": "vsWhite.toFixed",
+          "lineNumber": 170
+        },
+        {
+          "caller": "cmdTest",
+          "callee": "passW.padEnd",
+          "lineNumber": 170
+        },
+        {
+          "caller": "cmdTest",
+          "callee": "vsBlack.toFixed",
+          "lineNumber": 170
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "initTheme",
+          "lineNumber": 177
+        },
+        {
+          "caller": "parseAnsiRgb",
+          "callee": "ansi.match",
+          "lineNumber": 180
+        },
+        {
+          "caller": "parseAnsiRgb",
+          "callee": "parseInt",
+          "lineNumber": 181
+        },
+        {
+          "caller": "parseAnsiRgb",
+          "callee": "parseInt",
+          "lineNumber": 181
+        },
+        {
+          "caller": "parseAnsiRgb",
+          "callee": "parseInt",
+          "lineNumber": 181
+        },
+        {
+          "caller": "getContrastVsWhite",
+          "callee": "theme.getFgAnsi",
+          "lineNumber": 185
+        },
+        {
+          "caller": "getContrastVsWhite",
+          "callee": "parseAnsiRgb",
+          "lineNumber": 186
+        },
+        {
+          "caller": "getContrastVsWhite",
+          "callee": "getContrast",
+          "lineNumber": 188
+        },
+        {
+          "caller": "getContrastVsWhite",
+          "callee": "ratio.toFixed",
+          "lineNumber": 190
+        },
+        {
+          "caller": "getContrastVsBlack",
+          "callee": "theme.getFgAnsi",
+          "lineNumber": 194
+        },
+        {
+          "caller": "getContrastVsBlack",
+          "callee": "parseAnsiRgb",
+          "lineNumber": 195
+        },
+        {
+          "caller": "getContrastVsBlack",
+          "callee": "getContrast",
+          "lineNumber": 197
+        },
+        {
+          "caller": "getContrastVsBlack",
+          "callee": "ratio.toFixed",
+          "lineNumber": 199
+        },
+        {
+          "caller": "logColor",
+          "callee": "theme.fg",
+          "lineNumber": 203
+        },
+        {
+          "caller": "logColor",
+          "callee": "getContrastVsWhite",
+          "lineNumber": 204
+        },
+        {
+          "caller": "logColor",
+          "callee": "getContrastVsBlack",
+          "lineNumber": 205
+        },
+        {
+          "caller": "logColor",
+          "callee": "console.log",
+          "lineNumber": 206
+        },
+        {
+          "caller": "logColor",
+          "callee": "name.padEnd",
+          "lineNumber": 206
+        },
+        {
+          "caller": "logColor",
+          "callee": "cw.padEnd",
+          "lineNumber": 206
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "console.log",
+          "lineNumber": 209
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "console.log",
+          "lineNumber": 211
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "[\"accent\", \"border\", \"borderAccent\", \"borderMuted\", \"success\", \"error\", \"warning\", \"muted\", \"dim\"].forEach",
+          "lineNumber": 212
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "console.log",
+          "lineNumber": 214
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "[\"mdHeading\", \"mdLink\", \"mdCode\", \"mdCodeBlock\", \"mdCodeBlockBorder\", \"mdQuote\", \"mdListBullet\"].forEach",
+          "lineNumber": 215
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "console.log",
+          "lineNumber": 217
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "[\"toolDiffAdded\", \"toolDiffRemoved\", \"toolDiffContext\"].forEach",
+          "lineNumber": 218
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "console.log",
+          "lineNumber": 220
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "[\"thinkingOff\", \"thinkingMinimal\", \"thinkingLow\", \"thinkingMedium\", \"thinkingHigh\"].forEach",
+          "lineNumber": 221
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "console.log",
+          "lineNumber": 223
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "console.log",
+          "lineNumber": 224
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "theme.bg",
+          "lineNumber": 224
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "theme.bg",
+          "lineNumber": 225
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "theme.fg",
+          "lineNumber": 225
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "console.log",
+          "lineNumber": 226
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "theme.underline",
+          "lineNumber": 226
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "console.log",
+          "lineNumber": 227
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "theme.bold",
+          "lineNumber": 227
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "theme.inverse",
+          "lineNumber": 227
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "console.log",
+          "lineNumber": 228
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "theme.bg",
+          "lineNumber": 228
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "console.log",
+          "lineNumber": 229
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "theme.bg",
+          "lineNumber": 229
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "console.log",
+          "lineNumber": 230
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "theme.bg",
+          "lineNumber": 230
+        },
+        {
+          "caller": "cmdTheme",
+          "callee": "console.log",
+          "lineNumber": 231
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/theme-controller.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 125,
+      "nonEmptyLines": 108,
+      "functions": [
+        {
+          "name": "createUi",
+          "startLine": 7,
+          "endLine": 30,
+          "params": []
+        },
+        {
+          "name": "createController",
+          "startLine": 32,
+          "endLine": 39,
+          "params": [
+            "ui",
+            "getSettingsManager",
+            "initialThemeSetting"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createUi",
+          "callee": "vi.fn",
+          "lineNumber": 8
+        },
+        {
+          "caller": "createUi",
+          "callee": "vi.fn",
+          "lineNumber": 9
+        },
+        {
+          "caller": "createUi",
+          "callee": "vi.fn",
+          "lineNumber": 10
+        },
+        {
+          "caller": "createUi",
+          "callee": "vi.fn",
+          "lineNumber": 13
+        },
+        {
+          "caller": "createUi",
+          "callee": "vi.fn",
+          "lineNumber": 14
+        },
+        {
+          "caller": "createUi",
+          "callee": "vi.fn",
+          "lineNumber": 16
+        },
+        {
+          "caller": "createUi",
+          "callee": "vi.fn",
+          "lineNumber": 18
+        },
+        {
+          "caller": "createUi",
+          "callee": "terminalColorSchemeListener",
+          "lineNumber": 28
+        },
+        {
+          "caller": "createController",
+          "callee": "vi.fn",
+          "lineNumber": 35
+        },
+        {
+          "caller": "createController",
+          "callee": "vi.fn",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/theme-detection.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 174,
+      "nonEmptyLines": 157,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/theme-export.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 104,
+      "nonEmptyLines": 92,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/theme-picker.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 44,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/tree-selector.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 702,
+      "nonEmptyLines": 596,
+      "functions": [
+        {
+          "name": "userMessage",
+          "startLine": 24,
+          "endLine": 32,
+          "params": [
+            "id",
+            "parentId",
+            "content"
+          ]
+        },
+        {
+          "name": "assistantMessage",
+          "startLine": 35,
+          "endLine": 59,
+          "params": [
+            "id",
+            "parentId",
+            "text"
+          ]
+        },
+        {
+          "name": "toolCallOnlyAssistant",
+          "startLine": 62,
+          "endLine": 86,
+          "params": [
+            "id",
+            "parentId"
+          ]
+        },
+        {
+          "name": "modelChange",
+          "startLine": 89,
+          "endLine": 98,
+          "params": [
+            "id",
+            "parentId"
+          ]
+        },
+        {
+          "name": "buildTree",
+          "startLine": 101,
+          "endLine": 126,
+          "params": [
+            "entries"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "userMessage",
+          "callee": "new Date().toISOString",
+          "lineNumber": 29
+        },
+        {
+          "caller": "userMessage",
+          "callee": "Date.now",
+          "lineNumber": 30
+        },
+        {
+          "caller": "assistantMessage",
+          "callee": "new Date().toISOString",
+          "lineNumber": 40
+        },
+        {
+          "caller": "assistantMessage",
+          "callee": "Date.now",
+          "lineNumber": 56
+        },
+        {
+          "caller": "toolCallOnlyAssistant",
+          "callee": "new Date().toISOString",
+          "lineNumber": 67
+        },
+        {
+          "caller": "toolCallOnlyAssistant",
+          "callee": "Date.now",
+          "lineNumber": 83
+        },
+        {
+          "caller": "modelChange",
+          "callee": "new Date().toISOString",
+          "lineNumber": 94
+        },
+        {
+          "caller": "buildTree",
+          "callee": "entries.map",
+          "lineNumber": 104
+        },
+        {
+          "caller": "buildTree",
+          "callee": "byId.set",
+          "lineNumber": 111
+        },
+        {
+          "caller": "buildTree",
+          "callee": "roots.push",
+          "lineNumber": 117
+        },
+        {
+          "caller": "buildTree",
+          "callee": "byId.get",
+          "lineNumber": 119
+        },
+        {
+          "caller": "buildTree",
+          "callee": "parent.children.push",
+          "lineNumber": 121
+        },
+        {
+          "caller": "buildBranchingTree",
+          "callee": "userMessage",
+          "lineNumber": 422
+        },
+        {
+          "caller": "buildBranchingTree",
+          "callee": "assistantMessage",
+          "lineNumber": 423
+        },
+        {
+          "caller": "buildBranchingTree",
+          "callee": "userMessage",
+          "lineNumber": 424
+        },
+        {
+          "caller": "buildBranchingTree",
+          "callee": "assistantMessage",
+          "lineNumber": 425
+        },
+        {
+          "caller": "buildBranchingTree",
+          "callee": "userMessage",
+          "lineNumber": 427
+        },
+        {
+          "caller": "buildBranchingTree",
+          "callee": "assistantMessage",
+          "lineNumber": 428
+        },
+        {
+          "caller": "buildBranchingTree",
+          "callee": "userMessage",
+          "lineNumber": 429
+        },
+        {
+          "caller": "buildBranchingTree",
+          "callee": "assistantMessage",
+          "lineNumber": 430
+        },
+        {
+          "caller": "buildBranchingTree",
+          "callee": "userMessage",
+          "lineNumber": 432
+        },
+        {
+          "caller": "buildBranchingTree",
+          "callee": "assistantMessage",
+          "lineNumber": 433
+        },
+        {
+          "caller": "buildBranchingTree",
+          "callee": "userMessage",
+          "lineNumber": 434
+        },
+        {
+          "caller": "buildBranchingTree",
+          "callee": "buildTree",
+          "lineNumber": 436
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/trust-selector.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 87,
+      "nonEmptyLines": 72,
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/user-message.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 48,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/tool-stats.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 232,
+      "nonEmptyLines": 212,
+      "functions": [
+        {
+          "name": "parseArgs",
+          "startLine": 20,
+          "endLine": 34,
+          "params": []
+        },
+        {
+          "name": "jsonlFiles",
+          "startLine": 36,
+          "endLine": 44,
+          "params": [
+            "dir"
+          ]
+        },
+        {
+          "name": "getStats",
+          "startLine": 46,
+          "endLine": 53,
+          "params": [
+            "map",
+            "key",
+            "create"
+          ]
+        },
+        {
+          "name": "createToolStats",
+          "startLine": 55,
+          "endLine": 57,
+          "params": []
+        },
+        {
+          "name": "createBashStats",
+          "startLine": 59,
+          "endLine": 61,
+          "params": []
+        },
+        {
+          "name": "estimateTokenCount",
+          "startLine": 63,
+          "endLine": 65,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "contentText",
+          "startLine": 67,
+          "endLine": 75,
+          "params": [
+            "content"
+          ]
+        },
+        {
+          "name": "getBashCommand",
+          "startLine": 77,
+          "endLine": 80,
+          "params": [
+            "args"
+          ]
+        },
+        {
+          "name": "commandKey",
+          "startLine": 82,
+          "endLine": 89,
+          "params": [
+            "command"
+          ]
+        },
+        {
+          "name": "bucketCounts",
+          "startLine": 91,
+          "endLine": 98,
+          "params": [
+            "samples"
+          ]
+        },
+        {
+          "name": "bucketLabels",
+          "startLine": 100,
+          "endLine": 105,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parseArgs",
+          "callee": "join",
+          "lineNumber": 21
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "homedir",
+          "lineNumber": 21
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "join",
+          "lineNumber": 22
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "tmpdir",
+          "lineNumber": 22
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "process.argv.slice",
+          "lineNumber": 23
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "resolve",
+          "lineNumber": 26
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "resolve",
+          "lineNumber": 27
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "console.log",
+          "lineNumber": 29
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "process.exit",
+          "lineNumber": 30
+        },
+        {
+          "caller": "jsonlFiles",
+          "callee": "readdirSync",
+          "lineNumber": 38
+        },
+        {
+          "caller": "jsonlFiles",
+          "callee": "join",
+          "lineNumber": 39
+        },
+        {
+          "caller": "jsonlFiles",
+          "callee": "entry.isDirectory",
+          "lineNumber": 40
+        },
+        {
+          "caller": "jsonlFiles",
+          "callee": "out.push",
+          "lineNumber": 40
+        },
+        {
+          "caller": "jsonlFiles",
+          "callee": "jsonlFiles",
+          "lineNumber": 40
+        },
+        {
+          "caller": "jsonlFiles",
+          "callee": "entry.isFile",
+          "lineNumber": 41
+        },
+        {
+          "caller": "jsonlFiles",
+          "callee": "entry.name.endsWith",
+          "lineNumber": 41
+        },
+        {
+          "caller": "jsonlFiles",
+          "callee": "out.push",
+          "lineNumber": 41
+        },
+        {
+          "caller": "getStats",
+          "callee": "map.get",
+          "lineNumber": 47
+        },
+        {
+          "caller": "getStats",
+          "callee": "create",
+          "lineNumber": 49
+        },
+        {
+          "caller": "getStats",
+          "callee": "map.set",
+          "lineNumber": 50
+        },
+        {
+          "caller": "estimateTokenCount",
+          "callee": "Math.ceil",
+          "lineNumber": 64
+        },
+        {
+          "caller": "contentText",
+          "callee": "Array.isArray",
+          "lineNumber": 69
+        },
+        {
+          "caller": "contentText",
+          "callee": "content.map((block) => {\n\t\tif (block.type === \"text\" && \"text\" in block && typeof block.text === \"string\") return block.text;\n\t\tif (block.type === \"image\" && \"data\" in block && typeof block.data === \"string\") return block.data;\n\t\treturn JSON.stringify(block);\n\t}).join",
+          "lineNumber": 70
+        },
+        {
+          "caller": "contentText",
+          "callee": "content.map",
+          "lineNumber": 70
+        },
+        {
+          "caller": "contentText",
+          "callee": "JSON.stringify",
+          "lineNumber": 73
+        },
+        {
+          "caller": "commandKey",
+          "callee": "command.split(/\\n|&&|\\|\\||;|\\|/)[0]?.trim",
+          "lineNumber": 83
+        },
+        {
+          "caller": "commandKey",
+          "callee": "command.split",
+          "lineNumber": 83
+        },
+        {
+          "caller": "commandKey",
+          "callee": "command.trim",
+          "lineNumber": 83
+        },
+        {
+          "caller": "commandKey",
+          "callee": "first.match",
+          "lineNumber": 84
+        },
+        {
+          "caller": "commandKey",
+          "callee": "match[2].startsWith",
+          "lineNumber": 87
+        },
+        {
+          "caller": "bucketCounts",
+          "callee": "new Array(BUCKETS.length - 1).fill",
+          "lineNumber": 92
+        },
+        {
+          "caller": "bucketCounts",
+          "callee": "BUCKETS.findIndex",
+          "lineNumber": 94
+        },
+        {
+          "caller": "bucketCounts",
+          "callee": "Math.max",
+          "lineNumber": 95
+        },
+        {
+          "caller": "bucketLabels",
+          "callee": "BUCKETS.slice(0, -1).map",
+          "lineNumber": 101
+        },
+        {
+          "caller": "bucketLabels",
+          "callee": "BUCKETS.slice",
+          "lineNumber": 101
+        },
+        {
+          "caller": "bucketLabels",
+          "callee": "Number.isFinite",
+          "lineNumber": 103
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    }
+  ]
+}

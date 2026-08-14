@@ -1,0 +1,537 @@
+{
+  "nodes": [
+    {
+      "id": "file:scripts/package-workspaces.mjs",
+      "type": "file",
+      "name": "package-workspaces.mjs",
+      "filePath": "scripts/package-workspaces.mjs",
+      "language": "javascript",
+      "summary": "工作区包目录发现工具。递归扫描 packages/ 目录树，查找包含 package.json 的子目录，跳过 dist 和 node_modules，返回排序后的目录列表。作为发布流水线的基础依赖，被多个脚本引用。",
+      "tags": ["script", "workspace", "release-infrastructure", "file-discovery"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/package-workspaces.mjs:findPackageDirectories",
+      "type": "function",
+      "name": "findPackageDirectories",
+      "filePath": "scripts/package-workspaces.mjs",
+      "summary": "递归遍历指定根目录（默认 packages/），收集所有包含 package.json 的子目录路径，跳过 dist 和 node_modules 目录，返回排序后的数组。内部使用 visit 闭包实现深度优先搜索。",
+      "tags": ["file-discovery", "recursive-traversal", "workspace"],
+      "complexity": "simple",
+      "startLine": 6,
+      "endLine": 24
+    },
+    {
+      "id": "file:scripts/release-packages.mjs",
+      "type": "file",
+      "name": "release-packages.mjs",
+      "filePath": "scripts/release-packages.mjs",
+      "language": "javascript",
+      "summary": "公开工作区包元数据聚合模块。调用 findPackageDirectories 发现包目录，读取每个 package.json，过滤掉私有包，返回包含 name、version、directory 的对象数组。是发布和版本管理脚本的核心数据源。",
+      "tags": ["script", "workspace", "release-infrastructure", "package-metadata"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/publish-release-announcement.mjs",
+      "type": "file",
+      "name": "publish-release-announcement.mjs",
+      "filePath": "scripts/publish-release-announcement.mjs",
+      "language": "javascript",
+      "summary": "版本发布公告脚本。验证所有公开工作区包已发布到 npm registry（带重试机制），构造发布记录 JSON，通过 AWS S3 API 上传到 releases/ 目录并原子性地更新 latest.json 指针文件。使用 ETag 条件写入防止并发冲突，支持最多 5 次重试的乐观锁机制。导出 compareReleaseVersions 和 advanceLatestRelease 供测试使用。",
+      "tags": ["script", "release", "npm", "s3", "ci-cd", "version-management"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:scripts/publish-release-announcement.mjs:parseArgs",
+      "type": "function",
+      "name": "parseArgs",
+      "filePath": "scripts/publish-release-announcement.mjs",
+      "summary": "解析命令行参数（--bucket、--endpoint、--source-commit、--version），验证必填项和 semver 格式。返回结构化的 options 对象。",
+      "tags": ["cli", "argument-parsing", "validation"],
+      "complexity": "moderate",
+      "startLine": 17,
+      "endLine": 43
+    },
+    {
+      "id": "function:scripts/publish-release-announcement.mjs:resolvePackageFromNpm",
+      "type": "function",
+      "name": "resolvePackageFromNpm",
+      "filePath": "scripts/publish-release-announcement.mjs",
+      "summary": "从 npm registry 解析包的元数据，验证版本、tarball URL 和 integrity hash 的有效性。先获取包版本元数据，再 HEAD 请求验证 tarball 可下载。",
+      "tags": ["npm", "registry", "validation", "async"],
+      "complexity": "moderate",
+      "startLine": 49,
+      "endLine": 82
+    },
+    {
+      "id": "function:scripts/publish-release-announcement.mjs:verifyPackagesAreAvailable",
+      "type": "function",
+      "name": "verifyPackagesAreAvailable",
+      "filePath": "scripts/publish-release-announcement.mjs",
+      "summary": "轮询验证所有包在 npm registry 上可用。使用 Promise.allSettled 并行查询，10 分钟超时窗口内以 5 秒间隔重试，直到所有包都可达或超时抛出错误。",
+      "tags": ["npm", "retry", "polling", "async", "concurrency"],
+      "complexity": "complex",
+      "startLine": 84,
+      "endLine": 106
+    },
+    {
+      "id": "function:scripts/publish-release-announcement.mjs:runAws",
+      "type": "function",
+      "name": "runAws",
+      "filePath": "scripts/publish-release-announcement.mjs",
+      "summary": "封装 AWS CLI 调用（spawnSync），统一处理 stdout/stderr、404 和 412 条件错误码。设置 EC2 元数据禁用和自动区域检测。",
+      "tags": ["aws-cli", "shell-execution", "error-handling"],
+      "complexity": "moderate",
+      "startLine": 112,
+      "endLine": 131
+    },
+    {
+      "id": "function:scripts/publish-release-announcement.mjs:readLatestRelease",
+      "type": "function",
+      "name": "readLatestRelease",
+      "filePath": "scripts/publish-release-announcement.mjs",
+      "summary": "从 S3 读取 latest.json 发布指针文件，验证其 ETag 和 semver 版本格式。使用 head-object 获取 ETag 后用 get-object 下载内容到本地临时文件。",
+      "tags": ["s3", "release-pointer", "validation"],
+      "complexity": "complex",
+      "startLine": 133,
+      "endLine": 175
+    },
+    {
+      "id": "function:scripts/publish-release-announcement.mjs:putJson",
+      "type": "function",
+      "name": "putJson",
+      "filePath": "scripts/publish-release-announcement.mjs",
+      "summary": "将 JSON 文件上传到 S3，支持 ETag 条件匹配（if-match）和不存在检查（if-none-match）。设置 content-type 和 cache-control 头部。",
+      "tags": ["s3", "conditional-write", "upload"],
+      "complexity": "moderate",
+      "startLine": 177,
+      "endLine": 197
+    },
+    {
+      "id": "function:scripts/publish-release-announcement.mjs:compareReleaseVersions",
+      "type": "function",
+      "name": "compareReleaseVersions",
+      "filePath": "scripts/publish-release-announcement.mjs",
+      "summary": "比较两个稳定 semver 版本号的大小，按 major.minor.patch 逐段数值比较。仅接受 x.y.z 格式，拒绝预发布版本。导出供测试使用。",
+      "tags": ["semver", "comparison", "exported"],
+      "complexity": "simple",
+      "startLine": 199,
+      "endLine": 209
+    },
+    {
+      "id": "function:scripts/publish-release-announcement.mjs:advanceLatestRelease",
+      "type": "function",
+      "name": "advanceLatestRelease",
+      "filePath": "scripts/publish-release-announcement.mjs",
+      "summary": "原子性地推进 latest.json 发布指针。使用 ETag 条件写入实现乐观锁，最多重试 5 次。如果当前版本已更新则跳过。导出供测试使用。",
+      "tags": ["release-pointer", "optimistic-locking", "conditional-write", "exported"],
+      "complexity": "complex",
+      "startLine": 211,
+      "endLine": 224
+    },
+    {
+      "id": "function:scripts/publish-release-announcement.mjs:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "scripts/publish-release-announcement.mjs",
+      "summary": "发布公告主流程：解析参数 → 验证包版本一致性 → 等待 npm 可用性 → 构建发布记录 → 上传到 S3 releases/ → 原子更新 latest.json 指针。使用临时目录管理 JSON 文件，finally 块确保清理。",
+      "tags": ["main-flow", "release", "orchestration"],
+      "complexity": "complex",
+      "startLine": 226,
+      "endLine": 283
+    },
+    {
+      "id": "file:scripts/publish-release-announcement.test.mjs",
+      "type": "file",
+      "name": "publish-release-announcement.test.mjs",
+      "filePath": "scripts/publish-release-announcement.test.mjs",
+      "language": "javascript",
+      "summary": "publish-release-announcement 的单元测试。使用 node:test 框架测试版本比较函数的数值排序逻辑、发布指针不会回退到旧版本、条件更新重试机制以及首次创建时的 if-none-match 条件。",
+      "tags": ["test", "unit-test", "release", "node-test"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:scripts/publish.mjs",
+      "type": "file",
+      "name": "publish.mjs",
+      "filePath": "scripts/publish.mjs",
+      "language": "javascript",
+      "summary": "npm 发布脚本。验证所有公开工作区包的构建输出存在、使用 npm pack --dry-run 校验打包内容、检查 lockstep 版本一致性，然后逐个执行 npm publish（带 --access public --provenance）。支持 --dry-run 模式。已发布的包自动跳过。",
+      "tags": ["script", "npm-publish", "release", "validation"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/publish.mjs:run",
+      "type": "function",
+      "name": "run",
+      "filePath": "scripts/publish.mjs",
+      "summary": "命令执行封装函数。使用 spawnSync 运行外部命令，支持跨平台（Windows 自动追加 .cmd），可选捕获输出。失败时抛出包含 stdout+stderr 的错误。",
+      "tags": ["shell-execution", "cross-platform", "error-handling"],
+      "complexity": "moderate",
+      "startLine": 22,
+      "endLine": 36
+    },
+    {
+      "id": "function:scripts/publish.mjs:isPublished",
+      "type": "function",
+      "name": "isPublished",
+      "filePath": "scripts/publish.mjs",
+      "summary": "查询 npm registry 判断指定包版本是否已发布。通过 npm view 命令检查，区分未发布（404）和查询失败（其他错误码）。",
+      "tags": ["npm", "registry-query", "version-check"],
+      "complexity": "moderate",
+      "startLine": 50,
+      "endLine": 66
+    },
+    {
+      "id": "file:scripts/release.mjs",
+      "type": "file",
+      "name": "release.mjs",
+      "filePath": "scripts/release.mjs",
+      "language": "javascript",
+      "summary": "完整版本发布编排脚本。执行 10 步发布流程：检查工作目录 → 验证 npm 注册 → 版本升降 → 更新 CHANGELOG → 重新生成制品 → 运行检查和测试 → 提交并打标签 → 添加新 Unreleased 段 → 推送。支持 major/minor/patch 或显式版本号。",
+      "tags": ["script", "release-orchestrator", "version-management", "changelog", "git"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:scripts/release.mjs:run",
+      "type": "function",
+      "name": "run",
+      "filePath": "scripts/release.mjs",
+      "summary": "Shell 命令执行封装。使用 execSync 运行命令并继承 stdio 输出，支持静默模式和错误忽略选项。命令失败时打印错误信息并退出进程。",
+      "tags": ["shell-execution", "error-handling"],
+      "complexity": "simple",
+      "startLine": 37,
+      "endLine": 48
+    },
+    {
+      "id": "function:scripts/release.mjs:assertPackagesAreRegisteredWithNpm",
+      "type": "function",
+      "name": "assertPackagesAreRegisteredWithNpm",
+      "filePath": "scripts/release.mjs",
+      "summary": "验证所有公开工作区包已在 npm registry 注册。逐个查询 npm view，收集未注册的包名（404），最终统一抛出错误提示用户先注册。跨平台处理 Windows npm.cmd。",
+      "tags": ["npm", "validation", "pre-release-check"],
+      "complexity": "complex",
+      "startLine": 55,
+      "endLine": 85
+    },
+    {
+      "id": "function:scripts/release.mjs:compareVersions",
+      "type": "function",
+      "name": "compareVersions",
+      "filePath": "scripts/release.mjs",
+      "summary": "比较两个 semver 版本号大小。将版本号拆分为三段数值，逐段比较差值。返回正数/零/负数表示大小关系。",
+      "tags": ["semver", "comparison"],
+      "complexity": "simple",
+      "startLine": 87,
+      "endLine": 99
+    },
+    {
+      "id": "function:scripts/release.mjs:removeStaleWorkspaceLockEntries",
+      "type": "function",
+      "name": "removeStaleWorkspaceLockEntries",
+      "filePath": "scripts/release.mjs",
+      "summary": "清理 package-lock.json 中过期的工作区包条目。当 npm version 命令导致 lock 文件中的工作区版本与实际不一致时，删除这些过期条目，然后重新写入 lock 文件。",
+      "tags": ["lockfile", "workspace", "cleanup", "version-sync"],
+      "complexity": "complex",
+      "startLine": 105,
+      "endLine": 130
+    },
+    {
+      "id": "function:scripts/release.mjs:bumpOrSetVersion",
+      "type": "function",
+      "name": "bumpOrSetVersion",
+      "filePath": "scripts/release.mjs",
+      "summary": "版本升降或显式设置。支持 major/minor/patch 自动升降（通过 npm run version:xxx）或设置显式版本号（需大于当前版本）。升降后清理过期 lock 条目并刷新依赖。",
+      "tags": ["version-management", "semver", "npm-version"],
+      "complexity": "complex",
+      "startLine": 142,
+      "endLine": 165
+    },
+    {
+      "id": "function:scripts/release.mjs:updateChangelogsForRelease",
+      "type": "function",
+      "name": "updateChangelogsForRelease",
+      "filePath": "scripts/release.mjs",
+      "summary": "将所有 CHANGELOG.md 文件中的 [Unreleased] 标题替换为带版本号和日期的正式发布标题。跳过没有 Unreleased 段的文件。",
+      "tags": ["changelog", "version-tagging", "file-manipulation"],
+      "complexity": "moderate",
+      "startLine": 173,
+      "endLine": 192
+    },
+    {
+      "id": "function:scripts/release.mjs:addUnreleasedSection",
+      "type": "function",
+      "name": "addUnreleasedSection",
+      "filePath": "scripts/release.mjs",
+      "summary": "在每个 CHANGELOG.md 文件的标题后插入新的空 [Unreleased] 段，为下一轮开发准备变更日志区域。",
+      "tags": ["changelog", "file-manipulation"],
+      "complexity": "moderate",
+      "startLine": 194,
+      "endLine": 209
+    },
+    {
+      "id": "file:scripts/sync-versions.js",
+      "type": "file",
+      "name": "sync-versions.js",
+      "filePath": "scripts/sync-versions.js",
+      "language": "javascript",
+      "summary": "工作区版本同步脚本。验证所有公开包处于 lockstep 版本，然后将内部依赖的版本说明符更新为最新版本的 ^range。跳过生成包（如 install-lock）和注册表别名依赖。直接修改 package.json 文件。",
+      "tags": ["script", "version-sync", "workspace", "dependency-management"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:scripts/package-workspaces.mjs",
+      "target": "function:scripts/package-workspaces.mjs:findPackageDirectories",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/publish-release-announcement.mjs",
+      "target": "function:scripts/publish-release-announcement.mjs:parseArgs",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/publish-release-announcement.mjs",
+      "target": "function:scripts/publish-release-announcement.mjs:resolvePackageFromNpm",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/publish-release-announcement.mjs",
+      "target": "function:scripts/publish-release-announcement.mjs:verifyPackagesAreAvailable",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/publish-release-announcement.mjs",
+      "target": "function:scripts/publish-release-announcement.mjs:runAws",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/publish-release-announcement.mjs",
+      "target": "function:scripts/publish-release-announcement.mjs:readLatestRelease",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/publish-release-announcement.mjs",
+      "target": "function:scripts/publish-release-announcement.mjs:putJson",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/publish-release-announcement.mjs",
+      "target": "function:scripts/publish-release-announcement.mjs:compareReleaseVersions",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/publish-release-announcement.mjs",
+      "target": "function:scripts/publish-release-announcement.mjs:advanceLatestRelease",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/publish-release-announcement.mjs",
+      "target": "function:scripts/publish-release-announcement.mjs:main",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/publish.mjs",
+      "target": "function:scripts/publish.mjs:run",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/publish.mjs",
+      "target": "function:scripts/publish.mjs:isPublished",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/release.mjs",
+      "target": "function:scripts/release.mjs:run",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/release.mjs",
+      "target": "function:scripts/release.mjs:assertPackagesAreRegisteredWithNpm",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/release.mjs",
+      "target": "function:scripts/release.mjs:compareVersions",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/release.mjs",
+      "target": "function:scripts/release.mjs:removeStaleWorkspaceLockEntries",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/release.mjs",
+      "target": "function:scripts/release.mjs:bumpOrSetVersion",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/release.mjs",
+      "target": "function:scripts/release.mjs:updateChangelogsForRelease",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/release.mjs",
+      "target": "function:scripts/release.mjs:addUnreleasedSection",
+      "type": "contains",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/publish-release-announcement.mjs",
+      "target": "file:scripts/release-packages.mjs",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/publish-release-announcement.test.mjs",
+      "target": "file:scripts/publish-release-announcement.mjs",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/publish.mjs",
+      "target": "file:scripts/release-packages.mjs",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/release-packages.mjs",
+      "target": "file:scripts/package-workspaces.mjs",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/release.mjs",
+      "target": "file:scripts/package-workspaces.mjs",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/release.mjs",
+      "target": "file:scripts/release-packages.mjs",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/sync-versions.js",
+      "target": "file:scripts/package-workspaces.mjs",
+      "type": "imports",
+      "weight": 0.7
+    },
+    {
+      "source": "function:scripts/publish-release-announcement.mjs:main",
+      "target": "function:scripts/publish-release-announcement.mjs:parseArgs",
+      "type": "calls",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/publish-release-announcement.mjs:main",
+      "target": "function:scripts/publish-release-announcement.mjs:verifyPackagesAreAvailable",
+      "type": "calls",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/publish-release-announcement.mjs:main",
+      "target": "function:scripts/publish-release-announcement.mjs:runAws",
+      "type": "calls",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/publish-release-announcement.mjs:main",
+      "target": "function:scripts/publish-release-announcement.mjs:readLatestRelease",
+      "type": "calls",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/publish-release-announcement.mjs:main",
+      "target": "function:scripts/publish-release-announcement.mjs:putJson",
+      "type": "calls",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/publish-release-announcement.mjs:main",
+      "target": "function:scripts/publish-release-announcement.mjs:advanceLatestRelease",
+      "type": "calls",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/publish-release-announcement.mjs:verifyPackagesAreAvailable",
+      "target": "function:scripts/publish-release-announcement.mjs:resolvePackageFromNpm",
+      "type": "calls",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/publish-release-announcement.mjs:advanceLatestRelease",
+      "target": "function:scripts/publish-release-announcement.mjs:compareReleaseVersions",
+      "type": "calls",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/publish-release-announcement.mjs:readLatestRelease",
+      "target": "function:scripts/publish-release-announcement.mjs:runAws",
+      "type": "calls",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/publish-release-announcement.mjs:putJson",
+      "target": "function:scripts/publish-release-announcement.mjs:runAws",
+      "type": "calls",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/publish-release-announcement.test.mjs",
+      "target": "function:scripts/publish-release-announcement.mjs:compareReleaseVersions",
+      "type": "tested_by",
+      "weight": 0.5
+    },
+    {
+      "source": "function:scripts/publish-release-announcement.test.mjs",
+      "target": "function:scripts/publish-release-announcement.mjs:advanceLatestRelease",
+      "type": "tested_by",
+      "weight": 0.5
+    },
+    {
+      "source": "function:scripts/release.mjs:bumpOrSetVersion",
+      "target": "function:scripts/release.mjs:compareVersions",
+      "type": "calls",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/release.mjs:bumpOrSetVersion",
+      "target": "function:scripts/release.mjs:removeStaleWorkspaceLockEntries",
+      "type": "calls",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/release.mjs:updateChangelogsForRelease",
+      "target": "function:scripts/release.mjs:addUnreleasedSection",
+      "type": "related",
+      "weight": 0.5
+    },
+    {
+      "source": "file:scripts/publish-release-announcement.test.mjs",
+      "target": "file:scripts/publish-release-announcement.mjs",
+      "type": "tested_by",
+      "weight": 0.5
+    }
+  ]
+}

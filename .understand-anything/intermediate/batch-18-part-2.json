@@ -1,0 +1,1056 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/coding-agent/test/suite/regressions/6949-unavailable-scoped-model.test.ts",
+      "type": "file",
+      "name": "6949-unavailable-scoped-model.test.ts",
+      "filePath": "packages/coding-agent/test/suite/regressions/6949-unavailable-scoped-model.test.ts",
+      "summary": "回归测试 #6949：验证 scoped model 不可用时选择器的错误处理和用户提示。",
+      "tags": [
+        "test",
+        "regression",
+        "scoped-models"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/test/suite/regressions/6949-unavailable-scoped-model.test.ts:createInteractiveContext",
+      "type": "function",
+      "name": "createInteractiveContext",
+      "filePath": "packages/coding-agent/test/suite/regressions/6949-unavailable-scoped-model.test.ts",
+      "lineRange": [
+        11,
+        40
+      ],
+      "summary": "创建交互模式测试上下文，mock TUI、会话和模型运行时等依赖。",
+      "tags": [
+        "test-helper",
+        "mock",
+        "interactive-mode"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/suite/regressions/6999-models-json-hot-reload.test.ts",
+      "type": "file",
+      "name": "6999-models-json-hot-reload.test.ts",
+      "filePath": "packages/coding-agent/test/suite/regressions/6999-models-json-hot-reload.test.ts",
+      "summary": "回归测试 #6999：验证 models.json 文件热重载后模型选择器的刷新行为。",
+      "tags": [
+        "test",
+        "regression",
+        "hot-reload"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/test/suite/regressions/6999-models-json-hot-reload.test.ts:observeRefreshRender",
+      "type": "function",
+      "name": "observeRefreshRender",
+      "filePath": "packages/coding-agent/test/suite/regressions/6999-models-json-hot-reload.test.ts",
+      "lineRange": [
+        14,
+        29
+      ],
+      "summary": "观察模型刷新后的渲染输出，解析 TUI 渲染结果用于断言。",
+      "tags": [
+        "test-helper",
+        "render",
+        "model-refresh"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/suite/regressions/6999-models-json-hot-reload.test.ts:modelsJson",
+      "type": "function",
+      "name": "modelsJson",
+      "filePath": "packages/coding-agent/test/suite/regressions/6999-models-json-hot-reload.test.ts",
+      "lineRange": [
+        31,
+        42
+      ],
+      "summary": "生成模拟的 models.json 配置内容，包含指定的 provider 和 model。",
+      "tags": [
+        "test-helper",
+        "config",
+        "json"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/test/suite/regressions/7153-scoped-models-refresh.test.ts",
+      "type": "file",
+      "name": "7153-scoped-models-refresh.test.ts",
+      "filePath": "packages/coding-agent/test/suite/regressions/7153-scoped-models-refresh.test.ts",
+      "summary": "回归测试 #7153：验证 scoped models 刷新后选择器列表的更新和状态保持。",
+      "tags": [
+        "test",
+        "regression",
+        "scoped-models"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/test/suite/regressions/7153-scoped-models-refresh.test.ts:openSelector",
+      "type": "function",
+      "name": "openSelector",
+      "filePath": "packages/coding-agent/test/suite/regressions/7153-scoped-models-refresh.test.ts",
+      "lineRange": [
+        13,
+        63
+      ],
+      "summary": "打开 scoped models 选择器并返回 harness，mock 模型运行时的快照和刷新行为。",
+      "tags": [
+        "test-helper",
+        "scoped-models",
+        "selector"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/suite/regressions/7209-model-selector-filter-resets-selection.test.ts",
+      "type": "file",
+      "name": "7209-model-selector-filter-resets-selection.test.ts",
+      "filePath": "packages/coding-agent/test/suite/regressions/7209-model-selector-filter-resets-selection.test.ts",
+      "summary": "回归测试 #7209：验证模型选择器过滤后选中状态的重置行为。",
+      "tags": [
+        "test",
+        "regression",
+        "model-selector"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/suite/regressions/7731-tui-method-wrapping.test.ts",
+      "type": "file",
+      "name": "7731-tui-method-wrapping.test.ts",
+      "filePath": "packages/coding-agent/test/suite/regressions/7731-tui-method-wrapping.test.ts",
+      "summary": "回归测试 #7731：验证 TUI 方法包装不影响交互模式的正常调用。",
+      "tags": [
+        "test",
+        "regression",
+        "tui"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/test/suite/regressions/startup-session-rebind-duplicate-subscription.test.ts",
+      "type": "file",
+      "name": "startup-session-rebind-duplicate-subscription.test.ts",
+      "filePath": "packages/coding-agent/test/suite/regressions/startup-session-rebind-duplicate-subscription.test.ts",
+      "summary": "回归测试：验证启动时会话重新绑定不会导致重复订阅事件。",
+      "tags": [
+        "test",
+        "regression",
+        "session-rebind"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/syntax-highlight.test.ts",
+      "type": "file",
+      "name": "syntax-highlight.test.ts",
+      "filePath": "packages/coding-agent/test/syntax-highlight.test.ts",
+      "summary": "测试语法高亮工具函数的代码渲染和语言识别功能。",
+      "tags": [
+        "test",
+        "syntax-highlight",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/test-theme-colors.ts",
+      "type": "file",
+      "name": "test-theme-colors.ts",
+      "filePath": "packages/coding-agent/test/test-theme-colors.ts",
+      "summary": "主题颜色对比度测试工具，提供 hex/rgb/hsl 转换和 WCAG 对比度计算命令行工具。",
+      "tags": [
+        "test",
+        "color",
+        "contrast"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/test/test-theme-colors.ts:rgbToHex",
+      "type": "function",
+      "name": "rgbToHex",
+      "filePath": "packages/coding-agent/test/test-theme-colors.ts",
+      "lineRange": [
+        11,
+        22
+      ],
+      "summary": "将 RGB 颜色值转换为十六进制表示，支持值钳制和补零。",
+      "tags": [
+        "utility",
+        "color",
+        "conversion"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/test-theme-colors.ts:rgbToHsl",
+      "type": "function",
+      "name": "rgbToHsl",
+      "filePath": "packages/coding-agent/test/test-theme-colors.ts",
+      "lineRange": [
+        24,
+        49
+      ],
+      "summary": "将 RGB 颜色值转换为 HSL 色彩空间。",
+      "tags": [
+        "utility",
+        "color",
+        "conversion"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/test-theme-colors.ts:hslToRgb",
+      "type": "function",
+      "name": "hslToRgb",
+      "filePath": "packages/coding-agent/test/test-theme-colors.ts",
+      "lineRange": [
+        51,
+        71
+      ],
+      "summary": "将 HSL 色彩空间值转换为 RGB。",
+      "tags": [
+        "utility",
+        "color",
+        "conversion"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/test-theme-colors.ts:adjustColorToContrast",
+      "type": "function",
+      "name": "adjustColorToContrast",
+      "filePath": "packages/coding-agent/test/test-theme-colors.ts",
+      "lineRange": [
+        88,
+        112
+      ],
+      "summary": "调整颜色亮度以达到目标对比度比率，迭代修改 HSL 亮度分量。",
+      "tags": [
+        "utility",
+        "color",
+        "contrast"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/test-theme-colors.ts:cmdContrast",
+      "type": "function",
+      "name": "cmdContrast",
+      "filePath": "packages/coding-agent/test/test-theme-colors.ts",
+      "lineRange": [
+        123,
+        149
+      ],
+      "summary": "命令行工具：计算并输出主题中所有颜色对白/黑背景的对比度。",
+      "tags": [
+        "cli",
+        "color",
+        "contrast"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/test-theme-colors.ts:cmdTest",
+      "type": "function",
+      "name": "cmdTest",
+      "filePath": "packages/coding-agent/test/test-theme-colors.ts",
+      "lineRange": [
+        151,
+        173
+      ],
+      "summary": "命令行工具：读取主题 JSON 文件并测试每个颜色的对比度合规性。",
+      "tags": [
+        "cli",
+        "color",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/test-theme-colors.ts:cmdTheme",
+      "type": "function",
+      "name": "cmdTheme",
+      "filePath": "packages/coding-agent/test/test-theme-colors.ts",
+      "lineRange": [
+        175,
+        232
+      ],
+      "summary": "命令行工具：初始化主题并输出所有主题颜色的 ANSI 渲染效果和对比度。",
+      "tags": [
+        "cli",
+        "theme",
+        "color"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/theme-controller.test.ts",
+      "type": "file",
+      "name": "theme-controller.test.ts",
+      "filePath": "packages/coding-agent/test/theme-controller.test.ts",
+      "summary": "测试交互式主题控制器的主题切换、终端配色检测和设置持久化行为。",
+      "tags": [
+        "test",
+        "theme-controller",
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/test/theme-controller.test.ts:createUi",
+      "type": "function",
+      "name": "createUi",
+      "filePath": "packages/coding-agent/test/theme-controller.test.ts",
+      "lineRange": [
+        7,
+        30
+      ],
+      "summary": "创建模拟 UI 对象，包含主题控制器所需的渲染、监听和终端配色回调。",
+      "tags": [
+        "test-helper",
+        "mock",
+        "ui"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/test/theme-detection.test.ts",
+      "type": "file",
+      "name": "theme-detection.test.ts",
+      "filePath": "packages/coding-agent/test/theme-detection.test.ts",
+      "summary": "测试终端主题检测功能，验证自动主题识别和环境变量解析逻辑。",
+      "tags": [
+        "test",
+        "theme",
+        "detection"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/theme-export.test.ts",
+      "type": "file",
+      "name": "theme-export.test.ts",
+      "filePath": "packages/coding-agent/test/theme-export.test.ts",
+      "summary": "测试主题导出功能，验证颜色配置的正确导出和序列化。",
+      "tags": [
+        "test",
+        "theme",
+        "export"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/theme-picker.test.ts",
+      "type": "file",
+      "name": "theme-picker.test.ts",
+      "filePath": "packages/coding-agent/test/theme-picker.test.ts",
+      "summary": "测试主题选择器组件的列表渲染和选择行为。",
+      "tags": [
+        "test",
+        "theme-picker",
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/test/tree-selector.test.ts",
+      "type": "file",
+      "name": "tree-selector.test.ts",
+      "filePath": "packages/coding-agent/test/tree-selector.test.ts",
+      "summary": "测试树形选择器组件的消息树构建、展开折叠和导航功能，包含分支树结构测试。",
+      "tags": [
+        "test",
+        "tree-selector",
+        "component"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/test/tree-selector.test.ts:assistantMessage",
+      "type": "function",
+      "name": "assistantMessage",
+      "filePath": "packages/coding-agent/test/tree-selector.test.ts",
+      "lineRange": [
+        35,
+        59
+      ],
+      "summary": "创建模拟的助手消息条目，包含文本内容和工具调用块。",
+      "tags": [
+        "test-helper",
+        "message",
+        "mock"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/tree-selector.test.ts:toolCallOnlyAssistant",
+      "type": "function",
+      "name": "toolCallOnlyAssistant",
+      "filePath": "packages/coding-agent/test/tree-selector.test.ts",
+      "lineRange": [
+        62,
+        86
+      ],
+      "summary": "创建仅包含工具调用的模拟助手消息条目。",
+      "tags": [
+        "test-helper",
+        "message",
+        "tool-call"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/tree-selector.test.ts:modelChange",
+      "type": "function",
+      "name": "modelChange",
+      "filePath": "packages/coding-agent/test/tree-selector.test.ts",
+      "lineRange": [
+        89,
+        98
+      ],
+      "summary": "创建模拟的模型切换事件条目。",
+      "tags": [
+        "test-helper",
+        "message",
+        "model-change"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/tree-selector.test.ts:buildTree",
+      "type": "function",
+      "name": "buildTree",
+      "filePath": "packages/coding-agent/test/tree-selector.test.ts",
+      "lineRange": [
+        101,
+        126
+      ],
+      "summary": "将扁平消息条目列表构建为父子树结构，通过 parentId 关联子节点。",
+      "tags": [
+        "utility",
+        "tree",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/test/trust-selector.test.ts",
+      "type": "file",
+      "name": "trust-selector.test.ts",
+      "filePath": "packages/coding-agent/test/trust-selector.test.ts",
+      "summary": "测试信任选择器组件的列表渲染和选择行为。",
+      "tags": [
+        "test",
+        "trust-selector",
+        "component"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/user-message.test.ts",
+      "type": "file",
+      "name": "user-message.test.ts",
+      "filePath": "packages/coding-agent/test/user-message.test.ts",
+      "summary": "测试用户消息组件的渲染输出和内容显示逻辑。",
+      "tags": [
+        "test",
+        "user-message",
+        "component"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/tool-stats.ts",
+      "type": "file",
+      "name": "tool-stats.ts",
+      "filePath": "scripts/tool-stats.ts",
+      "summary": "工具使用统计脚本，解析 JSONL 会话日志并输出工具调用频率、token 估算和命令分布统计。",
+      "tags": [
+        "script",
+        "statistics",
+        "tool-usage"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:scripts/tool-stats.ts:parseArgs",
+      "type": "function",
+      "name": "parseArgs",
+      "filePath": "scripts/tool-stats.ts",
+      "lineRange": [
+        20,
+        34
+      ],
+      "summary": "解析命令行参数，设置 JSONL 目录和输出路径，支持 --jsonl-dir 和 --out 选项。",
+      "tags": [
+        "cli",
+        "arg-parsing",
+        "config"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/6949-unavailable-scoped-model.test.ts",
+      "target": "file:packages/coding-agent/src/core/keybindings.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/6949-unavailable-scoped-model.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/scoped-models-selector.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/6949-unavailable-scoped-model.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/6949-unavailable-scoped-model.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/6949-unavailable-scoped-model.test.ts",
+      "target": "file:packages/coding-agent/src/utils/ansi.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/6949-unavailable-scoped-model.test.ts",
+      "target": "file:packages/coding-agent/test/suite/harness.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/6949-unavailable-scoped-model.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/scoped-models-selector.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/6949-unavailable-scoped-model.test.ts",
+      "target": "function:packages/coding-agent/test/suite/regressions/6949-unavailable-scoped-model.test.ts:createInteractiveContext",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/6999-models-json-hot-reload.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/6999-models-json-hot-reload.test.ts",
+      "target": "file:packages/coding-agent/src/core/keybindings.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/6999-models-json-hot-reload.test.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/6999-models-json-hot-reload.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/model-selector.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/6999-models-json-hot-reload.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/6999-models-json-hot-reload.test.ts",
+      "target": "file:packages/coding-agent/src/utils/ansi.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/6999-models-json-hot-reload.test.ts",
+      "target": "file:packages/coding-agent/test/model-runtime-test-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/6999-models-json-hot-reload.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/model-selector.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/6999-models-json-hot-reload.test.ts",
+      "target": "function:packages/coding-agent/test/suite/regressions/6999-models-json-hot-reload.test.ts:observeRefreshRender",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/6999-models-json-hot-reload.test.ts",
+      "target": "function:packages/coding-agent/test/suite/regressions/6999-models-json-hot-reload.test.ts:modelsJson",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/7153-scoped-models-refresh.test.ts",
+      "target": "file:packages/coding-agent/src/core/keybindings.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/7153-scoped-models-refresh.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/scoped-models-selector.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/7153-scoped-models-refresh.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/7153-scoped-models-refresh.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/7153-scoped-models-refresh.test.ts",
+      "target": "file:packages/coding-agent/src/utils/ansi.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/7153-scoped-models-refresh.test.ts",
+      "target": "file:packages/coding-agent/test/suite/harness.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/7153-scoped-models-refresh.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/scoped-models-selector.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/7153-scoped-models-refresh.test.ts",
+      "target": "function:packages/coding-agent/test/suite/regressions/7153-scoped-models-refresh.test.ts:openSelector",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/7209-model-selector-filter-resets-selection.test.ts",
+      "target": "file:packages/coding-agent/src/core/keybindings.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/7209-model-selector-filter-resets-selection.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/model-selector.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/7209-model-selector-filter-resets-selection.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/7209-model-selector-filter-resets-selection.test.ts",
+      "target": "file:packages/coding-agent/src/utils/ansi.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/7209-model-selector-filter-resets-selection.test.ts",
+      "target": "file:packages/coding-agent/test/suite/harness.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/7209-model-selector-filter-resets-selection.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/model-selector.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/7731-tui-method-wrapping.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/7731-tui-method-wrapping.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/startup-session-rebind-duplicate-subscription.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/suite/regressions/startup-session-rebind-duplicate-subscription.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/test/syntax-highlight.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/syntax-highlight.test.ts",
+      "target": "file:packages/coding-agent/src/utils/syntax-highlight.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/syntax-highlight.test.ts",
+      "target": "file:packages/coding-agent/src/utils/syntax-highlight.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/test/test-theme-colors.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/test-theme-colors.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/test/test-theme-colors.ts",
+      "target": "function:packages/coding-agent/test/test-theme-colors.ts:rgbToHex",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/test-theme-colors.ts",
+      "target": "function:packages/coding-agent/test/test-theme-colors.ts:rgbToHsl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/test-theme-colors.ts",
+      "target": "function:packages/coding-agent/test/test-theme-colors.ts:hslToRgb",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/test-theme-colors.ts",
+      "target": "function:packages/coding-agent/test/test-theme-colors.ts:adjustColorToContrast",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/test-theme-colors.ts",
+      "target": "function:packages/coding-agent/test/test-theme-colors.ts:cmdContrast",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/test-theme-colors.ts",
+      "target": "function:packages/coding-agent/test/test-theme-colors.ts:cmdTest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/test-theme-colors.ts",
+      "target": "function:packages/coding-agent/test/test-theme-colors.ts:cmdTheme",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/theme-controller.test.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/theme-controller.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme-controller.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/theme-controller.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/theme-controller.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme-controller.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/test/theme-controller.test.ts",
+      "target": "function:packages/coding-agent/test/theme-controller.test.ts:createUi",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/theme-detection.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/theme-detection.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/test/theme-export.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/theme-export.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/test/theme-picker.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/theme-picker.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/test/tree-selector.test.ts",
+      "target": "file:packages/coding-agent/src/core/keybindings.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/tree-selector.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/tree-selector.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/tree-selector.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/tree-selector.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/tree-selector.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/tree-selector.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/test/tree-selector.test.ts",
+      "target": "function:packages/coding-agent/test/tree-selector.test.ts:assistantMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/tree-selector.test.ts",
+      "target": "function:packages/coding-agent/test/tree-selector.test.ts:toolCallOnlyAssistant",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/tree-selector.test.ts",
+      "target": "function:packages/coding-agent/test/tree-selector.test.ts:modelChange",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/tree-selector.test.ts",
+      "target": "function:packages/coding-agent/test/tree-selector.test.ts:buildTree",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/trust-selector.test.ts",
+      "target": "file:packages/coding-agent/src/core/keybindings.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/trust-selector.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/trust-selector.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/trust-selector.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/trust-selector.test.ts",
+      "target": "file:packages/coding-agent/src/utils/ansi.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/trust-selector.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/trust-selector.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/test/user-message.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/user-message.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/user-message.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/user-message.test.ts",
+      "target": "file:packages/coding-agent/src/utils/ansi.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/user-message.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/user-message.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:scripts/tool-stats.ts",
+      "target": "file:packages/coding-agent/src/utils/open-browser.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/tool-stats.ts",
+      "target": "function:scripts/tool-stats.ts:parseArgs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    }
+  ]
+}

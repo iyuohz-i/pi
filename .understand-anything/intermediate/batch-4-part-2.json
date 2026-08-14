@@ -1,0 +1,1390 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/ai/src/utils/json-parse.ts",
+      "type": "file",
+      "name": "json-parse.ts",
+      "filePath": "packages/ai/src/utils/json-parse.ts",
+      "summary": "JSON 解析与修复工具，支持流式 JSON 解析、控制字符转义和损坏 JSON 修复。",
+      "tags": [
+        "utility",
+        "json-parse",
+        "streaming",
+        "repair"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/utils/json-parse.ts:escapeControlCharacter",
+      "type": "function",
+      "name": "escapeControlCharacter",
+      "filePath": "packages/ai/src/utils/json-parse.ts",
+      "lineRange": [
+        10,
+        25
+      ],
+      "summary": "转义 JSON 字符串中的控制字符。",
+      "tags": [
+        "utility",
+        "escape",
+        "control-char"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/json-parse.ts:repairJson",
+      "type": "function",
+      "name": "repairJson",
+      "filePath": "packages/ai/src/utils/json-parse.ts",
+      "lineRange": [
+        32,
+        83
+      ],
+      "summary": "修复损坏的 JSON 字符串，处理截断、语法错误和结构问题。",
+      "tags": [
+        "utility",
+        "json-repair",
+        "parsing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/utils/json-parse.ts:parseJsonWithRepair",
+      "type": "function",
+      "name": "parseJsonWithRepair",
+      "filePath": "packages/ai/src/utils/json-parse.ts",
+      "lineRange": [
+        85,
+        95
+      ],
+      "summary": "解析 JSON 字符串，解析失败时自动尝试修复后重试。",
+      "tags": [
+        "utility",
+        "json-parse",
+        "repair"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/json-parse.ts:parseStreamingJson",
+      "type": "function",
+      "name": "parseStreamingJson",
+      "filePath": "packages/ai/src/utils/json-parse.ts",
+      "lineRange": [
+        104,
+        124
+      ],
+      "summary": "解析流式 JSON 片段，支持增量解析和部分 JSON 容错。",
+      "tags": [
+        "utility",
+        "json-parse",
+        "streaming"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/utils/node-http-proxy.ts",
+      "type": "file",
+      "name": "node-http-proxy.ts",
+      "filePath": "packages/ai/src/utils/node-http-proxy.ts",
+      "summary": "解析 HTTP/HTTPS 代理配置，根据目标 URL 解析适用的代理服务器地址。",
+      "tags": [
+        "utility",
+        "proxy",
+        "http"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/utils/node-http-proxy.ts:getProxyEnv",
+      "type": "function",
+      "name": "getProxyEnv",
+      "filePath": "packages/ai/src/utils/node-http-proxy.ts",
+      "lineRange": [
+        13,
+        23
+      ],
+      "summary": "从环境变量获取代理配置（HTTP_PROXY/HTTPS_PROXY）。",
+      "tags": [
+        "utility",
+        "proxy",
+        "environment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/node-http-proxy.ts:parseProxyTargetUrl",
+      "type": "function",
+      "name": "parseProxyTargetUrl",
+      "filePath": "packages/ai/src/utils/node-http-proxy.ts",
+      "lineRange": [
+        25,
+        35
+      ],
+      "summary": "解析代理目标 URL，验证协议合法性。",
+      "tags": [
+        "utility",
+        "proxy",
+        "url-parsing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/node-http-proxy.ts:shouldProxyHostname",
+      "type": "function",
+      "name": "shouldProxyHostname",
+      "filePath": "packages/ai/src/utils/node-http-proxy.ts",
+      "lineRange": [
+        37,
+        67
+      ],
+      "summary": "判断指定主机名是否应通过代理访问，排除 localhost 等。",
+      "tags": [
+        "utility",
+        "proxy",
+        "hostname"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/node-http-proxy.ts:getProxyForUrl",
+      "type": "function",
+      "name": "getProxyForUrl",
+      "filePath": "packages/ai/src/utils/node-http-proxy.ts",
+      "lineRange": [
+        69,
+        87
+      ],
+      "summary": "根据目标 URL 获取适用的代理地址。",
+      "tags": [
+        "utility",
+        "proxy",
+        "url"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/node-http-proxy.ts:resolveHttpProxyUrlForTarget",
+      "type": "function",
+      "name": "resolveHttpProxyUrlForTarget",
+      "filePath": "packages/ai/src/utils/node-http-proxy.ts",
+      "lineRange": [
+        92,
+        112
+      ],
+      "summary": "为目标 URL 解析 HTTP 代理地址，返回完整代理 URL。",
+      "tags": [
+        "utility",
+        "proxy",
+        "url-resolution"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/utils/overflow.ts",
+      "type": "file",
+      "name": "overflow.ts",
+      "filePath": "packages/ai/src/utils/overflow.ts",
+      "summary": "检测上下文溢出错误，通过模式匹配识别各 provider 的上下文长度超限错误。",
+      "tags": [
+        "utility",
+        "context-overflow",
+        "error-detection"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/utils/overflow.ts:isContextOverflow",
+      "type": "function",
+      "name": "isContextOverflow",
+      "filePath": "packages/ai/src/utils/overflow.ts",
+      "lineRange": [
+        134,
+        163
+      ],
+      "summary": "检测错误是否为上下文溢出，匹配各 provider 的溢出错误模式。",
+      "tags": [
+        "utility",
+        "overflow-detection",
+        "error-matching"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/overflow.ts:isRecoverableLength",
+      "type": "function",
+      "name": "isRecoverableLength",
+      "filePath": "packages/ai/src/utils/overflow.ts",
+      "lineRange": [
+        171,
+        173
+      ],
+      "summary": "判断上下文长度是否可通过截断消息恢复。",
+      "tags": [
+        "utility",
+        "overflow",
+        "recovery"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/overflow.ts:getOverflowPatterns",
+      "type": "function",
+      "name": "getOverflowPatterns",
+      "filePath": "packages/ai/src/utils/overflow.ts",
+      "lineRange": [
+        178,
+        180
+      ],
+      "summary": "获取所有 provider 的上下文溢出错误匹配模式。",
+      "tags": [
+        "utility",
+        "overflow",
+        "patterns"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/utils/provider-env.ts",
+      "type": "file",
+      "name": "provider-env.ts",
+      "filePath": "packages/ai/src/utils/provider-env.ts",
+      "summary": "获取 provider 专用环境变量值，支持 Bun 沙箱环境变量覆盖。",
+      "tags": [
+        "utility",
+        "environment",
+        "provider-config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/provider-env.ts:getBunSandboxEnvValue",
+      "type": "function",
+      "name": "getBunSandboxEnvValue",
+      "filePath": "packages/ai/src/utils/provider-env.ts",
+      "lineRange": [
+        15,
+        39
+      ],
+      "summary": "获取 Bun 沙箱环境中的环境变量值。",
+      "tags": [
+        "utility",
+        "environment",
+        "bun"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/provider-env.ts:getProviderEnvValue",
+      "type": "function",
+      "name": "getProviderEnvValue",
+      "filePath": "packages/ai/src/utils/provider-env.ts",
+      "lineRange": [
+        45,
+        52
+      ],
+      "summary": "获取 provider 专用环境变量值，支持 Bun 沙箱覆盖。",
+      "tags": [
+        "utility",
+        "environment",
+        "provider-config"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/utils/provider-retry.ts",
+      "type": "file",
+      "name": "provider-retry.ts",
+      "filePath": "packages/ai/src/utils/provider-retry.ts",
+      "summary": "Provider 请求重试逻辑，包含可重试错误判断、重试延迟计算和可中断休眠。",
+      "tags": [
+        "utility",
+        "retry",
+        "provider-error"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/utils/provider-retry.ts:isRetryableProviderError",
+      "type": "function",
+      "name": "isRetryableProviderError",
+      "filePath": "packages/ai/src/utils/provider-retry.ts",
+      "lineRange": [
+        23,
+        35
+      ],
+      "summary": "判断 provider 错误是否可重试（如 429、503 等）。",
+      "tags": [
+        "utility",
+        "retry",
+        "error-classification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/provider-retry.ts:validateServerRetryDelayMs",
+      "type": "function",
+      "name": "validateServerRetryDelayMs",
+      "filePath": "packages/ai/src/utils/provider-retry.ts",
+      "lineRange": [
+        37,
+        49
+      ],
+      "summary": "验证服务器返回的重试延迟值是否在合理范围内。",
+      "tags": [
+        "utility",
+        "retry",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/provider-retry.ts:getRetryDelayMs",
+      "type": "function",
+      "name": "getRetryDelayMs",
+      "filePath": "packages/ai/src/utils/provider-retry.ts",
+      "lineRange": [
+        51,
+        67
+      ],
+      "summary": "计算重试延迟时间，优先使用服务器指定的延迟。",
+      "tags": [
+        "utility",
+        "retry",
+        "delay"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/provider-retry.ts:abortableSleep",
+      "type": "function",
+      "name": "abortableSleep",
+      "filePath": "packages/ai/src/utils/provider-retry.ts",
+      "lineRange": [
+        75,
+        95
+      ],
+      "summary": "可被 AbortSignal 中断的异步休眠函数。",
+      "tags": [
+        "utility",
+        "sleep",
+        "abortable"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/provider-retry.ts:retryProviderRequest",
+      "type": "function",
+      "name": "retryProviderRequest",
+      "filePath": "packages/ai/src/utils/provider-retry.ts",
+      "lineRange": [
+        105,
+        125
+      ],
+      "summary": "执行 provider 请求并自动重试，支持指数退避和服务器延迟。",
+      "tags": [
+        "utility",
+        "retry",
+        "provider-request"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/utils/retry.ts",
+      "type": "file",
+      "name": "retry.ts",
+      "filePath": "packages/ai/src/utils/retry.ts",
+      "summary": "助手调用重试机制，支持指数退避、可重试错误判断和中断休眠错误处理。",
+      "tags": [
+        "utility",
+        "retry",
+        "exponential-backoff"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/src/utils/retry.ts:sleep",
+      "type": "function",
+      "name": "sleep",
+      "filePath": "packages/ai/src/utils/retry.ts",
+      "lineRange": [
+        127,
+        143
+      ],
+      "summary": "可被 AbortSignal 中断的异步休眠，支持指数退避延迟。",
+      "tags": [
+        "utility",
+        "sleep",
+        "abortable"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/retry.ts:retryAssistantCall",
+      "type": "function",
+      "name": "retryAssistantCall",
+      "filePath": "packages/ai/src/utils/retry.ts",
+      "lineRange": [
+        163,
+        212
+      ],
+      "summary": "执行助手调用并自动重试，支持错误分类和退避策略。",
+      "tags": [
+        "utility",
+        "retry",
+        "assistant-call"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/retry.ts:isRetryableAssistantError",
+      "type": "function",
+      "name": "isRetryableAssistantError",
+      "filePath": "packages/ai/src/utils/retry.ts",
+      "lineRange": [
+        223,
+        228
+      ],
+      "summary": "判断助手错误是否可重试（如速率限制、服务器错误等）。",
+      "tags": [
+        "utility",
+        "retry",
+        "error-classification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/utils/sanitize-unicode.ts",
+      "type": "file",
+      "name": "sanitize-unicode.ts",
+      "filePath": "packages/ai/src/utils/sanitize-unicode.ts",
+      "summary": "清理 Unicode 代理对，确保字符串在所有 JavaScript 环境中正确处理。",
+      "tags": [
+        "utility",
+        "unicode",
+        "sanitization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/sanitize-unicode.ts:sanitizeSurrogates",
+      "type": "function",
+      "name": "sanitizeSurrogates",
+      "filePath": "packages/ai/src/utils/sanitize-unicode.ts",
+      "lineRange": [
+        21,
+        25
+      ],
+      "summary": "清理字符串中的孤立 Unicode 代理对，防止编码错误。",
+      "tags": [
+        "utility",
+        "unicode",
+        "sanitization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/utils/text.ts",
+      "type": "file",
+      "name": "text.ts",
+      "filePath": "packages/ai/src/utils/text.ts",
+      "summary": "从消息内容中提取纯文本，处理文本和图片块类型。",
+      "tags": [
+        "utility",
+        "text-extraction",
+        "message-processing"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/text.ts:contentText",
+      "type": "function",
+      "name": "contentText",
+      "filePath": "packages/ai/src/utils/text.ts",
+      "lineRange": [
+        6,
+        12
+      ],
+      "summary": "从消息内容中提取纯文本，忽略图片等非文本块。",
+      "tags": [
+        "utility",
+        "text-extraction",
+        "message"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/utils/typebox-helpers.ts",
+      "type": "file",
+      "name": "typebox-helpers.ts",
+      "filePath": "packages/ai/src/utils/typebox-helpers.ts",
+      "summary": "TypeBox schema 辅助函数，提供 StringEnum 用于定义字符串枚举类型。",
+      "tags": [
+        "utility",
+        "typebox",
+        "schema"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/typebox-helpers.ts:StringEnum",
+      "type": "function",
+      "name": "StringEnum",
+      "filePath": "packages/ai/src/utils/typebox-helpers.ts",
+      "lineRange": [
+        14,
+        24
+      ],
+      "summary": "创建 TypeBox 字符串枚举 schema 的辅助函数。",
+      "tags": [
+        "utility",
+        "typebox",
+        "schema"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/utils/uuid.ts",
+      "type": "file",
+      "name": "uuid.ts",
+      "filePath": "packages/ai/src/utils/uuid.ts",
+      "summary": "生成 UUIDv7 格式的唯一标识符，基于时间戳保证时序排序。",
+      "tags": [
+        "utility",
+        "uuid",
+        "identifier"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/uuid.ts:uuidv7",
+      "type": "function",
+      "name": "uuidv7",
+      "filePath": "packages/ai/src/utils/uuid.ts",
+      "lineRange": [
+        15,
+        48
+      ],
+      "summary": "生成 UUIDv7 格式的唯一标识符，基于时间戳保证时序排序。",
+      "tags": [
+        "utility",
+        "uuid",
+        "identifier"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/utils/validation.ts",
+      "type": "file",
+      "name": "validation.ts",
+      "filePath": "packages/ai/src/utils/validation.ts",
+      "summary": "工具调用参数验证和 JSON Schema 强制类型转换，支持联合类型和可选空值处理。",
+      "tags": [
+        "utility",
+        "validation",
+        "json-schema",
+        "coercion"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/src/utils/validation.ts:matchesJsonType",
+      "type": "function",
+      "name": "matchesJsonType",
+      "filePath": "packages/ai/src/utils/validation.ts",
+      "lineRange": [
+        30,
+        49
+      ],
+      "summary": "检查值是否匹配指定的 JSON 类型。",
+      "tags": [
+        "utility",
+        "validation",
+        "json-type"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/validation.ts:coercePrimitiveByType",
+      "type": "function",
+      "name": "coercePrimitiveByType",
+      "filePath": "packages/ai/src/utils/validation.ts",
+      "lineRange": [
+        59,
+        131
+      ],
+      "summary": "按 JSON Schema 类型强制转换原始值（字符串转数字等）。",
+      "tags": [
+        "utility",
+        "coercion",
+        "type-cast"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/utils/validation.ts:applySchemaObjectCoercion",
+      "type": "function",
+      "name": "applySchemaObjectCoercion",
+      "filePath": "packages/ai/src/utils/validation.ts",
+      "lineRange": [
+        133,
+        154
+      ],
+      "summary": "对对象值应用 JSON Schema 类型强制转换。",
+      "tags": [
+        "utility",
+        "coercion",
+        "object"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/validation.ts:applySchemaArrayCoercion",
+      "type": "function",
+      "name": "applySchemaArrayCoercion",
+      "filePath": "packages/ai/src/utils/validation.ts",
+      "lineRange": [
+        156,
+        173
+      ],
+      "summary": "对数组值应用 JSON Schema 类型强制转换。",
+      "tags": [
+        "utility",
+        "coercion",
+        "array"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/validation.ts:coerceWithUnionSchema",
+      "type": "function",
+      "name": "coerceWithUnionSchema",
+      "filePath": "packages/ai/src/utils/validation.ts",
+      "lineRange": [
+        175,
+        192
+      ],
+      "summary": "使用联合类型 schema 尝试强制转换值。",
+      "tags": [
+        "utility",
+        "coercion",
+        "union-type"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/validation.ts:coerceWithJsonSchema",
+      "type": "function",
+      "name": "coerceWithJsonSchema",
+      "filePath": "packages/ai/src/utils/validation.ts",
+      "lineRange": [
+        194,
+        238
+      ],
+      "summary": "根据完整 JSON Schema 递归强制转换值的类型。",
+      "tags": [
+        "utility",
+        "coercion",
+        "json-schema"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/validation.ts:normalizeOptionalNulls",
+      "type": "function",
+      "name": "normalizeOptionalNulls",
+      "filePath": "packages/ai/src/utils/validation.ts",
+      "lineRange": [
+        240,
+        269
+      ],
+      "summary": "规范化可选字段的 null 值，移除不必要的 null 属性。",
+      "tags": [
+        "utility",
+        "normalization",
+        "null"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/validation.ts:getValidator",
+      "type": "function",
+      "name": "getValidator",
+      "filePath": "packages/ai/src/utils/validation.ts",
+      "lineRange": [
+        271,
+        280
+      ],
+      "summary": "获取 TypeBox schema 的验证器函数，带缓存。",
+      "tags": [
+        "utility",
+        "validator",
+        "cache"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/validation.ts:formatValidationPath",
+      "type": "function",
+      "name": "formatValidationPath",
+      "filePath": "packages/ai/src/utils/validation.ts",
+      "lineRange": [
+        282,
+        293
+      ],
+      "summary": "格式化验证错误路径为可读字符串。",
+      "tags": [
+        "utility",
+        "formatting",
+        "error-path"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/validation.ts:validateToolCall",
+      "type": "function",
+      "name": "validateToolCall",
+      "filePath": "packages/ai/src/utils/validation.ts",
+      "lineRange": [
+        302,
+        308
+      ],
+      "summary": "验证工具调用的参数是否符合 schema 定义。",
+      "tags": [
+        "utility",
+        "validation",
+        "tool-call"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/utils/validation.ts:validateToolArguments",
+      "type": "function",
+      "name": "validateToolArguments",
+      "filePath": "packages/ai/src/utils/validation.ts",
+      "lineRange": [
+        317,
+        350
+      ],
+      "summary": "验证工具参数并自动执行类型强制转换，返回验证结果和错误信息。",
+      "tags": [
+        "utility",
+        "validation",
+        "tool-arguments"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/abort.test.ts",
+      "type": "file",
+      "name": "abort.test.ts",
+      "filePath": "packages/ai/test/abort.test.ts",
+      "summary": "测试 AbortSignal 中断功能，验证流式和完成模式下的中断行为及后续消息处理。",
+      "tags": [
+        "test",
+        "abort-signal",
+        "streaming"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/test/abort.test.ts:testAbortSignal",
+      "type": "function",
+      "name": "testAbortSignal",
+      "filePath": "packages/ai/test/abort.test.ts",
+      "lineRange": [
+        14,
+        56
+      ],
+      "summary": "测试流式请求的 AbortSignal 中断，验证中断后仍能继续新消息。",
+      "tags": [
+        "test",
+        "abort-signal",
+        "streaming"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/abort.test.ts:testImmediateAbort",
+      "type": "function",
+      "name": "testImmediateAbort",
+      "filePath": "packages/ai/test/abort.test.ts",
+      "lineRange": [
+        58,
+        69
+      ],
+      "summary": "测试立即中断 AbortSignal 时完成请求的行为。",
+      "tags": [
+        "test",
+        "abort-signal",
+        "immediate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/abort.test.ts:testAbortThenNewMessage",
+      "type": "function",
+      "name": "testAbortThenNewMessage",
+      "filePath": "packages/ai/test/abort.test.ts",
+      "lineRange": [
+        71,
+        98
+      ],
+      "summary": "测试中断后发送新消息的完整流程。",
+      "tags": [
+        "test",
+        "abort-signal",
+        "new-message"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/ai/src/utils/node-http-proxy.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/utils/node-http-proxy.ts",
+      "target": "file:packages/ai/src/utils/provider-env.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/utils/overflow.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/utils/provider-env.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/utils/retry.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/utils/text.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/utils/validation.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/abort.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/abort.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/abort.test.ts",
+      "target": "file:packages/ai/test/azure-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/abort.test.ts",
+      "target": "file:packages/ai/test/bedrock-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/abort.test.ts",
+      "target": "file:packages/ai/test/oauth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/utils/json-parse.ts",
+      "target": "function:packages/ai/src/utils/json-parse.ts:escapeControlCharacter",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/json-parse.ts",
+      "target": "function:packages/ai/src/utils/json-parse.ts:repairJson",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/json-parse.ts",
+      "target": "function:packages/ai/src/utils/json-parse.ts:parseJsonWithRepair",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/json-parse.ts",
+      "target": "function:packages/ai/src/utils/json-parse.ts:parseStreamingJson",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/node-http-proxy.ts",
+      "target": "function:packages/ai/src/utils/node-http-proxy.ts:getProxyEnv",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/node-http-proxy.ts",
+      "target": "function:packages/ai/src/utils/node-http-proxy.ts:parseProxyTargetUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/node-http-proxy.ts",
+      "target": "function:packages/ai/src/utils/node-http-proxy.ts:shouldProxyHostname",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/node-http-proxy.ts",
+      "target": "function:packages/ai/src/utils/node-http-proxy.ts:getProxyForUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/node-http-proxy.ts",
+      "target": "function:packages/ai/src/utils/node-http-proxy.ts:resolveHttpProxyUrlForTarget",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/overflow.ts",
+      "target": "function:packages/ai/src/utils/overflow.ts:isContextOverflow",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/overflow.ts",
+      "target": "function:packages/ai/src/utils/overflow.ts:isRecoverableLength",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/overflow.ts",
+      "target": "function:packages/ai/src/utils/overflow.ts:getOverflowPatterns",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/provider-env.ts",
+      "target": "function:packages/ai/src/utils/provider-env.ts:getBunSandboxEnvValue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/provider-env.ts",
+      "target": "function:packages/ai/src/utils/provider-env.ts:getProviderEnvValue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/provider-retry.ts",
+      "target": "function:packages/ai/src/utils/provider-retry.ts:isRetryableProviderError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/provider-retry.ts",
+      "target": "function:packages/ai/src/utils/provider-retry.ts:validateServerRetryDelayMs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/provider-retry.ts",
+      "target": "function:packages/ai/src/utils/provider-retry.ts:getRetryDelayMs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/provider-retry.ts",
+      "target": "function:packages/ai/src/utils/provider-retry.ts:abortableSleep",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/provider-retry.ts",
+      "target": "function:packages/ai/src/utils/provider-retry.ts:retryProviderRequest",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/retry.ts",
+      "target": "function:packages/ai/src/utils/retry.ts:sleep",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/retry.ts",
+      "target": "function:packages/ai/src/utils/retry.ts:retryAssistantCall",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/retry.ts",
+      "target": "function:packages/ai/src/utils/retry.ts:isRetryableAssistantError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/sanitize-unicode.ts",
+      "target": "function:packages/ai/src/utils/sanitize-unicode.ts:sanitizeSurrogates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/text.ts",
+      "target": "function:packages/ai/src/utils/text.ts:contentText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/typebox-helpers.ts",
+      "target": "function:packages/ai/src/utils/typebox-helpers.ts:StringEnum",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/uuid.ts",
+      "target": "function:packages/ai/src/utils/uuid.ts:uuidv7",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/validation.ts",
+      "target": "function:packages/ai/src/utils/validation.ts:matchesJsonType",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/validation.ts",
+      "target": "function:packages/ai/src/utils/validation.ts:coercePrimitiveByType",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/validation.ts",
+      "target": "function:packages/ai/src/utils/validation.ts:applySchemaObjectCoercion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/validation.ts",
+      "target": "function:packages/ai/src/utils/validation.ts:applySchemaArrayCoercion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/validation.ts",
+      "target": "function:packages/ai/src/utils/validation.ts:coerceWithUnionSchema",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/validation.ts",
+      "target": "function:packages/ai/src/utils/validation.ts:coerceWithJsonSchema",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/validation.ts",
+      "target": "function:packages/ai/src/utils/validation.ts:normalizeOptionalNulls",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/validation.ts",
+      "target": "function:packages/ai/src/utils/validation.ts:getValidator",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/validation.ts",
+      "target": "function:packages/ai/src/utils/validation.ts:formatValidationPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/validation.ts",
+      "target": "function:packages/ai/src/utils/validation.ts:validateToolCall",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/validation.ts",
+      "target": "function:packages/ai/src/utils/validation.ts:validateToolArguments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/abort.test.ts",
+      "target": "function:packages/ai/test/abort.test.ts:testAbortSignal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/abort.test.ts",
+      "target": "function:packages/ai/test/abort.test.ts:testImmediateAbort",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/abort.test.ts",
+      "target": "function:packages/ai/test/abort.test.ts:testAbortThenNewMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/utils/json-parse.ts",
+      "target": "function:packages/ai/src/utils/json-parse.ts:repairJson",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/utils/json-parse.ts",
+      "target": "function:packages/ai/src/utils/json-parse.ts:parseJsonWithRepair",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/utils/json-parse.ts",
+      "target": "function:packages/ai/src/utils/json-parse.ts:parseStreamingJson",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/utils/node-http-proxy.ts",
+      "target": "function:packages/ai/src/utils/node-http-proxy.ts:resolveHttpProxyUrlForTarget",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/utils/overflow.ts",
+      "target": "function:packages/ai/src/utils/overflow.ts:isContextOverflow",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/utils/overflow.ts",
+      "target": "function:packages/ai/src/utils/overflow.ts:isRecoverableLength",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/utils/overflow.ts",
+      "target": "function:packages/ai/src/utils/overflow.ts:getOverflowPatterns",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/utils/provider-env.ts",
+      "target": "function:packages/ai/src/utils/provider-env.ts:getProviderEnvValue",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/utils/provider-retry.ts",
+      "target": "function:packages/ai/src/utils/provider-retry.ts:retryProviderRequest",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/utils/retry.ts",
+      "target": "function:packages/ai/src/utils/retry.ts:retryAssistantCall",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/utils/retry.ts",
+      "target": "function:packages/ai/src/utils/retry.ts:isRetryableAssistantError",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/utils/sanitize-unicode.ts",
+      "target": "function:packages/ai/src/utils/sanitize-unicode.ts:sanitizeSurrogates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/utils/text.ts",
+      "target": "function:packages/ai/src/utils/text.ts:contentText",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/utils/typebox-helpers.ts",
+      "target": "function:packages/ai/src/utils/typebox-helpers.ts:StringEnum",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/utils/uuid.ts",
+      "target": "function:packages/ai/src/utils/uuid.ts:uuidv7",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/utils/validation.ts",
+      "target": "function:packages/ai/src/utils/validation.ts:validateToolCall",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/utils/validation.ts",
+      "target": "function:packages/ai/src/utils/validation.ts:validateToolArguments",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/utils/node-http-proxy.ts",
+      "target": "file:packages/ai/test/node-http-proxy.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/utils/overflow.ts",
+      "target": "file:packages/ai/test/context-overflow.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/utils/overflow.ts",
+      "target": "file:packages/ai/test/overflow.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/utils/provider-retry.ts",
+      "target": "file:packages/ai/test/provider-retry.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/utils/retry.ts",
+      "target": "file:packages/ai/test/retry.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/utils/typebox-helpers.ts",
+      "target": "file:packages/ai/test/interleaved-thinking.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/utils/typebox-helpers.ts",
+      "target": "file:packages/ai/test/stream.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/utils/uuid.ts",
+      "target": "file:packages/ai/test/uuid.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/ai/src/utils/validation.ts",
+      "target": "file:packages/ai/test/validation.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

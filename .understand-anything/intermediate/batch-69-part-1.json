@@ -1,0 +1,571 @@
+{
+  "nodes": [
+    {
+      "id": "packages/coding-agent/examples/extensions/entry-renderer.ts",
+      "type": "file",
+      "label": "entry-renderer.ts",
+      "description": "自定义条目渲染示例 — 通过 registerEntryRenderer 在聊天中渲染持久化扩展数据（不发送给 LLM），支持 /status-card 命令",
+      "category": "code",
+      "tags": [
+        "扩展示例",
+        "TUI渲染",
+        "entry渲染"
+      ],
+      "lineRange": {
+        "start": 1,
+        "end": 41
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/event-bus.ts",
+      "type": "file",
+      "label": "event-bus.ts",
+      "description": "扩展间事件总线示例 — 使用 pi.events 实现扩展间的发布/订阅通信，通过 /emit 命令发送通知事件",
+      "category": "code",
+      "tags": [
+        "扩展示例",
+        "事件系统",
+        "扩展通信"
+      ],
+      "lineRange": {
+        "start": 1,
+        "end": 43
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/file-trigger.ts",
+      "type": "file",
+      "label": "file-trigger.ts",
+      "description": "文件触发器扩展 — 监视触发文件（/tmp/agent-trigger.txt）变化，将内容注入对话以触发 agent 响应",
+      "category": "code",
+      "tags": [
+        "扩展示例",
+        "文件系统",
+        "外部触发"
+      ],
+      "lineRange": {
+        "start": 1,
+        "end": 41
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/git-checkpoint.ts",
+      "type": "file",
+      "label": "git-checkpoint.ts",
+      "description": "Git 检查点扩展 — 在每个 turn 创建 git stash 检查点，/fork 时可恢复到历史代码状态",
+      "category": "code",
+      "tags": [
+        "扩展示例",
+        "Git",
+        "会话分叉",
+        "代码状态"
+      ],
+      "lineRange": {
+        "start": 1,
+        "end": 53
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/github-issue-autocomplete.ts",
+      "type": "file",
+      "label": "github-issue-autocomplete.ts",
+      "description": "GitHub Issue 自动补全扩展 — 输入 # 时提供 issue 编号补全，通过 gh CLI 获取仓库 issue 列表并支持模糊匹配",
+      "category": "code",
+      "tags": [
+        "扩展示例",
+        "自动补全",
+        "GitHub集成",
+        "模糊搜索"
+      ],
+      "lineRange": {
+        "start": 1,
+        "end": 185
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/gondolin/index.ts",
+      "type": "file",
+      "label": "gondolin/index.ts",
+      "description": "Gondolin VM 工具路由扩展 — 在 Gondolin 微虚拟机内运行 pi 内置工具，实现宿主机到客户机的路径转换、文件操作路由和沙箱化执行",
+      "category": "code",
+      "tags": [
+        "扩展示例",
+        "虚拟机",
+        "沙箱",
+        "工具路由",
+        "路径转换"
+      ],
+      "lineRange": {
+        "start": 1,
+        "end": 531
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/gondolin/package.json",
+      "type": "file",
+      "label": "gondolin/package.json",
+      "description": "Gondolin 扩展的包配置 — 声明 @earendil-works/gondolin 依赖和 pi 扩展入口",
+      "category": "config",
+      "tags": [
+        "配置",
+        "包管理"
+      ],
+      "lineRange": {
+        "start": 1,
+        "end": 19
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/handoff.ts",
+      "type": "file",
+      "label": "handoff.ts",
+      "description": "上下文交接扩展 — 从当前会话提取关键上下文，生成聚焦的提示词用于新会话，避免有损压缩",
+      "category": "code",
+      "tags": [
+        "扩展示例",
+        "会话管理",
+        "上下文转移",
+        "LLM提示词"
+      ],
+      "lineRange": {
+        "start": 1,
+        "end": 190
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/hello.ts",
+      "type": "file",
+      "label": "hello.ts",
+      "description": "最小自定义工具示例 — 使用 defineTool 注册简单的 hello 问候工具",
+      "category": "code",
+      "tags": [
+        "扩展示例",
+        "工具定义",
+        "入门示例"
+      ],
+      "lineRange": {
+        "start": 1,
+        "end": 26
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/hidden-thinking-label.ts",
+      "type": "file",
+      "label": "hidden-thinking-label.ts",
+      "description": "隐藏思考标签扩展 — 演示 setHiddenThinkingLabel API 自定义折叠思考块的显示文本",
+      "category": "code",
+      "tags": [
+        "扩展示例",
+        "TUI定制",
+        "思考块"
+      ],
+      "lineRange": {
+        "start": 1,
+        "end": 53
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/inline-bash.ts",
+      "type": "file",
+      "label": "inline-bash.ts",
+      "description": "内联 Bash 扩展 — 在用户提示词中展开 !{command} 模式，执行内联 bash 命令并替换为输出结果",
+      "category": "code",
+      "tags": [
+        "扩展示例",
+        "输入处理",
+        "Bash执行",
+        "模板展开"
+      ],
+      "lineRange": {
+        "start": 1,
+        "end": 94
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/input-transform.ts",
+      "type": "file",
+      "label": "input-transform.ts",
+      "description": "输入转换示例 — 演示 input 事件拦截用户输入，支持 ?quick 前缀转换和 ping/time 即时响应",
+      "category": "code",
+      "tags": [
+        "扩展示例",
+        "输入处理",
+        "事件拦截"
+      ],
+      "lineRange": {
+        "start": 1,
+        "end": 43
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/interactive-shell.ts",
+      "type": "file",
+      "label": "interactive-shell.ts",
+      "description": "交互式 Shell 命令扩展 — 支持 vim/htop 等交互式命令在 TUI 中暂停并授予完整终端访问权限",
+      "category": "code",
+      "tags": [
+        "扩展示例",
+        "终端",
+        "交互式命令",
+        "TUI控制"
+      ],
+      "lineRange": {
+        "start": 1,
+        "end": 196
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/github-issue-autocomplete.ts#parseGitHubRepo",
+      "type": "function",
+      "label": "parseGitHubRepo",
+      "description": "解析 Git remote URL 提取 owner/repo 信息，支持 HTTPS 和 SSH 格式",
+      "category": "code",
+      "tags": [
+        "解析",
+        "Git"
+      ],
+      "lineRange": {
+        "start": 28,
+        "end": 40
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/github-issue-autocomplete.ts#resolveGitHubRepo",
+      "type": "function",
+      "label": "resolveGitHubRepo",
+      "description": "解析当前项目的 GitHub 仓库，通过 git remote 命令获取",
+      "category": "code",
+      "tags": [
+        "Git",
+        "仓库解析"
+      ],
+      "lineRange": {
+        "start": 42,
+        "end": 61
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/github-issue-autocomplete.ts#filterIssues",
+      "type": "function",
+      "label": "filterIssues",
+      "description": "根据查询过滤 issue 列表，支持精确编号匹配和模糊搜索",
+      "category": "code",
+      "tags": [
+        "过滤",
+        "模糊搜索"
+      ],
+      "lineRange": {
+        "start": 71,
+        "end": 89
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/github-issue-autocomplete.ts#createIssueAutocompleteProvider",
+      "type": "function",
+      "label": "createIssueAutocompleteProvider",
+      "description": "创建 issue 自动补全提供者，包装现有提供者并注入 GitHub issue 补全逻辑",
+      "category": "code",
+      "tags": [
+        "自动补全",
+        "提供者模式"
+      ],
+      "lineRange": {
+        "start": 91,
+        "end": 128
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/gondolin/index.ts#createGondolinReadOps",
+      "type": "function",
+      "label": "createGondolinReadOps",
+      "description": "创建 Gondolin VM 文件读取操作，将宿主机路径转换为客户机路径后委托给 VM 文件系统",
+      "category": "code",
+      "tags": [
+        "VM操作",
+        "文件读取",
+        "路径转换"
+      ],
+      "lineRange": {
+        "start": 84,
+        "end": 99
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/gondolin/index.ts#createGondolinWriteOps",
+      "type": "function",
+      "label": "createGondolinWriteOps",
+      "description": "创建 Gondolin VM 文件写入操作，处理路径转换和写入委托",
+      "category": "code",
+      "tags": [
+        "VM操作",
+        "文件写入"
+      ],
+      "lineRange": {
+        "start": 101,
+        "end": 110
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/gondolin/index.ts#createGondolinLsOps",
+      "type": "function",
+      "label": "createGondolinLsOps",
+      "description": "创建 Gondolin VM 目录列表操作，支持路径转换和格式化输出",
+      "category": "code",
+      "tags": [
+        "VM操作",
+        "目录列表"
+      ],
+      "lineRange": {
+        "start": 122,
+        "end": 135
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/gondolin/index.ts#walkGuestFiles",
+      "type": "function",
+      "label": "walkGuestFiles",
+      "description": "递归遍历客户机 VM 文件系统，返回匹配工具 glob 模式的文件路径列表",
+      "category": "code",
+      "tags": [
+        "VM操作",
+        "文件遍历",
+        "递归"
+      ],
+      "lineRange": {
+        "start": 137,
+        "end": 170
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/gondolin/index.ts#matchesToolGlob",
+      "type": "function",
+      "label": "matchesToolGlob",
+      "description": "检查文件路径是否匹配工具相关的全局模式（如 .ts, .py, .json 等源码文件）",
+      "category": "code",
+      "tags": [
+        "模式匹配",
+        "文件过滤"
+      ],
+      "lineRange": {
+        "start": 172,
+        "end": 181
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/gondolin/index.ts#createGondolinFindOps",
+      "type": "function",
+      "label": "createGondolinFindOps",
+      "description": "创建 Gondolin VM 文件查找操作，在客户机文件系统中执行 glob 模式搜索",
+      "category": "code",
+      "tags": [
+        "VM操作",
+        "文件查找",
+        "glob"
+      ],
+      "lineRange": {
+        "start": 183,
+        "end": 204
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/gondolin/index.ts#appendGrepBlock",
+      "type": "function",
+      "label": "appendGrepBlock",
+      "description": "将 grep 匹配结果格式化为带上下文的文本块，用于结果输出",
+      "category": "code",
+      "tags": [
+        "格式化",
+        "grep",
+        "输出"
+      ],
+      "lineRange": {
+        "start": 215,
+        "end": 237
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/gondolin/index.ts#executeGondolinGrep",
+      "type": "function",
+      "label": "executeGondolinGrep",
+      "description": "在 Gondolin VM 中执行 grep 搜索，逐行读取文件并匹配正则表达式，支持上下文行和限制数",
+      "category": "code",
+      "tags": [
+        "VM操作",
+        "grep",
+        "正则匹配",
+        "搜索"
+      ],
+      "lineRange": {
+        "start": 239,
+        "end": 313
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/gondolin/index.ts#createGondolinBashOps",
+      "type": "function",
+      "label": "createGondolinBashOps",
+      "description": "创建 Gondolin VM Bash 执行操作，在客户机环境中执行命令并处理路径回显",
+      "category": "code",
+      "tags": [
+        "VM操作",
+        "Bash执行",
+        "沙箱"
+      ],
+      "lineRange": {
+        "start": 324,
+        "end": 363
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/handoff.ts#entryToMessage",
+      "type": "function",
+      "label": "entryToMessage",
+      "description": "将会话条目转换为 AgentMessage，处理 message 和 compaction 两种类型",
+      "category": "code",
+      "tags": [
+        "类型转换",
+        "会话处理"
+      ],
+      "lineRange": {
+        "start": 42,
+        "end": 55
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/handoff.ts#getHandoffMessages",
+      "type": "function",
+      "label": "getHandoffMessages",
+      "description": "从会话分支提取交接消息列表，保留最近压缩点之后的消息以提供上下文",
+      "category": "code",
+      "tags": [
+        "会话管理",
+        "消息提取",
+        "压缩"
+      ],
+      "lineRange": {
+        "start": 57,
+        "end": 78
+      }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/interactive-shell.ts#isInteractiveCommand",
+      "type": "function",
+      "label": "isInteractiveCommand",
+      "description": "判断给定命令是否为交互式命令，检查默认列表和环境变量配置，支持管道后命令匹配",
+      "category": "code",
+      "tags": [
+        "命令检测",
+        "交互式",
+        "配置"
+      ],
+      "lineRange": {
+        "start": 109,
+        "end": 129
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "packages/coding-agent/examples/extensions/github-issue-autocomplete.ts",
+      "target": "packages/coding-agent/examples/extensions/github-issue-autocomplete.ts#parseGitHubRepo",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/github-issue-autocomplete.ts",
+      "target": "packages/coding-agent/examples/extensions/github-issue-autocomplete.ts#resolveGitHubRepo",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/github-issue-autocomplete.ts",
+      "target": "packages/coding-agent/examples/extensions/github-issue-autocomplete.ts#filterIssues",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/github-issue-autocomplete.ts",
+      "target": "packages/coding-agent/examples/extensions/github-issue-autocomplete.ts#createIssueAutocompleteProvider",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/gondolin/index.ts",
+      "target": "packages/coding-agent/examples/extensions/gondolin/index.ts#createGondolinReadOps",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/gondolin/index.ts",
+      "target": "packages/coding-agent/examples/extensions/gondolin/index.ts#createGondolinWriteOps",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/gondolin/index.ts",
+      "target": "packages/coding-agent/examples/extensions/gondolin/index.ts#createGondolinLsOps",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/gondolin/index.ts",
+      "target": "packages/coding-agent/examples/extensions/gondolin/index.ts#walkGuestFiles",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/gondolin/index.ts",
+      "target": "packages/coding-agent/examples/extensions/gondolin/index.ts#matchesToolGlob",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/gondolin/index.ts",
+      "target": "packages/coding-agent/examples/extensions/gondolin/index.ts#createGondolinFindOps",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/gondolin/index.ts",
+      "target": "packages/coding-agent/examples/extensions/gondolin/index.ts#appendGrepBlock",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/gondolin/index.ts",
+      "target": "packages/coding-agent/examples/extensions/gondolin/index.ts#executeGondolinGrep",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/gondolin/index.ts",
+      "target": "packages/coding-agent/examples/extensions/gondolin/index.ts#createGondolinBashOps",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/handoff.ts",
+      "target": "packages/coding-agent/examples/extensions/handoff.ts#entryToMessage",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/handoff.ts",
+      "target": "packages/coding-agent/examples/extensions/handoff.ts#getHandoffMessages",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/interactive-shell.ts",
+      "target": "packages/coding-agent/examples/extensions/interactive-shell.ts#isInteractiveCommand",
+      "type": "contains",
+      "label": "contains"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/github-issue-autocomplete.ts#resolveGitHubRepo",
+      "target": "packages/coding-agent/examples/extensions/github-issue-autocomplete.ts#parseGitHubRepo",
+      "type": "calls",
+      "label": "calls"
+    }
+  ]
+}

@@ -1,0 +1,882 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/ai/src/bedrock-provider.ts",
+      "type": "file",
+      "name": "bedrock-provider.ts",
+      "filePath": "packages/ai/src/bedrock-provider.ts",
+      "summary": "Bedrock provider 模块导出，将 bedrock-converse-stream API 注册为 provider 模块。",
+      "tags": [
+        "barrel",
+        "bedrock",
+        "provider-module"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/compat.ts",
+      "type": "file",
+      "name": "compat.ts",
+      "filePath": "packages/ai/src/compat.ts",
+      "summary": "API 兼容层，注册内置和自定义 provider、管理 API provider 映射，并提供统一的 stream/complete 入口。",
+      "tags": [
+        "entry-point",
+        "compat",
+        "provider-registry",
+        "streaming"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/ai/src/env-api-keys.ts",
+      "type": "file",
+      "name": "env-api-keys.ts",
+      "filePath": "packages/ai/src/env-api-keys.ts",
+      "summary": "环境变量 API Key 解析器，支持多 provider 的 key 发现、Vertex ADC 凭证检测和 key 环境变量映射。",
+      "tags": [
+        "utility",
+        "api-keys",
+        "environment-variables",
+        "authentication"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/src/image-models.ts",
+      "type": "file",
+      "name": "image-models.ts",
+      "filePath": "packages/ai/src/image-models.ts",
+      "summary": "图像模型注册表，提供图像模型和 provider 的查询接口。",
+      "tags": [
+        "registry",
+        "image-models",
+        "query"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/images-api-registry.ts",
+      "type": "file",
+      "name": "images-api-registry.ts",
+      "filePath": "packages/ai/src/images-api-registry.ts",
+      "summary": "图像 API provider 注册表，管理图像生成 API provider 的注册和查找。",
+      "tags": [
+        "registry",
+        "image-generation",
+        "provider-management"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/images.ts",
+      "type": "file",
+      "name": "images.ts",
+      "filePath": "packages/ai/src/images.ts",
+      "summary": "图像生成入口模块，委托给 images-api-registry 和内置 provider 注册器执行图像生成。",
+      "tags": [
+        "entry-point",
+        "image-generation",
+        "delegation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/legacy-api-aliases.ts",
+      "type": "file",
+      "name": "legacy-api-aliases.ts",
+      "filePath": "packages/ai/src/legacy-api-aliases.ts",
+      "summary": "旧版 API 别名模块，为各 provider 的 stream/streamSimple 函数提供向后兼容的导出别名。",
+      "tags": [
+        "barrel",
+        "legacy",
+        "aliases",
+        "backward-compat"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/compat.ts:wrapStream",
+      "type": "function",
+      "name": "wrapStream",
+      "filePath": "packages/ai/src/compat.ts",
+      "lineRange": [
+        102,
+        112
+      ],
+      "summary": "wrapStream 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/compat.ts:wrapStreamSimple",
+      "type": "function",
+      "name": "wrapStreamSimple",
+      "filePath": "packages/ai/src/compat.ts",
+      "lineRange": [
+        114,
+        124
+      ],
+      "summary": "wrapStreamSimple 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/compat.ts:registerApiProvider",
+      "type": "function",
+      "name": "registerApiProvider",
+      "filePath": "packages/ai/src/compat.ts",
+      "lineRange": [
+        126,
+        138
+      ],
+      "summary": "注册 API provider 到全局注册表。",
+      "tags": [
+        "utility",
+        "exported",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/compat.ts:unregisterApiProviders",
+      "type": "function",
+      "name": "unregisterApiProviders",
+      "filePath": "packages/ai/src/compat.ts",
+      "lineRange": [
+        148,
+        154
+      ],
+      "summary": "unregisterApiProviders 函数。",
+      "tags": [
+        "utility",
+        "exported",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/compat.ts:registerFauxProvider",
+      "type": "function",
+      "name": "registerFauxProvider",
+      "filePath": "packages/ai/src/compat.ts",
+      "lineRange": [
+        160,
+        176
+      ],
+      "summary": "注册 faux（模拟）provider 用于测试。",
+      "tags": [
+        "utility",
+        "exported",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/compat.ts:registerBuiltInApiProviders",
+      "type": "function",
+      "name": "registerBuiltInApiProviders",
+      "filePath": "packages/ai/src/compat.ts",
+      "lineRange": [
+        198,
+        205
+      ],
+      "summary": "registerBuiltInApiProviders 函数。",
+      "tags": [
+        "utility",
+        "exported",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/compat.ts:resetApiProviders",
+      "type": "function",
+      "name": "resetApiProviders",
+      "filePath": "packages/ai/src/compat.ts",
+      "lineRange": [
+        207,
+        211
+      ],
+      "summary": "resetApiProviders 函数。",
+      "tags": [
+        "utility",
+        "exported",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/compat.ts:stream",
+      "type": "function",
+      "name": "stream",
+      "filePath": "packages/ai/src/compat.ts",
+      "lineRange": [
+        250,
+        264
+      ],
+      "summary": "兼容层统一流式入口，根据 model 查找对应 provider 并调用其 stream 函数。",
+      "tags": [
+        "api-handler",
+        "streaming",
+        "entry-point"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/compat.ts:complete",
+      "type": "function",
+      "name": "complete",
+      "filePath": "packages/ai/src/compat.ts",
+      "lineRange": [
+        266,
+        273
+      ],
+      "summary": "complete 函数。",
+      "tags": [
+        "utility",
+        "exported",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/compat.ts:streamSimple",
+      "type": "function",
+      "name": "streamSimple",
+      "filePath": "packages/ai/src/compat.ts",
+      "lineRange": [
+        275,
+        289
+      ],
+      "summary": "兼容层统一简化流式入口。",
+      "tags": [
+        "api-handler",
+        "streaming",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/compat.ts:completeSimple",
+      "type": "function",
+      "name": "completeSimple",
+      "filePath": "packages/ai/src/compat.ts",
+      "lineRange": [
+        291,
+        298
+      ],
+      "summary": "completeSimple 函数。",
+      "tags": [
+        "utility",
+        "exported",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/env-api-keys.ts:hasVertexAdcCredentials",
+      "type": "function",
+      "name": "hasVertexAdcCredentials",
+      "filePath": "packages/ai/src/env-api-keys.ts",
+      "lineRange": [
+        35,
+        66
+      ],
+      "summary": "检测是否存在 Vertex AI ADC（应用默认凭证）。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/env-api-keys.ts:getApiKeyEnvVars",
+      "type": "function",
+      "name": "getApiKeyEnvVars",
+      "filePath": "packages/ai/src/env-api-keys.ts",
+      "lineRange": [
+        68,
+        120
+      ],
+      "summary": "获取 provider 对应的所有 API key 环境变量名。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/env-api-keys.ts:findEnvKeys",
+      "type": "function",
+      "name": "findEnvKeys",
+      "filePath": "packages/ai/src/env-api-keys.ts",
+      "lineRange": [
+        131,
+        137
+      ],
+      "summary": "findEnvKeys 函数。",
+      "tags": [
+        "utility",
+        "exported",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/env-api-keys.ts:getEnvApiKey",
+      "type": "function",
+      "name": "getEnvApiKey",
+      "filePath": "packages/ai/src/env-api-keys.ts",
+      "lineRange": [
+        146,
+        188
+      ],
+      "summary": "从环境变量获取指定 provider 的 API key。",
+      "tags": [
+        "utility",
+        "exported",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/images-api-registry.ts:wrapGenerateImages",
+      "type": "function",
+      "name": "wrapGenerateImages",
+      "filePath": "packages/ai/src/images-api-registry.ts",
+      "lineRange": [
+        26,
+        36
+      ],
+      "summary": "wrapGenerateImages 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/images-api-registry.ts:registerImagesApiProvider",
+      "type": "function",
+      "name": "registerImagesApiProvider",
+      "filePath": "packages/ai/src/images-api-registry.ts",
+      "lineRange": [
+        38,
+        49
+      ],
+      "summary": "注册图像 API provider 到全局注册表。",
+      "tags": [
+        "utility",
+        "exported",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "function:packages/ai/src/compat.ts:wrapStream",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "function:packages/ai/src/compat.ts:wrapStreamSimple",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "function:packages/ai/src/compat.ts:registerApiProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "function:packages/ai/src/compat.ts:unregisterApiProviders",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "function:packages/ai/src/compat.ts:registerFauxProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "function:packages/ai/src/compat.ts:registerBuiltInApiProviders",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "function:packages/ai/src/compat.ts:resetApiProviders",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "function:packages/ai/src/compat.ts:stream",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "function:packages/ai/src/compat.ts:complete",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "function:packages/ai/src/compat.ts:streamSimple",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "function:packages/ai/src/compat.ts:completeSimple",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/env-api-keys.ts",
+      "target": "function:packages/ai/src/env-api-keys.ts:hasVertexAdcCredentials",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/env-api-keys.ts",
+      "target": "function:packages/ai/src/env-api-keys.ts:getApiKeyEnvVars",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/env-api-keys.ts",
+      "target": "function:packages/ai/src/env-api-keys.ts:findEnvKeys",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/env-api-keys.ts",
+      "target": "function:packages/ai/src/env-api-keys.ts:getEnvApiKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/images-api-registry.ts",
+      "target": "function:packages/ai/src/images-api-registry.ts:wrapGenerateImages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/images-api-registry.ts",
+      "target": "function:packages/ai/src/images-api-registry.ts:registerImagesApiProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "function:packages/ai/src/compat.ts:registerApiProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "function:packages/ai/src/compat.ts:unregisterApiProviders",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "function:packages/ai/src/compat.ts:registerFauxProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "function:packages/ai/src/compat.ts:registerBuiltInApiProviders",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "function:packages/ai/src/compat.ts:resetApiProviders",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "function:packages/ai/src/compat.ts:stream",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "function:packages/ai/src/compat.ts:complete",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "function:packages/ai/src/compat.ts:streamSimple",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "function:packages/ai/src/compat.ts:completeSimple",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/env-api-keys.ts",
+      "target": "function:packages/ai/src/env-api-keys.ts:findEnvKeys",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/env-api-keys.ts",
+      "target": "function:packages/ai/src/env-api-keys.ts:getEnvApiKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/images-api-registry.ts",
+      "target": "function:packages/ai/src/images-api-registry.ts:registerImagesApiProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/bedrock-provider.ts",
+      "target": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/src/api/anthropic-messages.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/src/api/azure-openai-responses.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/src/api/bedrock-converse-stream.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/src/api/google-generative-ai.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/src/api/google-vertex.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/src/api/mistral-conversations.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/src/api/openai-codex-responses.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/src/api/openai-completions.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/src/api/openai-responses.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/src/api/pi-messages.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/src/env-api-keys.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/src/providers/all.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/src/providers/faux.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/env-api-keys.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/env-api-keys.ts",
+      "target": "file:packages/ai/src/utils/provider-env.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/image-models.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/images-api-registry.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/images.ts",
+      "target": "file:packages/ai/src/images-api-registry.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/images.ts",
+      "target": "file:packages/ai/src/providers/images/register-builtins.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/images.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/legacy-api-aliases.ts",
+      "target": "file:packages/ai/src/api/anthropic-messages.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/legacy-api-aliases.ts",
+      "target": "file:packages/ai/src/api/anthropic-messages.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/legacy-api-aliases.ts",
+      "target": "file:packages/ai/src/api/azure-openai-responses.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/legacy-api-aliases.ts",
+      "target": "file:packages/ai/src/api/azure-openai-responses.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/legacy-api-aliases.ts",
+      "target": "file:packages/ai/src/api/google-generative-ai.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/legacy-api-aliases.ts",
+      "target": "file:packages/ai/src/api/google-generative-ai.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/legacy-api-aliases.ts",
+      "target": "file:packages/ai/src/api/google-vertex.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/legacy-api-aliases.ts",
+      "target": "file:packages/ai/src/api/google-vertex.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/legacy-api-aliases.ts",
+      "target": "file:packages/ai/src/api/mistral-conversations.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/legacy-api-aliases.ts",
+      "target": "file:packages/ai/src/api/mistral-conversations.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/legacy-api-aliases.ts",
+      "target": "file:packages/ai/src/api/openai-codex-responses.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/legacy-api-aliases.ts",
+      "target": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/legacy-api-aliases.ts",
+      "target": "file:packages/ai/src/api/openai-completions.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/legacy-api-aliases.ts",
+      "target": "file:packages/ai/src/api/openai-completions.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/legacy-api-aliases.ts",
+      "target": "file:packages/ai/src/api/openai-responses.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/legacy-api-aliases.ts",
+      "target": "file:packages/ai/src/api/openai-responses.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/legacy-api-aliases.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

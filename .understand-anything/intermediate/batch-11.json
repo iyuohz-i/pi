@@ -1,0 +1,1888 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/ai/src/providers/ant-ling.ts",
+      "type": "file",
+      "name": "ant-ling.ts",
+      "filePath": "packages/ai/src/providers/ant-ling.ts",
+      "summary": "AntLing 模型供应商定义文件，通过 createProvider 工厂创建基于 OpenAI Completions API 的供应商实例，使用环境变量 API Key 认证。",
+      "tags": [
+        "service",
+        "provider",
+        "llm",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/providers/ant-ling.ts:antLingProvider",
+      "type": "function",
+      "name": "antLingProvider",
+      "filePath": "packages/ai/src/providers/ant-ling.ts",
+      "lineRange": [
+        6,
+        15
+      ],
+      "summary": "创建 AntLing 供应商实例，配置 OpenAI Completions API 和环境变量 API Key 认证策略。",
+      "tags": [
+        "factory",
+        "provider",
+        "llm"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/baseten.ts",
+      "type": "file",
+      "name": "baseten.ts",
+      "filePath": "packages/ai/src/providers/baseten.ts",
+      "summary": "Baseten 模型供应商定义文件，通过 createProvider 创建基于 OpenAI Completions API 的供应商实例，使用环境变量 API Key 认证。",
+      "tags": [
+        "service",
+        "provider",
+        "llm",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/providers/baseten.ts:basetenProvider",
+      "type": "function",
+      "name": "basetenProvider",
+      "filePath": "packages/ai/src/providers/baseten.ts",
+      "lineRange": [
+        6,
+        15
+      ],
+      "summary": "创建 Baseten 供应商实例，配置 OpenAI Completions API 和环境变量 API Key 认证策略。",
+      "tags": [
+        "factory",
+        "provider",
+        "llm"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/cerebras.ts",
+      "type": "file",
+      "name": "cerebras.ts",
+      "filePath": "packages/ai/src/providers/cerebras.ts",
+      "summary": "Cerebras 模型供应商定义文件，通过 createProvider 创建基于 OpenAI Completions API 的供应商实例，使用环境变量 API Key 认证。",
+      "tags": [
+        "service",
+        "provider",
+        "llm",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/providers/cerebras.ts:cerebrasProvider",
+      "type": "function",
+      "name": "cerebrasProvider",
+      "filePath": "packages/ai/src/providers/cerebras.ts",
+      "lineRange": [
+        6,
+        15
+      ],
+      "summary": "创建 Cerebras 供应商实例，配置 OpenAI Completions API 和环境变量 API Key 认证策略。",
+      "tags": [
+        "factory",
+        "provider",
+        "llm"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/deepseek.ts",
+      "type": "file",
+      "name": "deepseek.ts",
+      "filePath": "packages/ai/src/providers/deepseek.ts",
+      "summary": "DeepSeek 模型供应商定义文件，通过 createProvider 创建基于 OpenAI Completions API 的供应商实例，使用环境变量 API Key 认证。",
+      "tags": [
+        "service",
+        "provider",
+        "llm",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/providers/deepseek.ts:deepseekProvider",
+      "type": "function",
+      "name": "deepseekProvider",
+      "filePath": "packages/ai/src/providers/deepseek.ts",
+      "lineRange": [
+        6,
+        15
+      ],
+      "summary": "创建 DeepSeek 供应商实例，配置 OpenAI Completions API 和环境变量 API Key 认证策略。",
+      "tags": [
+        "factory",
+        "provider",
+        "llm"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/google.ts",
+      "type": "file",
+      "name": "google.ts",
+      "filePath": "packages/ai/src/providers/google.ts",
+      "summary": "Google (Generative AI) 模型供应商定义文件，通过 createProvider 创建基于 Google Generative AI API 的供应商实例，使用环境变量 API Key 认证。",
+      "tags": [
+        "service",
+        "provider",
+        "llm",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/providers/google.ts:googleProvider",
+      "type": "function",
+      "name": "googleProvider",
+      "filePath": "packages/ai/src/providers/google.ts",
+      "lineRange": [
+        6,
+        15
+      ],
+      "summary": "创建 Google 供应商实例，配置 Google Generative AI API 和环境变量 API Key 认证策略。",
+      "tags": [
+        "factory",
+        "provider",
+        "llm"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/groq.ts",
+      "type": "file",
+      "name": "groq.ts",
+      "filePath": "packages/ai/src/providers/groq.ts",
+      "summary": "Groq 模型供应商定义文件，通过 createProvider 创建基于 OpenAI Completions API 的供应商实例，使用环境变量 API Key 认证。",
+      "tags": [
+        "service",
+        "provider",
+        "llm",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/providers/groq.ts:groqProvider",
+      "type": "function",
+      "name": "groqProvider",
+      "filePath": "packages/ai/src/providers/groq.ts",
+      "lineRange": [
+        6,
+        15
+      ],
+      "summary": "创建 Groq 供应商实例，配置 OpenAI Completions API 和环境变量 API Key 认证策略。",
+      "tags": [
+        "factory",
+        "provider",
+        "llm"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/huggingface.ts",
+      "type": "file",
+      "name": "huggingface.ts",
+      "filePath": "packages/ai/src/providers/huggingface.ts",
+      "summary": "HuggingFace 模型供应商定义文件，通过 createProvider 创建基于 OpenAI Completions API 的供应商实例，使用环境变量 API Key 认证。",
+      "tags": [
+        "service",
+        "provider",
+        "llm",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/providers/huggingface.ts:huggingfaceProvider",
+      "type": "function",
+      "name": "huggingfaceProvider",
+      "filePath": "packages/ai/src/providers/huggingface.ts",
+      "lineRange": [
+        6,
+        15
+      ],
+      "summary": "创建 HuggingFace 供应商实例，配置 OpenAI Completions API 和环境变量 API Key 认证策略。",
+      "tags": [
+        "factory",
+        "provider",
+        "llm"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/minimax-cn.ts",
+      "type": "file",
+      "name": "minimax-cn.ts",
+      "filePath": "packages/ai/src/providers/minimax-cn.ts",
+      "summary": "MiniMax (中国) 模型供应商定义文件，通过 createProvider 创建基于 Anthropic Messages API 的供应商实例，使用环境变量 API Key 认证。",
+      "tags": [
+        "service",
+        "provider",
+        "llm",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/providers/minimax-cn.ts:minimaxCnProvider",
+      "type": "function",
+      "name": "minimaxCnProvider",
+      "filePath": "packages/ai/src/providers/minimax-cn.ts",
+      "lineRange": [
+        6,
+        15
+      ],
+      "summary": "创建 MiniMax-CN 供应商实例，配置 Anthropic Messages API 和环境变量 API Key 认证策略。",
+      "tags": [
+        "factory",
+        "provider",
+        "llm"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/anthropic.models.ts",
+      "type": "file",
+      "name": "anthropic.models.ts",
+      "filePath": "packages/ai/src/providers/anthropic.models.ts",
+      "summary": "定义 anthropic 供应商的模型目录常量 ANTHROPIC_MODELS，通过 flattenModelCatalog 展平模型层级结构。",
+      "tags": [
+        "data-model",
+        "model-catalog",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/azure-openai-responses.models.ts",
+      "type": "file",
+      "name": "azure-openai-responses.models.ts",
+      "filePath": "packages/ai/src/providers/azure-openai-responses.models.ts",
+      "summary": "定义 azure-openai-responses 供应商的模型目录常量 AZURE_OPENAI_RESPONSES_MODELS，通过 flattenModelCatalog 展平模型层级结构。",
+      "tags": [
+        "data-model",
+        "model-catalog",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/baseten.models.ts",
+      "type": "file",
+      "name": "baseten.models.ts",
+      "filePath": "packages/ai/src/providers/baseten.models.ts",
+      "summary": "定义 baseten 供应商的模型目录常量 BASETEN_MODELS，通过 flattenModelCatalog 展平模型层级结构。",
+      "tags": [
+        "data-model",
+        "model-catalog",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/cerebras.models.ts",
+      "type": "file",
+      "name": "cerebras.models.ts",
+      "filePath": "packages/ai/src/providers/cerebras.models.ts",
+      "summary": "定义 cerebras 供应商的模型目录常量 CEREBRAS_MODELS，通过 flattenModelCatalog 展平模型层级结构。",
+      "tags": [
+        "data-model",
+        "model-catalog",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/cloudflare-ai-gateway.models.ts",
+      "type": "file",
+      "name": "cloudflare-ai-gateway.models.ts",
+      "filePath": "packages/ai/src/providers/cloudflare-ai-gateway.models.ts",
+      "summary": "定义 cloudflare-ai-gateway 供应商的模型目录常量 CLOUDFLARE_AI_GATEWAY_MODELS，通过 flattenModelCatalog 展平模型层级结构。",
+      "tags": [
+        "data-model",
+        "model-catalog",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/cloudflare-workers-ai.models.ts",
+      "type": "file",
+      "name": "cloudflare-workers-ai.models.ts",
+      "filePath": "packages/ai/src/providers/cloudflare-workers-ai.models.ts",
+      "summary": "定义 cloudflare-workers-ai 供应商的模型目录常量 CLOUDFLARE_WORKERS_AI_MODELS，通过 flattenModelCatalog 展平模型层级结构。",
+      "tags": [
+        "data-model",
+        "model-catalog",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/deepseek.models.ts",
+      "type": "file",
+      "name": "deepseek.models.ts",
+      "filePath": "packages/ai/src/providers/deepseek.models.ts",
+      "summary": "定义 deepseek 供应商的模型目录常量 DEEPSEEK_MODELS，通过 flattenModelCatalog 展平模型层级结构。",
+      "tags": [
+        "data-model",
+        "model-catalog",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/fireworks.models.ts",
+      "type": "file",
+      "name": "fireworks.models.ts",
+      "filePath": "packages/ai/src/providers/fireworks.models.ts",
+      "summary": "定义 fireworks 供应商的模型目录常量 FIREWORKS_MODELS，通过 flattenModelCatalog 展平模型层级结构。",
+      "tags": [
+        "data-model",
+        "model-catalog",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/github-copilot.models.ts",
+      "type": "file",
+      "name": "github-copilot.models.ts",
+      "filePath": "packages/ai/src/providers/github-copilot.models.ts",
+      "summary": "定义 github-copilot 供应商的模型目录常量 GITHUB_COPILOT_MODELS，通过 flattenModelCatalog 展平模型层级结构。",
+      "tags": [
+        "data-model",
+        "model-catalog",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/google-vertex.models.ts",
+      "type": "file",
+      "name": "google-vertex.models.ts",
+      "filePath": "packages/ai/src/providers/google-vertex.models.ts",
+      "summary": "定义 google-vertex 供应商的模型目录常量 GOOGLE_VERTEX_MODELS，通过 flattenModelCatalog 展平模型层级结构。",
+      "tags": [
+        "data-model",
+        "model-catalog",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/google.models.ts",
+      "type": "file",
+      "name": "google.models.ts",
+      "filePath": "packages/ai/src/providers/google.models.ts",
+      "summary": "定义 google 供应商的模型目录常量 GOOGLE_MODELS，通过 flattenModelCatalog 展平模型层级结构。",
+      "tags": [
+        "data-model",
+        "model-catalog",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/groq.models.ts",
+      "type": "file",
+      "name": "groq.models.ts",
+      "filePath": "packages/ai/src/providers/groq.models.ts",
+      "summary": "定义 groq 供应商的模型目录常量 GROQ_MODELS，通过 flattenModelCatalog 展平模型层级结构。",
+      "tags": [
+        "data-model",
+        "model-catalog",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/huggingface.models.ts",
+      "type": "file",
+      "name": "huggingface.models.ts",
+      "filePath": "packages/ai/src/providers/huggingface.models.ts",
+      "summary": "定义 huggingface 供应商的模型目录常量 HUGGINGFACE_MODELS，通过 flattenModelCatalog 展平模型层级结构。",
+      "tags": [
+        "data-model",
+        "model-catalog",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/kimi-coding.models.ts",
+      "type": "file",
+      "name": "kimi-coding.models.ts",
+      "filePath": "packages/ai/src/providers/kimi-coding.models.ts",
+      "summary": "定义 kimi-coding 供应商的模型目录常量 KIMI_CODING_MODELS，通过 flattenModelCatalog 展平模型层级结构。",
+      "tags": [
+        "data-model",
+        "model-catalog",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/minimax-cn.models.ts",
+      "type": "file",
+      "name": "minimax-cn.models.ts",
+      "filePath": "packages/ai/src/providers/minimax-cn.models.ts",
+      "summary": "定义 minimax-cn 供应商的模型目录常量 MINIMAX_CN_MODELS，通过 flattenModelCatalog 展平模型层级结构。",
+      "tags": [
+        "data-model",
+        "model-catalog",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/ant-ling.models.ts",
+      "type": "file",
+      "name": "ant-ling.models.ts",
+      "filePath": "packages/ai/src/providers/ant-ling.models.ts",
+      "summary": "定义 ant-ling 供应商的模型目录常量 ANT_LING_MODELS，通过 flattenModelCatalog 展平模型层级结构。",
+      "tags": [
+        "data-model",
+        "model-catalog",
+        "type-definition"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/azure-openai-responses.ts",
+      "type": "file",
+      "name": "azure-openai-responses.ts",
+      "filePath": "packages/ai/src/providers/azure-openai-responses.ts",
+      "summary": "Azure OpenAI Responses 模型供应商定义文件，通过 createProvider 创建基于 Azure OpenAI Responses API 的供应商实例，使用环境变量 API Key 认证。",
+      "tags": [
+        "service",
+        "provider",
+        "azure",
+        "llm"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/providers/azure-openai-responses.ts:azureOpenAIResponsesProvider",
+      "type": "function",
+      "name": "azureOpenAIResponsesProvider",
+      "filePath": "packages/ai/src/providers/azure-openai-responses.ts",
+      "lineRange": [
+        6,
+        14
+      ],
+      "summary": "创建 Azure OpenAI Responses 供应商实例，配置 Azure OpenAI Responses API 和环境变量 API Key 认证策略。",
+      "tags": [
+        "factory",
+        "provider",
+        "azure"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/fireworks.ts",
+      "type": "file",
+      "name": "fireworks.ts",
+      "filePath": "packages/ai/src/providers/fireworks.ts",
+      "summary": "Fireworks 模型供应商定义文件，通过 createProvider 创建同时支持 Anthropic Messages API 和 OpenAI Completions API 的双协议供应商实例，使用环境变量 API Key 认证。",
+      "tags": [
+        "service",
+        "provider",
+        "llm",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/providers/fireworks.ts:fireworksProvider",
+      "type": "function",
+      "name": "fireworksProvider",
+      "filePath": "packages/ai/src/providers/fireworks.ts",
+      "lineRange": [
+        7,
+        19
+      ],
+      "summary": "创建 Fireworks 供应商实例，同时配置 Anthropic Messages API 和 OpenAI Completions API 双协议支持及环境变量 API Key 认证。",
+      "tags": [
+        "factory",
+        "provider",
+        "llm"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/github-copilot.ts",
+      "type": "file",
+      "name": "github-copilot.ts",
+      "filePath": "packages/ai/src/providers/github-copilot.ts",
+      "summary": "GitHub Copilot 供应商定义文件，支持 API Key 认证和 OAuth 懒加载认证，同时配置 Anthropic Messages、OpenAI Completions 和 OpenAI Responses 三种 API 协议，并按可用模型列表过滤。",
+      "tags": [
+        "service",
+        "provider",
+        "github-copilot",
+        "authentication"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/providers/github-copilot.ts:githubCopilotProvider",
+      "type": "function",
+      "name": "githubCopilotProvider",
+      "filePath": "packages/ai/src/providers/github-copilot.ts",
+      "lineRange": [
+        9,
+        34
+      ],
+      "summary": "创建 GitHub Copilot 供应商实例，配置三种 API 协议（Anthropic Messages、OpenAI Completions、OpenAI Responses），支持 API Key 和 OAuth 认证，并按可用模型 ID 过滤支持的模型。",
+      "tags": [
+        "factory",
+        "provider",
+        "github-copilot",
+        "authentication"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/src/providers/google-vertex.ts",
+      "type": "file",
+      "name": "google-vertex.ts",
+      "filePath": "packages/ai/src/providers/google-vertex.ts",
+      "summary": "Google Vertex AI 供应商定义文件，包含自定义认证逻辑（从环境变量解析 service account 凭据），通过 googleVertexApi 提供模型调用能力。",
+      "tags": [
+        "service",
+        "provider",
+        "google-vertex",
+        "authentication"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/providers/google-vertex.ts:googleVertexProvider",
+      "type": "function",
+      "name": "googleVertexProvider",
+      "filePath": "packages/ai/src/providers/google-vertex.ts",
+      "lineRange": [
+        92,
+        100
+      ],
+      "summary": "创建 Google Vertex AI 供应商实例，配置自定义认证和 googleVertexApi 调用。",
+      "tags": [
+        "factory",
+        "provider",
+        "google-vertex"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/kimi-coding.ts",
+      "type": "file",
+      "name": "kimi-coding.ts",
+      "filePath": "packages/ai/src/providers/kimi-coding.ts",
+      "summary": "Kimi Coding 供应商定义文件，支持 API Key 认证和 OAuth 懒加载认证，通过 anthropicMessagesApi 提供模型调用能力。",
+      "tags": [
+        "service",
+        "provider",
+        "kimi",
+        "authentication"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/providers/kimi-coding.ts:kimiCodingProvider",
+      "type": "function",
+      "name": "kimiCodingProvider",
+      "filePath": "packages/ai/src/providers/kimi-coding.ts",
+      "lineRange": [
+        7,
+        24
+      ],
+      "summary": "创建 Kimi Coding 供应商实例，配置 Anthropic Messages API、API Key 和 OAuth 懒加载认证。",
+      "tags": [
+        "factory",
+        "provider",
+        "kimi",
+        "authentication"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/cloudflare-ai-gateway.ts",
+      "type": "file",
+      "name": "cloudflare-ai-gateway.ts",
+      "filePath": "packages/ai/src/providers/cloudflare-ai-gateway.ts",
+      "summary": "Cloudflare AI Gateway 供应商定义文件，通过 cloudflareStreams 包装器同时支持 Anthropic Messages、OpenAI Completions 和 OpenAI Responses 三种 API 协议，使用 Cloudflare AI Gateway 认证。",
+      "tags": [
+        "service",
+        "provider",
+        "cloudflare",
+        "llm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/providers/cloudflare-ai-gateway.ts:cloudflareAIGatewayProvider",
+      "type": "function",
+      "name": "cloudflareAIGatewayProvider",
+      "filePath": "packages/ai/src/providers/cloudflare-ai-gateway.ts",
+      "lineRange": [
+        9,
+        23
+      ],
+      "summary": "创建 Cloudflare AI Gateway 供应商实例，通过 cloudflareStreams 包装三种 API 协议并配置 Cloudflare AI Gateway 认证。",
+      "tags": [
+        "factory",
+        "provider",
+        "cloudflare"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/src/providers/cloudflare-auth.ts",
+      "type": "file",
+      "name": "cloudflare-auth.ts",
+      "filePath": "packages/ai/src/providers/cloudflare-auth.ts",
+      "summary": "Cloudflare 供应商认证模块，提供 cloudflareWorkersAIAuth 和 cloudflareAIGatewayAuth 两种认证策略，从环境变量解析 Cloudflare account ID 和 API token 凭据。",
+      "tags": [
+        "authentication",
+        "cloudflare",
+        "provider",
+        "service"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/providers/cloudflare-auth.ts:resolveValue",
+      "type": "function",
+      "name": "resolveValue",
+      "filePath": "packages/ai/src/providers/cloudflare-auth.ts",
+      "lineRange": [
+        10,
+        29
+      ],
+      "summary": "从环境变量或交互式提示中解析单个凭据值，支持 AbortSignal 中断。",
+      "tags": [
+        "authentication",
+        "cloudflare",
+        "helper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/providers/cloudflare-auth.ts:resolveCloudflareEnv",
+      "type": "function",
+      "name": "resolveCloudflareEnv",
+      "filePath": "packages/ai/src/providers/cloudflare-auth.ts",
+      "lineRange": [
+        31,
+        52
+      ],
+      "summary": "批量解析 Cloudflare 环境变量凭据，包括 account ID 和 token，委托 resolveValue 逐项获取。",
+      "tags": [
+        "authentication",
+        "cloudflare",
+        "helper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/providers/cloudflare-auth.ts:cloudflareWorkersAIAuth",
+      "type": "function",
+      "name": "cloudflareWorkersAIAuth",
+      "filePath": "packages/ai/src/providers/cloudflare-auth.ts",
+      "lineRange": [
+        54,
+        72
+      ],
+      "summary": "Cloudflare Workers AI 认证策略，交互式提示用户输入 account ID 和 token，通过 resolveCloudflareEnv 解析环境变量。",
+      "tags": [
+        "authentication",
+        "cloudflare",
+        "helper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/providers/cloudflare-auth.ts:cloudflareAIGatewayAuth",
+      "type": "function",
+      "name": "cloudflareAIGatewayAuth",
+      "filePath": "packages/ai/src/providers/cloudflare-auth.ts",
+      "lineRange": [
+        74,
+        103
+      ],
+      "summary": "Cloudflare AI Gateway 认证策略，交互式提示用户输入 gateway URL、account ID 和 token，通过 resolveCloudflareEnv 解析环境变量。",
+      "tags": [
+        "authentication",
+        "cloudflare",
+        "helper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/src/providers/cloudflare-stream.ts",
+      "type": "file",
+      "name": "cloudflare-stream.ts",
+      "filePath": "packages/ai/src/providers/cloudflare-stream.ts",
+      "summary": "Cloudflare 流式处理工具模块，提供 resolveCloudflareModel（替换 baseUrl 中的 account ID 占位符）和 cloudflareStreams（包装流式 API 调用）两个函数。",
+      "tags": [
+        "utility",
+        "cloudflare",
+        "stream",
+        "provider"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/providers/cloudflare-stream.ts:resolveCloudflareModel",
+      "type": "function",
+      "name": "resolveCloudflareModel",
+      "filePath": "packages/ai/src/providers/cloudflare-stream.ts",
+      "lineRange": [
+        6,
+        15
+      ],
+      "summary": "解析 Cloudflare 模型配置，将 baseUrl 中的 account ID 占位符替换为实际环境变量值。",
+      "tags": [
+        "utility",
+        "cloudflare",
+        "stream"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/providers/cloudflare-stream.ts:cloudflareStreams",
+      "type": "function",
+      "name": "cloudflareStreams",
+      "filePath": "packages/ai/src/providers/cloudflare-stream.ts",
+      "lineRange": [
+        21,
+        28
+      ],
+      "summary": "流式处理包装器，为 stream 和 streamSimple 方法注入 resolveCloudflareModel 模型解析逻辑。",
+      "tags": [
+        "utility",
+        "cloudflare",
+        "stream"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/cloudflare-workers-ai.ts",
+      "type": "file",
+      "name": "cloudflare-workers-ai.ts",
+      "filePath": "packages/ai/src/providers/cloudflare-workers-ai.ts",
+      "summary": "Cloudflare Workers AI 供应商定义文件，通过 cloudflareStreams 包装 OpenAI Completions API，使用 cloudflareWorkersAIAuth 认证策略。",
+      "tags": [
+        "service",
+        "provider",
+        "cloudflare",
+        "llm"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/providers/cloudflare-workers-ai.ts:cloudflareWorkersAIProvider",
+      "type": "function",
+      "name": "cloudflareWorkersAIProvider",
+      "filePath": "packages/ai/src/providers/cloudflare-workers-ai.ts",
+      "lineRange": [
+        7,
+        15
+      ],
+      "summary": "创建 Cloudflare Workers AI 供应商实例，通过 cloudflareStreams 包装 OpenAI Completions API 并配置 Workers AI 认证。",
+      "tags": [
+        "factory",
+        "provider",
+        "cloudflare"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/anthropic.ts",
+      "type": "file",
+      "name": "anthropic.ts",
+      "filePath": "packages/ai/src/providers/anthropic.ts",
+      "summary": "Anthropic 供应商定义文件，支持 API Key 认证和 OAuth 懒加载认证，通过 anthropicMessagesApi 提供模型调用能力。",
+      "tags": [
+        "service",
+        "provider",
+        "anthropic",
+        "authentication"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/providers/anthropic.ts:anthropicApiKeyAuth",
+      "type": "function",
+      "name": "anthropicApiKeyAuth",
+      "filePath": "packages/ai/src/providers/anthropic.ts",
+      "lineRange": [
+        9,
+        41
+      ],
+      "summary": "Anthropic 专用 API Key 认证策略，依次尝试环境变量中的 auth token、OAuth token 和 API key，支持交互式提示和 AbortSignal 中断。",
+      "tags": [
+        "authentication",
+        "anthropic",
+        "provider"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/providers/anthropic.ts:anthropicProvider",
+      "type": "function",
+      "name": "anthropicProvider",
+      "filePath": "packages/ai/src/providers/anthropic.ts",
+      "lineRange": [
+        43,
+        59
+      ],
+      "summary": "创建 Anthropic 供应商实例，配置 anthropicMessagesApi、API Key 认证和 OAuth 懒加载认证。",
+      "tags": [
+        "factory",
+        "provider",
+        "anthropic"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/ai/src/providers/ant-ling.ts",
+      "target": "function:packages/ai/src/providers/ant-ling.ts:antLingProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/ant-ling.ts",
+      "target": "function:packages/ai/src/providers/ant-ling.ts:antLingProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/ant-ling.ts",
+      "target": "file:packages/ai/src/api/openai-completions.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/ant-ling.ts",
+      "target": "file:packages/ai/src/auth/helpers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/ant-ling.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/ant-ling.ts",
+      "target": "file:packages/ai/src/providers/ant-ling.models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/baseten.ts",
+      "target": "function:packages/ai/src/providers/baseten.ts:basetenProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/baseten.ts",
+      "target": "function:packages/ai/src/providers/baseten.ts:basetenProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/baseten.ts",
+      "target": "file:packages/ai/src/api/openai-completions.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/baseten.ts",
+      "target": "file:packages/ai/src/auth/helpers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/baseten.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/baseten.ts",
+      "target": "file:packages/ai/src/providers/baseten.models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/cerebras.ts",
+      "target": "function:packages/ai/src/providers/cerebras.ts:cerebrasProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/cerebras.ts",
+      "target": "function:packages/ai/src/providers/cerebras.ts:cerebrasProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/cerebras.ts",
+      "target": "file:packages/ai/src/api/openai-completions.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/cerebras.ts",
+      "target": "file:packages/ai/src/auth/helpers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/cerebras.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/cerebras.ts",
+      "target": "file:packages/ai/src/providers/cerebras.models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/deepseek.ts",
+      "target": "function:packages/ai/src/providers/deepseek.ts:deepseekProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/deepseek.ts",
+      "target": "function:packages/ai/src/providers/deepseek.ts:deepseekProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/deepseek.ts",
+      "target": "file:packages/ai/src/api/openai-completions.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/deepseek.ts",
+      "target": "file:packages/ai/src/auth/helpers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/deepseek.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/deepseek.ts",
+      "target": "file:packages/ai/src/providers/deepseek.models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/google.ts",
+      "target": "function:packages/ai/src/providers/google.ts:googleProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/google.ts",
+      "target": "function:packages/ai/src/providers/google.ts:googleProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/google.ts",
+      "target": "file:packages/ai/src/api/google-generative-ai.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/google.ts",
+      "target": "file:packages/ai/src/auth/helpers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/google.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/google.ts",
+      "target": "file:packages/ai/src/providers/google.models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/groq.ts",
+      "target": "function:packages/ai/src/providers/groq.ts:groqProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/groq.ts",
+      "target": "function:packages/ai/src/providers/groq.ts:groqProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/groq.ts",
+      "target": "file:packages/ai/src/api/openai-completions.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/groq.ts",
+      "target": "file:packages/ai/src/auth/helpers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/groq.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/groq.ts",
+      "target": "file:packages/ai/src/providers/groq.models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/huggingface.ts",
+      "target": "function:packages/ai/src/providers/huggingface.ts:huggingfaceProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/huggingface.ts",
+      "target": "function:packages/ai/src/providers/huggingface.ts:huggingfaceProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/huggingface.ts",
+      "target": "file:packages/ai/src/api/openai-completions.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/huggingface.ts",
+      "target": "file:packages/ai/src/auth/helpers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/huggingface.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/huggingface.ts",
+      "target": "file:packages/ai/src/providers/huggingface.models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/minimax-cn.ts",
+      "target": "function:packages/ai/src/providers/minimax-cn.ts:minimaxCnProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/minimax-cn.ts",
+      "target": "function:packages/ai/src/providers/minimax-cn.ts:minimaxCnProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/minimax-cn.ts",
+      "target": "file:packages/ai/src/api/anthropic-messages.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/minimax-cn.ts",
+      "target": "file:packages/ai/src/auth/helpers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/minimax-cn.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/minimax-cn.ts",
+      "target": "file:packages/ai/src/providers/minimax-cn.models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/anthropic.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/azure-openai-responses.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/baseten.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/cerebras.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-ai-gateway.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-workers-ai.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/deepseek.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/fireworks.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/github-copilot.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/google-vertex.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/google.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/groq.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/huggingface.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/kimi-coding.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/minimax-cn.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/ant-ling.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/azure-openai-responses.ts",
+      "target": "function:packages/ai/src/providers/azure-openai-responses.ts:azureOpenAIResponsesProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/azure-openai-responses.ts",
+      "target": "function:packages/ai/src/providers/azure-openai-responses.ts:azureOpenAIResponsesProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/azure-openai-responses.ts",
+      "target": "file:packages/ai/src/api/azure-openai-responses.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/azure-openai-responses.ts",
+      "target": "file:packages/ai/src/auth/helpers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/azure-openai-responses.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/azure-openai-responses.ts",
+      "target": "file:packages/ai/src/providers/azure-openai-responses.models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/fireworks.ts",
+      "target": "function:packages/ai/src/providers/fireworks.ts:fireworksProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/fireworks.ts",
+      "target": "function:packages/ai/src/providers/fireworks.ts:fireworksProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/fireworks.ts",
+      "target": "file:packages/ai/src/api/anthropic-messages.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/fireworks.ts",
+      "target": "file:packages/ai/src/api/openai-completions.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/fireworks.ts",
+      "target": "file:packages/ai/src/auth/helpers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/fireworks.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/fireworks.ts",
+      "target": "file:packages/ai/src/providers/fireworks.models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/github-copilot.ts",
+      "target": "function:packages/ai/src/providers/github-copilot.ts:githubCopilotProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/github-copilot.ts",
+      "target": "function:packages/ai/src/providers/github-copilot.ts:githubCopilotProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/github-copilot.ts",
+      "target": "file:packages/ai/src/api/anthropic-messages.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/github-copilot.ts",
+      "target": "file:packages/ai/src/api/openai-completions.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/github-copilot.ts",
+      "target": "file:packages/ai/src/api/openai-responses.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/github-copilot.ts",
+      "target": "file:packages/ai/src/auth/helpers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/github-copilot.ts",
+      "target": "file:packages/ai/src/auth/oauth/load.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/github-copilot.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/github-copilot.ts",
+      "target": "file:packages/ai/src/providers/github-copilot.models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/google-vertex.ts",
+      "target": "function:packages/ai/src/providers/google-vertex.ts:googleVertexProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/google-vertex.ts",
+      "target": "function:packages/ai/src/providers/google-vertex.ts:googleVertexProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/google-vertex.ts",
+      "target": "file:packages/ai/src/api/google-vertex.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/google-vertex.ts",
+      "target": "file:packages/ai/src/auth/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/google-vertex.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/google-vertex.ts",
+      "target": "file:packages/ai/src/providers/google-vertex.models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/kimi-coding.ts",
+      "target": "function:packages/ai/src/providers/kimi-coding.ts:kimiCodingProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/kimi-coding.ts",
+      "target": "function:packages/ai/src/providers/kimi-coding.ts:kimiCodingProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/kimi-coding.ts",
+      "target": "file:packages/ai/src/api/anthropic-messages.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/kimi-coding.ts",
+      "target": "file:packages/ai/src/auth/helpers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/kimi-coding.ts",
+      "target": "file:packages/ai/src/auth/oauth/load.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/kimi-coding.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/kimi-coding.ts",
+      "target": "file:packages/ai/src/providers/kimi-coding.models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-ai-gateway.ts",
+      "target": "function:packages/ai/src/providers/cloudflare-ai-gateway.ts:cloudflareAIGatewayProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-ai-gateway.ts",
+      "target": "function:packages/ai/src/providers/cloudflare-ai-gateway.ts:cloudflareAIGatewayProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-ai-gateway.ts",
+      "target": "file:packages/ai/src/api/anthropic-messages.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-ai-gateway.ts",
+      "target": "file:packages/ai/src/api/openai-completions.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-ai-gateway.ts",
+      "target": "file:packages/ai/src/api/openai-responses.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-ai-gateway.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-ai-gateway.ts",
+      "target": "file:packages/ai/src/providers/cloudflare-ai-gateway.models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-ai-gateway.ts",
+      "target": "file:packages/ai/src/providers/cloudflare-auth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-ai-gateway.ts",
+      "target": "file:packages/ai/src/providers/cloudflare-stream.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-auth.ts",
+      "target": "function:packages/ai/src/providers/cloudflare-auth.ts:resolveValue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-auth.ts",
+      "target": "function:packages/ai/src/providers/cloudflare-auth.ts:resolveCloudflareEnv",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-auth.ts",
+      "target": "function:packages/ai/src/providers/cloudflare-auth.ts:cloudflareWorkersAIAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-auth.ts",
+      "target": "function:packages/ai/src/providers/cloudflare-auth.ts:cloudflareWorkersAIAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-auth.ts",
+      "target": "function:packages/ai/src/providers/cloudflare-auth.ts:cloudflareAIGatewayAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-auth.ts",
+      "target": "function:packages/ai/src/providers/cloudflare-auth.ts:cloudflareAIGatewayAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-auth.ts",
+      "target": "file:packages/ai/src/auth/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-auth.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-stream.ts",
+      "target": "function:packages/ai/src/providers/cloudflare-stream.ts:resolveCloudflareModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-stream.ts",
+      "target": "function:packages/ai/src/providers/cloudflare-stream.ts:resolveCloudflareModel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-stream.ts",
+      "target": "function:packages/ai/src/providers/cloudflare-stream.ts:cloudflareStreams",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-stream.ts",
+      "target": "function:packages/ai/src/providers/cloudflare-stream.ts:cloudflareStreams",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-stream.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-workers-ai.ts",
+      "target": "function:packages/ai/src/providers/cloudflare-workers-ai.ts:cloudflareWorkersAIProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-workers-ai.ts",
+      "target": "function:packages/ai/src/providers/cloudflare-workers-ai.ts:cloudflareWorkersAIProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-workers-ai.ts",
+      "target": "file:packages/ai/src/api/openai-completions.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-workers-ai.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-workers-ai.ts",
+      "target": "file:packages/ai/src/providers/cloudflare-auth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-workers-ai.ts",
+      "target": "file:packages/ai/src/providers/cloudflare-stream.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/cloudflare-workers-ai.ts",
+      "target": "file:packages/ai/src/providers/cloudflare-workers-ai.models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/anthropic.ts",
+      "target": "function:packages/ai/src/providers/anthropic.ts:anthropicApiKeyAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/anthropic.ts",
+      "target": "function:packages/ai/src/providers/anthropic.ts:anthropicProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/anthropic.ts",
+      "target": "function:packages/ai/src/providers/anthropic.ts:anthropicProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/anthropic.ts",
+      "target": "file:packages/ai/src/api/anthropic-messages.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/anthropic.ts",
+      "target": "file:packages/ai/src/auth/helpers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/anthropic.ts",
+      "target": "file:packages/ai/src/auth/oauth/load.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/anthropic.ts",
+      "target": "file:packages/ai/src/auth/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/anthropic.ts",
+      "target": "file:packages/ai/src/env-api-keys.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/anthropic.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/anthropic.ts",
+      "target": "file:packages/ai/src/providers/anthropic.models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:packages/ai/src/providers/ant-ling.ts:antLingProvider",
+      "target": "function:packages/ai/src/models.ts:createProvider",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/providers/ant-ling.ts:antLingProvider",
+      "target": "function:packages/ai/src/auth/helpers.ts:envApiKeyAuth",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/providers/anthropic.ts:anthropicProvider",
+      "target": "function:packages/ai/src/models.ts:createProvider",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/providers/anthropic.ts:anthropicProvider",
+      "target": "function:packages/ai/src/auth/helpers.ts:lazyOAuth",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/providers/cloudflare-ai-gateway.ts:cloudflareAIGatewayProvider",
+      "target": "function:packages/ai/src/providers/cloudflare-auth.ts:cloudflareAIGatewayAuth",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/providers/cloudflare-ai-gateway.ts:cloudflareAIGatewayProvider",
+      "target": "function:packages/ai/src/providers/cloudflare-stream.ts:cloudflareStreams",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/providers/cloudflare-workers-ai.ts:cloudflareWorkersAIProvider",
+      "target": "function:packages/ai/src/models.ts:createProvider",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/providers/cloudflare-workers-ai.ts:cloudflareWorkersAIProvider",
+      "target": "function:packages/ai/src/providers/cloudflare-auth.ts:cloudflareWorkersAIAuth",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/providers/cloudflare-workers-ai.ts:cloudflareWorkersAIProvider",
+      "target": "function:packages/ai/src/providers/cloudflare-stream.ts:cloudflareStreams",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

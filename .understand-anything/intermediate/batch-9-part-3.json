@@ -1,0 +1,394 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/coding-agent/test/ansi-utils.test.ts",
+      "type": "file",
+      "name": "ansi-utils.test.ts",
+      "filePath": "packages/coding-agent/test/ansi-utils.test.ts",
+      "summary": "ANSI 工具测试，验证 stripAnsi 函数与参考实现的兼容性。",
+      "tags": [
+        "test",
+        "ansi",
+        "compatibility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/assistant-message.test.ts",
+      "type": "file",
+      "name": "assistant-message.test.ts",
+      "filePath": "packages/coding-agent/test/assistant-message.test.ts",
+      "summary": "助手消息组件测试，验证消息渲染和 Markdown 转换。",
+      "tags": [
+        "test",
+        "assistant-message",
+        "rendering"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/test/bash-execution-width.test.ts",
+      "type": "file",
+      "name": "bash-execution-width.test.ts",
+      "filePath": "packages/coding-agent/test/bash-execution-width.test.ts",
+      "summary": "Bash 执行组件宽度测试，验证终端列宽自适应。",
+      "tags": [
+        "test",
+        "bash-execution",
+        "width"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/changelog.test.ts",
+      "type": "file",
+      "name": "changelog.test.ts",
+      "filePath": "packages/coding-agent/test/changelog.test.ts",
+      "summary": "变更日志工具测试，验证解析和版本比较功能。",
+      "tags": [
+        "test",
+        "changelog",
+        "parser"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/test/compaction-serialization.test.ts",
+      "type": "file",
+      "name": "compaction-serialization.test.ts",
+      "filePath": "packages/coding-agent/test/compaction-serialization.test.ts",
+      "summary": "压缩序列化测试，验证会话压缩数据的序列化与反序列化。",
+      "tags": [
+        "test",
+        "compaction",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/custom-message.test.ts",
+      "type": "file",
+      "name": "custom-message.test.ts",
+      "filePath": "packages/coding-agent/test/custom-message.test.ts",
+      "summary": "自定义消息组件测试，验证消息创建和渲染。",
+      "tags": [
+        "test",
+        "custom-message",
+        "rendering"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/test/export-html-whitespace.test.ts",
+      "type": "file",
+      "name": "export-html-whitespace.test.ts",
+      "filePath": "packages/coding-agent/test/export-html-whitespace.test.ts",
+      "summary": "HTML 导出空白处理测试，验证 ANSI 转 HTML 时的空白保留。",
+      "tags": [
+        "test",
+        "export-html",
+        "whitespace"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/test/external-editor.test.ts",
+      "type": "file",
+      "name": "external-editor.test.ts",
+      "filePath": "packages/coding-agent/test/external-editor.test.ts",
+      "summary": "外部编辑器测试，验证编辑器启动和内容返回。",
+      "tags": [
+        "test",
+        "external-editor"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/git-ssh-url.test.ts",
+      "type": "file",
+      "name": "git-ssh-url.test.ts",
+      "filePath": "packages/coding-agent/test/git-ssh-url.test.ts",
+      "summary": "Git SSH URL 测试，验证多种 Git URL 格式的解析。",
+      "tags": [
+        "test",
+        "git",
+        "url-parsing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/interactive-mode-anthropic-warning.test.ts",
+      "type": "file",
+      "name": "interactive-mode-anthropic-warning.test.ts",
+      "filePath": "packages/coding-agent/test/interactive-mode-anthropic-warning.test.ts",
+      "summary": "交互模式 Anthropic 警告测试，验证订阅密钥的检测和警告逻辑。",
+      "tags": [
+        "test",
+        "interactive-mode",
+        "warning"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/interactive-mode-clone-command.test.ts",
+      "type": "file",
+      "name": "interactive-mode-clone-command.test.ts",
+      "filePath": "packages/coding-agent/test/interactive-mode-clone-command.test.ts",
+      "summary": "交互模式 clone 命令测试，验证会话克隆功能。",
+      "tags": [
+        "test",
+        "interactive-mode",
+        "clone"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/test/ansi-utils.test.ts:getCompatibilityInputs",
+      "type": "function",
+      "name": "getCompatibilityInputs",
+      "filePath": "packages/coding-agent/test/ansi-utils.test.ts",
+      "lineRange": [
+        20,
+        74
+      ],
+      "summary": "getCompatibilityInputs 函数",
+      "tags": [
+        "function",
+        "test-helper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/test/assistant-message.test.ts:createAssistantMessage",
+      "type": "function",
+      "name": "createAssistantMessage",
+      "filePath": "packages/coding-agent/test/assistant-message.test.ts",
+      "lineRange": [
+        12,
+        33
+      ],
+      "summary": "createAssistantMessage 函数",
+      "tags": [
+        "function",
+        "test-helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/bash-execution-width.test.ts:createTuiStub",
+      "type": "function",
+      "name": "createTuiStub",
+      "filePath": "packages/coding-agent/test/bash-execution-width.test.ts",
+      "lineRange": [
+        11,
+        28
+      ],
+      "summary": "createTuiStub 函数",
+      "tags": [
+        "function",
+        "test-helper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/test/external-editor.test.ts:runExternalEditor",
+      "type": "function",
+      "name": "runExternalEditor",
+      "filePath": "packages/coding-agent/test/external-editor.test.ts",
+      "lineRange": [
+        17,
+        33
+      ],
+      "summary": "runExternalEditor 函数",
+      "tags": [
+        "function",
+        "test-helper"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/coding-agent/test/ansi-utils.test.ts",
+      "target": "function:packages/coding-agent/test/ansi-utils.test.ts:getCompatibilityInputs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/assistant-message.test.ts",
+      "target": "function:packages/coding-agent/test/assistant-message.test.ts:createAssistantMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/bash-execution-width.test.ts",
+      "target": "function:packages/coding-agent/test/bash-execution-width.test.ts:createTuiStub",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/external-editor.test.ts",
+      "target": "function:packages/coding-agent/test/external-editor.test.ts:runExternalEditor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/test/ansi-utils.test.ts",
+      "target": "file:packages/coding-agent/src/utils/ansi.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/assistant-message.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/assistant-message.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/assistant-message.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/user-message.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/assistant-message.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/assistant-message.test.ts",
+      "target": "file:packages/coding-agent/src/utils/ansi.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/bash-execution-width.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/bash-execution.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/bash-execution-width.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/changelog.test.ts",
+      "target": "file:packages/coding-agent/src/utils/changelog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/compaction-serialization.test.ts",
+      "target": "file:packages/coding-agent/src/core/compaction/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/custom-message.test.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/custom-message.test.ts",
+      "target": "file:packages/coding-agent/src/core/messages.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/custom-message.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/components/custom-message.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/custom-message.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/custom-message.test.ts",
+      "target": "file:packages/coding-agent/src/utils/ansi.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/export-html-whitespace.test.ts",
+      "target": "file:packages/coding-agent/src/core/export-html/ansi-to-html.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/export-html-whitespace.test.ts",
+      "target": "file:packages/coding-agent/src/core/export-html/tool-renderer.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/export-html-whitespace.test.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/export-html-whitespace.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/external-editor.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/external-editor.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/git-ssh-url.test.ts",
+      "target": "file:packages/coding-agent/src/utils/git.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/interactive-mode-anthropic-warning.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/interactive-mode-clone-command.test.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/interactive-mode.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

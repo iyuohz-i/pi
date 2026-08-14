@@ -1,0 +1,4051 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 7,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "packages/ai/scripts/check-model-data.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 16,
+      "nonEmptyLines": 13,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/scripts/generate-models.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 2948,
+      "nonEmptyLines": 2736,
+      "functions": [
+        {
+          "name": "readGeneratorOptions",
+          "startLine": 36,
+          "endLine": 79,
+          "params": [
+            "args"
+          ]
+        },
+        {
+          "name": "withOpenAiLongContextPricing",
+          "startLine": 382,
+          "endLine": 395,
+          "params": [
+            "cost"
+          ]
+        },
+        {
+          "name": "mergeThinkingLevelMap",
+          "startLine": 466,
+          "endLine": 468,
+          "params": [
+            "model",
+            "map"
+          ]
+        },
+        {
+          "name": "getModelKey",
+          "startLine": 472,
+          "endLine": 474,
+          "params": [
+            "model"
+          ]
+        },
+        {
+          "name": "recordModelsDevReasoningOptions",
+          "startLine": 476,
+          "endLine": 480,
+          "params": [
+            "provider",
+            "id",
+            "sourceModel"
+          ]
+        },
+        {
+          "name": "supportsDirectReasoningEffort",
+          "startLine": 482,
+          "endLine": 498,
+          "params": [
+            "model"
+          ]
+        },
+        {
+          "name": "applyModelsDevReasoningOptionMetadata",
+          "startLine": 500,
+          "endLine": 505,
+          "params": [
+            "model"
+          ]
+        },
+        {
+          "name": "getTogetherCompat",
+          "startLine": 507,
+          "endLine": 513,
+          "params": [
+            "modelId",
+            "reasoning"
+          ]
+        },
+        {
+          "name": "getTogetherThinkingLevelMap",
+          "startLine": 515,
+          "endLine": 524,
+          "params": [
+            "modelId",
+            "reasoning"
+          ]
+        },
+        {
+          "name": "supportsOpenAiXhigh",
+          "startLine": 526,
+          "endLine": 534,
+          "params": [
+            "modelId"
+          ]
+        },
+        {
+          "name": "supportsOpenAiMax",
+          "startLine": 536,
+          "endLine": 544,
+          "params": [
+            "model"
+          ]
+        },
+        {
+          "name": "isGoogleThinkingApi",
+          "startLine": 546,
+          "endLine": 548,
+          "params": [
+            "model"
+          ]
+        },
+        {
+          "name": "isAnthropicAdaptiveThinkingModel",
+          "startLine": 550,
+          "endLine": 566,
+          "params": [
+            "modelId"
+          ]
+        },
+        {
+          "name": "isAnthropicTemperatureUnsupportedModel",
+          "startLine": 568,
+          "endLine": 578,
+          "params": [
+            "modelId"
+          ]
+        },
+        {
+          "name": "mergeAnthropicMessagesCompat",
+          "startLine": 610,
+          "endLine": 612,
+          "params": [
+            "model",
+            "compat"
+          ]
+        },
+        {
+          "name": "detectOpenAICompletionsCompat",
+          "startLine": 614,
+          "endLine": 707,
+          "params": [
+            "model"
+          ]
+        },
+        {
+          "name": "isPlainEmptyObject",
+          "startLine": 709,
+          "endLine": 711,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "openAICompletionsCompatDelta",
+          "startLine": 713,
+          "endLine": 723,
+          "params": [
+            "compat"
+          ]
+        },
+        {
+          "name": "mergeOpenAICompletionsCompat",
+          "startLine": 725,
+          "endLine": 727,
+          "params": [
+            "model",
+            "compat"
+          ]
+        },
+        {
+          "name": "applyOpenAICompletionsCompatMetadata",
+          "startLine": 729,
+          "endLine": 736,
+          "params": [
+            "model"
+          ]
+        },
+        {
+          "name": "applyStrictToolCompatMetadata",
+          "startLine": 738,
+          "endLine": 747,
+          "params": [
+            "model"
+          ]
+        },
+        {
+          "name": "applyOpenAIGrammarToolCompatMetadata",
+          "startLine": 767,
+          "endLine": 772,
+          "params": [
+            "model"
+          ]
+        },
+        {
+          "name": "applyOpenAIToolSearchMetadata",
+          "startLine": 774,
+          "endLine": 786,
+          "params": [
+            "model"
+          ]
+        },
+        {
+          "name": "applyOpenAIExplicitPromptCacheMetadata",
+          "startLine": 791,
+          "endLine": 798,
+          "params": [
+            "model"
+          ]
+        },
+        {
+          "name": "isGemini3ProModel",
+          "startLine": 800,
+          "endLine": 802,
+          "params": [
+            "modelId"
+          ]
+        },
+        {
+          "name": "isGemini3FlashModel",
+          "startLine": 804,
+          "endLine": 807,
+          "params": [
+            "modelId"
+          ]
+        },
+        {
+          "name": "isGemma4Model",
+          "startLine": 809,
+          "endLine": 811,
+          "params": [
+            "modelId"
+          ]
+        },
+        {
+          "name": "applyThinkingLevelMetadata",
+          "startLine": 813,
+          "endLine": 945,
+          "params": [
+            "model"
+          ]
+        },
+        {
+          "name": "getAnthropicMessagesCompat",
+          "startLine": 947,
+          "endLine": 956,
+          "params": [
+            "provider",
+            "modelId"
+          ]
+        },
+        {
+          "name": "getBedrockBaseUrl",
+          "startLine": 958,
+          "endLine": 962,
+          "params": [
+            "modelId"
+          ]
+        },
+        {
+          "name": "normalizeNvidiaModelId",
+          "startLine": 964,
+          "endLine": 966,
+          "params": [
+            "modelId"
+          ]
+        },
+        {
+          "name": "roundCost",
+          "startLine": 968,
+          "endLine": 970,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "getModelsDevCost",
+          "startLine": 972,
+          "endLine": 994,
+          "params": [
+            "cost"
+          ]
+        },
+        {
+          "name": "fetchNvidiaNimModelIds",
+          "startLine": 996,
+          "endLine": 1016,
+          "params": []
+        },
+        {
+          "name": "fetchOpenRouterModels",
+          "startLine": 1018,
+          "endLine": 1078,
+          "params": []
+        },
+        {
+          "name": "fetchAiGatewayModels",
+          "startLine": 1080,
+          "endLine": 1138,
+          "params": []
+        },
+        {
+          "name": "processBasetenModels",
+          "startLine": 1140,
+          "endLine": 1232,
+          "params": [
+            "provider"
+          ]
+        },
+        {
+          "name": "processFireworksModels",
+          "startLine": 1234,
+          "endLine": 1310,
+          "params": [
+            "provider"
+          ]
+        },
+        {
+          "name": "loadModelsDevData",
+          "startLine": 1312,
+          "endLine": 2280,
+          "params": []
+        },
+        {
+          "name": "generateModels",
+          "startLine": 2282,
+          "endLine": 2942,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "readGeneratorOptions",
+          "callee": "resolve",
+          "lineNumber": 70
+        },
+        {
+          "caller": "withOpenAiLongContextPricing",
+          "callee": "roundCost",
+          "lineNumber": 388
+        },
+        {
+          "caller": "withOpenAiLongContextPricing",
+          "callee": "roundCost",
+          "lineNumber": 389
+        },
+        {
+          "caller": "withOpenAiLongContextPricing",
+          "callee": "roundCost",
+          "lineNumber": 390
+        },
+        {
+          "caller": "withOpenAiLongContextPricing",
+          "callee": "roundCost",
+          "lineNumber": 391
+        },
+        {
+          "caller": "recordModelsDevReasoningOptions",
+          "callee": "modelsDevReasoningOptions.set",
+          "lineNumber": 478
+        },
+        {
+          "caller": "supportsDirectReasoningEffort",
+          "callee": "detectOpenAICompletionsCompat",
+          "lineNumber": 494
+        },
+        {
+          "caller": "applyModelsDevReasoningOptionMetadata",
+          "callee": "modelsDevReasoningOptions.get",
+          "lineNumber": 501
+        },
+        {
+          "caller": "applyModelsDevReasoningOptionMetadata",
+          "callee": "getModelKey",
+          "lineNumber": 501
+        },
+        {
+          "caller": "applyModelsDevReasoningOptionMetadata",
+          "callee": "supportsDirectReasoningEffort",
+          "lineNumber": 502
+        },
+        {
+          "caller": "applyModelsDevReasoningOptionMetadata",
+          "callee": "getEffortThinkingLevelMap",
+          "lineNumber": 503
+        },
+        {
+          "caller": "applyModelsDevReasoningOptionMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 504
+        },
+        {
+          "caller": "getTogetherCompat",
+          "callee": "TOGETHER_REASONING_EFFORT_MODELS.has",
+          "lineNumber": 509
+        },
+        {
+          "caller": "getTogetherCompat",
+          "callee": "TOGETHER_TOGGLE_REASONING_EFFORT_MODELS.has",
+          "lineNumber": 510
+        },
+        {
+          "caller": "getTogetherCompat",
+          "callee": "TOGETHER_REASONING_ONLY_MODELS.has",
+          "lineNumber": 511
+        },
+        {
+          "caller": "getTogetherThinkingLevelMap",
+          "callee": "TOGETHER_REASONING_EFFORT_MODELS.has",
+          "lineNumber": 520
+        },
+        {
+          "caller": "getTogetherThinkingLevelMap",
+          "callee": "TOGETHER_TOGGLE_REASONING_EFFORT_MODELS.has",
+          "lineNumber": 521
+        },
+        {
+          "caller": "getTogetherThinkingLevelMap",
+          "callee": "TOGETHER_REASONING_ONLY_MODELS.has",
+          "lineNumber": 522
+        },
+        {
+          "caller": "supportsOpenAiXhigh",
+          "callee": "modelId.includes",
+          "lineNumber": 528
+        },
+        {
+          "caller": "supportsOpenAiXhigh",
+          "callee": "modelId.includes",
+          "lineNumber": 529
+        },
+        {
+          "caller": "supportsOpenAiXhigh",
+          "callee": "modelId.includes",
+          "lineNumber": 530
+        },
+        {
+          "caller": "supportsOpenAiXhigh",
+          "callee": "modelId.includes",
+          "lineNumber": 531
+        },
+        {
+          "caller": "supportsOpenAiXhigh",
+          "callee": "modelId.includes",
+          "lineNumber": 532
+        },
+        {
+          "caller": "supportsOpenAiMax",
+          "callee": "model.id.includes",
+          "lineNumber": 538
+        },
+        {
+          "caller": "isAnthropicAdaptiveThinkingModel",
+          "callee": "modelId.includes",
+          "lineNumber": 552
+        },
+        {
+          "caller": "isAnthropicAdaptiveThinkingModel",
+          "callee": "modelId.includes",
+          "lineNumber": 553
+        },
+        {
+          "caller": "isAnthropicAdaptiveThinkingModel",
+          "callee": "modelId.includes",
+          "lineNumber": 554
+        },
+        {
+          "caller": "isAnthropicAdaptiveThinkingModel",
+          "callee": "modelId.includes",
+          "lineNumber": 555
+        },
+        {
+          "caller": "isAnthropicAdaptiveThinkingModel",
+          "callee": "modelId.includes",
+          "lineNumber": 556
+        },
+        {
+          "caller": "isAnthropicAdaptiveThinkingModel",
+          "callee": "modelId.includes",
+          "lineNumber": 557
+        },
+        {
+          "caller": "isAnthropicAdaptiveThinkingModel",
+          "callee": "modelId.includes",
+          "lineNumber": 558
+        },
+        {
+          "caller": "isAnthropicAdaptiveThinkingModel",
+          "callee": "modelId.includes",
+          "lineNumber": 559
+        },
+        {
+          "caller": "isAnthropicAdaptiveThinkingModel",
+          "callee": "modelId.includes",
+          "lineNumber": 560
+        },
+        {
+          "caller": "isAnthropicAdaptiveThinkingModel",
+          "callee": "modelId.includes",
+          "lineNumber": 561
+        },
+        {
+          "caller": "isAnthropicAdaptiveThinkingModel",
+          "callee": "modelId.includes",
+          "lineNumber": 562
+        },
+        {
+          "caller": "isAnthropicAdaptiveThinkingModel",
+          "callee": "modelId.includes",
+          "lineNumber": 563
+        },
+        {
+          "caller": "isAnthropicAdaptiveThinkingModel",
+          "callee": "modelId.includes",
+          "lineNumber": 564
+        },
+        {
+          "caller": "isAnthropicTemperatureUnsupportedModel",
+          "callee": "modelId.toLowerCase",
+          "lineNumber": 569
+        },
+        {
+          "caller": "isAnthropicTemperatureUnsupportedModel",
+          "callee": "id.includes",
+          "lineNumber": 571
+        },
+        {
+          "caller": "isAnthropicTemperatureUnsupportedModel",
+          "callee": "id.includes",
+          "lineNumber": 572
+        },
+        {
+          "caller": "isAnthropicTemperatureUnsupportedModel",
+          "callee": "id.includes",
+          "lineNumber": 573
+        },
+        {
+          "caller": "isAnthropicTemperatureUnsupportedModel",
+          "callee": "id.includes",
+          "lineNumber": 574
+        },
+        {
+          "caller": "isAnthropicTemperatureUnsupportedModel",
+          "callee": "id.includes",
+          "lineNumber": 575
+        },
+        {
+          "caller": "isAnthropicTemperatureUnsupportedModel",
+          "callee": "id.includes",
+          "lineNumber": 576
+        },
+        {
+          "caller": "detectOpenAICompletionsCompat",
+          "callee": "baseUrl.includes",
+          "lineNumber": 621
+        },
+        {
+          "caller": "detectOpenAICompletionsCompat",
+          "callee": "baseUrl.includes",
+          "lineNumber": 622
+        },
+        {
+          "caller": "detectOpenAICompletionsCompat",
+          "callee": "baseUrl.includes",
+          "lineNumber": 624
+        },
+        {
+          "caller": "detectOpenAICompletionsCompat",
+          "callee": "baseUrl.includes",
+          "lineNumber": 624
+        },
+        {
+          "caller": "detectOpenAICompletionsCompat",
+          "callee": "baseUrl.includes",
+          "lineNumber": 625
+        },
+        {
+          "caller": "detectOpenAICompletionsCompat",
+          "callee": "baseUrl.includes",
+          "lineNumber": 626
+        },
+        {
+          "caller": "detectOpenAICompletionsCompat",
+          "callee": "baseUrl.includes",
+          "lineNumber": 627
+        },
+        {
+          "caller": "detectOpenAICompletionsCompat",
+          "callee": "baseUrl.includes",
+          "lineNumber": 628
+        },
+        {
+          "caller": "detectOpenAICompletionsCompat",
+          "callee": "baseUrl.includes",
+          "lineNumber": 629
+        },
+        {
+          "caller": "detectOpenAICompletionsCompat",
+          "callee": "baseUrl.includes",
+          "lineNumber": 630
+        },
+        {
+          "caller": "detectOpenAICompletionsCompat",
+          "callee": "TOGETHER_REASONING_ONLY_MODELS.has",
+          "lineNumber": 631
+        },
+        {
+          "caller": "detectOpenAICompletionsCompat",
+          "callee": "baseUrl.toLowerCase().includes",
+          "lineNumber": 632
+        },
+        {
+          "caller": "detectOpenAICompletionsCompat",
+          "callee": "baseUrl.toLowerCase",
+          "lineNumber": 632
+        },
+        {
+          "caller": "detectOpenAICompletionsCompat",
+          "callee": "baseUrl.includes",
+          "lineNumber": 637
+        },
+        {
+          "caller": "detectOpenAICompletionsCompat",
+          "callee": "baseUrl.includes",
+          "lineNumber": 639
+        },
+        {
+          "caller": "detectOpenAICompletionsCompat",
+          "callee": "baseUrl.includes",
+          "lineNumber": 641
+        },
+        {
+          "caller": "detectOpenAICompletionsCompat",
+          "callee": "baseUrl.includes",
+          "lineNumber": 646
+        },
+        {
+          "caller": "detectOpenAICompletionsCompat",
+          "callee": "baseUrl.includes",
+          "lineNumber": 652
+        },
+        {
+          "caller": "detectOpenAICompletionsCompat",
+          "callee": "baseUrl.includes",
+          "lineNumber": 661
+        },
+        {
+          "caller": "detectOpenAICompletionsCompat",
+          "callee": "model.id.startsWith",
+          "lineNumber": 663
+        },
+        {
+          "caller": "detectOpenAICompletionsCompat",
+          "callee": "model.id.startsWith",
+          "lineNumber": 663
+        },
+        {
+          "caller": "detectOpenAICompletionsCompat",
+          "callee": "/^~?anthropic\\//.test",
+          "lineNumber": 665
+        },
+        {
+          "caller": "isPlainEmptyObject",
+          "callee": "Array.isArray",
+          "lineNumber": 710
+        },
+        {
+          "caller": "isPlainEmptyObject",
+          "callee": "Object.keys",
+          "lineNumber": 710
+        },
+        {
+          "caller": "openAICompletionsCompatDelta",
+          "callee": "Object.entries",
+          "lineNumber": 715
+        },
+        {
+          "caller": "openAICompletionsCompatDelta",
+          "callee": "isPlainEmptyObject",
+          "lineNumber": 717
+        },
+        {
+          "caller": "openAICompletionsCompatDelta",
+          "callee": "isPlainEmptyObject",
+          "lineNumber": 717
+        },
+        {
+          "caller": "applyOpenAICompletionsCompatMetadata",
+          "callee": "openAICompletionsCompatDelta",
+          "lineNumber": 731
+        },
+        {
+          "caller": "applyOpenAICompletionsCompatMetadata",
+          "callee": "detectOpenAICompletionsCompat",
+          "lineNumber": 731
+        },
+        {
+          "caller": "applyOpenAICompletionsCompatMetadata",
+          "callee": "Object.keys",
+          "lineNumber": 733
+        },
+        {
+          "caller": "applyStrictToolCompatMetadata",
+          "callee": "mergeAnthropicMessagesCompat",
+          "lineNumber": 745
+        },
+        {
+          "caller": "applyOpenAIGrammarToolCompatMetadata",
+          "callee": "OPENAI_GRAMMAR_TOOL_APIS.has",
+          "lineNumber": 768
+        },
+        {
+          "caller": "applyOpenAIGrammarToolCompatMetadata",
+          "callee": "OPENAI_GRAMMAR_TOOL_PROVIDERS.has",
+          "lineNumber": 768
+        },
+        {
+          "caller": "applyOpenAIGrammarToolCompatMetadata",
+          "callee": "/^gpt-(\\d+)/.exec",
+          "lineNumber": 769
+        },
+        {
+          "caller": "applyOpenAIGrammarToolCompatMetadata",
+          "callee": "Number",
+          "lineNumber": 770
+        },
+        {
+          "caller": "applyOpenAIToolSearchMetadata",
+          "callee": "OPENAI_TOOL_SEARCH_MODEL_IDS.has",
+          "lineNumber": 777
+        },
+        {
+          "caller": "applyOpenAIToolSearchMetadata",
+          "callee": "OPENAI_ADDITIONAL_TOOLS_MODEL_IDS.has",
+          "lineNumber": 779
+        },
+        {
+          "caller": "applyOpenAIToolSearchMetadata",
+          "callee": "OPENAI_CODEX_ADDITIONAL_TOOLS_MODEL_IDS.has",
+          "lineNumber": 780
+        },
+        {
+          "caller": "isGemini3ProModel",
+          "callee": "/gemini-3(?:\\.\\d+)?-pro/.test",
+          "lineNumber": 801
+        },
+        {
+          "caller": "isGemini3ProModel",
+          "callee": "modelId.toLowerCase",
+          "lineNumber": 801
+        },
+        {
+          "caller": "isGemini3FlashModel",
+          "callee": "modelId.toLowerCase",
+          "lineNumber": 805
+        },
+        {
+          "caller": "isGemini3FlashModel",
+          "callee": "/gemini-3(?:\\.\\d+)?-flash/.test",
+          "lineNumber": 806
+        },
+        {
+          "caller": "isGemma4Model",
+          "callee": "/gemma-?4/.test",
+          "lineNumber": 810
+        },
+        {
+          "caller": "isGemma4Model",
+          "callee": "modelId.toLowerCase",
+          "lineNumber": 810
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "model.id.startsWith",
+          "lineNumber": 816
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 818
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "model.id.startsWith",
+          "lineNumber": 820
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 821
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "OPENAI_RESPONSES_NONE_REASONING_MODELS.has",
+          "lineNumber": 826
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 828
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 831
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "supportsOpenAiXhigh",
+          "lineNumber": 833
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 834
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "supportsOpenAiMax",
+          "lineNumber": 836
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 837
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 840
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "model.id.endsWith",
+          "lineNumber": 842
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 843
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "model.id.includes",
+          "lineNumber": 849
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "model.id.includes",
+          "lineNumber": 850
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "model.id.includes",
+          "lineNumber": 851
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "model.id.includes",
+          "lineNumber": 852
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 854
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "model.id.includes",
+          "lineNumber": 857
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "model.id.includes",
+          "lineNumber": 858
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "model.id.includes",
+          "lineNumber": 859
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "model.id.includes",
+          "lineNumber": 860
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "model.id.includes",
+          "lineNumber": 861
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "model.id.includes",
+          "lineNumber": 862
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "model.id.includes",
+          "lineNumber": 863
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "model.id.includes",
+          "lineNumber": 864
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 866
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "model.id.includes",
+          "lineNumber": 868
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 869
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "isAnthropicAdaptiveThinkingModel",
+          "lineNumber": 871
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeAnthropicMessagesCompat",
+          "lineNumber": 872
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "isAnthropicTemperatureUnsupportedModel",
+          "lineNumber": 874
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeAnthropicMessagesCompat",
+          "lineNumber": 875
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "model.id.includes",
+          "lineNumber": 877
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 878
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "isGoogleThinkingApi",
+          "lineNumber": 887
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "isGemini3ProModel",
+          "lineNumber": 887
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 888
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "isGoogleThinkingApi",
+          "lineNumber": 890
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "isGemini3FlashModel",
+          "lineNumber": 890
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 891
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "isGoogleThinkingApi",
+          "lineNumber": 893
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "isGemma4Model",
+          "lineNumber": 893
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 894
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 897
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "supportsOpenAiXhigh",
+          "lineNumber": 899
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 900
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 909
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "model.id.startsWith",
+          "lineNumber": 911
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 916
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 919
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "model.id.includes",
+          "lineNumber": 921
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 922
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 925
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 929
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 933
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 937
+        },
+        {
+          "caller": "applyThinkingLevelMetadata",
+          "callee": "mergeThinkingLevelMap",
+          "lineNumber": 942
+        },
+        {
+          "caller": "getAnthropicMessagesCompat",
+          "callee": "EAGER_TOOL_INPUT_STREAMING_UNSUPPORTED_ANTHROPIC_MODELS.has",
+          "lineNumber": 949
+        },
+        {
+          "caller": "getAnthropicMessagesCompat",
+          "callee": "provider.startsWith",
+          "lineNumber": 952
+        },
+        {
+          "caller": "getAnthropicMessagesCompat",
+          "callee": "Object.keys",
+          "lineNumber": 955
+        },
+        {
+          "caller": "getBedrockBaseUrl",
+          "callee": "modelId.startsWith",
+          "lineNumber": 959
+        },
+        {
+          "caller": "normalizeNvidiaModelId",
+          "callee": "modelId.toLowerCase().replaceAll",
+          "lineNumber": 965
+        },
+        {
+          "caller": "normalizeNvidiaModelId",
+          "callee": "modelId.toLowerCase",
+          "lineNumber": 965
+        },
+        {
+          "caller": "roundCost",
+          "callee": "Number",
+          "lineNumber": 969
+        },
+        {
+          "caller": "roundCost",
+          "callee": "value.toFixed",
+          "lineNumber": 969
+        },
+        {
+          "caller": "getModelsDevCost",
+          "callee": "cost?.tiers?.flatMap",
+          "lineNumber": 973
+        },
+        {
+          "caller": "fetchNvidiaNimModelIds",
+          "callee": "console.log",
+          "lineNumber": 998
+        },
+        {
+          "caller": "fetchNvidiaNimModelIds",
+          "callee": "fetch",
+          "lineNumber": 999
+        },
+        {
+          "caller": "fetchNvidiaNimModelIds",
+          "callee": "response.json",
+          "lineNumber": 1001
+        },
+        {
+          "caller": "fetchNvidiaNimModelIds",
+          "callee": "modelIds.set",
+          "lineNumber": 1005
+        },
+        {
+          "caller": "fetchNvidiaNimModelIds",
+          "callee": "modelIds.set",
+          "lineNumber": 1006
+        },
+        {
+          "caller": "fetchNvidiaNimModelIds",
+          "callee": "normalizeNvidiaModelId",
+          "lineNumber": 1006
+        },
+        {
+          "caller": "fetchNvidiaNimModelIds",
+          "callee": "console.log",
+          "lineNumber": 1009
+        },
+        {
+          "caller": "fetchNvidiaNimModelIds",
+          "callee": "console.error",
+          "lineNumber": 1012
+        },
+        {
+          "caller": "fetchOpenRouterModels",
+          "callee": "console.log",
+          "lineNumber": 1020
+        },
+        {
+          "caller": "fetchOpenRouterModels",
+          "callee": "fetch",
+          "lineNumber": 1021
+        },
+        {
+          "caller": "fetchOpenRouterModels",
+          "callee": "response.json",
+          "lineNumber": 1023
+        },
+        {
+          "caller": "fetchOpenRouterModels",
+          "callee": "model.supported_parameters?.includes",
+          "lineNumber": 1029
+        },
+        {
+          "caller": "fetchOpenRouterModels",
+          "callee": "model.architecture?.modality?.includes",
+          "lineNumber": 1039
+        },
+        {
+          "caller": "fetchOpenRouterModels",
+          "callee": "input.push",
+          "lineNumber": 1040
+        },
+        {
+          "caller": "fetchOpenRouterModels",
+          "callee": "roundCost",
+          "lineNumber": 1044
+        },
+        {
+          "caller": "fetchOpenRouterModels",
+          "callee": "parseFloat",
+          "lineNumber": 1044
+        },
+        {
+          "caller": "fetchOpenRouterModels",
+          "callee": "roundCost",
+          "lineNumber": 1045
+        },
+        {
+          "caller": "fetchOpenRouterModels",
+          "callee": "parseFloat",
+          "lineNumber": 1045
+        },
+        {
+          "caller": "fetchOpenRouterModels",
+          "callee": "roundCost",
+          "lineNumber": 1046
+        },
+        {
+          "caller": "fetchOpenRouterModels",
+          "callee": "parseFloat",
+          "lineNumber": 1046
+        },
+        {
+          "caller": "fetchOpenRouterModels",
+          "callee": "roundCost",
+          "lineNumber": 1047
+        },
+        {
+          "caller": "fetchOpenRouterModels",
+          "callee": "parseFloat",
+          "lineNumber": 1047
+        },
+        {
+          "caller": "fetchOpenRouterModels",
+          "callee": "model.supported_parameters?.includes",
+          "lineNumber": 1057
+        },
+        {
+          "caller": "fetchOpenRouterModels",
+          "callee": "models.push",
+          "lineNumber": 1068
+        },
+        {
+          "caller": "fetchOpenRouterModels",
+          "callee": "console.log",
+          "lineNumber": 1071
+        },
+        {
+          "caller": "fetchOpenRouterModels",
+          "callee": "console.error",
+          "lineNumber": 1074
+        },
+        {
+          "caller": "fetchAiGatewayModels",
+          "callee": "console.log",
+          "lineNumber": 1082
+        },
+        {
+          "caller": "fetchAiGatewayModels",
+          "callee": "fetch",
+          "lineNumber": 1083
+        },
+        {
+          "caller": "fetchAiGatewayModels",
+          "callee": "response.json",
+          "lineNumber": 1085
+        },
+        {
+          "caller": "toNumber",
+          "callee": "Number.isFinite",
+          "lineNumber": 1090
+        },
+        {
+          "caller": "toNumber",
+          "callee": "parseFloat",
+          "lineNumber": 1092
+        },
+        {
+          "caller": "toNumber",
+          "callee": "Number.isFinite",
+          "lineNumber": 1093
+        },
+        {
+          "caller": "fetchAiGatewayModels",
+          "callee": "Array.isArray",
+          "lineNumber": 1096
+        },
+        {
+          "caller": "fetchAiGatewayModels",
+          "callee": "Array.isArray",
+          "lineNumber": 1098
+        },
+        {
+          "caller": "fetchAiGatewayModels",
+          "callee": "tags.includes",
+          "lineNumber": 1100
+        },
+        {
+          "caller": "fetchAiGatewayModels",
+          "callee": "tags.includes",
+          "lineNumber": 1103
+        },
+        {
+          "caller": "fetchAiGatewayModels",
+          "callee": "input.push",
+          "lineNumber": 1104
+        },
+        {
+          "caller": "fetchAiGatewayModels",
+          "callee": "roundCost",
+          "lineNumber": 1107
+        },
+        {
+          "caller": "fetchAiGatewayModels",
+          "callee": "toNumber",
+          "lineNumber": 1107
+        },
+        {
+          "caller": "fetchAiGatewayModels",
+          "callee": "roundCost",
+          "lineNumber": 1108
+        },
+        {
+          "caller": "fetchAiGatewayModels",
+          "callee": "toNumber",
+          "lineNumber": 1108
+        },
+        {
+          "caller": "fetchAiGatewayModels",
+          "callee": "roundCost",
+          "lineNumber": 1109
+        },
+        {
+          "caller": "fetchAiGatewayModels",
+          "callee": "toNumber",
+          "lineNumber": 1109
+        },
+        {
+          "caller": "fetchAiGatewayModels",
+          "callee": "roundCost",
+          "lineNumber": 1110
+        },
+        {
+          "caller": "fetchAiGatewayModels",
+          "callee": "toNumber",
+          "lineNumber": 1110
+        },
+        {
+          "caller": "fetchAiGatewayModels",
+          "callee": "models.push",
+          "lineNumber": 1112
+        },
+        {
+          "caller": "fetchAiGatewayModels",
+          "callee": "tags.includes",
+          "lineNumber": 1118
+        },
+        {
+          "caller": "fetchAiGatewayModels",
+          "callee": "console.log",
+          "lineNumber": 1131
+        },
+        {
+          "caller": "fetchAiGatewayModels",
+          "callee": "console.error",
+          "lineNumber": 1134
+        },
+        {
+          "caller": "processBasetenModels",
+          "callee": "Object.entries",
+          "lineNumber": 1188
+        },
+        {
+          "caller": "processBasetenModels",
+          "callee": "reasoningOptions.some",
+          "lineNumber": 1194
+        },
+        {
+          "caller": "processBasetenModels",
+          "callee": "reasoningOptions.some",
+          "lineNumber": 1195
+        },
+        {
+          "caller": "processBasetenModels",
+          "callee": "getEffortThinkingLevelMap",
+          "lineNumber": 1208
+        },
+        {
+          "caller": "processBasetenModels",
+          "callee": "models.push",
+          "lineNumber": 1210
+        },
+        {
+          "caller": "processBasetenModels",
+          "callee": "model.modalities?.input?.includes",
+          "lineNumber": 1218
+        },
+        {
+          "caller": "processFireworksModels",
+          "callee": "Object.entries",
+          "lineNumber": 1257
+        },
+        {
+          "caller": "processFireworksModels",
+          "callee": "model.modalities?.input?.includes",
+          "lineNumber": 1260
+        },
+        {
+          "caller": "processFireworksModels",
+          "callee": "modelId.includes",
+          "lineNumber": 1279
+        },
+        {
+          "caller": "processFireworksModels",
+          "callee": "models.push",
+          "lineNumber": 1280
+        },
+        {
+          "caller": "processFireworksModels",
+          "callee": "modelId.includes",
+          "lineNumber": 1286
+        },
+        {
+          "caller": "processFireworksModels",
+          "callee": "models.push",
+          "lineNumber": 1287
+        },
+        {
+          "caller": "processFireworksModels",
+          "callee": "models.push",
+          "lineNumber": 1294
+        },
+        {
+          "caller": "processFireworksModels",
+          "callee": "recordModelsDevReasoningOptions",
+          "lineNumber": 1306
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "console.log",
+          "lineNumber": 1314
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "fetch",
+          "lineNumber": 1315
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "response.json",
+          "lineNumber": 1317
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "fetchNvidiaNimModelIds",
+          "lineNumber": 1320
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "Object.entries",
+          "lineNumber": 1324
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "BEDROCK_INFERENCE_PROFILE_ONLY_MODEL_IDS.has",
+          "lineNumber": 1327
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "id.startsWith",
+          "lineNumber": 1331
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "id.startsWith",
+          "lineNumber": 1336
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "models.push",
+          "lineNumber": 1341
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "getBedrockBaseUrl",
+          "lineNumber": 1346
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "m.modalities?.input?.includes",
+          "lineNumber": 1348
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "recordModelsDevReasoningOptions",
+          "lineNumber": 1359
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "Object.entries",
+          "lineNumber": 1365
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "models.push",
+          "lineNumber": 1369
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "m.modalities?.input?.includes",
+          "lineNumber": 1376
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "recordModelsDevReasoningOptions",
+          "lineNumber": 1386
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "Object.entries",
+          "lineNumber": 1392
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "models.push",
+          "lineNumber": 1403
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "source.modalities?.input?.includes",
+          "lineNumber": 1410
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "recordModelsDevReasoningOptions",
+          "lineNumber": 1420
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "Object.entries",
+          "lineNumber": 1428
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "modelId.startsWith",
+          "lineNumber": 1431
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "models.push",
+          "lineNumber": 1445
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "source.modalities?.input?.includes",
+          "lineNumber": 1452
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "recordModelsDevReasoningOptions",
+          "lineNumber": 1462
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "Object.entries",
+          "lineNumber": 1468
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "MODELS_DEV_OPENAI_UNSUPPORTED_MODEL_IDS.has",
+          "lineNumber": 1472
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "models.push",
+          "lineNumber": 1474
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "m.modalities?.input?.includes",
+          "lineNumber": 1481
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "recordModelsDevReasoningOptions",
+          "lineNumber": 1491
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "Object.entries",
+          "lineNumber": 1497
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "models.push",
+          "lineNumber": 1501
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "m.modalities?.input?.includes",
+          "lineNumber": 1508
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "recordModelsDevReasoningOptions",
+          "lineNumber": 1518
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "Object.entries",
+          "lineNumber": 1524
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "models.push",
+          "lineNumber": 1528
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "m.modalities?.input?.includes",
+          "lineNumber": 1535
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "recordModelsDevReasoningOptions",
+          "lineNumber": 1545
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "Object.entries",
+          "lineNumber": 1551
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "models.push",
+          "lineNumber": 1555
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "m.modalities?.input?.includes",
+          "lineNumber": 1562
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "recordModelsDevReasoningOptions",
+          "lineNumber": 1573
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "Object.entries",
+          "lineNumber": 1579
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "prefixedId.indexOf",
+          "lineNumber": 1583
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "prefixedId.slice",
+          "lineNumber": 1585
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "prefixedId.slice",
+          "lineNumber": 1586
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "models.push",
+          "lineNumber": 1612
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "m.modalities?.input?.includes",
+          "lineNumber": 1619
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "recordModelsDevReasoningOptions",
+          "lineNumber": 1630
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "Object.entries",
+          "lineNumber": 1636
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "models.push",
+          "lineNumber": 1641
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "m.modalities?.input?.includes",
+          "lineNumber": 1649
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "recordModelsDevReasoningOptions",
+          "lineNumber": 1659
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "Object.entries",
+          "lineNumber": 1671
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "m.modalities?.input?.includes",
+          "lineNumber": 1674
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "models.push",
+          "lineNumber": 1678
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "ZAI_TOOL_STREAM_UNSUPPORTED_MODELS.has",
+          "lineNumber": 1697
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "recordModelsDevReasoningOptions",
+          "lineNumber": 1702
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "Object.entries",
+          "lineNumber": 1709
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "models.push",
+          "lineNumber": 1713
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "m.modalities?.input?.includes",
+          "lineNumber": 1720
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "roundCost",
+          "lineNumber": 1724
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "recordModelsDevReasoningOptions",
+          "lineNumber": 1730
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "Object.entries",
+          "lineNumber": 1736
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "models.push",
+          "lineNumber": 1740
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "m.modalities?.input?.includes",
+          "lineNumber": 1747
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "recordModelsDevReasoningOptions",
+          "lineNumber": 1760
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "models.push",
+          "lineNumber": 1764
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "processFireworksModels",
+          "lineNumber": 1764
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "Object.entries",
+          "lineNumber": 1768
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "m.modalities?.input?.includes",
+          "lineNumber": 1771
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "m.modalities?.output?.includes",
+          "lineNumber": 1772
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "nvidiaNimModelIds.get",
+          "lineNumber": 1774
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "nvidiaNimModelIds.get",
+          "lineNumber": 1774
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "normalizeNvidiaModelId",
+          "lineNumber": 1774
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "NVIDIA_NIM_UNSUPPORTED_MODELS.has",
+          "lineNumber": 1776
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "models.push",
+          "lineNumber": 1778
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "m.modalities.input.includes",
+          "lineNumber": 1786
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "recordModelsDevReasoningOptions",
+          "lineNumber": 1797
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "Object.entries",
+          "lineNumber": 1804
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "getTogetherThinkingLevelMap",
+          "lineNumber": 1810
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "models.push",
+          "lineNumber": 1811
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "m.modalities?.input?.includes",
+          "lineNumber": 1819
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "getTogetherCompat",
+          "lineNumber": 1826
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "recordModelsDevReasoningOptions",
+          "lineNumber": 1830
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "models.push",
+          "lineNumber": 1834
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "processBasetenModels",
+          "lineNumber": 1834
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "Object.entries",
+          "lineNumber": 1850
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "OPENCODE_OPENAI_COMPLETIONS_LONG_CACHE_RETENTION_UNSUPPORTED_MODELS.has",
+          "lineNumber": 1914
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "models.push",
+          "lineNumber": 1922
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "m.modalities?.input?.includes",
+          "lineNumber": 1929
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "recordModelsDevReasoningOptions",
+          "lineNumber": 1940
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "Object.entries",
+          "lineNumber": 1946
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "/^claude-(haiku|sonnet|opus)-[45]([.\\-]|$)/.test",
+          "lineNumber": 1952
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "modelId.startsWith",
+          "lineNumber": 1957
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "modelId.startsWith",
+          "lineNumber": 1958
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "modelId.startsWith",
+          "lineNumber": 1959
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "getAnthropicMessagesCompat",
+          "lineNumber": 1968
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "m.modalities?.input?.includes",
+          "lineNumber": 1977
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "getModelsDevCost",
+          "lineNumber": 1978
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "models.push",
+          "lineNumber": 1993
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "recordModelsDevReasoningOptions",
+          "lineNumber": 1994
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "Object.entries",
+          "lineNumber": 2006
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "models.push",
+          "lineNumber": 2010
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "m.modalities?.input?.includes",
+          "lineNumber": 2018
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "recordModelsDevReasoningOptions",
+          "lineNumber": 2028
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "Object.prototype.hasOwnProperty.call",
+          "lineNumber": 2036
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "Object.entries",
+          "lineNumber": 2040
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "kimiAliases.has",
+          "lineNumber": 2045
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "kimiAliases.has",
+          "lineNumber": 2047
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "kimiAliases.has",
+          "lineNumber": 2048
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "models.push",
+          "lineNumber": 2053
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "m.modalities?.input?.includes",
+          "lineNumber": 2066
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "recordModelsDevReasoningOptions",
+          "lineNumber": 2076
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "getMoonshotProviderModels",
+          "lineNumber": 2098
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "getMoonshotProviderModels",
+          "lineNumber": 2099
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "Object.entries",
+          "lineNumber": 2103
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "models.push",
+          "lineNumber": 2114
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "m.modalities?.input?.includes",
+          "lineNumber": 2121
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "recordModelsDevReasoningOptions",
+          "lineNumber": 2132
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "Object.entries",
+          "lineNumber": 2167
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "models.push",
+          "lineNumber": 2171
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "m.modalities?.input?.includes",
+          "lineNumber": 2179
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "recordModelsDevReasoningOptions",
+          "lineNumber": 2189
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "Object.entries",
+          "lineNumber": 2229
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "QWEN_TOKEN_PLAN_EXCLUDED_MODEL_IDS.has",
+          "lineNumber": 2232
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "modelIds.has",
+          "lineNumber": 2233
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "QWEN_TOKEN_PLAN_REASONING_EFFORT_UNSUPPORTED_MODEL_IDS.has",
+          "lineNumber": 2234
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "models.push",
+          "lineNumber": 2236
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "m.modalities?.input?.includes",
+          "lineNumber": 2254
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "emittedModelIds?.add",
+          "lineNumber": 2264
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "recordModelsDevReasoningOptions",
+          "lineNumber": 2265
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "assertExactModelIds",
+          "lineNumber": 2269
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "console.log",
+          "lineNumber": 2273
+        },
+        {
+          "caller": "loadModelsDevData",
+          "callee": "console.error",
+          "lineNumber": 2276
+        },
+        {
+          "caller": "generateModels",
+          "callee": "loadModelsDevData",
+          "lineNumber": 2287
+        },
+        {
+          "caller": "generateModels",
+          "callee": "fetchOpenRouterModels",
+          "lineNumber": 2288
+        },
+        {
+          "caller": "generateModels",
+          "callee": "fetchAiGatewayModels",
+          "lineNumber": 2289
+        },
+        {
+          "caller": "generateModels",
+          "callee": "[...modelsDevModels, ...openRouterModels, ...aiGatewayModels].filter",
+          "lineNumber": 2292
+        },
+        {
+          "caller": "generateModels",
+          "callee": "XAI_BUILTIN_EXCLUDED_MODEL_IDS.has",
+          "lineNumber": 2294
+        },
+        {
+          "caller": "generateModels",
+          "callee": "GITHUB_COPILOT_EXTENDED_CONTEXT_MODELS.has",
+          "lineNumber": 2300
+        },
+        {
+          "caller": "generateModels",
+          "callee": "OPENAI_SHORT_CONTEXT_CAPPED_MODEL_IDS.has",
+          "lineNumber": 2329
+        },
+        {
+          "caller": "generateModels",
+          "callee": "OPENAI_LONG_CONTEXT_PRICING_MODEL_IDS.has",
+          "lineNumber": 2333
+        },
+        {
+          "caller": "generateModels",
+          "callee": "withOpenAiLongContextPricing",
+          "lineNumber": 2335
+        },
+        {
+          "caller": "generateModels",
+          "callee": "withOpenAiLongContextPricing",
+          "lineNumber": 2340
+        },
+        {
+          "caller": "generateModels",
+          "callee": "OPENROUTER_KIMI_K3_MODEL_IDS.has",
+          "lineNumber": 2349
+        },
+        {
+          "caller": "generateModels",
+          "callee": "candidate.id.startsWith",
+          "lineNumber": 2361
+        },
+        {
+          "caller": "generateModels",
+          "callee": "withOpenAiLongContextPricing",
+          "lineNumber": 2385
+        },
+        {
+          "caller": "generateModels",
+          "callee": "withOpenAiLongContextPricing",
+          "lineNumber": 2397
+        },
+        {
+          "caller": "generateModels",
+          "callee": "withOpenAiLongContextPricing",
+          "lineNumber": 2409
+        },
+        {
+          "caller": "generateModels",
+          "callee": "allModels.some",
+          "lineNumber": 2432
+        },
+        {
+          "caller": "generateModels",
+          "callee": "allModels.push",
+          "lineNumber": 2433
+        },
+        {
+          "caller": "generateModels",
+          "callee": "allModels.push",
+          "lineNumber": 2479
+        },
+        {
+          "caller": "generateModels",
+          "callee": "allModels.push",
+          "lineNumber": 2529
+        },
+        {
+          "caller": "generateModels",
+          "callee": "candidate.id.includes",
+          "lineNumber": 2534
+        },
+        {
+          "caller": "generateModels",
+          "callee": "QWEN_TOKEN_PLAN_PROVIDER_IDS.has",
+          "lineNumber": 2535
+        },
+        {
+          "caller": "generateModels",
+          "callee": "minimaxDirectSupportedIds.has",
+          "lineNumber": 2556
+        },
+        {
+          "caller": "generateModels",
+          "callee": "allModels.splice",
+          "lineNumber": 2558
+        },
+        {
+          "caller": "generateModels",
+          "callee": "withOpenAiLongContextPricing",
+          "lineNumber": 2591
+        },
+        {
+          "caller": "generateModels",
+          "callee": "withOpenAiLongContextPricing",
+          "lineNumber": 2615
+        },
+        {
+          "caller": "generateModels",
+          "callee": "withOpenAiLongContextPricing",
+          "lineNumber": 2627
+        },
+        {
+          "caller": "generateModels",
+          "callee": "withOpenAiLongContextPricing",
+          "lineNumber": 2639
+        },
+        {
+          "caller": "generateModels",
+          "callee": "withOpenAiLongContextPricing",
+          "lineNumber": 2651
+        },
+        {
+          "caller": "generateModels",
+          "callee": "allModels.push",
+          "lineNumber": 2656
+        },
+        {
+          "caller": "generateModels",
+          "callee": "allModels.some",
+          "lineNumber": 2659
+        },
+        {
+          "caller": "generateModels",
+          "callee": "allModels.push",
+          "lineNumber": 2660
+        },
+        {
+          "caller": "generateModels",
+          "callee": "allModels.some",
+          "lineNumber": 2680
+        },
+        {
+          "caller": "generateModels",
+          "callee": "allModels.push",
+          "lineNumber": 2681
+        },
+        {
+          "caller": "generateModels",
+          "callee": "allModels.some",
+          "lineNumber": 2706
+        },
+        {
+          "caller": "generateModels",
+          "callee": "allModels.push",
+          "lineNumber": 2707
+        },
+        {
+          "caller": "generateModels",
+          "callee": "allModels\n\t\t.filter((model) => model.provider === \"openai\" && model.api === \"openai-responses\")\n\t\t.map",
+          "lineNumber": 2737
+        },
+        {
+          "caller": "generateModels",
+          "callee": "allModels\n\t\t.filter",
+          "lineNumber": 2737
+        },
+        {
+          "caller": "generateModels",
+          "callee": "allModels.push",
+          "lineNumber": 2752
+        },
+        {
+          "caller": "generateModels",
+          "callee": "applyOpenAICompletionsCompatMetadata",
+          "lineNumber": 2755
+        },
+        {
+          "caller": "generateModels",
+          "callee": "applyModelsDevReasoningOptionMetadata",
+          "lineNumber": 2756
+        },
+        {
+          "caller": "generateModels",
+          "callee": "applyThinkingLevelMetadata",
+          "lineNumber": 2757
+        },
+        {
+          "caller": "generateModels",
+          "callee": "applyStrictToolCompatMetadata",
+          "lineNumber": 2758
+        },
+        {
+          "caller": "generateModels",
+          "callee": "applyOpenAIGrammarToolCompatMetadata",
+          "lineNumber": 2759
+        },
+        {
+          "caller": "generateModels",
+          "callee": "applyOpenAIToolSearchMetadata",
+          "lineNumber": 2760
+        },
+        {
+          "caller": "generateModels",
+          "callee": "applyOpenAIExplicitPromptCacheMetadata",
+          "lineNumber": 2761
+        },
+        {
+          "caller": "generateModels",
+          "callee": "Object.keys(providers).sort",
+          "lineNumber": 2777
+        },
+        {
+          "caller": "generateModels",
+          "callee": "Object.keys",
+          "lineNumber": 2777
+        },
+        {
+          "caller": "generateModels",
+          "callee": "Object.keys(providers[providerId]).sort",
+          "lineNumber": 2781
+        },
+        {
+          "caller": "generateModels",
+          "callee": "Object.keys",
+          "lineNumber": 2781
+        },
+        {
+          "caller": "serializeJson",
+          "callee": "JSON.stringify",
+          "lineNumber": 2786
+        },
+        {
+          "caller": "writeJson",
+          "callee": "writeFileSync",
+          "lineNumber": 2787
+        },
+        {
+          "caller": "writeJson",
+          "callee": "serializeJson",
+          "lineNumber": 2787
+        },
+        {
+          "caller": "generateModels",
+          "callee": "readModelDataProviderIds",
+          "lineNumber": 2789
+        },
+        {
+          "caller": "generateModels",
+          "callee": "generatedDataProviderIds.filter",
+          "lineNumber": 2791
+        },
+        {
+          "caller": "generateModels",
+          "callee": "missingProviderIds.join",
+          "lineNumber": 2793
+        },
+        {
+          "caller": "generateModels",
+          "callee": "Array.from(new Set(Object.values(models).map((model) => model.api))).sort",
+          "lineNumber": 2803
+        },
+        {
+          "caller": "generateModels",
+          "callee": "Array.from",
+          "lineNumber": 2803
+        },
+        {
+          "caller": "generateModels",
+          "callee": "Object.values(models).map",
+          "lineNumber": 2803
+        },
+        {
+          "caller": "generateModels",
+          "callee": "Object.values",
+          "lineNumber": 2803
+        },
+        {
+          "caller": "generateModels",
+          "callee": "Object.entries",
+          "lineNumber": 2806
+        },
+        {
+          "caller": "generateModels",
+          "callee": "new Date().toISOString",
+          "lineNumber": 2814
+        },
+        {
+          "caller": "generateModels",
+          "callee": "join",
+          "lineNumber": 2818
+        },
+        {
+          "caller": "generateModels",
+          "callee": "join",
+          "lineNumber": 2819
+        },
+        {
+          "caller": "generateModels",
+          "callee": "mkdtempSync",
+          "lineNumber": 2820
+        },
+        {
+          "caller": "generateModels",
+          "callee": "join",
+          "lineNumber": 2820
+        },
+        {
+          "caller": "generateModels",
+          "callee": "join",
+          "lineNumber": 2821
+        },
+        {
+          "caller": "generateModels",
+          "callee": "join",
+          "lineNumber": 2822
+        },
+        {
+          "caller": "generateModels",
+          "callee": "mkdirSync",
+          "lineNumber": 2825
+        },
+        {
+          "caller": "generateModels",
+          "callee": "serializeJson",
+          "lineNumber": 2829
+        },
+        {
+          "caller": "generateModels",
+          "callee": "writeFileSync",
+          "lineNumber": 2831
+        },
+        {
+          "caller": "generateModels",
+          "callee": "join",
+          "lineNumber": 2831
+        },
+        {
+          "caller": "generateModels",
+          "callee": "writeJson",
+          "lineNumber": 2833
+        },
+        {
+          "caller": "generateModels",
+          "callee": "join",
+          "lineNumber": 2834
+        },
+        {
+          "caller": "generateModels",
+          "callee": "createModelDataManifest",
+          "lineNumber": 2835
+        },
+        {
+          "caller": "generateModels",
+          "callee": "validateModelDataDirectory",
+          "lineNumber": 2837
+        },
+        {
+          "caller": "generateModels",
+          "callee": "readdirSync(providersDir)\n\t\t\t\t\t\t.filter((entry) => entry.endsWith(\".models.ts\"))\n\t\t\t\t\t\t.map",
+          "lineNumber": 2841
+        },
+        {
+          "caller": "generateModels",
+          "callee": "readdirSync(providersDir)\n\t\t\t\t\t\t.filter",
+          "lineNumber": 2841
+        },
+        {
+          "caller": "generateModels",
+          "callee": "readdirSync",
+          "lineNumber": 2841
+        },
+        {
+          "caller": "generateModels",
+          "callee": "entry.endsWith",
+          "lineNumber": 2842
+        },
+        {
+          "caller": "generateModels",
+          "callee": "readFileSync",
+          "lineNumber": 2843
+        },
+        {
+          "caller": "generateModels",
+          "callee": "join",
+          "lineNumber": 2843
+        },
+        {
+          "caller": "generateModels",
+          "callee": "join",
+          "lineNumber": 2845
+        },
+        {
+          "caller": "generateModels",
+          "callee": "readFileSync",
+          "lineNumber": 2846
+        },
+        {
+          "caller": "generateModels",
+          "callee": "readdirSync",
+          "lineNumber": 2848
+        },
+        {
+          "caller": "generateModels",
+          "callee": "entry.endsWith",
+          "lineNumber": 2849
+        },
+        {
+          "caller": "generateModels",
+          "callee": "rmSync",
+          "lineNumber": 2849
+        },
+        {
+          "caller": "generateModels",
+          "callee": "join",
+          "lineNumber": 2849
+        },
+        {
+          "caller": "generateModels",
+          "callee": "writeFileSync",
+          "lineNumber": 2852
+        },
+        {
+          "caller": "generateModels",
+          "callee": "join",
+          "lineNumber": 2852
+        },
+        {
+          "caller": "generateModels",
+          "callee": "writeFileSync",
+          "lineNumber": 2854
+        },
+        {
+          "caller": "catalogConstName",
+          "callee": "providerId.toUpperCase().replace",
+          "lineNumber": 2862
+        },
+        {
+          "caller": "catalogConstName",
+          "callee": "providerId.toUpperCase",
+          "lineNumber": 2862
+        },
+        {
+          "caller": "generateModels",
+          "callee": "catalogConstName",
+          "lineNumber": 2868
+        },
+        {
+          "caller": "generateModels",
+          "callee": "JSON.stringify",
+          "lineNumber": 2868
+        },
+        {
+          "caller": "generateModels",
+          "callee": "JSON.stringify",
+          "lineNumber": 2869
+        },
+        {
+          "caller": "generateModels",
+          "callee": "generatedShardFiles.add",
+          "lineNumber": 2871
+        },
+        {
+          "caller": "generateModels",
+          "callee": "writeFileSync",
+          "lineNumber": 2872
+        },
+        {
+          "caller": "generateModels",
+          "callee": "join",
+          "lineNumber": 2872
+        },
+        {
+          "caller": "generateModels",
+          "callee": "readdirSync",
+          "lineNumber": 2874
+        },
+        {
+          "caller": "generateModels",
+          "callee": "entry.endsWith",
+          "lineNumber": 2875
+        },
+        {
+          "caller": "generateModels",
+          "callee": "generatedShardFiles.has",
+          "lineNumber": 2875
+        },
+        {
+          "caller": "generateModels",
+          "callee": "rmSync",
+          "lineNumber": 2875
+        },
+        {
+          "caller": "generateModels",
+          "callee": "join",
+          "lineNumber": 2875
+        },
+        {
+          "caller": "generateModels",
+          "callee": "catalogConstName",
+          "lineNumber": 2880
+        },
+        {
+          "caller": "generateModels",
+          "callee": "JSON.stringify",
+          "lineNumber": 2884
+        },
+        {
+          "caller": "generateModels",
+          "callee": "catalogConstName",
+          "lineNumber": 2884
+        },
+        {
+          "caller": "generateModels",
+          "callee": "JSON.stringify",
+          "lineNumber": 2888
+        },
+        {
+          "caller": "generateModels",
+          "callee": "catalogConstName",
+          "lineNumber": 2888
+        },
+        {
+          "caller": "generateModels",
+          "callee": "writeFileSync",
+          "lineNumber": 2891
+        },
+        {
+          "caller": "generateModels",
+          "callee": "console.log",
+          "lineNumber": 2892
+        },
+        {
+          "caller": "generateModels",
+          "callee": "existsSync",
+          "lineNumber": 2895
+        },
+        {
+          "caller": "generateModels",
+          "callee": "renameSync",
+          "lineNumber": 2896
+        },
+        {
+          "caller": "generateModels",
+          "callee": "renameSync",
+          "lineNumber": 2898
+        },
+        {
+          "caller": "generateModels",
+          "callee": "validateGeneratedModelData",
+          "lineNumber": 2899
+        },
+        {
+          "caller": "generateModels",
+          "callee": "rmSync",
+          "lineNumber": 2901
+        },
+        {
+          "caller": "generateModels",
+          "callee": "existsSync",
+          "lineNumber": 2902
+        },
+        {
+          "caller": "generateModels",
+          "callee": "renameSync",
+          "lineNumber": 2902
+        },
+        {
+          "caller": "generateModels",
+          "callee": "console.log",
+          "lineNumber": 2906
+        },
+        {
+          "caller": "generateModels",
+          "callee": "restoreGeneratedCatalog",
+          "lineNumber": 2912
+        },
+        {
+          "caller": "generateModels",
+          "callee": "rmSync",
+          "lineNumber": 2915
+        },
+        {
+          "caller": "generateModels",
+          "callee": "join",
+          "lineNumber": 2920
+        },
+        {
+          "caller": "generateModels",
+          "callee": "rmSync",
+          "lineNumber": 2921
+        },
+        {
+          "caller": "generateModels",
+          "callee": "mkdirSync",
+          "lineNumber": 2922
+        },
+        {
+          "caller": "generateModels",
+          "callee": "writeJson",
+          "lineNumber": 2923
+        },
+        {
+          "caller": "generateModels",
+          "callee": "join",
+          "lineNumber": 2923
+        },
+        {
+          "caller": "generateModels",
+          "callee": "writeJson",
+          "lineNumber": 2924
+        },
+        {
+          "caller": "generateModels",
+          "callee": "join",
+          "lineNumber": 2924
+        },
+        {
+          "caller": "generateModels",
+          "callee": "writeJson",
+          "lineNumber": 2926
+        },
+        {
+          "caller": "generateModels",
+          "callee": "join",
+          "lineNumber": 2926
+        },
+        {
+          "caller": "generateModels",
+          "callee": "console.log",
+          "lineNumber": 2928
+        },
+        {
+          "caller": "generateModels",
+          "callee": "allModels.filter",
+          "lineNumber": 2933
+        },
+        {
+          "caller": "generateModels",
+          "callee": "console.log",
+          "lineNumber": 2935
+        },
+        {
+          "caller": "generateModels",
+          "callee": "console.log",
+          "lineNumber": 2936
+        },
+        {
+          "caller": "generateModels",
+          "callee": "console.log",
+          "lineNumber": 2937
+        },
+        {
+          "caller": "generateModels",
+          "callee": "Object.entries",
+          "lineNumber": 2939
+        },
+        {
+          "caller": "generateModels",
+          "callee": "console.log",
+          "lineNumber": 2940
+        },
+        {
+          "caller": "generateModels",
+          "callee": "Object.keys",
+          "lineNumber": 2940
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 40,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/scripts/model-data.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 280,
+      "nonEmptyLines": 252,
+      "functions": [
+        {
+          "name": "sha256",
+          "startLine": 20,
+          "endLine": 22,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "sortedRecord",
+          "startLine": 24,
+          "endLine": 26,
+          "params": [
+            "entries"
+          ]
+        },
+        {
+          "name": "sameStrings",
+          "startLine": 28,
+          "endLine": 30,
+          "params": [
+            "a",
+            "b"
+          ]
+        },
+        {
+          "name": "describeSetDifference",
+          "startLine": 32,
+          "endLine": 40,
+          "params": [
+            "expected",
+            "actual"
+          ]
+        },
+        {
+          "name": "assertExactModelIds",
+          "startLine": 42,
+          "endLine": 47,
+          "params": [
+            "label",
+            "expected",
+            "actual"
+          ]
+        },
+        {
+          "name": "isRecord",
+          "startLine": 49,
+          "endLine": 51,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "readJsonObject",
+          "startLine": 53,
+          "endLine": 66,
+          "params": [
+            "path",
+            "description",
+            "errors"
+          ]
+        },
+        {
+          "name": "readProviderStructure",
+          "startLine": 68,
+          "endLine": 83,
+          "params": [
+            "path",
+            "providerId"
+          ]
+        },
+        {
+          "name": "readModelDataProviderIds",
+          "startLine": 85,
+          "endLine": 94,
+          "params": [
+            "packageRoot"
+          ]
+        },
+        {
+          "name": "readModelDataStructure",
+          "startLine": 96,
+          "endLine": 116,
+          "params": [
+            "packageRoot"
+          ]
+        },
+        {
+          "name": "modelDataStructureHash",
+          "startLine": 118,
+          "endLine": 125,
+          "params": [
+            "structure"
+          ]
+        },
+        {
+          "name": "createModelDataManifest",
+          "startLine": 127,
+          "endLine": 138,
+          "params": [
+            "structure",
+            "fileContents",
+            "generatedAt"
+          ]
+        },
+        {
+          "name": "validateModelValue",
+          "startLine": 140,
+          "endLine": 185,
+          "params": [
+            "value",
+            "providerId",
+            "modelId",
+            "expectedApi",
+            "errors"
+          ]
+        },
+        {
+          "name": "throwValidationErrors",
+          "startLine": 187,
+          "endLine": 191,
+          "params": [
+            "errors"
+          ]
+        },
+        {
+          "name": "validateModelDataDirectory",
+          "startLine": 193,
+          "endLine": 275,
+          "params": [
+            "structure",
+            "dataDir"
+          ]
+        },
+        {
+          "name": "validateGeneratedModelData",
+          "startLine": 277,
+          "endLine": 280,
+          "params": [
+            "packageRoot"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "MODEL_DATA_SCHEMA_VERSION",
+          "line": 5,
+          "isDefault": false
+        },
+        {
+          "name": "MODEL_DATA_MANIFEST_FILE",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "assertExactModelIds",
+          "line": 42,
+          "isDefault": false
+        },
+        {
+          "name": "readModelDataProviderIds",
+          "line": 85,
+          "isDefault": false
+        },
+        {
+          "name": "readModelDataStructure",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "modelDataStructureHash",
+          "line": 118,
+          "isDefault": false
+        },
+        {
+          "name": "createModelDataManifest",
+          "line": 127,
+          "isDefault": false
+        },
+        {
+          "name": "validateModelDataDirectory",
+          "line": 193,
+          "isDefault": false
+        },
+        {
+          "name": "validateGeneratedModelData",
+          "line": 277,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "sha256",
+          "callee": "createHash(\"sha256\").update(value).digest",
+          "lineNumber": 21
+        },
+        {
+          "caller": "sha256",
+          "callee": "createHash(\"sha256\").update",
+          "lineNumber": 21
+        },
+        {
+          "caller": "sha256",
+          "callee": "createHash",
+          "lineNumber": 21
+        },
+        {
+          "caller": "sortedRecord",
+          "callee": "Object.fromEntries",
+          "lineNumber": 25
+        },
+        {
+          "caller": "sortedRecord",
+          "callee": "Array.from(entries).sort",
+          "lineNumber": 25
+        },
+        {
+          "caller": "sortedRecord",
+          "callee": "Array.from",
+          "lineNumber": 25
+        },
+        {
+          "caller": "sameStrings",
+          "callee": "a.every",
+          "lineNumber": 29
+        },
+        {
+          "caller": "describeSetDifference",
+          "callee": "expected.filter",
+          "lineNumber": 35
+        },
+        {
+          "caller": "describeSetDifference",
+          "callee": "actualSet.has",
+          "lineNumber": 35
+        },
+        {
+          "caller": "describeSetDifference",
+          "callee": "actual.filter",
+          "lineNumber": 36
+        },
+        {
+          "caller": "describeSetDifference",
+          "callee": "expectedSet.has",
+          "lineNumber": 36
+        },
+        {
+          "caller": "describeSetDifference",
+          "callee": "[missing.length > 0 ? `missing: ${missing.join(\", \")}` : \"\", extra.length > 0 ? `extra: ${extra.join(\", \")}` : \"\"]\n\t\t.filter(Boolean)\n\t\t.join",
+          "lineNumber": 37
+        },
+        {
+          "caller": "describeSetDifference",
+          "callee": "[missing.length > 0 ? `missing: ${missing.join(\", \")}` : \"\", extra.length > 0 ? `extra: ${extra.join(\", \")}` : \"\"]\n\t\t.filter",
+          "lineNumber": 37
+        },
+        {
+          "caller": "describeSetDifference",
+          "callee": "missing.join",
+          "lineNumber": 37
+        },
+        {
+          "caller": "describeSetDifference",
+          "callee": "extra.join",
+          "lineNumber": 37
+        },
+        {
+          "caller": "assertExactModelIds",
+          "callee": "Array.from(new Set(expected)).sort",
+          "lineNumber": 43
+        },
+        {
+          "caller": "assertExactModelIds",
+          "callee": "Array.from",
+          "lineNumber": 43
+        },
+        {
+          "caller": "assertExactModelIds",
+          "callee": "Array.from(new Set(actual)).sort",
+          "lineNumber": 44
+        },
+        {
+          "caller": "assertExactModelIds",
+          "callee": "Array.from",
+          "lineNumber": 44
+        },
+        {
+          "caller": "assertExactModelIds",
+          "callee": "sameStrings",
+          "lineNumber": 45
+        },
+        {
+          "caller": "assertExactModelIds",
+          "callee": "describeSetDifference",
+          "lineNumber": 46
+        },
+        {
+          "caller": "isRecord",
+          "callee": "Array.isArray",
+          "lineNumber": 50
+        },
+        {
+          "caller": "readJsonObject",
+          "callee": "JSON.parse",
+          "lineNumber": 56
+        },
+        {
+          "caller": "readJsonObject",
+          "callee": "readFileSync",
+          "lineNumber": 56
+        },
+        {
+          "caller": "readJsonObject",
+          "callee": "errors.push",
+          "lineNumber": 58
+        },
+        {
+          "caller": "readJsonObject",
+          "callee": "String",
+          "lineNumber": 58
+        },
+        {
+          "caller": "readJsonObject",
+          "callee": "isRecord",
+          "lineNumber": 61
+        },
+        {
+          "caller": "readJsonObject",
+          "callee": "errors.push",
+          "lineNumber": 62
+        },
+        {
+          "caller": "readProviderStructure",
+          "callee": "readJsonObject",
+          "lineNumber": 70
+        },
+        {
+          "caller": "readProviderStructure",
+          "callee": "errors.join",
+          "lineNumber": 71
+        },
+        {
+          "caller": "readProviderStructure",
+          "callee": "Object.entries",
+          "lineNumber": 74
+        },
+        {
+          "caller": "readProviderStructure",
+          "callee": "isRecord",
+          "lineNumber": 75
+        },
+        {
+          "caller": "readProviderStructure",
+          "callee": "JSON.stringify",
+          "lineNumber": 75
+        },
+        {
+          "caller": "readProviderStructure",
+          "callee": "Object.keys",
+          "lineNumber": 76
+        },
+        {
+          "caller": "readProviderStructure",
+          "callee": "models.has",
+          "lineNumber": 77
+        },
+        {
+          "caller": "readProviderStructure",
+          "callee": "models.set",
+          "lineNumber": 78
+        },
+        {
+          "caller": "readProviderStructure",
+          "callee": "sortedRecord",
+          "lineNumber": 82
+        },
+        {
+          "caller": "readModelDataProviderIds",
+          "callee": "join",
+          "lineNumber": 86
+        },
+        {
+          "caller": "readModelDataProviderIds",
+          "callee": "readFileSync",
+          "lineNumber": 87
+        },
+        {
+          "caller": "readModelDataProviderIds",
+          "callee": "Array.from(aggregator.matchAll(MODEL_DATA_IMPORT_PATTERN), (match) => match[1]).sort",
+          "lineNumber": 88
+        },
+        {
+          "caller": "readModelDataProviderIds",
+          "callee": "Array.from",
+          "lineNumber": 88
+        },
+        {
+          "caller": "readModelDataProviderIds",
+          "callee": "aggregator.matchAll",
+          "lineNumber": 88
+        },
+        {
+          "caller": "readModelDataStructure",
+          "callee": "join",
+          "lineNumber": 97
+        },
+        {
+          "caller": "readModelDataStructure",
+          "callee": "join",
+          "lineNumber": 98
+        },
+        {
+          "caller": "readModelDataStructure",
+          "callee": "readModelDataProviderIds",
+          "lineNumber": 99
+        },
+        {
+          "caller": "readModelDataStructure",
+          "callee": "providerIds.map((providerId) => `${providerId}.models.ts`).sort",
+          "lineNumber": 100
+        },
+        {
+          "caller": "readModelDataStructure",
+          "callee": "providerIds.map",
+          "lineNumber": 100
+        },
+        {
+          "caller": "readModelDataStructure",
+          "callee": "readdirSync(providersDir)\n\t\t.filter((entry) => entry.endsWith(\".models.ts\"))\n\t\t.sort",
+          "lineNumber": 101
+        },
+        {
+          "caller": "readModelDataStructure",
+          "callee": "readdirSync(providersDir)\n\t\t.filter",
+          "lineNumber": 101
+        },
+        {
+          "caller": "readModelDataStructure",
+          "callee": "readdirSync",
+          "lineNumber": 101
+        },
+        {
+          "caller": "readModelDataStructure",
+          "callee": "entry.endsWith",
+          "lineNumber": 102
+        },
+        {
+          "caller": "readModelDataStructure",
+          "callee": "sameStrings",
+          "lineNumber": 104
+        },
+        {
+          "caller": "readModelDataStructure",
+          "callee": "describeSetDifference",
+          "lineNumber": 106
+        },
+        {
+          "caller": "readModelDataStructure",
+          "callee": "sortedRecord",
+          "lineNumber": 110
+        },
+        {
+          "caller": "readModelDataStructure",
+          "callee": "providerIds.map",
+          "lineNumber": 111
+        },
+        {
+          "caller": "readModelDataStructure",
+          "callee": "readProviderStructure",
+          "lineNumber": 113
+        },
+        {
+          "caller": "readModelDataStructure",
+          "callee": "join",
+          "lineNumber": 113
+        },
+        {
+          "caller": "modelDataStructureHash",
+          "callee": "sortedRecord",
+          "lineNumber": 119
+        },
+        {
+          "caller": "modelDataStructureHash",
+          "callee": "Object.entries(structure).map",
+          "lineNumber": 120
+        },
+        {
+          "caller": "modelDataStructureHash",
+          "callee": "Object.entries",
+          "lineNumber": 120
+        },
+        {
+          "caller": "modelDataStructureHash",
+          "callee": "sortedRecord",
+          "lineNumber": 121
+        },
+        {
+          "caller": "modelDataStructureHash",
+          "callee": "Object.entries",
+          "lineNumber": 121
+        },
+        {
+          "caller": "modelDataStructureHash",
+          "callee": "sha256",
+          "lineNumber": 124
+        },
+        {
+          "caller": "modelDataStructureHash",
+          "callee": "JSON.stringify",
+          "lineNumber": 124
+        },
+        {
+          "caller": "createModelDataManifest",
+          "callee": "modelDataStructureHash",
+          "lineNumber": 135
+        },
+        {
+          "caller": "createModelDataManifest",
+          "callee": "sortedRecord",
+          "lineNumber": 136
+        },
+        {
+          "caller": "createModelDataManifest",
+          "callee": "Object.entries(fileContents).map",
+          "lineNumber": 136
+        },
+        {
+          "caller": "createModelDataManifest",
+          "callee": "Object.entries",
+          "lineNumber": 136
+        },
+        {
+          "caller": "createModelDataManifest",
+          "callee": "sha256",
+          "lineNumber": 136
+        },
+        {
+          "caller": "validateModelValue",
+          "callee": "isRecord",
+          "lineNumber": 148
+        },
+        {
+          "caller": "validateModelValue",
+          "callee": "errors.push",
+          "lineNumber": 149
+        },
+        {
+          "caller": "validateModelValue",
+          "callee": "errors.push",
+          "lineNumber": 152
+        },
+        {
+          "caller": "validateModelValue",
+          "callee": "JSON.stringify",
+          "lineNumber": 152
+        },
+        {
+          "caller": "validateModelValue",
+          "callee": "JSON.stringify",
+          "lineNumber": 152
+        },
+        {
+          "caller": "validateModelValue",
+          "callee": "errors.push",
+          "lineNumber": 154
+        },
+        {
+          "caller": "validateModelValue",
+          "callee": "JSON.stringify",
+          "lineNumber": 154
+        },
+        {
+          "caller": "validateModelValue",
+          "callee": "JSON.stringify",
+          "lineNumber": 154
+        },
+        {
+          "caller": "validateModelValue",
+          "callee": "errors.push",
+          "lineNumber": 157
+        },
+        {
+          "caller": "validateModelValue",
+          "callee": "JSON.stringify",
+          "lineNumber": 157
+        },
+        {
+          "caller": "validateModelValue",
+          "callee": "JSON.stringify",
+          "lineNumber": 157
+        },
+        {
+          "caller": "validateModelValue",
+          "callee": "errors.push",
+          "lineNumber": 159
+        },
+        {
+          "caller": "validateModelValue",
+          "callee": "errors.push",
+          "lineNumber": 160
+        },
+        {
+          "caller": "validateModelValue",
+          "callee": "errors.push",
+          "lineNumber": 161
+        },
+        {
+          "caller": "validateModelValue",
+          "callee": "Array.isArray",
+          "lineNumber": 163
+        },
+        {
+          "caller": "validateModelValue",
+          "callee": "value.input.some",
+          "lineNumber": 165
+        },
+        {
+          "caller": "validateModelValue",
+          "callee": "errors.push",
+          "lineNumber": 167
+        },
+        {
+          "caller": "validateModelValue",
+          "callee": "Number.isFinite",
+          "lineNumber": 169
+        },
+        {
+          "caller": "validateModelValue",
+          "callee": "errors.push",
+          "lineNumber": 170
+        },
+        {
+          "caller": "validateModelValue",
+          "callee": "Number.isFinite",
+          "lineNumber": 172
+        },
+        {
+          "caller": "validateModelValue",
+          "callee": "errors.push",
+          "lineNumber": 173
+        },
+        {
+          "caller": "validateModelValue",
+          "callee": "isRecord",
+          "lineNumber": 175
+        },
+        {
+          "caller": "validateModelValue",
+          "callee": "errors.push",
+          "lineNumber": 176
+        },
+        {
+          "caller": "validateModelValue",
+          "callee": "Number.isFinite",
+          "lineNumber": 180
+        },
+        {
+          "caller": "validateModelValue",
+          "callee": "errors.push",
+          "lineNumber": 181
+        },
+        {
+          "caller": "throwValidationErrors",
+          "callee": "errors.slice",
+          "lineNumber": 188
+        },
+        {
+          "caller": "throwValidationErrors",
+          "callee": "visible.map((error) => `  - ${error}`).join",
+          "lineNumber": 190
+        },
+        {
+          "caller": "throwValidationErrors",
+          "callee": "visible.map",
+          "lineNumber": 190
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "existsSync",
+          "lineNumber": 194
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "statSync(dataDir).isDirectory",
+          "lineNumber": 194
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "statSync",
+          "lineNumber": 194
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "Object.keys(structure)\n\t\t.map((providerId) => `${providerId}.json`)\n\t\t.sort",
+          "lineNumber": 199
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "Object.keys(structure)\n\t\t.map",
+          "lineNumber": 199
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "Object.keys",
+          "lineNumber": 199
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "readdirSync(dataDir)\n\t\t.filter((entry) => entry.endsWith(\".json\") && entry !== MODEL_DATA_MANIFEST_FILE)\n\t\t.sort",
+          "lineNumber": 202
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "readdirSync(dataDir)\n\t\t.filter",
+          "lineNumber": 202
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "readdirSync",
+          "lineNumber": 202
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "entry.endsWith",
+          "lineNumber": 203
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "sameStrings",
+          "lineNumber": 205
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "errors.push",
+          "lineNumber": 206
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "describeSetDifference",
+          "lineNumber": 206
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "join",
+          "lineNumber": 209
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "readJsonObject",
+          "lineNumber": 210
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "errors.push",
+          "lineNumber": 212
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "JSON.stringify",
+          "lineNumber": 213
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "Number.isNaN",
+          "lineNumber": 216
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "Date.parse",
+          "lineNumber": 216
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "errors.push",
+          "lineNumber": 217
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "modelDataStructureHash",
+          "lineNumber": 219
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "errors.push",
+          "lineNumber": 221
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "isRecord",
+          "lineNumber": 223
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "errors.push",
+          "lineNumber": 224
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "Object.keys(manifestFiles).sort",
+          "lineNumber": 226
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "Object.keys",
+          "lineNumber": 226
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "sameStrings",
+          "lineNumber": 227
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "errors.push",
+          "lineNumber": 228
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "describeSetDifference",
+          "lineNumber": 228
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "Object.entries",
+          "lineNumber": 232
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "join",
+          "lineNumber": 234
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "existsSync",
+          "lineNumber": 235
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "readFileSync",
+          "lineNumber": 236
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "sha256",
+          "lineNumber": 237
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "errors.push",
+          "lineNumber": 238
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "readJsonObject",
+          "lineNumber": 240
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "Object.entries",
+          "lineNumber": 244
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "isRecord",
+          "lineNumber": 245
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "errors.push",
+          "lineNumber": 246
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "JSON.stringify",
+          "lineNumber": 246
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "Object.entries",
+          "lineNumber": 249
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "actualModels.has",
+          "lineNumber": 250
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "errors.push",
+          "lineNumber": 251
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "actualModels.set",
+          "lineNumber": 254
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "validateModelValue",
+          "lineNumber": 255
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "Object.keys(expectedModels).sort",
+          "lineNumber": 259
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "Object.keys",
+          "lineNumber": 259
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "Array.from(actualModels.keys()).sort",
+          "lineNumber": 260
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "Array.from",
+          "lineNumber": 260
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "actualModels.keys",
+          "lineNumber": 260
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "sameStrings",
+          "lineNumber": 261
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "errors.push",
+          "lineNumber": 262
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "describeSetDifference",
+          "lineNumber": 262
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "Object.entries",
+          "lineNumber": 264
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "actualModels.get",
+          "lineNumber": 265
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "errors.push",
+          "lineNumber": 267
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "JSON.stringify",
+          "lineNumber": 268
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "JSON.stringify",
+          "lineNumber": 268
+        },
+        {
+          "caller": "validateModelDataDirectory",
+          "callee": "throwValidationErrors",
+          "lineNumber": 274
+        },
+        {
+          "caller": "validateGeneratedModelData",
+          "callee": "readModelDataStructure",
+          "lineNumber": 278
+        },
+        {
+          "caller": "validateGeneratedModelData",
+          "callee": "validateModelDataDirectory",
+          "lineNumber": 279
+        },
+        {
+          "caller": "validateGeneratedModelData",
+          "callee": "join",
+          "lineNumber": 279
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 9,
+        "functionCount": 16,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/scripts/models-dev-reasoning-options.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 30,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "getEffortThinkingLevelMap",
+          "startLine": 18,
+          "endLine": 30,
+          "params": [
+            "options"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "getEffortThinkingLevelMap",
+          "line": 18,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getEffortThinkingLevelMap",
+          "callee": "options.flatMap",
+          "lineNumber": 19
+        },
+        {
+          "caller": "getEffortThinkingLevelMap",
+          "callee": "THINKING_LEVELS.some",
+          "lineNumber": 23
+        },
+        {
+          "caller": "getEffortThinkingLevelMap",
+          "callee": "supported.has",
+          "lineNumber": 23
+        },
+        {
+          "caller": "getEffortThinkingLevelMap",
+          "callee": "supported.has",
+          "lineNumber": 23
+        },
+        {
+          "caller": "getEffortThinkingLevelMap",
+          "callee": "supported.has",
+          "lineNumber": 25
+        },
+        {
+          "caller": "getEffortThinkingLevelMap",
+          "callee": "supported.has",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/api/cloudflare.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 15,
+      "nonEmptyLines": 12,
+      "exports": [
+        {
+          "name": "CLOUDFLARE_WORKERS_AI_BASE_URL",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "CLOUDFLARE_AI_GATEWAY_COMPAT_BASE_URL",
+          "line": 6,
+          "isDefault": false
+        },
+        {
+          "name": "CLOUDFLARE_AI_GATEWAY_OPENAI_BASE_URL",
+          "line": 10,
+          "isDefault": false
+        },
+        {
+          "name": "CLOUDFLARE_AI_GATEWAY_ANTHROPIC_BASE_URL",
+          "line": 14,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 4,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/model-data-validation.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 177,
+      "nonEmptyLines": 160,
+      "functions": [
+        {
+          "name": "createFixture",
+          "startLine": 22,
+          "endLine": 63,
+          "params": []
+        },
+        {
+          "name": "writeFixtureData",
+          "startLine": 65,
+          "endLine": 78,
+          "params": [
+            "dataDir",
+            "structure",
+            "values",
+            "manifestSchemaVersion",
+            "apiGroup"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createFixture",
+          "callee": "mkdtempSync",
+          "lineNumber": 28
+        },
+        {
+          "caller": "createFixture",
+          "callee": "join",
+          "lineNumber": 28
+        },
+        {
+          "caller": "createFixture",
+          "callee": "tmpdir",
+          "lineNumber": 28
+        },
+        {
+          "caller": "createFixture",
+          "callee": "temporaryRoots.push",
+          "lineNumber": 29
+        },
+        {
+          "caller": "createFixture",
+          "callee": "join",
+          "lineNumber": 30
+        },
+        {
+          "caller": "createFixture",
+          "callee": "join",
+          "lineNumber": 31
+        },
+        {
+          "caller": "createFixture",
+          "callee": "mkdirSync",
+          "lineNumber": 32
+        },
+        {
+          "caller": "createFixture",
+          "callee": "writeFileSync",
+          "lineNumber": 33
+        },
+        {
+          "caller": "createFixture",
+          "callee": "join",
+          "lineNumber": 34
+        },
+        {
+          "caller": "createFixture",
+          "callee": "writeFileSync",
+          "lineNumber": 37
+        },
+        {
+          "caller": "createFixture",
+          "callee": "join",
+          "lineNumber": 38
+        },
+        {
+          "caller": "createFixture",
+          "callee": "writeFixtureData",
+          "lineNumber": 61
+        },
+        {
+          "caller": "writeFixtureData",
+          "callee": "JSON.stringify",
+          "lineNumber": 73
+        },
+        {
+          "caller": "writeFixtureData",
+          "callee": "writeFileSync",
+          "lineNumber": 74
+        },
+        {
+          "caller": "writeFixtureData",
+          "callee": "join",
+          "lineNumber": 74
+        },
+        {
+          "caller": "writeFixtureData",
+          "callee": "createModelDataManifest",
+          "lineNumber": 75
+        },
+        {
+          "caller": "writeFixtureData",
+          "callee": "writeFileSync",
+          "lineNumber": 77
+        },
+        {
+          "caller": "writeFixtureData",
+          "callee": "join",
+          "lineNumber": 77
+        },
+        {
+          "caller": "writeFixtureData",
+          "callee": "JSON.stringify",
+          "lineNumber": 77
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/reasoning-options.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 33,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

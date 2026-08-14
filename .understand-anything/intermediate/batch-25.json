@@ -1,0 +1,1522 @@
+{
+  "nodes": [
+    {
+      "id": "packages/tui/test/markdown.test.ts",
+      "type": "file",
+      "label": "markdown.test.ts",
+      "language": "typescript",
+      "layer": "test",
+      "description": "Markdown 组件测试文件。验证 Markdown 渲染中的富文本样式（斜体、下划线）、ANSI 转义序列处理、CJK 文本、超链接、代码块、表格、列表等格式的正确性。使用虚拟终端捕获渲染输出并进行单元格级别的样式断言。",
+      "metadata": {
+        "sizeLines": 1667,
+        "importCount": 6,
+        "testFile": true
+      }
+    },
+    {
+      "id": "packages/tui/test/overlay-non-capturing.test.ts",
+      "type": "file",
+      "label": "overlay-non-capturing.test.ts",
+      "language": "typescript",
+      "layer": "test",
+      "description": "覆盖层非捕获行为测试。验证静态覆盖层、空内容覆盖层和可聚焦覆盖层在输入处理时的行为，确保非捕获覆盖层不会拦截键盘输入。",
+      "metadata": {
+        "sizeLines": 1203,
+        "importCount": 3,
+        "testFile": true
+      }
+    },
+    {
+      "id": "packages/tui/test/overlay-options.test.ts",
+      "type": "file",
+      "label": "overlay-options.test.ts",
+      "language": "typescript",
+      "layer": "test",
+      "description": "覆盖层选项配置测试。验证覆盖层的锚点位置（anchor）、边距（margin）、宽度限制等选项的正确行为，测试不同对齐方式下的渲染结果。",
+      "metadata": {
+        "sizeLines": 541,
+        "importCount": 3,
+        "testFile": true
+      }
+    },
+    {
+      "id": "packages/tui/test/overlay-short-content.test.ts",
+      "type": "file",
+      "label": "overlay-short-content.test.ts",
+      "language": "typescript",
+      "layer": "test",
+      "description": "短内容覆盖层测试。验证内容行数少于终端高度时覆盖层的渲染行为，确保覆盖层正确显示且不产生多余输出。",
+      "metadata": {
+        "sizeLines": 62,
+        "importCount": 3,
+        "testFile": true
+      }
+    },
+    {
+      "id": "packages/tui/test/regression-overlay-cjk-boundary.test.ts",
+      "type": "file",
+      "label": "regression-overlay-cjk-boundary.test.ts",
+      "language": "typescript",
+      "layer": "test",
+      "description": "CJK 边界覆盖层回归测试。验证当覆盖层位于 CJK（中日韩）字符边界时的宽度计算和渲染正确性，防止因全角字符导致的布局偏移。",
+      "metadata": {
+        "sizeLines": 46,
+        "importCount": 2,
+        "testFile": true
+      }
+    },
+    {
+      "id": "packages/tui/test/regression-regional-indicator-width.test.ts",
+      "type": "file",
+      "label": "regression-regional-indicator-width.test.ts",
+      "language": "typescript",
+      "layer": "test",
+      "description": "区域指示符宽度回归测试。验证国旗 emoji（区域指示符序列）在终端中的单元格宽度计算是否正确，防止宽度计算错误导致的布局问题。",
+      "metadata": {
+        "sizeLines": 52,
+        "importCount": 1,
+        "testFile": true
+      }
+    },
+    {
+      "id": "packages/tui/test/render-churn-bench.ts",
+      "type": "file",
+      "label": "render-churn-bench.ts",
+      "language": "typescript",
+      "layer": "test",
+      "description": "渲染性能基准测试。模拟编辑器场景下的 TUI 高频渲染，测量内存分配（MiB）、每帧带宽（KiB/frame）和渲染耗时（ms/frame），使用 NullTerminal 避免 I/O 开销。",
+      "metadata": {
+        "sizeLines": 203,
+        "importCount": 6
+      }
+    },
+    {
+      "id": "packages/tui/test/select-list.test.ts",
+      "type": "file",
+      "label": "select-list.test.ts",
+      "language": "typescript",
+      "layer": "test",
+      "description": "选择列表组件测试。验证 SelectList 的键盘导航（上下箭头）、可见项索引计算、选中状态管理、搜索过滤和可见宽度计算。",
+      "metadata": {
+        "sizeLines": 116,
+        "importCount": 2,
+        "testFile": true
+      }
+    },
+    {
+      "id": "packages/tui/test/settings-list.test.ts",
+      "type": "file",
+      "label": "settings-list.test.ts",
+      "language": "typescript",
+      "layer": "test",
+      "description": "设置列表组件测试。验证 SettingsList 的设置项渲染、选项切换和交互行为。",
+      "metadata": {
+        "sizeLines": 58,
+        "importCount": 1,
+        "testFile": true
+      }
+    },
+    {
+      "id": "packages/tui/test/stdin-buffer.test.ts",
+      "type": "file",
+      "label": "stdin-buffer.test.ts",
+      "language": "typescript",
+      "layer": "test",
+      "description": "标准输入缓冲区测试。验证 StdinBuffer 对输入事件的缓冲、处理和分发机制，包括按键序列的解析、事件合并和时序控制。",
+      "metadata": {
+        "sizeLines": 526,
+        "importCount": 2,
+        "testFile": true
+      }
+    },
+    {
+      "id": "packages/tui/test/tab-width.test.ts",
+      "type": "file",
+      "label": "tab-width.test.ts",
+      "language": "typescript",
+      "layer": "test",
+      "description": "制表符宽度测试。验证 Tab 字符在终端中的渲染宽度计算，确保覆盖层和主内容中的制表符对齐正确。",
+      "metadata": {
+        "sizeLines": 88,
+        "importCount": 4,
+        "testFile": true
+      }
+    },
+    {
+      "id": "packages/tui/test/terminal-colors.test.ts",
+      "type": "file",
+      "label": "terminal-colors.test.ts",
+      "language": "typescript",
+      "layer": "test",
+      "description": "终端颜色支持测试。验证终端的颜色能力检测、256 色和真彩色输出、以及 OSC 11 背景色查询的响应解析。使用 TestTerminal 记录写入序列进行断言。",
+      "metadata": {
+        "sizeLines": 252,
+        "importCount": 1,
+        "testFile": true
+      }
+    },
+    {
+      "id": "packages/tui/test/terminal-image.test.ts",
+      "type": "file",
+      "label": "terminal-image.test.ts",
+      "language": "typescript",
+      "layer": "test",
+      "description": "终端图像协议测试。验证 Kitty 和 iTerm2 图像协议的编码、渲染、尺寸计算、格式检测（PNG/JPEG/GIF/WebP）以及能力缓存管理。",
+      "metadata": {
+        "sizeLines": 632,
+        "importCount": 3,
+        "testFile": true
+      }
+    },
+    {
+      "id": "packages/tui/test/terminal.test.ts",
+      "type": "file",
+      "label": "terminal.test.ts",
+      "language": "typescript",
+      "layer": "test",
+      "description": "终端核心功能测试。验证 ProcessTerminal 的键盘协议协商（Kitty 协议）、输入解析、转义序列处理以及终端能力检测。",
+      "metadata": {
+        "sizeLines": 300,
+        "importCount": 2,
+        "testFile": true
+      }
+    },
+    {
+      "id": "packages/tui/test/test-themes.ts",
+      "type": "file",
+      "label": "test-themes.ts",
+      "language": "typescript",
+      "layer": "test",
+      "description": "测试主题定义文件。导出 SelectList、Markdown 和 Editor 组件的默认测试主题配置，供其他测试文件复用。",
+      "metadata": {
+        "sizeLines": 38,
+        "importCount": 1,
+        "exportCount": 3
+      }
+    },
+    {
+      "id": "packages/tui/test/truncate-to-width.test.ts",
+      "type": "file",
+      "label": "truncate-to-width.test.ts",
+      "language": "typescript",
+      "layer": "test",
+      "description": "宽度截断工具测试。验证 truncateToWidth 函数在处理 ANSI 转义序列、CJK 字符和组合字符时的正确截断行为。",
+      "metadata": {
+        "sizeLines": 127,
+        "importCount": 1,
+        "testFile": true
+      }
+    },
+    {
+      "id": "packages/tui/test/truncated-text.test.ts",
+      "type": "file",
+      "label": "truncated-text.test.ts",
+      "language": "typescript",
+      "layer": "test",
+      "description": "截断文本组件测试。验证 TruncatedText 组件在不同宽度约束下的文本截断、省略号显示和对齐行为。",
+      "metadata": {
+        "sizeLines": 129,
+        "importCount": 2,
+        "testFile": true
+      }
+    },
+    {
+      "id": "packages/tui/test/tui-alt-screen.test.ts",
+      "type": "file",
+      "label": "tui-alt-screen.test.ts",
+      "language": "typescript",
+      "layer": "test",
+      "description": "TUI 备用屏幕测试。验证 TuiAltScreen 的备用屏幕切换、搜索匹配（包括 OSC 8 超链接搜索）、剪贴板写入、键盘导航和覆盖层交互行为。使用 RecordingTerminal 记录所有写入事件。",
+      "metadata": {
+        "sizeLines": 1360,
+        "importCount": 10,
+        "testFile": true
+      }
+    },
+    {
+      "id": "packages/tui/test/tui-cell-size-input.test.ts",
+      "type": "file",
+      "label": "tui-cell-size-input.test.ts",
+      "language": "typescript",
+      "layer": "test",
+      "description": "TUI 单元格尺寸输入测试。验证在设置了单元格像素尺寸的情况下，图像渲染和输入处理的正确性。使用 withImageTerminal 辅助函数管理终端能力缓存。",
+      "metadata": {
+        "sizeLines": 82,
+        "importCount": 4,
+        "testFile": true
+      }
+    },
+    {
+      "id": "packages/tui/test/tui-overlay-style-leak.test.ts",
+      "type": "file",
+      "label": "tui-overlay-style-leak.test.ts",
+      "language": "typescript",
+      "layer": "test",
+      "description": "TUI 覆盖层样式泄漏测试。验证覆盖层的文本样式（如斜体）不会泄漏到主内容区域，确保样式隔离的正确性。",
+      "metadata": {
+        "sizeLines": 81,
+        "importCount": 3,
+        "testFile": true
+      }
+    },
+    {
+      "id": "packages/tui/test/tui-render.test.ts",
+      "type": "file",
+      "label": "tui-render.test.ts",
+      "language": "typescript",
+      "layer": "test",
+      "description": "TUI 渲染管线测试。验证 TUI 的核心渲染流程，包括组件渲染、覆盖层合成、图像协议选择、环境变量覆盖和样式应用。使用 LoggingVirtualTerminal 追踪写入序列。",
+      "metadata": {
+        "sizeLines": 832,
+        "importCount": 5,
+        "testFile": true
+      }
+    },
+    {
+      "id": "packages/tui/test/tui-shrink.test.ts",
+      "type": "file",
+      "label": "tui-shrink.test.ts",
+      "language": "typescript",
+      "layer": "test",
+      "description": "TUI 收缩测试。验证当终端窗口缩小时 TUI 的正确重绘行为，防止残留内容或布局错误。",
+      "metadata": {
+        "sizeLines": 45,
+        "importCount": 3,
+        "testFile": true
+      }
+    },
+    {
+      "id": "packages/tui/test/viewport-overwrite-repro.ts",
+      "type": "file",
+      "label": "viewport-overwrite-repro.ts",
+      "language": "typescript",
+      "layer": "test",
+      "description": "视口覆写复现脚本。复现视口内容被错误覆写的问题，通过流式追加内容并触发渲染来验证视口刷新机制的正确性。",
+      "metadata": {
+        "sizeLines": 108,
+        "importCount": 3
+      }
+    },
+    {
+      "id": "packages/tui/test/virtual-terminal.ts",
+      "type": "file",
+      "label": "virtual-terminal.ts",
+      "language": "typescript",
+      "layer": "test",
+      "description": "虚拟终端测试工具。基于 xterm.js headless 实现的虚拟终端，提供输入模拟、视口捕获、滚动缓冲区读取、光标位置查询和渲染等待等功能，是 TUI 测试基础设施的核心组件。",
+      "metadata": {
+        "sizeLines": 218,
+        "importCount": 1,
+        "exportCount": 1
+      }
+    },
+    {
+      "id": "packages/tui/test/word-navigation.test.ts",
+      "type": "file",
+      "label": "word-navigation.test.ts",
+      "language": "typescript",
+      "layer": "test",
+      "description": "单词导航测试。验证 findWordForward 和 findWordBackward 函数在编辑器输入中的单词边界检测和光标跳转行为。",
+      "metadata": {
+        "sizeLines": 191,
+        "importCount": 1,
+        "testFile": true
+      }
+    },
+    {
+      "id": "packages/tui/test/wrap-ansi.test.ts",
+      "type": "file",
+      "label": "wrap-ansi.test.ts",
+      "language": "typescript",
+      "layer": "test",
+      "description": "ANSI 文本换行测试。验证 wrapTextWithAnsi 函数在处理带 ANSI 转义序列的文本时的换行行为，确保样式在换行后正确保持。",
+      "metadata": {
+        "sizeLines": 266,
+        "importCount": 1,
+        "testFile": true
+      }
+    },
+    {
+      "id": "packages/tui/test/overlay-non-capturing.test.ts::StaticOverlay",
+      "type": "class",
+      "label": "StaticOverlay",
+      "description": "静态覆盖层测试桩。接收预定义的行数组并在 render 时输出，用于验证覆盖层的渲染行为。",
+      "metadata": {
+        "startLine": 8,
+        "endLine": 20,
+        "methods": [
+          "constructor",
+          "render",
+          "invalidate"
+        ],
+        "file": "packages/tui/test/overlay-non-capturing.test.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/overlay-non-capturing.test.ts::EmptyContent",
+      "type": "class",
+      "label": "EmptyContent",
+      "description": "空内容覆盖层测试桩。render 返回空数组，用于验证空内容覆盖层不会导致渲染异常。",
+      "metadata": {
+        "startLine": 22,
+        "endLine": 27,
+        "methods": [
+          "render",
+          "invalidate"
+        ],
+        "file": "packages/tui/test/overlay-non-capturing.test.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/overlay-non-capturing.test.ts::FocusableOverlay",
+      "type": "class",
+      "label": "FocusableOverlay",
+      "description": "可聚焦覆盖层测试桩。实现 handleInput 方法记录所有输入事件，用于验证覆盖层的焦点和输入捕获行为。",
+      "metadata": {
+        "startLine": 29,
+        "endLine": 47,
+        "methods": [
+          "constructor",
+          "handleInput",
+          "render",
+          "invalidate"
+        ],
+        "file": "packages/tui/test/overlay-non-capturing.test.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/overlay-options.test.ts::StaticOverlay",
+      "type": "class",
+      "label": "StaticOverlay",
+      "description": "带宽度请求的静态覆盖层测试桩。记录请求的渲染宽度，用于验证覆盖层宽度约束选项。",
+      "metadata": {
+        "startLine": 7,
+        "endLine": 23,
+        "methods": [
+          "constructor",
+          "render",
+          "invalidate"
+        ],
+        "file": "packages/tui/test/overlay-options.test.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/overlay-options.test.ts::EmptyContent",
+      "type": "class",
+      "label": "EmptyContent",
+      "description": "空内容覆盖层测试桩（overlay-options 版本）。用于测试空覆盖层与选项配置的交互。",
+      "metadata": {
+        "startLine": 25,
+        "endLine": 30,
+        "methods": [
+          "render",
+          "invalidate"
+        ],
+        "file": "packages/tui/test/overlay-options.test.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/overlay-short-content.test.ts::SimpleContent",
+      "type": "class",
+      "label": "SimpleContent",
+      "description": "简单内容测试桩。渲染预定义的行数组，用于测试短内容覆盖层的行为。",
+      "metadata": {
+        "startLine": 7,
+        "endLine": 18,
+        "methods": [
+          "constructor",
+          "render",
+          "invalidate"
+        ],
+        "file": "packages/tui/test/overlay-short-content.test.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/overlay-short-content.test.ts::SimpleOverlay",
+      "type": "class",
+      "label": "SimpleOverlay",
+      "description": "简单覆盖层测试桩。固定渲染一行文本，用于验证短内容场景下的覆盖层渲染。",
+      "metadata": {
+        "startLine": 20,
+        "endLine": 25,
+        "methods": [
+          "render",
+          "invalidate"
+        ],
+        "file": "packages/tui/test/overlay-short-content.test.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/render-churn-bench.ts::NullTerminal",
+      "type": "class",
+      "label": "NullTerminal",
+      "description": "空操作终端实现。所有写入操作仅记录字节数而不实际输出，用于隔离渲染性能基准测试中的 I/O 开销。",
+      "metadata": {
+        "startLine": 35,
+        "endLine": 60,
+        "methods": [
+          "start",
+          "stop",
+          "drainInput",
+          "write",
+          "columns",
+          "rows",
+          "kittyProtocolActive",
+          "moveBy",
+          "hideCursor",
+          "showCursor",
+          "clearLine",
+          "clearFromCursor",
+          "clearScreen",
+          "setTitle",
+          "setProgress"
+        ],
+        "file": "packages/tui/test/render-churn-bench.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/render-churn-bench.ts::EditorSim",
+      "type": "class",
+      "label": "EditorSim",
+      "description": "编辑器模拟器。模拟文本编辑器的渲染行为，维护文本内容和缓存的渲染行，用于生成典型的编辑器渲染负载。",
+      "metadata": {
+        "startLine": 63,
+        "endLine": 90,
+        "methods": [
+          "append",
+          "invalidate",
+          "render"
+        ],
+        "file": "packages/tui/test/render-churn-bench.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/render-churn-bench.ts::buildTranscript",
+      "type": "function",
+      "label": "buildTranscript",
+      "description": "构建模拟的对话转录内容。创建包含多个文本块的 VStack 容器，模拟典型的 AI 对话输出。",
+      "metadata": {
+        "startLine": 92,
+        "endLine": 102,
+        "file": "packages/tui/test/render-churn-bench.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/render-churn-bench.ts::runScenario",
+      "type": "function",
+      "label": "runScenario",
+      "description": "运行单个性能测试场景。模拟消息发布和渲染帧循环，测量内存分配和渲染耗时。",
+      "metadata": {
+        "startLine": 121,
+        "endLine": 145,
+        "file": "packages/tui/test/render-churn-bench.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/render-churn-bench.ts::report",
+      "type": "function",
+      "label": "report",
+      "description": "输出性能测试报告。格式化打印场景名称、总内存、每帧带宽和每帧耗时。",
+      "metadata": {
+        "startLine": 147,
+        "endLine": 157,
+        "file": "packages/tui/test/render-churn-bench.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/render-churn-bench.ts::main",
+      "type": "function",
+      "label": "main",
+      "description": "基准测试入口函数。初始化 TUI 和终端，运行多种渲染场景（静态转录、编辑器模拟），输出性能统计。",
+      "metadata": {
+        "startLine": 159,
+        "endLine": 201,
+        "file": "packages/tui/test/render-churn-bench.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/terminal-colors.test.ts::TestTerminal",
+      "type": "class",
+      "label": "TestTerminal",
+      "description": "测试用终端实现。记录所有写入操作并支持模拟输入和窗口缩放事件，用于验证终端颜色序列输出。",
+      "metadata": {
+        "startLine": 12,
+        "endLine": 75,
+        "methods": [
+          "constructor",
+          "start",
+          "stop",
+          "drainInput",
+          "write",
+          "columns",
+          "rows",
+          "kittyProtocolActive",
+          "moveBy",
+          "hideCursor",
+          "showCursor",
+          "clearLine",
+          "clearFromCursor",
+          "clearScreen",
+          "setTitle",
+          "setProgress",
+          "sendInput",
+          "sendResize"
+        ],
+        "file": "packages/tui/test/terminal-colors.test.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/terminal-colors.test.ts::InputRecorder",
+      "type": "class",
+      "label": "InputRecorder",
+      "description": "输入记录器组件。记录所有接收到的键盘输入事件，用于验证终端输入处理。",
+      "metadata": {
+        "startLine": 77,
+        "endLine": 89,
+        "methods": [
+          "render",
+          "handleInput",
+          "invalidate"
+        ],
+        "file": "packages/tui/test/terminal-colors.test.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/terminal-image.test.ts::withEnv",
+      "type": "function",
+      "label": "withEnv",
+      "description": "环境变量覆盖辅助函数。临时设置环境变量执行测试函数，完成后恢复原始值。用于测试不同终端能力配置。",
+      "metadata": {
+        "startLine": 47,
+        "endLine": 65,
+        "file": "packages/tui/test/terminal-image.test.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/tui-alt-screen.test.ts::InputOverlay",
+      "type": "class",
+      "label": "InputOverlay",
+      "description": "输入覆盖层测试桩。记录所有键盘输入并维护焦点状态，用于验证备用屏幕上的覆盖层交互。",
+      "metadata": {
+        "startLine": 22,
+        "endLine": 35,
+        "methods": [
+          "handleInput",
+          "render",
+          "invalidate"
+        ],
+        "file": "packages/tui/test/tui-alt-screen.test.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/tui-alt-screen.test.ts::RecordingTerminal",
+      "type": "class",
+      "label": "RecordingTerminal",
+      "description": "事件记录终端。在 VirtualTerminal 基础上记录所有 start/write/stop 事件，用于验证写入序列和剪贴板操作。",
+      "metadata": {
+        "startLine": 37,
+        "endLine": 54,
+        "methods": [
+          "start",
+          "write",
+          "stop"
+        ],
+        "file": "packages/tui/test/tui-alt-screen.test.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/tui-cell-size-input.test.ts::InputRecorder",
+      "type": "class",
+      "label": "InputRecorder",
+      "description": "输入记录器组件（cell-size-input 版本）。记录键盘输入用于验证单元格尺寸对输入处理的影响。",
+      "metadata": {
+        "startLine": 8,
+        "endLine": 20,
+        "methods": [
+          "render",
+          "handleInput",
+          "invalidate"
+        ],
+        "file": "packages/tui/test/tui-cell-size-input.test.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/tui-cell-size-input.test.ts::withImageTerminal",
+      "type": "function",
+      "label": "withImageTerminal",
+      "description": "图像终端测试辅助函数。重置能力缓存、创建虚拟终端并设置单元格像素尺寸，执行测试后恢复缓存状态。",
+      "metadata": {
+        "startLine": 22,
+        "endLine": 43,
+        "file": "packages/tui/test/tui-cell-size-input.test.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/tui-overlay-style-leak.test.ts::StaticLines",
+      "type": "class",
+      "label": "StaticLines",
+      "description": "静态行内容组件。渲染预定义的行数组，用于验证主内容区域的样式基线。",
+      "metadata": {
+        "startLine": 8,
+        "endLine": 20,
+        "methods": [
+          "constructor",
+          "render",
+          "invalidate"
+        ],
+        "file": "packages/tui/test/tui-overlay-style-leak.test.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/tui-overlay-style-leak.test.ts::StaticOverlay",
+      "type": "class",
+      "label": "StaticOverlay",
+      "description": "样式泄漏测试覆盖层。渲染带斜体样式的单行文本，用于验证斜体样式不会泄漏到主内容。",
+      "metadata": {
+        "startLine": 22,
+        "endLine": 34,
+        "methods": [
+          "constructor",
+          "render",
+          "invalidate"
+        ],
+        "file": "packages/tui/test/tui-overlay-style-leak.test.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/tui-render.test.ts::TestComponent",
+      "type": "class",
+      "label": "TestComponent",
+      "description": "测试组件。渲染预定义的行数组，用于验证 TUI 渲染管线的基础组件行为。",
+      "metadata": {
+        "startLine": 19,
+        "endLine": 25,
+        "methods": [
+          "render",
+          "invalidate"
+        ],
+        "file": "packages/tui/test/tui-render.test.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/tui-render.test.ts::InputComponent",
+      "type": "class",
+      "label": "InputComponent",
+      "description": "输入测试组件。记录渲染调用次数并处理输入事件，用于验证渲染计数和输入响应。",
+      "metadata": {
+        "startLine": 27,
+        "endLine": 38,
+        "methods": [
+          "render",
+          "handleInput"
+        ],
+        "file": "packages/tui/test/tui-render.test.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/tui-render.test.ts::LoggingVirtualTerminal",
+      "type": "class",
+      "label": "LoggingVirtualTerminal",
+      "description": "日志虚拟终端。在 VirtualTerminal 基础上记录所有写入序列，用于验证 TUI 输出的正确性。",
+      "metadata": {
+        "startLine": 40,
+        "endLine": 55,
+        "methods": [
+          "write",
+          "getWrites",
+          "clearWrites"
+        ],
+        "file": "packages/tui/test/tui-render.test.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/tui-render.test.ts::withEnv",
+      "type": "function",
+      "label": "withEnv",
+      "description": "环境变量覆盖辅助函数（render 版本）。临时修改环境变量并在测试完成后恢复。",
+      "metadata": {
+        "startLine": 57,
+        "endLine": 79,
+        "file": "packages/tui/test/tui-render.test.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/tui-shrink.test.ts::Lines",
+      "type": "class",
+      "label": "Lines",
+      "description": "行内容组件（shrink 版本）。渲染预定义的行数组，用于验证终端缩小后的重绘行为。",
+      "metadata": {
+        "startLine": 7,
+        "endLine": 19,
+        "methods": [
+          "constructor",
+          "render",
+          "invalidate"
+        ],
+        "file": "packages/tui/test/tui-shrink.test.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/tab-width.test.ts::FullViewportContent",
+      "type": "class",
+      "label": "FullViewportContent",
+      "description": "全视口内容组件。渲染填充整个终端宽度的制表符分隔内容，用于测试制表符宽度计算。",
+      "metadata": {
+        "startLine": 8,
+        "endLine": 14,
+        "methods": [
+          "render",
+          "invalidate"
+        ],
+        "file": "packages/tui/test/tab-width.test.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/tab-width.test.ts::CapturingVirtualTerminal",
+      "type": "class",
+      "label": "CapturingVirtualTerminal",
+      "description": "捕获型虚拟终端。继承 VirtualTerminal 并额外记录所有写入输出，用于断言终端输出序列。",
+      "metadata": {
+        "startLine": 16,
+        "endLine": 27,
+        "methods": [
+          "write",
+          "getOutput"
+        ],
+        "file": "packages/tui/test/tab-width.test.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/tab-width.test.ts::TabStatusOverlay",
+      "type": "class",
+      "label": "TabStatusOverlay",
+      "description": "制表符状态覆盖层。渲染包含制表符的状态行，用于验证覆盖层中制表符的宽度处理。",
+      "metadata": {
+        "startLine": 29,
+        "endLine": 35,
+        "methods": [
+          "render",
+          "invalidate"
+        ],
+        "file": "packages/tui/test/tab-width.test.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/viewport-overwrite-repro.ts::Lines",
+      "type": "class",
+      "label": "Lines",
+      "description": "动态行内容组件（viewport 版本）。支持动态设置和追加行，用于流式内容渲染测试。",
+      "metadata": {
+        "startLine": 27,
+        "endLine": 46,
+        "methods": [
+          "set",
+          "append",
+          "render",
+          "invalidate"
+        ],
+        "file": "packages/tui/test/viewport-overwrite-repro.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/viewport-overwrite-repro.ts::main",
+      "type": "function",
+      "label": "main",
+      "description": "视口覆写复现入口。创建 TUI 和缓冲区，通过多次设置和流式追加操作复现视口内容覆写问题。",
+      "metadata": {
+        "startLine": 56,
+        "endLine": 96,
+        "file": "packages/tui/test/viewport-overwrite-repro.ts"
+      }
+    },
+    {
+      "id": "packages/tui/test/virtual-terminal.ts::VirtualTerminal",
+      "type": "class",
+      "label": "VirtualTerminal",
+      "description": "虚拟终端核心实现。基于 xterm.js headless 模式，提供完整的终端模拟能力：输入模拟、视口捕获、滚动缓冲区读取、光标管理、窗口缩放和渲染同步。是 TUI 测试框架的基础设施。",
+      "metadata": {
+        "startLine": 11,
+        "endLine": 218,
+        "methods": [
+          "constructor",
+          "start",
+          "drainInput",
+          "stop",
+          "write",
+          "columns",
+          "rows",
+          "kittyProtocolActive",
+          "moveBy",
+          "hideCursor",
+          "showCursor",
+          "clearLine",
+          "clearFromCursor",
+          "clearScreen",
+          "setTitle",
+          "setProgress",
+          "sendInput",
+          "resize",
+          "flush",
+          "flushAndGetViewport",
+          "getViewport",
+          "getScrollBuffer",
+          "clear",
+          "reset",
+          "getCursorPosition",
+          "waitForRender"
+        ],
+        "file": "packages/tui/test/virtual-terminal.ts"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from": "packages/tui/test/markdown.test.ts",
+      "to": "packages/tui/src/components/markdown.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/markdown.test.ts",
+      "to": "packages/tui/src/terminal-image.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/markdown.test.ts",
+      "to": "packages/tui/src/tui-main-screen.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/markdown.test.ts",
+      "to": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/markdown.test.ts",
+      "to": "packages/tui/test/test-themes.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/markdown.test.ts",
+      "to": "packages/tui/test/virtual-terminal.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/overlay-non-capturing.test.ts",
+      "to": "packages/tui/src/tui-main-screen.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/overlay-non-capturing.test.ts",
+      "to": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/overlay-non-capturing.test.ts",
+      "to": "packages/tui/test/virtual-terminal.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/overlay-options.test.ts",
+      "to": "packages/tui/src/tui-main-screen.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/overlay-options.test.ts",
+      "to": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/overlay-options.test.ts",
+      "to": "packages/tui/test/virtual-terminal.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/overlay-short-content.test.ts",
+      "to": "packages/tui/src/tui-main-screen.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/overlay-short-content.test.ts",
+      "to": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/overlay-short-content.test.ts",
+      "to": "packages/tui/test/virtual-terminal.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/regression-overlay-cjk-boundary.test.ts",
+      "to": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/regression-overlay-cjk-boundary.test.ts",
+      "to": "packages/tui/src/utils.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/regression-regional-indicator-width.test.ts",
+      "to": "packages/tui/src/utils.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/render-churn-bench.ts",
+      "to": "packages/tui/src/components/scroll-view.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/render-churn-bench.ts",
+      "to": "packages/tui/src/components/text.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/render-churn-bench.ts",
+      "to": "packages/tui/src/components/v-stack.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/render-churn-bench.ts",
+      "to": "packages/tui/src/terminal.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/render-churn-bench.ts",
+      "to": "packages/tui/src/tui-alt-screen.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/render-churn-bench.ts",
+      "to": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/select-list.test.ts",
+      "to": "packages/tui/src/components/select-list.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/select-list.test.ts",
+      "to": "packages/tui/src/utils.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/settings-list.test.ts",
+      "to": "packages/tui/src/components/settings-list.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/stdin-buffer.test.ts",
+      "to": "packages/tui/src/keys.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/stdin-buffer.test.ts",
+      "to": "packages/tui/src/stdin-buffer.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tab-width.test.ts",
+      "to": "packages/tui/src/tui-main-screen.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tab-width.test.ts",
+      "to": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tab-width.test.ts",
+      "to": "packages/tui/src/utils.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tab-width.test.ts",
+      "to": "packages/tui/test/virtual-terminal.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/terminal-colors.test.ts",
+      "to": "packages/tui/src/index.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/terminal-image.test.ts",
+      "to": "packages/tui/src/components/image.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/terminal-image.test.ts",
+      "to": "packages/tui/src/terminal-image.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/terminal-image.test.ts",
+      "to": "packages/tui/src/utils.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/terminal.test.ts",
+      "to": "packages/tui/src/keys.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/terminal.test.ts",
+      "to": "packages/tui/src/terminal.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/test-themes.ts",
+      "to": "packages/tui/src/index.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/test-themes.ts",
+      "to": "packages/coding-agent/test/custom-editor-history-keybindings.test.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/test-themes.ts",
+      "to": "packages/tui/test/chat-simple.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/test-themes.ts",
+      "to": "packages/tui/test/editor-history-keybindings.test.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/test-themes.ts",
+      "to": "packages/tui/test/editor.test.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/truncate-to-width.test.ts",
+      "to": "packages/tui/src/utils.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/truncated-text.test.ts",
+      "to": "packages/tui/src/components/truncated-text.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/truncated-text.test.ts",
+      "to": "packages/tui/src/utils.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tui-alt-screen.test.ts",
+      "to": "packages/tui/src/alt-screen-search.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tui-alt-screen.test.ts",
+      "to": "packages/tui/src/components/h-stack.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tui-alt-screen.test.ts",
+      "to": "packages/tui/src/components/image.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tui-alt-screen.test.ts",
+      "to": "packages/tui/src/components/scroll-view.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tui-alt-screen.test.ts",
+      "to": "packages/tui/src/components/text.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tui-alt-screen.test.ts",
+      "to": "packages/tui/src/components/v-stack.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tui-alt-screen.test.ts",
+      "to": "packages/tui/src/keybindings.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tui-alt-screen.test.ts",
+      "to": "packages/tui/src/terminal-image.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tui-alt-screen.test.ts",
+      "to": "packages/tui/src/tui-alt-screen.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tui-alt-screen.test.ts",
+      "to": "packages/tui/test/virtual-terminal.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tui-cell-size-input.test.ts",
+      "to": "packages/tui/src/terminal-image.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tui-cell-size-input.test.ts",
+      "to": "packages/tui/src/tui-main-screen.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tui-cell-size-input.test.ts",
+      "to": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tui-cell-size-input.test.ts",
+      "to": "packages/tui/test/virtual-terminal.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tui-overlay-style-leak.test.ts",
+      "to": "packages/tui/src/tui-main-screen.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tui-overlay-style-leak.test.ts",
+      "to": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tui-overlay-style-leak.test.ts",
+      "to": "packages/tui/test/virtual-terminal.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tui-render.test.ts",
+      "to": "packages/tui/src/components/image.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tui-render.test.ts",
+      "to": "packages/tui/src/terminal-image.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tui-render.test.ts",
+      "to": "packages/tui/src/tui-main-screen.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tui-render.test.ts",
+      "to": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tui-render.test.ts",
+      "to": "packages/tui/test/virtual-terminal.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tui-shrink.test.ts",
+      "to": "packages/tui/src/tui-main-screen.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tui-shrink.test.ts",
+      "to": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/tui-shrink.test.ts",
+      "to": "packages/tui/test/virtual-terminal.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/viewport-overwrite-repro.ts",
+      "to": "packages/tui/src/terminal.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/viewport-overwrite-repro.ts",
+      "to": "packages/tui/src/tui-main-screen.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/viewport-overwrite-repro.ts",
+      "to": "packages/tui/src/tui.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/virtual-terminal.ts",
+      "to": "packages/tui/src/terminal.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/virtual-terminal.ts",
+      "to": "packages/coding-agent/test/custom-editor-history-keybindings.test.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/virtual-terminal.ts",
+      "to": "packages/coding-agent/test/interactive-mode-status.test.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/virtual-terminal.ts",
+      "to": "packages/coding-agent/test/interactive-tui.test.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/virtual-terminal.ts",
+      "to": "packages/tui/test/editor-history-keybindings.test.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/virtual-terminal.ts",
+      "to": "packages/tui/test/editor.test.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/word-navigation.test.ts",
+      "to": "packages/tui/src/word-navigation.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/wrap-ansi.test.ts",
+      "to": "packages/tui/src/utils.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "from": "packages/tui/test/overlay-non-capturing.test.ts::StaticOverlay",
+      "to": "packages/tui/test/overlay-non-capturing.test.ts",
+      "type": "contains",
+      "label": "defined in"
+    },
+    {
+      "from": "packages/tui/test/overlay-non-capturing.test.ts::EmptyContent",
+      "to": "packages/tui/test/overlay-non-capturing.test.ts",
+      "type": "contains",
+      "label": "defined in"
+    },
+    {
+      "from": "packages/tui/test/overlay-non-capturing.test.ts::FocusableOverlay",
+      "to": "packages/tui/test/overlay-non-capturing.test.ts",
+      "type": "contains",
+      "label": "defined in"
+    },
+    {
+      "from": "packages/tui/test/overlay-options.test.ts::StaticOverlay",
+      "to": "packages/tui/test/overlay-options.test.ts",
+      "type": "contains",
+      "label": "defined in"
+    },
+    {
+      "from": "packages/tui/test/overlay-options.test.ts::EmptyContent",
+      "to": "packages/tui/test/overlay-options.test.ts",
+      "type": "contains",
+      "label": "defined in"
+    },
+    {
+      "from": "packages/tui/test/overlay-short-content.test.ts::SimpleContent",
+      "to": "packages/tui/test/overlay-short-content.test.ts",
+      "type": "contains",
+      "label": "defined in"
+    },
+    {
+      "from": "packages/tui/test/overlay-short-content.test.ts::SimpleOverlay",
+      "to": "packages/tui/test/overlay-short-content.test.ts",
+      "type": "contains",
+      "label": "defined in"
+    },
+    {
+      "from": "packages/tui/test/render-churn-bench.ts::NullTerminal",
+      "to": "packages/tui/test/render-churn-bench.ts",
+      "type": "contains",
+      "label": "defined in"
+    },
+    {
+      "from": "packages/tui/test/render-churn-bench.ts::EditorSim",
+      "to": "packages/tui/test/render-churn-bench.ts",
+      "type": "contains",
+      "label": "defined in"
+    },
+    {
+      "from": "packages/tui/test/terminal-colors.test.ts::TestTerminal",
+      "to": "packages/tui/test/terminal-colors.test.ts",
+      "type": "contains",
+      "label": "defined in"
+    },
+    {
+      "from": "packages/tui/test/terminal-colors.test.ts::InputRecorder",
+      "to": "packages/tui/test/terminal-colors.test.ts",
+      "type": "contains",
+      "label": "defined in"
+    },
+    {
+      "from": "packages/tui/test/tui-alt-screen.test.ts::InputOverlay",
+      "to": "packages/tui/test/tui-alt-screen.test.ts",
+      "type": "contains",
+      "label": "defined in"
+    },
+    {
+      "from": "packages/tui/test/tui-alt-screen.test.ts::RecordingTerminal",
+      "to": "packages/tui/test/tui-alt-screen.test.ts",
+      "type": "contains",
+      "label": "defined in"
+    },
+    {
+      "from": "packages/tui/test/tui-cell-size-input.test.ts::InputRecorder",
+      "to": "packages/tui/test/tui-cell-size-input.test.ts",
+      "type": "contains",
+      "label": "defined in"
+    },
+    {
+      "from": "packages/tui/test/tui-overlay-style-leak.test.ts::StaticLines",
+      "to": "packages/tui/test/tui-overlay-style-leak.test.ts",
+      "type": "contains",
+      "label": "defined in"
+    },
+    {
+      "from": "packages/tui/test/tui-overlay-style-leak.test.ts::StaticOverlay",
+      "to": "packages/tui/test/tui-overlay-style-leak.test.ts",
+      "type": "contains",
+      "label": "defined in"
+    },
+    {
+      "from": "packages/tui/test/tui-render.test.ts::TestComponent",
+      "to": "packages/tui/test/tui-render.test.ts",
+      "type": "contains",
+      "label": "defined in"
+    },
+    {
+      "from": "packages/tui/test/tui-render.test.ts::InputComponent",
+      "to": "packages/tui/test/tui-render.test.ts",
+      "type": "contains",
+      "label": "defined in"
+    },
+    {
+      "from": "packages/tui/test/tui-render.test.ts::LoggingVirtualTerminal",
+      "to": "packages/tui/test/tui-render.test.ts",
+      "type": "contains",
+      "label": "defined in"
+    },
+    {
+      "from": "packages/tui/test/tui-shrink.test.ts::Lines",
+      "to": "packages/tui/test/tui-shrink.test.ts",
+      "type": "contains",
+      "label": "defined in"
+    },
+    {
+      "from": "packages/tui/test/tab-width.test.ts::FullViewportContent",
+      "to": "packages/tui/test/tab-width.test.ts",
+      "type": "contains",
+      "label": "defined in"
+    },
+    {
+      "from": "packages/tui/test/tab-width.test.ts::CapturingVirtualTerminal",
+      "to": "packages/tui/test/tab-width.test.ts",
+      "type": "contains",
+      "label": "defined in"
+    },
+    {
+      "from": "packages/tui/test/tab-width.test.ts::TabStatusOverlay",
+      "to": "packages/tui/test/tab-width.test.ts",
+      "type": "contains",
+      "label": "defined in"
+    },
+    {
+      "from": "packages/tui/test/viewport-overwrite-repro.ts::Lines",
+      "to": "packages/tui/test/viewport-overwrite-repro.ts",
+      "type": "contains",
+      "label": "defined in"
+    },
+    {
+      "from": "packages/tui/test/virtual-terminal.ts::VirtualTerminal",
+      "to": "packages/tui/test/virtual-terminal.ts",
+      "type": "contains",
+      "label": "defined in"
+    }
+  ]
+}

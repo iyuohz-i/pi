@@ -1,0 +1,1895 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 25,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": ".gitattributes",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 20,
+      "metrics": {}
+    },
+    {
+      "path": ".github/APPROVED_CONTRIBUTORS",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 365,
+      "nonEmptyLines": 256,
+      "metrics": {}
+    },
+    {
+      "path": ".husky/pre-commit",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 45,
+      "nonEmptyLines": 38,
+      "metrics": {}
+    },
+    {
+      "path": ".npmrc",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "metrics": {}
+    },
+    {
+      "path": ".pi/extensions/import-repro.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 351,
+      "nonEmptyLines": 298,
+      "functions": [
+        {
+          "name": "parseRef",
+          "startLine": 58,
+          "endLine": 78,
+          "params": [
+            "ref",
+            "cwd"
+          ]
+        },
+        {
+          "name": "parseSessionJsonl",
+          "startLine": 80,
+          "endLine": 94,
+          "params": [
+            "raw"
+          ]
+        },
+        {
+          "name": "decodeExportedHtml",
+          "startLine": 96,
+          "endLine": 118,
+          "params": [
+            "html"
+          ]
+        },
+        {
+          "name": "escapeJsonString",
+          "startLine": 122,
+          "endLine": 124,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "escapeRegExp",
+          "startLine": 126,
+          "endLine": 128,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "trimTrailingPathSeparators",
+          "startLine": 130,
+          "endLine": 132,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "getPathTailName",
+          "startLine": 134,
+          "endLine": 137,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "getWindowsDrivePathParts",
+          "startLine": 139,
+          "endLine": 152,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "getCwdRewriteVariants",
+          "startLine": 154,
+          "endLine": 170,
+          "params": [
+            "sourceCwd"
+          ]
+        },
+        {
+          "name": "getCiWorkdirName",
+          "startLine": 172,
+          "endLine": 175,
+          "params": [
+            "sourceCwd"
+          ]
+        },
+        {
+          "name": "detectSessionPlatform",
+          "startLine": 177,
+          "endLine": 181,
+          "params": [
+            "cwd"
+          ]
+        },
+        {
+          "name": "getLocalPlatform",
+          "startLine": 183,
+          "endLine": 185,
+          "params": []
+        },
+        {
+          "name": "getPlatformContinuationNotice",
+          "startLine": 187,
+          "endLine": 195,
+          "params": [
+            "sourceCwd"
+          ]
+        },
+        {
+          "name": "rewriteSessionCwd",
+          "startLine": 198,
+          "endLine": 220,
+          "params": [
+            "raw",
+            "sourceCwd",
+            "targetCwd"
+          ]
+        },
+        {
+          "name": "fetchText",
+          "startLine": 222,
+          "endLine": 228,
+          "params": [
+            "url"
+          ]
+        },
+        {
+          "name": "readGistFile",
+          "startLine": 230,
+          "endLine": 234,
+          "params": [
+            "file"
+          ]
+        },
+        {
+          "name": "findIssueGistId",
+          "startLine": 236,
+          "endLine": 261,
+          "params": [
+            "owner",
+            "repo",
+            "issue"
+          ]
+        },
+        {
+          "name": "fetchGistSession",
+          "startLine": 263,
+          "endLine": 281,
+          "params": [
+            "gistId"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parseRef",
+          "callee": "ref.endsWith",
+          "lineNumber": 62
+        },
+        {
+          "caller": "parseRef",
+          "callee": "ref.endsWith",
+          "lineNumber": 62
+        },
+        {
+          "caller": "parseRef",
+          "callee": "isAbsolute",
+          "lineNumber": 63
+        },
+        {
+          "caller": "parseRef",
+          "callee": "resolve",
+          "lineNumber": 63
+        },
+        {
+          "caller": "parseRef",
+          "callee": "ref.match",
+          "lineNumber": 66
+        },
+        {
+          "caller": "parseRef",
+          "callee": "ref.match",
+          "lineNumber": 69
+        },
+        {
+          "caller": "parseRef",
+          "callee": "ref.match",
+          "lineNumber": 72
+        },
+        {
+          "caller": "parseRef",
+          "callee": "GIST_ID_RE.test",
+          "lineNumber": 75
+        },
+        {
+          "caller": "parseSessionJsonl",
+          "callee": "raw.indexOf",
+          "lineNumber": 81
+        },
+        {
+          "caller": "parseSessionJsonl",
+          "callee": "raw.slice",
+          "lineNumber": 82
+        },
+        {
+          "caller": "parseSessionJsonl",
+          "callee": "JSON.parse",
+          "lineNumber": 85
+        },
+        {
+          "caller": "decodeExportedHtml",
+          "callee": "html.match",
+          "lineNumber": 97
+        },
+        {
+          "caller": "decodeExportedHtml",
+          "callee": "JSON.parse",
+          "lineNumber": 102
+        },
+        {
+          "caller": "decodeExportedHtml",
+          "callee": "Buffer.from(match[1], \"base64\").toString",
+          "lineNumber": 102
+        },
+        {
+          "caller": "decodeExportedHtml",
+          "callee": "Buffer.from",
+          "lineNumber": 102
+        },
+        {
+          "caller": "decodeExportedHtml",
+          "callee": "Array.isArray",
+          "lineNumber": 112
+        },
+        {
+          "caller": "decodeExportedHtml",
+          "callee": "[header, ...sessionData.entries].map",
+          "lineNumber": 116
+        },
+        {
+          "caller": "decodeExportedHtml",
+          "callee": "JSON.stringify",
+          "lineNumber": 116
+        },
+        {
+          "caller": "decodeExportedHtml",
+          "callee": "lines.join",
+          "lineNumber": 117
+        },
+        {
+          "caller": "escapeJsonString",
+          "callee": "JSON.stringify(value).slice",
+          "lineNumber": 123
+        },
+        {
+          "caller": "escapeJsonString",
+          "callee": "JSON.stringify",
+          "lineNumber": 123
+        },
+        {
+          "caller": "escapeRegExp",
+          "callee": "value.replace",
+          "lineNumber": 127
+        },
+        {
+          "caller": "trimTrailingPathSeparators",
+          "callee": "value.replace",
+          "lineNumber": 131
+        },
+        {
+          "caller": "getPathTailName",
+          "callee": "trimTrailingPathSeparators",
+          "lineNumber": 135
+        },
+        {
+          "caller": "getPathTailName",
+          "callee": "trimmed.split(/[\\\\/]/).filter(Boolean).at",
+          "lineNumber": 136
+        },
+        {
+          "caller": "getPathTailName",
+          "callee": "trimmed.split(/[\\\\/]/).filter",
+          "lineNumber": 136
+        },
+        {
+          "caller": "getPathTailName",
+          "callee": "trimmed.split",
+          "lineNumber": 136
+        },
+        {
+          "caller": "getWindowsDrivePathParts",
+          "callee": "trimTrailingPathSeparators",
+          "lineNumber": 140
+        },
+        {
+          "caller": "getWindowsDrivePathParts",
+          "callee": "trimmed.match",
+          "lineNumber": 141
+        },
+        {
+          "caller": "getWindowsDrivePathParts",
+          "callee": "driveMatch[1].toUpperCase",
+          "lineNumber": 143
+        },
+        {
+          "caller": "getWindowsDrivePathParts",
+          "callee": "driveMatch[2].replace",
+          "lineNumber": 143
+        },
+        {
+          "caller": "getWindowsDrivePathParts",
+          "callee": "trimmed.match",
+          "lineNumber": 146
+        },
+        {
+          "caller": "getWindowsDrivePathParts",
+          "callee": "msysMatch[1].toUpperCase",
+          "lineNumber": 148
+        },
+        {
+          "caller": "getWindowsDrivePathParts",
+          "callee": "msysMatch[2].replace",
+          "lineNumber": 148
+        },
+        {
+          "caller": "getCwdRewriteVariants",
+          "callee": "trimTrailingPathSeparators",
+          "lineNumber": 155
+        },
+        {
+          "caller": "getCwdRewriteVariants",
+          "callee": "variants.add",
+          "lineNumber": 157
+        },
+        {
+          "caller": "getCwdRewriteVariants",
+          "callee": "getWindowsDrivePathParts",
+          "lineNumber": 159
+        },
+        {
+          "caller": "getCwdRewriteVariants",
+          "callee": "driveParts.rest.replace",
+          "lineNumber": 161
+        },
+        {
+          "caller": "getCwdRewriteVariants",
+          "callee": "rest.replace",
+          "lineNumber": 162
+        },
+        {
+          "caller": "getCwdRewriteVariants",
+          "callee": "variants.add",
+          "lineNumber": 163
+        },
+        {
+          "caller": "getCwdRewriteVariants",
+          "callee": "variants.add",
+          "lineNumber": 164
+        },
+        {
+          "caller": "getCwdRewriteVariants",
+          "callee": "variants.add",
+          "lineNumber": 165
+        },
+        {
+          "caller": "getCwdRewriteVariants",
+          "callee": "driveParts.drive.toLowerCase",
+          "lineNumber": 165
+        },
+        {
+          "caller": "getCwdRewriteVariants",
+          "callee": "variants.add",
+          "lineNumber": 166
+        },
+        {
+          "caller": "getCwdRewriteVariants",
+          "callee": "Array.from(variants).filter(Boolean).sort",
+          "lineNumber": 169
+        },
+        {
+          "caller": "getCwdRewriteVariants",
+          "callee": "Array.from(variants).filter",
+          "lineNumber": 169
+        },
+        {
+          "caller": "getCwdRewriteVariants",
+          "callee": "Array.from",
+          "lineNumber": 169
+        },
+        {
+          "caller": "getCiWorkdirName",
+          "callee": "getPathTailName",
+          "lineNumber": 173
+        },
+        {
+          "caller": "getCiWorkdirName",
+          "callee": "/^pi-ci-[0-9a-f]{32}$/i.test",
+          "lineNumber": 174
+        },
+        {
+          "caller": "detectSessionPlatform",
+          "callee": "/^[A-Za-z]:[\\\\/]/.test",
+          "lineNumber": 178
+        },
+        {
+          "caller": "detectSessionPlatform",
+          "callee": "/^\\/[A-Za-z]\\//.test",
+          "lineNumber": 178
+        },
+        {
+          "caller": "detectSessionPlatform",
+          "callee": "cwd.startsWith",
+          "lineNumber": 179
+        },
+        {
+          "caller": "getPlatformContinuationNotice",
+          "callee": "detectSessionPlatform",
+          "lineNumber": 188
+        },
+        {
+          "caller": "getPlatformContinuationNotice",
+          "callee": "getLocalPlatform",
+          "lineNumber": 189
+        },
+        {
+          "caller": "rewriteSessionCwd",
+          "callee": "escapeJsonString",
+          "lineNumber": 199
+        },
+        {
+          "caller": "rewriteSessionCwd",
+          "callee": "getCwdRewriteVariants",
+          "lineNumber": 202
+        },
+        {
+          "caller": "rewriteSessionCwd",
+          "callee": "rewritten.split(escapeJsonString(sourceVariant)).join",
+          "lineNumber": 204
+        },
+        {
+          "caller": "rewriteSessionCwd",
+          "callee": "rewritten.split",
+          "lineNumber": 204
+        },
+        {
+          "caller": "rewriteSessionCwd",
+          "callee": "escapeJsonString",
+          "lineNumber": 204
+        },
+        {
+          "caller": "rewriteSessionCwd",
+          "callee": "getCiWorkdirName",
+          "lineNumber": 207
+        },
+        {
+          "caller": "rewriteSessionCwd",
+          "callee": "escapeRegExp",
+          "lineNumber": 209
+        },
+        {
+          "caller": "rewriteSessionCwd",
+          "callee": "rewritten.replace",
+          "lineNumber": 215
+        },
+        {
+          "caller": "fetchText",
+          "callee": "fetch",
+          "lineNumber": 223
+        },
+        {
+          "caller": "fetchText",
+          "callee": "response.text",
+          "lineNumber": 227
+        },
+        {
+          "caller": "readGistFile",
+          "callee": "fetchText",
+          "lineNumber": 233
+        },
+        {
+          "caller": "findIssueGistId",
+          "callee": "fetch",
+          "lineNumber": 240
+        },
+        {
+          "caller": "findIssueGistId",
+          "callee": "encodeURIComponent",
+          "lineNumber": 241
+        },
+        {
+          "caller": "findIssueGistId",
+          "callee": "encodeURIComponent",
+          "lineNumber": 241
+        },
+        {
+          "caller": "findIssueGistId",
+          "callee": "encodeURIComponent",
+          "lineNumber": 241
+        },
+        {
+          "caller": "findIssueGistId",
+          "callee": "response.json",
+          "lineNumber": 246
+        },
+        {
+          "caller": "findIssueGistId",
+          "callee": "(comment.body ?? \"\").matchAll",
+          "lineNumber": 249
+        },
+        {
+          "caller": "findIssueGistId",
+          "callee": "gistIds.push",
+          "lineNumber": 250
+        },
+        {
+          "caller": "findIssueGistId",
+          "callee": "gistIds.at",
+          "lineNumber": 258
+        },
+        {
+          "caller": "fetchGistSession",
+          "callee": "fetch",
+          "lineNumber": 264
+        },
+        {
+          "caller": "fetchGistSession",
+          "callee": "response.json",
+          "lineNumber": 272
+        },
+        {
+          "caller": "fetchGistSession",
+          "callee": "Object.values",
+          "lineNumber": 273
+        },
+        {
+          "caller": "fetchGistSession",
+          "callee": "files.find",
+          "lineNumber": 274
+        },
+        {
+          "caller": "fetchGistSession",
+          "callee": "file.filename?.endsWith",
+          "lineNumber": 274
+        },
+        {
+          "caller": "fetchGistSession",
+          "callee": "parseSessionJsonl",
+          "lineNumber": 275
+        },
+        {
+          "caller": "fetchGistSession",
+          "callee": "readGistFile",
+          "lineNumber": 275
+        },
+        {
+          "caller": "fetchGistSession",
+          "callee": "files.find",
+          "lineNumber": 277
+        },
+        {
+          "caller": "fetchGistSession",
+          "callee": "file.filename?.endsWith",
+          "lineNumber": 277
+        },
+        {
+          "caller": "fetchGistSession",
+          "callee": "decodeExportedHtml",
+          "lineNumber": 278
+        },
+        {
+          "caller": "fetchGistSession",
+          "callee": "readGistFile",
+          "lineNumber": 278
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 18,
+        "classCount": 0
+      }
+    },
+    {
+      "path": ".pi/extensions/prompt-url-widget.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 270,
+      "nonEmptyLines": 235,
+      "functions": [
+        {
+          "name": "extractPromptMatch",
+          "startLine": 42,
+          "endLine": 59,
+          "params": [
+            "prompt"
+          ]
+        },
+        {
+          "name": "getPromptLabel",
+          "startLine": 61,
+          "endLine": 65,
+          "params": [
+            "kind"
+          ]
+        },
+        {
+          "name": "parseAdvisoryUrl",
+          "startLine": 67,
+          "endLine": 78,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "unquoteYamlValue",
+          "startLine": 80,
+          "endLine": 89,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "resolveDraftPath",
+          "startLine": 91,
+          "endLine": 95,
+          "params": [
+            "cwd",
+            "target"
+          ]
+        },
+        {
+          "name": "readAdvisoryRefFromDraft",
+          "startLine": 97,
+          "endLine": 108,
+          "params": [
+            "cwd",
+            "target"
+          ]
+        },
+        {
+          "name": "formatAdvisoryDetail",
+          "startLine": 110,
+          "endLine": 115,
+          "params": [
+            "advisory"
+          ]
+        },
+        {
+          "name": "fetchAdvisoryMetadata",
+          "startLine": 117,
+          "endLine": 136,
+          "params": [
+            "pi",
+            "cwd",
+            "target"
+          ]
+        },
+        {
+          "name": "fetchGhMetadata",
+          "startLine": 138,
+          "endLine": 160,
+          "params": [
+            "pi",
+            "kind",
+            "target",
+            "cwd"
+          ]
+        },
+        {
+          "name": "formatAuthor",
+          "startLine": 162,
+          "endLine": 170,
+          "params": [
+            "author"
+          ]
+        },
+        {
+          "name": "promptUrlWidgetExtension",
+          "startLine": 172,
+          "endLine": 270,
+          "params": [
+            "pi"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "promptUrlWidgetExtension",
+          "line": 172,
+          "isDefault": true
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "extractPromptMatch",
+          "callee": "prompt.match",
+          "lineNumber": 43
+        },
+        {
+          "caller": "extractPromptMatch",
+          "callee": "prMatch[1].trim",
+          "lineNumber": 45
+        },
+        {
+          "caller": "extractPromptMatch",
+          "callee": "prompt.match",
+          "lineNumber": 48
+        },
+        {
+          "caller": "extractPromptMatch",
+          "callee": "issueMatch[1].trim",
+          "lineNumber": 50
+        },
+        {
+          "caller": "extractPromptMatch",
+          "callee": "prompt.match",
+          "lineNumber": 53
+        },
+        {
+          "caller": "extractPromptMatch",
+          "callee": "advisoryMatch[1].trim",
+          "lineNumber": 55
+        },
+        {
+          "caller": "parseAdvisoryUrl",
+          "callee": "value.match",
+          "lineNumber": 68
+        },
+        {
+          "caller": "unquoteYamlValue",
+          "callee": "value.trim",
+          "lineNumber": 81
+        },
+        {
+          "caller": "unquoteYamlValue",
+          "callee": "trimmed.startsWith",
+          "lineNumber": 83
+        },
+        {
+          "caller": "unquoteYamlValue",
+          "callee": "trimmed.endsWith",
+          "lineNumber": 83
+        },
+        {
+          "caller": "unquoteYamlValue",
+          "callee": "trimmed.startsWith",
+          "lineNumber": 84
+        },
+        {
+          "caller": "unquoteYamlValue",
+          "callee": "trimmed.endsWith",
+          "lineNumber": 84
+        },
+        {
+          "caller": "unquoteYamlValue",
+          "callee": "trimmed.slice",
+          "lineNumber": 86
+        },
+        {
+          "caller": "resolveDraftPath",
+          "callee": "homedir",
+          "lineNumber": 92
+        },
+        {
+          "caller": "resolveDraftPath",
+          "callee": "target.startsWith",
+          "lineNumber": 93
+        },
+        {
+          "caller": "resolveDraftPath",
+          "callee": "resolve",
+          "lineNumber": 93
+        },
+        {
+          "caller": "resolveDraftPath",
+          "callee": "homedir",
+          "lineNumber": 93
+        },
+        {
+          "caller": "resolveDraftPath",
+          "callee": "target.slice",
+          "lineNumber": 93
+        },
+        {
+          "caller": "resolveDraftPath",
+          "callee": "resolve",
+          "lineNumber": 94
+        },
+        {
+          "caller": "readAdvisoryRefFromDraft",
+          "callee": "readFile",
+          "lineNumber": 99
+        },
+        {
+          "caller": "readAdvisoryRefFromDraft",
+          "callee": "resolveDraftPath",
+          "lineNumber": 99
+        },
+        {
+          "caller": "readAdvisoryRefFromDraft",
+          "callee": "content.match",
+          "lineNumber": 100
+        },
+        {
+          "caller": "readAdvisoryRefFromDraft",
+          "callee": "body.match",
+          "lineNumber": 102
+        },
+        {
+          "caller": "readAdvisoryRefFromDraft",
+          "callee": "parseAdvisoryUrl",
+          "lineNumber": 104
+        },
+        {
+          "caller": "readAdvisoryRefFromDraft",
+          "callee": "unquoteYamlValue",
+          "lineNumber": 104
+        },
+        {
+          "caller": "formatAdvisoryDetail",
+          "callee": "[advisory.ghsa_id, advisory.cve_id ?? undefined, advisory.severity, advisory.state]\n\t\t.map((part) => part?.trim())\n\t\t.filter",
+          "lineNumber": 111
+        },
+        {
+          "caller": "formatAdvisoryDetail",
+          "callee": "[advisory.ghsa_id, advisory.cve_id ?? undefined, advisory.severity, advisory.state]\n\t\t.map",
+          "lineNumber": 111
+        },
+        {
+          "caller": "formatAdvisoryDetail",
+          "callee": "part?.trim",
+          "lineNumber": 112
+        },
+        {
+          "caller": "formatAdvisoryDetail",
+          "callee": "parts.join",
+          "lineNumber": 114
+        },
+        {
+          "caller": "fetchAdvisoryMetadata",
+          "callee": "parseAdvisoryUrl",
+          "lineNumber": 118
+        },
+        {
+          "caller": "fetchAdvisoryMetadata",
+          "callee": "readAdvisoryRefFromDraft",
+          "lineNumber": 118
+        },
+        {
+          "caller": "fetchAdvisoryMetadata",
+          "callee": "pi.exec",
+          "lineNumber": 122
+        },
+        {
+          "caller": "fetchAdvisoryMetadata",
+          "callee": "JSON.parse",
+          "lineNumber": 127
+        },
+        {
+          "caller": "fetchAdvisoryMetadata",
+          "callee": "formatAdvisoryDetail",
+          "lineNumber": 130
+        },
+        {
+          "caller": "fetchGhMetadata",
+          "callee": "fetchAdvisoryMetadata",
+          "lineNumber": 145
+        },
+        {
+          "caller": "fetchGhMetadata",
+          "callee": "pi.exec",
+          "lineNumber": 154
+        },
+        {
+          "caller": "fetchGhMetadata",
+          "callee": "JSON.parse",
+          "lineNumber": 156
+        },
+        {
+          "caller": "formatAuthor",
+          "callee": "author.name?.trim",
+          "lineNumber": 164
+        },
+        {
+          "caller": "formatAuthor",
+          "callee": "author.login?.trim",
+          "lineNumber": 165
+        },
+        {
+          "caller": "setWidget",
+          "callee": "ctx.ui.setWidget",
+          "lineNumber": 174
+        },
+        {
+          "caller": "setWidget",
+          "callee": "thm.fg",
+          "lineNumber": 177
+        },
+        {
+          "caller": "setWidget",
+          "callee": "hyperlink",
+          "lineNumber": 178
+        },
+        {
+          "caller": "setWidget",
+          "callee": "thm.fg",
+          "lineNumber": 178
+        },
+        {
+          "caller": "setWidget",
+          "callee": "formatAuthor",
+          "lineNumber": 179
+        },
+        {
+          "caller": "setWidget",
+          "callee": "thm.fg",
+          "lineNumber": 180
+        },
+        {
+          "caller": "setWidget",
+          "callee": "hyperlink",
+          "lineNumber": 181
+        },
+        {
+          "caller": "setWidget",
+          "callee": "thm.fg",
+          "lineNumber": 181
+        },
+        {
+          "caller": "setWidget",
+          "callee": "lines.push",
+          "lineNumber": 184
+        },
+        {
+          "caller": "setWidget",
+          "callee": "lines.push",
+          "lineNumber": 185
+        },
+        {
+          "caller": "setWidget",
+          "callee": "container.addChild",
+          "lineNumber": 188
+        },
+        {
+          "caller": "setWidget",
+          "callee": "thm.fg",
+          "lineNumber": 188
+        },
+        {
+          "caller": "setWidget",
+          "callee": "container.addChild",
+          "lineNumber": 189
+        },
+        {
+          "caller": "setWidget",
+          "callee": "lines.join",
+          "lineNumber": 189
+        },
+        {
+          "caller": "applySessionName",
+          "callee": "getPromptLabel",
+          "lineNumber": 195
+        },
+        {
+          "caller": "applySessionName",
+          "callee": "metadata?.title?.trim",
+          "lineNumber": 197
+        },
+        {
+          "caller": "applySessionName",
+          "callee": "pi.getSessionName()?.trim",
+          "lineNumber": 201
+        },
+        {
+          "caller": "applySessionName",
+          "callee": "pi.getSessionName",
+          "lineNumber": 201
+        },
+        {
+          "caller": "applySessionName",
+          "callee": "pi.setSessionName",
+          "lineNumber": 203
+        },
+        {
+          "caller": "applySessionName",
+          "callee": "pi.setSessionName",
+          "lineNumber": 207
+        },
+        {
+          "caller": "updatePromptContext",
+          "callee": "setWidget",
+          "lineNumber": 212
+        },
+        {
+          "caller": "updatePromptContext",
+          "callee": "applySessionName",
+          "lineNumber": 213
+        },
+        {
+          "caller": "updatePromptContext",
+          "callee": "fetchGhMetadata(pi, match.kind, match.target, ctx.cwd).then",
+          "lineNumber": 214
+        },
+        {
+          "caller": "updatePromptContext",
+          "callee": "fetchGhMetadata",
+          "lineNumber": 214
+        },
+        {
+          "caller": "updatePromptContext",
+          "callee": "setWidget",
+          "lineNumber": 215
+        },
+        {
+          "caller": "updatePromptContext",
+          "callee": "applySessionName",
+          "lineNumber": 216
+        },
+        {
+          "caller": "promptUrlWidgetExtension",
+          "callee": "pi.on",
+          "lineNumber": 220
+        },
+        {
+          "caller": "promptUrlWidgetExtension",
+          "callee": "extractPromptMatch",
+          "lineNumber": 222
+        },
+        {
+          "caller": "promptUrlWidgetExtension",
+          "callee": "updatePromptContext",
+          "lineNumber": 227
+        },
+        {
+          "caller": "promptUrlWidgetExtension",
+          "callee": "pi.on",
+          "lineNumber": 230
+        },
+        {
+          "caller": "promptUrlWidgetExtension",
+          "callee": "rebuildFromSession",
+          "lineNumber": 231
+        },
+        {
+          "caller": "getUserText",
+          "callee": "content\n\t\t\t\t.filter((block): block is { type: \"text\"; text: string } => block.type === \"text\")\n\t\t\t\t.map((block) => block.text)\n\t\t\t\t.join",
+          "lineNumber": 238
+        },
+        {
+          "caller": "getUserText",
+          "callee": "content\n\t\t\t\t.filter((block): block is { type: \"text\"; text: string } => block.type === \"text\")\n\t\t\t\t.map",
+          "lineNumber": 238
+        },
+        {
+          "caller": "getUserText",
+          "callee": "content\n\t\t\t\t.filter",
+          "lineNumber": 238
+        },
+        {
+          "caller": "rebuildFromSession",
+          "callee": "ctx.sessionManager.getEntries",
+          "lineNumber": 248
+        },
+        {
+          "caller": "rebuildFromSession",
+          "callee": "[...entries].reverse().find",
+          "lineNumber": 249
+        },
+        {
+          "caller": "rebuildFromSession",
+          "callee": "[...entries].reverse",
+          "lineNumber": 249
+        },
+        {
+          "caller": "rebuildFromSession",
+          "callee": "getUserText",
+          "lineNumber": 251
+        },
+        {
+          "caller": "rebuildFromSession",
+          "callee": "extractPromptMatch",
+          "lineNumber": 252
+        },
+        {
+          "caller": "rebuildFromSession",
+          "callee": "getUserText",
+          "lineNumber": 257
+        },
+        {
+          "caller": "rebuildFromSession",
+          "callee": "extractPromptMatch",
+          "lineNumber": 258
+        },
+        {
+          "caller": "rebuildFromSession",
+          "callee": "ctx.ui.setWidget",
+          "lineNumber": 260
+        },
+        {
+          "caller": "rebuildFromSession",
+          "callee": "updatePromptContext",
+          "lineNumber": 264
+        },
+        {
+          "caller": "promptUrlWidgetExtension",
+          "callee": "pi.on",
+          "lineNumber": 267
+        },
+        {
+          "caller": "promptUrlWidgetExtension",
+          "callee": "rebuildFromSession",
+          "lineNumber": 268
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    },
+    {
+      "path": ".pi/extensions/redraws.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 22,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": ".pi/extensions/tps.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 38,
+      "functions": [
+        {
+          "name": "isAssistantMessage",
+          "startLine": 4,
+          "endLine": 8,
+          "params": [
+            "message"
+          ]
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": ".pi/skills/add-llm-provider.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 57,
+      "nonEmptyLines": 40,
+      "sections": [
+        {
+          "heading": "Adding a New LLM Provider (packages/ai)",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "1. Core Types (`packages/ai/src/types.ts`)",
+          "level": 2,
+          "line": 10
+        },
+        {
+          "heading": "2. Provider Implementation (`packages/ai/src/providers/`)",
+          "level": 2,
+          "line": 17
+        },
+        {
+          "heading": "3. Provider Exports and Lazy Registration",
+          "level": 2,
+          "line": 27
+        },
+        {
+          "heading": "4. Model Generation (`packages/ai/scripts/generate-models.ts`)",
+          "level": 2,
+          "line": 34
+        },
+        {
+          "heading": "5. Tests (`packages/ai/test/`)",
+          "level": 2,
+          "line": 39
+        },
+        {
+          "heading": "6. Coding Agent (`packages/coding-agent/`)",
+          "level": 2,
+          "line": 46
+        },
+        {
+          "heading": "7. Documentation",
+          "level": 2,
+          "line": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    },
+    {
+      "path": ".understand-anything/.understandignore",
+      "language": "unknown",
+      "fileCategory": "code",
+      "totalLines": 51,
+      "nonEmptyLines": 46,
+      "metrics": {}
+    },
+    {
+      "path": ".understand-anything/config.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "sections": [
+        {
+          "heading": "outputLanguage",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "packages/agent/src/harness/events.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 102,
+      "nonEmptyLines": 91,
+      "classes": [
+        {
+          "name": "HarnessEventBus",
+          "startLine": 37,
+          "endLine": 102,
+          "methods": [
+            "on",
+            "emit",
+            "watch"
+          ],
+          "properties": [
+            "listeners",
+            "watchListeners"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "HarnessEventBus",
+          "line": 37,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "on",
+          "callee": "this.listeners.get",
+          "lineNumber": 50
+        },
+        {
+          "caller": "on",
+          "callee": "this.listeners.set",
+          "lineNumber": 51
+        },
+        {
+          "caller": "receive",
+          "callee": "listener",
+          "lineNumber": 56
+        },
+        {
+          "caller": "on",
+          "callee": "listeners.add",
+          "lineNumber": 58
+        },
+        {
+          "caller": "on",
+          "callee": "listeners.delete",
+          "lineNumber": 60
+        },
+        {
+          "caller": "on",
+          "callee": "this.listeners.delete",
+          "lineNumber": 61
+        },
+        {
+          "caller": "emit",
+          "callee": "this.listeners.get",
+          "lineNumber": 69
+        },
+        {
+          "caller": "emit",
+          "callee": "listener",
+          "lineNumber": 69
+        },
+        {
+          "caller": "emit",
+          "callee": "listener",
+          "lineNumber": 72
+        },
+        {
+          "caller": "receive",
+          "callee": "listener",
+          "lineNumber": 79
+        },
+        {
+          "caller": "receive",
+          "callee": "buffered.push",
+          "lineNumber": 80
+        },
+        {
+          "caller": "watch",
+          "callee": "this.watchListeners.add",
+          "lineNumber": 82
+        },
+        {
+          "caller": "watch",
+          "callee": "captureSnapshot",
+          "lineNumber": 83
+        },
+        {
+          "caller": "watch",
+          "callee": "nextListener",
+          "lineNumber": 92
+        },
+        {
+          "caller": "watch",
+          "callee": "this.watchListeners.delete",
+          "lineNumber": 97
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "packages/agent/src/harness/session/jsonl.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 9,
+      "exports": [
+        {
+          "name": "JsonlSessionRepo",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "JsonlSessionCreateOptions",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "JsonlSessionListOptions",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "JsonlSessionMetadata",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "JsonlSessionRepoFileSystem",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "JsonlSessionRepoOptions",
+          "line": 2,
+          "isDefault": false
+        },
+        {
+          "name": "JsonlV4Header",
+          "line": 2,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 7,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/agent/src/harness/tools/index.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 23,
+      "nonEmptyLines": 23,
+      "exports": [
+        {
+          "name": "BashExecution",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "BashPrepare",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "BashToolDetails",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "BashToolInput",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "BashToolOptions",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "createBashTool",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "createEditTool",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "EditToolDetails",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "EditToolInput",
+          "line": 9,
+          "isDefault": false
+        },
+        {
+          "name": "createReadTool",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "ReadImageProcessor",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "ReadImageProcessorResult",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "ReadToolDetails",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "ReadToolInput",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "ReadToolOptions",
+          "line": 14,
+          "isDefault": false
+        },
+        {
+          "name": "ExecutionToolContext",
+          "line": 22,
+          "isDefault": false
+        },
+        {
+          "name": "createWriteTool",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "WriteToolInput",
+          "line": 23,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 18,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/agent/src/node.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 2,
+      "nonEmptyLines": 2,
+      "exports": [
+        {
+          "name": "NodeExecutionEnv",
+          "line": 1,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/agent/src/proxy.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 370,
+      "nonEmptyLines": 336,
+      "functions": [
+        {
+          "name": "buildProxyRequestOptions",
+          "startLine": 102,
+          "endLine": 116,
+          "params": [
+            "options"
+          ]
+        },
+        {
+          "name": "streamProxy",
+          "startLine": 118,
+          "endLine": 235,
+          "params": [
+            "model",
+            "context",
+            "options"
+          ]
+        },
+        {
+          "name": "processProxyEvent",
+          "startLine": 240,
+          "endLine": 370,
+          "params": [
+            "proxyEvent",
+            "partial"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ProxyMessageEventStream",
+          "startLine": 20,
+          "endLine": 31,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "streamProxy",
+          "line": 118,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 22
+        },
+        {
+          "caller": "streamProxy",
+          "callee": "(async () => {\n\t\t// Initialize the partial message that we'll build up from events\n\t\tconst partial: AssistantMessage = {\n\t\t\trole: \"assistant\",\n\t\t\tstopReason: \"pending\",\n\t\t\tcontent: [],\n\t\t\tapi: model.api,\n\t\t\tprovider: model.provider,\n\t\t\tmodel: model.id,\n\t\t\tusage: {\n\t\t\t\tinput: 0,\n\t\t\t\toutput: 0,\n\t\t\t\tcacheRead: 0,\n\t\t\t\tcacheWrite: 0,\n\t\t\t\ttotalTokens: 0,\n\t\t\t\tcost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0, total: 0 },\n\t\t\t},\n\t\t\ttimestamp: Date.now(),\n\t\t};\n\n\t\tlet reader: ReadableStreamDefaultReader<Uint8Array> | undefined;\n\n\t\tconst abortHandler = () => {\n\t\t\tif (reader) {\n\t\t\t\treader.cancel(\"Request aborted by user\").catch(() => {});\n\t\t\t}\n\t\t};\n\n\t\tif (options.signal) {\n\t\t\toptions.signal.addEventListener(\"abort\", abortHandler);\n\t\t}\n\n\t\ttry {\n\t\t\tconst response = await fetch(`${options.proxyUrl}/api/stream`, {\n\t\t\t\tmethod: \"POST\",\n\t\t\t\theaders: {\n\t\t\t\t\tAuthorization: `Bearer ${options.authToken}`,\n\t\t\t\t\t\"Content-Type\": \"application/json\",\n\t\t\t\t},\n\t\t\t\tbody: JSON.stringify({\n\t\t\t\t\tmodel,\n\t\t\t\t\tcontext,\n\t\t\t\t\toptions: buildProxyRequestOptions(options),\n\t\t\t\t}),\n\t\t\t\tsignal: options.signal,\n\t\t\t});\n\n\t\t\tif (!response.ok) {\n\t\t\t\tlet errorMessage = `Proxy error: ${response.status} ${response.statusText}`;\n\t\t\t\ttry {\n\t\t\t\t\tconst errorData = (await response.json()) as { error?: string };\n\t\t\t\t\tif (errorData.error) {\n\t\t\t\t\t\terrorMessage = `Proxy error: ${errorData.error}`;\n\t\t\t\t\t}\n\t\t\t\t} catch {\n\t\t\t\t\t// Couldn't parse error response\n\t\t\t\t}\n\t\t\t\tthrow new Error(errorMessage);\n\t\t\t}\n\n\t\t\treader = response.body!.getReader();\n\t\t\tconst decoder = new TextDecoder();\n\t\t\tlet buffer = \"\";\n\n\t\t\twhile (true) {\n\t\t\t\tconst { done, value } = await reader.read();\n\t\t\t\tif (done) break;\n\n\t\t\t\tif (options.signal?.aborted) {\n\t\t\t\t\tthrow new Error(\"Request aborted by user\");\n\t\t\t\t}\n\n\t\t\t\tbuffer += decoder.decode(value, { stream: true });\n\t\t\t\tconst lines = buffer.split(\"\\n\");\n\t\t\t\tbuffer = lines.pop() || \"\";\n\n\t\t\t\tfor (const line of lines) {\n\t\t\t\t\tif (line.startsWith(\"data: \")) {\n\t\t\t\t\t\tconst data = line.slice(6).trim();\n\t\t\t\t\t\tif (data) {\n\t\t\t\t\t\t\tconst proxyEvent = JSON.parse(data) as ProxyAssistantMessageEvent;\n\t\t\t\t\t\t\tconst event = processProxyEvent(proxyEvent, partial);\n\t\t\t\t\t\t\tif (event) {\n\t\t\t\t\t\t\t\tstream.push(event);\n\t\t\t\t\t\t\t}\n\t\t\t\t\t\t}\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\n\t\t\tif (options.signal?.aborted) {\n\t\t\t\tthrow new Error(\"Request aborted by user\");\n\t\t\t}\n\n\t\t\tstream.end();\n\t\t} catch (error) {\n\t\t\tconst errorMessage = error instanceof Error ? error.message : String(error);\n\t\t\tconst reason = options.signal?.aborted ? \"aborted\" : \"error\";\n\t\t\tpartial.stopReason = reason;\n\t\t\tpartial.errorMessage = errorMessage;\n\t\t\tstream.push({\n\t\t\t\ttype: \"error\",\n\t\t\t\treason,\n\t\t\t\terror: partial,\n\t\t\t});\n\t\t\tstream.end();\n\t\t} finally {\n\t\t\tif (options.signal) {\n\t\t\t\toptions.signal.removeEventListener(\"abort\", abortHandler);\n\t\t\t}\n\t\t}\n\t})",
+          "lineNumber": 121
+        },
+        {
+          "caller": "streamProxy",
+          "callee": "Date.now",
+          "lineNumber": 138
+        },
+        {
+          "caller": "abortHandler",
+          "callee": "reader.cancel(\"Request aborted by user\").catch",
+          "lineNumber": 145
+        },
+        {
+          "caller": "abortHandler",
+          "callee": "reader.cancel",
+          "lineNumber": 145
+        },
+        {
+          "caller": "streamProxy",
+          "callee": "options.signal.addEventListener",
+          "lineNumber": 150
+        },
+        {
+          "caller": "streamProxy",
+          "callee": "fetch",
+          "lineNumber": 154
+        },
+        {
+          "caller": "streamProxy",
+          "callee": "JSON.stringify",
+          "lineNumber": 160
+        },
+        {
+          "caller": "streamProxy",
+          "callee": "buildProxyRequestOptions",
+          "lineNumber": 163
+        },
+        {
+          "caller": "streamProxy",
+          "callee": "response.json",
+          "lineNumber": 171
+        },
+        {
+          "caller": "streamProxy",
+          "callee": "response.body!.getReader",
+          "lineNumber": 181
+        },
+        {
+          "caller": "streamProxy",
+          "callee": "reader.read",
+          "lineNumber": 186
+        },
+        {
+          "caller": "streamProxy",
+          "callee": "decoder.decode",
+          "lineNumber": 193
+        },
+        {
+          "caller": "streamProxy",
+          "callee": "buffer.split",
+          "lineNumber": 194
+        },
+        {
+          "caller": "streamProxy",
+          "callee": "lines.pop",
+          "lineNumber": 195
+        },
+        {
+          "caller": "streamProxy",
+          "callee": "line.startsWith",
+          "lineNumber": 198
+        },
+        {
+          "caller": "streamProxy",
+          "callee": "line.slice(6).trim",
+          "lineNumber": 199
+        },
+        {
+          "caller": "streamProxy",
+          "callee": "line.slice",
+          "lineNumber": 199
+        },
+        {
+          "caller": "streamProxy",
+          "callee": "JSON.parse",
+          "lineNumber": 201
+        },
+        {
+          "caller": "streamProxy",
+          "callee": "processProxyEvent",
+          "lineNumber": 202
+        },
+        {
+          "caller": "streamProxy",
+          "callee": "stream.push",
+          "lineNumber": 204
+        },
+        {
+          "caller": "streamProxy",
+          "callee": "stream.end",
+          "lineNumber": 215
+        },
+        {
+          "caller": "streamProxy",
+          "callee": "String",
+          "lineNumber": 217
+        },
+        {
+          "caller": "streamProxy",
+          "callee": "stream.push",
+          "lineNumber": 221
+        },
+        {
+          "caller": "streamProxy",
+          "callee": "stream.end",
+          "lineNumber": 226
+        },
+        {
+          "caller": "streamProxy",
+          "callee": "options.signal.removeEventListener",
+          "lineNumber": 229
+        },
+        {
+          "caller": "processProxyEvent",
+          "callee": "parseStreamingJson",
+          "lineNumber": 326
+        },
+        {
+          "caller": "processProxyEvent",
+          "callee": "Object.assign",
+          "lineNumber": 341
+        },
+        {
+          "caller": "processProxyEvent",
+          "callee": "console.warn",
+          "lineNumber": 366
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 3,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "packages/agent/test/harness/events.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 55,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/agent/test/proxy.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 79,
+      "nonEmptyLines": 73,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/agent/vitest.config.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 25,
+      "nonEmptyLines": 23,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/agent/vitest.harness.config.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 32,
+      "nonEmptyLines": 30,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/bedrock-provider.d.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/bedrock-provider.js",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 1,
+      "nonEmptyLines": 1,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/scripts/generate-test-image.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 25,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/src/providers/data-json.d.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 4,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/generate-models-strict.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 85,
+      "nonEmptyLines": 79,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    }
+  ]
+}

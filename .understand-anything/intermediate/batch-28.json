@@ -1,0 +1,440 @@
+{
+  "nodes": [
+    {
+      "id": "packages/server/src/connection.ts",
+      "type": "file",
+      "label": "connection.ts",
+      "language": "typescript",
+      "summary": "定义传输无关的字节流连接抽象：ByteConnection（有序字节连接接口）、ByteConnectionHandler（数据/关闭/错误回调）、ByteConnectionAcceptor（连接接收工厂）、ConnectionStage（连接阶段状态机：awaitingHello→handshaking→ready→closing→closed）和 ConnectionState（单个连接的完整运行时状态，包含 id、decoder、sessionIds、握手进度等）。提供 isTerminalConnection 谓词判断连接是否已终止。",
+      "lineRange": [1, 36]
+    },
+    {
+      "id": "packages/server/src/errors.ts",
+      "type": "file",
+      "label": "errors.ts",
+      "language": "typescript",
+      "summary": "定义可跨协议边界传递的服务器错误层级。PiServerError 是基类，携带 ProtocolErrorCode（busy/session_locked/not_found/invalid_request/not_implemented）和可选 details。派生类：SessionBusyError、SessionLockedError、SessionNotFoundError、NotImplementedError。InternalServerError 用于不可序列化的内部失败，仅保留 cause 供上报。",
+      "lineRange": [1, 58]
+    },
+    {
+      "id": "packages/server/src/index.ts",
+      "type": "file",
+      "label": "index.ts",
+      "language": "typescript",
+      "summary": "服务器包的公共入口，通过 export * 重新导出 errors、listener、protocol、server、types 模块的所有公共符号。",
+      "lineRange": [1, 5]
+    },
+    {
+      "id": "packages/server/src/listener.ts",
+      "type": "file",
+      "label": "listener.ts",
+      "language": "typescript",
+      "summary": "定义 PiServerListener 接口——传输层的抽象入口。要求实现 address（可选绑定地址）、start(accept)（启动并传递已授权的连接给 accept 回调）和 close()。任何传输（Unix socket、stdio 等）都通过实现此接口接入 PiServer。",
+      "lineRange": [1, 10]
+    },
+    {
+      "id": "packages/server/src/server.ts",
+      "type": "file",
+      "label": "server.ts",
+      "language": "typescript",
+      "summary": "PiServer 核心类——协议引擎。负责启动所有 listeners、接受连接、握手协商（版本校验、hello 交换）、消息解码分发、请求路由到 LiveSessionManager 执行命令、快照广播、错误转换为协议错误并关闭连接。内部组合 LiveSessionManager（会话生命周期）和 ServerSnapshotPublisher（快照发布）。resolveOptions 辅助函数校验 maxFrameLength/handshakeTimeoutMs。",
+      "lineRange": [1, 396]
+    },
+    {
+      "id": "packages/server/src/sessions.ts",
+      "type": "file",
+      "label": "sessions.ts",
+      "language": "typescript",
+      "summary": "LiveSessionManager 类——管理所有活跃会话的核心协调器。通过 PiServerService 创建/打开会话，维护 liveSessions 与 openingSessions 映射；支持 executeCommand 分发 list/prompt/steer/abort/setModel/setThinking 命令；实现连接附加（attach/detach）、断开、运行时事件处理（progress/error/snapshot）、会话终止与资源释放（maybeDispose）。toMetadata 辅助函数将快照转换为 SessionMetadata。",
+      "lineRange": [1, 346]
+    },
+    {
+      "id": "packages/server/src/snapshots.ts",
+      "type": "file",
+      "label": "snapshots.ts",
+      "language": "typescript",
+      "summary": "ServerSnapshotPublisher 类——负责组装并广播 ServerSnapshot 给所有 ready 连接。维护 revision 计数器，broadcast 方法通过队列串行化广播请求，performBroadcast 过滤 ready 连接后向每个连接发送 server_snapshot 事件。",
+      "lineRange": [1, 62]
+    },
+    {
+      "id": "packages/server/src/types.ts",
+      "type": "file",
+      "label": "types.ts",
+      "language": "typescript",
+      "summary": "服务器核心类型定义：PiServerOptions（listeners、maxFrameLength、handshakeTimeoutMs、serverId、onError）、MaybePromise<T>、PromptInput/SteerInput（从 Command 协议类型派生）、CreateSessionOptions（id/cwd/name/model/thinkingLevel）、PiSessionRuntimeEvent（snapshot/progress/error 联合类型）、PiSessionRuntime 接口（snapshot/getPhase/prompt/steer/abort/setModel/setThinking/subscribe/dispose）、PiServerService 接口（listSessions/listModels/createSession/openSession）。",
+      "lineRange": [1, 63]
+    },
+    {
+      "id": "packages/server/src/testing/client.ts",
+      "type": "file",
+      "label": "testing/client.ts",
+      "language": "typescript",
+      "summary": "协议测试客户端实现。WireChannel 接口抽象发送/分片发送/关闭；ProtocolTestClient 类封装协议交互：hello 握手、request 发送、消息接收解码、等待特定消息（next/nextFrom）、关闭等待。connectUnixTestClient 工厂函数创建 Unix socket 连接并绑定客户端接收逻辑。writeSocket 辅助函数写入 socket。",
+      "lineRange": [1, 147]
+    },
+    {
+      "id": "packages/server/src/testing/index.ts",
+      "type": "file",
+      "label": "testing/index.ts",
+      "language": "typescript",
+      "summary": "测试工具包的公共入口，重新导出 WireChannel、connectUnixTestClient、ProtocolTestClient、TestServer、TestServerOptions、createTestServer、Deferred、TEST_MODEL、TestServerService、TestSessionRuntime。",
+      "lineRange": [1, 5]
+    },
+    {
+      "id": "packages/server/src/testing/server.ts",
+      "type": "file",
+      "label": "testing/server.ts",
+      "language": "typescript",
+      "summary": "createTestServer 工厂函数——创建未启动的 PiServer 用于传输一致性测试，接受 TestServerOptions（继承 PiServerOptions 并可覆盖 service），默认使用 TestServerService。返回 {server, service} 便于测试断言。",
+      "lineRange": [1, 27]
+    },
+    {
+      "id": "packages/server/src/testing/service.ts",
+      "type": "file",
+      "label": "testing/service.ts",
+      "language": "typescript",
+      "summary": "测试用服务层实现。TEST_MODEL 常量定义默认测试模型。Deferred<T> 通用延迟原语。TestSessionRuntime 实现 PiSessionRuntime 接口，模拟会话生命周期（prompt/steer/abort/setModel/setThinking/subscribe/dispose），支持事件监听和进度发射。TestServerService 实现 PiServerService 接口，提供内存中的会话存储、锁定机制、延迟列表注入（delayNextList）和运行时获取（latestRuntime/acquire）。",
+      "lineRange": [1, 287]
+    },
+    {
+      "id": "packages/server/src/transports/unix/index.ts",
+      "type": "file",
+      "label": "transports/unix/index.ts",
+      "language": "typescript",
+      "summary": "Unix 传输模块的公共入口，导出 createUnixListener、createUnixServer 工厂函数和 UnixListenerOptions、UnixServerOptions 类型。",
+      "lineRange": [1, 3]
+    },
+    {
+      "id": "packages/server/src/transports/unix/listener.ts",
+      "type": "file",
+      "label": "transports/unix/listener.ts",
+      "language": "typescript",
+      "summary": "Unix domain socket 传输实现。validateUnixSocketPath 校验路径长度。UnixListener 类实现 PiServerListener：绑定 socket 路径、处理 stale socket 清理（通过 rename 原子替换）、文件系统权限设置、连接接受和优雅关闭。UnixByteConnection 实现 ByteConnection：基于 net.Socket 的有序字节流，支持背压（pendingBytes 追踪）、最大帧长度限制、优雅关闭超时（gracefulCloseTimeoutMs）。辅助函数：getOwnedBindPath（SHA256 派生绑定路径）、removeStaleSocket（检测并替换陈旧 socket）、isSocketLive（探测 socket 活性）、setSocketMode、closeNetServer、resolveUnixListenerOptions。",
+      "lineRange": [1, 434]
+    },
+    {
+      "id": "packages/server/src/transports/unix/preset.ts",
+      "type": "file",
+      "label": "transports/unix/preset.ts",
+      "language": "typescript",
+      "summary": "createUnixServer 便捷工厂——组合 PiServer 与单个 UnixListener，将 UnixServerOptions 拆分为 listener 配置和 server 配置，返回可直接启动的 PiServer 实例。",
+      "lineRange": [1, 23]
+    },
+    {
+      "id": "packages/server/src/transports/unix/types.ts",
+      "type": "file",
+      "label": "transports/unix/types.ts",
+      "language": "typescript",
+      "summary": "Unix 传输配置类型：UnixListenerOptions（path/mode/maxPendingBytes/gracefulCloseTimeoutMs/maxFrameLength/onError）和 UnixServerOptions（继承 PiServerOptions 排除 listeners，再合并 UnixListenerOptions）。",
+      "lineRange": [1, 15]
+    },
+    {
+      "id": "packages/server/test/conformance.test.ts",
+      "type": "file",
+      "label": "test/conformance.test.ts",
+      "language": "typescript",
+      "summary": "协议一致性测试套件。验证 PiServer 的传输层协议合规性：hello 握手、版本协商、会话列表、请求/响应匹配、错误处理、分片消息、连接关闭等场景。使用 createUnixServer 启动服务器，connectUnixTestClient 连接并交互。包含多个自定义 TestServerService 派生类测试特定行为（如 listSessions 延迟、并发锁定）。",
+      "lineRange": [1, 378]
+    },
+    {
+      "id": "packages/server/test/listener.test.ts",
+      "type": "file",
+      "label": "test/listener.test.ts",
+      "language": "typescript",
+      "summary": "PiServerListener 接口行为测试。TestListener 类实现 PiServerListener 用于验证 PiServer 对 listener 的 start/close 调用次数、错误处理和地址暴露。",
+      "lineRange": [1, 57]
+    },
+    {
+      "id": "packages/server/test/server.test.ts",
+      "type": "file",
+      "label": "test/server.test.ts",
+      "language": "typescript",
+      "summary": "PiServer 核心功能测试。验证服务器启动/关闭、多 listener 支持、连接接受、握手流程、请求处理等端到端行为。使用 makeSocketPath 创建临时 Unix socket 路径。",
+      "lineRange": [1, 100]
+    },
+    {
+      "id": "packages/server/test/sessions.test.ts",
+      "type": "file",
+      "label": "test/sessions.test.ts",
+      "language": "typescript",
+      "summary": "LiveSessionManager 和会话生命周期测试。验证会话创建/打开/列表、命令执行（prompt/steer/abort/setModel/setThinking）、多连接附加/断开、快照广播、并发操作锁定、错误场景（not_found/busy/locked）。使用 startServer 和 connect 辅助函数构建测试环境。",
+      "lineRange": [1, 429]
+    },
+    {
+      "id": "packages/server/test/unix-connection.test.ts",
+      "type": "file",
+      "label": "test/unix-connection.test.ts",
+      "language": "typescript",
+      "summary": "UnixByteConnection 单元测试。验证字节连接的发送/接收、背压控制、优雅关闭、超时销毁、错误处理等行为。直接测试 UnixListener 内部的连接管理逻辑。",
+      "lineRange": [1, 65]
+    },
+    {
+      "id": "packages/server/test/unix.test.ts",
+      "type": "file",
+      "label": "test/unix.test.ts",
+      "language": "typescript",
+      "summary": "Unix 传输端到端测试。验证 createUnixServer 创建的服务器在真实 Unix socket 上的协议交互、stale socket 清理、权限设置、并发连接等场景。",
+      "lineRange": [1, 117]
+    },
+    {
+      "id": "fn:packages/server/src/connection.ts:isTerminalConnection",
+      "type": "function",
+      "label": "isTerminalConnection",
+      "summary": "判断 ConnectionState 是否已终止（disconnected 或 stage 为 closing/closed）。用于接收循环中提前退出。",
+      "file": "packages/server/src/connection.ts",
+      "lineRange": [34, 36]
+    },
+    {
+      "id": "cls:packages/server/src/errors.ts:PiServerError",
+      "type": "class",
+      "label": "PiServerError",
+      "summary": "可跨协议边界传递的服务器错误基类。携带 code（ProtocolErrorCode）和可选 details（JsonValue）。派生类包括 SessionBusyError、SessionLockedError、SessionNotFoundError、NotImplementedError。",
+      "file": "packages/server/src/errors.ts",
+      "lineRange": [12, 22]
+    },
+    {
+      "id": "cls:packages/server/src/server.ts:PiServer",
+      "type": "class",
+      "label": "PiServer",
+      "summary": "协议引擎核心类。管理 listeners 启动、connections 集合、sessions（LiveSessionManager）、snapshots（ServerSnapshotPublisher）。实现连接接受、握手协商、消息分发、请求处理、错误转换和优雅关闭。",
+      "file": "packages/server/src/server.ts",
+      "lineRange": [39, 378]
+    },
+    {
+      "id": "fn:packages/server/src/server.ts:resolveOptions",
+      "type": "function",
+      "label": "resolveOptions",
+      "summary": "校验并解析 PiServerOptions：确保 maxFrameLength 在合法范围（>= DEFAULT_MAX_FRAME_LENGTH 且 <= MAX_UINT32），handshakeTimeoutMs 为非负安全整数。",
+      "file": "packages/server/src/server.ts",
+      "lineRange": [380, 396]
+    },
+    {
+      "id": "cls:packages/server/src/sessions.ts:LiveSessionManager",
+      "type": "class",
+      "label": "LiveSessionManager",
+      "summary": "活跃会话管理器。维护 liveSessions 和 openingSessions 映射，实现 executeCommand 分发、连接 attach/detach、运行时事件处理、会话终止和资源释放。支持并发操作锁定和广播快照。",
+      "file": "packages/server/src/sessions.ts",
+      "lineRange": [38, 346]
+    },
+    {
+      "id": "fn:packages/server/src/sessions.ts:toMetadata",
+      "type": "function",
+      "label": "toMetadata",
+      "summary": "将 SessionSnapshot 转换为 SessionMetadata（提取 id/createdAt/updatedAt/sessionName/cwd）。",
+      "file": "packages/server/src/sessions.ts",
+      "lineRange": [28, 36]
+    },
+    {
+      "id": "cls:packages/server/src/snapshots.ts:ServerSnapshotPublisher",
+      "type": "class",
+      "label": "ServerSnapshotPublisher",
+      "summary": "服务器快照发布器。维护 revision 计数，get 方法组装 ServerSnapshot，broadcast 方法通过队列串行化向所有 ready 连接发送 server_snapshot 事件。",
+      "file": "packages/server/src/snapshots.ts",
+      "lineRange": [21, 62]
+    },
+    {
+      "id": "cls:packages/server/src/testing/client.ts:ProtocolTestClient",
+      "type": "class",
+      "label": "ProtocolTestClient",
+      "summary": "协议测试客户端。封装 WireChannel，提供 hello 握手、request 发送、消息接收解码、等待特定消息（next/nextFrom）、关闭等待等测试辅助方法。",
+      "file": "packages/server/src/testing/client.ts",
+      "lineRange": [26, 114]
+    },
+    {
+      "id": "fn:packages/server/src/testing/client.ts:connectUnixTestClient",
+      "type": "function",
+      "label": "connectUnixTestClient",
+      "summary": "创建 Unix socket 测试客户端。连接指定路径，绑定数据接收和关闭事件，返回 ProtocolTestClient 实例。",
+      "file": "packages/server/src/testing/client.ts",
+      "lineRange": [116, 138]
+    },
+    {
+      "id": "fn:packages/server/src/testing/server.ts:createTestServer",
+      "type": "function",
+      "label": "createTestServer",
+      "summary": "创建未启动的测试服务器。接受 TestServerOptions，默认使用 TestServerService，返回 {server, service} 便于测试断言。",
+      "file": "packages/server/src/testing/server.ts",
+      "lineRange": [15, 27]
+    },
+    {
+      "id": "cls:packages/server/src/testing/service.ts:Deferred",
+      "type": "class",
+      "label": "Deferred",
+      "summary": "通用延迟原语。暴露 promise 和 resolve 方法，允许外部解决 Promise。",
+      "file": "packages/server/src/testing/service.ts",
+      "lineRange": [33, 46]
+    },
+    {
+      "id": "cls:packages/server/src/testing/service.ts:TestSessionRuntime",
+      "type": "class",
+      "label": "TestSessionRuntime",
+      "summary": "测试用会话运行时。实现 PiSessionRuntime 接口，模拟 prompt/steer/abort/setModel/setThinking 等行为，支持事件订阅和进度发射。",
+      "file": "packages/server/src/testing/service.ts",
+      "lineRange": [52, 191]
+    },
+    {
+      "id": "cls:packages/server/src/testing/service.ts:TestServerService",
+      "type": "class",
+      "label": "TestServerService",
+      "summary": "测试用服务器服务。实现 PiServerService 接口，提供内存会话存储、锁定机制、延迟列表注入和运行时获取。",
+      "file": "packages/server/src/testing/service.ts",
+      "lineRange": [198, 287]
+    },
+    {
+      "id": "cls:packages/server/src/transports/unix/listener.ts:UnixListener",
+      "type": "class",
+      "label": "UnixListener",
+      "summary": "Unix domain socket listener。实现 PiServerListener 接口，管理 socket 绑定、stale socket 清理、权限设置、连接接受和优雅关闭。",
+      "file": "packages/server/src/transports/unix/listener.ts",
+      "lineRange": [37, 201]
+    },
+    {
+      "id": "cls:packages/server/src/transports/unix/listener.ts:UnixByteConnection",
+      "type": "class",
+      "label": "UnixByteConnection",
+      "summary": "Unix socket 字节连接。实现 ByteConnection 接口，基于 net.Socket 提供有序字节流，支持背压追踪、最大帧长度限制和优雅关闭超时。",
+      "file": "packages/server/src/transports/unix/listener.ts",
+      "lineRange": [204, 305]
+    },
+    {
+      "id": "fn:packages/server/src/transports/unix/listener.ts:validateUnixSocketPath",
+      "type": "function",
+      "label": "validateUnixSocketPath",
+      "summary": "校验 Unix socket 路径：非空且不超过平台限制（Linux 107 字节，其他 103 字节）。",
+      "file": "packages/server/src/transports/unix/listener.ts",
+      "lineRange": [18, 23]
+    },
+    {
+      "id": "fn:packages/server/src/transports/unix/listener.ts:removeStaleSocket",
+      "type": "function",
+      "label": "removeStaleSocket",
+      "summary": "检测并移除陈旧的 socket 文件。如果目标路径存在且为 socket 但无人监听，则通过 rename 原子替换或直接删除。",
+      "file": "packages/server/src/transports/unix/listener.ts",
+      "lineRange": [312, 341]
+    },
+    {
+      "id": "fn:packages/server/src/transports/unix/listener.ts:isSocketLive",
+      "type": "function",
+      "label": "isSocketLive",
+      "summary": "探测 socket 路径是否有活跃监听。尝试连接并等待响应或特定错误（ECONNREFUSED/ENOENT/EPIPE/ECONNRESET）。",
+      "file": "packages/server/src/transports/unix/listener.ts",
+      "lineRange": [351, 376]
+    },
+    {
+      "id": "fn:packages/server/src/transports/unix/preset.ts:createUnixServer",
+      "type": "function",
+      "label": "createUnixServer",
+      "summary": "便捷工厂函数。组合 PiServer 与单个 UnixListener，将 UnixServerOptions 拆分为 listener 和 server 配置，返回可直接启动的 PiServer 实例。",
+      "file": "packages/server/src/transports/unix/preset.ts",
+      "lineRange": [7, 23]
+    },
+    {
+      "id": "fn:packages/server/test/conformance.test.ts:startServer",
+      "type": "function",
+      "label": "startServer",
+      "summary": "测试辅助函数。创建临时目录和 Unix socket 路径，使用 createUnixServer 启动服务器并注册清理逻辑。",
+      "file": "packages/server/test/conformance.test.ts",
+      "lineRange": [14, 27]
+    },
+    {
+      "id": "fn:packages/server/test/sessions.test.ts:startServer",
+      "type": "function",
+      "label": "startServer",
+      "summary": "测试辅助函数。启动服务器并返回 {server, service, socketPath}，注册 afterEach 清理。",
+      "file": "packages/server/test/sessions.test.ts",
+      "lineRange": [46, 56]
+    },
+    {
+      "id": "fn:packages/server/test/server.test.ts:makeSocketPath",
+      "type": "function",
+      "label": "makeSocketPath",
+      "summary": "创建临时目录并返回 Unix socket 路径。",
+      "file": "packages/server/test/server.test.ts",
+      "lineRange": [16, 19]
+    }
+  ],
+  "edges": [
+    {"from": "packages/server/src/connection.ts", "to": "packages/server/src/types.ts", "type": "imports", "label": "导入 MaybePromise"},
+    {"from": "packages/server/src/listener.ts", "to": "packages/server/src/connection.ts", "type": "imports", "label": "导入 ByteConnectionAcceptor"},
+    {"from": "packages/server/src/server.ts", "to": "packages/server/src/connection.ts", "type": "imports", "label": "导入 ByteConnection/ConnectionState/isTerminalConnection"},
+    {"from": "packages/server/src/server.ts", "to": "packages/server/src/errors.ts", "type": "imports", "label": "导入 PiServerError/InternalServerError"},
+    {"from": "packages/server/src/server.ts", "to": "packages/server/src/listener.ts", "type": "imports", "label": "导入 PiServerListener"},
+    {"from": "packages/server/src/server.ts", "to": "packages/server/src/sessions.ts", "type": "imports", "label": "导入 LiveSessionManager"},
+    {"from": "packages/server/src/server.ts", "to": "packages/server/src/snapshots.ts", "type": "imports", "label": "导入 ServerSnapshotPublisher"},
+    {"from": "packages/server/src/server.ts", "to": "packages/server/src/types.ts", "type": "imports", "label": "导入 PiServerOptions/PiServerService"},
+    {"from": "packages/server/src/sessions.ts", "to": "packages/server/src/connection.ts", "type": "imports", "label": "导入 ByteConnection/ConnectionState"},
+    {"from": "packages/server/src/sessions.ts", "to": "packages/server/src/errors.ts", "type": "imports", "label": "导入 PiServerError"},
+    {"from": "packages/server/src/sessions.ts", "to": "packages/server/src/types.ts", "type": "imports", "label": "导入 CreateSessionOptions/PiServerService/PiSessionRuntime"},
+    {"from": "packages/server/src/snapshots.ts", "to": "packages/server/src/connection.ts", "type": "imports", "label": "导入 ConnectionState"},
+    {"from": "packages/server/src/snapshots.ts", "to": "packages/server/src/types.ts", "type": "imports", "label": "导入 PiServerService"},
+    {"from": "packages/server/src/testing/client.ts", "to": "packages/server/src/testing/service.ts", "type": "imports", "label": "导入 Deferred"},
+    {"from": "packages/server/src/testing/server.ts", "to": "packages/server/src/server.ts", "type": "imports", "label": "导入 PiServer"},
+    {"from": "packages/server/src/testing/server.ts", "to": "packages/server/src/testing/service.ts", "type": "imports", "label": "导入 TestServerService"},
+    {"from": "packages/server/src/testing/server.ts", "to": "packages/server/src/types.ts", "type": "imports", "label": "导入 PiServerOptions/PiServerService"},
+    {"from": "packages/server/src/testing/service.ts", "to": "packages/server/src/errors.ts", "type": "imports", "label": "导入 PiServerError"},
+    {"from": "packages/server/src/testing/service.ts", "to": "packages/server/src/types.ts", "type": "imports", "label": "导入 CreateSessionOptions/PiServerService/PiSessionRuntime"},
+    {"from": "packages/server/src/transports/unix/listener.ts", "to": "packages/server/src/connection.ts", "type": "imports", "label": "导入 ByteConnection/ByteConnectionAcceptor"},
+    {"from": "packages/server/src/transports/unix/listener.ts", "to": "packages/server/src/listener.ts", "type": "imports", "label": "导入 PiServerListener"},
+    {"from": "packages/server/src/transports/unix/listener.ts", "to": "packages/server/src/transports/unix/types.ts", "type": "imports", "label": "导入 UnixListenerOptions"},
+    {"from": "packages/server/src/transports/unix/preset.ts", "to": "packages/server/src/server.ts", "type": "imports", "label": "导入 PiServer"},
+    {"from": "packages/server/src/transports/unix/preset.ts", "to": "packages/server/src/transports/unix/listener.ts", "type": "imports", "label": "导入 createUnixListener"},
+    {"from": "packages/server/src/transports/unix/preset.ts", "to": "packages/server/src/transports/unix/types.ts", "type": "imports", "label": "导入 UnixServerOptions"},
+    {"from": "packages/server/src/transports/unix/preset.ts", "to": "packages/server/src/types.ts", "type": "imports", "label": "导入 PiServerService"},
+    {"from": "packages/server/src/transports/unix/types.ts", "to": "packages/server/src/types.ts", "type": "imports", "label": "导入 PiServerOptions"},
+    {"from": "packages/server/src/types.ts", "to": "packages/server/src/errors.ts", "type": "imports", "label": "导入 PiServerError 类型"},
+    {"from": "packages/server/src/types.ts", "to": "packages/server/src/listener.ts", "type": "imports", "label": "导入 PiServerListener 类型"},
+    {"from": "packages/server/test/conformance.test.ts", "to": "packages/server/src/index.ts", "type": "imports", "label": "导入公共 API"},
+    {"from": "packages/server/test/conformance.test.ts", "to": "packages/server/src/testing/index.ts", "type": "imports", "label": "导入测试工具"},
+    {"from": "packages/server/test/conformance.test.ts", "to": "packages/server/src/transports/unix/index.ts", "type": "imports", "label": "导入 createUnixServer"},
+    {"from": "packages/server/test/listener.test.ts", "to": "packages/server/src/connection.ts", "type": "imports", "label": "导入 ByteConnection/ByteConnectionHandler"},
+    {"from": "packages/server/test/listener.test.ts", "to": "packages/server/src/listener.ts", "type": "imports", "label": "导入 PiServerListener"},
+    {"from": "packages/server/test/listener.test.ts", "to": "packages/server/src/testing/index.ts", "type": "imports", "label": "导入测试工具"},
+    {"from": "packages/server/test/server.test.ts", "to": "packages/server/src/connection.ts", "type": "imports", "label": "导入 ByteConnection"},
+    {"from": "packages/server/test/server.test.ts", "to": "packages/server/src/index.ts", "type": "imports", "label": "导入公共 API"},
+    {"from": "packages/server/test/server.test.ts", "to": "packages/server/src/testing/index.ts", "type": "imports", "label": "导入测试工具"},
+    {"from": "packages/server/test/server.test.ts", "to": "packages/server/src/transports/unix/index.ts", "type": "imports", "label": "导入 createUnixServer"},
+    {"from": "packages/server/test/sessions.test.ts", "to": "packages/server/src/index.ts", "type": "imports", "label": "导入公共 API"},
+    {"from": "packages/server/test/sessions.test.ts", "to": "packages/server/src/testing/index.ts", "type": "imports", "label": "导入测试工具"},
+    {"from": "packages/server/test/sessions.test.ts", "to": "packages/server/src/transports/unix/index.ts", "type": "imports", "label": "导入 createUnixServer"},
+    {"from": "packages/server/test/unix-connection.test.ts", "to": "packages/server/src/transports/unix/listener.ts", "type": "imports", "label": "导入 UnixListener 内部类"},
+    {"from": "packages/server/test/unix.test.ts", "to": "packages/server/src/index.ts", "type": "imports", "label": "导入公共 API"},
+    {"from": "packages/server/test/unix.test.ts", "to": "packages/server/src/testing/index.ts", "type": "imports", "label": "导入测试工具"},
+    {"from": "packages/server/test/unix.test.ts", "to": "packages/server/src/transports/unix/index.ts", "type": "imports", "label": "导入 createUnixServer"},
+    {"from": "fn:packages/server/src/connection.ts:isTerminalConnection", "to": "packages/server/src/connection.ts", "type": "defined_in", "label": "定义于"},
+    {"from": "cls:packages/server/src/errors.ts:PiServerError", "to": "packages/server/src/errors.ts", "type": "defined_in", "label": "定义于"},
+    {"from": "cls:packages/server/src/server.ts:PiServer", "to": "packages/server/src/server.ts", "type": "defined_in", "label": "定义于"},
+    {"from": "fn:packages/server/src/server.ts:resolveOptions", "to": "packages/server/src/server.ts", "type": "defined_in", "label": "定义于"},
+    {"from": "cls:packages/server/src/sessions.ts:LiveSessionManager", "to": "packages/server/src/sessions.ts", "type": "defined_in", "label": "定义于"},
+    {"from": "fn:packages/server/src/sessions.ts:toMetadata", "to": "packages/server/src/sessions.ts", "type": "defined_in", "label": "定义于"},
+    {"from": "cls:packages/server/src/snapshots.ts:ServerSnapshotPublisher", "to": "packages/server/src/snapshots.ts", "type": "defined_in", "label": "定义于"},
+    {"from": "cls:packages/server/src/testing/client.ts:ProtocolTestClient", "to": "packages/server/src/testing/client.ts", "type": "defined_in", "label": "定义于"},
+    {"from": "fn:packages/server/src/testing/client.ts:connectUnixTestClient", "to": "packages/server/src/testing/client.ts", "type": "defined_in", "label": "定义于"},
+    {"from": "fn:packages/server/src/testing/server.ts:createTestServer", "to": "packages/server/src/testing/server.ts", "type": "defined_in", "label": "定义于"},
+    {"from": "cls:packages/server/src/testing/service.ts:Deferred", "to": "packages/server/src/testing/service.ts", "type": "defined_in", "label": "定义于"},
+    {"from": "cls:packages/server/src/testing/service.ts:TestSessionRuntime", "to": "packages/server/src/testing/service.ts", "type": "defined_in", "label": "定义于"},
+    {"from": "cls:packages/server/src/testing/service.ts:TestServerService", "to": "packages/server/src/testing/service.ts", "type": "defined_in", "label": "定义于"},
+    {"from": "cls:packages/server/src/transports/unix/listener.ts:UnixListener", "to": "packages/server/src/transports/unix/listener.ts", "type": "defined_in", "label": "定义于"},
+    {"from": "cls:packages/server/src/transports/unix/listener.ts:UnixByteConnection", "to": "packages/server/src/transports/unix/listener.ts", "type": "defined_in", "label": "定义于"},
+    {"from": "fn:packages/server/src/transports/unix/listener.ts:validateUnixSocketPath", "to": "packages/server/src/transports/unix/listener.ts", "type": "defined_in", "label": "定义于"},
+    {"from": "fn:packages/server/src/transports/unix/listener.ts:removeStaleSocket", "to": "packages/server/src/transports/unix/listener.ts", "type": "defined_in", "label": "定义于"},
+    {"from": "fn:packages/server/src/transports/unix/listener.ts:isSocketLive", "to": "packages/server/src/transports/unix/listener.ts", "type": "defined_in", "label": "定义于"},
+    {"from": "fn:packages/server/src/transports/unix/preset.ts:createUnixServer", "to": "packages/server/src/transports/unix/preset.ts", "type": "defined_in", "label": "定义于"},
+    {"from": "fn:packages/server/test/conformance.test.ts:startServer", "to": "packages/server/test/conformance.test.ts", "type": "defined_in", "label": "定义于"},
+    {"from": "fn:packages/server/test/sessions.test.ts:startServer", "to": "packages/server/test/sessions.test.ts", "type": "defined_in", "label": "定义于"},
+    {"from": "fn:packages/server/test/server.test.ts:makeSocketPath", "to": "packages/server/test/server.test.ts", "type": "defined_in", "label": "定义于"},
+    {"from": "cls:packages/server/src/server.ts:PiServer", "to": "cls:packages/server/src/sessions.ts:LiveSessionManager", "type": "uses", "label": "组合 LiveSessionManager"},
+    {"from": "cls:packages/server/src/server.ts:PiServer", "to": "cls:packages/server/src/snapshots.ts:ServerSnapshotPublisher", "type": "uses", "label": "组合 ServerSnapshotPublisher"},
+    {"from": "cls:packages/server/src/sessions.ts:LiveSessionManager", "to": "packages/server/src/types.ts", "type": "implements", "label": "使用 PiServerService/PiSessionRuntime 接口"},
+    {"from": "cls:packages/server/src/testing/service.ts:TestServerService", "to": "packages/server/src/types.ts", "type": "implements", "label": "实现 PiServerService"},
+    {"from": "cls:packages/server/src/testing/service.ts:TestSessionRuntime", "to": "packages/server/src/types.ts", "type": "implements", "label": "实现 PiSessionRuntime"},
+    {"from": "cls:packages/server/src/transports/unix/listener.ts:UnixListener", "to": "packages/server/src/listener.ts", "type": "implements", "label": "实现 PiServerListener"},
+    {"from": "cls:packages/server/src/transports/unix/listener.ts:UnixByteConnection", "to": "packages/server/src/connection.ts", "type": "implements", "label": "实现 ByteConnection"},
+    {"from": "fn:packages/server/src/transports/unix/preset.ts:createUnixServer", "to": "cls:packages/server/src/server.ts:PiServer", "type": "creates", "label": "创建 PiServer 实例"},
+    {"from": "fn:packages/server/src/transports/unix/preset.ts:createUnixServer", "to": "cls:packages/server/src/transports/unix/listener.ts:UnixListener", "type": "creates", "label": "创建 UnixListener 实例"},
+    {"from": "fn:packages/server/src/testing/server.ts:createTestServer", "to": "cls:packages/server/src/server.ts:PiServer", "type": "creates", "label": "创建 PiServer 实例"},
+    {"from": "fn:packages/server/src/testing/client.ts:connectUnixTestClient", "to": "cls:packages/server/src/testing/client.ts:ProtocolTestClient", "type": "creates", "label": "创建 ProtocolTestClient 实例"},
+    {"from": "packages/server/test/conformance.test.ts", "to": "packages/server/test/server.test.ts", "type": "related", "label": "协议一致性测试 vs 核心功能测试"},
+    {"from": "packages/server/test/sessions.test.ts", "to": "packages/server/test/conformance.test.ts", "type": "related", "label": "会话生命周期测试 vs 协议一致性测试"},
+    {"from": "packages/server/test/unix.test.ts", "to": "packages/server/test/unix-connection.test.ts", "type": "related", "label": "Unix 传输端到端测试 vs 字节连接单元测试"}
+  ]
+}

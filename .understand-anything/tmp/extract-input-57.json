@@ -1,0 +1,15 @@
+{
+  "projectRoot": "/Users/zhouyi/AiHub/pi",
+  "batchFiles": [
+    {"path": "packages/coding-agent/examples/extensions/subagent/agents/planner.md", "language": "markdown", "sizeLines": 37, "fileCategory": "docs"},
+    {"path": "packages/coding-agent/examples/extensions/subagent/agents/reviewer.md", "language": "markdown", "sizeLines": 35, "fileCategory": "docs"},
+    {"path": "packages/coding-agent/examples/extensions/subagent/agents/scout.md", "language": "markdown", "sizeLines": 50, "fileCategory": "docs"},
+    {"path": "packages/coding-agent/examples/extensions/subagent/agents/worker.md", "language": "markdown", "sizeLines": 24, "fileCategory": "docs"}
+  ],
+  "batchImportData": {
+    "packages/coding-agent/examples/extensions/subagent/agents/planner.md": [],
+    "packages/coding-agent/examples/extensions/subagent/agents/reviewer.md": [],
+    "packages/coding-agent/examples/extensions/subagent/agents/scout.md": [],
+    "packages/coding-agent/examples/extensions/subagent/agents/worker.md": []
+  }
+}

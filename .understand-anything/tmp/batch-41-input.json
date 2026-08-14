@@ -1,0 +1,15 @@
+{
+  "projectRoot": "/Users/zhouyi/AiHub/pi",
+  "batchFiles": [
+    {"path": "packages/protocol/src/cbor/index.ts", "language": "typescript", "sizeLines": 9, "fileCategory": "code"},
+    {"path": "packages/protocol/src/codec.ts", "language": "typescript", "sizeLines": 172, "fileCategory": "code"},
+    {"path": "packages/protocol/src/framing.ts", "language": "typescript", "sizeLines": 165, "fileCategory": "code"},
+    {"path": "packages/protocol/src/schemas.ts", "language": "typescript", "sizeLines": 450, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "packages/protocol/src/cbor/index.ts": [],
+    "packages/protocol/src/codec.ts": ["packages/protocol/src/cbor/index.ts", "packages/protocol/src/framing.ts", "packages/protocol/src/schemas.ts"],
+    "packages/protocol/src/framing.ts": [],
+    "packages/protocol/src/schemas.ts": []
+  }
+}

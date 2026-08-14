@@ -1,0 +1,21 @@
+{
+  "projectRoot": "/Users/zhouyi/AiHub/pi",
+  "batchFiles": [
+    {"path": "packages/ai/scripts/check-model-data.ts", "language": "typescript", "sizeLines": 16, "fileCategory": "code"},
+    {"path": "packages/ai/scripts/generate-models.ts", "language": "typescript", "sizeLines": 2948, "fileCategory": "code"},
+    {"path": "packages/ai/scripts/model-data.ts", "language": "typescript", "sizeLines": 280, "fileCategory": "code"},
+    {"path": "packages/ai/scripts/models-dev-reasoning-options.ts", "language": "typescript", "sizeLines": 30, "fileCategory": "code"},
+    {"path": "packages/ai/src/api/cloudflare.ts", "language": "typescript", "sizeLines": 15, "fileCategory": "code"},
+    {"path": "packages/ai/test/model-data-validation.test.ts", "language": "typescript", "sizeLines": 177, "fileCategory": "code"},
+    {"path": "packages/ai/test/reasoning-options.test.ts", "language": "typescript", "sizeLines": 36, "fileCategory": "code"}
+  ],
+  "batchImportData": {
+    "packages/ai/scripts/check-model-data.ts": ["packages/ai/scripts/model-data.ts"],
+    "packages/ai/scripts/generate-models.ts": ["packages/ai/scripts/model-data.ts", "packages/ai/scripts/models-dev-reasoning-options.ts", "packages/ai/src/api/cloudflare.ts", "packages/ai/src/types.ts"],
+    "packages/ai/scripts/model-data.ts": [],
+    "packages/ai/scripts/models-dev-reasoning-options.ts": ["packages/ai/src/types.ts"],
+    "packages/ai/src/api/cloudflare.ts": [],
+    "packages/ai/test/model-data-validation.test.ts": ["packages/ai/scripts/model-data.ts"],
+    "packages/ai/test/reasoning-options.test.ts": ["packages/ai/scripts/models-dev-reasoning-options.ts"]
+  }
+}

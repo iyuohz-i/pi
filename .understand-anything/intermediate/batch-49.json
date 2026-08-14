@@ -1,0 +1,235 @@
+{
+  "batchIndex": 49,
+  "nodes": [
+    {
+      "id": "packages/agent/CHANGELOG.md",
+      "type": "file",
+      "label": "CHANGELOG.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "description": "pi-agent-core 包的版本变更日志，记录从 v0.31.0 到 v0.84.1 的所有版本发布历史，包括 Breaking Changes、新增功能、修复和变更说明",
+      "metadata": {
+        "totalLines": 677,
+        "nonEmptyLines": 372,
+        "sectionCount": 239,
+        "versionRange": "0.31.0 ~ 0.84.1"
+      }
+    },
+    {
+      "id": "packages/agent/README.md",
+      "type": "file",
+      "label": "README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "description": "pi-agent-core 包的完整使用文档，涵盖安装指南、快速开始、核心概念（AgentMessage 与 LLM Message 区别）、事件流、Agent 选项与状态管理、工具定义、steering/follow-up 消息队列、代理流转发及低级 API 说明",
+      "metadata": {
+        "totalLines": 513,
+        "nonEmptyLines": 392,
+        "sectionCount": 27
+      }
+    },
+    {
+      "id": "packages/agent/package.json",
+      "type": "file",
+      "label": "package.json",
+      "language": "json",
+      "fileCategory": "config",
+      "description": "@earendil-works/pi-agent-core 包清单，定义包名、版本 0.84.1、ESM 模块导出（根入口、node 入口、session/testing 入口）、构建脚本、运行时依赖（pi-ai、pi-telemetry、diff、ignore、typebox、yaml）及 Node.js >=22.19.0 引擎要求",
+      "metadata": {
+        "totalLines": 68,
+        "packageName": "@earendil-works/pi-agent-core",
+        "version": "0.84.1",
+        "moduleType": "ESM",
+        "nodeEngine": ">=22.19.0"
+      }
+    },
+    {
+      "id": "packages/agent/tsconfig.build.json",
+      "type": "file",
+      "label": "tsconfig.build.json",
+      "language": "json",
+      "fileCategory": "config",
+      "description": "Agent 包的 TypeScript 构建配置，继承根 tsconfig.base.json，配置输出目录 dist/、源码根目录 src/，以及指向 pi-telemetry 和 pi-ai 包声明文件的类型路径映射",
+      "metadata": {
+        "totalLines": 14,
+        "extends": "../../tsconfig.base.json",
+        "outDir": "./dist",
+        "rootDir": "./src"
+      }
+    },
+    {
+      "id": "concept:agent-core-package",
+      "type": "concept",
+      "label": "@earendil-works/pi-agent-core",
+      "description": "通用 AI Agent 核心包，提供 transport 抽象、有状态 Agent 类、工具执行、事件流和会话管理功能。构建于 @earendil-works/pi-ai 之上，支持并行/顺序工具执行、steering/follow-up 消息队列、代理流转发等能力"
+    },
+    {
+      "id": "concept:agent-class",
+      "type": "concept",
+      "label": "Agent 类",
+      "description": "有状态 AI Agent 主类，管理 systemPrompt、model、thinkingLevel、tools、messages 等状态。提供 prompt()、continue()、steer()、followUp()、abort()、waitForIdle()、subscribe() 等方法，支持事件订阅和声明式消息类型扩展"
+    },
+    {
+      "id": "concept:event-system",
+      "type": "concept",
+      "label": "事件系统",
+      "description": "Agent 的事件驱动架构，按序发射 agent_start/turn_start/message_start/message_update/message_end/tool_execution_start/tool_execution_update/tool_execution_end/turn_end/agent_end 等事件类型，支持异步订阅者等待机制"
+    },
+    {
+      "id": "concept:tool-execution",
+      "type": "concept",
+      "label": "工具执行系统",
+      "description": "Agent 工具定义与执行框架。支持 parallel（默认）和 sequential 两种执行模式，提供 beforeToolCall 预检钩子和 afterToolCall 后处理钩子，工具结果可返回 terminate:true 提示提前终止循环"
+    },
+    {
+      "id": "concept:session-management",
+      "type": "concept",
+      "label": "会话管理（v4）",
+      "description": "基于 v4 lane 模型的持久化会话系统，包含 Session、SessionStorage、SessionRepo 接口，支持 JsonlSessionRepo 和 InMemorySessionRepo 实现，提供 durable operation records、global facts、shared sequence numbers 和 tree-scoped lane views"
+    },
+    {
+      "id": "concept:message-pipeline",
+      "type": "concept",
+      "label": "消息转换管道",
+      "description": "Agent 消息处理管道：AgentMessage[] → transformContext()（可选，修剪/注入上下文）→ convertToLlm()（过滤 UI 专用消息、转换自定义类型）→ LLM Message[]。支持通过声明合并扩展自定义 AgentMessage 类型"
+    },
+    {
+      "id": "concept:steering-followup",
+      "type": "concept",
+      "label": "Steering/Follow-up 消息队列",
+      "description": "Agent 的中断与追加消息机制。steer() 在工具执行后中断 Agent 并注入消息；followUp() 等待 Agent 完成当前工作后追加。两者各支持 one-at-a-time 和 all 两种投递模式"
+    },
+    {
+      "id": "concept:stream-proxy",
+      "type": "concept",
+      "label": "streamProxy 工具函数",
+      "description": "面向浏览器应用的代理转发工具，将 LLM 流式调用通过后端服务器中转，支持代理安全序列化选项（session、transport、retry-delay、metadata、header、cache-retention、thinking-budget 等）"
+    },
+    {
+      "id": "dep:pi-ai",
+      "type": "dependency",
+      "label": "@earendil-works/pi-ai",
+      "description": "AI 模型抽象层包，提供 createModels()、provider 工厂和 streamSimple()/completeSimple() 流式接口，是 pi-agent-core 的核心依赖"
+    },
+    {
+      "id": "dep:pi-telemetry",
+      "type": "dependency",
+      "label": "@earendil-works/pi-telemetry",
+      "description": "遥测包，提供 AI 请求和 harness 的类型化遥测 schema、回调辅助和生成的 schema 参考文档"
+    }
+  ],
+  "edges": [
+    {
+      "source": "packages/agent/README.md",
+      "target": "concept:agent-core-package",
+      "type": "documents",
+      "label": "文档说明",
+      "description": "README 是 agent-core 包的主要使用文档"
+    },
+    {
+      "source": "packages/agent/CHANGELOG.md",
+      "target": "concept:agent-core-package",
+      "type": "documents",
+      "label": "版本记录",
+      "description": "CHANGELOG 记录 agent-core 包的完整版本历史"
+    },
+    {
+      "source": "packages/agent/package.json",
+      "target": "concept:agent-core-package",
+      "type": "defines",
+      "label": "包清单定义",
+      "description": "package.json 定义 agent-core 包的元数据、依赖和导出"
+    },
+    {
+      "source": "packages/agent/tsconfig.build.json",
+      "target": "concept:agent-core-package",
+      "type": "configures",
+      "label": "构建配置",
+      "description": "tsconfig.build.json 配置 agent-core 包的 TypeScript 编译选项"
+    },
+    {
+      "source": "packages/agent/package.json",
+      "target": "dep:pi-ai",
+      "type": "depends_on",
+      "label": "依赖",
+      "description": "运行时依赖 @earendil-works/pi-ai ^0.84.1"
+    },
+    {
+      "source": "packages/agent/package.json",
+      "target": "dep:pi-telemetry",
+      "type": "depends_on",
+      "label": "依赖",
+      "description": "运行时依赖 @earendil-works/pi-telemetry ^0.84.1"
+    },
+    {
+      "source": "packages/agent/tsconfig.build.json",
+      "target": "dep:pi-ai",
+      "type": "type_reference",
+      "label": "类型路径映射",
+      "description": "通过 paths 映射 @earendil-works/pi-ai 到 ../ai/dist/ 的声明文件"
+    },
+    {
+      "source": "packages/agent/tsconfig.build.json",
+      "target": "dep:pi-telemetry",
+      "type": "type_reference",
+      "label": "类型路径映射",
+      "description": "通过 paths 映射 @earendil-works/pi-telemetry 到 ../telemetry/dist/index.d.ts"
+    },
+    {
+      "source": "concept:agent-core-package",
+      "target": "concept:agent-class",
+      "type": "contains",
+      "label": "核心组件",
+      "description": "Agent 类是 agent-core 包的核心有状态接口"
+    },
+    {
+      "source": "concept:agent-class",
+      "target": "concept:event-system",
+      "type": "uses",
+      "label": "事件发射",
+      "description": "Agent 类通过事件系统向外部发射生命周期和流式事件"
+    },
+    {
+      "source": "concept:agent-class",
+      "target": "concept:tool-execution",
+      "type": "uses",
+      "label": "工具管理",
+      "description": "Agent 类管理工具注册、执行模式选择和 beforeToolCall/afterToolCall 钩子"
+    },
+    {
+      "source": "concept:agent-class",
+      "target": "concept:message-pipeline",
+      "type": "uses",
+      "label": "消息处理",
+      "description": "Agent 类通过 transformContext 和 convertToLlm 管道处理消息上下文"
+    },
+    {
+      "source": "concept:agent-class",
+      "target": "concept:steering-followup",
+      "type": "uses",
+      "label": "消息队列",
+      "description": "Agent 类通过 steer() 和 followUp() 方法支持中断和追加消息"
+    },
+    {
+      "source": "concept:agent-core-package",
+      "target": "concept:session-management",
+      "type": "contains",
+      "label": "会话子系统",
+      "description": "agent-core 包含 v4 lane 模型的持久化会话管理系统"
+    },
+    {
+      "source": "concept:agent-core-package",
+      "target": "concept:stream-proxy",
+      "type": "contains",
+      "label": "代理工具",
+      "description": "agent-core 导出 streamProxy 工具函数用于浏览器代理场景"
+    },
+    {
+      "source": "concept:stream-proxy",
+      "target": "dep:pi-ai",
+      "type": "depends_on",
+      "label": "流式接口",
+      "description": "streamProxy 作为 streamFn 传递给 Agent，底层通过 pi-ai 的 Models 实例完成实际 LLM 调用"
+    }
+  ]
+}

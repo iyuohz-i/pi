@@ -1,0 +1,2408 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/ai/src/api/lazy.ts",
+      "type": "file",
+      "name": "lazy.ts",
+      "filePath": "packages/ai/src/api/lazy.ts",
+      "summary": "惰性 API 加载基础设施，提供 createSetupErrorMessage、lazyStream 和 lazyApi 工厂函数供各 provider 的 .lazy.ts 文件复用。",
+      "tags": [
+        "utility",
+        "lazy-loading",
+        "factory",
+        "infrastructure"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/src/api/mistral-conversations.lazy.ts",
+      "type": "file",
+      "name": "mistral-conversations.lazy.ts",
+      "filePath": "packages/ai/src/api/mistral-conversations.lazy.ts",
+      "summary": "Mistral Conversations API 的惰性加载包装器，实现按需初始化模块。",
+      "tags": [
+        "lazy-loader",
+        "mistral",
+        "barrel"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/api/mistral-conversations.ts",
+      "type": "file",
+      "name": "mistral-conversations.ts",
+      "filePath": "packages/ai/src/api/mistral-conversations.ts",
+      "summary": "Mistral Conversations API 适配器，实现 chat payload 构建、流式事件解析、工具调用 ID 规范化和 HTTP 传输。",
+      "tags": [
+        "api-handler",
+        "mistral",
+        "streaming",
+        "tool-calling"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/ai/src/api/openai-codex-responses.lazy.ts",
+      "type": "file",
+      "name": "openai-codex-responses.lazy.ts",
+      "filePath": "packages/ai/src/api/openai-codex-responses.lazy.ts",
+      "summary": "OpenAI Codex Responses API 的惰性加载包装器，实现按需初始化模块。",
+      "tags": [
+        "lazy-loader",
+        "openai-codex",
+        "barrel"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "type": "file",
+      "name": "openai-codex-responses.ts",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "summary": "OpenAI Codex Responses API 适配器，支持 SSE 和 WebSocket 双通道流式传输、请求体压缩、会话缓存和重试逻辑。",
+      "tags": [
+        "api-handler",
+        "openai-codex",
+        "websocket",
+        "streaming",
+        "caching"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/ai/src/api/openai-completions.ts",
+      "type": "file",
+      "name": "openai-completions.ts",
+      "filePath": "packages/ai/src/api/openai-completions.ts",
+      "summary": "OpenAI Completions API 适配器，实现兼容性检测、消息转换、prompt cache 控制和 chat template 参数构建。",
+      "tags": [
+        "api-handler",
+        "openai",
+        "completions",
+        "streaming",
+        "compat"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/ai/src/api/openai-prompt-cache.ts",
+      "type": "file",
+      "name": "openai-prompt-cache.ts",
+      "filePath": "packages/ai/src/api/openai-prompt-cache.ts",
+      "summary": "OpenAI prompt cache key 工具函数，提供 key 长度限制和截断逻辑。",
+      "tags": [
+        "utility",
+        "openai",
+        "prompt-cache"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/lazy.ts:createSetupErrorMessage",
+      "type": "function",
+      "name": "createSetupErrorMessage",
+      "filePath": "packages/ai/src/api/lazy.ts",
+      "lineRange": [
+        4,
+        23
+      ],
+      "summary": "createSetupErrorMessage 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/lazy.ts:lazyStream",
+      "type": "function",
+      "name": "lazyStream",
+      "filePath": "packages/ai/src/api/lazy.ts",
+      "lineRange": [
+        46,
+        61
+      ],
+      "summary": "创建惰性加载 stream 函数，首次调用时加载模块。",
+      "tags": [
+        "utility",
+        "exported",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/lazy.ts:lazyApi",
+      "type": "function",
+      "name": "lazyApi",
+      "filePath": "packages/ai/src/api/lazy.ts",
+      "lineRange": [
+        73,
+        98
+      ],
+      "summary": "创建惰性加载 API 工厂函数，延迟加载实际 API 模块。",
+      "tags": [
+        "utility",
+        "exported",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/mistral-conversations.ts:stream",
+      "type": "function",
+      "name": "stream",
+      "filePath": "packages/ai/src/api/mistral-conversations.ts",
+      "lineRange": [
+        121,
+        175
+      ],
+      "summary": "Mistral Conversations API 流式入口，处理 HTTP 流和事件解析。",
+      "tags": [
+        "api-handler",
+        "streaming",
+        "entry-point"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/mistral-conversations.ts:streamSimple",
+      "type": "function",
+      "name": "streamSimple",
+      "filePath": "packages/ai/src/api/mistral-conversations.ts",
+      "lineRange": [
+        180,
+        201
+      ],
+      "summary": "Mistral 简化流式接口。",
+      "tags": [
+        "api-handler",
+        "streaming",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/mistral-conversations.ts:createOutput",
+      "type": "function",
+      "name": "createOutput",
+      "filePath": "packages/ai/src/api/mistral-conversations.ts",
+      "lineRange": [
+        203,
+        221
+      ],
+      "summary": "createOutput 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/mistral-conversations.ts:createMistralToolCallIdNormalizer",
+      "type": "function",
+      "name": "createMistralToolCallIdNormalizer",
+      "filePath": "packages/ai/src/api/mistral-conversations.ts",
+      "lineRange": [
+        223,
+        243
+      ],
+      "summary": "createMistralToolCallIdNormalizer 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/mistral-conversations.ts:formatMistralError",
+      "type": "function",
+      "name": "formatMistralError",
+      "filePath": "packages/ai/src/api/mistral-conversations.ts",
+      "lineRange": [
+        255,
+        267
+      ],
+      "summary": "formatMistralError 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/mistral-conversations.ts:requestMistralStream",
+      "type": "function",
+      "name": "requestMistralStream",
+      "filePath": "packages/ai/src/api/mistral-conversations.ts",
+      "lineRange": [
+        283,
+        313
+      ],
+      "summary": "requestMistralStream 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/mistral-conversations.ts:buildMistralHeaders",
+      "type": "function",
+      "name": "buildMistralHeaders",
+      "filePath": "packages/ai/src/api/mistral-conversations.ts",
+      "lineRange": [
+        327,
+        343
+      ],
+      "summary": "buildMistralHeaders 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/mistral-conversations.ts:toMistralWirePayload",
+      "type": "function",
+      "name": "toMistralWirePayload",
+      "filePath": "packages/ai/src/api/mistral-conversations.ts",
+      "lineRange": [
+        357,
+        391
+      ],
+      "summary": "将 payload 转换为 Mistral wire 格式。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/mistral-conversations.ts:toMistralWireContentChunk",
+      "type": "function",
+      "name": "toMistralWireContentChunk",
+      "filePath": "packages/ai/src/api/mistral-conversations.ts",
+      "lineRange": [
+        403,
+        416
+      ],
+      "summary": "toMistralWireContentChunk 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/mistral-conversations.ts:parseMistralEvent",
+      "type": "function",
+      "name": "parseMistralEvent",
+      "filePath": "packages/ai/src/api/mistral-conversations.ts",
+      "lineRange": [
+        481,
+        496
+      ],
+      "summary": "parseMistralEvent 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/mistral-conversations.ts:buildChatPayload",
+      "type": "function",
+      "name": "buildChatPayload",
+      "filePath": "packages/ai/src/api/mistral-conversations.ts",
+      "lineRange": [
+        498,
+        526
+      ],
+      "summary": "构建 Mistral chat 请求 payload。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/mistral-conversations.ts:getMistralCachedPromptTokens",
+      "type": "function",
+      "name": "getMistralCachedPromptTokens",
+      "filePath": "packages/ai/src/api/mistral-conversations.ts",
+      "lineRange": [
+        532,
+        551
+      ],
+      "summary": "getMistralCachedPromptTokens 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/mistral-conversations.ts:consumeChatStream",
+      "type": "function",
+      "name": "consumeChatStream",
+      "filePath": "packages/ai/src/api/mistral-conversations.ts",
+      "lineRange": [
+        553,
+        746
+      ],
+      "summary": "消费 Mistral chat 流，解析 SSE 事件并分发到 output stream。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/src/api/mistral-conversations.ts:toFunctionTools",
+      "type": "function",
+      "name": "toFunctionTools",
+      "filePath": "packages/ai/src/api/mistral-conversations.ts",
+      "lineRange": [
+        748,
+        761
+      ],
+      "summary": "toFunctionTools 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/mistral-conversations.ts:stripSymbolKeys",
+      "type": "function",
+      "name": "stripSymbolKeys",
+      "filePath": "packages/ai/src/api/mistral-conversations.ts",
+      "lineRange": [
+        763,
+        777
+      ],
+      "summary": "stripSymbolKeys 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/mistral-conversations.ts:toChatMessages",
+      "type": "function",
+      "name": "toChatMessages",
+      "filePath": "packages/ai/src/api/mistral-conversations.ts",
+      "lineRange": [
+        779,
+        865
+      ],
+      "summary": "将内部消息格式转换为 Mistral chat 消息格式。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/mistral-conversations.ts:buildToolResultText",
+      "type": "function",
+      "name": "buildToolResultText",
+      "filePath": "packages/ai/src/api/mistral-conversations.ts",
+      "lineRange": [
+        867,
+        886
+      ],
+      "summary": "buildToolResultText 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/mistral-conversations.ts:mapToolChoice",
+      "type": "function",
+      "name": "mapToolChoice",
+      "filePath": "packages/ai/src/api/mistral-conversations.ts",
+      "lineRange": [
+        903,
+        914
+      ],
+      "summary": "mapToolChoice 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/mistral-conversations.ts:mapChatStopReason",
+      "type": "function",
+      "name": "mapChatStopReason",
+      "filePath": "packages/ai/src/api/mistral-conversations.ts",
+      "lineRange": [
+        916,
+        931
+      ],
+      "summary": "mapChatStopReason 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:getRetryAfterDelayMs",
+      "type": "function",
+      "name": "getRetryAfterDelayMs",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        146,
+        171
+      ],
+      "summary": "getRetryAfterDelayMs 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:sleep",
+      "type": "function",
+      "name": "sleep",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        185,
+        197
+      ],
+      "summary": "sleep 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:compressRequestBodyZstd",
+      "type": "function",
+      "name": "compressRequestBodyZstd",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        225,
+        238
+      ],
+      "summary": "compressRequestBodyZstd 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:stream",
+      "type": "function",
+      "name": "stream",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        244,
+        504
+      ],
+      "summary": "OpenAI Codex Responses API 流式入口，支持 SSE 和 WebSocket 通道选择。",
+      "tags": [
+        "api-handler",
+        "streaming",
+        "entry-point"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:streamSimple",
+      "type": "function",
+      "name": "streamSimple",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        506,
+        524
+      ],
+      "summary": "OpenAI Codex Responses 简化流式接口。",
+      "tags": [
+        "api-handler",
+        "streaming",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:buildRequestBody",
+      "type": "function",
+      "name": "buildRequestBody",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        530,
+        603
+      ],
+      "summary": "构建 Codex Responses API 请求体，包含 session cache 和 grammar 配置。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:getServiceTierCostMultiplier",
+      "type": "function",
+      "name": "getServiceTierCostMultiplier",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        605,
+        617
+      ],
+      "summary": "getServiceTierCostMultiplier 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:applyServiceTierPricing",
+      "type": "function",
+      "name": "applyServiceTierPricing",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        619,
+        632
+      ],
+      "summary": "applyServiceTierPricing 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:processStream",
+      "type": "function",
+      "name": "processStream",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        663,
+        677
+      ],
+      "summary": "processStream 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:extractCodexEventError",
+      "type": "function",
+      "name": "extractCodexEventError",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        715,
+        726
+      ],
+      "summary": "extractCodexEventError 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:getOrCreateWebSocketDebugStats",
+      "type": "function",
+      "name": "getOrCreateWebSocketDebugStats",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        888,
+        906
+      ],
+      "summary": "getOrCreateWebSocketDebugStats 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:getOpenAICodexWebSocketDebugStats",
+      "type": "function",
+      "name": "getOpenAICodexWebSocketDebugStats",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        908,
+        911
+      ],
+      "summary": "getOpenAICodexWebSocketDebugStats 函数。",
+      "tags": [
+        "utility",
+        "exported",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:resetOpenAICodexWebSocketDebugStats",
+      "type": "function",
+      "name": "resetOpenAICodexWebSocketDebugStats",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        913,
+        921
+      ],
+      "summary": "resetOpenAICodexWebSocketDebugStats 函数。",
+      "tags": [
+        "utility",
+        "exported",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:closeOpenAICodexWebSocketSessions",
+      "type": "function",
+      "name": "closeOpenAICodexWebSocketSessions",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        923,
+        937
+      ],
+      "summary": "关闭指定会话的所有 WebSocket 连接。",
+      "tags": [
+        "utility",
+        "exported",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:getWebSocketConstructor",
+      "type": "function",
+      "name": "getWebSocketConstructor",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        968,
+        999
+      ],
+      "summary": "getWebSocketConstructor 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:scheduleSessionWebSocketExpiry",
+      "type": "function",
+      "name": "scheduleSessionWebSocketExpiry",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        1036,
+        1047
+      ],
+      "summary": "scheduleSessionWebSocketExpiry 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:connectWebSocket",
+      "type": "function",
+      "name": "connectWebSocket",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        1049,
+        1125
+      ],
+      "summary": "建立 WebSocket 连接，处理超时和错误。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:acquireWebSocket",
+      "type": "function",
+      "name": "acquireWebSocket",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        1127,
+        1222
+      ],
+      "summary": "获取或复用 WebSocket 连接，实现会话级连接池。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:extractWebSocketError",
+      "type": "function",
+      "name": "extractWebSocketError",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        1224,
+        1243
+      ],
+      "summary": "extractWebSocketError 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:extractWebSocketCloseError",
+      "type": "function",
+      "name": "extractWebSocketCloseError",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        1245,
+        1262
+      ],
+      "summary": "extractWebSocketCloseError 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:decodeWebSocketData",
+      "type": "function",
+      "name": "decodeWebSocketData",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        1264,
+        1279
+      ],
+      "summary": "decodeWebSocketData 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:getCachedWebSocketInputDelta",
+      "type": "function",
+      "name": "getCachedWebSocketInputDelta",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        1412,
+        1432
+      ],
+      "summary": "getCachedWebSocketInputDelta 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:buildCachedWebSocketRequestBody",
+      "type": "function",
+      "name": "buildCachedWebSocketRequestBody",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        1434,
+        1451
+      ],
+      "summary": "buildCachedWebSocketRequestBody 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:processWebSocketStream",
+      "type": "function",
+      "name": "processWebSocketStream",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        1467,
+        1554
+      ],
+      "summary": "处理 WebSocket 流式响应，解析事件并分发到 output stream。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:parseErrorResponse",
+      "type": "function",
+      "name": "parseErrorResponse",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        1560,
+        1585
+      ],
+      "summary": "parseErrorResponse 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:extractAccountId",
+      "type": "function",
+      "name": "extractAccountId",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        1591,
+        1602
+      ],
+      "summary": "extractAccountId 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:buildBaseCodexHeaders",
+      "type": "function",
+      "name": "buildBaseCodexHeaders",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        1604,
+        1624
+      ],
+      "summary": "buildBaseCodexHeaders 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:buildSSEHeaders",
+      "type": "function",
+      "name": "buildSSEHeaders",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        1626,
+        1644
+      ],
+      "summary": "buildSSEHeaders 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-codex-responses.ts:buildWebSocketHeaders",
+      "type": "function",
+      "name": "buildWebSocketHeaders",
+      "filePath": "packages/ai/src/api/openai-codex-responses.ts",
+      "lineRange": [
+        1646,
+        1662
+      ],
+      "summary": "buildWebSocketHeaders 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-completions.ts:hasToolHistory",
+      "type": "function",
+      "name": "hasToolHistory",
+      "filePath": "packages/ai/src/api/openai-completions.ts",
+      "lineRange": [
+        79,
+        91
+      ],
+      "summary": "hasToolHistory 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-completions.ts:getDeferredToolNames",
+      "type": "function",
+      "name": "getDeferredToolNames",
+      "filePath": "packages/ai/src/api/openai-completions.ts",
+      "lineRange": [
+        93,
+        103
+      ],
+      "summary": "getDeferredToolNames 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-completions.ts:isEncryptedReasoningDetail",
+      "type": "function",
+      "name": "isEncryptedReasoningDetail",
+      "filePath": "packages/ai/src/api/openai-completions.ts",
+      "lineRange": [
+        129,
+        141
+      ],
+      "summary": "isEncryptedReasoningDetail 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-completions.ts:stream",
+      "type": "function",
+      "name": "stream",
+      "filePath": "packages/ai/src/api/openai-completions.ts",
+      "lineRange": [
+        201,
+        615
+      ],
+      "summary": "OpenAI Completions API 核心流式入口，处理 SSE 解析和兼容性逻辑。",
+      "tags": [
+        "api-handler",
+        "streaming",
+        "entry-point"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-completions.ts:streamSimple",
+      "type": "function",
+      "name": "streamSimple",
+      "filePath": "packages/ai/src/api/openai-completions.ts",
+      "lineRange": [
+        617,
+        635
+      ],
+      "summary": "OpenAI Completions 简化流式接口。",
+      "tags": [
+        "api-handler",
+        "streaming",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-completions.ts:createClient",
+      "type": "function",
+      "name": "createClient",
+      "filePath": "packages/ai/src/api/openai-completions.ts",
+      "lineRange": [
+        637,
+        680
+      ],
+      "summary": "创建 OpenAI Completions API 客户端，配置认证和 base URL。",
+      "tags": [
+        "utility",
+        "client-creation",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-completions.ts:buildParams",
+      "type": "function",
+      "name": "buildParams",
+      "filePath": "packages/ai/src/api/openai-completions.ts",
+      "lineRange": [
+        682,
+        891
+      ],
+      "summary": "构建 OpenAI Completions API 请求参数，包含 cache control 和 chat template。",
+      "tags": [
+        "api-handler",
+        "request-builder",
+        "function",
+        "internal"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-completions.ts:buildChatTemplateValues",
+      "type": "function",
+      "name": "buildChatTemplateValues",
+      "filePath": "packages/ai/src/api/openai-completions.ts",
+      "lineRange": [
+        893,
+        908
+      ],
+      "summary": "buildChatTemplateValues 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-completions.ts:resolveChatTemplateKwargValue",
+      "type": "function",
+      "name": "resolveChatTemplateKwargValue",
+      "filePath": "packages/ai/src/api/openai-completions.ts",
+      "lineRange": [
+        910,
+        929
+      ],
+      "summary": "resolveChatTemplateKwargValue 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-completions.ts:getCompatCacheControl",
+      "type": "function",
+      "name": "getCompatCacheControl",
+      "filePath": "packages/ai/src/api/openai-completions.ts",
+      "lineRange": [
+        931,
+        941
+      ],
+      "summary": "getCompatCacheControl 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-completions.ts:addCacheControlToSystemPrompt",
+      "type": "function",
+      "name": "addCacheControlToSystemPrompt",
+      "filePath": "packages/ai/src/api/openai-completions.ts",
+      "lineRange": [
+        953,
+        963
+      ],
+      "summary": "addCacheControlToSystemPrompt 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-completions.ts:addCacheControlToLastConversationMessage",
+      "type": "function",
+      "name": "addCacheControlToLastConversationMessage",
+      "filePath": "packages/ai/src/api/openai-completions.ts",
+      "lineRange": [
+        965,
+        977
+      ],
+      "summary": "addCacheControlToLastConversationMessage 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-completions.ts:addCacheControlToLastTool",
+      "type": "function",
+      "name": "addCacheControlToLastTool",
+      "filePath": "packages/ai/src/api/openai-completions.ts",
+      "lineRange": [
+        979,
+        989
+      ],
+      "summary": "addCacheControlToLastTool 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-completions.ts:addCacheControlToTextContent",
+      "type": "function",
+      "name": "addCacheControlToTextContent",
+      "filePath": "packages/ai/src/api/openai-completions.ts",
+      "lineRange": [
+        1008,
+        1045
+      ],
+      "summary": "addCacheControlToTextContent 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-completions.ts:convertMessages",
+      "type": "function",
+      "name": "convertMessages",
+      "filePath": "packages/ai/src/api/openai-completions.ts",
+      "lineRange": [
+        1047,
+        1336
+      ],
+      "summary": "将内部消息格式转换为 OpenAI Completions 格式，处理兼容性和图像内容。",
+      "tags": [
+        "utility",
+        "message-conversion",
+        "exported"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-completions.ts:convertTools",
+      "type": "function",
+      "name": "convertTools",
+      "filePath": "packages/ai/src/api/openai-completions.ts",
+      "lineRange": [
+        1338,
+        1373
+      ],
+      "summary": "将工具定义转换为 OpenAI Completions 格式。",
+      "tags": [
+        "utility",
+        "tool-conversion",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-completions.ts:parseChunkUsage",
+      "type": "function",
+      "name": "parseChunkUsage",
+      "filePath": "packages/ai/src/api/openai-completions.ts",
+      "lineRange": [
+        1375,
+        1411
+      ],
+      "summary": "parseChunkUsage 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-completions.ts:mapStopReason",
+      "type": "function",
+      "name": "mapStopReason",
+      "filePath": "packages/ai/src/api/openai-completions.ts",
+      "lineRange": [
+        1413,
+        1437
+      ],
+      "summary": "将 OpenAI finish reason 映射为统一的停止原因枚举。",
+      "tags": [
+        "utility",
+        "stop-reason-mapping",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-completions.ts:detectCompat",
+      "type": "function",
+      "name": "detectCompat",
+      "filePath": "packages/ai/src/api/openai-completions.ts",
+      "lineRange": [
+        1444,
+        1538
+      ],
+      "summary": "检测模型的兼容性配置，包括 cache control、thinking 和 tool calling 支持。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-completions.ts:getCompat",
+      "type": "function",
+      "name": "getCompat",
+      "filePath": "packages/ai/src/api/openai-completions.ts",
+      "lineRange": [
+        1544,
+        1577
+      ],
+      "summary": "getCompat 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/openai-prompt-cache.ts:clampOpenAIPromptCacheKey",
+      "type": "function",
+      "name": "clampOpenAIPromptCacheKey",
+      "filePath": "packages/ai/src/api/openai-prompt-cache.ts",
+      "lineRange": [
+        3,
+        8
+      ],
+      "summary": "截断 OpenAI prompt cache key 到最大长度限制。",
+      "tags": [
+        "utility",
+        "exported",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/ai/src/api/lazy.ts",
+      "target": "function:packages/ai/src/api/lazy.ts:createSetupErrorMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/lazy.ts",
+      "target": "function:packages/ai/src/api/lazy.ts:lazyStream",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/lazy.ts",
+      "target": "function:packages/ai/src/api/lazy.ts:lazyApi",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "function:packages/ai/src/api/mistral-conversations.ts:stream",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "function:packages/ai/src/api/mistral-conversations.ts:streamSimple",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "function:packages/ai/src/api/mistral-conversations.ts:createOutput",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "function:packages/ai/src/api/mistral-conversations.ts:createMistralToolCallIdNormalizer",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "function:packages/ai/src/api/mistral-conversations.ts:formatMistralError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "function:packages/ai/src/api/mistral-conversations.ts:requestMistralStream",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "function:packages/ai/src/api/mistral-conversations.ts:buildMistralHeaders",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "function:packages/ai/src/api/mistral-conversations.ts:toMistralWirePayload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "function:packages/ai/src/api/mistral-conversations.ts:toMistralWireContentChunk",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "function:packages/ai/src/api/mistral-conversations.ts:parseMistralEvent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "function:packages/ai/src/api/mistral-conversations.ts:buildChatPayload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "function:packages/ai/src/api/mistral-conversations.ts:getMistralCachedPromptTokens",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "function:packages/ai/src/api/mistral-conversations.ts:consumeChatStream",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "function:packages/ai/src/api/mistral-conversations.ts:toFunctionTools",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "function:packages/ai/src/api/mistral-conversations.ts:stripSymbolKeys",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "function:packages/ai/src/api/mistral-conversations.ts:toChatMessages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "function:packages/ai/src/api/mistral-conversations.ts:buildToolResultText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "function:packages/ai/src/api/mistral-conversations.ts:mapToolChoice",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "function:packages/ai/src/api/mistral-conversations.ts:mapChatStopReason",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:getRetryAfterDelayMs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:sleep",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:compressRequestBodyZstd",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:stream",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:streamSimple",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:buildRequestBody",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:getServiceTierCostMultiplier",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:applyServiceTierPricing",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:processStream",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:extractCodexEventError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:getOrCreateWebSocketDebugStats",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:getOpenAICodexWebSocketDebugStats",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:resetOpenAICodexWebSocketDebugStats",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:closeOpenAICodexWebSocketSessions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:getWebSocketConstructor",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:scheduleSessionWebSocketExpiry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:connectWebSocket",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:acquireWebSocket",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:extractWebSocketError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:extractWebSocketCloseError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:decodeWebSocketData",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:getCachedWebSocketInputDelta",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:buildCachedWebSocketRequestBody",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:processWebSocketStream",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:parseErrorResponse",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:extractAccountId",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:buildBaseCodexHeaders",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:buildSSEHeaders",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:buildWebSocketHeaders",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "function:packages/ai/src/api/openai-completions.ts:hasToolHistory",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "function:packages/ai/src/api/openai-completions.ts:getDeferredToolNames",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "function:packages/ai/src/api/openai-completions.ts:isEncryptedReasoningDetail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "function:packages/ai/src/api/openai-completions.ts:stream",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "function:packages/ai/src/api/openai-completions.ts:streamSimple",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "function:packages/ai/src/api/openai-completions.ts:createClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "function:packages/ai/src/api/openai-completions.ts:buildParams",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "function:packages/ai/src/api/openai-completions.ts:buildChatTemplateValues",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "function:packages/ai/src/api/openai-completions.ts:resolveChatTemplateKwargValue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "function:packages/ai/src/api/openai-completions.ts:getCompatCacheControl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "function:packages/ai/src/api/openai-completions.ts:addCacheControlToSystemPrompt",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "function:packages/ai/src/api/openai-completions.ts:addCacheControlToLastConversationMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "function:packages/ai/src/api/openai-completions.ts:addCacheControlToLastTool",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "function:packages/ai/src/api/openai-completions.ts:addCacheControlToTextContent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "function:packages/ai/src/api/openai-completions.ts:convertMessages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "function:packages/ai/src/api/openai-completions.ts:convertTools",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "function:packages/ai/src/api/openai-completions.ts:parseChunkUsage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "function:packages/ai/src/api/openai-completions.ts:mapStopReason",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "function:packages/ai/src/api/openai-completions.ts:detectCompat",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "function:packages/ai/src/api/openai-completions.ts:getCompat",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-prompt-cache.ts",
+      "target": "function:packages/ai/src/api/openai-prompt-cache.ts:clampOpenAIPromptCacheKey",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/lazy.ts",
+      "target": "function:packages/ai/src/api/lazy.ts:lazyStream",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/api/lazy.ts",
+      "target": "function:packages/ai/src/api/lazy.ts:lazyApi",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "function:packages/ai/src/api/mistral-conversations.ts:stream",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "function:packages/ai/src/api/mistral-conversations.ts:streamSimple",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:stream",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:streamSimple",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:getOpenAICodexWebSocketDebugStats",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:resetOpenAICodexWebSocketDebugStats",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "function:packages/ai/src/api/openai-codex-responses.ts:closeOpenAICodexWebSocketSessions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "function:packages/ai/src/api/openai-completions.ts:stream",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "function:packages/ai/src/api/openai-completions.ts:streamSimple",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "function:packages/ai/src/api/openai-completions.ts:convertMessages",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-prompt-cache.ts",
+      "target": "function:packages/ai/src/api/openai-prompt-cache.ts:clampOpenAIPromptCacheKey",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/api/lazy.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/lazy.ts",
+      "target": "file:packages/ai/src/utils/event-stream.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.lazy.ts",
+      "target": "file:packages/ai/src/api/lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.lazy.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "file:packages/ai/src/api/constrained-sampling.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "file:packages/ai/src/api/simple-options.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "file:packages/ai/src/api/transform-messages.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "file:packages/ai/src/utils/event-stream.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "file:packages/ai/src/utils/hash.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "file:packages/ai/src/utils/headers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "file:packages/ai/src/utils/json-parse.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/mistral-conversations.ts",
+      "target": "file:packages/ai/src/utils/sanitize-unicode.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.lazy.ts",
+      "target": "file:packages/ai/src/api/lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.lazy.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "file:packages/ai/src/api/constrained-sampling.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "file:packages/ai/src/api/openai-prompt-cache.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "file:packages/ai/src/api/openai-responses-shared.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "file:packages/ai/src/api/simple-options.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "file:packages/ai/src/session-resources.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "file:packages/ai/src/utils/abort-signals.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "file:packages/ai/src/utils/deferred-tools.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "file:packages/ai/src/utils/diagnostics.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "file:packages/ai/src/utils/error-body.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "file:packages/ai/src/utils/event-stream.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "file:packages/ai/src/utils/headers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "file:packages/ai/src/utils/node-http-proxy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-codex-responses.ts",
+      "target": "file:packages/ai/src/utils/uuid.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "file:packages/ai/src/api/constrained-sampling.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "file:packages/ai/src/api/github-copilot-headers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "file:packages/ai/src/api/openai-prompt-cache.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "file:packages/ai/src/api/simple-options.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "file:packages/ai/src/api/transform-messages.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "file:packages/ai/src/utils/error-body.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "file:packages/ai/src/utils/event-stream.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "file:packages/ai/src/utils/hash.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "file:packages/ai/src/utils/headers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "file:packages/ai/src/utils/json-parse.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "file:packages/ai/src/utils/provider-env.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "file:packages/ai/src/utils/provider-retry.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/openai-completions.ts",
+      "target": "file:packages/ai/src/utils/sanitize-unicode.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:packages/ai/src/api/mistral-conversations.ts:stream",
+      "target": "function:packages/ai/src/api/transform-messages.ts:transformMessages",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/mistral-conversations.ts:streamSimple",
+      "target": "function:packages/ai/src/api/simple-options.ts:buildBaseOptions",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/mistral-conversations.ts:toFunctionTools",
+      "target": "function:packages/ai/src/api/constrained-sampling.ts:resolveJsonSchemaStrictSampling",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/openai-codex-responses.ts:stream",
+      "target": "function:packages/ai/src/api/constrained-sampling.ts:createGrammarToolInputProperties",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/openai-codex-responses.ts:stream",
+      "target": "function:packages/ai/src/api/openai-prompt-cache.ts:clampOpenAIPromptCacheKey",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/openai-codex-responses.ts:streamSimple",
+      "target": "function:packages/ai/src/api/simple-options.ts:buildBaseOptions",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/openai-codex-responses.ts:buildRequestBody",
+      "target": "function:packages/ai/src/api/constrained-sampling.ts:createGrammarToolInputProperties",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/openai-codex-responses.ts:buildRequestBody",
+      "target": "function:packages/ai/src/api/openai-responses-shared.ts:convertResponsesMessages",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/openai-codex-responses.ts:buildRequestBody",
+      "target": "function:packages/ai/src/api/openai-responses-shared.ts:convertResponsesTools",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/openai-codex-responses.ts:processStream",
+      "target": "function:packages/ai/src/api/openai-responses-shared.ts:processResponsesStream",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/openai-codex-responses.ts:processWebSocketStream",
+      "target": "function:packages/ai/src/api/openai-responses-shared.ts:processResponsesStream",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/openai-codex-responses.ts:processWebSocketStream",
+      "target": "function:packages/ai/src/api/openai-responses-shared.ts:convertResponsesMessages",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/openai-completions.ts:stream",
+      "target": "function:packages/ai/src/api/constrained-sampling.ts:createGrammarToolInputProperties",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/openai-completions.ts:streamSimple",
+      "target": "function:packages/ai/src/api/simple-options.ts:buildBaseOptions",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/openai-completions.ts:createClient",
+      "target": "function:packages/ai/src/api/github-copilot-headers.ts:hasCopilotVisionInput",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/openai-completions.ts:createClient",
+      "target": "function:packages/ai/src/api/github-copilot-headers.ts:buildCopilotDynamicHeaders",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/openai-completions.ts:buildParams",
+      "target": "function:packages/ai/src/api/constrained-sampling.ts:createGrammarToolInputProperties",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/openai-completions.ts:buildParams",
+      "target": "function:packages/ai/src/api/openai-prompt-cache.ts:clampOpenAIPromptCacheKey",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/openai-completions.ts:convertMessages",
+      "target": "function:packages/ai/src/api/transform-messages.ts:transformMessages",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/openai-completions.ts:convertMessages",
+      "target": "function:packages/ai/src/api/constrained-sampling.ts:getGrammarToolInput",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/openai-completions.ts:convertTools",
+      "target": "function:packages/ai/src/api/constrained-sampling.ts:resolveGrammarConstrainedSampling",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/openai-completions.ts:convertTools",
+      "target": "function:packages/ai/src/api/constrained-sampling.ts:resolveJsonSchemaStrictSampling",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

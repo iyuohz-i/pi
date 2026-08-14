@@ -1,0 +1,1142 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/coding-agent/src/core/bash-executor.ts",
+      "type": "file",
+      "name": "bash-executor.ts",
+      "filePath": "packages/coding-agent/src/core/bash-executor.ts",
+      "summary": "Bash 命令执行器，封装 bash 工具操作的执行逻辑，包括命令执行、输出截断和 ANSI 处理。",
+      "tags": [
+        "bash",
+        "executor",
+        "command-execution",
+        "core"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/cache-stats.ts",
+      "type": "file",
+      "name": "cache-stats.ts",
+      "filePath": "packages/coding-agent/src/core/cache-stats.ts",
+      "summary": "缓存统计模块，检测 LLM 请求中的缓存命中/未命中情况，计算缓存浪费并收集缓存未命中事件。",
+      "tags": [
+        "cache",
+        "statistics",
+        "llm",
+        "analytics",
+        "core"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/defaults.ts",
+      "type": "file",
+      "name": "defaults.ts",
+      "filePath": "packages/coding-agent/src/core/defaults.ts",
+      "summary": "定义默认 thinking level 等核心默认配置常量。",
+      "tags": [
+        "defaults",
+        "constants",
+        "core"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/diagnostics.ts",
+      "type": "file",
+      "name": "diagnostics.ts",
+      "filePath": "packages/coding-agent/src/core/diagnostics.ts",
+      "summary": "诊断工具模块，提供运行时诊断信息的收集与输出功能。",
+      "tags": [
+        "diagnostics",
+        "debugging",
+        "core"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/event-bus.ts",
+      "type": "file",
+      "name": "event-bus.ts",
+      "filePath": "packages/coding-agent/src/core/event-bus.ts",
+      "summary": "轻量级事件总线，提供发布/订阅模式的事件通信机制，供扩展和核心组件使用。",
+      "tags": [
+        "event-bus",
+        "pubsub",
+        "events",
+        "core"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/exec.ts",
+      "type": "file",
+      "name": "exec.ts",
+      "filePath": "packages/coding-agent/src/core/exec.ts",
+      "summary": "命令执行封装模块，提供带超时和信号控制的子进程执行功能。",
+      "tags": [
+        "exec",
+        "command-execution",
+        "subprocess",
+        "core"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/experimental.ts",
+      "type": "file",
+      "name": "experimental.ts",
+      "filePath": "packages/coding-agent/src/core/experimental.ts",
+      "summary": "实验性功能开关模块，控制实验特性的启用状态和工具采样配置。",
+      "tags": [
+        "experimental",
+        "feature-flag",
+        "core"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/export-html/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "packages/coding-agent/src/core/export-html/index.ts",
+      "summary": "会话 HTML 导出模块，将会话记录渲染为带主题样式的 HTML 页面，支持自定义颜色派生和工具渲染。",
+      "tags": [
+        "export",
+        "html",
+        "session",
+        "theme",
+        "core"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/extensions/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "packages/coding-agent/src/core/extensions/index.ts",
+      "summary": "扩展模块的 barrel 文件，统一导出扩展系统的所有类型、接口和工厂函数。",
+      "tags": [
+        "barrel",
+        "extension",
+        "exports",
+        "core"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "154 个 re-export，作为扩展系统的公共 API 入口。"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "type": "file",
+      "name": "loader.ts",
+      "filePath": "packages/coding-agent/src/core/extensions/loader.ts",
+      "summary": "扩展加载器，负责发现、加载和缓存扩展模块，创建扩展 API 和运行时环境，支持目录扫描和工厂函数加载。",
+      "tags": [
+        "extension",
+        "loader",
+        "discovery",
+        "caching",
+        "core"
+      ],
+      "complexity": "complex",
+      "languageNotes": "支持扩展缓存机制，通过 cacheToken 实现缓存失效控制。"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/extensions/runner.ts",
+      "type": "file",
+      "name": "runner.ts",
+      "filePath": "packages/coding-agent/src/core/extensions/runner.ts",
+      "summary": "扩展运行时管理器，绑定扩展核心功能、处理事件分发、管理工具注册和命令解析，是扩展系统的中枢组件。",
+      "tags": [
+        "extension",
+        "runner",
+        "event-dispatch",
+        "tool-registry",
+        "core"
+      ],
+      "complexity": "complex",
+      "languageNotes": "大型类（1000+ 行），包含 40+ 方法，管理扩展生命周期的各个方面。"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/bash-executor.ts:executeBashWithOperations",
+      "type": "function",
+      "name": "executeBashWithOperations",
+      "filePath": "packages/coding-agent/src/core/bash-executor.ts",
+      "lineRange": [
+        50,
+        156
+      ],
+      "summary": "使用 bash 操作接口执行命令，处理输出截断、ANSI 清理和信号控制。",
+      "tags": [
+        "bash",
+        "executor",
+        "command-execution"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/cache-stats.ts:detectMiss",
+      "type": "function",
+      "name": "detectMiss",
+      "filePath": "packages/coding-agent/src/core/cache-stats.ts",
+      "lineRange": [
+        56,
+        90
+      ],
+      "summary": "检测单条消息相对于前一次请求的缓存未命中情况。",
+      "tags": [
+        "cache",
+        "detection",
+        "analytics"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/cache-stats.ts:scan",
+      "type": "function",
+      "name": "scan",
+      "filePath": "packages/coding-agent/src/core/cache-stats.ts",
+      "lineRange": [
+        104,
+        132
+      ],
+      "summary": "扫描会话条目列表，检测所有缓存未命中事件。",
+      "tags": [
+        "cache",
+        "scanning",
+        "analytics"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/cache-stats.ts:computeCacheWaste",
+      "type": "function",
+      "name": "computeCacheWaste",
+      "filePath": "packages/coding-agent/src/core/cache-stats.ts",
+      "lineRange": [
+        138,
+        140
+      ],
+      "summary": "计算缓存浪费总量。",
+      "tags": [
+        "cache",
+        "statistics",
+        "analytics"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/event-bus.ts:createEventBus",
+      "type": "function",
+      "name": "createEventBus",
+      "filePath": "packages/coding-agent/src/core/event-bus.ts",
+      "lineRange": [
+        12,
+        33
+      ],
+      "summary": "创建轻量级事件总线实例，提供发布/订阅模式的事件通信。",
+      "tags": [
+        "event-bus",
+        "pubsub",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/exec.ts:execCommand",
+      "type": "function",
+      "name": "execCommand",
+      "filePath": "packages/coding-agent/src/core/exec.ts",
+      "lineRange": [
+        34,
+        107
+      ],
+      "summary": "执行外部命令，提供超时控制和信号中止支持。",
+      "tags": [
+        "exec",
+        "command-execution",
+        "subprocess"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/experimental.ts:areExperimentalFeaturesEnabled",
+      "type": "function",
+      "name": "areExperimentalFeaturesEnabled",
+      "filePath": "packages/coding-agent/src/core/experimental.ts",
+      "lineRange": [
+        3,
+        5
+      ],
+      "summary": "检查实验性功能是否已启用。",
+      "tags": [
+        "experimental",
+        "feature-flag"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/export-html/index.ts:deriveExportColors",
+      "type": "function",
+      "name": "deriveExportColors",
+      "filePath": "packages/coding-agent/src/core/export-html/index.ts",
+      "lineRange": [
+        81,
+        106
+      ],
+      "summary": "从基础颜色派生导出 HTML 所需的完整配色方案。",
+      "tags": [
+        "export",
+        "html",
+        "color",
+        "theme"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/export-html/index.ts:generateHtml",
+      "type": "function",
+      "name": "generateHtml",
+      "filePath": "packages/coding-agent/src/core/export-html/index.ts",
+      "lineRange": [
+        143,
+        175
+      ],
+      "summary": "根据会话数据和主题生成完整的 HTML 页面。",
+      "tags": [
+        "export",
+        "html",
+        "generation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/export-html/index.ts:preRenderCustomTools",
+      "type": "function",
+      "name": "preRenderCustomTools",
+      "filePath": "packages/coding-agent/src/core/export-html/index.ts",
+      "lineRange": [
+        183,
+        230
+      ],
+      "summary": "预渲染自定义工具的调用结果为 HTML 片段。",
+      "tags": [
+        "export",
+        "html",
+        "tool-renderer"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/export-html/index.ts:exportSessionToHtml",
+      "type": "function",
+      "name": "exportSessionToHtml",
+      "filePath": "packages/coding-agent/src/core/export-html/index.ts",
+      "lineRange": [
+        236,
+        282
+      ],
+      "summary": "将会话记录导出为带主题样式的 HTML 文件。",
+      "tags": [
+        "export",
+        "html",
+        "session"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/export-html/index.ts:exportFromFile",
+      "type": "function",
+      "name": "exportFromFile",
+      "filePath": "packages/coding-agent/src/core/export-html/index.ts",
+      "lineRange": [
+        288,
+        316
+      ],
+      "summary": "从 JSONL 会话文件读取并导出为 HTML。",
+      "tags": [
+        "export",
+        "html",
+        "file-io"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/extensions/loader.ts:createExtensionAPI",
+      "type": "function",
+      "name": "createExtensionAPI",
+      "filePath": "packages/coding-agent/src/core/extensions/loader.ts",
+      "lineRange": [
+        249,
+        426
+      ],
+      "summary": "为扩展创建 API 接口，提供工具注册、命令注册、事件监听等扩展能力。",
+      "tags": [
+        "extension",
+        "api",
+        "factory"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/extensions/loader.ts:createExtensionRuntime",
+      "type": "function",
+      "name": "createExtensionRuntime",
+      "filePath": "packages/coding-agent/src/core/extensions/loader.ts",
+      "lineRange": [
+        174,
+        242
+      ],
+      "summary": "创建扩展运行时环境，管理扩展注册表和生命周期。",
+      "tags": [
+        "extension",
+        "runtime",
+        "factory"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/extensions/loader.ts:loadExtension",
+      "type": "function",
+      "name": "loadExtension",
+      "filePath": "packages/coding-agent/src/core/extensions/loader.ts",
+      "lineRange": [
+        490,
+        516
+      ],
+      "summary": "加载单个扩展模块，处理模块导入和工厂函数调用。",
+      "tags": [
+        "extension",
+        "loader",
+        "module-loading"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/extensions/loader.ts:loadExtensions",
+      "type": "function",
+      "name": "loadExtensions",
+      "filePath": "packages/coding-agent/src/core/extensions/loader.ts",
+      "lineRange": [
+        579,
+        586
+      ],
+      "summary": "加载指定路径列表中的所有扩展。",
+      "tags": [
+        "extension",
+        "loader",
+        "batch-loading"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/extensions/loader.ts:discoverAndLoadExtensions",
+      "type": "function",
+      "name": "discoverAndLoadExtensions",
+      "filePath": "packages/coding-agent/src/core/extensions/loader.ts",
+      "lineRange": [
+        689,
+        737
+      ],
+      "summary": "发现并加载所有已配置的扩展，支持目录扫描和路径解析。",
+      "tags": [
+        "extension",
+        "discovery",
+        "loader"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:packages/coding-agent/src/core/extensions/runner.ts:ExtensionRunner",
+      "type": "class",
+      "name": "ExtensionRunner",
+      "filePath": "packages/coding-agent/src/core/extensions/runner.ts",
+      "lineRange": [
+        268,
+        1236
+      ],
+      "summary": "扩展运行时管理器，绑定扩展核心功能、处理事件分发、管理工具注册和命令解析。",
+      "tags": [
+        "extension",
+        "runner",
+        "event-dispatch",
+        "tool-registry"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/extensions/runner.ts:emitSessionShutdownEvent",
+      "type": "function",
+      "name": "emitSessionShutdownEvent",
+      "filePath": "packages/coding-agent/src/core/extensions/runner.ts",
+      "lineRange": [
+        192,
+        201
+      ],
+      "summary": "向所有扩展发出会话关闭事件。",
+      "tags": [
+        "extension",
+        "event",
+        "shutdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/extensions/runner.ts:emitProjectTrustEvent",
+      "type": "function",
+      "name": "emitProjectTrustEvent",
+      "filePath": "packages/coding-agent/src/core/extensions/runner.ts",
+      "lineRange": [
+        203,
+        233
+      ],
+      "summary": "向扩展发出项目信任事件，处理信任决策回调。",
+      "tags": [
+        "extension",
+        "event",
+        "project-trust"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/coding-agent/src/core/bash-executor.ts",
+      "target": "function:packages/coding-agent/src/core/bash-executor.ts:executeBashWithOperations",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/cache-stats.ts",
+      "target": "function:packages/coding-agent/src/core/cache-stats.ts:detectMiss",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/cache-stats.ts",
+      "target": "function:packages/coding-agent/src/core/cache-stats.ts:scan",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/cache-stats.ts",
+      "target": "function:packages/coding-agent/src/core/cache-stats.ts:computeCacheWaste",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/event-bus.ts",
+      "target": "function:packages/coding-agent/src/core/event-bus.ts:createEventBus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/exec.ts",
+      "target": "function:packages/coding-agent/src/core/exec.ts:execCommand",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/experimental.ts",
+      "target": "function:packages/coding-agent/src/core/experimental.ts:areExperimentalFeaturesEnabled",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/export-html/index.ts",
+      "target": "function:packages/coding-agent/src/core/export-html/index.ts:deriveExportColors",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/export-html/index.ts",
+      "target": "function:packages/coding-agent/src/core/export-html/index.ts:generateHtml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/export-html/index.ts",
+      "target": "function:packages/coding-agent/src/core/export-html/index.ts:preRenderCustomTools",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/export-html/index.ts",
+      "target": "function:packages/coding-agent/src/core/export-html/index.ts:exportSessionToHtml",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/export-html/index.ts",
+      "target": "function:packages/coding-agent/src/core/export-html/index.ts:exportFromFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/loader.ts:createExtensionAPI",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/loader.ts:createExtensionRuntime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/loader.ts:loadExtension",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/loader.ts:loadExtensions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/loader.ts:discoverAndLoadExtensions",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/runner.ts",
+      "target": "class:packages/coding-agent/src/core/extensions/runner.ts:ExtensionRunner",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/runner.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/runner.ts:emitSessionShutdownEvent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/runner.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/runner.ts:emitProjectTrustEvent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/bash-executor.ts",
+      "target": "function:packages/coding-agent/src/core/bash-executor.ts:executeBashWithOperations",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/cache-stats.ts",
+      "target": "function:packages/coding-agent/src/core/cache-stats.ts:computeCacheWaste",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/event-bus.ts",
+      "target": "function:packages/coding-agent/src/core/event-bus.ts:createEventBus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/exec.ts",
+      "target": "function:packages/coding-agent/src/core/exec.ts:execCommand",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/experimental.ts",
+      "target": "function:packages/coding-agent/src/core/experimental.ts:areExperimentalFeaturesEnabled",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/export-html/index.ts",
+      "target": "function:packages/coding-agent/src/core/export-html/index.ts:exportSessionToHtml",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/export-html/index.ts",
+      "target": "function:packages/coding-agent/src/core/export-html/index.ts:exportFromFile",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/loader.ts:createExtensionRuntime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/loader.ts:loadExtensions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/loader.ts:discoverAndLoadExtensions",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/runner.ts",
+      "target": "class:packages/coding-agent/src/core/extensions/runner.ts:ExtensionRunner",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/runner.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/runner.ts:emitSessionShutdownEvent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/runner.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/runner.ts:emitProjectTrustEvent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/bash-executor.ts",
+      "target": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/bash-executor.ts",
+      "target": "file:packages/coding-agent/src/core/tools/truncate.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/bash-executor.ts",
+      "target": "file:packages/coding-agent/src/utils/ansi.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/bash-executor.ts",
+      "target": "file:packages/coding-agent/src/utils/shell.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/cache-stats.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/exec.ts",
+      "target": "file:packages/coding-agent/src/utils/child-process.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/export-html/index.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/export-html/index.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/export-html/index.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/export-html/index.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/export-html/index.ts",
+      "target": "file:packages/coding-agent/src/utils/paths.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "file:packages/coding-agent/src/core/event-bus.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "file:packages/coding-agent/src/core/exec.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "file:packages/coding-agent/src/core/pi-manifest.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "file:packages/coding-agent/src/core/source-info.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "file:packages/coding-agent/src/core/timings.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "file:packages/coding-agent/src/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "file:packages/coding-agent/src/utils/paths.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/runner.ts",
+      "target": "file:packages/coding-agent/src/core/diagnostics.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/runner.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/runner.ts",
+      "target": "file:packages/coding-agent/src/core/keybindings.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/runner.ts",
+      "target": "file:packages/coding-agent/src/core/model-registry.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/runner.ts",
+      "target": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/runner.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/runner.ts",
+      "target": "file:packages/coding-agent/src/core/system-prompt.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/runner.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/bash-executor.ts",
+      "target": "file:packages/coding-agent/test/bash-close-hang-windows.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/bash-executor.ts",
+      "target": "file:packages/coding-agent/test/tools.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/cache-stats.ts",
+      "target": "file:packages/coding-agent/test/cache-stats.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/diagnostics.ts",
+      "target": "file:packages/coding-agent/test/skills.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/event-bus.ts",
+      "target": "file:packages/coding-agent/test/llama-extension.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/event-bus.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/7193-event-bus-lifecycle.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/event-bus.ts",
+      "target": "file:packages/coding-agent/test/utilities.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/experimental.ts",
+      "target": "file:packages/coding-agent/test/experimental.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/index.ts",
+      "target": "file:packages/coding-agent/test/compaction-extensions-example.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/index.ts",
+      "target": "file:packages/coding-agent/test/compaction-extensions.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/index.ts",
+      "target": "file:packages/coding-agent/test/git-merge-and-resolve-extension.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/index.ts",
+      "target": "file:packages/coding-agent/test/input-transform-streaming-example.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/index.ts",
+      "target": "file:packages/coding-agent/test/plan-mode-extension.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/index.ts",
+      "target": "file:packages/coding-agent/test/suite/agent-session-prompt.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/index.ts",
+      "target": "file:packages/coding-agent/test/suite/harness.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/index.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/5943-session-start-notify.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/index.ts",
+      "target": "file:packages/coding-agent/test/trigger-compact-extension.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/index.ts",
+      "target": "file:packages/coding-agent/test/utilities.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "file:packages/coding-agent/test/extensions-discovery.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "file:packages/coding-agent/test/extensions-input-event.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "file:packages/coding-agent/test/extensions-runner.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "file:packages/coding-agent/test/llama-extension.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "file:packages/coding-agent/test/sdk-codex-cache-probe-tool-loop.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "file:packages/coding-agent/test/sdk-skills.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/7193-event-bus-lifecycle.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "file:packages/coding-agent/test/suite/regressions/extension-factory-cache.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/loader.ts",
+      "target": "file:packages/coding-agent/test/utilities.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/runner.ts",
+      "target": "file:packages/coding-agent/test/extensions-input-event.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/runner.ts",
+      "target": "file:packages/coding-agent/test/extensions-runner.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/runner.ts",
+      "target": "file:packages/coding-agent/test/resource-loader.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

@@ -1,0 +1,1490 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "type": "file",
+      "name": "types.ts",
+      "filePath": "packages/coding-agent/src/core/extensions/types.ts",
+      "summary": "扩展系统核心类型定义模块，定义了扩展接口、工具定义、会话事件、斜杠命令等所有扩展相关的 TypeScript 类型契约，是整个扩展体系的类型基础。",
+      "tags": [
+        "type-definition",
+        "extensions",
+        "api-contract"
+      ],
+      "complexity": "complex",
+      "languageNotes": "大量 interface/type 定义，是扩展系统的类型契约中枢。"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/extensions/wrapper.ts",
+      "type": "file",
+      "name": "wrapper.ts",
+      "filePath": "packages/coding-agent/src/core/extensions/wrapper.ts",
+      "summary": "扩展工具包装器，将已注册的扩展工具与 ExtensionRunner 关联起来，为工具调用提供扩展生命周期钩子。",
+      "tags": [
+        "extensions",
+        "middleware",
+        "tool-wrapper"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/footer-data-provider.ts",
+      "type": "file",
+      "name": "footer-data-provider.ts",
+      "filePath": "packages/coding-agent/src/core/footer-data-provider.ts",
+      "summary": "底部状态栏数据提供者，管理 Git 分支监控、扩展状态跟踪和可用 provider 计数，通过文件系统监视实现实时分支变更通知。",
+      "tags": [
+        "ui-data",
+        "git",
+        "file-watcher",
+        "status-bar"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/http-dispatcher.ts",
+      "type": "file",
+      "name": "http-dispatcher.ts",
+      "filePath": "packages/coding-agent/src/core/http-dispatcher.ts",
+      "summary": "HTTP 请求分发器配置模块，管理 undici dispatcher 的空闲超时、代理设置和全局 HTTP 分发器实例。",
+      "tags": [
+        "http",
+        "network",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/model-config.ts",
+      "type": "file",
+      "name": "model-config.ts",
+      "filePath": "packages/coding-agent/src/core/model-config.ts",
+      "summary": "模型配置加载器，从 models.json 配置文件解析 provider 定义，支持 JSON 注释剥离和配置错误诊断。",
+      "tags": [
+        "config",
+        "model",
+        "provider"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/model-registry.ts",
+      "type": "file",
+      "name": "model-registry.ts",
+      "filePath": "packages/coding-agent/src/core/model-registry.ts",
+      "summary": "模型注册表，封装 ModelRuntime 提供 provider 查询、模型搜索、认证状态检查和 provider 动态注册/注销功能。",
+      "tags": [
+        "model",
+        "registry",
+        "provider",
+        "auth"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "type": "file",
+      "name": "model-resolver.ts",
+      "filePath": "packages/coding-agent/src/core/model-resolver.ts",
+      "summary": "模型解析器，处理 CLI 模型参数解析、模式匹配、模糊查找和会话模型恢复，支持 provider/model 格式和作用域解析。",
+      "tags": [
+        "model",
+        "resolver",
+        "cli",
+        "pattern-matching"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "type": "file",
+      "name": "model-runtime.ts",
+      "filePath": "packages/coding-agent/src/core/model-runtime.ts",
+      "summary": "模型运行时核心，管理 provider 组合、模型可用性刷新、凭据同步、流式/完成请求，是 LLM 交互的中央运行时引擎。",
+      "tags": [
+        "model",
+        "runtime",
+        "llm",
+        "provider",
+        "core"
+      ],
+      "complexity": "complex",
+      "languageNotes": "45 个方法的超大类，是 LLM 交互的中枢，管理 provider 生命周期和凭据同步。"
+    },
+    {
+      "id": "file:packages/coding-agent/src/core/models-store.ts",
+      "type": "file",
+      "name": "models-store.ts",
+      "filePath": "packages/coding-agent/src/core/models-store.ts",
+      "summary": "模型存储抽象层，提供内存和文件两种存储后端，用于持久化用户自定义模型配置。",
+      "tags": [
+        "model",
+        "storage",
+        "persistence"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/extensions/types.ts:defineTool",
+      "type": "function",
+      "name": "defineTool",
+      "filePath": "packages/coding-agent/src/core/extensions/types.ts",
+      "lineRange": [
+        509,
+        513
+      ],
+      "summary": "defineTool 函数，位于 types.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/extensions/types.ts:isBashToolResult",
+      "type": "function",
+      "name": "isBashToolResult",
+      "filePath": "packages/coding-agent/src/core/extensions/types.ts",
+      "lineRange": [
+        976,
+        978
+      ],
+      "summary": "isBashToolResult 函数，位于 types.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/extensions/types.ts:isReadToolResult",
+      "type": "function",
+      "name": "isReadToolResult",
+      "filePath": "packages/coding-agent/src/core/extensions/types.ts",
+      "lineRange": [
+        979,
+        981
+      ],
+      "summary": "isReadToolResult 函数，位于 types.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/extensions/types.ts:isEditToolResult",
+      "type": "function",
+      "name": "isEditToolResult",
+      "filePath": "packages/coding-agent/src/core/extensions/types.ts",
+      "lineRange": [
+        982,
+        984
+      ],
+      "summary": "isEditToolResult 函数，位于 types.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/extensions/types.ts:isWriteToolResult",
+      "type": "function",
+      "name": "isWriteToolResult",
+      "filePath": "packages/coding-agent/src/core/extensions/types.ts",
+      "lineRange": [
+        985,
+        987
+      ],
+      "summary": "isWriteToolResult 函数，位于 types.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/extensions/types.ts:isGrepToolResult",
+      "type": "function",
+      "name": "isGrepToolResult",
+      "filePath": "packages/coding-agent/src/core/extensions/types.ts",
+      "lineRange": [
+        988,
+        990
+      ],
+      "summary": "isGrepToolResult 函数，位于 types.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/extensions/types.ts:isFindToolResult",
+      "type": "function",
+      "name": "isFindToolResult",
+      "filePath": "packages/coding-agent/src/core/extensions/types.ts",
+      "lineRange": [
+        991,
+        993
+      ],
+      "summary": "isFindToolResult 函数，位于 types.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/extensions/types.ts:isLsToolResult",
+      "type": "function",
+      "name": "isLsToolResult",
+      "filePath": "packages/coding-agent/src/core/extensions/types.ts",
+      "lineRange": [
+        994,
+        996
+      ],
+      "summary": "isLsToolResult 函数，位于 types.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/extensions/types.ts:isToolCallEventType",
+      "type": "function",
+      "name": "isToolCallEventType",
+      "filePath": "packages/coding-agent/src/core/extensions/types.ts",
+      "lineRange": [
+        1029,
+        1031
+      ],
+      "summary": "isToolCallEventType 函数，位于 types.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/extensions/wrapper.ts:wrapRegisteredTool",
+      "type": "function",
+      "name": "wrapRegisteredTool",
+      "filePath": "packages/coding-agent/src/core/extensions/wrapper.ts",
+      "lineRange": [
+        17,
+        37
+      ],
+      "summary": "将已注册的扩展工具包装为带 ExtensionRunner 钩子的工具定义。",
+      "tags": [
+        "extensions",
+        "tool-wrapper",
+        "middleware"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/extensions/wrapper.ts:wrapRegisteredTools",
+      "type": "function",
+      "name": "wrapRegisteredTools",
+      "filePath": "packages/coding-agent/src/core/extensions/wrapper.ts",
+      "lineRange": [
+        43,
+        45
+      ],
+      "summary": "wrapRegisteredTools 函数，位于 wrapper.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/footer-data-provider.ts:findGitPaths",
+      "type": "function",
+      "name": "findGitPaths",
+      "filePath": "packages/coding-agent/src/core/footer-data-provider.ts",
+      "lineRange": [
+        16,
+        48
+      ],
+      "summary": "查找给定工作目录下的 .git 路径，支持 worktree 和子模块。",
+      "tags": [
+        "git",
+        "path-finding",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/footer-data-provider.ts:resolveBranchWithGitAsync",
+      "type": "function",
+      "name": "resolveBranchWithGitAsync",
+      "filePath": "packages/coding-agent/src/core/footer-data-provider.ts",
+      "lineRange": [
+        62,
+        81
+      ],
+      "summary": "异步解析 Git 仓库的当前分支名称。",
+      "tags": [
+        "git",
+        "branch",
+        "async"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/http-dispatcher.ts:parseHttpIdleTimeoutMs",
+      "type": "function",
+      "name": "parseHttpIdleTimeoutMs",
+      "filePath": "packages/coding-agent/src/core/http-dispatcher.ts",
+      "lineRange": [
+        19,
+        35
+      ],
+      "summary": "解析 HTTP 空闲超时设置字符串为毫秒值。",
+      "tags": [
+        "http",
+        "parser",
+        "timeout"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/http-dispatcher.ts:formatHttpIdleTimeoutMs",
+      "type": "function",
+      "name": "formatHttpIdleTimeoutMs",
+      "filePath": "packages/coding-agent/src/core/http-dispatcher.ts",
+      "lineRange": [
+        37,
+        43
+      ],
+      "summary": "formatHttpIdleTimeoutMs 函数，位于 http-dispatcher.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/http-dispatcher.ts:applyHttpProxySettings",
+      "type": "function",
+      "name": "applyHttpProxySettings",
+      "filePath": "packages/coding-agent/src/core/http-dispatcher.ts",
+      "lineRange": [
+        45,
+        50
+      ],
+      "summary": "applyHttpProxySettings 函数，位于 http-dispatcher.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/http-dispatcher.ts:createUndiciOriginDispatcher",
+      "type": "function",
+      "name": "createUndiciOriginDispatcher",
+      "filePath": "packages/coding-agent/src/core/http-dispatcher.ts",
+      "lineRange": [
+        68,
+        79
+      ],
+      "summary": "为指定 origin 创建 undici dispatcher 实例。",
+      "tags": [
+        "http",
+        "dispatcher",
+        "undici"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/http-dispatcher.ts:configureHttpDispatcher",
+      "type": "function",
+      "name": "configureHttpDispatcher",
+      "filePath": "packages/coding-agent/src/core/http-dispatcher.ts",
+      "lineRange": [
+        81,
+        111
+      ],
+      "summary": "配置全局 HTTP dispatcher 的空闲超时和代理设置。",
+      "tags": [
+        "http",
+        "configuration",
+        "dispatcher"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/model-config.ts:formatValidationPath",
+      "type": "function",
+      "name": "formatValidationPath",
+      "filePath": "packages/coding-agent/src/core/model-config.ts",
+      "lineRange": [
+        217,
+        228
+      ],
+      "summary": "格式化配置验证错误中的路径信息。",
+      "tags": [
+        "config",
+        "validation",
+        "formatter"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/model-resolver.ts:findExactModelReferenceMatch",
+      "type": "function",
+      "name": "findExactModelReferenceMatch",
+      "filePath": "packages/coding-agent/src/core/model-resolver.ts",
+      "lineRange": [
+        87,
+        129
+      ],
+      "summary": "在可用模型列表中查找与模型引用精确匹配的模型。",
+      "tags": [
+        "model",
+        "matcher",
+        "exact-match"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/model-resolver.ts:tryMatchModel",
+      "type": "function",
+      "name": "tryMatchModel",
+      "filePath": "packages/coding-agent/src/core/model-resolver.ts",
+      "lineRange": [
+        135,
+        165
+      ],
+      "summary": "尝试用模式匹配可用模型列表，返回最佳匹配。",
+      "tags": [
+        "model",
+        "matcher",
+        "pattern"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/model-resolver.ts:buildFallbackModel",
+      "type": "function",
+      "name": "buildFallbackModel",
+      "filePath": "packages/coding-agent/src/core/model-resolver.ts",
+      "lineRange": [
+        174,
+        188
+      ],
+      "summary": "当无法找到匹配模型时构建回退模型定义。",
+      "tags": [
+        "model",
+        "fallback",
+        "builder"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/model-resolver.ts:parseModelPattern",
+      "type": "function",
+      "name": "parseModelPattern",
+      "filePath": "packages/coding-agent/src/core/model-resolver.ts",
+      "lineRange": [
+        203,
+        256
+      ],
+      "summary": "解析 provider/model 模式字符串，支持通配符和作用域。",
+      "tags": [
+        "model",
+        "parser",
+        "pattern"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/model-resolver.ts:resolveModelScopeFromModels",
+      "type": "function",
+      "name": "resolveModelScopeFromModels",
+      "filePath": "packages/coding-agent/src/core/model-resolver.ts",
+      "lineRange": [
+        281,
+        361
+      ],
+      "summary": "从模型列表解析模式集合，返回匹配的模型作用域。",
+      "tags": [
+        "model",
+        "resolver",
+        "scope"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/model-resolver.ts:resolveModelScopeWithDiagnostics",
+      "type": "function",
+      "name": "resolveModelScopeWithDiagnostics",
+      "filePath": "packages/coding-agent/src/core/model-resolver.ts",
+      "lineRange": [
+        363,
+        369
+      ],
+      "summary": "resolveModelScopeWithDiagnostics 函数，位于 model-resolver.ts。",
+      "tags": [
+        "function"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/model-resolver.ts:resolveModelScope",
+      "type": "function",
+      "name": "resolveModelScope",
+      "filePath": "packages/coding-agent/src/core/model-resolver.ts",
+      "lineRange": [
+        371,
+        381
+      ],
+      "summary": "解析模型作用域，委托给 ModelRuntime 获取可用模型。",
+      "tags": [
+        "model",
+        "resolver",
+        "scope"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/model-resolver.ts:resolveCliModel",
+      "type": "function",
+      "name": "resolveCliModel",
+      "filePath": "packages/coding-agent/src/core/model-resolver.ts",
+      "lineRange": [
+        405,
+        605
+      ],
+      "summary": "从 CLI 参数解析用户选择的模型，支持多种输入格式和回退逻辑。",
+      "tags": [
+        "model",
+        "resolver",
+        "cli"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/model-resolver.ts:findInitialModel",
+      "type": "function",
+      "name": "findInitialModel",
+      "filePath": "packages/coding-agent/src/core/model-resolver.ts",
+      "lineRange": [
+        621,
+        701
+      ],
+      "summary": "查找会话的初始模型，考虑默认 provider 和上次使用模型。",
+      "tags": [
+        "model",
+        "resolver",
+        "initialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/model-resolver.ts:restoreModelFromSession",
+      "type": "function",
+      "name": "restoreModelFromSession",
+      "filePath": "packages/coding-agent/src/core/model-resolver.ts",
+      "lineRange": [
+        706,
+        775
+      ],
+      "summary": "从已保存的会话状态恢复 provider 和模型选择。",
+      "tags": [
+        "model",
+        "resolver",
+        "session-restore"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/core/model-runtime.ts:mergeHeaders",
+      "type": "function",
+      "name": "mergeHeaders",
+      "filePath": "packages/coding-agent/src/core/model-runtime.ts",
+      "lineRange": [
+        113,
+        127
+      ],
+      "summary": "合并两组 HTTP 头，覆盖值优先。",
+      "tags": [
+        "http",
+        "merge",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/coding-agent/src/core/footer-data-provider.ts:FooterDataProvider",
+      "type": "class",
+      "name": "FooterDataProvider",
+      "filePath": "packages/coding-agent/src/core/footer-data-provider.ts",
+      "lineRange": [
+        99,
+        382
+      ],
+      "summary": "底部状态栏数据提供者类，管理 Git 分支监视、扩展状态和 provider 计数，通过回调通知变更。",
+      "tags": [
+        "status-bar",
+        "git",
+        "file-watcher",
+        "provider"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:packages/coding-agent/src/core/model-config.ts:ModelConfig",
+      "type": "class",
+      "name": "ModelConfig",
+      "filePath": "packages/coding-agent/src/core/model-config.ts",
+      "lineRange": [
+        237,
+        298
+      ],
+      "summary": "模型配置类，加载和解析 models.json，提供 provider 查询和错误诊断。",
+      "tags": [
+        "model",
+        "config",
+        "provider"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:packages/coding-agent/src/core/model-registry.ts:ModelRegistry",
+      "type": "class",
+      "name": "ModelRegistry",
+      "filePath": "packages/coding-agent/src/core/model-registry.ts",
+      "lineRange": [
+        32,
+        157
+      ],
+      "summary": "模型注册表类，封装 ModelRuntime 提供 provider 查询、模型搜索、认证检查和动态注册。",
+      "tags": [
+        "model",
+        "registry",
+        "provider",
+        "auth"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:packages/coding-agent/src/core/model-runtime.ts:CredentialSynchronizationError",
+      "type": "class",
+      "name": "CredentialSynchronizationError",
+      "filePath": "packages/coding-agent/src/core/model-runtime.ts",
+      "lineRange": [
+        94,
+        111
+      ],
+      "summary": "CredentialSynchronizationError 类，位于 model-runtime.ts。",
+      "tags": [
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/coding-agent/src/core/model-runtime.ts:ModelRuntime",
+      "type": "class",
+      "name": "ModelRuntime",
+      "filePath": "packages/coding-agent/src/core/model-runtime.ts",
+      "lineRange": [
+        130,
+        787
+      ],
+      "summary": "模型运行时核心类，管理 provider 组合、可用性刷新、凭据同步和 LLM 请求，是 LLM 交互的中央引擎。",
+      "tags": [
+        "model",
+        "runtime",
+        "llm",
+        "core"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:packages/coding-agent/src/core/models-store.ts:InMemoryCodingAgentModelsStore",
+      "type": "class",
+      "name": "InMemoryCodingAgentModelsStore",
+      "filePath": "packages/coding-agent/src/core/models-store.ts",
+      "lineRange": [
+        25,
+        43
+      ],
+      "summary": "内存模型存储实现，用于测试和临时配置。",
+      "tags": [
+        "model",
+        "storage",
+        "in-memory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/coding-agent/src/core/models-store.ts:FileModelsStore",
+      "type": "class",
+      "name": "FileModelsStore",
+      "filePath": "packages/coding-agent/src/core/models-store.ts",
+      "lineRange": [
+        46,
+        146
+      ],
+      "summary": "文件模型存储实现，持久化用户自定义模型配置到 JSON 文件。",
+      "tags": [
+        "model",
+        "storage",
+        "file"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/types.ts:defineTool",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/types.ts:isBashToolResult",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/types.ts:isReadToolResult",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/types.ts:isEditToolResult",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/types.ts:isWriteToolResult",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/types.ts:isGrepToolResult",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/types.ts:isFindToolResult",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/types.ts:isLsToolResult",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/types.ts:isToolCallEventType",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/wrapper.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/wrapper.ts:wrapRegisteredTool",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/wrapper.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/wrapper.ts:wrapRegisteredTools",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/footer-data-provider.ts",
+      "target": "function:packages/coding-agent/src/core/footer-data-provider.ts:findGitPaths",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/footer-data-provider.ts",
+      "target": "function:packages/coding-agent/src/core/footer-data-provider.ts:resolveBranchWithGitAsync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/http-dispatcher.ts",
+      "target": "function:packages/coding-agent/src/core/http-dispatcher.ts:parseHttpIdleTimeoutMs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/http-dispatcher.ts",
+      "target": "function:packages/coding-agent/src/core/http-dispatcher.ts:formatHttpIdleTimeoutMs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/http-dispatcher.ts",
+      "target": "function:packages/coding-agent/src/core/http-dispatcher.ts:applyHttpProxySettings",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/http-dispatcher.ts",
+      "target": "function:packages/coding-agent/src/core/http-dispatcher.ts:createUndiciOriginDispatcher",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/http-dispatcher.ts",
+      "target": "function:packages/coding-agent/src/core/http-dispatcher.ts:configureHttpDispatcher",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-config.ts",
+      "target": "function:packages/coding-agent/src/core/model-config.ts:formatValidationPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "target": "function:packages/coding-agent/src/core/model-resolver.ts:findExactModelReferenceMatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "target": "function:packages/coding-agent/src/core/model-resolver.ts:tryMatchModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "target": "function:packages/coding-agent/src/core/model-resolver.ts:buildFallbackModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "target": "function:packages/coding-agent/src/core/model-resolver.ts:parseModelPattern",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "target": "function:packages/coding-agent/src/core/model-resolver.ts:resolveModelScopeFromModels",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "target": "function:packages/coding-agent/src/core/model-resolver.ts:resolveModelScopeWithDiagnostics",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "target": "function:packages/coding-agent/src/core/model-resolver.ts:resolveModelScope",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "target": "function:packages/coding-agent/src/core/model-resolver.ts:resolveCliModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "target": "function:packages/coding-agent/src/core/model-resolver.ts:findInitialModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "target": "function:packages/coding-agent/src/core/model-resolver.ts:restoreModelFromSession",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "target": "function:packages/coding-agent/src/core/model-runtime.ts:mergeHeaders",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/footer-data-provider.ts",
+      "target": "class:packages/coding-agent/src/core/footer-data-provider.ts:FooterDataProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-config.ts",
+      "target": "class:packages/coding-agent/src/core/model-config.ts:ModelConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-registry.ts",
+      "target": "class:packages/coding-agent/src/core/model-registry.ts:ModelRegistry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "target": "class:packages/coding-agent/src/core/model-runtime.ts:CredentialSynchronizationError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "target": "class:packages/coding-agent/src/core/model-runtime.ts:ModelRuntime",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/models-store.ts",
+      "target": "class:packages/coding-agent/src/core/models-store.ts:InMemoryCodingAgentModelsStore",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/models-store.ts",
+      "target": "class:packages/coding-agent/src/core/models-store.ts:FileModelsStore",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "file:packages/coding-agent/src/core/bash-executor.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "file:packages/coding-agent/src/core/compaction/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "file:packages/coding-agent/src/core/event-bus.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "file:packages/coding-agent/src/core/exec.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "file:packages/coding-agent/src/core/footer-data-provider.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "file:packages/coding-agent/src/core/keybindings.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "file:packages/coding-agent/src/core/messages.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "file:packages/coding-agent/src/core/model-registry.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "file:packages/coding-agent/src/core/slash-commands.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "file:packages/coding-agent/src/core/source-info.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "file:packages/coding-agent/src/core/system-prompt.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "file:packages/coding-agent/src/core/tools/edit.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "file:packages/coding-agent/src/core/tools/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "file:packages/coding-agent/src/modes/interactive/theme/theme.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/wrapper.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/runner.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/wrapper.ts",
+      "target": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/wrapper.ts",
+      "target": "file:packages/coding-agent/src/core/tools/tool-definition-wrapper.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/footer-data-provider.ts",
+      "target": "file:packages/coding-agent/src/utils/fs-watch.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-config.ts",
+      "target": "file:packages/coding-agent/src/utils/json.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-config.ts",
+      "target": "file:packages/coding-agent/src/utils/paths.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-registry.ts",
+      "target": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-registry.ts",
+      "target": "file:packages/coding-agent/src/core/provider-composer.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "target": "file:packages/coding-agent/src/cli/args.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "target": "file:packages/coding-agent/src/core/defaults.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "target": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "target": "file:packages/coding-agent/src/core/model-config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "target": "file:packages/coding-agent/src/core/models-store.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "target": "file:packages/coding-agent/src/core/provider-composer.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "target": "file:packages/coding-agent/src/core/remote-catalog-provider.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "target": "file:packages/coding-agent/src/core/runtime-credentials.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "target": "file:packages/coding-agent/src/utils/abort.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/models-store.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/models-store.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/models-store.ts",
+      "target": "file:packages/coding-agent/src/utils/abort.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/models-store.ts",
+      "target": "file:packages/coding-agent/src/utils/paths.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/types.ts:defineTool",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/types.ts:isBashToolResult",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/types.ts:isReadToolResult",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/types.ts:isEditToolResult",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/types.ts:isWriteToolResult",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/types.ts:isGrepToolResult",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/types.ts:isFindToolResult",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/types.ts:isLsToolResult",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/types.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/types.ts:isToolCallEventType",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/wrapper.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/wrapper.ts:wrapRegisteredTool",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/extensions/wrapper.ts",
+      "target": "function:packages/coding-agent/src/core/extensions/wrapper.ts:wrapRegisteredTools",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/footer-data-provider.ts",
+      "target": "function:packages/coding-agent/src/core/footer-data-provider.ts:findGitPaths",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/http-dispatcher.ts",
+      "target": "function:packages/coding-agent/src/core/http-dispatcher.ts:parseHttpIdleTimeoutMs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/http-dispatcher.ts",
+      "target": "function:packages/coding-agent/src/core/http-dispatcher.ts:formatHttpIdleTimeoutMs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/http-dispatcher.ts",
+      "target": "function:packages/coding-agent/src/core/http-dispatcher.ts:applyHttpProxySettings",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/http-dispatcher.ts",
+      "target": "function:packages/coding-agent/src/core/http-dispatcher.ts:configureHttpDispatcher",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "target": "function:packages/coding-agent/src/core/model-resolver.ts:findExactModelReferenceMatch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "target": "function:packages/coding-agent/src/core/model-resolver.ts:parseModelPattern",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "target": "function:packages/coding-agent/src/core/model-resolver.ts:resolveModelScopeFromModels",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "target": "function:packages/coding-agent/src/core/model-resolver.ts:resolveModelScopeWithDiagnostics",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "target": "function:packages/coding-agent/src/core/model-resolver.ts:resolveModelScope",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "target": "function:packages/coding-agent/src/core/model-resolver.ts:resolveCliModel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "target": "function:packages/coding-agent/src/core/model-resolver.ts:findInitialModel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-resolver.ts",
+      "target": "function:packages/coding-agent/src/core/model-resolver.ts:restoreModelFromSession",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/footer-data-provider.ts",
+      "target": "class:packages/coding-agent/src/core/footer-data-provider.ts:FooterDataProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-config.ts",
+      "target": "class:packages/coding-agent/src/core/model-config.ts:ModelConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-registry.ts",
+      "target": "class:packages/coding-agent/src/core/model-registry.ts:ModelRegistry",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "target": "class:packages/coding-agent/src/core/model-runtime.ts:CredentialSynchronizationError",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "target": "class:packages/coding-agent/src/core/model-runtime.ts:ModelRuntime",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/models-store.ts",
+      "target": "class:packages/coding-agent/src/core/models-store.ts:InMemoryCodingAgentModelsStore",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/models-store.ts",
+      "target": "class:packages/coding-agent/src/core/models-store.ts:FileModelsStore",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

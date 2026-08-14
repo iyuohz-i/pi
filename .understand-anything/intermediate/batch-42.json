@@ -1,0 +1,99 @@
+{
+  "batchIndex": 42,
+  "nodes": [
+    {
+      "id": "packages/protocol/src/index.ts",
+      "type": "file",
+      "label": "index.ts",
+      "language": "typescript",
+      "path": "packages/protocol/src/index.ts",
+      "sizeLines": 4,
+      "category": "code",
+      "summary": "协议包的桶文件，统一重导出 CBOR 编解码、编解码器、二进制帧和消息 schema 模块的全部公共导出。作为 @anthropic-ai/protocol 包的唯一入口。",
+      "meta": {
+        "functions": 0,
+        "classes": 0,
+        "imports": [],
+        "exports": ["cbor/*", "codec", "framing", "schemas"]
+      }
+    },
+    {
+      "id": "packages/protocol/test/cbor/cbor.test.ts",
+      "type": "file",
+      "label": "cbor.test.ts",
+      "language": "typescript",
+      "path": "packages/protocol/test/cbor/cbor.test.ts",
+      "sizeLines": 175,
+      "category": "test",
+      "summary": "CBOR 编解码器的全面测试套件，验证 RFC 8949 已知向量（整数、浮点数、字节串、文本、数组、映射）的编解码正确性，覆盖 undefined 属性省略、__proto__ 安全处理、不支持类型拒绝、循环检测、深度限制、容器大小限制、UTF-8 校验、unsafe integer 拒绝以及调用者自定义限制等边界场景。",
+      "meta": {
+        "functions": 2,
+        "classes": 0,
+        "imports": ["vitest", "../../src/index.ts"],
+        "testSuites": ["CBOR codec"],
+        "testedSymbols": ["encodeCbor", "decodeCbor", "CborError", "DEFAULT_MAX_CBOR_BYTE_LENGTH", "DEFAULT_MAX_CBOR_CONTAINER_LENGTH", "DEFAULT_MAX_CBOR_DEPTH"]
+      }
+    },
+    {
+      "id": "packages/protocol/test/framing.test.ts",
+      "type": "file",
+      "label": "framing.test.ts",
+      "language": "typescript",
+      "path": "packages/protocol/test/framing.test.ts",
+      "sizeLines": 117,
+      "category": "test",
+      "summary": "二进制帧协议测试套件，验证 encodeFrame 的四字节大端长度前缀编码、assertCompleteFrame 的完整帧校验、FrameDecoder 的增量流式解码（逐字节推送、合并推送、跨块拼接、全分割点覆盖）、帧负载深拷贝语义、空流处理、截断流拒绝、超大帧拒绝、最大帧长度边界值、以及 end() 后不可再推入的状态机约束。",
+      "meta": {
+        "functions": 1,
+        "classes": 0,
+        "imports": ["vitest", "../src/index.ts"],
+        "testSuites": ["binary framing"],
+        "testedSymbols": ["encodeFrame", "assertCompleteFrame", "FrameDecoder", "FrameError", "DEFAULT_MAX_FRAME_LENGTH"]
+      }
+    },
+    {
+      "id": "packages/protocol/test/protocol.test.ts",
+      "type": "file",
+      "label": "protocol.test.ts",
+      "language": "typescript",
+      "path": "packages/protocol/test/protocol.test.ts",
+      "sizeLines": 424,
+      "category": "test",
+      "summary": "协议验证的综合测试套件，覆盖两个域：(1) 协议验证层——协议版本协商（v1 及向前兼容）、client hello 字段白名单校验、JSON 字符串拒绝、图像输入拒绝、server snapshot 解析、session 列表元数据、错误码（not_implemented / internal_error）、server 消息类型校验、assistant/tool 项的 status-stopReason-isError 状态一致性规则、循环值检测、验证错误不保留被拒负载；(2) 帧化协议 API——encodeClientMessage/encodeServerMessage 的帧编码、出站帧大小限制、编码前验证、undefined 可选属性省略、ClientMessageDecoder/ServerMessageDecoder 的增量解码（全分割点覆盖）、无效 CBOR 和 schema 违规拒绝、CBOR 字节串在 JSON 字段中的拒绝、截断及超大帧拒绝。",
+      "meta": {
+        "functions": 1,
+        "classes": 0,
+        "imports": ["vitest", "../src/index.ts"],
+        "testSuites": ["protocol validation", "validated framed protocol APIs"],
+        "testedSymbols": [
+          "PROTOCOL_VERSION", "isSupportedProtocolVersion",
+          "parseClientMessage", "parseServerMessage",
+          "encodeClientMessage", "encodeServerMessage",
+          "ClientMessageDecoder", "ServerMessageDecoder",
+          "ProtocolValidationError",
+          "encodeCbor", "decodeCbor", "encodeFrame", "FrameDecoder"
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "packages/protocol/test/cbor/cbor.test.ts",
+      "target": "packages/protocol/src/index.ts",
+      "type": "import",
+      "label": "导入 CBOR 编解码符号"
+    },
+    {
+      "source": "packages/protocol/test/framing.test.ts",
+      "target": "packages/protocol/src/index.ts",
+      "type": "import",
+      "label": "导入帧编解码符号"
+    },
+    {
+      "source": "packages/protocol/test/protocol.test.ts",
+      "target": "packages/protocol/src/index.ts",
+      "type": "import",
+      "label": "导入协议验证及帧化 API 符号"
+    }
+  ]
+}

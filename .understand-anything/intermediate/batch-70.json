@@ -1,0 +1,583 @@
+{
+  "batchIndex": 70,
+  "nodes": [
+    {
+      "id": "packages/coding-agent/examples/extensions/preset.ts",
+      "type": "file",
+      "label": "preset.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "预设扩展：定义命名预设来配置模型、思考级别、工具和系统提示指令。支持全局和项目级 JSON 配置文件，通过 CLI 标志、/preset 命令或 Ctrl+Shift+U 切换。",
+      "metrics": { "lines": 436 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/preset.ts::loadPresets",
+      "type": "function",
+      "label": "loadPresets",
+      "parent": "packages/coding-agent/examples/extensions/preset.ts",
+      "language": "typescript",
+      "summary": "从全局 (~/.pi/agent/presets.json) 和项目级 (.pi/presets.json) 配置文件加载预设配置，项目级覆盖全局同名预设。",
+      "metrics": { "lines": 30, "startLine": 70 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/preset.ts::presetExtension",
+      "type": "function",
+      "label": "presetExtension",
+      "parent": "packages/coding-agent/examples/extensions/preset.ts",
+      "language": "typescript",
+      "summary": "预设扩展入口函数。注册 --preset CLI 标志、/preset 命令和 Ctrl+Shift+U 快捷键，实现预设应用逻辑（模型切换、思考级别、工具启用、指令追加）和预设选择器 UI。",
+      "metrics": { "lines": 330, "startLine": 107 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/project-trust.ts",
+      "type": "file",
+      "label": "project-trust.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "项目信任扩展：演示 project_trust 事件处理，允许用户通过交互式选择决定是否信任当前项目目录，支持带备注的信任、会话级信任和内置流程委托。",
+      "metrics": { "lines": 64 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/prompt-customizer.ts",
+      "type": "file",
+      "label": "prompt-customizer.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "提示词定制扩展：通过 systemPromptOptions 动态修改系统提示，根据当前激活的工具和技能集注入上下文感知的工具使用指导。",
+      "metrics": { "lines": 97 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/prompt-customizer.ts::addToolGuidance",
+      "type": "function",
+      "label": "addToolGuidance",
+      "parent": "packages/coding-agent/examples/extensions/prompt-customizer.ts",
+      "language": "typescript",
+      "summary": "根据当前激活的工具集（read/bash/edit/write）和技能列表，动态生成工具使用指导并追加到基础系统提示中。",
+      "metrics": { "lines": 42, "startLine": 22 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/protected-paths.ts",
+      "type": "file",
+      "label": "protected-paths.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "受保护路径扩展：拦截 tool_call 事件，阻止对 .env、.git/、node_modules/ 等敏感路径的 write 和 edit 操作。",
+      "metrics": { "lines": 30 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/provider-payload.ts",
+      "type": "file",
+      "label": "provider-payload.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "Provider 载荷扩展：演示 provider_payload 事件，用于在 API 请求前自定义修改请求体参数。",
+      "metrics": { "lines": 18 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/qna.ts",
+      "type": "file",
+      "label": "qna.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "问答提取扩展：注册 /qna 命令，从最后一条助手消息中提取问题，使用 AI 模型解析后加载到编辑器供用户填写答案。演示 prompt generator 模式。",
+      "metrics": { "lines": 118 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/question.ts",
+      "type": "file",
+      "label": "question.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "问题工具扩展：注册自定义 question 工具，通过完全自定义 UI（选项列表 + 内联编辑器）向用户提问，支持带描述的选项和自由输入。",
+      "metrics": { "lines": 286 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/question.ts::question",
+      "type": "function",
+      "label": "question",
+      "parent": "packages/coding-agent/examples/extensions/question.ts",
+      "language": "typescript",
+      "summary": "问题工具主函数。使用 pi.registerTool 注册 question 工具，实现自定义 TUI 渲染（选项列表、键盘导航、内联编辑器、Escape 键层级交互）。",
+      "metrics": { "lines": 243, "startLine": 44 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/questionnaire.ts",
+      "type": "file",
+      "label": "questionnaire.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "问卷扩展：注册自定义 questionnaire 工具，通过标签栏导航在多个问题之间切换，每个问题支持选项列表和自由文本输入。",
+      "metrics": { "lines": 448 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/questionnaire.ts::questionnaire",
+      "type": "function",
+      "label": "questionnaire",
+      "parent": "packages/coding-agent/examples/extensions/questionnaire.ts",
+      "language": "typescript",
+      "summary": "问卷工具主函数。使用 registerTool 注册多问题输入工具，实现标签栏导航（Tab/Shift+Tab 切换问题）、选项列表和编辑器的自定义 TUI 渲染。",
+      "metrics": { "lines": 365, "startLine": 20 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/rainbow-editor.ts",
+      "type": "file",
+      "label": "rainbow-editor.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "彩虹编辑器扩展：通过 ctx.ui.setEditorComponent() 设置自定义编辑器组件，实现动画彩虹文本效果。",
+      "metrics": { "lines": 88 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/rainbow-editor.ts::RainbowEditor",
+      "type": "class",
+      "label": "RainbowEditor",
+      "parent": "packages/coding-agent/examples/extensions/rainbow-editor.ts",
+      "language": "typescript",
+      "summary": "彩虹文本编辑器组件类，继承自定义编辑器基类，通过定时器驱动颜色循环动画渲染编辑文本。",
+      "metrics": { "methods": 5 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/README.md",
+      "type": "file",
+      "label": "README.md",
+      "language": "markdown",
+      "category": "docs",
+      "summary": "扩展示例目录文档。分类列出所有示例扩展（生命周期/安全、自定义工具、命令/UI、Git 集成、系统提示/压缩、系统整合、资源、消息通信、会话元数据、自定义 Provider 等），提供使用方法和编写指南。",
+      "metrics": { "lines": 213 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/reload-runtime.ts",
+      "type": "file",
+      "label": "reload-runtime.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "运行时重载扩展：注册 /reload-runtime 命令和 reload_runtime 工具，演示安全的运行时重载流程。",
+      "metrics": { "lines": 37 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/rpc-demo.ts",
+      "type": "file",
+      "label": "rpc-demo.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "RPC 演示扩展：练习所有 RPC 支持的扩展 UI 方法（notify、confirm、select、input、status、header、footer、widget 等），配合 rpc-extension-ui.ts 使用。",
+      "metrics": { "lines": 118 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/sandbox/index.ts",
+      "type": "file",
+      "label": "sandbox/index.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "沙箱扩展：使用 @anthropic-ai/sandbox-runtime 实现 OS 级沙箱隔离，支持按项目配置（sandbox.json），将内置 bash 工具替换为沙箱化执行环境。",
+      "metrics": { "lines": 321 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/sandbox/index.ts::loadConfig",
+      "type": "function",
+      "label": "loadConfig",
+      "parent": "packages/coding-agent/examples/extensions/sandbox/index.ts",
+      "language": "typescript",
+      "summary": "从项目 .pi/sandbox.json 加载沙箱配置，支持默认值填充。",
+      "metrics": { "lines": 25, "startLine": 40 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/sandbox/index.ts::deepMerge",
+      "type": "function",
+      "label": "deepMerge",
+      "parent": "packages/coding-agent/examples/extensions/sandbox/index.ts",
+      "language": "typescript",
+      "summary": "深度合并两个配置对象，用于将项目配置与默认配置合并。",
+      "metrics": { "lines": 26, "startLine": 67 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/sandbox/index.ts::createSandboxedBashOps",
+      "type": "function",
+      "label": "createSandboxedBashOps",
+      "parent": "packages/coding-agent/examples/extensions/sandbox/index.ts",
+      "language": "typescript",
+      "summary": "创建沙箱化的 bash 操作集，将所有命令执行包装在 sandbox-runtime 隔离环境中，支持网络/文件系统访问控制。",
+      "metrics": { "lines": 68, "startLine": 95 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/sandbox/package.json",
+      "type": "file",
+      "label": "sandbox/package.json",
+      "language": "json",
+      "category": "config",
+      "summary": "沙箱扩展的包配置文件，声明 @anthropic-ai/sandbox-runtime 依赖。",
+      "metrics": { "lines": 19 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/send-user-message.ts",
+      "type": "file",
+      "label": "send-user-message.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "发送用户消息扩展：演示 pi.sendUserMessage() API，从扩展内部向对话中发送用户消息。",
+      "metrics": { "lines": 97 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/session-name.ts",
+      "type": "file",
+      "label": "session-name.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "会话命名扩展：通过 setSessionName API 为会话设置自定义名称，用于会话选择器显示。",
+      "metrics": { "lines": 27 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/shutdown-command.ts",
+      "type": "file",
+      "label": "shutdown-command.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "关机命令扩展：注册 /quit 命令，演示 ctx.shutdown() API 实现安全退出流程。",
+      "metrics": { "lines": 63 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/snake.ts",
+      "type": "file",
+      "label": "snake.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "贪吃蛇游戏扩展：使用自定义 TUI 组件实现贪吃蛇游戏，包含键盘处理、碰撞检测、分数计数和会话持久化。",
+      "metrics": { "lines": 343 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/snake.ts::SnakeComponent",
+      "type": "class",
+      "label": "SnakeComponent",
+      "parent": "packages/coding-agent/examples/extensions/snake.ts",
+      "language": "typescript",
+      "summary": "贪吃蛇游戏 TUI 组件类，管理游戏状态（蛇身、食物、方向、分数）、定时器驱动的游戏循环、键盘输入处理和画面渲染。",
+      "metrics": { "methods": 8 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/space-invaders.ts",
+      "type": "file",
+      "label": "space-invaders.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "太空侵略者游戏扩展：使用自定义 TUI 组件实现完整的太空侵略者游戏，包含外星人编队、护盾、激光、碰撞检测和动画。",
+      "metrics": { "lines": 560 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/space-invaders.ts::SpaceInvadersComponent",
+      "type": "class",
+      "label": "SpaceInvadersComponent",
+      "parent": "packages/coding-agent/examples/extensions/space-invaders.ts",
+      "language": "typescript",
+      "summary": "太空侵略者游戏 TUI 组件类，管理游戏状态（玩家、外星人、子弹、护盾、分数）、游戏循环、碰撞检测和帧渲染。",
+      "metrics": { "methods": 11 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/ssh.ts",
+      "type": "file",
+      "label": "ssh.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "SSH 远程扩展：通过 SSH 将所有工具操作委派到远程机器，实现可插拔的远程 read/write/edit/bash 操作集。",
+      "metrics": { "lines": 220 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/ssh.ts::sshExec",
+      "type": "function",
+      "label": "sshExec",
+      "parent": "packages/coding-agent/examples/extensions/ssh.ts",
+      "language": "typescript",
+      "summary": "在远程主机上通过 SSH 执行命令并返回输出结果。",
+      "metrics": { "lines": 17, "startLine": 30 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/ssh.ts::createRemoteBashOps",
+      "type": "function",
+      "label": "createRemoteBashOps",
+      "parent": "packages/coding-agent/examples/extensions/ssh.ts",
+      "language": "typescript",
+      "summary": "创建远程 bash 操作集，通过 SSH 在远程机器上执行命令，支持超时和流式输出。",
+      "metrics": { "lines": 32, "startLine": 130 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/status-line.ts",
+      "type": "file",
+      "label": "status-line.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "状态行扩展：通过 ctx.ui.setStatus() 在页脚显示轮次进度信息，使用主题颜色渲染。",
+      "metrics": { "lines": 32 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/structured-output.ts",
+      "type": "file",
+      "label": "structured-output.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "结构化输出扩展：注册最终输出工具，返回 terminate: true 使 Agent 在工具调用后结束会话。",
+      "metrics": { "lines": 65 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/subagent/agents.ts",
+      "type": "file",
+      "label": "subagent/agents.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "子代理发现模块：从项目级 agents/ 目录加载和发现可用的子代理定义，支持 YAML 配置文件解析和格式化输出。",
+      "metrics": { "lines": 126 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/subagent/agents.ts::loadAgentsFromDir",
+      "type": "function",
+      "label": "loadAgentsFromDir",
+      "parent": "packages/coding-agent/examples/extensions/subagent/agents.ts",
+      "language": "typescript",
+      "summary": "从指定目录加载子代理定义文件（YAML 格式），解析并返回代理配置列表。",
+      "metrics": { "lines": 50, "startLine": 15 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/subagent/agents.ts::discoverAgents",
+      "type": "function",
+      "label": "discoverAgents",
+      "parent": "packages/coding-agent/examples/extensions/subagent/agents.ts",
+      "language": "typescript",
+      "summary": "发现可用的子代理，从当前项目目录向上查找 agents/ 目录并合并所有找到的代理定义。",
+      "metrics": { "lines": 20, "startLine": 84 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/subagent/index.ts",
+      "type": "file",
+      "label": "subagent/index.ts",
+      "language": "typescript",
+      "category": "code",
+      "summary": "子代理扩展主模块：实现任务委派到专用子代理的完整流程，支持并发执行、隔离上下文窗口、工具调用跟踪、token 统计和结果汇总。注册 /subagent 命令和 delegate 工具。",
+      "metrics": { "lines": 1033 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/subagent/index.ts::runSingleAgent",
+      "type": "function",
+      "label": "runSingleAgent",
+      "parent": "packages/coding-agent/examples/extensions/subagent/index.ts",
+      "language": "typescript",
+      "summary": "运行单个子代理实例，管理其生命周期（启动 pi 进程、流式输出处理、工具调用跟踪、错误处理和 token 用量统计）。",
+      "metrics": { "lines": 169, "startLine": 430 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/subagent/index.ts::formatToolCall",
+      "type": "function",
+      "label": "formatToolCall",
+      "parent": "packages/coding-agent/examples/extensions/subagent/index.ts",
+      "language": "typescript",
+      "summary": "格式化工具调用信息为可读字符串，用于子代理输出日志。",
+      "metrics": { "lines": 67, "startLine": 140 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/subagent/index.ts::mapWithConcurrencyLimit",
+      "type": "function",
+      "label": "mapWithConcurrencyLimit",
+      "parent": "packages/coding-agent/examples/extensions/subagent/index.ts",
+      "language": "typescript",
+      "summary": "带并发限制的异步 map 工具函数，控制同时运行的子代理数量。",
+      "metrics": { "lines": 19, "startLine": 350 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/subagent/index.ts::getPiInvocation",
+      "type": "function",
+      "label": "getPiInvocation",
+      "parent": "packages/coding-agent/examples/extensions/subagent/index.ts",
+      "language": "typescript",
+      "summary": "构建子代理的 pi 进程调用参数，配置隔离的上下文窗口、模型、工具和提示词。",
+      "metrics": { "lines": 15, "startLine": 400 }
+    },
+    {
+      "id": "packages/coding-agent/examples/extensions/subagent/README.md",
+      "type": "file",
+      "label": "subagent/README.md",
+      "language": "markdown",
+      "category": "docs",
+      "summary": "子代理扩展文档。描述子代理架构（隔离上下文窗口、并发控制）、配置方式（agents/ 目录 YAML 文件）和使用方法（/subagent 命令、delegate 工具）。",
+      "metrics": { "lines": 177 }
+    }
+  ],
+  "edges": [
+    {
+      "source": "packages/coding-agent/examples/extensions/subagent/index.ts",
+      "target": "packages/coding-agent/examples/extensions/subagent/agents.ts",
+      "type": "import",
+      "label": "imports"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/preset.ts",
+      "target": "packages/coding-agent/examples/extensions/preset.ts::loadPresets",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/preset.ts",
+      "target": "packages/coding-agent/examples/extensions/preset.ts::presetExtension",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/prompt-customizer.ts",
+      "target": "packages/coding-agent/examples/extensions/prompt-customizer.ts::addToolGuidance",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/question.ts",
+      "target": "packages/coding-agent/examples/extensions/question.ts::question",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/questionnaire.ts",
+      "target": "packages/coding-agent/examples/extensions/questionnaire.ts::questionnaire",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/rainbow-editor.ts",
+      "target": "packages/coding-agent/examples/extensions/rainbow-editor.ts::RainbowEditor",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/sandbox/index.ts",
+      "target": "packages/coding-agent/examples/extensions/sandbox/index.ts::loadConfig",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/sandbox/index.ts",
+      "target": "packages/coding-agent/examples/extensions/sandbox/index.ts::deepMerge",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/sandbox/index.ts",
+      "target": "packages/coding-agent/examples/extensions/sandbox/index.ts::createSandboxedBashOps",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/snake.ts",
+      "target": "packages/coding-agent/examples/extensions/snake.ts::SnakeComponent",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/space-invaders.ts",
+      "target": "packages/coding-agent/examples/extensions/space-invaders.ts::SpaceInvadersComponent",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/ssh.ts",
+      "target": "packages/coding-agent/examples/extensions/ssh.ts::sshExec",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/ssh.ts",
+      "target": "packages/coding-agent/examples/extensions/ssh.ts::createRemoteBashOps",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/subagent/agents.ts",
+      "target": "packages/coding-agent/examples/extensions/subagent/agents.ts::loadAgentsFromDir",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/subagent/agents.ts",
+      "target": "packages/coding-agent/examples/extensions/subagent/agents.ts::discoverAgents",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/subagent/index.ts",
+      "target": "packages/coding-agent/examples/extensions/subagent/index.ts::runSingleAgent",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/subagent/index.ts",
+      "target": "packages/coding-agent/examples/extensions/subagent/index.ts::formatToolCall",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/subagent/index.ts",
+      "target": "packages/coding-agent/examples/extensions/subagent/index.ts::mapWithConcurrencyLimit",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/subagent/index.ts",
+      "target": "packages/coding-agent/examples/extensions/subagent/index.ts::getPiInvocation",
+      "type": "contains",
+      "label": "defines"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/subagent/index.ts",
+      "target": "packages/coding-agent/examples/extensions/subagent/agents.ts",
+      "type": "uses",
+      "label": "uses discoverAgents"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/preset.ts::presetExtension",
+      "target": "packages/coding-agent/examples/extensions/preset.ts::loadPresets",
+      "type": "calls",
+      "label": "calls loadPresets"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/README.md",
+      "target": "packages/coding-agent/examples/extensions/preset.ts",
+      "type": "references",
+      "label": "documents"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/README.md",
+      "target": "packages/coding-agent/examples/extensions/question.ts",
+      "type": "references",
+      "label": "documents"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/README.md",
+      "target": "packages/coding-agent/examples/extensions/questionnaire.ts",
+      "type": "references",
+      "label": "documents"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/README.md",
+      "target": "packages/coding-agent/examples/extensions/snake.ts",
+      "type": "references",
+      "label": "documents"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/README.md",
+      "target": "packages/coding-agent/examples/extensions/ssh.ts",
+      "type": "references",
+      "label": "documents"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/subagent/README.md",
+      "target": "packages/coding-agent/examples/extensions/subagent/index.ts",
+      "type": "references",
+      "label": "documents"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/subagent/README.md",
+      "target": "packages/coding-agent/examples/extensions/subagent/agents.ts",
+      "type": "references",
+      "label": "documents"
+    },
+    {
+      "source": "packages/coding-agent/examples/extensions/sandbox/index.ts",
+      "target": "packages/coding-agent/examples/extensions/sandbox/package.json",
+      "type": "depends_on",
+      "label": "configured by"
+    }
+  ]
+}

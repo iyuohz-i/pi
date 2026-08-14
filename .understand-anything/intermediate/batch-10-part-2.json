@@ -1,0 +1,1480 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/ai/src/auth/oauth/xai.ts",
+      "type": "file",
+      "name": "xai.ts",
+      "filePath": "packages/ai/src/auth/oauth/xai.ts",
+      "summary": "实现 xAI 的设备码 OAuth 认证流程，包含设备码请求、令牌轮询和刷新逻辑。",
+      "tags": [
+        "auth",
+        "oauth",
+        "xai",
+        "device-code"
+      ],
+      "complexity": "complex",
+      "languageNotes": "使用表单 POST 请求与 xAI OAuth 端点交互，支持令牌刷新令牌轮换。"
+    },
+    {
+      "id": "file:packages/ai/src/auth/resolve.ts",
+      "type": "file",
+      "name": "resolve.ts",
+      "filePath": "packages/ai/src/auth/resolve.ts",
+      "summary": "解析供应商认证信息，按优先级依次尝试存储的 OAuth、API Key 和环境变量认证方式。",
+      "tags": [
+        "auth",
+        "resolver",
+        "oauth",
+        "api-key"
+      ],
+      "complexity": "complex",
+      "languageNotes": "支持 AbortSignal 取消认证解析，并通过 ModelsError 提供结构化错误码。"
+    },
+    {
+      "id": "file:packages/ai/src/auth/types.ts",
+      "type": "file",
+      "name": "types.ts",
+      "filePath": "packages/ai/src/auth/types.ts",
+      "summary": "定义认证系统的核心类型，包括认证上下文、凭证存储接口、OAuth 回调和提示类型。",
+      "tags": [
+        "auth",
+        "type-definition",
+        "oauth",
+        "interface"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "纯类型定义文件，无运行时代码，为整个认证模块提供类型契约。"
+    },
+    {
+      "id": "file:packages/ai/src/bun-oauth.ts",
+      "type": "file",
+      "name": "bun-oauth.ts",
+      "filePath": "packages/ai/src/bun-oauth.ts",
+      "summary": "为 Bun 运行时注册所有内置 OAuth 流程的加载器入口。",
+      "tags": [
+        "auth",
+        "oauth",
+        "bun",
+        "registration"
+      ],
+      "complexity": "simple",
+      "languageNotes": "通过 registerBunOAuthFlows 将所有延迟加载的 OAuth 模块注册到 Bun 运行时。"
+    },
+    {
+      "id": "file:packages/ai/src/cli.ts",
+      "type": "file",
+      "name": "cli.ts",
+      "filePath": "packages/ai/src/cli.ts",
+      "summary": "命令行工具入口，提供供应商登录和模型列表查看功能。",
+      "tags": [
+        "entry-point",
+        "cli",
+        "auth",
+        "interactive"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/src/compat/extension-oauth-types.ts",
+      "type": "file",
+      "name": "extension-oauth-types.ts",
+      "filePath": "packages/ai/src/compat/extension-oauth-types.ts",
+      "summary": "兼容性类型定义文件，为 VS Code 扩展提供 OAuth 凭证类型的重新导出。",
+      "tags": [
+        "type-definition",
+        "compat",
+        "oauth"
+      ],
+      "complexity": "simple",
+      "languageNotes": "用于向后兼容扩展程序的 OAuth 类型定义。"
+    },
+    {
+      "id": "file:packages/ai/src/images-models.ts",
+      "type": "file",
+      "name": "images-models.ts",
+      "filePath": "packages/ai/src/images-models.ts",
+      "summary": "实现图像生成模型的供应商管理和认证解析，支持多供应商图像 API 的统一接口。",
+      "tags": [
+        "image-generation",
+        "service",
+        "auth",
+        "multi-provider"
+      ],
+      "complexity": "complex",
+      "languageNotes": "ImagesModelsImpl 管理多个图像供应商，提供统一的 generateImages 接口。"
+    },
+    {
+      "id": "file:packages/ai/src/index.ts",
+      "type": "file",
+      "name": "index.ts",
+      "filePath": "packages/ai/src/index.ts",
+      "summary": "包的入口 barrel 文件，重新导出所有公开的类型、接口和工厂函数。",
+      "tags": [
+        "entry-point",
+        "barrel",
+        "exports"
+      ],
+      "complexity": "simple",
+      "languageNotes": "纯 re-export barrel 文件，28 个导出，无运行时逻辑。"
+    },
+    {
+      "id": "file:packages/ai/src/model-catalog.ts",
+      "type": "file",
+      "name": "model-catalog.ts",
+      "filePath": "packages/ai/src/model-catalog.ts",
+      "summary": "提供模型目录扁平化工具函数，将分组模型列表转换为扁平的模型 ID 列表。",
+      "tags": [
+        "utility",
+        "model-catalog",
+        "flatten"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/models-store.ts",
+      "type": "file",
+      "name": "models-store.ts",
+      "filePath": "packages/ai/src/models-store.ts",
+      "summary": "内存模型存储实现，提供供应商模型数据的读写和删除操作。",
+      "tags": [
+        "data-model",
+        "in-memory",
+        "store"
+      ],
+      "complexity": "simple",
+      "languageNotes": "InMemoryModelsStore 使用 Map 存储模型数据，实现 ModelsStore 接口。"
+    },
+    {
+      "id": "file:packages/ai/src/models.ts",
+      "type": "file",
+      "name": "models.ts",
+      "filePath": "packages/ai/src/models.ts",
+      "summary": "核心模型管理实现，提供多供应商模型注册、认证、流式补全和刷新等全部功能。",
+      "tags": [
+        "service",
+        "multi-provider",
+        "model-management",
+        "streaming"
+      ],
+      "complexity": "complex",
+      "languageNotes": "ModelsImpl 类包含 28 个方法，涵盖供应商管理、认证解析、模型刷新和流式 API 调用。"
+    },
+    {
+      "id": "file:packages/ai/src/oauth.ts",
+      "type": "file",
+      "name": "oauth.ts",
+      "filePath": "packages/ai/src/oauth.ts",
+      "summary": "OAuth 模块的 barrel 文件，重新导出所有 OAuth 相关的公开类型。",
+      "tags": [
+        "barrel",
+        "oauth",
+        "type-definition",
+        "exports"
+      ],
+      "complexity": "simple",
+      "languageNotes": "纯 re-export barrel 文件，7 个类型导出，无运行时代码。"
+    },
+    {
+      "id": "file:packages/ai/src/providers/all.ts",
+      "type": "file",
+      "name": "all.ts",
+      "filePath": "packages/ai/src/providers/all.ts",
+      "summary": "汇总所有内置 LLM 供应商的定义，提供供应商列表、模型目录和图像供应商的统一入口。",
+      "tags": [
+        "barrel",
+        "multi-provider",
+        "registry",
+        "entry-point"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "导入 44 个供应商模块并聚合为统一的 builtinProviders 和 builtinModels 接口。"
+    },
+    {
+      "id": "file:packages/ai/src/providers/amazon-bedrock.models.ts",
+      "type": "file",
+      "name": "amazon-bedrock.models.ts",
+      "filePath": "packages/ai/src/providers/amazon-bedrock.models.ts",
+      "summary": "定义 Amazon Bedrock 供应商的内置模型目录常量。",
+      "tags": [
+        "model-catalog",
+        "amazon-bedrock",
+        "constant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/providers/amazon-bedrock.ts",
+      "type": "file",
+      "name": "amazon-bedrock.ts",
+      "filePath": "packages/ai/src/providers/amazon-bedrock.ts",
+      "summary": "实现 Amazon Bedrock 供应商的创建函数，配置认证方式和 API 端点。",
+      "tags": [
+        "provider",
+        "amazon-bedrock",
+        "factory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/src/providers/ant-ling.models.ts",
+      "type": "file",
+      "name": "ant-ling.models.ts",
+      "filePath": "packages/ai/src/providers/ant-ling.models.ts",
+      "summary": "定义 Ant Ling 供应商的内置模型目录常量。",
+      "tags": [
+        "model-catalog",
+        "ant-ling",
+        "constant"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/auth/oauth/xai.ts:postForm",
+      "type": "function",
+      "name": "postForm",
+      "filePath": "packages/ai/src/auth/oauth/xai.ts",
+      "lineRange": [
+        64,
+        98
+      ],
+      "summary": "向 xAI 端点发送表单 POST 请求，处理错误响应并返回 JSON。",
+      "tags": [
+        "auth",
+        "oauth",
+        "http",
+        "xai"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/auth/oauth/xai.ts:pollForTokens",
+      "type": "function",
+      "name": "pollForTokens",
+      "filePath": "packages/ai/src/auth/oauth/xai.ts",
+      "lineRange": [
+        161,
+        199
+      ],
+      "summary": "轮询 xAI 令牌端点，等待用户完成设备授权后获取访问令牌。",
+      "tags": [
+        "auth",
+        "oauth",
+        "polling",
+        "xai"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/auth/oauth/xai.ts:loginXai",
+      "type": "function",
+      "name": "loginXai",
+      "filePath": "packages/ai/src/auth/oauth/xai.ts",
+      "lineRange": [
+        201,
+        211
+      ],
+      "summary": "执行 xAI OAuth 登录流程，通过设备码方式获取访问令牌。",
+      "tags": [
+        "auth",
+        "oauth",
+        "login",
+        "xai"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/auth/oauth/xai.ts:refreshXaiToken",
+      "type": "function",
+      "name": "refreshXaiToken",
+      "filePath": "packages/ai/src/auth/oauth/xai.ts",
+      "lineRange": [
+        213,
+        227
+      ],
+      "summary": "使用刷新令牌获取新的 xAI 访问令牌。",
+      "tags": [
+        "auth",
+        "oauth",
+        "token-refresh",
+        "xai"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/ai/src/auth/resolve.ts:ModelsError",
+      "type": "class",
+      "name": "ModelsError",
+      "filePath": "packages/ai/src/auth/resolve.ts",
+      "lineRange": [
+        26,
+        34
+      ],
+      "summary": "模型认证错误类，携带结构化错误码用于区分不同认证失败场景。",
+      "tags": [
+        "auth",
+        "error",
+        "model"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/auth/resolve.ts:resolveProviderAuth",
+      "type": "function",
+      "name": "resolveProviderAuth",
+      "filePath": "packages/ai/src/auth/resolve.ts",
+      "lineRange": [
+        50,
+        61
+      ],
+      "summary": "解析供应商认证信息，按优先级依次尝试 OAuth、API Key 和环境变量。",
+      "tags": [
+        "auth",
+        "resolver",
+        "provider"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/auth/resolve.ts:resolveProviderAuthWithSignal",
+      "type": "function",
+      "name": "resolveProviderAuthWithSignal",
+      "filePath": "packages/ai/src/auth/resolve.ts",
+      "lineRange": [
+        63,
+        110
+      ],
+      "summary": "带 AbortSignal 的供应商认证解析，支持取消长时间运行的认证操作。",
+      "tags": [
+        "auth",
+        "resolver",
+        "abort"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/src/auth/resolve.ts:resolveStoredOAuth",
+      "type": "function",
+      "name": "resolveStoredOAuth",
+      "filePath": "packages/ai/src/auth/resolve.ts",
+      "lineRange": [
+        127,
+        179
+      ],
+      "summary": "解析存储的 OAuth 凭证，检查令牌有效期并在需要时触发刷新。",
+      "tags": [
+        "auth",
+        "oauth",
+        "resolver",
+        "token-refresh"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/src/bun-oauth.ts:registerBunOAuthFlows",
+      "type": "function",
+      "name": "registerBunOAuthFlows",
+      "filePath": "packages/ai/src/bun-oauth.ts",
+      "lineRange": [
+        11,
+        21
+      ],
+      "summary": "为 Bun 运行时注册所有内置 OAuth 流程的延迟加载器。",
+      "tags": [
+        "auth",
+        "oauth",
+        "bun",
+        "registration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/cli.ts:login",
+      "type": "function",
+      "name": "login",
+      "filePath": "packages/ai/src/cli.ts",
+      "lineRange": [
+        45,
+        77
+      ],
+      "summary": "CLI 登录命令，引导用户选择供应商并执行 OAuth 认证流程。",
+      "tags": [
+        "cli",
+        "auth",
+        "login",
+        "interactive"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/cli.ts:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "packages/ai/src/cli.ts",
+      "lineRange": [
+        79,
+        114
+      ],
+      "summary": "CLI 主入口函数，解析命令行参数并分发到登录或列表子命令。",
+      "tags": [
+        "entry-point",
+        "cli",
+        "main"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:packages/ai/src/images-models.ts:ImagesModelsImpl",
+      "type": "class",
+      "name": "ImagesModelsImpl",
+      "filePath": "packages/ai/src/images-models.ts",
+      "lineRange": [
+        97,
+        225
+      ],
+      "summary": "图像模型管理实现类，管理多个图像供应商并提供统一的认证解析和图像生成接口。",
+      "tags": [
+        "image-generation",
+        "service",
+        "multi-provider"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/src/images-models.ts:createImagesProvider",
+      "type": "function",
+      "name": "createImagesProvider",
+      "filePath": "packages/ai/src/images-models.ts",
+      "lineRange": [
+        251,
+        275
+      ],
+      "summary": "创建图像供应商定义，封装模型列表和图像生成 API 调用。",
+      "tags": [
+        "image-generation",
+        "factory",
+        "provider"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/model-catalog.ts:flattenModelCatalog",
+      "type": "function",
+      "name": "flattenModelCatalog",
+      "filePath": "packages/ai/src/model-catalog.ts",
+      "lineRange": [
+        22,
+        27
+      ],
+      "summary": "将分组模型目录扁平化为模型 ID 列表，去除分组层级。",
+      "tags": [
+        "utility",
+        "model-catalog",
+        "flatten"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/ai/src/models-store.ts:InMemoryModelsStore",
+      "type": "class",
+      "name": "InMemoryModelsStore",
+      "filePath": "packages/ai/src/models-store.ts",
+      "lineRange": [
+        27,
+        45
+      ],
+      "summary": "内存模型存储实现，使用 Map 存储供应商模型数据，提供读写和删除操作。",
+      "tags": [
+        "data-model",
+        "in-memory",
+        "store"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/ai/src/models.ts:ModelsImpl",
+      "type": "class",
+      "name": "ModelsImpl",
+      "filePath": "packages/ai/src/models.ts",
+      "lineRange": [
+        254,
+        733
+      ],
+      "summary": "核心模型管理类，提供多供应商注册、认证解析、模型刷新、流式补全和批量完成等全部功能。",
+      "tags": [
+        "service",
+        "multi-provider",
+        "model-management",
+        "streaming"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/src/models.ts:mergeHeaders",
+      "type": "function",
+      "name": "mergeHeaders",
+      "filePath": "packages/ai/src/models.ts",
+      "lineRange": [
+        238,
+        252
+      ],
+      "summary": "合并 HTTP 请求头，覆盖重复的键值。",
+      "tags": [
+        "utility",
+        "http",
+        "headers"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/models.ts:createProvider",
+      "type": "function",
+      "name": "createProvider",
+      "filePath": "packages/ai/src/models.ts",
+      "lineRange": [
+        762,
+        862
+      ],
+      "summary": "根据供应商输入创建供应商定义，配置认证方式、API 端点和模型列表。",
+      "tags": [
+        "factory",
+        "provider",
+        "multi-provider"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/src/models.ts:calculateCost",
+      "type": "function",
+      "name": "calculateCost",
+      "filePath": "packages/ai/src/models.ts",
+      "lineRange": [
+        878,
+        898
+      ],
+      "summary": "根据模型定价和使用量计算 API 调用费用。",
+      "tags": [
+        "utility",
+        "cost",
+        "calculation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/models.ts:clampThinkingLevel",
+      "type": "function",
+      "name": "clampThinkingLevel",
+      "filePath": "packages/ai/src/models.ts",
+      "lineRange": [
+        913,
+        932
+      ],
+      "summary": "将思考级别限制在模型支持的范围内。",
+      "tags": [
+        "utility",
+        "validation",
+        "thinking"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/providers/all.ts:builtinProviders",
+      "type": "function",
+      "name": "builtinProviders",
+      "filePath": "packages/ai/src/providers/all.ts",
+      "lineRange": [
+        89,
+        132
+      ],
+      "summary": "返回所有内置 LLM 供应商的定义列表，聚合 44 个供应商模块。",
+      "tags": [
+        "registry",
+        "multi-provider",
+        "barrel"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/providers/all.ts:builtinModels",
+      "type": "function",
+      "name": "builtinModels",
+      "filePath": "packages/ai/src/providers/all.ts",
+      "lineRange": [
+        135,
+        141
+      ],
+      "summary": "返回所有内置供应商的模型目录，支持供应商过滤。",
+      "tags": [
+        "registry",
+        "model-catalog",
+        "multi-provider"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/providers/amazon-bedrock.ts:amazonBedrockProvider",
+      "type": "function",
+      "name": "amazonBedrockProvider",
+      "filePath": "packages/ai/src/providers/amazon-bedrock.ts",
+      "lineRange": [
+        82,
+        90
+      ],
+      "summary": "创建 Amazon Bedrock 供应商定义，配置认证和 API 端点。",
+      "tags": [
+        "provider",
+        "amazon-bedrock",
+        "factory"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/ai/src/auth/oauth/xai.ts",
+      "target": "file:packages/ai/src/auth/oauth/device-code.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/auth/oauth/xai.ts",
+      "target": "file:packages/ai/src/auth/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/auth/resolve.ts",
+      "target": "file:packages/ai/src/auth/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/auth/resolve.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/auth/resolve.ts",
+      "target": "file:packages/ai/src/utils/abort.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/auth/resolve.ts",
+      "target": "file:packages/ai/src/utils/diagnostics.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/auth/types.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/bun-oauth.ts",
+      "target": "file:packages/ai/src/auth/oauth/anthropic.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/bun-oauth.ts",
+      "target": "file:packages/ai/src/auth/oauth/github-copilot.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/bun-oauth.ts",
+      "target": "file:packages/ai/src/auth/oauth/kimi-coding.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/bun-oauth.ts",
+      "target": "file:packages/ai/src/auth/oauth/load.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/bun-oauth.ts",
+      "target": "file:packages/ai/src/auth/oauth/openai-codex.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/bun-oauth.ts",
+      "target": "file:packages/ai/src/auth/oauth/openrouter.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/bun-oauth.ts",
+      "target": "file:packages/ai/src/auth/oauth/radius.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/bun-oauth.ts",
+      "target": "file:packages/ai/src/auth/oauth/xai.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/cli.ts",
+      "target": "file:packages/ai/src/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/cli.ts",
+      "target": "file:packages/ai/src/providers/all.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/compat/extension-oauth-types.ts",
+      "target": "file:packages/ai/src/auth/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/images-models.ts",
+      "target": "file:packages/ai/src/auth/context.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/images-models.ts",
+      "target": "file:packages/ai/src/auth/credential-store.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/images-models.ts",
+      "target": "file:packages/ai/src/auth/resolve.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/images-models.ts",
+      "target": "file:packages/ai/src/auth/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/images-models.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/images-models.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/model-catalog.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/models-store.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/models.ts",
+      "target": "file:packages/ai/src/api/lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/models.ts",
+      "target": "file:packages/ai/src/auth/context.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/models.ts",
+      "target": "file:packages/ai/src/auth/credential-store.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/models.ts",
+      "target": "file:packages/ai/src/auth/resolve.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/models.ts",
+      "target": "file:packages/ai/src/auth/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/models.ts",
+      "target": "file:packages/ai/src/models-store.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/models.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/models.ts",
+      "target": "file:packages/ai/src/utils/abort.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/images-models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/amazon-bedrock.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/ant-ling.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/anthropic.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/azure-openai-responses.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/baseten.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/cerebras.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/cloudflare-ai-gateway.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/cloudflare-workers-ai.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/deepseek.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/fireworks.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/github-copilot.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/google-vertex.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/google.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/groq.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/huggingface.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/kimi-coding.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/minimax-cn.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/minimax.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/mistral.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/moonshotai-cn.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/moonshotai.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/nvidia.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/openai-codex.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/openai.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/opencode-go.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/opencode.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/openrouter-images.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/openrouter.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/qwen-token-plan-cn.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/qwen-token-plan-individual.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/qwen-token-plan.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/radius.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/together.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/vercel-ai-gateway.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/xai.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/xiaomi-token-plan-ams.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/xiaomi-token-plan-cn.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/xiaomi-token-plan-sgp.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/xiaomi.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/zai-coding-cn.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/providers/zai.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/amazon-bedrock.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/amazon-bedrock.ts",
+      "target": "file:packages/ai/src/api/bedrock-converse-stream.lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/amazon-bedrock.ts",
+      "target": "file:packages/ai/src/auth/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/amazon-bedrock.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/amazon-bedrock.ts",
+      "target": "file:packages/ai/src/providers/amazon-bedrock.models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/providers/ant-ling.models.ts",
+      "target": "file:packages/ai/src/model-catalog.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/auth/oauth/xai.ts",
+      "target": "function:packages/ai/src/auth/oauth/xai.ts:postForm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/auth/oauth/xai.ts",
+      "target": "function:packages/ai/src/auth/oauth/xai.ts:pollForTokens",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/auth/oauth/xai.ts",
+      "target": "function:packages/ai/src/auth/oauth/xai.ts:loginXai",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/auth/oauth/xai.ts",
+      "target": "function:packages/ai/src/auth/oauth/xai.ts:refreshXaiToken",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/auth/resolve.ts",
+      "target": "class:packages/ai/src/auth/resolve.ts:ModelsError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/auth/resolve.ts",
+      "target": "function:packages/ai/src/auth/resolve.ts:resolveProviderAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/auth/resolve.ts",
+      "target": "function:packages/ai/src/auth/resolve.ts:resolveProviderAuthWithSignal",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/auth/resolve.ts",
+      "target": "function:packages/ai/src/auth/resolve.ts:resolveStoredOAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/bun-oauth.ts",
+      "target": "function:packages/ai/src/bun-oauth.ts:registerBunOAuthFlows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/cli.ts",
+      "target": "function:packages/ai/src/cli.ts:login",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/cli.ts",
+      "target": "function:packages/ai/src/cli.ts:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/images-models.ts",
+      "target": "class:packages/ai/src/images-models.ts:ImagesModelsImpl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/images-models.ts",
+      "target": "function:packages/ai/src/images-models.ts:createImagesProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/model-catalog.ts",
+      "target": "function:packages/ai/src/model-catalog.ts:flattenModelCatalog",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/models-store.ts",
+      "target": "class:packages/ai/src/models-store.ts:InMemoryModelsStore",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/models.ts",
+      "target": "class:packages/ai/src/models.ts:ModelsImpl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/models.ts",
+      "target": "function:packages/ai/src/models.ts:mergeHeaders",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/models.ts",
+      "target": "function:packages/ai/src/models.ts:createProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/models.ts",
+      "target": "function:packages/ai/src/models.ts:calculateCost",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/models.ts",
+      "target": "function:packages/ai/src/models.ts:clampThinkingLevel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "function:packages/ai/src/providers/all.ts:builtinProviders",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "function:packages/ai/src/providers/all.ts:builtinModels",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/providers/amazon-bedrock.ts",
+      "target": "function:packages/ai/src/providers/amazon-bedrock.ts:amazonBedrockProvider",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/auth/resolve.ts",
+      "target": "class:packages/ai/src/auth/resolve.ts:ModelsError",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/auth/resolve.ts",
+      "target": "function:packages/ai/src/auth/resolve.ts:resolveProviderAuth",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/bun-oauth.ts",
+      "target": "function:packages/ai/src/bun-oauth.ts:registerBunOAuthFlows",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/images-models.ts",
+      "target": "class:packages/ai/src/images-models.ts:ImagesModelsImpl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/images-models.ts",
+      "target": "function:packages/ai/src/images-models.ts:createImagesProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/model-catalog.ts",
+      "target": "function:packages/ai/src/model-catalog.ts:flattenModelCatalog",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/models-store.ts",
+      "target": "class:packages/ai/src/models-store.ts:InMemoryModelsStore",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/models.ts",
+      "target": "class:packages/ai/src/models.ts:ModelsImpl",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/models.ts",
+      "target": "function:packages/ai/src/models.ts:createProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/models.ts",
+      "target": "function:packages/ai/src/models.ts:calculateCost",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/models.ts",
+      "target": "function:packages/ai/src/models.ts:clampThinkingLevel",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "function:packages/ai/src/providers/all.ts:builtinProviders",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/all.ts",
+      "target": "function:packages/ai/src/providers/all.ts:builtinModels",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/providers/amazon-bedrock.ts",
+      "target": "function:packages/ai/src/providers/amazon-bedrock.ts:amazonBedrockProvider",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

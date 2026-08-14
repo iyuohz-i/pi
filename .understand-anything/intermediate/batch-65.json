@@ -1,0 +1,181 @@
+{
+  "batchIndex": 65,
+  "nodes": [
+    {
+      "id": "packages/tui/CHANGELOG.md",
+      "type": "file",
+      "label": "CHANGELOG.md",
+      "filePath": "packages/tui/CHANGELOG.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "description": "pi-tui 包的变更日志，记录从 0.29.0 到 0.84.1+ 的所有版本发布说明，包含 Added/Changed/Fixed/Breaking Changes 分类条目，涵盖终端渲染、组件、输入法、图像协议、Markdown/LaTeX 渲染等方面的持续改进。",
+      "metadata": {
+        "lines": 1099,
+        "sectionCount": 329,
+        "versionRange": "0.29.0 - 0.84.1+",
+        "dateRange": "2025-12-25 - 2026-08-07"
+      }
+    },
+    {
+      "id": "packages/tui/README.md",
+      "type": "file",
+      "label": "README.md",
+      "filePath": "packages/tui/README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "description": "pi-tui 包的核心 API 文档，介绍 TUI 接口与渲染器（TuiMainScreen/TuiAltScreen）、交替屏幕视口布局（VStack/HStack/ScrollView）、覆盖层系统、组件接口、内置组件（Text/Input/Editor/Markdown/Image 等）、自动补全、按键检测、渲染模式、终端接口、自定义组件指南和开发调试方法。",
+      "metadata": {
+        "lines": 854,
+        "sectionCount": 38
+      }
+    },
+    {
+      "id": "packages/tui/package.json",
+      "type": "file",
+      "label": "package.json",
+      "filePath": "packages/tui/package.json",
+      "language": "json",
+      "fileCategory": "config",
+      "description": "@earendil-works/pi-tui 包清单。版本 0.84.1，ESM 模块，入口 dist/index.js。运行时依赖 get-east-asian-width（东亚字符宽度计算）和 marked（Markdown 解析）。开发依赖 @xterm/headless 和 chalk。包含 Darwin/Win32 原生 addon 构建脚本和 prebuild 产物。Node ≥ 22.19.0。",
+      "metadata": {
+        "lines": 55,
+        "packageName": "@earendil-works/pi-tui",
+        "version": "0.84.1",
+        "engines": "node>=22.19.0"
+      }
+    },
+    {
+      "id": "packages/tui/tsconfig.build.json",
+      "type": "file",
+      "label": "tsconfig.build.json",
+      "filePath": "packages/tui/tsconfig.build.json",
+      "language": "json",
+      "fileCategory": "config",
+      "description": "pi-tui 包的 TypeScript 构建配置。继承 monorepo 根 tsconfig.base.json，输出到 dist/，源码在 src/，排除 node_modules 和 dist。",
+      "metadata": {
+        "lines": 9,
+        "extends": "../../tsconfig.base.json"
+      }
+    },
+    {
+      "id": "topic:tui-core-api",
+      "type": "topic",
+      "label": "TUI 核心 API 与渲染器",
+      "description": "pi-tui 的核心抽象层。TUI 接口统一组件管理、焦点、覆盖层、输入、生命周期和渲染。TuiMainScreen 在主终端缓冲区渲染并保留回滚历史；TuiAltScreen 在交替缓冲区渲染固定高度视口，支持应用自管理的滚动，停止时恢复主缓冲区并输出完整文档。",
+      "metadata": {
+        "sourceFiles": ["packages/tui/README.md"],
+        "keyTypes": ["TUI", "TuiMainScreen", "TuiAltScreen"]
+      }
+    },
+    {
+      "id": "topic:tui-altscreen-viewport",
+      "type": "topic",
+      "label": "交替屏幕视口布局",
+      "description": "TuiAltScreen 的布局系统。VStack 和 HStack 分配受限区域，ScrollView 为单个区域提供滚动控制。支持 basis/grow/shrink/minSize/maxSize 约束和响应式 visible 回调。鼠标滚轮定向到指针下方的滚动视图，未使用的增量默认链式传递到外层。主滚动视图接收键盘导航和 OSC 133 语义提示跳转。支持 Ctrl+Shift+F 搜索。",
+      "metadata": {
+        "sourceFiles": ["packages/tui/README.md"],
+        "keyTypes": ["VStack", "HStack", "ScrollView", "Container"]
+      }
+    },
+    {
+      "id": "topic:tui-overlays",
+      "type": "topic",
+      "label": "覆盖层系统",
+      "description": "pi-tui 的覆盖层机制，在已有内容之上渲染组件，用于对话框、菜单和模态 UI。支持锚点定位、百分比定位、绝对定位、边距、响应式可见性和焦点控制。OverlayHandle 提供 hide/setHidden/focus/unfocus 等方法。堆叠通知在交替屏幕渲染器中可用。",
+      "metadata": {
+        "sourceFiles": ["packages/tui/README.md"],
+        "keyTypes": ["OverlayHandle"]
+      }
+    },
+    {
+      "id": "topic:tui-builtin-components",
+      "type": "topic",
+      "label": "内置组件库",
+      "description": "pi-tui 提供的内置组件集合：Container、Box、Text、TruncatedText、Input、Editor（多行文本编辑，支持粘贴注册表和 IME）、Markdown（基于 marked 的流式渲染，支持 LaTeX 和宽度感知源变换）、Loader/CancellableLoader、SelectList、SettingsList、Spacer、Image（Kitty/iTerm2 图形协议）。所有组件实现 Component 接口的 render() 方法。",
+      "metadata": {
+        "sourceFiles": ["packages/tui/README.md"],
+        "keyTypes": ["Component", "Text", "Editor", "Markdown", "Image", "SelectList", "SettingsList"]
+      }
+    },
+    {
+      "id": "topic:tui-differential-rendering",
+      "type": "topic",
+      "label": "差分渲染与同步输出",
+      "description": "pi-tui 的核心渲染策略。差分渲染仅更新变化的行或视口行，减少终端 I/O。使用 CSI 2026 同步输出实现无闪烁的原子屏幕更新。交替屏幕通过全宽布局行直接引用进一步降低每帧分配（9-18x 改进）。",
+      "metadata": {
+        "sourceFiles": ["packages/tui/README.md", "packages/tui/CHANGELOG.md"]
+      }
+    },
+    {
+      "id": "topic:tui-terminal-queries",
+      "type": "topic",
+      "label": "终端能力查询",
+      "description": "pi-tui 的终端能力探测机制。支持颜色方案查询（OSC 11/背景色）、Kitty/iTerm2 图形协议检测、Warp/WezTerm 等特定终端识别、鼠标跟踪模式选择（按钮运动 vs 全运动）、CSI 2026 同步输出支持检测。",
+      "metadata": {
+        "sourceFiles": ["packages/tui/CHANGELOG.md", "packages/tui/README.md"]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "packages/tui/README.md",
+      "target": "topic:tui-core-api",
+      "type": "documents",
+      "label": "文档描述"
+    },
+    {
+      "source": "packages/tui/README.md",
+      "target": "topic:tui-altscreen-viewport",
+      "type": "documents",
+      "label": "文档描述"
+    },
+    {
+      "source": "packages/tui/README.md",
+      "target": "topic:tui-overlays",
+      "type": "documents",
+      "label": "文档描述"
+    },
+    {
+      "source": "packages/tui/README.md",
+      "target": "topic:tui-builtin-components",
+      "type": "documents",
+      "label": "文档描述"
+    },
+    {
+      "source": "packages/tui/README.md",
+      "target": "topic:tui-differential-rendering",
+      "type": "documents",
+      "label": "文档描述"
+    },
+    {
+      "source": "packages/tui/CHANGELOG.md",
+      "target": "topic:tui-differential-rendering",
+      "type": "documents",
+      "label": "版本变更记录"
+    },
+    {
+      "source": "packages/tui/CHANGELOG.md",
+      "target": "topic:tui-terminal-queries",
+      "type": "documents",
+      "label": "版本变更记录"
+    },
+    {
+      "source": "packages/tui/package.json",
+      "target": "packages/tui/tsconfig.build.json",
+      "type": "references",
+      "label": "构建脚本引用"
+    },
+    {
+      "source": "packages/tui/package.json",
+      "target": "packages/tui/README.md",
+      "type": "references",
+      "label": "包文件包含"
+    },
+    {
+      "source": "packages/tui/tsconfig.build.json",
+      "target": "packages/tui/package.json",
+      "type": "configures",
+      "label": "TypeScript 构建配置"
+    }
+  ]
+}

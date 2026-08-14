@@ -1,0 +1,457 @@
+{
+  "nodes": [
+    {
+      "id": "packages/coding-agent/test/fixtures/large-session.jsonl",
+      "type": "file",
+      "label": "large-session.jsonl",
+      "description": "大型 JSONL 会话 fixture 文件，包含 1019 行会话数据，用于测试会话解析和恢复功能。",
+      "lineCount": 1019,
+      "language": "jsonl",
+      "fileCategory": "code"
+    },
+    {
+      "id": "packages/coding-agent/test/fixtures/skills-collision/first/calendar/SKILL.md",
+      "type": "file",
+      "label": "calendar/SKILL.md (first)",
+      "description": "技能碰撞测试 fixture：第一个名为 calendar 的技能定义，用于测试同名技能冲突场景。",
+      "lineCount": 8,
+      "language": "markdown",
+      "fileCategory": "docs"
+    },
+    {
+      "id": "packages/coding-agent/test/fixtures/skills-collision/second/calendar/SKILL.md",
+      "type": "file",
+      "label": "calendar/SKILL.md (second)",
+      "description": "技能碰撞测试 fixture：第二个名为 calendar 的技能定义，与 first 目录下的同名技能构成冲突测试用例。",
+      "lineCount": 8,
+      "language": "markdown",
+      "fileCategory": "docs"
+    },
+    {
+      "id": "packages/coding-agent/test/fixtures/skills/consecutive-hyphens/SKILL.md",
+      "type": "file",
+      "label": "consecutive-hyphens/SKILL.md",
+      "description": "技能 fixture：名称包含连续连字符的技能，用于测试技能名称校验规则。",
+      "lineCount": 8,
+      "language": "markdown",
+      "fileCategory": "docs"
+    },
+    {
+      "id": "packages/coding-agent/test/fixtures/skills/disable-model-invocation/SKILL.md",
+      "type": "file",
+      "label": "disable-model-invocation/SKILL.md",
+      "description": "技能 fixture：禁用模型调用的技能定义，用于测试技能配置中模型调用控制。",
+      "lineCount": 9,
+      "language": "markdown",
+      "fileCategory": "docs"
+    },
+    {
+      "id": "packages/coding-agent/test/fixtures/skills/invalid-name-chars/SKILL.md",
+      "type": "file",
+      "label": "invalid-name-chars/SKILL.md",
+      "description": "技能 fixture：名称包含非法字符的技能，用于测试技能名称验证逻辑。",
+      "lineCount": 8,
+      "language": "markdown",
+      "fileCategory": "docs"
+    },
+    {
+      "id": "packages/coding-agent/test/fixtures/skills/invalid-yaml/SKILL.md",
+      "type": "file",
+      "label": "invalid-yaml/SKILL.md",
+      "description": "技能 fixture：包含无效 YAML frontmatter 的技能文件，用于测试 YAML 解析容错。",
+      "lineCount": 8,
+      "language": "markdown",
+      "fileCategory": "docs"
+    },
+    {
+      "id": "packages/coding-agent/test/fixtures/skills/long-name/SKILL.md",
+      "type": "file",
+      "label": "long-name/SKILL.md",
+      "description": "技能 fixture：名称过长的技能，用于测试技能名称长度限制校验。",
+      "lineCount": 8,
+      "language": "markdown",
+      "fileCategory": "docs"
+    },
+    {
+      "id": "packages/coding-agent/test/fixtures/skills/missing-description/SKILL.md",
+      "type": "file",
+      "label": "missing-description/SKILL.md",
+      "description": "技能 fixture：缺少 description 字段的技能，用于测试必填字段校验。",
+      "lineCount": 7,
+      "language": "markdown",
+      "fileCategory": "docs"
+    },
+    {
+      "id": "packages/coding-agent/test/fixtures/skills/multiline-description/SKILL.md",
+      "type": "file",
+      "label": "multiline-description/SKILL.md",
+      "description": "技能 fixture：包含多行 YAML 描述的技能，用于测试描述字段归一化处理。",
+      "lineCount": 11,
+      "language": "markdown",
+      "fileCategory": "docs"
+    },
+    {
+      "id": "packages/coding-agent/test/fixtures/skills/name-mismatch/SKILL.md",
+      "type": "file",
+      "label": "name-mismatch/SKILL.md",
+      "description": "技能 fixture：frontmatter 名称与目录名称不匹配的技能，用于测试名称一致性校验。",
+      "lineCount": 8,
+      "language": "markdown",
+      "fileCategory": "docs"
+    },
+    {
+      "id": "packages/coding-agent/test/fixtures/skills/nested/child-skill/SKILL.md",
+      "type": "file",
+      "label": "nested/child-skill/SKILL.md",
+      "description": "技能 fixture：嵌套目录中的子技能，用于测试技能层级发现和加载。",
+      "lineCount": 8,
+      "language": "markdown",
+      "fileCategory": "docs"
+    },
+    {
+      "id": "packages/coding-agent/test/fixtures/skills/no-frontmatter/SKILL.md",
+      "type": "file",
+      "label": "no-frontmatter/SKILL.md",
+      "description": "技能 fixture：缺少 YAML frontmatter 的技能文件，用于测试无元数据场景处理。",
+      "lineCount": 3,
+      "language": "markdown",
+      "fileCategory": "docs"
+    },
+    {
+      "id": "packages/coding-agent/test/fixtures/skills/root-skill-preferred/nested-child/SKILL.md",
+      "type": "file",
+      "label": "root-skill-preferred/nested-child/SKILL.md",
+      "description": "技能 fixture：嵌套子技能，用于测试根级技能优先于嵌套同名技能的规则。",
+      "lineCount": 3,
+      "language": "markdown",
+      "fileCategory": "docs"
+    },
+    {
+      "id": "packages/coding-agent/test/fixtures/skills/root-skill-preferred/SKILL.md",
+      "type": "file",
+      "label": "root-skill-preferred/SKILL.md",
+      "description": "技能 fixture：根级技能，用于测试根级技能优先于同名嵌套子技能的规则。",
+      "lineCount": 3,
+      "language": "markdown",
+      "fileCategory": "docs"
+    },
+    {
+      "id": "packages/coding-agent/test/fixtures/skills/unknown-field/SKILL.md",
+      "type": "file",
+      "label": "unknown-field/SKILL.md",
+      "description": "技能 fixture：包含非标准 frontmatter 字段（author、version）的技能，用于测试未知字段处理。",
+      "lineCount": 10,
+      "language": "markdown",
+      "fileCategory": "docs"
+    },
+    {
+      "id": "packages/coding-agent/test/fixtures/skills/valid-skill/SKILL.md",
+      "type": "file",
+      "label": "valid-skill/SKILL.md",
+      "description": "技能 fixture：符合 Agent Skills 标准的有效技能定义，用作测试基准。",
+      "lineCount": 8,
+      "language": "markdown",
+      "fileCategory": "docs"
+    },
+    {
+      "id": "packages/coding-agent/test/restore-sandbox-env.test.ts",
+      "type": "file",
+      "label": "restore-sandbox-env.test.ts",
+      "description": "restoreSandboxEnv 函数的单元测试。验证在 Bun 沙箱环境下环境变量被清空时，从 /proc/self/environ 恢复环境变量的行为。包含三个测试用例：非 Bun 环境无操作、已有环境变量时无操作、空环境时恢复。",
+      "lineCount": 77,
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "id": "fn:packages/coding-agent/test/restore-sandbox-env.test.ts:restoreSandboxEnv describe block",
+      "type": "function",
+      "label": "restoreSandboxEnv 测试套件",
+      "description": "restoreSandboxEnv 的完整测试套件，包含三个测试用例：验证非 Bun 环境下不执行任何操作、验证已有环境变量时不覆盖、验证 Bun 沙箱环境清空后从 /proc/self/environ 正确恢复环境变量。",
+      "lineCount": 66,
+      "parentFile": "packages/coding-agent/test/restore-sandbox-env.test.ts"
+    },
+    {
+      "id": "packages/coding-agent/test/suite/README.md",
+      "type": "file",
+      "label": "suite/README.md",
+      "description": "测试套件说明文档。描述基于 AgentSession 和 AgentSessionRuntime 的 harness 测试套件规则，包括使用 faux provider、禁止真实 API 调用、CI 安全等要求，以及回归测试的命名规范。",
+      "lineCount": 16,
+      "language": "markdown",
+      "fileCategory": "docs"
+    },
+    {
+      "id": "packages/coding-agent/test/suite/regressions/2791-fswatch-error-crash.test.ts",
+      "type": "file",
+      "label": "2791-fswatch-error-crash.test.ts",
+      "description": "Issue #2791 回归测试。验证 fs.watch() 返回的 FSWatcher 在发出 'error' 事件时不会导致进程崩溃。通过子进程设置自定义主题监视器，找到 FSWatcher 并发送合成错误事件，检查错误处理器是否正确附加。",
+      "lineCount": 106,
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "id": "fn:packages/coding-agent/test/suite/regressions/2791-fswatch-error-crash.test.ts:fs.watch regression describe block",
+      "type": "function",
+      "label": "fs.watch 错误回归测试套件",
+      "description": "Issue #2791 的完整回归测试。beforeEach 创建临时目录并复制暗色主题为自定义主题，afterEach 清理。核心测试用例生成子进程脚本，设置主题监视器，通过 process._getActiveHandles() 找到 FSWatcher 并发射合成 'error' 事件，验证进程不会崩溃（exit code 0）。",
+      "lineCount": 85,
+      "parentFile": "packages/coding-agent/test/suite/regressions/2791-fswatch-error-crash.test.ts"
+    },
+    {
+      "id": "packages/coding-agent/test/truncate-to-width.test.ts",
+      "type": "file",
+      "label": "truncate-to-width.test.ts",
+      "description": "truncateToWidth 函数的单元测试。验证 Unicode 字符（✔、世界、emoji）的显示宽度处理，确保截断后不超过终端宽度。包含精确崩溃场景复现（终端宽度 67 时的 ✔ 和 › 字符）。",
+      "lineCount": 81,
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "id": "fn:packages/coding-agent/test/truncate-to-width.test.ts:truncateToWidth describe block",
+      "type": "function",
+      "label": "truncateToWidth 测试套件",
+      "description": "truncateToWidth 的完整测试套件，包含六个测试用例：Unicode 字符正确截断、emoji 处理、混合 ASCII 和宽字符、短消息不截断、截断时添加省略号、Issue 报告的精确崩溃场景复现。",
+      "lineCount": 71,
+      "parentFile": "packages/coding-agent/test/truncate-to-width.test.ts"
+    },
+    {
+      "id": "packages/evals/scripts/run-evals.mjs",
+      "type": "file",
+      "label": "run-evals.mjs",
+      "description": "评估脚本入口。解析 --provider 和 --model CLI 参数（或使用 PI_PROVIDER/PI_MODEL 环境变量），创建 artifact 目录，通过 spawnSync 调用 vitest 运行评估测试。要求 provider 和 model 必须成对提供。",
+      "lineCount": 97,
+      "language": "javascript",
+      "fileCategory": "code"
+    },
+    {
+      "id": "fn:packages/evals/scripts/run-evals.mjs:CLI argument parsing loop",
+      "type": "function",
+      "label": "CLI 参数解析循环",
+      "description": "解析 process.argv 中的 --provider、--model 参数（支持 --key=value 和 --key value 两种格式），将非模型参数收集到 vitestArgs 数组中。",
+      "lineCount": 25,
+      "parentFile": "packages/evals/scripts/run-evals.mjs"
+    },
+    {
+      "id": "packages/protocol/vitest.config.ts",
+      "type": "file",
+      "label": "vitest.config.ts",
+      "description": "Protocol 包的 Vitest 测试配置。启用全局 API，设置 node 环境，根据 GITHUB_ACTIONS 环境变量选择报告器（dot + github-actions 或仅 dot）。",
+      "lineCount": 9,
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "id": "packages/server/src/protocol.ts",
+      "type": "file",
+      "label": "protocol.ts",
+      "description": "服务器协议层核心模块。负责将 pi-ai 包的内部类型（UserMessage、AssistantMessage、ToolResultMessage、Model、Usage 等）转换为 pi-protocol 包的协议兼容类型。通过大量 TypeScript 类型断言确保 ai 和 protocol 包字段同步。提供 JSON 值验证、诊断信息清理、使用量转换、消息转换等功能。",
+      "lineCount": 382,
+      "language": "typescript",
+      "fileCategory": "code"
+    },
+    {
+      "id": "fn:packages/server/src/protocol.ts:toProtocolJsonValue",
+      "type": "function",
+      "label": "toProtocolJsonValue",
+      "description": "将任意值验证并转换为协议 JSON 兼容子集。处理 null/字符串/布尔/有限数字，递归处理数组和纯对象，检测循环引用，拒绝非纯对象和特殊数字值。",
+      "lineCount": 22,
+      "parentFile": "packages/server/src/protocol.ts"
+    },
+    {
+      "id": "fn:packages/server/src/protocol.ts:sanitizeProtocolDetails",
+      "type": "function",
+      "label": "sanitizeProtocolDetails",
+      "description": "有损地清理诊断工具详情数据，使其不影响执行语义。将函数/symbol/undefined 转为 undefined，Date 转 ISO 字符串，bigint 转字符串，处理循环引用，递归清理数组和对象。",
+      "lineCount": 21,
+      "parentFile": "packages/server/src/protocol.ts"
+    },
+    {
+      "id": "fn:packages/server/src/protocol.ts:toProtocolUsage",
+      "type": "function",
+      "label": "toProtocolUsage",
+      "description": "将 pi-ai 的 Usage 类型转换为协议的 Usage 类型。将各 token 计数转为非负整数，成本转为非负数字，保留 reasoning 字段（若有值）。",
+      "lineCount": 20,
+      "parentFile": "packages/server/src/protocol.ts"
+    },
+    {
+      "id": "fn:packages/server/src/protocol.ts:toProtocolModelMetadata",
+      "type": "function",
+      "label": "toProtocolModelMetadata",
+      "description": "将 pi-ai Model 对象转换为协议 ModelMetadata。提取 provider/id/name/api、reasoning 能力、input 类型、上下文窗口、最大 token、成本信息，并附加认证状态和支持的思考级别。",
+      "lineCount": 21,
+      "parentFile": "packages/server/src/protocol.ts"
+    },
+    {
+      "id": "fn:packages/server/src/protocol.ts:toProtocolUserContent",
+      "type": "function",
+      "label": "toProtocolUserContent",
+      "description": "将用户消息内容（字符串或内容部分数组）转换为协议用户内容格式。字符串转为单个 text 部分，数组中处理 text 和 image 两种类型。",
+      "lineCount": 14,
+      "parentFile": "packages/server/src/protocol.ts"
+    },
+    {
+      "id": "fn:packages/server/src/protocol.ts:toProtocolUserMessage",
+      "type": "function",
+      "label": "toProtocolUserMessage",
+      "description": "将 pi-ai UserMessage 转换为协议 UserTranscriptItem。使用 identifier 验证 id，转换内容并保留时间戳。",
+      "lineCount": 9,
+      "parentFile": "packages/server/src/protocol.ts"
+    },
+    {
+      "id": "fn:packages/server/src/protocol.ts:toProtocolAssistantContent",
+      "type": "function",
+      "label": "toProtocolAssistantContent",
+      "description": "将助手消息内容数组转换为协议助手内容格式。处理 text（保留文本）、thinking（保留思考内容和 redacted 标记）、toolCall（提取 id/name/arguments）三种类型。",
+      "lineCount": 24,
+      "parentFile": "packages/server/src/protocol.ts"
+    },
+    {
+      "id": "fn:packages/server/src/protocol.ts:toProtocolAssistantMessage",
+      "type": "function",
+      "label": "toProtocolAssistantMessage",
+      "description": "将 pi-ai AssistantMessage 转换为协议 AssistantTranscriptItem。根据 stopReason 映射状态：pending→streaming，stop/length/toolUse→complete，error→error（验证 errorMessage 非空），aborted→aborted。deferred 消息抛出异常（协议 v1 不支持）。",
+      "lineCount": 55,
+      "parentFile": "packages/server/src/protocol.ts"
+    },
+    {
+      "id": "fn:packages/server/src/protocol.ts:toProtocolToolContent",
+      "type": "function",
+      "label": "toProtocolToolContent",
+      "description": "将工具结果内容（text/image 数组）转换为协议工具内容格式。与 toProtocolUserContent 逻辑类似但用于工具上下文。",
+      "lineCount": 13,
+      "parentFile": "packages/server/src/protocol.ts"
+    },
+    {
+      "id": "fn:packages/server/src/protocol.ts:toProtocolToolResultMessage",
+      "type": "function",
+      "label": "toProtocolToolResultMessage",
+      "description": "将 pi-ai ToolResultMessage 转换为协议 ToolTranscriptItem。验证 callId 和 callName 与 options.call 一致，清理 details，转换 usage，根据 isError 标记设置 error 或 complete 状态。",
+      "lineCount": 28,
+      "parentFile": "packages/server/src/protocol.ts"
+    },
+    {
+      "id": "packages/server/test/fixtures/stale-socket-server.mjs",
+      "type": "file",
+      "label": "stale-socket-server.mjs",
+      "description": "测试 fixture：简单的 Unix socket 服务器。创建 net 服务器监听指定路径，监听就绪后通过 process.send 发送 'listening' 消息，用于测试陈旧 socket 文件处理。",
+      "lineCount": 9,
+      "language": "javascript",
+      "fileCategory": "code"
+    }
+  ],
+  "edges": [
+    {
+      "source": "packages/coding-agent/test/restore-sandbox-env.test.ts",
+      "target": "fn:packages/coding-agent/test/restore-sandbox-env.test.ts:restoreSandboxEnv describe block",
+      "type": "contains",
+      "description": "文件包含 restoreSandboxEnv 测试套件"
+    },
+    {
+      "source": "packages/coding-agent/test/suite/regressions/2791-fswatch-error-crash.test.ts",
+      "target": "fn:packages/coding-agent/test/suite/regressions/2791-fswatch-error-crash.test.ts:fs.watch regression describe block",
+      "type": "contains",
+      "description": "文件包含 fs.watch 错误回归测试套件"
+    },
+    {
+      "source": "packages/coding-agent/test/truncate-to-width.test.ts",
+      "target": "fn:packages/coding-agent/test/truncate-to-width.test.ts:truncateToWidth describe block",
+      "type": "contains",
+      "description": "文件包含 truncateToWidth 测试套件"
+    },
+    {
+      "source": "packages/evals/scripts/run-evals.mjs",
+      "target": "fn:packages/evals/scripts/run-evals.mjs:CLI argument parsing loop",
+      "type": "contains",
+      "description": "文件包含 CLI 参数解析循环"
+    },
+    {
+      "source": "packages/server/src/protocol.ts",
+      "target": "fn:packages/server/src/protocol.ts:toProtocolJsonValue",
+      "type": "contains",
+      "description": "文件包含 toProtocolJsonValue 函数"
+    },
+    {
+      "source": "packages/server/src/protocol.ts",
+      "target": "fn:packages/server/src/protocol.ts:sanitizeProtocolDetails",
+      "type": "contains",
+      "description": "文件包含 sanitizeProtocolDetails 函数"
+    },
+    {
+      "source": "packages/server/src/protocol.ts",
+      "target": "fn:packages/server/src/protocol.ts:toProtocolUsage",
+      "type": "contains",
+      "description": "文件包含 toProtocolUsage 函数"
+    },
+    {
+      "source": "packages/server/src/protocol.ts",
+      "target": "fn:packages/server/src/protocol.ts:toProtocolModelMetadata",
+      "type": "contains",
+      "description": "文件包含 toProtocolModelMetadata 函数"
+    },
+    {
+      "source": "packages/server/src/protocol.ts",
+      "target": "fn:packages/server/src/protocol.ts:toProtocolUserContent",
+      "type": "contains",
+      "description": "文件包含 toProtocolUserContent 函数"
+    },
+    {
+      "source": "packages/server/src/protocol.ts",
+      "target": "fn:packages/server/src/protocol.ts:toProtocolUserMessage",
+      "type": "contains",
+      "description": "文件包含 toProtocolUserMessage 函数"
+    },
+    {
+      "source": "packages/server/src/protocol.ts",
+      "target": "fn:packages/server/src/protocol.ts:toProtocolAssistantContent",
+      "type": "contains",
+      "description": "文件包含 toProtocolAssistantContent 函数"
+    },
+    {
+      "source": "packages/server/src/protocol.ts",
+      "target": "fn:packages/server/src/protocol.ts:toProtocolAssistantMessage",
+      "type": "contains",
+      "description": "文件包含 toProtocolAssistantMessage 函数"
+    },
+    {
+      "source": "packages/server/src/protocol.ts",
+      "target": "fn:packages/server/src/protocol.ts:toProtocolToolContent",
+      "type": "contains",
+      "description": "文件包含 toProtocolToolContent 函数"
+    },
+    {
+      "source": "packages/server/src/protocol.ts",
+      "target": "fn:packages/server/src/protocol.ts:toProtocolToolResultMessage",
+      "type": "contains",
+      "description": "文件包含 toProtocolToolResultMessage 函数"
+    },
+    {
+      "source": "packages/coding-agent/test/restore-sandbox-env.test.ts",
+      "target": "packages/coding-agent/src/bun/restore-sandbox-env.ts",
+      "type": "import",
+      "description": "动态导入 restoreSandboxEnv 函数进行测试"
+    },
+    {
+      "source": "packages/coding-agent/test/truncate-to-width.test.ts",
+      "target": "packages/tui/src/index.ts",
+      "type": "import",
+      "description": "从 @earendil-works/pi-tui 导入 truncateToWidth 和 visibleWidth"
+    },
+    {
+      "source": "packages/server/src/protocol.ts",
+      "target": "packages/ai/src/index.ts",
+      "type": "import",
+      "description": "从 @earendil-works/pi-ai 导入 AI 类型和 getSupportedThinkingLevels"
+    },
+    {
+      "source": "packages/server/src/protocol.ts",
+      "target": "packages/protocol/src/index.ts",
+      "type": "import",
+      "description": "从 @earendil-works/pi-protocol 导入协议类型"
+    },
+    {
+      "source": "packages/server/src/protocol.ts",
+      "target": "packages/server/test/protocol.test.ts",
+      "type": "used_by",
+      "description": "protocol.ts 被 protocol.test.ts 测试（来自 neighborMap）"
+    }
+  ]
+}

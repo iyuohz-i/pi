@@ -1,0 +1,2622 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/agent/scripts/generate-telemetry-docs.ts",
+      "type": "file",
+      "name": "generate-telemetry-docs.ts",
+      "filePath": "packages/agent/scripts/generate-telemetry-docs.ts",
+      "summary": "从遥测 schema 定义生成 Markdown 文档的脚本，渲染属性表格与父级描述。",
+      "tags": [
+        "script",
+        "telemetry",
+        "documentation",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/scripts/generate-telemetry-docs.ts:renderSchema",
+      "type": "function",
+      "name": "renderSchema",
+      "filePath": "packages/agent/scripts/generate-telemetry-docs.ts",
+      "lineRange": [
+        36,
+        82
+      ],
+      "summary": "将遥测 schema 的属性定义渲染为 Markdown 表格，包含允许值、默认值和说明。",
+      "tags": [
+        "telemetry",
+        "serialization",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/scripts/generate-telemetry-docs.ts:renderAgentTelemetrySchemaMarkdown",
+      "type": "function",
+      "name": "renderAgentTelemetrySchemaMarkdown",
+      "filePath": "packages/agent/scripts/generate-telemetry-docs.ts",
+      "lineRange": [
+        84,
+        94
+      ],
+      "summary": "渲染 agent 遥测 schema 的完整 Markdown 文档。",
+      "tags": [
+        "telemetry",
+        "serialization",
+        "markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/agent/scripts/generate-telemetry-docs.ts:generateTelemetryDocs",
+      "type": "function",
+      "name": "generateTelemetryDocs",
+      "filePath": "packages/agent/scripts/generate-telemetry-docs.ts",
+      "lineRange": [
+        96,
+        110
+      ],
+      "summary": "生成遥测文档并写入指定输出路径的主入口函数。",
+      "tags": [
+        "telemetry",
+        "documentation",
+        "entry-point"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/agent/src/agent-loop.ts",
+      "type": "file",
+      "name": "agent-loop.ts",
+      "filePath": "packages/agent/src/agent-loop.ts",
+      "summary": "Agent 核心循环逻辑，管理 LLM 流式响应、工具调用执行（串行/并行）与终止条件判断。",
+      "tags": [
+        "agent",
+        "core-loop",
+        "tool-execution",
+        "streaming"
+      ],
+      "complexity": "complex",
+      "languageNotes": "使用 async generator 实现流式 agent 循环，支持串行与并行工具调用批次。"
+    },
+    {
+      "id": "function:packages/agent/src/agent-loop.ts:agentLoop",
+      "type": "function",
+      "name": "agentLoop",
+      "filePath": "packages/agent/src/agent-loop.ts",
+      "lineRange": [
+        31,
+        54
+      ],
+      "summary": "创建 agent 循环的 async generator，处理用户消息并产出流式事件。",
+      "tags": [
+        "agent",
+        "core-loop",
+        "async-generator"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/agent-loop.ts:agentLoopContinue",
+      "type": "function",
+      "name": "agentLoopContinue",
+      "filePath": "packages/agent/src/agent-loop.ts",
+      "lineRange": [
+        64,
+        93
+      ],
+      "summary": "从已有状态继续 agent 循环的 async generator 变体。",
+      "tags": [
+        "agent",
+        "core-loop",
+        "async-generator"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/agent-loop.ts:runAgentLoop",
+      "type": "function",
+      "name": "runAgentLoop",
+      "filePath": "packages/agent/src/agent-loop.ts",
+      "lineRange": [
+        95,
+        118
+      ],
+      "summary": "执行 agent 循环并收集所有流式事件的封装函数。",
+      "tags": [
+        "agent",
+        "core-loop",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/agent-loop.ts:runAgentLoopContinue",
+      "type": "function",
+      "name": "runAgentLoopContinue",
+      "filePath": "packages/agent/src/agent-loop.ts",
+      "lineRange": [
+        120,
+        143
+      ],
+      "summary": "从已有状态继续执行 agent 循环的封装函数。",
+      "tags": [
+        "agent",
+        "core-loop",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/agent-loop.ts:createAgentStream",
+      "type": "function",
+      "name": "createAgentStream",
+      "filePath": "packages/agent/src/agent-loop.ts",
+      "lineRange": [
+        145,
+        150
+      ],
+      "summary": "创建 agent 流式响应的工厂函数。",
+      "tags": [
+        "agent",
+        "factory",
+        "streaming"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/agent/src/agent-loop.ts:runLoop",
+      "type": "function",
+      "name": "runLoop",
+      "filePath": "packages/agent/src/agent-loop.ts",
+      "lineRange": [
+        155,
+        275
+      ],
+      "summary": "Agent 循环的核心实现，迭代 LLM 响应与工具调用直到终止。",
+      "tags": [
+        "agent",
+        "core-loop",
+        "tool-execution"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/agent/src/agent-loop.ts:streamAssistantResponse",
+      "type": "function",
+      "name": "streamAssistantResponse",
+      "filePath": "packages/agent/src/agent-loop.ts",
+      "lineRange": [
+        281,
+        372
+      ],
+      "summary": "流式处理 LLM 助手响应，解析流块并产出事件。",
+      "tags": [
+        "agent",
+        "streaming",
+        "llm"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/agent/src/agent-loop.ts:failToolCallsFromTruncatedMessage",
+      "type": "function",
+      "name": "failToolCallsFromTruncatedMessage",
+      "filePath": "packages/agent/src/agent-loop.ts",
+      "lineRange": [
+        381,
+        406
+      ],
+      "summary": "处理因消息截断导致的工具调用失败，生成错误结果。",
+      "tags": [
+        "agent",
+        "tool-execution",
+        "error-handling"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/agent-loop.ts:executeToolCalls",
+      "type": "function",
+      "name": "executeToolCalls",
+      "filePath": "packages/agent/src/agent-loop.ts",
+      "lineRange": [
+        411,
+        426
+      ],
+      "summary": "执行工具调用批次，根据配置选择串行或并行模式。",
+      "tags": [
+        "agent",
+        "tool-execution",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/agent/src/agent-loop.ts:executeToolCallsSequential",
+      "type": "function",
+      "name": "executeToolCallsSequential",
+      "filePath": "packages/agent/src/agent-loop.ts",
+      "lineRange": [
+        433,
+        487
+      ],
+      "summary": "串行执行工具调用，每个工具完成后才执行下一个。",
+      "tags": [
+        "agent",
+        "tool-execution",
+        "sequential"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/agent-loop.ts:executeToolCallsParallel",
+      "type": "function",
+      "name": "executeToolCallsParallel",
+      "filePath": "packages/agent/src/agent-loop.ts",
+      "lineRange": [
+        489,
+        554
+      ],
+      "summary": "并行执行工具调用，所有工具同时运行后收集结果。",
+      "tags": [
+        "agent",
+        "tool-execution",
+        "parallel"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/agent-loop.ts:prepareToolCallArguments",
+      "type": "function",
+      "name": "prepareToolCallArguments",
+      "filePath": "packages/agent/src/agent-loop.ts",
+      "lineRange": [
+        586,
+        598
+      ],
+      "summary": "准备工具调用的参数解析与验证。",
+      "tags": [
+        "agent",
+        "tool-execution",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/agent/src/agent-loop.ts:prepareToolCall",
+      "type": "function",
+      "name": "prepareToolCall",
+      "filePath": "packages/agent/src/agent-loop.ts",
+      "lineRange": [
+        600,
+        668
+      ],
+      "summary": "准备单个工具调用，包括参数解析、权限检查与执行环境设置。",
+      "tags": [
+        "agent",
+        "tool-execution",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/agent-loop.ts:executePreparedToolCall",
+      "type": "function",
+      "name": "executePreparedToolCall",
+      "filePath": "packages/agent/src/agent-loop.ts",
+      "lineRange": [
+        670,
+        711
+      ],
+      "summary": "执行已准备好的工具调用并处理结果。",
+      "tags": [
+        "agent",
+        "tool-execution",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/agent-loop.ts:finalizeExecutedToolCall",
+      "type": "function",
+      "name": "finalizeExecutedToolCall",
+      "filePath": "packages/agent/src/agent-loop.ts",
+      "lineRange": [
+        713,
+        758
+      ],
+      "summary": "完成工具调用后处理，包括结果格式化与遥测记录。",
+      "tags": [
+        "agent",
+        "tool-execution",
+        "telemetry"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/agent-loop.ts:createToolResultMessage",
+      "type": "function",
+      "name": "createToolResultMessage",
+      "filePath": "packages/agent/src/agent-loop.ts",
+      "lineRange": [
+        777,
+        791
+      ],
+      "summary": "从工具执行结果创建消息对象。",
+      "tags": [
+        "agent",
+        "tool-execution",
+        "message"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/agent/src/agent.ts",
+      "type": "file",
+      "name": "agent.ts",
+      "filePath": "packages/agent/src/agent.ts",
+      "summary": "Agent 类的核心实现，管理 agent 状态、消息队列、工具注册与对话循环入口。",
+      "tags": [
+        "agent",
+        "core",
+        "state-management"
+      ],
+      "complexity": "complex",
+      "languageNotes": "Agent 类持有 PendingMessageQueue 和可变状态，协调 LLM 调用与工具执行。"
+    },
+    {
+      "id": "function:packages/agent/src/agent.ts:createMutableAgentState",
+      "type": "function",
+      "name": "createMutableAgentState",
+      "filePath": "packages/agent/src/agent.ts",
+      "lineRange": [
+        68,
+        95
+      ],
+      "summary": "创建 agent 的可变内部状态对象。",
+      "tags": [
+        "agent",
+        "state-management",
+        "factory"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:packages/agent/src/agent.ts:PendingMessageQueue",
+      "type": "class",
+      "name": "PendingMessageQueue",
+      "filePath": "packages/agent/src/agent.ts",
+      "lineRange": [
+        125,
+        159
+      ],
+      "summary": "待处理消息队列，管理排队模式与消息优先级。",
+      "tags": [
+        "agent",
+        "queue",
+        "state-management"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:packages/agent/src/agent.ts:Agent",
+      "type": "class",
+      "name": "Agent",
+      "filePath": "packages/agent/src/agent.ts",
+      "lineRange": [
+        173,
+        592
+      ],
+      "summary": "Agent 核心类，管理对话循环、工具调用、状态转换与消息处理。",
+      "tags": [
+        "agent",
+        "core",
+        "state-management",
+        "tool-execution"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/agent/src/harness/agent-harness.ts",
+      "type": "file",
+      "name": "agent-harness.ts",
+      "filePath": "packages/agent/src/harness/agent-harness.ts",
+      "summary": "AgentHarness 类及其错误类型定义，作为 agent 运行时的协调层管理 session、compaction 与工具注册。",
+      "tags": [
+        "harness",
+        "orchestration",
+        "error-handling"
+      ],
+      "complexity": "complex",
+      "languageNotes": "AgentHarness 使用 Result 类型模式管理错误，包含多种领域特定错误类。"
+    },
+    {
+      "id": "class:packages/agent/src/harness/agent-harness.ts:HarnessFault",
+      "type": "class",
+      "name": "HarnessFault",
+      "filePath": "packages/agent/src/harness/agent-harness.ts",
+      "lineRange": [
+        57,
+        65
+      ],
+      "summary": "Harness 运行时的严重错误，表示不可恢复的故障。",
+      "tags": [
+        "error-handling",
+        "harness",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/agent/src/harness/agent-harness.ts:HarnessClosed",
+      "type": "class",
+      "name": "HarnessClosed",
+      "filePath": "packages/agent/src/harness/agent-harness.ts",
+      "lineRange": [
+        67,
+        72
+      ],
+      "summary": "Harness 已关闭时抛出的错误。",
+      "tags": [
+        "error-handling",
+        "harness",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/agent/src/harness/agent-harness.ts:HarnessNotImplemented",
+      "type": "class",
+      "name": "HarnessNotImplemented",
+      "filePath": "packages/agent/src/harness/agent-harness.ts",
+      "lineRange": [
+        74,
+        82
+      ],
+      "summary": "Harness 功能未实现时抛出的错误。",
+      "tags": [
+        "error-handling",
+        "harness",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/agent/src/harness/agent-harness.ts:UnavailableRegistry",
+      "type": "class",
+      "name": "UnavailableRegistry",
+      "filePath": "packages/agent/src/harness/agent-harness.ts",
+      "lineRange": [
+        219,
+        235
+      ],
+      "summary": "注册表不可用时抛出的错误，包含缺失组件信息。",
+      "tags": [
+        "error-handling",
+        "registry",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:packages/agent/src/harness/agent-harness.ts:AgentHarness",
+      "type": "class",
+      "name": "AgentHarness",
+      "filePath": "packages/agent/src/harness/agent-harness.ts",
+      "lineRange": [
+        305,
+        508
+      ],
+      "summary": "Agent 运行时 Harness 类，协调 session 管理、compaction、工具注册与执行生命周期。",
+      "tags": [
+        "harness",
+        "orchestration",
+        "session-management",
+        "tool-execution"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/agent/src/harness/compaction/branch-summarization.ts",
+      "type": "file",
+      "name": "branch-summarization.ts",
+      "filePath": "packages/agent/src/harness/compaction/branch-summarization.ts",
+      "summary": "分支摘要生成模块，收集对话分支条目并通过 LLM 生成摘要消息。",
+      "tags": [
+        "compaction",
+        "branch-summary",
+        "llm"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/agent/src/harness/compaction/branch-summarization.ts:collectEntriesForBranchSummary",
+      "type": "function",
+      "name": "collectEntriesForBranchSummary",
+      "filePath": "packages/agent/src/harness/compaction/branch-summarization.ts",
+      "lineRange": [
+        82,
+        111
+      ],
+      "summary": "收集用于生成分支摘要的对话条目。",
+      "tags": [
+        "compaction",
+        "branch-summary",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/harness/compaction/branch-summarization.ts:getMessageFromEntry",
+      "type": "function",
+      "name": "getMessageFromEntry",
+      "filePath": "packages/agent/src/harness/compaction/branch-summarization.ts",
+      "lineRange": [
+        112,
+        129
+      ],
+      "summary": "从会话条目中提取消息内容。",
+      "tags": [
+        "compaction",
+        "message",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/agent/src/harness/compaction/branch-summarization.ts:prepareBranchEntries",
+      "type": "function",
+      "name": "prepareBranchEntries",
+      "filePath": "packages/agent/src/harness/compaction/branch-summarization.ts",
+      "lineRange": [
+        132,
+        171
+      ],
+      "summary": "准备分支摘要所需的条目列表，包括文件操作提取与格式化。",
+      "tags": [
+        "compaction",
+        "branch-summary",
+        "preparation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/harness/compaction/branch-summarization.ts:generateBranchSummary",
+      "type": "function",
+      "name": "generateBranchSummary",
+      "filePath": "packages/agent/src/harness/compaction/branch-summarization.ts",
+      "lineRange": [
+        208,
+        280
+      ],
+      "summary": "通过 LLM 生成分支摘要消息，包含重试逻辑与错误处理。",
+      "tags": [
+        "compaction",
+        "branch-summary",
+        "llm"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "type": "file",
+      "name": "compaction.ts",
+      "filePath": "packages/agent/src/harness/compaction/compaction.ts",
+      "summary": "对话压缩核心模块，包含 token 估算、上下文窗口管理、摘要生成与压缩执行逻辑。",
+      "tags": [
+        "compaction",
+        "token-estimation",
+        "context-management",
+        "llm"
+      ],
+      "complexity": "complex",
+      "languageNotes": "实现多策略 token 估算与对话切割点检测，支持 LLM 摘要压缩。"
+    },
+    {
+      "id": "function:packages/agent/src/harness/compaction/compaction.ts:extractFileOperations",
+      "type": "function",
+      "name": "extractFileOperations",
+      "filePath": "packages/agent/src/harness/compaction/compaction.ts",
+      "lineRange": [
+        44,
+        67
+      ],
+      "summary": "从对话消息中提取文件操作记录。",
+      "tags": [
+        "compaction",
+        "file-operations",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/harness/compaction/compaction.ts:completeSimpleWithRetries",
+      "type": "function",
+      "name": "completeSimpleWithRetries",
+      "filePath": "packages/agent/src/harness/compaction/compaction.ts",
+      "lineRange": [
+        102,
+        122
+      ],
+      "summary": "带重试的简单 LLM 补全请求封装。",
+      "tags": [
+        "compaction",
+        "llm",
+        "retry"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/harness/compaction/compaction.ts:combineUsage",
+      "type": "function",
+      "name": "combineUsage",
+      "filePath": "packages/agent/src/harness/compaction/compaction.ts",
+      "lineRange": [
+        124,
+        145
+      ],
+      "summary": "合并多次 LLM 调用的 token 使用量。",
+      "tags": [
+        "compaction",
+        "usage-tracking",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/harness/compaction/compaction.ts:getAssistantUsage",
+      "type": "function",
+      "name": "getAssistantUsage",
+      "filePath": "packages/agent/src/harness/compaction/compaction.ts",
+      "lineRange": [
+        168,
+        181
+      ],
+      "summary": "获取 assistant 消息的 token 使用量信息。",
+      "tags": [
+        "compaction",
+        "usage-tracking",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/agent/src/harness/compaction/compaction.ts:getLastAssistantUsage",
+      "type": "function",
+      "name": "getLastAssistantUsage",
+      "filePath": "packages/agent/src/harness/compaction/compaction.ts",
+      "lineRange": [
+        184,
+        193
+      ],
+      "summary": "获取对话中最后一条 assistant 消息的 token 使用量。",
+      "tags": [
+        "compaction",
+        "usage-tracking",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/agent/src/harness/compaction/compaction.ts:estimateContextTokens",
+      "type": "function",
+      "name": "estimateContextTokens",
+      "filePath": "packages/agent/src/harness/compaction/compaction.ts",
+      "lineRange": [
+        216,
+        244
+      ],
+      "summary": "估算当前对话上下文的 token 数量。",
+      "tags": [
+        "compaction",
+        "token-estimation",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/harness/compaction/compaction.ts:estimateTokens",
+      "type": "function",
+      "name": "estimateTokens",
+      "filePath": "packages/agent/src/harness/compaction/compaction.ts",
+      "lineRange": [
+        271,
+        311
+      ],
+      "summary": "估算文本与图片内容的 token 数量，支持多种估算策略。",
+      "tags": [
+        "compaction",
+        "token-estimation",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/harness/compaction/compaction.ts:findValidCutPoints",
+      "type": "function",
+      "name": "findValidCutPoints",
+      "filePath": "packages/agent/src/harness/compaction/compaction.ts",
+      "lineRange": [
+        312,
+        344
+      ],
+      "summary": "查找对话中有效的压缩切割点。",
+      "tags": [
+        "compaction",
+        "context-management",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/harness/compaction/compaction.ts:findTurnStartIndex",
+      "type": "function",
+      "name": "findTurnStartIndex",
+      "filePath": "packages/agent/src/harness/compaction/compaction.ts",
+      "lineRange": [
+        347,
+        361
+      ],
+      "summary": "查找对话轮次的起始索引。",
+      "tags": [
+        "compaction",
+        "context-management",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/agent/src/harness/compaction/compaction.ts:findCutPoint",
+      "type": "function",
+      "name": "findCutPoint",
+      "filePath": "packages/agent/src/harness/compaction/compaction.ts",
+      "lineRange": [
+        374,
+        422
+      ],
+      "summary": "根据 token 限制查找最佳压缩切割点。",
+      "tags": [
+        "compaction",
+        "context-management",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/harness/compaction/compaction.ts:generateSummary",
+      "type": "function",
+      "name": "generateSummary",
+      "filePath": "packages/agent/src/harness/compaction/compaction.ts",
+      "lineRange": [
+        501,
+        526
+      ],
+      "summary": "通过 LLM 生成对话摘要。",
+      "tags": [
+        "compaction",
+        "llm",
+        "summarization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/harness/compaction/compaction.ts:generateSummaryWithUsage",
+      "type": "function",
+      "name": "generateSummaryWithUsage",
+      "filePath": "packages/agent/src/harness/compaction/compaction.ts",
+      "lineRange": [
+        529,
+        593
+      ],
+      "summary": "生成对话摘要并返回 token 使用量信息。",
+      "tags": [
+        "compaction",
+        "llm",
+        "summarization",
+        "usage-tracking"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/agent/src/harness/compaction/compaction.ts:prepareCompaction",
+      "type": "function",
+      "name": "prepareCompaction",
+      "filePath": "packages/agent/src/harness/compaction/compaction.ts",
+      "lineRange": [
+        616,
+        687
+      ],
+      "summary": "准备压缩操作，确定切割点与待摘要内容。",
+      "tags": [
+        "compaction",
+        "preparation",
+        "utility"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/agent/src/harness/compaction/compaction.ts:compact",
+      "type": "function",
+      "name": "compact",
+      "filePath": "packages/agent/src/harness/compaction/compaction.ts",
+      "lineRange": [
+        707,
+        794
+      ],
+      "summary": "执行对话压缩，生成摘要并重组消息列表。",
+      "tags": [
+        "compaction",
+        "core",
+        "summarization"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/agent/src/harness/compaction/compaction.ts:generateTurnPrefixSummary",
+      "type": "function",
+      "name": "generateTurnPrefixSummary",
+      "filePath": "packages/agent/src/harness/compaction/compaction.ts",
+      "lineRange": [
+        795,
+        848
+      ],
+      "summary": "生成对话轮次前缀摘要。",
+      "tags": [
+        "compaction",
+        "summarization",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/agent/src/harness/compaction/utils.ts",
+      "type": "file",
+      "name": "utils.ts",
+      "filePath": "packages/agent/src/harness/compaction/utils.ts",
+      "summary": "压缩模块的工具函数，包括文件操作提取、格式化与对话序列化。",
+      "tags": [
+        "compaction",
+        "utility",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/harness/compaction/utils.ts:extractFileOpsFromMessage",
+      "type": "function",
+      "name": "extractFileOpsFromMessage",
+      "filePath": "packages/agent/src/harness/compaction/utils.ts",
+      "lineRange": [
+        24,
+        51
+      ],
+      "summary": "从单条消息中提取文件操作记录。",
+      "tags": [
+        "compaction",
+        "file-operations",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/harness/compaction/utils.ts:computeFileLists",
+      "type": "function",
+      "name": "computeFileLists",
+      "filePath": "packages/agent/src/harness/compaction/utils.ts",
+      "lineRange": [
+        54,
+        59
+      ],
+      "summary": "计算文件操作中的文件列表。",
+      "tags": [
+        "compaction",
+        "file-operations",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/agent/src/harness/compaction/utils.ts:formatFileOperations",
+      "type": "function",
+      "name": "formatFileOperations",
+      "filePath": "packages/agent/src/harness/compaction/utils.ts",
+      "lineRange": [
+        62,
+        72
+      ],
+      "summary": "格式化文件操作列表为可读字符串。",
+      "tags": [
+        "compaction",
+        "formatting",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/agent/src/harness/compaction/utils.ts:serializeConversation",
+      "type": "function",
+      "name": "serializeConversation",
+      "filePath": "packages/agent/src/harness/compaction/utils.ts",
+      "lineRange": [
+        91,
+        132
+      ],
+      "summary": "将对话条目序列化为文本格式。",
+      "tags": [
+        "compaction",
+        "serialization",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/agent/src/harness/env/nodejs.ts",
+      "type": "file",
+      "name": "nodejs.ts",
+      "filePath": "packages/agent/src/harness/env/nodejs.ts",
+      "summary": "Node.js 执行环境实现，提供进程管理、shell 配置、文件操作与命令执行能力。",
+      "tags": [
+        "execution-environment",
+        "nodejs",
+        "process-management",
+        "shell"
+      ],
+      "complexity": "complex",
+      "languageNotes": "NodeExecutionEnv 类封装了 child_process 管理、WSL 兼容性与 bash 路径查找。"
+    },
+    {
+      "id": "function:packages/agent/src/harness/env/nodejs.ts:resolveTimeoutMs",
+      "type": "function",
+      "name": "resolveTimeoutMs",
+      "filePath": "packages/agent/src/harness/env/nodejs.ts",
+      "lineRange": [
+        38,
+        49
+      ],
+      "summary": "解析超时配置，支持环境变量覆盖。",
+      "tags": [
+        "execution-environment",
+        "configuration",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/agent/src/harness/env/nodejs.ts:resolvePath",
+      "type": "function",
+      "name": "resolvePath",
+      "filePath": "packages/agent/src/harness/env/nodejs.ts",
+      "lineRange": [
+        51,
+        65
+      ],
+      "summary": "解析文件路径，处理相对路径与工作目录。",
+      "tags": [
+        "execution-environment",
+        "path",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/agent/src/harness/env/nodejs.ts:toFileError",
+      "type": "function",
+      "name": "toFileError",
+      "filePath": "packages/agent/src/harness/env/nodejs.ts",
+      "lineRange": [
+        97,
+        121
+      ],
+      "summary": "将 Node.js 错误转换为 FileError 类型。",
+      "tags": [
+        "execution-environment",
+        "error-handling",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/harness/env/nodejs.ts:runCommand",
+      "type": "function",
+      "name": "runCommand",
+      "filePath": "packages/agent/src/harness/env/nodejs.ts",
+      "lineRange": [
+        136,
+        169
+      ],
+      "summary": "在 shell 中执行命令并返回结果。",
+      "tags": [
+        "execution-environment",
+        "shell",
+        "command-execution"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/harness/env/nodejs.ts:findBashOnPath",
+      "type": "function",
+      "name": "findBashOnPath",
+      "filePath": "packages/agent/src/harness/env/nodejs.ts",
+      "lineRange": [
+        171,
+        179
+      ],
+      "summary": "在系统 PATH 中查找 bash 可执行文件。",
+      "tags": [
+        "execution-environment",
+        "shell",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/agent/src/harness/env/nodejs.ts:getShellConfig",
+      "type": "function",
+      "name": "getShellConfig",
+      "filePath": "packages/agent/src/harness/env/nodejs.ts",
+      "lineRange": [
+        196,
+        238
+      ],
+      "summary": "获取 shell 配置，处理 WSL 与不同平台的兼容性。",
+      "tags": [
+        "execution-environment",
+        "shell",
+        "configuration"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/agent/src/harness/env/nodejs.ts:getShellEnv",
+      "type": "function",
+      "name": "getShellEnv",
+      "filePath": "packages/agent/src/harness/env/nodejs.ts",
+      "lineRange": [
+        240,
+        251
+      ],
+      "summary": "获取 shell 环境变量配置。",
+      "tags": [
+        "execution-environment",
+        "shell",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/agent/src/harness/env/nodejs.ts:killProcessTree",
+      "type": "function",
+      "name": "killProcessTree",
+      "filePath": "packages/agent/src/harness/env/nodejs.ts",
+      "lineRange": [
+        253,
+        276
+      ],
+      "summary": "终止进程树，包括所有子进程。",
+      "tags": [
+        "execution-environment",
+        "process-management",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/harness/env/nodejs.ts:waitForChildProcess",
+      "type": "function",
+      "name": "waitForChildProcess",
+      "filePath": "packages/agent/src/harness/env/nodejs.ts",
+      "lineRange": [
+        278,
+        345
+      ],
+      "summary": "等待子进程完成，支持超时与取消。",
+      "tags": [
+        "execution-environment",
+        "process-management",
+        "utility"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "class:packages/agent/src/harness/env/nodejs.ts:NodeExecutionEnv",
+      "type": "class",
+      "name": "NodeExecutionEnv",
+      "filePath": "packages/agent/src/harness/env/nodejs.ts",
+      "lineRange": [
+        347,
+        695
+      ],
+      "summary": "Node.js 执行环境类，实现文件读写、命令执行与进程管理接口。",
+      "tags": [
+        "execution-environment",
+        "nodejs",
+        "process-management"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/agent/src/harness/messages.ts",
+      "type": "file",
+      "name": "messages.ts",
+      "filePath": "packages/agent/src/harness/messages.ts",
+      "summary": "消息构造工具模块，提供 bash 执行、分支摘要、压缩摘要等消息的创建与 LLM 格式转换。",
+      "tags": [
+        "message",
+        "utility",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/harness/messages.ts:bashExecutionToText",
+      "type": "function",
+      "name": "bashExecutionToText",
+      "filePath": "packages/agent/src/harness/messages.ts",
+      "lineRange": [
+        63,
+        79
+      ],
+      "summary": "将 bash 执行记录转换为可读文本。",
+      "tags": [
+        "message",
+        "formatting",
+        "bash"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/agent/src/harness/messages.ts:createBranchSummaryMessage",
+      "type": "function",
+      "name": "createBranchSummaryMessage",
+      "filePath": "packages/agent/src/harness/messages.ts",
+      "lineRange": [
+        81,
+        92
+      ],
+      "summary": "创建分支摘要消息。",
+      "tags": [
+        "message",
+        "branch-summary",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/agent/src/harness/messages.ts:createCompactionSummaryMessage",
+      "type": "function",
+      "name": "createCompactionSummaryMessage",
+      "filePath": "packages/agent/src/harness/messages.ts",
+      "lineRange": [
+        94,
+        105
+      ],
+      "summary": "创建压缩摘要消息。",
+      "tags": [
+        "message",
+        "compaction",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/agent/src/harness/messages.ts:createCustomMessage",
+      "type": "function",
+      "name": "createCustomMessage",
+      "filePath": "packages/agent/src/harness/messages.ts",
+      "lineRange": [
+        107,
+        122
+      ],
+      "summary": "创建自定义类型的系统消息。",
+      "tags": [
+        "message",
+        "factory",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/harness/messages.ts:convertToLlm",
+      "type": "function",
+      "name": "convertToLlm",
+      "filePath": "packages/agent/src/harness/messages.ts",
+      "lineRange": [
+        124,
+        168
+      ],
+      "summary": "将内部消息格式转换为 LLM API 格式。",
+      "tags": [
+        "message",
+        "serialization",
+        "llm"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/agent/src/harness/prompt-templates.ts",
+      "type": "file",
+      "name": "prompt-templates.ts",
+      "filePath": "packages/agent/src/harness/prompt-templates.ts",
+      "summary": "Prompt 模板加载模块，从文件系统读取 frontmatter 格式的模板并解析参数。",
+      "tags": [
+        "prompt-template",
+        "loader",
+        "frontmatter"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/agent/src/harness/prompt-templates.ts:loadPromptTemplates",
+      "type": "function",
+      "name": "loadPromptTemplates",
+      "filePath": "packages/agent/src/harness/prompt-templates.ts",
+      "lineRange": [
+        30,
+        62
+      ],
+      "summary": "从指定目录加载所有 prompt 模板。",
+      "tags": [
+        "prompt-template",
+        "loader",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/harness/prompt-templates.ts:loadSourcedPromptTemplates",
+      "type": "function",
+      "name": "loadSourcedPromptTemplates",
+      "filePath": "packages/agent/src/harness/prompt-templates.ts",
+      "lineRange": [
+        70,
+        93
+      ],
+      "summary": "从指定源路径加载 prompt 模板。",
+      "tags": [
+        "prompt-template",
+        "loader",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/harness/prompt-templates.ts:loadTemplatesFromDir",
+      "type": "function",
+      "name": "loadTemplatesFromDir",
+      "filePath": "packages/agent/src/harness/prompt-templates.ts",
+      "lineRange": [
+        95,
+        121
+      ],
+      "summary": "遍历目录加载模板文件。",
+      "tags": [
+        "prompt-template",
+        "loader",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/harness/prompt-templates.ts:loadTemplateFromFile",
+      "type": "function",
+      "name": "loadTemplateFromFile",
+      "filePath": "packages/agent/src/harness/prompt-templates.ts",
+      "lineRange": [
+        123,
+        166
+      ],
+      "summary": "从单个文件加载并解析模板，包括 frontmatter 与命令参数。",
+      "tags": [
+        "prompt-template",
+        "loader",
+        "frontmatter"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/agent/src/harness/prompt-templates.ts:resolveKind",
+      "type": "function",
+      "name": "resolveKind",
+      "filePath": "packages/agent/src/harness/prompt-templates.ts",
+      "lineRange": [
+        168,
+        199
+      ],
+      "summary": "解析模板类型，区分 prompt 与 command。",
+      "tags": [
+        "prompt-template",
+        "validation",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/harness/prompt-templates.ts:parseCommandArgs",
+      "type": "function",
+      "name": "parseCommandArgs",
+      "filePath": "packages/agent/src/harness/prompt-templates.ts",
+      "lineRange": [
+        218,
+        241
+      ],
+      "summary": "解析命令模板的参数定义。",
+      "tags": [
+        "prompt-template",
+        "parsing",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/harness/prompt-templates.ts:substituteArgs",
+      "type": "function",
+      "name": "substituteArgs",
+      "filePath": "packages/agent/src/harness/prompt-templates.ts",
+      "lineRange": [
+        244,
+        257
+      ],
+      "summary": "替换模板中的参数占位符。",
+      "tags": [
+        "prompt-template",
+        "substitution",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/agent/src/harness/reducer.ts",
+      "type": "file",
+      "name": "reducer.ts",
+      "filePath": "packages/agent/src/harness/reducer.ts",
+      "summary": "Lane 状态 reducer 模块，验证 record log 条目并派生有效的 lane 状态。",
+      "tags": [
+        "reducer",
+        "state-management",
+        "validation",
+        "record-log"
+      ],
+      "complexity": "complex",
+      "languageNotes": "实现 record log 验证、attempt 序列校验与工具批次状态派生。"
+    },
+    {
+      "id": "class:packages/agent/src/harness/reducer.ts:RecordLogCorruption",
+      "type": "class",
+      "name": "RecordLogCorruption",
+      "filePath": "packages/agent/src/harness/reducer.ts",
+      "lineRange": [
+        36,
+        44
+      ],
+      "summary": "Record log 损坏错误，表示日志验证失败。",
+      "tags": [
+        "error-handling",
+        "record-log",
+        "class"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/agent/src/harness/reducer.ts:validateRecordLog",
+      "type": "function",
+      "name": "validateRecordLog",
+      "filePath": "packages/agent/src/harness/reducer.ts",
+      "lineRange": [
+        312,
+        390
+      ],
+      "summary": "验证 record log 的完整性与一致性，检测损坏与序列错误。",
+      "tags": [
+        "reducer",
+        "validation",
+        "record-log"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/agent/src/harness/reducer.ts:deriveEffectiveConfiguration",
+      "type": "function",
+      "name": "deriveEffectiveConfiguration",
+      "filePath": "packages/agent/src/harness/reducer.ts",
+      "lineRange": [
+        400,
+        427
+      ],
+      "summary": "从 record log 派生生效的配置。",
+      "tags": [
+        "reducer",
+        "configuration",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/harness/reducer.ts:deriveNewestOwn",
+      "type": "function",
+      "name": "deriveNewestOwn",
+      "filePath": "packages/agent/src/harness/reducer.ts",
+      "lineRange": [
+        429,
+        443
+      ],
+      "summary": "派生最新的所有权信息。",
+      "tags": [
+        "reducer",
+        "state-derivation",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/agent/src/harness/reducer.ts:deriveToolBatch",
+      "type": "function",
+      "name": "deriveToolBatch",
+      "filePath": "packages/agent/src/harness/reducer.ts",
+      "lineRange": [
+        445,
+        503
+      ],
+      "summary": "从 record log 条目派生工具批次状态。",
+      "tags": [
+        "reducer",
+        "tool-execution",
+        "state-derivation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/harness/reducer.ts:reduceLaneState",
+      "type": "function",
+      "name": "reduceLaneState",
+      "filePath": "packages/agent/src/harness/reducer.ts",
+      "lineRange": [
+        506,
+        667
+      ],
+      "summary": "核心 reducer 函数，从 record log 派生完整的 lane 状态。",
+      "tags": [
+        "reducer",
+        "core",
+        "state-management"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/agent/src/harness/result.ts",
+      "type": "file",
+      "name": "result.ts",
+      "filePath": "packages/agent/src/harness/result.ts",
+      "summary": "Result 类型实现，提供 ok/err 构造与错误匹配的函数式错误处理模式。",
+      "tags": [
+        "result",
+        "error-handling",
+        "functional"
+      ],
+      "complexity": "simple",
+      "languageNotes": "使用 TaggedError 实现类型安全的错误分类。"
+    },
+    {
+      "id": "function:packages/agent/src/harness/result.ts:TaggedError",
+      "type": "function",
+      "name": "TaggedError",
+      "filePath": "packages/agent/src/harness/result.ts",
+      "lineRange": [
+        28,
+        51
+      ],
+      "summary": "创建带标签的错误对象，支持错误分类与模式匹配。",
+      "tags": [
+        "error-handling",
+        "tagged-error",
+        "utility"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/agent/src/harness/result.ts:matchError",
+      "type": "function",
+      "name": "matchError",
+      "filePath": "packages/agent/src/harness/result.ts",
+      "lineRange": [
+        57,
+        63
+      ],
+      "summary": "根据错误标签进行模式匹配。",
+      "tags": [
+        "error-handling",
+        "pattern-matching",
+        "utility"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/agent/scripts/generate-telemetry-docs.ts",
+      "target": "function:packages/agent/scripts/generate-telemetry-docs.ts:renderSchema",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/scripts/generate-telemetry-docs.ts",
+      "target": "function:packages/agent/scripts/generate-telemetry-docs.ts:renderAgentTelemetrySchemaMarkdown",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/scripts/generate-telemetry-docs.ts",
+      "target": "function:packages/agent/scripts/generate-telemetry-docs.ts:renderAgentTelemetrySchemaMarkdown",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/scripts/generate-telemetry-docs.ts",
+      "target": "function:packages/agent/scripts/generate-telemetry-docs.ts:generateTelemetryDocs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/scripts/generate-telemetry-docs.ts",
+      "target": "function:packages/agent/scripts/generate-telemetry-docs.ts:generateTelemetryDocs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/scripts/generate-telemetry-docs.ts",
+      "target": "file:packages/agent/src/harness/telemetry.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/agent-loop.ts",
+      "target": "function:packages/agent/src/agent-loop.ts:agentLoop",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/agent-loop.ts",
+      "target": "function:packages/agent/src/agent-loop.ts:agentLoop",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/agent-loop.ts",
+      "target": "function:packages/agent/src/agent-loop.ts:agentLoopContinue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/agent-loop.ts",
+      "target": "function:packages/agent/src/agent-loop.ts:agentLoopContinue",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/agent-loop.ts",
+      "target": "function:packages/agent/src/agent-loop.ts:runAgentLoop",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/agent-loop.ts",
+      "target": "function:packages/agent/src/agent-loop.ts:runAgentLoop",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/agent-loop.ts",
+      "target": "function:packages/agent/src/agent-loop.ts:runAgentLoopContinue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/agent-loop.ts",
+      "target": "function:packages/agent/src/agent-loop.ts:runAgentLoopContinue",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/agent-loop.ts",
+      "target": "function:packages/agent/src/agent-loop.ts:createAgentStream",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/agent-loop.ts",
+      "target": "function:packages/agent/src/agent-loop.ts:runLoop",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/agent-loop.ts",
+      "target": "function:packages/agent/src/agent-loop.ts:streamAssistantResponse",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/agent-loop.ts",
+      "target": "function:packages/agent/src/agent-loop.ts:failToolCallsFromTruncatedMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/agent-loop.ts",
+      "target": "function:packages/agent/src/agent-loop.ts:executeToolCalls",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/agent-loop.ts",
+      "target": "function:packages/agent/src/agent-loop.ts:executeToolCallsSequential",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/agent-loop.ts",
+      "target": "function:packages/agent/src/agent-loop.ts:executeToolCallsParallel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/agent-loop.ts",
+      "target": "function:packages/agent/src/agent-loop.ts:prepareToolCallArguments",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/agent-loop.ts",
+      "target": "function:packages/agent/src/agent-loop.ts:prepareToolCall",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/agent-loop.ts",
+      "target": "function:packages/agent/src/agent-loop.ts:executePreparedToolCall",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/agent-loop.ts",
+      "target": "function:packages/agent/src/agent-loop.ts:finalizeExecutedToolCall",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/agent-loop.ts",
+      "target": "function:packages/agent/src/agent-loop.ts:createToolResultMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/agent-loop.ts",
+      "target": "file:packages/agent/src/stream-fn.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/agent-loop.ts",
+      "target": "file:packages/agent/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/agent.ts",
+      "target": "function:packages/agent/src/agent.ts:createMutableAgentState",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/agent.ts",
+      "target": "class:packages/agent/src/agent.ts:PendingMessageQueue",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/agent.ts",
+      "target": "class:packages/agent/src/agent.ts:Agent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/agent.ts",
+      "target": "class:packages/agent/src/agent.ts:Agent",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/agent.ts",
+      "target": "file:packages/agent/src/agent-loop.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/agent.ts",
+      "target": "file:packages/agent/src/stream-fn.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/agent.ts",
+      "target": "file:packages/agent/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/harness/agent-harness.ts",
+      "target": "class:packages/agent/src/harness/agent-harness.ts:HarnessFault",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/agent-harness.ts",
+      "target": "class:packages/agent/src/harness/agent-harness.ts:HarnessClosed",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/agent-harness.ts",
+      "target": "class:packages/agent/src/harness/agent-harness.ts:HarnessNotImplemented",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/agent-harness.ts",
+      "target": "class:packages/agent/src/harness/agent-harness.ts:UnavailableRegistry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/agent-harness.ts",
+      "target": "class:packages/agent/src/harness/agent-harness.ts:AgentHarness",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/agent-harness.ts",
+      "target": "class:packages/agent/src/harness/agent-harness.ts:AgentHarness",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/agent-harness.ts",
+      "target": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/harness/agent-harness.ts",
+      "target": "file:packages/agent/src/harness/result.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/harness/agent-harness.ts",
+      "target": "file:packages/agent/src/harness/session/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/harness/agent-harness.ts",
+      "target": "file:packages/agent/src/harness/telemetry.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/harness/agent-harness.ts",
+      "target": "file:packages/agent/src/harness/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/harness/agent-harness.ts",
+      "target": "file:packages/agent/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/branch-summarization.ts",
+      "target": "function:packages/agent/src/harness/compaction/branch-summarization.ts:collectEntriesForBranchSummary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/branch-summarization.ts",
+      "target": "function:packages/agent/src/harness/compaction/branch-summarization.ts:collectEntriesForBranchSummary",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/branch-summarization.ts",
+      "target": "function:packages/agent/src/harness/compaction/branch-summarization.ts:getMessageFromEntry",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/branch-summarization.ts",
+      "target": "function:packages/agent/src/harness/compaction/branch-summarization.ts:prepareBranchEntries",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/branch-summarization.ts",
+      "target": "function:packages/agent/src/harness/compaction/branch-summarization.ts:prepareBranchEntries",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/branch-summarization.ts",
+      "target": "function:packages/agent/src/harness/compaction/branch-summarization.ts:generateBranchSummary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/branch-summarization.ts",
+      "target": "function:packages/agent/src/harness/compaction/branch-summarization.ts:generateBranchSummary",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/branch-summarization.ts",
+      "target": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/branch-summarization.ts",
+      "target": "file:packages/agent/src/harness/compaction/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/branch-summarization.ts",
+      "target": "file:packages/agent/src/harness/messages.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/branch-summarization.ts",
+      "target": "file:packages/agent/src/harness/session/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/branch-summarization.ts",
+      "target": "file:packages/agent/src/harness/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/branch-summarization.ts",
+      "target": "file:packages/agent/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:extractFileOperations",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:completeSimpleWithRetries",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:completeSimpleWithRetries",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:combineUsage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:getAssistantUsage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:getAssistantUsage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:getLastAssistantUsage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:getLastAssistantUsage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:estimateContextTokens",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:estimateContextTokens",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:estimateTokens",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:estimateTokens",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:findValidCutPoints",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:findTurnStartIndex",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:findTurnStartIndex",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:findCutPoint",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:findCutPoint",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:generateSummary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:generateSummary",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:generateSummaryWithUsage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:generateSummaryWithUsage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:prepareCompaction",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:prepareCompaction",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:compact",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:compact",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:generateTurnPrefixSummary",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "file:packages/agent/src/harness/compaction/utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "file:packages/agent/src/harness/messages.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "file:packages/agent/src/harness/session/context.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "file:packages/agent/src/harness/session/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "file:packages/agent/src/harness/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/compaction.ts",
+      "target": "file:packages/agent/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/utils.ts",
+      "target": "function:packages/agent/src/harness/compaction/utils.ts:extractFileOpsFromMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/utils.ts",
+      "target": "function:packages/agent/src/harness/compaction/utils.ts:extractFileOpsFromMessage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/utils.ts",
+      "target": "function:packages/agent/src/harness/compaction/utils.ts:computeFileLists",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/utils.ts",
+      "target": "function:packages/agent/src/harness/compaction/utils.ts:computeFileLists",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/utils.ts",
+      "target": "function:packages/agent/src/harness/compaction/utils.ts:formatFileOperations",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/utils.ts",
+      "target": "function:packages/agent/src/harness/compaction/utils.ts:formatFileOperations",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/utils.ts",
+      "target": "function:packages/agent/src/harness/compaction/utils.ts:serializeConversation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/utils.ts",
+      "target": "function:packages/agent/src/harness/compaction/utils.ts:serializeConversation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/utils.ts",
+      "target": "file:packages/agent/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/harness/env/nodejs.ts",
+      "target": "function:packages/agent/src/harness/env/nodejs.ts:resolveTimeoutMs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/env/nodejs.ts",
+      "target": "function:packages/agent/src/harness/env/nodejs.ts:resolvePath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/env/nodejs.ts",
+      "target": "function:packages/agent/src/harness/env/nodejs.ts:toFileError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/env/nodejs.ts",
+      "target": "function:packages/agent/src/harness/env/nodejs.ts:runCommand",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/env/nodejs.ts",
+      "target": "function:packages/agent/src/harness/env/nodejs.ts:findBashOnPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/env/nodejs.ts",
+      "target": "function:packages/agent/src/harness/env/nodejs.ts:getShellConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/env/nodejs.ts",
+      "target": "function:packages/agent/src/harness/env/nodejs.ts:getShellEnv",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/env/nodejs.ts",
+      "target": "function:packages/agent/src/harness/env/nodejs.ts:killProcessTree",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/env/nodejs.ts",
+      "target": "function:packages/agent/src/harness/env/nodejs.ts:waitForChildProcess",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/env/nodejs.ts",
+      "target": "class:packages/agent/src/harness/env/nodejs.ts:NodeExecutionEnv",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/env/nodejs.ts",
+      "target": "class:packages/agent/src/harness/env/nodejs.ts:NodeExecutionEnv",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/env/nodejs.ts",
+      "target": "file:packages/agent/src/harness/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/harness/messages.ts",
+      "target": "function:packages/agent/src/harness/messages.ts:bashExecutionToText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/messages.ts",
+      "target": "function:packages/agent/src/harness/messages.ts:bashExecutionToText",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/messages.ts",
+      "target": "function:packages/agent/src/harness/messages.ts:createBranchSummaryMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/messages.ts",
+      "target": "function:packages/agent/src/harness/messages.ts:createBranchSummaryMessage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/messages.ts",
+      "target": "function:packages/agent/src/harness/messages.ts:createCompactionSummaryMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/messages.ts",
+      "target": "function:packages/agent/src/harness/messages.ts:createCompactionSummaryMessage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/messages.ts",
+      "target": "function:packages/agent/src/harness/messages.ts:createCustomMessage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/messages.ts",
+      "target": "function:packages/agent/src/harness/messages.ts:createCustomMessage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/messages.ts",
+      "target": "function:packages/agent/src/harness/messages.ts:convertToLlm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/messages.ts",
+      "target": "function:packages/agent/src/harness/messages.ts:convertToLlm",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/messages.ts",
+      "target": "file:packages/agent/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/harness/prompt-templates.ts",
+      "target": "function:packages/agent/src/harness/prompt-templates.ts:loadPromptTemplates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/prompt-templates.ts",
+      "target": "function:packages/agent/src/harness/prompt-templates.ts:loadPromptTemplates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/prompt-templates.ts",
+      "target": "function:packages/agent/src/harness/prompt-templates.ts:loadSourcedPromptTemplates",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/prompt-templates.ts",
+      "target": "function:packages/agent/src/harness/prompt-templates.ts:loadSourcedPromptTemplates",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/prompt-templates.ts",
+      "target": "function:packages/agent/src/harness/prompt-templates.ts:loadTemplatesFromDir",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/prompt-templates.ts",
+      "target": "function:packages/agent/src/harness/prompt-templates.ts:loadTemplateFromFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/prompt-templates.ts",
+      "target": "function:packages/agent/src/harness/prompt-templates.ts:resolveKind",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/prompt-templates.ts",
+      "target": "function:packages/agent/src/harness/prompt-templates.ts:parseCommandArgs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/prompt-templates.ts",
+      "target": "function:packages/agent/src/harness/prompt-templates.ts:parseCommandArgs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/prompt-templates.ts",
+      "target": "function:packages/agent/src/harness/prompt-templates.ts:substituteArgs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/prompt-templates.ts",
+      "target": "function:packages/agent/src/harness/prompt-templates.ts:substituteArgs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/prompt-templates.ts",
+      "target": "file:packages/agent/src/harness/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/harness/reducer.ts",
+      "target": "class:packages/agent/src/harness/reducer.ts:RecordLogCorruption",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/reducer.ts",
+      "target": "class:packages/agent/src/harness/reducer.ts:RecordLogCorruption",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/reducer.ts",
+      "target": "function:packages/agent/src/harness/reducer.ts:validateRecordLog",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/reducer.ts",
+      "target": "function:packages/agent/src/harness/reducer.ts:validateRecordLog",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/reducer.ts",
+      "target": "function:packages/agent/src/harness/reducer.ts:deriveEffectiveConfiguration",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/reducer.ts",
+      "target": "function:packages/agent/src/harness/reducer.ts:deriveNewestOwn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/reducer.ts",
+      "target": "function:packages/agent/src/harness/reducer.ts:deriveToolBatch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/reducer.ts",
+      "target": "function:packages/agent/src/harness/reducer.ts:reduceLaneState",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/reducer.ts",
+      "target": "function:packages/agent/src/harness/reducer.ts:reduceLaneState",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/reducer.ts",
+      "target": "file:packages/agent/src/harness/session/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/harness/reducer.ts",
+      "target": "file:packages/agent/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/agent/src/harness/result.ts",
+      "target": "function:packages/agent/src/harness/result.ts:TaggedError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/result.ts",
+      "target": "function:packages/agent/src/harness/result.ts:TaggedError",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/result.ts",
+      "target": "function:packages/agent/src/harness/result.ts:matchError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/agent/src/harness/result.ts",
+      "target": "function:packages/agent/src/harness/result.ts:matchError",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/agent.ts",
+      "target": "file:packages/agent/src/agent-loop.ts",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:packages/agent/src/harness/agent-harness.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:compact",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/agent/src/harness/compaction/branch-summarization.ts",
+      "target": "function:packages/agent/src/harness/compaction/compaction.ts:generateSummary",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/agent/scripts/generate-telemetry-docs.ts:generateTelemetryDocs",
+      "target": "file:packages/agent/src/harness/telemetry.ts",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

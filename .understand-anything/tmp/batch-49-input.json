@@ -1,0 +1,15 @@
+{
+  "projectRoot": "/Users/zhouyi/AiHub/pi",
+  "batchFiles": [
+    {"path": "packages/agent/CHANGELOG.md", "language": "markdown", "sizeLines": 677, "fileCategory": "docs"},
+    {"path": "packages/agent/README.md", "language": "markdown", "sizeLines": 513, "fileCategory": "docs"},
+    {"path": "packages/agent/package.json", "language": "json", "sizeLines": 68, "fileCategory": "config"},
+    {"path": "packages/agent/tsconfig.build.json", "language": "json", "sizeLines": 14, "fileCategory": "config"}
+  ],
+  "batchImportData": {
+    "packages/agent/CHANGELOG.md": [],
+    "packages/agent/README.md": [],
+    "packages/agent/package.json": [],
+    "packages/agent/tsconfig.build.json": []
+  }
+}

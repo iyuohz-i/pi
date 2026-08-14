@@ -1,0 +1,951 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/ai/test/anthropic-thinking-disable.test.ts",
+      "type": "file",
+      "name": "anthropic-thinking-disable.test.ts",
+      "filePath": "packages/ai/test/anthropic-thinking-disable.test.ts",
+      "summary": "测试 Anthropic 模型在禁用 reasoning（thinking）模式时的行为，验证请求 payload 中不包含 thinking 配置且响应正常。",
+      "tags": [
+        "test",
+        "anthropic",
+        "reasoning",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/anthropic-thinking-disable.test.ts:capturePayload",
+      "type": "function",
+      "name": "capturePayload",
+      "filePath": "packages/ai/test/anthropic-thinking-disable.test.ts",
+      "lineRange": [
+        23,
+        49
+      ],
+      "summary": "通过 streamSimple 发送请求并捕获实际发送给 Anthropic API 的 payload，用于验证 thinking 配置是否被正确排除。",
+      "tags": [
+        "test-helper",
+        "payload-capture",
+        "anthropic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/anthropic-thinking-disable.test.ts:runWithoutReasoning",
+      "type": "function",
+      "name": "runWithoutReasoning",
+      "filePath": "packages/ai/test/anthropic-thinking-disable.test.ts",
+      "lineRange": [
+        76,
+        110
+      ],
+      "summary": "执行端到端测试，验证模型在不启用 reasoning 模式时能正常完成 ping-pong 对话且响应中不包含 thinking 内容。",
+      "tags": [
+        "test",
+        "e2e",
+        "reasoning",
+        "anthropic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/test/anthropic-tool-name-normalization.test.ts",
+      "type": "file",
+      "name": "anthropic-tool-name-normalization.test.ts",
+      "filePath": "packages/ai/test/anthropic-tool-name-normalization.test.ts",
+      "summary": "测试 Anthropic API 的工具名称规范化逻辑，验证包含非法字符的工具名被正确转换。",
+      "tags": [
+        "test",
+        "anthropic",
+        "tool-name",
+        "normalization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/test/azure-openai-base-url.test.ts",
+      "type": "file",
+      "name": "azure-openai-base-url.test.ts",
+      "filePath": "packages/ai/test/azure-openai-base-url.test.ts",
+      "summary": "测试 Azure OpenAI Responses API 的 base URL 构建逻辑，验证客户端使用正确的 endpoint 地址。",
+      "tags": [
+        "test",
+        "azure",
+        "openai",
+        "endpoint"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/test/azure-openai-responses-reasoning-replay.test.ts",
+      "type": "file",
+      "name": "azure-openai-responses-reasoning-replay.test.ts",
+      "filePath": "packages/ai/test/azure-openai-responses-reasoning-replay.test.ts",
+      "summary": "测试 Azure OpenAI Responses API 的 reasoning replay 逻辑，验证 reasoning 内容在后续请求中被正确重放。",
+      "tags": [
+        "test",
+        "azure",
+        "openai",
+        "reasoning",
+        "replay"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/azure-openai-responses-reasoning-replay.test.ts:createModel",
+      "type": "function",
+      "name": "createModel",
+      "filePath": "packages/ai/test/azure-openai-responses-reasoning-replay.test.ts",
+      "lineRange": [
+        7,
+        20
+      ],
+      "summary": "创建测试用的模型配置对象，用于 Azure OpenAI Responses reasoning replay 测试。",
+      "tags": [
+        "test-helper",
+        "model-factory",
+        "test-utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/azure-openai-responses-reasoning-replay.test.ts:createOutput",
+      "type": "function",
+      "name": "createOutput",
+      "filePath": "packages/ai/test/azure-openai-responses-reasoning-replay.test.ts",
+      "lineRange": [
+        22,
+        40
+      ],
+      "summary": "构造模拟的 API 输出对象，包含 reasoning 内容用于 replay 测试。",
+      "tags": [
+        "test-helper",
+        "mock-factory",
+        "test-utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/azure-openai-responses-reasoning-replay.test.ts:getReplayedReasoning",
+      "type": "function",
+      "name": "getReplayedReasoning",
+      "filePath": "packages/ai/test/azure-openai-responses-reasoning-replay.test.ts",
+      "lineRange": [
+        69,
+        79
+      ],
+      "summary": "从转换后的消息中提取被重放的 reasoning 内容，验证 reasoning replay 逻辑正确性。",
+      "tags": [
+        "test-helper",
+        "reasoning",
+        "extraction"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/azure-utils.ts",
+      "type": "file",
+      "name": "azure-utils.ts",
+      "filePath": "packages/ai/test/azure-utils.ts",
+      "summary": "Azure 测试共享工具模块，提供 Azure OpenAI 凭据检测和部署名称解析功能。",
+      "tags": [
+        "test-helper",
+        "azure",
+        "utility",
+        "credentials"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/azure-utils.ts:parseDeploymentNameMap",
+      "type": "function",
+      "name": "parseDeploymentNameMap",
+      "filePath": "packages/ai/test/azure-utils.ts",
+      "lineRange": [
+        5,
+        16
+      ],
+      "summary": "解析环境变量中的模型 ID 到部署名称的映射字符串，返回 Map 供部署名称查找使用。",
+      "tags": [
+        "utility",
+        "parsing",
+        "azure"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/azure-utils.ts:hasAzureOpenAICredentials",
+      "type": "function",
+      "name": "hasAzureOpenAICredentials",
+      "filePath": "packages/ai/test/azure-utils.ts",
+      "lineRange": [
+        18,
+        22
+      ],
+      "summary": "检测当前环境是否配置了 Azure OpenAI 所需的凭据环境变量。",
+      "tags": [
+        "utility",
+        "credentials",
+        "azure"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/azure-utils.ts:resolveAzureDeploymentName",
+      "type": "function",
+      "name": "resolveAzureDeploymentName",
+      "filePath": "packages/ai/test/azure-utils.ts",
+      "lineRange": [
+        24,
+        28
+      ],
+      "summary": "根据模型 ID 解析对应的 Azure OpenAI 部署名称，用于构建正确的 API endpoint。",
+      "tags": [
+        "utility",
+        "azure",
+        "deployment"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/baseten-models.test.ts",
+      "type": "file",
+      "name": "baseten-models.test.ts",
+      "filePath": "packages/ai/test/baseten-models.test.ts",
+      "summary": "测试 Baseten 供应商的模型注册与配置，验证模型列表和 API key 解析正确。",
+      "tags": [
+        "test",
+        "baseten",
+        "models",
+        "provider"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/test/bedrock-convert-messages.test.ts",
+      "type": "file",
+      "name": "bedrock-convert-messages.test.ts",
+      "filePath": "packages/ai/test/bedrock-convert-messages.test.ts",
+      "summary": "测试 AWS Bedrock Converse API 的消息转换逻辑，验证不同消息类型被正确映射为 Bedrock 格式。",
+      "tags": [
+        "test",
+        "bedrock",
+        "message-conversion",
+        "aws"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/test/bedrock-convert-messages.test.ts:capturePayload",
+      "type": "function",
+      "name": "capturePayload",
+      "filePath": "packages/ai/test/bedrock-convert-messages.test.ts",
+      "lineRange": [
+        83,
+        97
+      ],
+      "summary": "通过 streamBedrock 捕获发送给 Bedrock Converse API 的实际请求 payload，用于验证消息转换结果。",
+      "tags": [
+        "test-helper",
+        "payload-capture",
+        "bedrock"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/bedrock-credentials.test.ts",
+      "type": "file",
+      "name": "bedrock-credentials.test.ts",
+      "filePath": "packages/ai/test/bedrock-credentials.test.ts",
+      "summary": "测试 AWS Bedrock 的凭据配置逻辑，验证客户端使用正确的 region 和 credentials。",
+      "tags": [
+        "test",
+        "bedrock",
+        "credentials",
+        "aws"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/test/bedrock-custom-headers.test.ts",
+      "type": "file",
+      "name": "bedrock-custom-headers.test.ts",
+      "filePath": "packages/ai/test/bedrock-custom-headers.test.ts",
+      "summary": "测试 AWS Bedrock 请求的自定义 header 注入逻辑，验证 middleware 正确注册并传递自定义 HTTP header。",
+      "tags": [
+        "test",
+        "bedrock",
+        "custom-headers",
+        "middleware"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/test/bedrock-endpoint-resolution.test.ts",
+      "type": "file",
+      "name": "bedrock-endpoint-resolution.test.ts",
+      "filePath": "packages/ai/test/bedrock-endpoint-resolution.test.ts",
+      "summary": "测试 AWS Bedrock 的 endpoint 解析逻辑，验证不同 region 和配置下客户端连接到正确的服务端点。",
+      "tags": [
+        "test",
+        "bedrock",
+        "endpoint",
+        "resolution"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/test/bedrock-error-metadata.test.ts",
+      "type": "file",
+      "name": "bedrock-error-metadata.test.ts",
+      "filePath": "packages/ai/test/bedrock-error-metadata.test.ts",
+      "summary": "测试 AWS Bedrock 流式响应中的错误元数据提取，验证诊断信息被正确附加到 assistant message。",
+      "tags": [
+        "test",
+        "bedrock",
+        "error-handling",
+        "diagnostics"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/bedrock-error-metadata.test.ts:respondWithFailingStream",
+      "type": "function",
+      "name": "respondWithFailingStream",
+      "filePath": "packages/ai/test/bedrock-error-metadata.test.ts",
+      "lineRange": [
+        77,
+        88
+      ],
+      "summary": "构造一个在流式输出中途抛出异常的模拟 Bedrock 响应流，用于测试错误元数据提取。",
+      "tags": [
+        "test-helper",
+        "mock",
+        "error-simulation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/bedrock-models.test.ts",
+      "type": "file",
+      "name": "bedrock-models.test.ts",
+      "filePath": "packages/ai/test/bedrock-models.test.ts",
+      "summary": "测试 AWS Bedrock 内置模型注册，验证模型元数据和配置正确。",
+      "tags": [
+        "test",
+        "bedrock",
+        "models",
+        "registration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/bedrock-raw-stop-reason.test.ts",
+      "type": "file",
+      "name": "bedrock-raw-stop-reason.test.ts",
+      "filePath": "packages/ai/test/bedrock-raw-stop-reason.test.ts",
+      "summary": "测试 AWS Bedrock 原始 stop reason 的映射逻辑，验证 Bedrock 特有的停止原因被正确转换为统一格式。",
+      "tags": [
+        "test",
+        "bedrock",
+        "stop-reason",
+        "mapping"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/bedrock-thinking-payload.test.ts",
+      "type": "file",
+      "name": "bedrock-thinking-payload.test.ts",
+      "filePath": "packages/ai/test/bedrock-thinking-payload.test.ts",
+      "summary": "测试 AWS Bedrock thinking（reasoning）模式的请求 payload 构建，验证 thinking 配置被正确序列化到 Bedrock Converse 请求中。",
+      "tags": [
+        "test",
+        "bedrock",
+        "thinking",
+        "payload"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/test/bedrock-thinking-payload.test.ts:capturePayload",
+      "type": "function",
+      "name": "capturePayload",
+      "filePath": "packages/ai/test/bedrock-thinking-payload.test.ts",
+      "lineRange": [
+        28,
+        53
+      ],
+      "summary": "通过 streamBedrock 捕获包含 thinking 配置的请求 payload，用于验证 thinking 参数的序列化。",
+      "tags": [
+        "test-helper",
+        "payload-capture",
+        "bedrock",
+        "thinking"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/test/bedrock-utils.ts",
+      "type": "file",
+      "name": "bedrock-utils.ts",
+      "filePath": "packages/ai/test/bedrock-utils.ts",
+      "summary": "Bedrock 测试共享工具模块，提供 AWS Bedrock 凭据检测功能供多个测试文件复用。",
+      "tags": [
+        "test-helper",
+        "bedrock",
+        "utility",
+        "credentials"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/test/bedrock-utils.ts:hasBedrockCredentials",
+      "type": "function",
+      "name": "hasBedrockCredentials",
+      "filePath": "packages/ai/test/bedrock-utils.ts",
+      "lineRange": [
+        12,
+        18
+      ],
+      "summary": "检测当前环境是否配置了 AWS Bedrock 所需的凭据环境变量。",
+      "tags": [
+        "utility",
+        "credentials",
+        "bedrock"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/cache-retention.test.ts",
+      "type": "file",
+      "name": "cache-retention.test.ts",
+      "filePath": "packages/ai/test/cache-retention.test.ts",
+      "summary": "测试多供应商（Anthropic、OpenAI Completions、OpenAI Responses）的 cache retention 配置，验证 prompt cache 控制参数被正确传递到请求 payload 中。",
+      "tags": [
+        "test",
+        "cache-retention",
+        "anthropic",
+        "openai"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/ai/test/cloudflare-gateway-binding.test.ts",
+      "type": "file",
+      "name": "cloudflare-gateway-binding.test.ts",
+      "filePath": "packages/ai/test/cloudflare-gateway-binding.test.ts",
+      "summary": "测试 Cloudflare AI Gateway binding 集成，验证通过 Workers binding 发起的请求被正确路由和认证。",
+      "tags": [
+        "test",
+        "cloudflare",
+        "gateway",
+        "binding"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/test/cloudflare-gateway-binding.test.ts:fakeBinding",
+      "type": "function",
+      "name": "fakeBinding",
+      "filePath": "packages/ai/test/cloudflare-gateway-binding.test.ts",
+      "lineRange": [
+        18,
+        29
+      ],
+      "summary": "创建模拟的 Cloudflare Workers binding 对象，记录请求并返回预设的 Response。",
+      "tags": [
+        "test-helper",
+        "mock",
+        "cloudflare"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/test/cloudflare-stream.test.ts",
+      "type": "file",
+      "name": "cloudflare-stream.test.ts",
+      "filePath": "packages/ai/test/cloudflare-stream.test.ts",
+      "summary": "测试 Cloudflare Workers AI 的流式响应处理，验证 SSE 流被正确解析为统一的 event stream。",
+      "tags": [
+        "test",
+        "cloudflare",
+        "stream",
+        "sse"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/ai/test/anthropic-thinking-disable.test.ts",
+      "target": "function:packages/ai/test/anthropic-thinking-disable.test.ts:capturePayload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-thinking-disable.test.ts",
+      "target": "function:packages/ai/test/anthropic-thinking-disable.test.ts:runWithoutReasoning",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-thinking-disable.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-thinking-disable.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-tool-name-normalization.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-tool-name-normalization.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/anthropic-tool-name-normalization.test.ts",
+      "target": "file:packages/ai/test/oauth.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/azure-openai-base-url.test.ts",
+      "target": "file:packages/ai/src/api/azure-openai-responses.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/azure-openai-base-url.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/azure-openai-base-url.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/azure-openai-responses-reasoning-replay.test.ts",
+      "target": "function:packages/ai/test/azure-openai-responses-reasoning-replay.test.ts:createModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/azure-openai-responses-reasoning-replay.test.ts",
+      "target": "function:packages/ai/test/azure-openai-responses-reasoning-replay.test.ts:createOutput",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/azure-openai-responses-reasoning-replay.test.ts",
+      "target": "function:packages/ai/test/azure-openai-responses-reasoning-replay.test.ts:getReplayedReasoning",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/azure-openai-responses-reasoning-replay.test.ts",
+      "target": "file:packages/ai/src/api/openai-responses-shared.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/azure-openai-responses-reasoning-replay.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/azure-openai-responses-reasoning-replay.test.ts",
+      "target": "file:packages/ai/src/utils/event-stream.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/azure-utils.ts",
+      "target": "function:packages/ai/test/azure-utils.ts:parseDeploymentNameMap",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/azure-utils.ts",
+      "target": "function:packages/ai/test/azure-utils.ts:hasAzureOpenAICredentials",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/azure-utils.ts",
+      "target": "function:packages/ai/test/azure-utils.ts:hasAzureOpenAICredentials",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/test/azure-utils.ts",
+      "target": "function:packages/ai/test/azure-utils.ts:resolveAzureDeploymentName",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/azure-utils.ts",
+      "target": "function:packages/ai/test/azure-utils.ts:resolveAzureDeploymentName",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/test/baseten-models.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/baseten-models.test.ts",
+      "target": "file:packages/ai/src/env-api-keys.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/baseten-models.test.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-convert-messages.test.ts",
+      "target": "function:packages/ai/test/bedrock-convert-messages.test.ts:capturePayload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-convert-messages.test.ts",
+      "target": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-convert-messages.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-credentials.test.ts",
+      "target": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-credentials.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-credentials.test.ts",
+      "target": "file:packages/ai/src/providers/all.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-credentials.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-custom-headers.test.ts",
+      "target": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-custom-headers.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-custom-headers.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-endpoint-resolution.test.ts",
+      "target": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-endpoint-resolution.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-endpoint-resolution.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-error-metadata.test.ts",
+      "target": "function:packages/ai/test/bedrock-error-metadata.test.ts:respondWithFailingStream",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-error-metadata.test.ts",
+      "target": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-error-metadata.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-error-metadata.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-error-metadata.test.ts",
+      "target": "file:packages/ai/src/utils/diagnostics.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-models.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-models.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-models.test.ts",
+      "target": "file:packages/ai/test/bedrock-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-raw-stop-reason.test.ts",
+      "target": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-raw-stop-reason.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-raw-stop-reason.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-thinking-payload.test.ts",
+      "target": "function:packages/ai/test/bedrock-thinking-payload.test.ts:capturePayload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-thinking-payload.test.ts",
+      "target": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-thinking-payload.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-thinking-payload.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-thinking-payload.test.ts",
+      "target": "file:packages/ai/test/bedrock-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-utils.ts",
+      "target": "function:packages/ai/test/bedrock-utils.ts:hasBedrockCredentials",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/bedrock-utils.ts",
+      "target": "function:packages/ai/test/bedrock-utils.ts:hasBedrockCredentials",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/test/cache-retention.test.ts",
+      "target": "file:packages/ai/src/api/anthropic-messages.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/cache-retention.test.ts",
+      "target": "file:packages/ai/src/api/openai-completions.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/cache-retention.test.ts",
+      "target": "file:packages/ai/src/api/openai-responses.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/cache-retention.test.ts",
+      "target": "file:packages/ai/src/compat.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/cache-retention.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/cloudflare-gateway-binding.test.ts",
+      "target": "function:packages/ai/test/cloudflare-gateway-binding.test.ts:fakeBinding",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/test/cloudflare-gateway-binding.test.ts",
+      "target": "file:packages/ai/src/api/cloudflare-gateway-binding.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/cloudflare-gateway-binding.test.ts",
+      "target": "file:packages/ai/src/api/openai-completions.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/cloudflare-gateway-binding.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/cloudflare-stream.test.ts",
+      "target": "file:packages/ai/src/providers/cloudflare-stream.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/cloudflare-stream.test.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/test/cloudflare-stream.test.ts",
+      "target": "file:packages/ai/src/utils/event-stream.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    }
+  ]
+}

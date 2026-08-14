@@ -1,0 +1,1272 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/coding-agent/src/utils/paths.ts",
+      "type": "file",
+      "name": "paths.ts",
+      "filePath": "packages/coding-agent/src/utils/paths.ts",
+      "summary": "提供路径规范化、解析、相对路径转换及云同步标记等路径处理工具函数，被整个 coding-agent 项目广泛复用。",
+      "tags": [
+        "utility",
+        "path",
+        "filesystem",
+        "normalization"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "使用 realpathSync 实现 symlink 解析并容错降级，支持 Unicode 空格归一化和 Windows 路径转换。"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/paths.ts:isLocalPath",
+      "type": "function",
+      "name": "isLocalPath",
+      "filePath": "packages/coding-agent/src/utils/paths.ts",
+      "lineRange": [
+        50,
+        64
+      ],
+      "summary": "判断字符串是否为本地文件路径，支持 ~ 开头和相对路径前缀检测。",
+      "tags": [
+        "utility",
+        "path",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/paths.ts:normalizePath",
+      "type": "function",
+      "name": "normalizePath",
+      "filePath": "packages/coding-agent/src/utils/paths.ts",
+      "lineRange": [
+        75,
+        100
+      ],
+      "summary": "对输入路径进行 trim、tilde 展开、Unicode 空格归一化及 Windows 路径格式转换。",
+      "tags": [
+        "utility",
+        "path",
+        "normalization"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/paths.ts:getCwdRelativePath",
+      "type": "function",
+      "name": "getCwdRelativePath",
+      "filePath": "packages/coding-agent/src/utils/paths.ts",
+      "lineRange": [
+        108,
+        117
+      ],
+      "summary": "将文件路径转换为相对于当前工作目录的相对路径表示。",
+      "tags": [
+        "utility",
+        "path",
+        "relative"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/paths.ts:markPathIgnoredByCloudSync",
+      "type": "function",
+      "name": "markPathIgnoredByCloudSync",
+      "filePath": "packages/coding-agent/src/utils/paths.ts",
+      "lineRange": [
+        124,
+        139
+      ],
+      "summary": "通过设置扩展属性标记文件使其被 iCloud Drive 等云同步服务忽略。",
+      "tags": [
+        "utility",
+        "cloud-sync",
+        "filesystem"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/utils/shell.ts",
+      "type": "file",
+      "name": "shell.ts",
+      "filePath": "packages/coding-agent/src/utils/shell.ts",
+      "summary": "提供 shell 环境配置、bash 路径查找、二进制输出清理及进程树终止等 shell 相关工具函数。",
+      "tags": [
+        "utility",
+        "shell",
+        "process-management",
+        "environment"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "跨平台支持 WSL bash 路径检测和 PATH 上的 bash 查找，使用 detached child PID 追踪机制管理进程。"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/shell.ts:findBashOnPath",
+      "type": "function",
+      "name": "findBashOnPath",
+      "filePath": "packages/coding-agent/src/utils/shell.ts",
+      "lineRange": [
+        24,
+        58
+      ],
+      "summary": "在 PATH 中查找可用的 bash 可执行文件路径，支持 Windows WSL 和原生 bash 检测。",
+      "tags": [
+        "utility",
+        "shell",
+        "bash",
+        "detection"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/shell.ts:getShellConfig",
+      "type": "function",
+      "name": "getShellConfig",
+      "filePath": "packages/coding-agent/src/utils/shell.ts",
+      "lineRange": [
+        67,
+        120
+      ],
+      "summary": "根据自定义 shell 路径或系统环境返回 shell 配置对象，包含 shell 路径和参数。",
+      "tags": [
+        "utility",
+        "shell",
+        "config"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/shell.ts:sanitizeBinaryOutput",
+      "type": "function",
+      "name": "sanitizeBinaryOutput",
+      "filePath": "packages/coding-agent/src/utils/shell.ts",
+      "lineRange": [
+        144,
+        174
+      ],
+      "summary": "清理 shell 命令输出中的二进制字符和无效 UTF-8 序列，确保输出可安全渲染。",
+      "tags": [
+        "utility",
+        "shell",
+        "sanitization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/shell.ts:killProcessTree",
+      "type": "function",
+      "name": "killProcessTree",
+      "filePath": "packages/coding-agent/src/utils/shell.ts",
+      "lineRange": [
+        200,
+        225
+      ],
+      "summary": "递归终止指定 PID 及其所有子进程，支持跨平台进程树清理。",
+      "tags": [
+        "utility",
+        "process-management",
+        "kill"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/utils/sleep.ts",
+      "type": "file",
+      "name": "sleep.ts",
+      "filePath": "packages/coding-agent/src/utils/sleep.ts",
+      "summary": "提供可中断的 Promise 延时工具函数，支持 AbortSignal 取消。",
+      "tags": [
+        "utility",
+        "sleep",
+        "async",
+        "abort-signal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/coding-agent/src/utils/tools-manager.ts",
+      "type": "file",
+      "name": "tools-manager.ts",
+      "filePath": "packages/coding-agent/src/utils/tools-manager.ts",
+      "summary": "管理外部工具的二进制下载、版本检查、解压安装及路径解析，支持 GitHub release 资产自动获取。",
+      "tags": [
+        "utility",
+        "tools",
+        "download",
+        "binary-management"
+      ],
+      "complexity": "complex",
+      "languageNotes": "支持 tar.gz 和 zip 格式解压，离线模式检测，以及通过 GitHub API 获取最新版本号。"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/tools-manager.ts:getToolPath",
+      "type": "function",
+      "name": "getToolPath",
+      "filePath": "packages/coding-agent/src/utils/tools-manager.ts",
+      "lineRange": [
+        86,
+        105
+      ],
+      "summary": "获取指定工具的本地安装路径，按平台选择正确的二进制文件名。",
+      "tags": [
+        "utility",
+        "tools",
+        "path"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/tools-manager.ts:getLatestVersion",
+      "type": "function",
+      "name": "getLatestVersion",
+      "filePath": "packages/coding-agent/src/utils/tools-manager.ts",
+      "lineRange": [
+        108,
+        123
+      ],
+      "summary": "通过 GitHub API 获取指定仓库的最新 release 版本号。",
+      "tags": [
+        "utility",
+        "tools",
+        "version",
+        "github-api"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/tools-manager.ts:findBinaryRecursively",
+      "type": "function",
+      "name": "findBinaryRecursively",
+      "filePath": "packages/coding-agent/src/utils/tools-manager.ts",
+      "lineRange": [
+        141,
+        161
+      ],
+      "summary": "递归搜索目录树查找指定二进制文件，使用迭代栈避免递归溢出。",
+      "tags": [
+        "utility",
+        "tools",
+        "search"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/tools-manager.ts:extractZipArchive",
+      "type": "function",
+      "name": "extractZipArchive",
+      "filePath": "packages/coding-agent/src/utils/tools-manager.ts",
+      "lineRange": [
+        204,
+        240
+      ],
+      "summary": "解压 zip 格式归档文件到指定目录，处理平台差异和错误情况。",
+      "tags": [
+        "utility",
+        "tools",
+        "zip",
+        "extraction"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/tools-manager.ts:downloadTool",
+      "type": "function",
+      "name": "downloadTool",
+      "filePath": "packages/coding-agent/src/utils/tools-manager.ts",
+      "lineRange": [
+        243,
+        318
+      ],
+      "summary": "下载指定工具的二进制文件，包括版本检查、资产选择、下载和解压的完整流程。",
+      "tags": [
+        "utility",
+        "tools",
+        "download",
+        "installation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/tools-manager.ts:ensureTool",
+      "type": "function",
+      "name": "ensureTool",
+      "filePath": "packages/coding-agent/src/utils/tools-manager.ts",
+      "lineRange": [
+        328,
+        371
+      ],
+      "summary": "确保指定工具已安装并可用，若不存在则自动下载安装。",
+      "tags": [
+        "utility",
+        "tools",
+        "ensure",
+        "installation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/src/utils/windows-self-update.ts",
+      "type": "file",
+      "name": "windows-self-update.ts",
+      "filePath": "packages/coding-agent/src/utils/windows-self-update.ts",
+      "summary": "处理 Windows 平台自更新时的原生依赖隔离与清理，通过隔离机制避免文件锁定问题。",
+      "tags": [
+        "utility",
+        "windows",
+        "self-update",
+        "quarantine"
+      ],
+      "complexity": "moderate",
+      "languageNotes": "利用 process.report.getReport 获取已加载共享对象列表，实现 native 依赖的隔离与清理。"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/windows-self-update.ts:getLoadedSharedObjectsInPackageDir",
+      "type": "function",
+      "name": "getLoadedSharedObjectsInPackageDir",
+      "filePath": "packages/coding-agent/src/utils/windows-self-update.ts",
+      "lineRange": [
+        26,
+        48
+      ],
+      "summary": "获取当前进程中加载的、属于指定包目录的共享对象文件列表。",
+      "tags": [
+        "utility",
+        "windows",
+        "shared-objects"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/coding-agent/src/utils/windows-self-update.ts:quarantineWindowsNativeDependencies",
+      "type": "function",
+      "name": "quarantineWindowsNativeDependencies",
+      "filePath": "packages/coding-agent/src/utils/windows-self-update.ts",
+      "lineRange": [
+        62,
+        84
+      ],
+      "summary": "将 Windows 原生依赖文件隔离到临时目录，为自更新操作做准备。",
+      "tags": [
+        "utility",
+        "windows",
+        "quarantine",
+        "self-update"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/agent-session-auto-compaction-queue.test.ts",
+      "type": "file",
+      "name": "agent-session-auto-compaction-queue.test.ts",
+      "filePath": "packages/coding-agent/test/agent-session-auto-compaction-queue.test.ts",
+      "summary": "测试 agent session 的自动压缩队列行为，验证上下文窗口满时的触发逻辑和排队机制。",
+      "tags": [
+        "test",
+        "agent-session",
+        "compaction",
+        "queue"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/test/agent-session-branching.test.ts",
+      "type": "file",
+      "name": "agent-session-branching.test.ts",
+      "filePath": "packages/coding-agent/test/agent-session-branching.test.ts",
+      "summary": "测试 agent session 的分支功能，验证对话分支创建和管理逻辑。",
+      "tags": [
+        "test",
+        "agent-session",
+        "branching"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/agent-session-compaction.test.ts",
+      "type": "file",
+      "name": "agent-session-compaction.test.ts",
+      "filePath": "packages/coding-agent/test/agent-session-compaction.test.ts",
+      "summary": "测试 agent session 的上下文压缩功能，验证压缩触发条件和消息截断行为。",
+      "tags": [
+        "test",
+        "agent-session",
+        "compaction"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/agent-session-concurrent.test.ts",
+      "type": "file",
+      "name": "agent-session-concurrent.test.ts",
+      "filePath": "packages/coding-agent/test/agent-session-concurrent.test.ts",
+      "summary": "测试 agent session 的并发行为，验证多请求同时处理时的正确性和资源竞争处理。",
+      "tags": [
+        "test",
+        "agent-session",
+        "concurrent"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/test/agent-session-dynamic-provider.test.ts",
+      "type": "file",
+      "name": "agent-session-dynamic-provider.test.ts",
+      "filePath": "packages/coding-agent/test/agent-session-dynamic-provider.test.ts",
+      "summary": "测试 agent session 的动态 provider 切换功能，验证运行时更换 LLM provider 的行为。",
+      "tags": [
+        "test",
+        "agent-session",
+        "dynamic-provider"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/coding-agent/test/agent-session-dynamic-tools.test.ts",
+      "type": "file",
+      "name": "agent-session-dynamic-tools.test.ts",
+      "filePath": "packages/coding-agent/test/agent-session-dynamic-tools.test.ts",
+      "summary": "测试 agent session 的动态工具加载功能，验证运行时添加和移除工具的行为。",
+      "tags": [
+        "test",
+        "agent-session",
+        "dynamic-tools"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/test/agent-session-retry.test.ts",
+      "type": "file",
+      "name": "agent-session-retry.test.ts",
+      "filePath": "packages/coding-agent/test/agent-session-retry.test.ts",
+      "summary": "测试 agent session 的重试机制，验证 API 失败后的自动重试和退避策略。",
+      "tags": [
+        "test",
+        "agent-session",
+        "retry"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/test/agent-session-runtime-events.test.ts",
+      "type": "file",
+      "name": "agent-session-runtime-events.test.ts",
+      "filePath": "packages/coding-agent/test/agent-session-runtime-events.test.ts",
+      "summary": "测试 agent session 运行时事件系统，验证事件触发顺序和事件处理器注册机制。",
+      "tags": [
+        "test",
+        "agent-session",
+        "runtime-events"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/test/agent-session-stats.test.ts",
+      "type": "file",
+      "name": "agent-session-stats.test.ts",
+      "filePath": "packages/coding-agent/test/agent-session-stats.test.ts",
+      "summary": "测试 agent session 的统计信息收集功能，验证 token 用量和会话指标计算。",
+      "tags": [
+        "test",
+        "agent-session",
+        "stats"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/test/agent-session-tree-navigation.test.ts",
+      "type": "file",
+      "name": "agent-session-tree-navigation.test.ts",
+      "filePath": "packages/coding-agent/test/agent-session-tree-navigation.test.ts",
+      "summary": "测试 agent session 的对话树导航功能，验证分支树遍历和历史回溯逻辑。",
+      "tags": [
+        "test",
+        "agent-session",
+        "tree-navigation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/test/args.test.ts",
+      "type": "file",
+      "name": "args.test.ts",
+      "filePath": "packages/coding-agent/test/args.test.ts",
+      "summary": "测试 CLI 参数解析逻辑，验证各种命令行参数组合的解析和验证行为。",
+      "tags": [
+        "test",
+        "cli",
+        "args",
+        "parsing"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/coding-agent/test/auth-check.test.ts",
+      "type": "file",
+      "name": "auth-check.test.ts",
+      "filePath": "packages/coding-agent/test/auth-check.test.ts",
+      "summary": "测试认证检查功能，验证 API key 验证和认证状态检测逻辑。",
+      "tags": [
+        "test",
+        "auth",
+        "authentication"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/coding-agent/src/utils/paths.ts",
+      "target": "function:packages/coding-agent/src/utils/paths.ts:isLocalPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/paths.ts",
+      "target": "function:packages/coding-agent/src/utils/paths.ts:isLocalPath",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/paths.ts",
+      "target": "function:packages/coding-agent/src/utils/paths.ts:normalizePath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/paths.ts",
+      "target": "function:packages/coding-agent/src/utils/paths.ts:normalizePath",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/paths.ts",
+      "target": "function:packages/coding-agent/src/utils/paths.ts:getCwdRelativePath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/paths.ts",
+      "target": "function:packages/coding-agent/src/utils/paths.ts:getCwdRelativePath",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/paths.ts",
+      "target": "function:packages/coding-agent/src/utils/paths.ts:markPathIgnoredByCloudSync",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/paths.ts",
+      "target": "function:packages/coding-agent/src/utils/paths.ts:markPathIgnoredByCloudSync",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/shell.ts",
+      "target": "function:packages/coding-agent/src/utils/shell.ts:findBashOnPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/shell.ts",
+      "target": "function:packages/coding-agent/src/utils/shell.ts:findBashOnPath",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/shell.ts",
+      "target": "function:packages/coding-agent/src/utils/shell.ts:getShellConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/shell.ts",
+      "target": "function:packages/coding-agent/src/utils/shell.ts:getShellConfig",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/shell.ts",
+      "target": "function:packages/coding-agent/src/utils/shell.ts:sanitizeBinaryOutput",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/shell.ts",
+      "target": "function:packages/coding-agent/src/utils/shell.ts:sanitizeBinaryOutput",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/shell.ts",
+      "target": "function:packages/coding-agent/src/utils/shell.ts:killProcessTree",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/shell.ts",
+      "target": "function:packages/coding-agent/src/utils/shell.ts:killProcessTree",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/tools-manager.ts",
+      "target": "function:packages/coding-agent/src/utils/tools-manager.ts:getToolPath",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/tools-manager.ts",
+      "target": "function:packages/coding-agent/src/utils/tools-manager.ts:getToolPath",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/tools-manager.ts",
+      "target": "function:packages/coding-agent/src/utils/tools-manager.ts:getLatestVersion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/tools-manager.ts",
+      "target": "function:packages/coding-agent/src/utils/tools-manager.ts:findBinaryRecursively",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/tools-manager.ts",
+      "target": "function:packages/coding-agent/src/utils/tools-manager.ts:extractZipArchive",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/tools-manager.ts",
+      "target": "function:packages/coding-agent/src/utils/tools-manager.ts:downloadTool",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/tools-manager.ts",
+      "target": "function:packages/coding-agent/src/utils/tools-manager.ts:ensureTool",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/tools-manager.ts",
+      "target": "function:packages/coding-agent/src/utils/tools-manager.ts:ensureTool",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/windows-self-update.ts",
+      "target": "function:packages/coding-agent/src/utils/windows-self-update.ts:getLoadedSharedObjectsInPackageDir",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/windows-self-update.ts",
+      "target": "function:packages/coding-agent/src/utils/windows-self-update.ts:getLoadedSharedObjectsInPackageDir",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/windows-self-update.ts",
+      "target": "function:packages/coding-agent/src/utils/windows-self-update.ts:quarantineWindowsNativeDependencies",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/windows-self-update.ts",
+      "target": "function:packages/coding-agent/src/utils/windows-self-update.ts:quarantineWindowsNativeDependencies",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/paths.ts",
+      "target": "file:packages/coding-agent/src/utils/child-process.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/shell.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/tools-manager.ts",
+      "target": "file:packages/coding-agent/src/config.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/tools-manager.ts",
+      "target": "file:packages/coding-agent/src/utils/management-http.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/windows-self-update.ts",
+      "target": "file:packages/coding-agent/src/utils/paths.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-auto-compaction-queue.test.ts",
+      "target": "file:packages/coding-agent/src/core/agent-session.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-auto-compaction-queue.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-auto-compaction-queue.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-auto-compaction-queue.test.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-auto-compaction-queue.test.ts",
+      "target": "file:packages/coding-agent/test/model-runtime-test-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-auto-compaction-queue.test.ts",
+      "target": "file:packages/coding-agent/test/utilities.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-branching.test.ts",
+      "target": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-branching.test.ts",
+      "target": "file:packages/coding-agent/src/core/agent-session.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-branching.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-branching.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-branching.test.ts",
+      "target": "file:packages/coding-agent/test/utilities.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-compaction.test.ts",
+      "target": "file:packages/coding-agent/src/core/agent-session.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-compaction.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-compaction.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-compaction.test.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-compaction.test.ts",
+      "target": "file:packages/coding-agent/src/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-compaction.test.ts",
+      "target": "file:packages/coding-agent/test/model-runtime-test-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-compaction.test.ts",
+      "target": "file:packages/coding-agent/test/utilities.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-concurrent.test.ts",
+      "target": "file:packages/coding-agent/src/core/agent-session.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-concurrent.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-concurrent.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-concurrent.test.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-concurrent.test.ts",
+      "target": "file:packages/coding-agent/src/core/system-prompt.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-concurrent.test.ts",
+      "target": "file:packages/coding-agent/test/model-runtime-test-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-concurrent.test.ts",
+      "target": "file:packages/coding-agent/test/utilities.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-dynamic-provider.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-dynamic-provider.test.ts",
+      "target": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-dynamic-provider.test.ts",
+      "target": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-dynamic-provider.test.ts",
+      "target": "file:packages/coding-agent/src/core/sdk.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-dynamic-provider.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-dynamic-provider.test.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-dynamic-tools.test.ts",
+      "target": "file:packages/coding-agent/src/core/resource-loader.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-dynamic-tools.test.ts",
+      "target": "file:packages/coding-agent/src/core/sdk.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-dynamic-tools.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-dynamic-tools.test.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-dynamic-tools.test.ts",
+      "target": "file:packages/coding-agent/src/core/tools/bash.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-retry.test.ts",
+      "target": "file:packages/coding-agent/src/core/agent-session.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-retry.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-retry.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-retry.test.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-retry.test.ts",
+      "target": "file:packages/coding-agent/test/model-runtime-test-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-retry.test.ts",
+      "target": "file:packages/coding-agent/test/utilities.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-runtime-events.test.ts",
+      "target": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-runtime-events.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-runtime-events.test.ts",
+      "target": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-runtime-events.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-runtime-events.test.ts",
+      "target": "file:packages/coding-agent/src/index.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-stats.test.ts",
+      "target": "file:packages/coding-agent/src/core/agent-session.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-stats.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-stats.test.ts",
+      "target": "file:packages/coding-agent/src/core/session-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-stats.test.ts",
+      "target": "file:packages/coding-agent/src/core/settings-manager.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-stats.test.ts",
+      "target": "file:packages/coding-agent/src/core/usage-totals.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-stats.test.ts",
+      "target": "file:packages/coding-agent/test/model-runtime-test-utils.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-stats.test.ts",
+      "target": "file:packages/coding-agent/test/utilities.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/agent-session-tree-navigation.test.ts",
+      "target": "file:packages/coding-agent/test/utilities.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/args.test.ts",
+      "target": "file:packages/coding-agent/src/cli/args.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/auth-check.test.ts",
+      "target": "file:packages/coding-agent/src/cli/args.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/auth-check.test.ts",
+      "target": "file:packages/coding-agent/src/cli/auth-check.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/auth-check.test.ts",
+      "target": "file:packages/coding-agent/src/cli/auth-command.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/auth-check.test.ts",
+      "target": "file:packages/coding-agent/src/core/auth-storage.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/test/auth-check.test.ts",
+      "target": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/test/agent-session-auto-compaction-queue.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/test/agent-session-branching.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/test/agent-session-compaction.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/test/agent-session-concurrent.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/model-runtime.ts",
+      "target": "file:packages/coding-agent/test/agent-session-dynamic-provider.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/sdk.ts",
+      "target": "file:packages/coding-agent/test/agent-session-dynamic-tools.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/test/agent-session-retry.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session-runtime.ts",
+      "target": "file:packages/coding-agent/test/agent-session-runtime-events.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/agent-session.ts",
+      "target": "file:packages/coding-agent/test/agent-session-stats.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/test/utilities.ts",
+      "target": "file:packages/coding-agent/test/agent-session-tree-navigation.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/args.ts",
+      "target": "file:packages/coding-agent/test/args.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/cli/auth-check.ts",
+      "target": "file:packages/coding-agent/test/auth-check.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/core/sdk.ts",
+      "target": "file:packages/coding-agent/test/default-tools-setting.test.ts",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:packages/coding-agent/src/utils/windows-self-update.ts",
+      "target": "file:packages/coding-agent/src/utils/paths.ts",
+      "type": "depends_on",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

@@ -1,0 +1,2910 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 35,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "packages/ai/test/anthropic-thinking-disable.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 172,
+      "nonEmptyLines": 139,
+      "functions": [
+        {
+          "name": "makePayloadCaptureContext",
+          "startLine": 17,
+          "endLine": 21,
+          "params": []
+        },
+        {
+          "name": "capturePayload",
+          "startLine": 23,
+          "endLine": 49,
+          "params": [
+            "model",
+            "options"
+          ]
+        },
+        {
+          "name": "makeE2EContext",
+          "startLine": 58,
+          "endLine": 70,
+          "params": []
+        },
+        {
+          "name": "countPongs",
+          "startLine": 72,
+          "endLine": 74,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "runWithoutReasoning",
+          "startLine": 76,
+          "endLine": 110,
+          "params": [
+            "model"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PayloadCaptured",
+          "startLine": 10,
+          "endLine": 15,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 12
+        },
+        {
+          "caller": "makePayloadCaptureContext",
+          "callee": "Date.now",
+          "lineNumber": 19
+        },
+        {
+          "caller": "capturePayload",
+          "callee": "streamSimple",
+          "lineNumber": 33
+        },
+        {
+          "caller": "capturePayload",
+          "callee": "makePayloadCaptureContext",
+          "lineNumber": 33
+        },
+        {
+          "caller": "capturePayload",
+          "callee": "s.result",
+          "lineNumber": 42
+        },
+        {
+          "caller": "makeE2EContext",
+          "callee": "Date.now",
+          "lineNumber": 66
+        },
+        {
+          "caller": "countPongs",
+          "callee": "text.match",
+          "lineNumber": 73
+        },
+        {
+          "caller": "runWithoutReasoning",
+          "callee": "streamSimple",
+          "lineNumber": 77
+        },
+        {
+          "caller": "runWithoutReasoning",
+          "callee": "makeE2EContext",
+          "lineNumber": 77
+        },
+        {
+          "caller": "runWithoutReasoning",
+          "callee": "s.result",
+          "lineNumber": 95
+        },
+        {
+          "caller": "runWithoutReasoning",
+          "callee": "expect(response.stopReason, response.errorMessage).toBe",
+          "lineNumber": 96
+        },
+        {
+          "caller": "runWithoutReasoning",
+          "callee": "expect",
+          "lineNumber": 96
+        },
+        {
+          "caller": "runWithoutReasoning",
+          "callee": "response.content\n\t\t.filter((block) => block.type === \"text\")\n\t\t.map((block) => block.text)\n\t\t.join(\"\")\n\t\t.trim",
+          "lineNumber": 98
+        },
+        {
+          "caller": "runWithoutReasoning",
+          "callee": "response.content\n\t\t.filter((block) => block.type === \"text\")\n\t\t.map((block) => block.text)\n\t\t.join",
+          "lineNumber": 98
+        },
+        {
+          "caller": "runWithoutReasoning",
+          "callee": "response.content\n\t\t.filter((block) => block.type === \"text\")\n\t\t.map",
+          "lineNumber": 98
+        },
+        {
+          "caller": "runWithoutReasoning",
+          "callee": "response.content\n\t\t.filter",
+          "lineNumber": 98
+        },
+        {
+          "caller": "runWithoutReasoning",
+          "callee": "response.content.map",
+          "lineNumber": 108
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "packages/ai/test/anthropic-tool-name-normalization.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 204,
+      "nonEmptyLines": 178,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/azure-openai-base-url.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 203,
+      "nonEmptyLines": 171,
+      "functions": [
+        {
+          "name": "captureClientBaseUrl",
+          "startLine": 87,
+          "endLine": 93,
+          "params": [
+            "baseUrl"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "azureMock.constructorCalls.push",
+          "lineNumber": 36
+        },
+        {
+          "caller": "captureClientBaseUrl",
+          "callee": "getModel",
+          "lineNumber": 89
+        },
+        {
+          "caller": "captureClientBaseUrl",
+          "callee": "streamAzureOpenAIResponses(model, context, { apiKey: \"test-api-key\" }).result",
+          "lineNumber": 90
+        },
+        {
+          "caller": "captureClientBaseUrl",
+          "callee": "streamAzureOpenAIResponses",
+          "lineNumber": 90
+        },
+        {
+          "caller": "captureClientBaseUrl",
+          "callee": "expect(azureMock.constructorCalls).toHaveLength",
+          "lineNumber": 91
+        },
+        {
+          "caller": "captureClientBaseUrl",
+          "callee": "expect",
+          "lineNumber": 91
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/azure-openai-responses-reasoning-replay.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 136,
+      "nonEmptyLines": 126,
+      "functions": [
+        {
+          "name": "createModel",
+          "startLine": 7,
+          "endLine": 20,
+          "params": []
+        },
+        {
+          "name": "createOutput",
+          "startLine": 22,
+          "endLine": 40,
+          "params": [
+            "model"
+          ]
+        },
+        {
+          "name": "getReplayedReasoning",
+          "startLine": 69,
+          "endLine": 79,
+          "params": [
+            "model",
+            "assistant"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createOutput",
+          "callee": "Date.now",
+          "lineNumber": 38
+        },
+        {
+          "caller": "getReplayedReasoning",
+          "callee": "Date.now",
+          "lineNumber": 72
+        },
+        {
+          "caller": "getReplayedReasoning",
+          "callee": "Date.now",
+          "lineNumber": 74
+        },
+        {
+          "caller": "getReplayedReasoning",
+          "callee": "convertResponsesMessages",
+          "lineNumber": 77
+        },
+        {
+          "caller": "getReplayedReasoning",
+          "callee": "input.find",
+          "lineNumber": 78
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/azure-utils.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 28,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "parseDeploymentNameMap",
+          "startLine": 5,
+          "endLine": 16,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "hasAzureOpenAICredentials",
+          "startLine": 18,
+          "endLine": 22,
+          "params": []
+        },
+        {
+          "name": "resolveAzureDeploymentName",
+          "startLine": 24,
+          "endLine": 28,
+          "params": [
+            "modelId"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "hasAzureOpenAICredentials",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "resolveAzureDeploymentName",
+          "line": 24,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parseDeploymentNameMap",
+          "callee": "value.split",
+          "lineNumber": 8
+        },
+        {
+          "caller": "parseDeploymentNameMap",
+          "callee": "entry.trim",
+          "lineNumber": 9
+        },
+        {
+          "caller": "parseDeploymentNameMap",
+          "callee": "trimmed.split",
+          "lineNumber": 11
+        },
+        {
+          "caller": "parseDeploymentNameMap",
+          "callee": "map.set",
+          "lineNumber": 13
+        },
+        {
+          "caller": "parseDeploymentNameMap",
+          "callee": "modelId.trim",
+          "lineNumber": 13
+        },
+        {
+          "caller": "parseDeploymentNameMap",
+          "callee": "deploymentName.trim",
+          "lineNumber": 13
+        },
+        {
+          "caller": "resolveAzureDeploymentName",
+          "callee": "parseDeploymentNameMap(mapValue).get",
+          "lineNumber": 27
+        },
+        {
+          "caller": "resolveAzureDeploymentName",
+          "callee": "parseDeploymentNameMap",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/baseten-models.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 141,
+      "nonEmptyLines": 125,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/bedrock-convert-messages.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 410,
+      "nonEmptyLines": 383,
+      "functions": [
+        {
+          "name": "capturePayload",
+          "startLine": 83,
+          "endLine": 97,
+          "params": [
+            "context",
+            "model"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "bedrockMock.constructorCalls.push",
+          "lineNumber": 14
+        },
+        {
+          "caller": "send",
+          "callee": "Promise.resolve",
+          "lineNumber": 20
+        },
+        {
+          "caller": "send",
+          "callee": "(async function* () {\n\t\t\t\t\t\tyield* events;\n\t\t\t\t\t})",
+          "lineNumber": 22
+        },
+        {
+          "caller": "send",
+          "callee": "Promise.reject",
+          "lineNumber": 27
+        },
+        {
+          "caller": "capturePayload",
+          "callee": "streamBedrock",
+          "lineNumber": 85
+        },
+        {
+          "caller": "capturePayload",
+          "callee": "AbortSignal.abort",
+          "lineNumber": 87
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/bedrock-credentials.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 115,
+      "nonEmptyLines": 93,
+      "functions": [
+        {
+          "name": "captureClientConfig",
+          "startLine": 56,
+          "endLine": 64,
+          "params": [
+            "model",
+            "options"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "bedrockMock.constructorCalls.push",
+          "lineNumber": 12
+        },
+        {
+          "caller": "send",
+          "callee": "Promise.reject",
+          "lineNumber": 16
+        },
+        {
+          "caller": "captureClientConfig",
+          "callee": "streamBedrock(model, context, { cacheRetention: \"none\", ...options }).result",
+          "lineNumber": 61
+        },
+        {
+          "caller": "captureClientConfig",
+          "callee": "streamBedrock",
+          "lineNumber": 61
+        },
+        {
+          "caller": "captureClientConfig",
+          "callee": "expect(bedrockMock.constructorCalls).toHaveLength",
+          "lineNumber": 62
+        },
+        {
+          "caller": "captureClientConfig",
+          "callee": "expect",
+          "lineNumber": 62
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/bedrock-custom-headers.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 202,
+      "nonEmptyLines": 163,
+      "functions": [
+        {
+          "name": "getModelFixture",
+          "startLine": 65,
+          "endLine": 67,
+          "params": []
+        },
+        {
+          "name": "driveBedrock",
+          "startLine": 74,
+          "endLine": 78,
+          "params": [
+            "options"
+          ]
+        },
+        {
+          "name": "findCustomHeadersRegistration",
+          "startLine": 80,
+          "endLine": 83,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "send",
+          "callee": "Promise.reject",
+          "lineNumber": 23
+        },
+        {
+          "caller": "getModelFixture",
+          "callee": "getModel",
+          "lineNumber": 66
+        },
+        {
+          "caller": "driveBedrock",
+          "callee": "streamBedrock(getModelFixture(), context, options)\n\t\t.result()\n\t\t.catch",
+          "lineNumber": 75
+        },
+        {
+          "caller": "driveBedrock",
+          "callee": "streamBedrock(getModelFixture(), context, options)\n\t\t.result",
+          "lineNumber": 75
+        },
+        {
+          "caller": "driveBedrock",
+          "callee": "streamBedrock",
+          "lineNumber": 75
+        },
+        {
+          "caller": "driveBedrock",
+          "callee": "getModelFixture",
+          "lineNumber": 75
+        },
+        {
+          "caller": "findCustomHeadersRegistration",
+          "callee": "bedrockMock.middlewareRegistrations.filter",
+          "lineNumber": 81
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/bedrock-endpoint-resolution.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 208,
+      "nonEmptyLines": 163,
+      "functions": [
+        {
+          "name": "captureClientConfig",
+          "startLine": 86,
+          "endLine": 94,
+          "params": [
+            "model",
+            "options"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "bedrockMock.constructorCalls.push",
+          "lineNumber": 12
+        },
+        {
+          "caller": "send",
+          "callee": "Promise.reject",
+          "lineNumber": 16
+        },
+        {
+          "caller": "captureClientConfig",
+          "callee": "streamBedrock(model, context, { cacheRetention: \"none\", ...options }).result",
+          "lineNumber": 91
+        },
+        {
+          "caller": "captureClientConfig",
+          "callee": "streamBedrock",
+          "lineNumber": 91
+        },
+        {
+          "caller": "captureClientConfig",
+          "callee": "expect(bedrockMock.constructorCalls).toHaveLength",
+          "lineNumber": 92
+        },
+        {
+          "caller": "captureClientConfig",
+          "callee": "expect",
+          "lineNumber": 92
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/bedrock-error-metadata.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 212,
+      "nonEmptyLines": 174,
+      "functions": [
+        {
+          "name": "getModelFixture",
+          "startLine": 64,
+          "endLine": 66,
+          "params": []
+        },
+        {
+          "name": "makeServiceException",
+          "startLine": 69,
+          "endLine": 74,
+          "params": [
+            "name",
+            "extra"
+          ]
+        },
+        {
+          "name": "respondWithFailingStream",
+          "startLine": 77,
+          "endLine": 88,
+          "params": [
+            "thrown"
+          ]
+        },
+        {
+          "name": "runBedrock",
+          "startLine": 90,
+          "endLine": 92,
+          "params": [
+            "signal"
+          ]
+        },
+        {
+          "name": "findDiagnostic",
+          "startLine": 94,
+          "endLine": 96,
+          "params": [
+            "message"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "send",
+          "callee": "Promise.reject",
+          "lineNumber": 20
+        },
+        {
+          "caller": "send",
+          "callee": "Promise.reject",
+          "lineNumber": 21
+        },
+        {
+          "caller": "send",
+          "callee": "Promise.resolve",
+          "lineNumber": 21
+        },
+        {
+          "caller": "getModelFixture",
+          "callee": "getModel",
+          "lineNumber": 65
+        },
+        {
+          "caller": "makeServiceException",
+          "callee": "Object.assign",
+          "lineNumber": 72
+        },
+        {
+          "caller": "respondWithFailingStream",
+          "callee": "(async function* () {\n\t\t\t\tyield { messageStart: { role: \"assistant\" } };\n\t\t\t\tthrow thrown;\n\t\t\t})",
+          "lineNumber": 82
+        },
+        {
+          "caller": "runBedrock",
+          "callee": "streamBedrock(getModelFixture(), context, { cacheRetention: \"none\", signal }).result",
+          "lineNumber": 91
+        },
+        {
+          "caller": "runBedrock",
+          "callee": "streamBedrock",
+          "lineNumber": 91
+        },
+        {
+          "caller": "runBedrock",
+          "callee": "getModelFixture",
+          "lineNumber": 91
+        },
+        {
+          "caller": "findDiagnostic",
+          "callee": "message.diagnostics?.find",
+          "lineNumber": 95
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/bedrock-models.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 62,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/bedrock-raw-stop-reason.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 67,
+      "callGraph": [
+        {
+          "caller": "send",
+          "callee": "(async function* () {\n\t\t\t\t\tyield { messageStart: { role: \"assistant\" } };\n\t\t\t\t\tyield { messageStop: { stopReason: bedrockMock.stopReason } };\n\t\t\t\t})",
+          "lineNumber": 18
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/bedrock-thinking-payload.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 266,
+      "nonEmptyLines": 218,
+      "functions": [
+        {
+          "name": "makeContext",
+          "startLine": 22,
+          "endLine": 26,
+          "params": []
+        },
+        {
+          "name": "capturePayload",
+          "startLine": 28,
+          "endLine": 53,
+          "params": [
+            "model",
+            "options"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PayloadCaptured",
+          "startLine": 15,
+          "endLine": 20,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 17
+        },
+        {
+          "caller": "makeContext",
+          "callee": "Date.now",
+          "lineNumber": 24
+        },
+        {
+          "caller": "capturePayload",
+          "callee": "streamBedrock",
+          "lineNumber": 33
+        },
+        {
+          "caller": "capturePayload",
+          "callee": "makeContext",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "packages/ai/test/bedrock-utils.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 18,
+      "nonEmptyLines": 17,
+      "functions": [
+        {
+          "name": "hasBedrockCredentials",
+          "startLine": 12,
+          "endLine": 18,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "hasBedrockCredentials",
+          "line": 12,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/cache-retention.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 529,
+      "nonEmptyLines": 446,
+      "functions": [
+        {
+          "name": "stopAfterPayload",
+          "startLine": 25,
+          "endLine": 30,
+          "params": [
+            "capture"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "PayloadCaptured",
+          "startLine": 9,
+          "endLine": 14,
+          "methods": [
+            "constructor"
+          ],
+          "properties": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "constructor",
+          "callee": "super",
+          "lineNumber": 11
+        },
+        {
+          "caller": "stopAfterPayload",
+          "callee": "capture",
+          "lineNumber": 27
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "packages/ai/test/cloudflare-gateway-binding.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 332,
+      "nonEmptyLines": 289,
+      "functions": [
+        {
+          "name": "fakeBinding",
+          "startLine": 18,
+          "endLine": 29,
+          "params": [
+            "response"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "fakeBinding",
+          "callee": "runs.push",
+          "lineNumber": 23
+        },
+        {
+          "caller": "fakeBinding",
+          "callee": "Promise.resolve",
+          "lineNumber": 24
+        },
+        {
+          "caller": "start",
+          "callee": "controller.enqueue",
+          "lineNumber": 182
+        },
+        {
+          "caller": "start",
+          "callee": "new TextEncoder().encode",
+          "lineNumber": 182
+        },
+        {
+          "caller": "start",
+          "callee": "controller.close",
+          "lineNumber": 183
+        },
+        {
+          "caller": "start",
+          "callee": "controller.enqueue",
+          "lineNumber": 264
+        },
+        {
+          "caller": "start",
+          "callee": "new TextEncoder().encode",
+          "lineNumber": 264
+        },
+        {
+          "caller": "start",
+          "callee": "controller.close",
+          "lineNumber": 265
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/cloudflare-stream.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 65,
+      "nonEmptyLines": 57,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/cloudflare-utils.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 9,
+      "nonEmptyLines": 8,
+      "functions": [
+        {
+          "name": "hasCloudflareWorkersAICredentials",
+          "startLine": 1,
+          "endLine": 3,
+          "params": []
+        },
+        {
+          "name": "hasCloudflareAiGatewayCredentials",
+          "startLine": 5,
+          "endLine": 9,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "hasCloudflareWorkersAICredentials",
+          "line": 1,
+          "isDefault": false
+        },
+        {
+          "name": "hasCloudflareAiGatewayCredentials",
+          "line": 5,
+          "isDefault": false
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/codex-websocket-cached-probe.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 299,
+      "nonEmptyLines": 276,
+      "functions": [
+        {
+          "name": "parseArgs",
+          "startLine": 35,
+          "endLine": 87,
+          "params": [
+            "argv"
+          ]
+        },
+        {
+          "name": "required",
+          "startLine": 89,
+          "endLine": 92,
+          "params": [
+            "value",
+            "flag"
+          ]
+        },
+        {
+          "name": "printHelp",
+          "startLine": 94,
+          "endLine": 104,
+          "params": []
+        },
+        {
+          "name": "buildPrompt",
+          "startLine": 106,
+          "endLine": 121,
+          "params": [
+            "turn"
+          ]
+        },
+        {
+          "name": "deterministicProbeTool",
+          "startLine": 123,
+          "endLine": 132,
+          "params": []
+        },
+        {
+          "name": "executeTool",
+          "startLine": 134,
+          "endLine": 144,
+          "params": [
+            "call"
+          ]
+        },
+        {
+          "name": "textOf",
+          "startLine": 146,
+          "endLine": 152,
+          "params": [
+            "message"
+          ]
+        },
+        {
+          "name": "average",
+          "startLine": 154,
+          "endLine": 156,
+          "params": [
+            "values"
+          ]
+        },
+        {
+          "name": "percentile",
+          "startLine": 158,
+          "endLine": 162,
+          "params": [
+            "values",
+            "p"
+          ]
+        },
+        {
+          "name": "main",
+          "startLine": 164,
+          "endLine": 294,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "parseArgs",
+          "callee": "Date.now",
+          "lineNumber": 40
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "Number.parseInt",
+          "lineNumber": 46
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "required",
+          "lineNumber": 46
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "required",
+          "lineNumber": 49
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "Number.parseInt",
+          "lineNumber": 57
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "required",
+          "lineNumber": 57
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "required",
+          "lineNumber": 60
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "required",
+          "lineNumber": 75
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "printHelp",
+          "lineNumber": 78
+        },
+        {
+          "caller": "parseArgs",
+          "callee": "process.exit",
+          "lineNumber": 79
+        },
+        {
+          "caller": "printHelp",
+          "callee": "console.log",
+          "lineNumber": 95
+        },
+        {
+          "caller": "buildPrompt",
+          "callee": "String(turn).padStart",
+          "lineNumber": 107
+        },
+        {
+          "caller": "buildPrompt",
+          "callee": "String",
+          "lineNumber": 107
+        },
+        {
+          "caller": "buildPrompt",
+          "callee": "lines.push",
+          "lineNumber": 116
+        },
+        {
+          "caller": "buildPrompt",
+          "callee": "String(i).padStart",
+          "lineNumber": 117
+        },
+        {
+          "caller": "buildPrompt",
+          "callee": "String",
+          "lineNumber": 117
+        },
+        {
+          "caller": "buildPrompt",
+          "callee": "lines.join",
+          "lineNumber": 120
+        },
+        {
+          "caller": "deterministicProbeTool",
+          "callee": "Type.Object",
+          "lineNumber": 127
+        },
+        {
+          "caller": "deterministicProbeTool",
+          "callee": "Type.Number",
+          "lineNumber": 128
+        },
+        {
+          "caller": "deterministicProbeTool",
+          "callee": "Type.String",
+          "lineNumber": 129
+        },
+        {
+          "caller": "executeTool",
+          "callee": "JSON.stringify",
+          "lineNumber": 139
+        },
+        {
+          "caller": "executeTool",
+          "callee": "Date.now",
+          "lineNumber": 142
+        },
+        {
+          "caller": "textOf",
+          "callee": "message.content\n\t\t.filter((block): block is Extract<AssistantMessage[\"content\"][number], { type: \"text\" }> => block.type === \"text\")\n\t\t.map((block) => block.text)\n\t\t.join(\"\\n\")\n\t\t.trim",
+          "lineNumber": 147
+        },
+        {
+          "caller": "textOf",
+          "callee": "message.content\n\t\t.filter((block): block is Extract<AssistantMessage[\"content\"][number], { type: \"text\" }> => block.type === \"text\")\n\t\t.map((block) => block.text)\n\t\t.join",
+          "lineNumber": 147
+        },
+        {
+          "caller": "textOf",
+          "callee": "message.content\n\t\t.filter((block): block is Extract<AssistantMessage[\"content\"][number], { type: \"text\" }> => block.type === \"text\")\n\t\t.map",
+          "lineNumber": 147
+        },
+        {
+          "caller": "textOf",
+          "callee": "message.content\n\t\t.filter",
+          "lineNumber": 147
+        },
+        {
+          "caller": "average",
+          "callee": "values.reduce",
+          "lineNumber": 155
+        },
+        {
+          "caller": "average",
+          "callee": "Math.max",
+          "lineNumber": 155
+        },
+        {
+          "caller": "percentile",
+          "callee": "[...values].sort",
+          "lineNumber": 160
+        },
+        {
+          "caller": "percentile",
+          "callee": "Math.min",
+          "lineNumber": 161
+        },
+        {
+          "caller": "percentile",
+          "callee": "Math.max",
+          "lineNumber": 161
+        },
+        {
+          "caller": "percentile",
+          "callee": "Math.ceil",
+          "lineNumber": 161
+        },
+        {
+          "caller": "main",
+          "callee": "parseArgs",
+          "lineNumber": 165
+        },
+        {
+          "caller": "main",
+          "callee": "process.argv.slice",
+          "lineNumber": 165
+        },
+        {
+          "caller": "main",
+          "callee": "getModel",
+          "lineNumber": 166
+        },
+        {
+          "caller": "main",
+          "callee": "ModelRuntime.create",
+          "lineNumber": 169
+        },
+        {
+          "caller": "main",
+          "callee": "modelRuntime.getAuth",
+          "lineNumber": 171
+        },
+        {
+          "caller": "main",
+          "callee": "modelRuntime.getAuth",
+          "lineNumber": 171
+        },
+        {
+          "caller": "main",
+          "callee": "deterministicProbeTool",
+          "lineNumber": 179
+        },
+        {
+          "caller": "main",
+          "callee": "resetOpenAICodexWebSocketDebugStats",
+          "lineNumber": 182
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 184
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 185
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 186
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 189
+        },
+        {
+          "caller": "main",
+          "callee": "resolve",
+          "lineNumber": 189
+        },
+        {
+          "caller": "main",
+          "callee": "join",
+          "lineNumber": 189
+        },
+        {
+          "caller": "main",
+          "callee": "tmpdir",
+          "lineNumber": 189
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 190
+        },
+        {
+          "caller": "main",
+          "callee": "context.messages.push",
+          "lineNumber": 193
+        },
+        {
+          "caller": "main",
+          "callee": "buildPrompt",
+          "lineNumber": 193
+        },
+        {
+          "caller": "main",
+          "callee": "Date.now",
+          "lineNumber": 193
+        },
+        {
+          "caller": "main",
+          "callee": "getOpenAICodexWebSocketDebugStats",
+          "lineNumber": 194
+        },
+        {
+          "caller": "main",
+          "callee": "Date.now",
+          "lineNumber": 195
+        },
+        {
+          "caller": "main",
+          "callee": "streamOpenAICodexResponses(modelWithMaxTokens, context, {\n\t\t\t\tapiKey,\n\t\t\t\tsessionId: args.sessionId,\n\t\t\t\ttransport: args.transport,\n\t\t\t\treasoningEffort: args.reasoning,\n\t\t\t\tmaxTokens: args.maxTokens,\n\t\t\t}).result",
+          "lineNumber": 207
+        },
+        {
+          "caller": "main",
+          "callee": "streamOpenAICodexResponses",
+          "lineNumber": 207
+        },
+        {
+          "caller": "main",
+          "callee": "context.messages.push",
+          "lineNumber": 215
+        },
+        {
+          "caller": "main",
+          "callee": "message.content.filter",
+          "lineNumber": 220
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 224
+        },
+        {
+          "caller": "main",
+          "callee": "[\n\t\t\t\t\t`turn ${String(turn).padStart(2, \"0\")}.${requests}`,\n\t\t\t\t\t`stop ${message.stopReason}`,\n\t\t\t\t\t`in ${message.usage.input}`,\n\t\t\t\t\t`out ${message.usage.output}`,\n\t\t\t\t\t`cache ${message.usage.cacheRead}/${message.usage.cacheWrite}`,\n\t\t\t\t\t`tools ${toolCalls.length}`,\n\t\t\t\t].join",
+          "lineNumber": 225
+        },
+        {
+          "caller": "main",
+          "callee": "String(turn).padStart",
+          "lineNumber": 226
+        },
+        {
+          "caller": "main",
+          "callee": "String",
+          "lineNumber": 226
+        },
+        {
+          "caller": "main",
+          "callee": "textOf",
+          "lineNumber": 238
+        },
+        {
+          "caller": "main",
+          "callee": "context.messages.push",
+          "lineNumber": 242
+        },
+        {
+          "caller": "main",
+          "callee": "executeTool",
+          "lineNumber": 242
+        },
+        {
+          "caller": "main",
+          "callee": "Date.now",
+          "lineNumber": 248
+        },
+        {
+          "caller": "main",
+          "callee": "elapsed.push",
+          "lineNumber": 249
+        },
+        {
+          "caller": "main",
+          "callee": "getOpenAICodexWebSocketDebugStats",
+          "lineNumber": 250
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 254
+        },
+        {
+          "caller": "main",
+          "callee": "[\n\t\t\t\t`turn ${String(turn).padStart(2, \"0\")} agg`,\n\t\t\t\t`elapsed ${(elapsedMs / 1000).toFixed(1)}s`,\n\t\t\t\t`assistant ${assistantCount}`,\n\t\t\t\t`toolResults ${toolResults}`,\n\t\t\t\t`in ${turnInput}`,\n\t\t\t\t`out ${turnOutput}`,\n\t\t\t\t`cache ${turnCacheRead}/${turnCacheWrite}`,\n\t\t\t\tstatLine,\n\t\t\t\t`final ${JSON.stringify(finalText).slice(0, 80)}`,\n\t\t\t].join",
+          "lineNumber": 255
+        },
+        {
+          "caller": "main",
+          "callee": "String(turn).padStart",
+          "lineNumber": 256
+        },
+        {
+          "caller": "main",
+          "callee": "String",
+          "lineNumber": 256
+        },
+        {
+          "caller": "main",
+          "callee": "(elapsedMs / 1000).toFixed",
+          "lineNumber": 257
+        },
+        {
+          "caller": "main",
+          "callee": "JSON.stringify(finalText).slice",
+          "lineNumber": 264
+        },
+        {
+          "caller": "main",
+          "callee": "JSON.stringify",
+          "lineNumber": 264
+        },
+        {
+          "caller": "main",
+          "callee": "getOpenAICodexWebSocketDebugStats",
+          "lineNumber": 269
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 270
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 271
+        },
+        {
+          "caller": "main",
+          "callee": "[\n\t\t\t\"timing\",\n\t\t\t`turns ${elapsed.length}`,\n\t\t\t`total ${(elapsed.reduce((sum, value) => sum + value, 0) / 1000).toFixed(1)}s`,\n\t\t\t`avg ${(average(elapsed) / 1000).toFixed(2)}s`,\n\t\t\t`p50 ${(percentile(elapsed, 50) / 1000).toFixed(2)}s`,\n\t\t\t`p95 ${(percentile(elapsed, 95) / 1000).toFixed(2)}s`,\n\t\t\t`max ${(Math.max(...elapsed) / 1000).toFixed(2)}s`,\n\t\t].join",
+          "lineNumber": 272
+        },
+        {
+          "caller": "main",
+          "callee": "(elapsed.reduce((sum, value) => sum + value, 0) / 1000).toFixed",
+          "lineNumber": 275
+        },
+        {
+          "caller": "main",
+          "callee": "elapsed.reduce",
+          "lineNumber": 275
+        },
+        {
+          "caller": "main",
+          "callee": "(average(elapsed) / 1000).toFixed",
+          "lineNumber": 276
+        },
+        {
+          "caller": "main",
+          "callee": "average",
+          "lineNumber": 276
+        },
+        {
+          "caller": "main",
+          "callee": "(percentile(elapsed, 50) / 1000).toFixed",
+          "lineNumber": 277
+        },
+        {
+          "caller": "main",
+          "callee": "percentile",
+          "lineNumber": 277
+        },
+        {
+          "caller": "main",
+          "callee": "(percentile(elapsed, 95) / 1000).toFixed",
+          "lineNumber": 278
+        },
+        {
+          "caller": "main",
+          "callee": "percentile",
+          "lineNumber": 278
+        },
+        {
+          "caller": "main",
+          "callee": "(Math.max(...elapsed) / 1000).toFixed",
+          "lineNumber": 279
+        },
+        {
+          "caller": "main",
+          "callee": "Math.max",
+          "lineNumber": 279
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 282
+        },
+        {
+          "caller": "main",
+          "callee": "[\n\t\t\t\"transport summary\",\n\t\t\t`requested ${args.transport}`,\n\t\t\t`observed ${stats && stats.requests > 0 ? \"websocket\" : \"sse/no-websocket\"}`,\n\t\t\t`storeTrue ${stats ? `${stats.storeTrueRequests}/${stats.requests}` : \"0/0\"}`,\n\t\t\t`full/delta ${stats ? `${stats.fullContextRequests}/${stats.deltaRequests}` : \"0/0\"}`,\n\t\t\t`connections created/reused ${stats ? `${stats.connectionsCreated}/${stats.connectionsReused}` : \"0/0\"}`,\n\t\t\t`lastPreviousResponseId ${stats?.lastPreviousResponseId ?? \"n/a\"}`,\n\t\t].join",
+          "lineNumber": 283
+        },
+        {
+          "caller": "main",
+          "callee": "closeOpenAICodexWebSocketSessions",
+          "lineNumber": 293
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 10,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/compat-env.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 74,
+      "nonEmptyLines": 67,
+      "functions": [
+        {
+          "name": "message",
+          "startLine": 21,
+          "endLine": 39,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "message",
+          "callee": "Date.now",
+          "lineNumber": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/constrained-sampling.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 305,
+      "nonEmptyLines": 279,
+      "functions": [
+        {
+          "name": "makeModel",
+          "startLine": 17,
+          "endLine": 30,
+          "params": []
+        },
+        {
+          "name": "makeUsage",
+          "startLine": 32,
+          "endLine": 41,
+          "params": []
+        },
+        {
+          "name": "makeOutput",
+          "startLine": 43,
+          "endLine": 54,
+          "params": []
+        },
+        {
+          "name": "makeTool",
+          "startLine": 60,
+          "endLine": 67,
+          "params": [
+            "overrides"
+          ]
+        },
+        {
+          "name": "captureToolCallDeltas",
+          "startLine": 69,
+          "endLine": 79,
+          "params": [
+            "stream"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "makeOutput",
+          "callee": "makeUsage",
+          "lineNumber": 50
+        },
+        {
+          "caller": "makeOutput",
+          "callee": "Date.now",
+          "lineNumber": 52
+        },
+        {
+          "caller": "makeTool",
+          "callee": "Type.Object",
+          "lineNumber": 64
+        },
+        {
+          "caller": "makeTool",
+          "callee": "Type.String",
+          "lineNumber": 64
+        },
+        {
+          "caller": "captureToolCallDeltas",
+          "callee": "stream.push.bind",
+          "lineNumber": 71
+        },
+        {
+          "caller": "captureToolCallDeltas",
+          "callee": "deltas.push",
+          "lineNumber": 74
+        },
+        {
+          "caller": "captureToolCallDeltas",
+          "callee": "originalPush",
+          "lineNumber": 76
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/context-estimate.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 81,
+      "nonEmptyLines": 74,
+      "functions": [
+        {
+          "name": "createUsage",
+          "startLine": 6,
+          "endLine": 15,
+          "params": [
+            "totalTokens"
+          ]
+        },
+        {
+          "name": "createAssistant",
+          "startLine": 17,
+          "endLine": 28,
+          "params": [
+            "timestamp",
+            "totalTokens"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createAssistant",
+          "callee": "createUsage",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/context-overflow.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 771,
+      "nonEmptyLines": 655,
+      "functions": [
+        {
+          "name": "generateOverflowContent",
+          "startLine": 33,
+          "endLine": 38,
+          "params": [
+            "contextWindow"
+          ]
+        },
+        {
+          "name": "testContextOverflow",
+          "startLine": 51,
+          "endLine": 79,
+          "params": [
+            "model",
+            "apiKey"
+          ]
+        },
+        {
+          "name": "logResult",
+          "startLine": 81,
+          "endLine": 88,
+          "params": [
+            "result"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "generateOverflowContent",
+          "callee": "Math.ceil",
+          "lineNumber": 36
+        },
+        {
+          "caller": "generateOverflowContent",
+          "callee": "LOREM_IPSUM.repeat",
+          "lineNumber": 37
+        },
+        {
+          "caller": "testContextOverflow",
+          "callee": "generateOverflowContent",
+          "lineNumber": 52
+        },
+        {
+          "caller": "testContextOverflow",
+          "callee": "Date.now",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testContextOverflow",
+          "callee": "complete",
+          "lineNumber": 65
+        },
+        {
+          "caller": "logResult",
+          "callee": "console.log",
+          "lineNumber": 82
+        },
+        {
+          "caller": "logResult",
+          "callee": "console.log",
+          "lineNumber": 83
+        },
+        {
+          "caller": "logResult",
+          "callee": "console.log",
+          "lineNumber": 84
+        },
+        {
+          "caller": "logResult",
+          "callee": "console.log",
+          "lineNumber": 85
+        },
+        {
+          "caller": "logResult",
+          "callee": "console.log",
+          "lineNumber": 86
+        },
+        {
+          "caller": "logResult",
+          "callee": "JSON.stringify",
+          "lineNumber": 86
+        },
+        {
+          "caller": "logResult",
+          "callee": "console.log",
+          "lineNumber": 87
+        },
+        {
+          "caller": "checkServer",
+          "callee": "fetch",
+          "lineNumber": 641
+        },
+        {
+          "caller": "checkServer",
+          "callee": "resolve",
+          "lineNumber": 643
+        },
+        {
+          "caller": "checkServer",
+          "callee": "setTimeout",
+          "lineNumber": 645
+        },
+        {
+          "caller": "checkServer",
+          "callee": "setTimeout",
+          "lineNumber": 648
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/cross-provider-handoff.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 522,
+      "nonEmptyLines": 475,
+      "functions": [
+        {
+          "name": "getApiKey",
+          "startLine": 168,
+          "endLine": 172,
+          "params": [
+            "provider"
+          ]
+        },
+        {
+          "name": "hasApiKey",
+          "startLine": 177,
+          "endLine": 189,
+          "params": [
+            "pair"
+          ]
+        },
+        {
+          "name": "getHeaders",
+          "startLine": 191,
+          "endLine": 195,
+          "params": [
+            "pair"
+          ]
+        },
+        {
+          "name": "hasAnyApiKey",
+          "startLine": 200,
+          "endLine": 202,
+          "params": []
+        },
+        {
+          "name": "dumpFailurePayload",
+          "startLine": 204,
+          "endLine": 214,
+          "params": [
+            "params"
+          ]
+        },
+        {
+          "name": "generateContext",
+          "startLine": 220,
+          "endLine": 348,
+          "params": [
+            "pair",
+            "apiKey"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getApiKey",
+          "callee": "resolveApiKey",
+          "lineNumber": 169
+        },
+        {
+          "caller": "getApiKey",
+          "callee": "getEnvApiKey",
+          "lineNumber": 171
+        },
+        {
+          "caller": "hasApiKey",
+          "callee": "hasAzureOpenAICredentials",
+          "lineNumber": 179
+        },
+        {
+          "caller": "hasApiKey",
+          "callee": "hasCloudflareWorkersAICredentials",
+          "lineNumber": 182
+        },
+        {
+          "caller": "hasApiKey",
+          "callee": "hasCloudflareAiGatewayCredentials",
+          "lineNumber": 185
+        },
+        {
+          "caller": "hasApiKey",
+          "callee": "getEnvApiKey",
+          "lineNumber": 188
+        },
+        {
+          "caller": "hasAnyApiKey",
+          "callee": "PROVIDER_MODEL_PAIRS.some",
+          "lineNumber": 201
+        },
+        {
+          "caller": "hasAnyApiKey",
+          "callee": "hasApiKey",
+          "lineNumber": 201
+        },
+        {
+          "caller": "dumpFailurePayload",
+          "callee": "Date.now",
+          "lineNumber": 205
+        },
+        {
+          "caller": "dumpFailurePayload",
+          "callee": "writeFileSync",
+          "lineNumber": 212
+        },
+        {
+          "caller": "dumpFailurePayload",
+          "callee": "JSON.stringify",
+          "lineNumber": 212
+        },
+        {
+          "caller": "dumpFailurePayload",
+          "callee": "console.log",
+          "lineNumber": 213
+        },
+        {
+          "caller": "generateContext",
+          "callee": "(getModel as (p: string, m: string) => Model<Api> | undefined)",
+          "lineNumber": 224
+        },
+        {
+          "caller": "generateContext",
+          "callee": "console.log",
+          "lineNumber": 226
+        },
+        {
+          "caller": "generateContext",
+          "callee": "Date.now",
+          "lineNumber": 235
+        },
+        {
+          "caller": "generateContext",
+          "callee": "getHeaders",
+          "lineNumber": 239
+        },
+        {
+          "caller": "generateContext",
+          "callee": "completeSimple",
+          "lineNumber": 243
+        },
+        {
+          "caller": "generateContext",
+          "callee": "String",
+          "lineNumber": 260
+        },
+        {
+          "caller": "generateContext",
+          "callee": "console.log",
+          "lineNumber": 261
+        },
+        {
+          "caller": "generateContext",
+          "callee": "dumpFailurePayload",
+          "lineNumber": 262
+        },
+        {
+          "caller": "generateContext",
+          "callee": "console.log",
+          "lineNumber": 272
+        },
+        {
+          "caller": "generateContext",
+          "callee": "dumpFailurePayload",
+          "lineNumber": 273
+        },
+        {
+          "caller": "generateContext",
+          "callee": "assistantResponse.content.find",
+          "lineNumber": 282
+        },
+        {
+          "caller": "generateContext",
+          "callee": "console.log",
+          "lineNumber": 284
+        },
+        {
+          "caller": "generateContext",
+          "callee": "console.log",
+          "lineNumber": 291
+        },
+        {
+          "caller": "generateContext",
+          "callee": "Date.now",
+          "lineNumber": 299
+        },
+        {
+          "caller": "generateContext",
+          "callee": "completeSimple",
+          "lineNumber": 305
+        },
+        {
+          "caller": "generateContext",
+          "callee": "String",
+          "lineNumber": 322
+        },
+        {
+          "caller": "generateContext",
+          "callee": "console.log",
+          "lineNumber": 323
+        },
+        {
+          "caller": "generateContext",
+          "callee": "dumpFailurePayload",
+          "lineNumber": 324
+        },
+        {
+          "caller": "generateContext",
+          "callee": "console.log",
+          "lineNumber": 334
+        },
+        {
+          "caller": "generateContext",
+          "callee": "dumpFailurePayload",
+          "lineNumber": 335
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 0,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/deferred-tools.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 550,
+      "nonEmptyLines": 481,
+      "functions": [
+        {
+          "name": "makeTool",
+          "startLine": 83,
+          "endLine": 89,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "makeUserMessage",
+          "startLine": 91,
+          "endLine": 93,
+          "params": [
+            "timestamp"
+          ]
+        },
+        {
+          "name": "makeAssistantToolCall",
+          "startLine": 95,
+          "endLine": 113,
+          "params": []
+        },
+        {
+          "name": "makeToolResult",
+          "startLine": 115,
+          "endLine": 125,
+          "params": [
+            "addedToolNames"
+          ]
+        },
+        {
+          "name": "makeContext",
+          "startLine": 127,
+          "endLine": 132,
+          "params": [
+            "tools",
+            "addedToolNames"
+          ]
+        },
+        {
+          "name": "makeKimiModel",
+          "startLine": 134,
+          "endLine": 148,
+          "params": [
+            "deferredToolsMode"
+          ]
+        },
+        {
+          "name": "capturePayload",
+          "startLine": 150,
+          "endLine": 162,
+          "params": [
+            "model",
+            "context",
+            "apiKey"
+          ]
+        },
+        {
+          "name": "findAnthropicToolResultContent",
+          "startLine": 164,
+          "endLine": 171,
+          "params": [
+            "payload"
+          ]
+        },
+        {
+          "name": "findAnthropicToolResult",
+          "startLine": 173,
+          "endLine": 177,
+          "params": [
+            "payload"
+          ]
+        },
+        {
+          "name": "openAIToolNames",
+          "startLine": 179,
+          "endLine": 181,
+          "params": [
+            "payload"
+          ]
+        },
+        {
+          "name": "makeCodexToken",
+          "startLine": 183,
+          "endLine": 185,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "PayloadCaptured",
+          "startLine": 81,
+          "endLine": 81,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "makeTool",
+          "callee": "Type.Object",
+          "lineNumber": 87
+        },
+        {
+          "caller": "makeTool",
+          "callee": "Type.String",
+          "lineNumber": 87
+        },
+        {
+          "caller": "makeContext",
+          "callee": "makeUserMessage",
+          "lineNumber": 129
+        },
+        {
+          "caller": "makeContext",
+          "callee": "makeAssistantToolCall",
+          "lineNumber": 129
+        },
+        {
+          "caller": "makeContext",
+          "callee": "makeToolResult",
+          "lineNumber": 129
+        },
+        {
+          "caller": "makeContext",
+          "callee": "makeUserMessage",
+          "lineNumber": 129
+        },
+        {
+          "caller": "capturePayload",
+          "callee": "streamSimple",
+          "lineNumber": 152
+        },
+        {
+          "caller": "capturePayload",
+          "callee": "stream.result",
+          "lineNumber": 159
+        },
+        {
+          "caller": "findAnthropicToolResultContent",
+          "callee": "message.content.some",
+          "lineNumber": 166
+        },
+        {
+          "caller": "findAnthropicToolResult",
+          "callee": "findAnthropicToolResultContent(payload).find",
+          "lineNumber": 174
+        },
+        {
+          "caller": "findAnthropicToolResult",
+          "callee": "findAnthropicToolResultContent",
+          "lineNumber": 174
+        },
+        {
+          "caller": "openAIToolNames",
+          "callee": "(payload.tools ?? []).map",
+          "lineNumber": 180
+        },
+        {
+          "caller": "makeCodexToken",
+          "callee": "btoa",
+          "lineNumber": 184
+        },
+        {
+          "caller": "makeCodexToken",
+          "callee": "JSON.stringify",
+          "lineNumber": 184
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 11,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "packages/ai/test/empty.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 822,
+      "nonEmptyLines": 654,
+      "functions": [
+        {
+          "name": "testEmptyMessage",
+          "startLine": 20,
+          "endLine": 43,
+          "params": [
+            "llm",
+            "options"
+          ]
+        },
+        {
+          "name": "testEmptyStringMessage",
+          "startLine": 45,
+          "endLine": 68,
+          "params": [
+            "llm",
+            "options"
+          ]
+        },
+        {
+          "name": "testWhitespaceOnlyMessage",
+          "startLine": 70,
+          "endLine": 93,
+          "params": [
+            "llm",
+            "options"
+          ]
+        },
+        {
+          "name": "testEmptyAssistantMessage",
+          "startLine": 95,
+          "endLine": 144,
+          "params": [
+            "llm",
+            "options"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "testEmptyMessage",
+          "callee": "Date.now",
+          "lineNumber": 25
+        },
+        {
+          "caller": "testEmptyMessage",
+          "callee": "complete",
+          "lineNumber": 32
+        },
+        {
+          "caller": "testEmptyMessage",
+          "callee": "expect(response).toBeDefined",
+          "lineNumber": 35
+        },
+        {
+          "caller": "testEmptyMessage",
+          "callee": "expect",
+          "lineNumber": 35
+        },
+        {
+          "caller": "testEmptyMessage",
+          "callee": "expect(response.role).toBe",
+          "lineNumber": 36
+        },
+        {
+          "caller": "testEmptyMessage",
+          "callee": "expect",
+          "lineNumber": 36
+        },
+        {
+          "caller": "testEmptyMessage",
+          "callee": "expect(response.errorMessage).toBeDefined",
+          "lineNumber": 39
+        },
+        {
+          "caller": "testEmptyMessage",
+          "callee": "expect",
+          "lineNumber": 39
+        },
+        {
+          "caller": "testEmptyMessage",
+          "callee": "expect(response.content).toBeDefined",
+          "lineNumber": 41
+        },
+        {
+          "caller": "testEmptyMessage",
+          "callee": "expect",
+          "lineNumber": 41
+        },
+        {
+          "caller": "testEmptyStringMessage",
+          "callee": "Date.now",
+          "lineNumber": 52
+        },
+        {
+          "caller": "testEmptyStringMessage",
+          "callee": "complete",
+          "lineNumber": 57
+        },
+        {
+          "caller": "testEmptyStringMessage",
+          "callee": "expect(response).toBeDefined",
+          "lineNumber": 59
+        },
+        {
+          "caller": "testEmptyStringMessage",
+          "callee": "expect",
+          "lineNumber": 59
+        },
+        {
+          "caller": "testEmptyStringMessage",
+          "callee": "expect(response.role).toBe",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testEmptyStringMessage",
+          "callee": "expect",
+          "lineNumber": 60
+        },
+        {
+          "caller": "testEmptyStringMessage",
+          "callee": "expect(response.errorMessage).toBeDefined",
+          "lineNumber": 64
+        },
+        {
+          "caller": "testEmptyStringMessage",
+          "callee": "expect",
+          "lineNumber": 64
+        },
+        {
+          "caller": "testEmptyStringMessage",
+          "callee": "expect(response.content).toBeDefined",
+          "lineNumber": 66
+        },
+        {
+          "caller": "testEmptyStringMessage",
+          "callee": "expect",
+          "lineNumber": 66
+        },
+        {
+          "caller": "testWhitespaceOnlyMessage",
+          "callee": "Date.now",
+          "lineNumber": 77
+        },
+        {
+          "caller": "testWhitespaceOnlyMessage",
+          "callee": "complete",
+          "lineNumber": 82
+        },
+        {
+          "caller": "testWhitespaceOnlyMessage",
+          "callee": "expect(response).toBeDefined",
+          "lineNumber": 84
+        },
+        {
+          "caller": "testWhitespaceOnlyMessage",
+          "callee": "expect",
+          "lineNumber": 84
+        },
+        {
+          "caller": "testWhitespaceOnlyMessage",
+          "callee": "expect(response.role).toBe",
+          "lineNumber": 85
+        },
+        {
+          "caller": "testWhitespaceOnlyMessage",
+          "callee": "expect",
+          "lineNumber": 85
+        },
+        {
+          "caller": "testWhitespaceOnlyMessage",
+          "callee": "expect(response.errorMessage).toBeDefined",
+          "lineNumber": 89
+        },
+        {
+          "caller": "testWhitespaceOnlyMessage",
+          "callee": "expect",
+          "lineNumber": 89
+        },
+        {
+          "caller": "testWhitespaceOnlyMessage",
+          "callee": "expect(response.content).toBeDefined",
+          "lineNumber": 91
+        },
+        {
+          "caller": "testWhitespaceOnlyMessage",
+          "callee": "expect",
+          "lineNumber": 91
+        },
+        {
+          "caller": "testEmptyAssistantMessage",
+          "callee": "Date.now",
+          "lineNumber": 113
+        },
+        {
+          "caller": "testEmptyAssistantMessage",
+          "callee": "Date.now",
+          "lineNumber": 121
+        },
+        {
+          "caller": "testEmptyAssistantMessage",
+          "callee": "Date.now",
+          "lineNumber": 127
+        },
+        {
+          "caller": "testEmptyAssistantMessage",
+          "callee": "complete",
+          "lineNumber": 132
+        },
+        {
+          "caller": "testEmptyAssistantMessage",
+          "callee": "expect(response).toBeDefined",
+          "lineNumber": 134
+        },
+        {
+          "caller": "testEmptyAssistantMessage",
+          "callee": "expect",
+          "lineNumber": 134
+        },
+        {
+          "caller": "testEmptyAssistantMessage",
+          "callee": "expect(response.role).toBe",
+          "lineNumber": 135
+        },
+        {
+          "caller": "testEmptyAssistantMessage",
+          "callee": "expect",
+          "lineNumber": 135
+        },
+        {
+          "caller": "testEmptyAssistantMessage",
+          "callee": "expect(response.errorMessage).toBeDefined",
+          "lineNumber": 139
+        },
+        {
+          "caller": "testEmptyAssistantMessage",
+          "callee": "expect",
+          "lineNumber": 139
+        },
+        {
+          "caller": "testEmptyAssistantMessage",
+          "callee": "expect(response.content).toBeDefined",
+          "lineNumber": 141
+        },
+        {
+          "caller": "testEmptyAssistantMessage",
+          "callee": "expect",
+          "lineNumber": 141
+        },
+        {
+          "caller": "testEmptyAssistantMessage",
+          "callee": "expect(response.content.length).toBeGreaterThan",
+          "lineNumber": 142
+        },
+        {
+          "caller": "testEmptyAssistantMessage",
+          "callee": "expect",
+          "lineNumber": 142
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/env-api-keys.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 116,
+      "nonEmptyLines": 94,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/error-body.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 226,
+      "nonEmptyLines": 181,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/faux-provider.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 616,
+      "nonEmptyLines": 536,
+      "functions": [
+        {
+          "name": "collectEvents",
+          "startLine": 14,
+          "endLine": 20,
+          "params": [
+            "streamResult"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "collectEvents",
+          "callee": "events.push",
+          "lineNumber": 17
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/fetch-option.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 178,
+      "nonEmptyLines": 165,
+      "functions": [
+        {
+          "name": "createModel",
+          "startLine": 18,
+          "endLine": 31,
+          "params": [
+            "api"
+          ]
+        },
+        {
+          "name": "mockFetches",
+          "startLine": 33,
+          "endLine": 46,
+          "params": []
+        },
+        {
+          "name": "expectOnlyCustomFetch",
+          "startLine": 48,
+          "endLine": 55,
+          "params": [
+            "custom",
+            "fallback"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "mockFetches",
+          "callee": "vi.fn",
+          "lineNumber": 34
+        },
+        {
+          "caller": "mockFetches",
+          "callee": "vi.fn",
+          "lineNumber": 37
+        },
+        {
+          "caller": "mockFetches",
+          "callee": "JSON.stringify",
+          "lineNumber": 39
+        },
+        {
+          "caller": "mockFetches",
+          "callee": "vi.stubGlobal",
+          "lineNumber": 44
+        },
+        {
+          "caller": "expectOnlyCustomFetch",
+          "callee": "expect(custom).toHaveBeenCalled",
+          "lineNumber": 52
+        },
+        {
+          "caller": "expectOnlyCustomFetch",
+          "callee": "expect",
+          "lineNumber": 52
+        },
+        {
+          "caller": "expectOnlyCustomFetch",
+          "callee": "expect(fallback).not.toHaveBeenCalled",
+          "lineNumber": 53
+        },
+        {
+          "caller": "expectOnlyCustomFetch",
+          "callee": "expect",
+          "lineNumber": 53
+        },
+        {
+          "caller": "expectOnlyCustomFetch",
+          "callee": "expect(globalThis.fetch).toBe",
+          "lineNumber": 54
+        },
+        {
+          "caller": "expectOnlyCustomFetch",
+          "callee": "expect",
+          "lineNumber": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 11,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/fireworks-models.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 343,
+      "nonEmptyLines": 294,
+      "functions": [
+        {
+          "name": "createFireworksModel",
+          "startLine": 173,
+          "endLine": 189,
+          "params": [
+            "compat"
+          ]
+        },
+        {
+          "name": "createAnthropicModel",
+          "startLine": 191,
+          "endLine": 204,
+          "params": []
+        },
+        {
+          "name": "createContext",
+          "startLine": 206,
+          "endLine": 211,
+          "params": [
+            "tools"
+          ]
+        },
+        {
+          "name": "readRequestBody",
+          "startLine": 213,
+          "endLine": 219,
+          "params": [
+            "request"
+          ]
+        },
+        {
+          "name": "writeEmptySseResponse",
+          "startLine": 221,
+          "endLine": 224,
+          "params": [
+            "response"
+          ]
+        },
+        {
+          "name": "captureAnthropicRequest",
+          "startLine": 226,
+          "endLine": 267,
+          "params": [
+            "model",
+            "context",
+            "options"
+          ]
+        },
+        {
+          "name": "getTools",
+          "startLine": 269,
+          "endLine": 275,
+          "params": [
+            "body"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createContext",
+          "callee": "Date.now",
+          "lineNumber": 208
+        },
+        {
+          "caller": "readRequestBody",
+          "callee": "chunks.push",
+          "lineNumber": 216
+        },
+        {
+          "caller": "readRequestBody",
+          "callee": "Buffer.isBuffer",
+          "lineNumber": 216
+        },
+        {
+          "caller": "readRequestBody",
+          "callee": "Buffer.from",
+          "lineNumber": 216
+        },
+        {
+          "caller": "readRequestBody",
+          "callee": "JSON.parse",
+          "lineNumber": 218
+        },
+        {
+          "caller": "readRequestBody",
+          "callee": "Buffer.concat(chunks).toString",
+          "lineNumber": 218
+        },
+        {
+          "caller": "readRequestBody",
+          "callee": "Buffer.concat",
+          "lineNumber": 218
+        },
+        {
+          "caller": "writeEmptySseResponse",
+          "callee": "response.writeHead",
+          "lineNumber": 222
+        },
+        {
+          "caller": "writeEmptySseResponse",
+          "callee": "response.end",
+          "lineNumber": 223
+        },
+        {
+          "caller": "captureAnthropicRequest",
+          "callee": "createServer",
+          "lineNumber": 233
+        },
+        {
+          "caller": "captureAnthropicRequest",
+          "callee": "readRequestBody",
+          "lineNumber": 236
+        },
+        {
+          "caller": "captureAnthropicRequest",
+          "callee": "writeEmptySseResponse",
+          "lineNumber": 238
+        },
+        {
+          "caller": "captureAnthropicRequest",
+          "callee": "server.listen",
+          "lineNumber": 241
+        },
+        {
+          "caller": "captureAnthropicRequest",
+          "callee": "server.address",
+          "lineNumber": 242
+        },
+        {
+          "caller": "captureAnthropicRequest",
+          "callee": "streamAnthropic",
+          "lineNumber": 248
+        },
+        {
+          "caller": "captureAnthropicRequest",
+          "callee": "server.close",
+          "lineNumber": 259
+        },
+        {
+          "caller": "captureAnthropicRequest",
+          "callee": "reject",
+          "lineNumber": 259
+        },
+        {
+          "caller": "captureAnthropicRequest",
+          "callee": "resolve",
+          "lineNumber": 259
+        },
+        {
+          "caller": "getTools",
+          "callee": "Array.isArray",
+          "lineNumber": 271
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 7,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/github-copilot-anthropic.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 127,
+      "nonEmptyLines": 108,
+      "callGraph": [
+        {
+          "caller": "createSseResponse",
+          "callee": "[\n\t\t\t`event: message_start\\ndata: ${JSON.stringify({\n\t\t\t\ttype: \"message_start\",\n\t\t\t\tmessage: {\n\t\t\t\t\tid: \"msg_test\",\n\t\t\t\t\tusage: { input_tokens: 10, output_tokens: 0 },\n\t\t\t\t},\n\t\t\t})}\\n`,\n\t\t\t`event: message_delta\\ndata: ${JSON.stringify({\n\t\t\t\ttype: \"message_delta\",\n\t\t\t\tdelta: { stop_reason: \"end_turn\" },\n\t\t\t\tusage: { output_tokens: 5 },\n\t\t\t})}\\n`,\n\t\t].join",
+          "lineNumber": 14
+        },
+        {
+          "caller": "createSseResponse",
+          "callee": "JSON.stringify",
+          "lineNumber": 15
+        },
+        {
+          "caller": "createSseResponse",
+          "callee": "JSON.stringify",
+          "lineNumber": 22
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/google-raw-stop-reason.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 106,
+      "nonEmptyLines": 93,
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/ai/test/google-shared-convert-tools.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 203,
+      "nonEmptyLines": 181,
+      "functions": [
+        {
+          "name": "makeTool",
+          "startLine": 9,
+          "endLine": 15,
+          "params": [
+            "parameters"
+          ]
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

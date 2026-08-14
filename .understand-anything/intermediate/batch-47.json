@@ -1,0 +1,162 @@
+{
+  "nodes": [
+    {
+      "id": ".pi/prompts/cl.md",
+      "type": "file",
+      "label": "cl.md — Changelog 审计提示词",
+      "layer": "docs",
+      "attributes": {
+        "language": "markdown",
+        "sizeLines": 54,
+        "fileCategory": "docs",
+        "description": "发布前审计 CHANGELOG 条目的提示词模板。指导逐 commit 检查各 package 的 [Unreleased] 段落，验证 changelog 条目是否存在、跨包重复规则、外部贡献者格式，并自动生成 New Features 段。定义了 Breaking Changes / Added / Changed / Fixed / Removed 五段标准格式及内外贡献者的归因写法。"
+      }
+    },
+    {
+      "id": ".pi/prompts/is.md",
+      "type": "file",
+      "label": "is.md — GitHub Issue 分析提示词",
+      "layer": "docs",
+      "attributes": {
+        "language": "markdown",
+        "sizeLines": 28,
+        "fileCategory": "docs",
+        "description": "分析 GitHub Issue（bug 或 feature request）的提示词模板。在 CI 环境下跳过标签与指派操作；完整读取 issue 及其评论、关联 issue/PR；对 bug 忽略 issue 中的根因分析并独立追踪代码路径定位真实根因；对 feature request 独立评估后提出最简实现方案。仅分析不实施，除非用户明确要求。"
+      }
+    },
+    {
+      "id": ".pi/prompts/pr.md",
+      "type": "file",
+      "label": "pr.md — PR 结构化审查提示词",
+      "layer": "docs",
+      "attributes": {
+        "language": "markdown",
+        "sizeLines": 37,
+        "fileCategory": "docs",
+        "description": "从 PR URL 进行结构化代码审查的提示词模板。先添加 inprogress 标签，完整读取 PR 描述、评论、commits 和变更文件；识别关联 issue 并读取；使用 gh CLI 获取 diff 而不切换到 PR 分支；与 main 分支代码对比分析；检查是否需要更新 README/docs/examples；按 What/Good/Bad/Ugly/Tests/Open Questions 结构输出审查结果。"
+      }
+    },
+    {
+      "id": ".pi/prompts/sa.md",
+      "type": "file",
+      "label": "sa.md — 安全公告更新提示词",
+      "layer": "docs",
+      "attributes": {
+        "language": "markdown",
+        "sizeLines": 163,
+        "fileCategory": "docs",
+        "description": "更新 GitHub Security Advisory 以供发布的提示词模板。接收 advisory URL 或本地 markdown 草稿；通过 gh API 获取 advisory 并记录原始 CVSS/severity；独立调查漏洞修复状态和受影响版本范围；与用户讨论 CVSS 向量后生成包含 YAML frontmatter 的发布就绪草稿；定义严格的安全规则——不发布、不请求 CVE（除非 frontmatter 显式标记）、不包含 PoC、不通过浏览器获取评论。"
+      }
+    },
+    {
+      "id": ".pi/prompts/wr.md",
+      "type": "file",
+      "label": "wr.md — 任务收尾提示词",
+      "layer": "docs",
+      "attributes": {
+        "language": "markdown",
+        "sizeLines": 40,
+        "fileCategory": "docs",
+        "description": "任务端到端收尾的提示词模板。自动检测会话上下文（issue/PR/非 GitHub 工作），依次执行：更新 changelog、起草并发送 issue/PR 评论（含 AI 生成免责声明）、提交仅本次会话修改的文件、在 commit message 中关联 issue、确认在 main 分支后推送、以 completed 原因关闭 issue。严格约束不暂存无关文件、不使用 git add .、不主动开 PR。"
+      }
+    },
+    {
+      "id": "concept:pi-prompts",
+      "type": "concept",
+      "label": "Prompt 模板系统",
+      "layer": "docs",
+      "attributes": {
+        "description": ".pi/prompts/ 目录下的 slash-command 提示词集合，为 AI 编码代理提供结构化工作流模板。每个文件定义一个独立命令（cl/is/pr/sa/wr），通过 YAML frontmatter 声明 description 和 argument-hint，通过 markdown body 定义执行步骤、约束和安全规则。"
+      }
+    },
+    {
+      "id": "concept:github-workflow",
+      "type": "concept",
+      "label": "GitHub 工作流集成",
+      "layer": "docs",
+      "attributes": {
+        "description": "通过 gh CLI 与 GitHub 深度集成的工作流模式，涵盖 issue 分析、PR 审查、安全公告管理和任务收尾。包括标签管理（inprogress）、issue 关闭、CVE 请求、评论发布等自动化操作，以及 CI 环境感知和安全约束。"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": ".pi/prompts/cl.md",
+      "target": "concept:pi-prompts",
+      "type": "belongs_to",
+      "label": "属于 prompt 模板系统"
+    },
+    {
+      "source": ".pi/prompts/is.md",
+      "target": "concept:pi-prompts",
+      "type": "belongs_to",
+      "label": "属于 prompt 模板系统"
+    },
+    {
+      "source": ".pi/prompts/pr.md",
+      "target": "concept:pi-prompts",
+      "type": "belongs_to",
+      "label": "属于 prompt 模板系统"
+    },
+    {
+      "source": ".pi/prompts/sa.md",
+      "target": "concept:pi-prompts",
+      "type": "belongs_to",
+      "label": "属于 prompt 模板系统"
+    },
+    {
+      "source": ".pi/prompts/wr.md",
+      "target": "concept:pi-prompts",
+      "type": "belongs_to",
+      "label": "属于 prompt 模板系统"
+    },
+    {
+      "source": ".pi/prompts/wr.md",
+      "target": ".pi/prompts/is.md",
+      "type": "references",
+      "label": "wr 调用 /is 命令上下文"
+    },
+    {
+      "source": ".pi/prompts/wr.md",
+      "target": ".pi/prompts/pr.md",
+      "type": "references",
+      "label": "wr 调用 /pr 命令上下文"
+    },
+    {
+      "source": "concept:pi-prompts",
+      "target": "concept:github-workflow",
+      "type": "enables",
+      "label": "prompt 模板驱动 GitHub 工作流"
+    },
+    {
+      "source": ".pi/prompts/is.md",
+      "target": "concept:github-workflow",
+      "type": "implements",
+      "label": "实现 issue 分析工作流"
+    },
+    {
+      "source": ".pi/prompts/pr.md",
+      "target": "concept:github-workflow",
+      "type": "implements",
+      "label": "实现 PR 审查工作流"
+    },
+    {
+      "source": ".pi/prompts/sa.md",
+      "target": "concept:github-workflow",
+      "type": "implements",
+      "label": "实现安全公告工作流"
+    },
+    {
+      "source": ".pi/prompts/wr.md",
+      "target": "concept:github-workflow",
+      "type": "implements",
+      "label": "实现任务收尾工作流"
+    },
+    {
+      "source": ".pi/prompts/cl.md",
+      "target": "concept:github-workflow",
+      "type": "related_to",
+      "label": "changelog 审计是发布流程的一部分"
+    }
+  ]
+}

@@ -1,0 +1,2883 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 28,
+  "filesSkipped": [],
+  "results": [
+    {
+      "path": "packages/coding-agent/test/suite/regressions/3592-no-builtin-tools-keeps-extension-tools.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 119,
+      "nonEmptyLines": 107,
+      "callGraph": [
+        {
+          "caller": "createSession",
+          "callee": "SettingsManager.create",
+          "lineNumber": 33
+        },
+        {
+          "caller": "createSession",
+          "callee": "SessionManager.inMemory",
+          "lineNumber": 34
+        },
+        {
+          "caller": "createSession",
+          "callee": "pi.on",
+          "lineNumber": 41
+        },
+        {
+          "caller": "createSession",
+          "callee": "pi.registerTool",
+          "lineNumber": 42
+        },
+        {
+          "caller": "createSession",
+          "callee": "Type.Object",
+          "lineNumber": 47
+        },
+        {
+          "caller": "createSession",
+          "callee": "resourceLoader.reload",
+          "lineNumber": 57
+        },
+        {
+          "caller": "createSession",
+          "callee": "createAgentSession",
+          "lineNumber": 59
+        },
+        {
+          "caller": "createSession",
+          "callee": "getModel",
+          "lineNumber": 62
+        },
+        {
+          "caller": "createSession",
+          "callee": "session.bindExtensions",
+          "lineNumber": 69
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/3616-settings-inmemory-reload.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 86,
+      "nonEmptyLines": 74,
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/4167-thinking-toggle-pending-tool-render.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 182,
+      "nonEmptyLines": 162,
+      "functions": [
+        {
+          "name": "createFakeInteractiveModeThis",
+          "startLine": 64,
+          "endLine": 88,
+          "params": []
+        },
+        {
+          "name": "createAssistantToolCallMessage",
+          "startLine": 90,
+          "endLine": 108,
+          "params": []
+        },
+        {
+          "name": "createToolResultMessage",
+          "startLine": 110,
+          "endLine": 119,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "createSessionEntries",
+          "startLine": 121,
+          "endLine": 134,
+          "params": [
+            "messages"
+          ]
+        },
+        {
+          "name": "renderChat",
+          "startLine": 136,
+          "endLine": 138,
+          "params": [
+            "container"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createFakeInteractiveModeThis",
+          "callee": "vi.fn",
+          "lineNumber": 69
+        },
+        {
+          "caller": "createFakeInteractiveModeThis",
+          "callee": "vi.fn",
+          "lineNumber": 70
+        },
+        {
+          "caller": "createFakeInteractiveModeThis",
+          "callee": "process.cwd",
+          "lineNumber": 76
+        },
+        {
+          "caller": "createFakeInteractiveModeThis",
+          "callee": "vi.fn",
+          "lineNumber": 80
+        },
+        {
+          "caller": "addMessageToChat",
+          "callee": "chatContainer.addChild",
+          "lineNumber": 85
+        },
+        {
+          "caller": "createAssistantToolCallMessage",
+          "callee": "Date.now",
+          "lineNumber": 106
+        },
+        {
+          "caller": "createToolResultMessage",
+          "callee": "Date.now",
+          "lineNumber": 117
+        },
+        {
+          "caller": "createSessionEntries",
+          "callee": "messages.map",
+          "lineNumber": 123
+        },
+        {
+          "caller": "createSessionEntries",
+          "callee": "new Date().toISOString",
+          "lineNumber": 128
+        },
+        {
+          "caller": "renderChat",
+          "callee": "stripAnsi",
+          "lineNumber": 137
+        },
+        {
+          "caller": "renderChat",
+          "callee": "container.render(120).join",
+          "lineNumber": 137
+        },
+        {
+          "caller": "renderChat",
+          "callee": "container.render",
+          "lineNumber": 137
+        }
+      ],
+      "metrics": {
+        "importCount": 6,
+        "exportCount": 0,
+        "functionCount": 5,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/5080-signal-shutdown-extension-cleanup.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 185,
+      "nonEmptyLines": 158,
+      "functions": [
+        {
+          "name": "createSessionManager",
+          "startLine": 39,
+          "endLine": 47,
+          "params": [
+            "options"
+          ]
+        },
+        {
+          "name": "createTempFile",
+          "startLine": 49,
+          "endLine": 55,
+          "params": []
+        },
+        {
+          "name": "setStdoutIsTTY",
+          "startLine": 57,
+          "endLine": 59,
+          "params": [
+            "value"
+          ]
+        },
+        {
+          "name": "restoreStdoutIsTTY",
+          "startLine": 61,
+          "endLine": 67,
+          "params": []
+        },
+        {
+          "name": "createContext",
+          "startLine": 69,
+          "endLine": 91,
+          "params": [
+            "order",
+            "sessionManager"
+          ]
+        },
+        {
+          "name": "callShutdown",
+          "startLine": 93,
+          "endLine": 99,
+          "params": [
+            "context",
+            "options"
+          ]
+        }
+      ],
+      "classes": [
+        {
+          "name": "ProcessExitError",
+          "startLine": 37,
+          "endLine": 37,
+          "methods": [],
+          "properties": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createTempFile",
+          "callee": "mkdtempSync",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createTempFile",
+          "callee": "join",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createTempFile",
+          "callee": "tmpdir",
+          "lineNumber": 50
+        },
+        {
+          "caller": "createTempFile",
+          "callee": "tempDirs.push",
+          "lineNumber": 51
+        },
+        {
+          "caller": "createTempFile",
+          "callee": "join",
+          "lineNumber": 52
+        },
+        {
+          "caller": "createTempFile",
+          "callee": "writeFileSync",
+          "lineNumber": 53
+        },
+        {
+          "caller": "setStdoutIsTTY",
+          "callee": "Object.defineProperty",
+          "lineNumber": 58
+        },
+        {
+          "caller": "restoreStdoutIsTTY",
+          "callee": "Object.defineProperty",
+          "lineNumber": 63
+        },
+        {
+          "caller": "restoreStdoutIsTTY",
+          "callee": "Reflect.deleteProperty",
+          "lineNumber": 65
+        },
+        {
+          "caller": "createContext",
+          "callee": "createSessionManager",
+          "lineNumber": 69
+        },
+        {
+          "caller": "createContext",
+          "callee": "vi.fn",
+          "lineNumber": 72
+        },
+        {
+          "caller": "createContext",
+          "callee": "vi.fn",
+          "lineNumber": 74
+        },
+        {
+          "caller": "createContext",
+          "callee": "order.push",
+          "lineNumber": 75
+        },
+        {
+          "caller": "createContext",
+          "callee": "vi.fn",
+          "lineNumber": 80
+        },
+        {
+          "caller": "createContext",
+          "callee": "order.push",
+          "lineNumber": 81
+        },
+        {
+          "caller": "createContext",
+          "callee": "vi.fn",
+          "lineNumber": 85
+        },
+        {
+          "caller": "createContext",
+          "callee": "vi.fn",
+          "lineNumber": 86
+        },
+        {
+          "caller": "createContext",
+          "callee": "order.push",
+          "lineNumber": 87
+        },
+        {
+          "caller": "callShutdown",
+          "callee": "(interactiveModePrototype as InteractiveModePrototypeWithShutdown).shutdown.call",
+          "lineNumber": 95
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 6,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/5208-late-bash-output.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 29,
+      "nonEmptyLines": 25,
+      "functions": [
+        {
+          "name": "getTextOutput",
+          "startLine": 4,
+          "endLine": 11,
+          "params": [
+            "result"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getTextOutput",
+          "callee": "result.content\n\t\t\t?.filter((block) => block.type === \"text\")\n\t\t\t.map((block) => block.text ?? \"\")\n\t\t\t.join",
+          "lineNumber": 6
+        },
+        {
+          "caller": "getTextOutput",
+          "callee": "result.content\n\t\t\t?.filter((block) => block.type === \"text\")\n\t\t\t.map",
+          "lineNumber": 6
+        },
+        {
+          "caller": "getTextOutput",
+          "callee": "result.content\n\t\t\t?.filter",
+          "lineNumber": 6
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/5303-bash-output-truncation.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 82,
+      "nonEmptyLines": 73,
+      "callGraph": [
+        {
+          "caller": "createChild",
+          "callee": "Object.assign",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/5596-missing-theme-export.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 90,
+      "nonEmptyLines": 83,
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/5661-uppercase-header-values.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 91,
+      "nonEmptyLines": 82,
+      "callGraph": [
+        {
+          "caller": "withAgentDir",
+          "callee": "fn",
+          "lineNumber": 23
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/5868-rpc-unknown-command-id.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 113,
+      "nonEmptyLines": 96,
+      "functions": [
+        {
+          "name": "takeListenerSnapshot",
+          "startLine": 41,
+          "endLine": 47,
+          "params": []
+        },
+        {
+          "name": "restoreListeners",
+          "startLine": 49,
+          "endLine": 63,
+          "params": [
+            "snapshot"
+          ]
+        },
+        {
+          "name": "parseOutputLines",
+          "startLine": 65,
+          "endLine": 70,
+          "params": []
+        },
+        {
+          "name": "createRuntimeHost",
+          "startLine": 72,
+          "endLine": 81,
+          "params": [
+            "harness"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "takeListenerSnapshot",
+          "callee": "process.stdin.listeners",
+          "lineNumber": 44
+        },
+        {
+          "caller": "takeListenerSnapshot",
+          "callee": "signals.map",
+          "lineNumber": 45
+        },
+        {
+          "caller": "takeListenerSnapshot",
+          "callee": "process.listeners",
+          "lineNumber": 45
+        },
+        {
+          "caller": "restoreListeners",
+          "callee": "process.stdin.listeners",
+          "lineNumber": 50
+        },
+        {
+          "caller": "restoreListeners",
+          "callee": "snapshot.stdinEnd.includes",
+          "lineNumber": 51
+        },
+        {
+          "caller": "restoreListeners",
+          "callee": "process.stdin.off",
+          "lineNumber": 52
+        },
+        {
+          "caller": "restoreListeners",
+          "callee": "process.listeners",
+          "lineNumber": 57
+        },
+        {
+          "caller": "restoreListeners",
+          "callee": "previousListeners.includes",
+          "lineNumber": 58
+        },
+        {
+          "caller": "restoreListeners",
+          "callee": "process.off",
+          "lineNumber": 59
+        },
+        {
+          "caller": "parseOutputLines",
+          "callee": "rpcIo.outputLines\n\t\t.flatMap((line) => line.split(\"\\n\"))\n\t\t.filter((line) => line.trim().length > 0)\n\t\t.map",
+          "lineNumber": 66
+        },
+        {
+          "caller": "parseOutputLines",
+          "callee": "rpcIo.outputLines\n\t\t.flatMap((line) => line.split(\"\\n\"))\n\t\t.filter",
+          "lineNumber": 66
+        },
+        {
+          "caller": "parseOutputLines",
+          "callee": "rpcIo.outputLines\n\t\t.flatMap",
+          "lineNumber": 66
+        },
+        {
+          "caller": "parseOutputLines",
+          "callee": "line.split",
+          "lineNumber": 67
+        },
+        {
+          "caller": "parseOutputLines",
+          "callee": "line.trim",
+          "lineNumber": 68
+        },
+        {
+          "caller": "parseOutputLines",
+          "callee": "JSON.parse",
+          "lineNumber": 69
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "vi.fn",
+          "lineNumber": 75
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "vi.fn",
+          "lineNumber": 76
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "vi.fn",
+          "lineNumber": 77
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "vi.fn",
+          "lineNumber": 78
+        },
+        {
+          "caller": "createRuntimeHost",
+          "callee": "vi.fn",
+          "lineNumber": 79
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 4,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/6104-find-root-relativization.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 91,
+      "nonEmptyLines": 79,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/7027-credential-refresh-hang.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 125,
+      "nonEmptyLines": 116,
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/7187-malformed-package-manifest.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 47,
+      "nonEmptyLines": 45,
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/7193-event-bus-lifecycle.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 63,
+      "callGraph": [
+        {
+          "caller": "factory",
+          "callee": "pi.events.on",
+          "lineNumber": 23
+        },
+        {
+          "caller": "loadExtensions",
+          "callee": "createExtensionRuntime",
+          "lineNumber": 28
+        },
+        {
+          "caller": "loadExtensions",
+          "callee": "loadExtensionFromFactory",
+          "lineNumber": 29
+        },
+        {
+          "caller": "loadExtensions",
+          "callee": "process.cwd",
+          "lineNumber": 29
+        },
+        {
+          "caller": "emit",
+          "callee": "eventBus.emit",
+          "lineNumber": 55
+        },
+        {
+          "caller": "emit",
+          "callee": "setImmediate",
+          "lineNumber": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 4,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/7497-session-discovery-symlink.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 75,
+      "nonEmptyLines": 61,
+      "callGraph": [
+        {
+          "caller": "writeSession",
+          "callee": "mkdirSync",
+          "lineNumber": 28
+        },
+        {
+          "caller": "writeSession",
+          "callee": "writeFileSync",
+          "lineNumber": 29
+        },
+        {
+          "caller": "writeSession",
+          "callee": "join",
+          "lineNumber": 30
+        },
+        {
+          "caller": "writeSession",
+          "callee": "JSON.stringify",
+          "lineNumber": 31
+        },
+        {
+          "caller": "writeSession",
+          "callee": "join",
+          "lineNumber": 36
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/7572-provider-retry-settings-merge.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 35,
+      "nonEmptyLines": 32,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/suite/regressions/extension-factory-cache.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 131,
+      "nonEmptyLines": 110,
+      "functions": [
+        {
+          "name": "state",
+          "startLine": 13,
+          "endLine": 19,
+          "params": []
+        },
+        {
+          "name": "resetState",
+          "startLine": 21,
+          "endLine": 23,
+          "params": []
+        },
+        {
+          "name": "writeCountingExtension",
+          "startLine": 25,
+          "endLine": 38,
+          "params": [
+            "filePath"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "writeCountingExtension",
+          "callee": "writeFileSync",
+          "lineNumber": 26
+        },
+        {
+          "caller": "fixture",
+          "callee": "join",
+          "lineNumber": 44
+        },
+        {
+          "caller": "fixture",
+          "callee": "tmpdir",
+          "lineNumber": 44
+        },
+        {
+          "caller": "fixture",
+          "callee": "Date.now",
+          "lineNumber": 44
+        },
+        {
+          "caller": "fixture",
+          "callee": "Math.random().toString(36).slice",
+          "lineNumber": 44
+        },
+        {
+          "caller": "fixture",
+          "callee": "Math.random().toString",
+          "lineNumber": 44
+        },
+        {
+          "caller": "fixture",
+          "callee": "Math.random",
+          "lineNumber": 44
+        },
+        {
+          "caller": "fixture",
+          "callee": "join",
+          "lineNumber": 45
+        },
+        {
+          "caller": "fixture",
+          "callee": "join",
+          "lineNumber": 46
+        },
+        {
+          "caller": "fixture",
+          "callee": "mkdirSync",
+          "lineNumber": 47
+        },
+        {
+          "caller": "fixture",
+          "callee": "mkdirSync",
+          "lineNumber": 48
+        },
+        {
+          "caller": "fixture",
+          "callee": "roots.push",
+          "lineNumber": 49
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 3,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/system-prompt.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 115,
+      "nonEmptyLines": 99,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/test-harness.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 335,
+      "nonEmptyLines": 261,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/test-harness.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 471,
+      "nonEmptyLines": 415,
+      "functions": [
+        {
+          "name": "normalizeResponse",
+          "startLine": 93,
+          "endLine": 98,
+          "params": [
+            "input"
+          ]
+        },
+        {
+          "name": "buildUsage",
+          "startLine": 100,
+          "endLine": 113,
+          "params": [
+            "partial"
+          ]
+        },
+        {
+          "name": "buildAssistantMessage",
+          "startLine": 117,
+          "endLine": 164,
+          "params": [
+            "resp"
+          ]
+        },
+        {
+          "name": "chunkString",
+          "startLine": 171,
+          "endLine": 180,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "streamWithDeltas",
+          "startLine": 186,
+          "endLine": 258,
+          "params": [
+            "stream",
+            "message"
+          ]
+        },
+        {
+          "name": "makeEvent",
+          "startLine": 260,
+          "endLine": 267,
+          "params": [
+            "type",
+            "contentIndex",
+            "delta",
+            "partial"
+          ]
+        },
+        {
+          "name": "createFauxStreamFn",
+          "startLine": 288,
+          "endLine": 321,
+          "params": [
+            "responses"
+          ]
+        },
+        {
+          "name": "createTempDir",
+          "startLine": 365,
+          "endLine": 369,
+          "params": []
+        },
+        {
+          "name": "createHarnessWithResourceLoader",
+          "startLine": 371,
+          "endLine": 455,
+          "params": [
+            "options",
+            "resourceLoader",
+            "tempDir"
+          ]
+        },
+        {
+          "name": "createHarness",
+          "startLine": 457,
+          "endLine": 464,
+          "params": [
+            "options"
+          ]
+        },
+        {
+          "name": "createHarnessWithExtensions",
+          "startLine": 466,
+          "endLine": 471,
+          "params": [
+            "options"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "fauxModel",
+          "line": 50,
+          "isDefault": false
+        },
+        {
+          "name": "createFauxStreamFn",
+          "line": 288,
+          "isDefault": false
+        },
+        {
+          "name": "createHarness",
+          "line": 457,
+          "isDefault": false
+        },
+        {
+          "name": "createHarnessWithExtensions",
+          "line": 466,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "buildAssistantMessage",
+          "callee": "content.push",
+          "lineNumber": 121
+        },
+        {
+          "caller": "buildAssistantMessage",
+          "callee": "content.push",
+          "lineNumber": 124
+        },
+        {
+          "caller": "buildAssistantMessage",
+          "callee": "content.push",
+          "lineNumber": 128
+        },
+        {
+          "caller": "buildAssistantMessage",
+          "callee": "content.push",
+          "lineNumber": 139
+        },
+        {
+          "caller": "buildAssistantMessage",
+          "callee": "buildUsage",
+          "lineNumber": 159
+        },
+        {
+          "caller": "buildAssistantMessage",
+          "callee": "Date.now",
+          "lineNumber": 162
+        },
+        {
+          "caller": "chunkString",
+          "callee": "Math.floor",
+          "lineNumber": 175
+        },
+        {
+          "caller": "chunkString",
+          "callee": "Math.random",
+          "lineNumber": 175
+        },
+        {
+          "caller": "chunkString",
+          "callee": "chunks.push",
+          "lineNumber": 176
+        },
+        {
+          "caller": "chunkString",
+          "callee": "text.slice",
+          "lineNumber": 176
+        },
+        {
+          "caller": "streamWithDeltas",
+          "callee": "stream.push",
+          "lineNumber": 189
+        },
+        {
+          "caller": "streamWithDeltas",
+          "callee": "stream.push",
+          "lineNumber": 196
+        },
+        {
+          "caller": "streamWithDeltas",
+          "callee": "chunkString",
+          "lineNumber": 198
+        },
+        {
+          "caller": "streamWithDeltas",
+          "callee": "stream.push",
+          "lineNumber": 200
+        },
+        {
+          "caller": "streamWithDeltas",
+          "callee": "makeEvent",
+          "lineNumber": 200
+        },
+        {
+          "caller": "streamWithDeltas",
+          "callee": "stream.push",
+          "lineNumber": 203
+        },
+        {
+          "caller": "streamWithDeltas",
+          "callee": "stream.push",
+          "lineNumber": 211
+        },
+        {
+          "caller": "streamWithDeltas",
+          "callee": "chunkString",
+          "lineNumber": 213
+        },
+        {
+          "caller": "streamWithDeltas",
+          "callee": "stream.push",
+          "lineNumber": 215
+        },
+        {
+          "caller": "streamWithDeltas",
+          "callee": "makeEvent",
+          "lineNumber": 215
+        },
+        {
+          "caller": "streamWithDeltas",
+          "callee": "stream.push",
+          "lineNumber": 218
+        },
+        {
+          "caller": "streamWithDeltas",
+          "callee": "JSON.stringify",
+          "lineNumber": 225
+        },
+        {
+          "caller": "streamWithDeltas",
+          "callee": "stream.push",
+          "lineNumber": 227
+        },
+        {
+          "caller": "streamWithDeltas",
+          "callee": "chunkString",
+          "lineNumber": 229
+        },
+        {
+          "caller": "streamWithDeltas",
+          "callee": "stream.push",
+          "lineNumber": 230
+        },
+        {
+          "caller": "streamWithDeltas",
+          "callee": "makeEvent",
+          "lineNumber": 230
+        },
+        {
+          "caller": "streamWithDeltas",
+          "callee": "stream.push",
+          "lineNumber": 235
+        },
+        {
+          "caller": "streamWithDeltas",
+          "callee": "stream.push",
+          "lineNumber": 250
+        },
+        {
+          "caller": "streamWithDeltas",
+          "callee": "stream.push",
+          "lineNumber": 254
+        },
+        {
+          "caller": "streamWithDeltas",
+          "callee": "stream.push",
+          "lineNumber": 257
+        },
+        {
+          "caller": "streamFn",
+          "callee": "state.contexts.push",
+          "lineNumber": 301
+        },
+        {
+          "caller": "streamFn",
+          "callee": "normalizeResponse",
+          "lineNumber": 303
+        },
+        {
+          "caller": "streamFn",
+          "callee": "buildAssistantMessage",
+          "lineNumber": 304
+        },
+        {
+          "caller": "streamFn",
+          "callee": "createAssistantMessageEventStream",
+          "lineNumber": 305
+        },
+        {
+          "caller": "emit",
+          "callee": "streamWithDeltas",
+          "lineNumber": 308
+        },
+        {
+          "caller": "streamFn",
+          "callee": "setTimeout",
+          "lineNumber": 312
+        },
+        {
+          "caller": "streamFn",
+          "callee": "queueMicrotask",
+          "lineNumber": 314
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "join",
+          "lineNumber": 366
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "tmpdir",
+          "lineNumber": 366
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "Date.now",
+          "lineNumber": 366
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "Math.random().toString(36).slice",
+          "lineNumber": 366
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "Math.random().toString",
+          "lineNumber": 366
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "Math.random",
+          "lineNumber": 366
+        },
+        {
+          "caller": "createTempDir",
+          "callee": "mkdirSync",
+          "lineNumber": 367
+        },
+        {
+          "caller": "createHarnessWithResourceLoader",
+          "callee": "createFauxStreamFn",
+          "lineNumber": 379
+        },
+        {
+          "caller": "createHarnessWithResourceLoader",
+          "callee": "SessionManager.inMemory",
+          "lineNumber": 391
+        },
+        {
+          "caller": "createHarnessWithResourceLoader",
+          "callee": "SettingsManager.create",
+          "lineNumber": 392
+        },
+        {
+          "caller": "createHarnessWithResourceLoader",
+          "callee": "settingsManager.applyOverrides",
+          "lineNumber": 395
+        },
+        {
+          "caller": "createHarnessWithResourceLoader",
+          "callee": "AuthStorage.inMemory",
+          "lineNumber": 398
+        },
+        {
+          "caller": "createHarnessWithResourceLoader",
+          "callee": "createInMemoryModelRegistry",
+          "lineNumber": 401
+        },
+        {
+          "caller": "createHarnessWithResourceLoader",
+          "callee": "modelRegistry.registerProvider",
+          "lineNumber": 402
+        },
+        {
+          "caller": "createHarnessWithResourceLoader",
+          "callee": "getModelRuntime",
+          "lineNumber": 425
+        },
+        {
+          "caller": "createHarnessWithResourceLoader",
+          "callee": "session.subscribe",
+          "lineNumber": 431
+        },
+        {
+          "caller": "createHarnessWithResourceLoader",
+          "callee": "events.push",
+          "lineNumber": 432
+        },
+        {
+          "caller": "cleanup",
+          "callee": "session.dispose",
+          "lineNumber": 436
+        },
+        {
+          "caller": "cleanup",
+          "callee": "existsSync",
+          "lineNumber": 437
+        },
+        {
+          "caller": "cleanup",
+          "callee": "rmSync",
+          "lineNumber": 438
+        },
+        {
+          "caller": "eventsOfType",
+          "callee": "events.filter",
+          "lineNumber": 450
+        },
+        {
+          "caller": "createHarness",
+          "callee": "createTempDir",
+          "lineNumber": 462
+        },
+        {
+          "caller": "createHarness",
+          "callee": "createHarnessWithResourceLoader",
+          "lineNumber": 463
+        },
+        {
+          "caller": "createHarness",
+          "callee": "createTestResourceLoader",
+          "lineNumber": 463
+        },
+        {
+          "caller": "createHarnessWithExtensions",
+          "callee": "createTempDir",
+          "lineNumber": 467
+        },
+        {
+          "caller": "createHarnessWithExtensions",
+          "callee": "createTestExtensionsResult",
+          "lineNumber": 468
+        },
+        {
+          "caller": "createHarnessWithExtensions",
+          "callee": "createTestResourceLoader",
+          "lineNumber": 469
+        },
+        {
+          "caller": "createHarnessWithExtensions",
+          "callee": "createHarnessWithResourceLoader",
+          "lineNumber": 470
+        }
+      ],
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 4,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/test-network-env.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 5,
+      "functions": [
+        {
+          "name": "allowNetwork",
+          "startLine": 4,
+          "endLine": 6,
+          "params": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "allowNetwork",
+          "line": 4,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "allowNetwork",
+          "callee": "vi.stubEnv",
+          "lineNumber": 5
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/tool-execution-component.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 537,
+      "nonEmptyLines": 495,
+      "functions": [
+        {
+          "name": "createBaseToolDefinition",
+          "startLine": 14,
+          "endLine": 25,
+          "params": [
+            "name"
+          ]
+        },
+        {
+          "name": "createFakeTui",
+          "startLine": 27,
+          "endLine": 31,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createBaseToolDefinition",
+          "callee": "Type.Any",
+          "lineNumber": 19
+        }
+      ],
+      "metrics": {
+        "importCount": 8,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/tool-system-prompt-contributions.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 36,
+      "nonEmptyLines": 31,
+      "metrics": {
+        "importCount": 7,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/tools.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 1213,
+      "nonEmptyLines": 996,
+      "functions": [
+        {
+          "name": "getTextOutput",
+          "startLine": 28,
+          "endLine": 35,
+          "params": [
+            "result"
+          ]
+        },
+        {
+          "name": "createTinyBmp1x1Red24bpp",
+          "startLine": 37,
+          "endLine": 51,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getTextOutput",
+          "callee": "result.content\n\t\t\t?.filter((c: any) => c.type === \"text\")\n\t\t\t.map((c: any) => c.text)\n\t\t\t.join",
+          "lineNumber": 30
+        },
+        {
+          "caller": "getTextOutput",
+          "callee": "result.content\n\t\t\t?.filter((c: any) => c.type === \"text\")\n\t\t\t.map",
+          "lineNumber": 30
+        },
+        {
+          "caller": "getTextOutput",
+          "callee": "result.content\n\t\t\t?.filter",
+          "lineNumber": 30
+        },
+        {
+          "caller": "createTinyBmp1x1Red24bpp",
+          "callee": "Buffer.alloc",
+          "lineNumber": 38
+        },
+        {
+          "caller": "createTinyBmp1x1Red24bpp",
+          "callee": "buffer.write",
+          "lineNumber": 39
+        },
+        {
+          "caller": "createTinyBmp1x1Red24bpp",
+          "callee": "buffer.writeUInt32LE",
+          "lineNumber": 40
+        },
+        {
+          "caller": "createTinyBmp1x1Red24bpp",
+          "callee": "buffer.writeUInt32LE",
+          "lineNumber": 41
+        },
+        {
+          "caller": "createTinyBmp1x1Red24bpp",
+          "callee": "buffer.writeUInt32LE",
+          "lineNumber": 42
+        },
+        {
+          "caller": "createTinyBmp1x1Red24bpp",
+          "callee": "buffer.writeInt32LE",
+          "lineNumber": 43
+        },
+        {
+          "caller": "createTinyBmp1x1Red24bpp",
+          "callee": "buffer.writeInt32LE",
+          "lineNumber": 44
+        },
+        {
+          "caller": "createTinyBmp1x1Red24bpp",
+          "callee": "buffer.writeUInt16LE",
+          "lineNumber": 45
+        },
+        {
+          "caller": "createTinyBmp1x1Red24bpp",
+          "callee": "buffer.writeUInt16LE",
+          "lineNumber": 46
+        },
+        {
+          "caller": "createTinyBmp1x1Red24bpp",
+          "callee": "buffer.writeUInt32LE",
+          "lineNumber": 47
+        },
+        {
+          "caller": "createTinyBmp1x1Red24bpp",
+          "callee": "buffer.writeUInt32LE",
+          "lineNumber": 48
+        }
+      ],
+      "metrics": {
+        "importCount": 5,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/trigger-compact-extension.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 60,
+      "nonEmptyLines": 51,
+      "functions": [
+        {
+          "name": "createContext",
+          "startLine": 5,
+          "endLine": 25,
+          "params": [
+            "tokens",
+            "compact"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "createContext",
+          "callee": "vi.fn",
+          "lineNumber": 5
+        },
+        {
+          "caller": "createContext",
+          "callee": "process.cwd",
+          "lineNumber": 10
+        },
+        {
+          "caller": "createContext",
+          "callee": "vi.fn",
+          "lineNumber": 18
+        },
+        {
+          "caller": "createContext",
+          "callee": "vi.fn",
+          "lineNumber": 20
+        }
+      ],
+      "metrics": {
+        "importCount": 2,
+        "exportCount": 0,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/trust-manager.test.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 67,
+      "nonEmptyLines": 58,
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "packages/coding-agent/test/utilities.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 321,
+      "nonEmptyLines": 276,
+      "functions": [
+        {
+          "name": "loadAuthStorage",
+          "startLine": 53,
+          "endLine": 63,
+          "params": []
+        },
+        {
+          "name": "saveAuthStorage",
+          "startLine": 65,
+          "endLine": 72,
+          "params": [
+            "storage"
+          ]
+        },
+        {
+          "name": "resolveApiKey",
+          "startLine": 81,
+          "endLine": 104,
+          "params": [
+            "provider"
+          ]
+        },
+        {
+          "name": "hasAuthForProvider",
+          "startLine": 109,
+          "endLine": 112,
+          "params": [
+            "provider"
+          ]
+        },
+        {
+          "name": "getRealAuthStorage",
+          "startLine": 121,
+          "endLine": 123,
+          "params": []
+        },
+        {
+          "name": "userMsg",
+          "startLine": 128,
+          "endLine": 130,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "assistantMsg",
+          "startLine": 135,
+          "endLine": 153,
+          "params": [
+            "text"
+          ]
+        },
+        {
+          "name": "createTestExtensionsResult",
+          "startLine": 184,
+          "endLine": 207,
+          "params": [
+            "inputs",
+            "cwd"
+          ]
+        },
+        {
+          "name": "createTestResourceLoader",
+          "startLine": 213,
+          "endLine": 233,
+          "params": [
+            "options"
+          ]
+        },
+        {
+          "name": "createTestSession",
+          "startLine": 239,
+          "endLine": 284,
+          "params": [
+            "options"
+          ]
+        },
+        {
+          "name": "buildTestTree",
+          "startLine": 297,
+          "endLine": 321,
+          "params": [
+            "session",
+            "structure"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "API_KEY",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "resolveApiKey",
+          "line": 81,
+          "isDefault": false
+        },
+        {
+          "name": "hasAuthForProvider",
+          "line": 109,
+          "isDefault": false
+        },
+        {
+          "name": "PI_AGENT_DIR",
+          "line": 115,
+          "isDefault": false
+        },
+        {
+          "name": "getRealAuthStorage",
+          "line": 121,
+          "isDefault": false
+        },
+        {
+          "name": "userMsg",
+          "line": 128,
+          "isDefault": false
+        },
+        {
+          "name": "assistantMsg",
+          "line": 135,
+          "isDefault": false
+        },
+        {
+          "name": "createTestExtensionsResult",
+          "line": 184,
+          "isDefault": false
+        },
+        {
+          "name": "createTestResourceLoader",
+          "line": 213,
+          "isDefault": false
+        },
+        {
+          "name": "createTestSession",
+          "line": 239,
+          "isDefault": false
+        },
+        {
+          "name": "buildTestTree",
+          "line": 297,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "loadAuthStorage",
+          "callee": "existsSync",
+          "lineNumber": 54
+        },
+        {
+          "caller": "loadAuthStorage",
+          "callee": "readFileSync",
+          "lineNumber": 58
+        },
+        {
+          "caller": "loadAuthStorage",
+          "callee": "JSON.parse",
+          "lineNumber": 59
+        },
+        {
+          "caller": "saveAuthStorage",
+          "callee": "dirname",
+          "lineNumber": 66
+        },
+        {
+          "caller": "saveAuthStorage",
+          "callee": "existsSync",
+          "lineNumber": 67
+        },
+        {
+          "caller": "saveAuthStorage",
+          "callee": "mkdirSync",
+          "lineNumber": 68
+        },
+        {
+          "caller": "saveAuthStorage",
+          "callee": "writeFileSync",
+          "lineNumber": 70
+        },
+        {
+          "caller": "saveAuthStorage",
+          "callee": "JSON.stringify",
+          "lineNumber": 70
+        },
+        {
+          "caller": "saveAuthStorage",
+          "callee": "chmodSync",
+          "lineNumber": 71
+        },
+        {
+          "caller": "resolveApiKey",
+          "callee": "loadAuthStorage",
+          "lineNumber": 82
+        },
+        {
+          "caller": "resolveApiKey",
+          "callee": "builtinProviders().find",
+          "lineNumber": 92
+        },
+        {
+          "caller": "resolveApiKey",
+          "callee": "builtinProviders",
+          "lineNumber": 92
+        },
+        {
+          "caller": "resolveApiKey",
+          "callee": "Date.now",
+          "lineNumber": 95
+        },
+        {
+          "caller": "resolveApiKey",
+          "callee": "oauth.refresh",
+          "lineNumber": 96
+        },
+        {
+          "caller": "resolveApiKey",
+          "callee": "saveAuthStorage",
+          "lineNumber": 98
+        },
+        {
+          "caller": "resolveApiKey",
+          "callee": "oauth.toAuth",
+          "lineNumber": 100
+        },
+        {
+          "caller": "hasAuthForProvider",
+          "callee": "loadAuthStorage",
+          "lineNumber": 110
+        },
+        {
+          "caller": "getRealAuthStorage",
+          "callee": "AuthStorage.create",
+          "lineNumber": 122
+        },
+        {
+          "caller": "userMsg",
+          "callee": "Date.now",
+          "lineNumber": 129
+        },
+        {
+          "caller": "assistantMsg",
+          "callee": "Date.now",
+          "lineNumber": 151
+        },
+        {
+          "caller": "createTestExtensionsResult",
+          "callee": "process.cwd",
+          "lineNumber": 186
+        },
+        {
+          "caller": "createTestExtensionsResult",
+          "callee": "createExtensionRuntime",
+          "lineNumber": 188
+        },
+        {
+          "caller": "createTestExtensionsResult",
+          "callee": "createEventBus",
+          "lineNumber": 189
+        },
+        {
+          "caller": "createTestExtensionsResult",
+          "callee": "inputs.entries",
+          "lineNumber": 192
+        },
+        {
+          "caller": "createTestExtensionsResult",
+          "callee": "extensions.push",
+          "lineNumber": 199
+        },
+        {
+          "caller": "createTestExtensionsResult",
+          "callee": "loadExtensionFromFactory",
+          "lineNumber": 199
+        },
+        {
+          "caller": "createTestResourceLoader",
+          "callee": "createExtensionRuntime",
+          "lineNumber": 217
+        },
+        {
+          "caller": "createTestSession",
+          "callee": "join",
+          "lineNumber": 240
+        },
+        {
+          "caller": "createTestSession",
+          "callee": "tmpdir",
+          "lineNumber": 240
+        },
+        {
+          "caller": "createTestSession",
+          "callee": "Date.now",
+          "lineNumber": 240
+        },
+        {
+          "caller": "createTestSession",
+          "callee": "Math.random().toString(36).slice",
+          "lineNumber": 240
+        },
+        {
+          "caller": "createTestSession",
+          "callee": "Math.random().toString",
+          "lineNumber": 240
+        },
+        {
+          "caller": "createTestSession",
+          "callee": "Math.random",
+          "lineNumber": 240
+        },
+        {
+          "caller": "createTestSession",
+          "callee": "mkdirSync",
+          "lineNumber": 241
+        },
+        {
+          "caller": "createTestSession",
+          "callee": "getModel",
+          "lineNumber": 243
+        },
+        {
+          "caller": "createTestSession",
+          "callee": "createCodingTools",
+          "lineNumber": 249
+        },
+        {
+          "caller": "createTestSession",
+          "callee": "process.cwd",
+          "lineNumber": 249
+        },
+        {
+          "caller": "createTestSession",
+          "callee": "SessionManager.inMemory",
+          "lineNumber": 254
+        },
+        {
+          "caller": "createTestSession",
+          "callee": "SessionManager.create",
+          "lineNumber": 254
+        },
+        {
+          "caller": "createTestSession",
+          "callee": "SettingsManager.create",
+          "lineNumber": 255
+        },
+        {
+          "caller": "createTestSession",
+          "callee": "settingsManager.applyOverrides",
+          "lineNumber": 258
+        },
+        {
+          "caller": "createTestSession",
+          "callee": "AuthStorage.create",
+          "lineNumber": 261
+        },
+        {
+          "caller": "createTestSession",
+          "callee": "join",
+          "lineNumber": 261
+        },
+        {
+          "caller": "createTestSession",
+          "callee": "createModelRegistry",
+          "lineNumber": 262
+        },
+        {
+          "caller": "createTestSession",
+          "callee": "getModelRuntime",
+          "lineNumber": 269
+        },
+        {
+          "caller": "createTestSession",
+          "callee": "createTestResourceLoader",
+          "lineNumber": 270
+        },
+        {
+          "caller": "createTestSession",
+          "callee": "session.subscribe",
+          "lineNumber": 274
+        },
+        {
+          "caller": "cleanup",
+          "callee": "session.dispose",
+          "lineNumber": 277
+        },
+        {
+          "caller": "cleanup",
+          "callee": "existsSync",
+          "lineNumber": 278
+        },
+        {
+          "caller": "cleanup",
+          "callee": "rmSync",
+          "lineNumber": 279
+        },
+        {
+          "caller": "buildTestTree",
+          "callee": "ids.get",
+          "lineNumber": 307
+        },
+        {
+          "caller": "buildTestTree",
+          "callee": "session.branch",
+          "lineNumber": 311
+        },
+        {
+          "caller": "buildTestTree",
+          "callee": "session.appendMessage",
+          "lineNumber": 315
+        },
+        {
+          "caller": "buildTestTree",
+          "callee": "userMsg",
+          "lineNumber": 315
+        },
+        {
+          "caller": "buildTestTree",
+          "callee": "session.appendMessage",
+          "lineNumber": 315
+        },
+        {
+          "caller": "buildTestTree",
+          "callee": "assistantMsg",
+          "lineNumber": 315
+        },
+        {
+          "caller": "buildTestTree",
+          "callee": "ids.set",
+          "lineNumber": 317
+        }
+      ],
+      "metrics": {
+        "importCount": 10,
+        "exportCount": 11,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/repro-5893-wsl-bash.mjs",
+      "language": "javascript",
+      "fileCategory": "code",
+      "totalLines": 55,
+      "nonEmptyLines": 47,
+      "functions": [
+        {
+          "name": "getTextOutput",
+          "startLine": 10,
+          "endLine": 15,
+          "params": [
+            "result"
+          ]
+        },
+        {
+          "name": "runCase",
+          "startLine": 17,
+          "endLine": 33,
+          "params": [
+            "label",
+            "command",
+            "expectedOutput"
+          ]
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "getTextOutput",
+          "callee": "result.content\n\t\t.filter((content) => content.type === \"text\")\n\t\t.map((content) => content.text ?? \"\")\n\t\t.join",
+          "lineNumber": 11
+        },
+        {
+          "caller": "getTextOutput",
+          "callee": "result.content\n\t\t.filter((content) => content.type === \"text\")\n\t\t.map",
+          "lineNumber": 11
+        },
+        {
+          "caller": "getTextOutput",
+          "callee": "result.content\n\t\t.filter",
+          "lineNumber": 11
+        },
+        {
+          "caller": "runCase",
+          "callee": "createBashTool",
+          "lineNumber": 18
+        },
+        {
+          "caller": "runCase",
+          "callee": "process.cwd",
+          "lineNumber": 18
+        },
+        {
+          "caller": "runCase",
+          "callee": "tool.execute",
+          "lineNumber": 19
+        },
+        {
+          "caller": "runCase",
+          "callee": "getTextOutput(result).trimEnd",
+          "lineNumber": 20
+        },
+        {
+          "caller": "runCase",
+          "callee": "getTextOutput",
+          "lineNumber": 20
+        },
+        {
+          "caller": "runCase",
+          "callee": "[\n\t\t\t\t`${label} failed`,\n\t\t\t\t\"Expected:\",\n\t\t\t\texpectedOutput,\n\t\t\t\t\"Actual:\",\n\t\t\t\toutput,\n\t\t\t].join",
+          "lineNumber": 23
+        },
+        {
+          "caller": "runCase",
+          "callee": "console.log",
+          "lineNumber": 32
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "scripts/session-transcripts.ts",
+      "language": "typescript",
+      "fileCategory": "code",
+      "totalLines": 406,
+      "nonEmptyLines": 331,
+      "functions": [
+        {
+          "name": "cwdToSessionDir",
+          "startLine": 22,
+          "endLine": 25,
+          "params": [
+            "cwd"
+          ]
+        },
+        {
+          "name": "extractTextContent",
+          "startLine": 27,
+          "endLine": 35,
+          "params": [
+            "content"
+          ]
+        },
+        {
+          "name": "parseSession",
+          "startLine": 37,
+          "endLine": 56,
+          "params": [
+            "filePath"
+          ]
+        },
+        {
+          "name": "truncateLine",
+          "startLine": 60,
+          "endLine": 64,
+          "params": [
+            "text",
+            "maxWidth"
+          ]
+        },
+        {
+          "name": "runSubagent",
+          "startLine": 78,
+          "endLine": 141,
+          "params": [
+            "prompt",
+            "cwd"
+          ]
+        },
+        {
+          "name": "main",
+          "startLine": 143,
+          "endLine": 404,
+          "params": []
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "cwdToSessionDir",
+          "callee": "resolve(cwd).replace",
+          "lineNumber": 23
+        },
+        {
+          "caller": "cwdToSessionDir",
+          "callee": "resolve",
+          "lineNumber": 23
+        },
+        {
+          "caller": "cwdToSessionDir",
+          "callee": "normalized.slice",
+          "lineNumber": 24
+        },
+        {
+          "caller": "extractTextContent",
+          "callee": "Array.isArray",
+          "lineNumber": 29
+        },
+        {
+          "caller": "extractTextContent",
+          "callee": "content\n\t\t.filter((c) => c.type === \"text\" && c.text)\n\t\t.map((c) => c.text!)\n\t\t.join",
+          "lineNumber": 31
+        },
+        {
+          "caller": "extractTextContent",
+          "callee": "content\n\t\t.filter((c) => c.type === \"text\" && c.text)\n\t\t.map",
+          "lineNumber": 31
+        },
+        {
+          "caller": "extractTextContent",
+          "callee": "content\n\t\t.filter",
+          "lineNumber": 31
+        },
+        {
+          "caller": "parseSession",
+          "callee": "readFileSync",
+          "lineNumber": 38
+        },
+        {
+          "caller": "parseSession",
+          "callee": "parseSessionEntries",
+          "lineNumber": 39
+        },
+        {
+          "caller": "parseSession",
+          "callee": "extractTextContent",
+          "lineNumber": 49
+        },
+        {
+          "caller": "parseSession",
+          "callee": "text.trim",
+          "lineNumber": 50
+        },
+        {
+          "caller": "parseSession",
+          "callee": "messages.push",
+          "lineNumber": 52
+        },
+        {
+          "caller": "parseSession",
+          "callee": "role.toUpperCase",
+          "lineNumber": 52
+        },
+        {
+          "caller": "truncateLine",
+          "callee": "text.replace(/\\n/g, \" \").replace(/\\s+/g, \" \").trim",
+          "lineNumber": 61
+        },
+        {
+          "caller": "truncateLine",
+          "callee": "text.replace(/\\n/g, \" \").replace",
+          "lineNumber": 61
+        },
+        {
+          "caller": "truncateLine",
+          "callee": "text.replace",
+          "lineNumber": 61
+        },
+        {
+          "caller": "truncateLine",
+          "callee": "singleLine.slice",
+          "lineNumber": 63
+        },
+        {
+          "caller": "runSubagent",
+          "callee": "spawn",
+          "lineNumber": 80
+        },
+        {
+          "caller": "runSubagent",
+          "callee": "createInterface",
+          "lineNumber": 87
+        },
+        {
+          "caller": "runSubagent",
+          "callee": "rl.on",
+          "lineNumber": 89
+        },
+        {
+          "caller": "runSubagent",
+          "callee": "JSON.parse",
+          "lineNumber": 91
+        },
+        {
+          "caller": "runSubagent",
+          "callee": "textBuffer.trim",
+          "lineNumber": 100
+        },
+        {
+          "caller": "runSubagent",
+          "callee": "console.log",
+          "lineNumber": 101
+        },
+        {
+          "caller": "runSubagent",
+          "callee": "chalk.dim",
+          "lineNumber": 101
+        },
+        {
+          "caller": "runSubagent",
+          "callee": "truncateLine",
+          "lineNumber": 101
+        },
+        {
+          "caller": "runSubagent",
+          "callee": "console.log",
+          "lineNumber": 115
+        },
+        {
+          "caller": "runSubagent",
+          "callee": "chalk.cyan",
+          "lineNumber": 115
+        },
+        {
+          "caller": "runSubagent",
+          "callee": "textBuffer.trim",
+          "lineNumber": 118
+        },
+        {
+          "caller": "runSubagent",
+          "callee": "console.log",
+          "lineNumber": 119
+        },
+        {
+          "caller": "runSubagent",
+          "callee": "chalk.dim",
+          "lineNumber": 119
+        },
+        {
+          "caller": "runSubagent",
+          "callee": "truncateLine",
+          "lineNumber": 119
+        },
+        {
+          "caller": "runSubagent",
+          "callee": "child.stderr.on",
+          "lineNumber": 128
+        },
+        {
+          "caller": "runSubagent",
+          "callee": "process.stderr.write",
+          "lineNumber": 129
+        },
+        {
+          "caller": "runSubagent",
+          "callee": "chalk.red",
+          "lineNumber": 129
+        },
+        {
+          "caller": "runSubagent",
+          "callee": "data.toString",
+          "lineNumber": 129
+        },
+        {
+          "caller": "runSubagent",
+          "callee": "child.on",
+          "lineNumber": 132
+        },
+        {
+          "caller": "runSubagent",
+          "callee": "resolve",
+          "lineNumber": 133
+        },
+        {
+          "caller": "runSubagent",
+          "callee": "child.on",
+          "lineNumber": 136
+        },
+        {
+          "caller": "runSubagent",
+          "callee": "console.error",
+          "lineNumber": 137
+        },
+        {
+          "caller": "runSubagent",
+          "callee": "chalk.red",
+          "lineNumber": 137
+        },
+        {
+          "caller": "runSubagent",
+          "callee": "resolve",
+          "lineNumber": 138
+        },
+        {
+          "caller": "main",
+          "callee": "process.argv.slice",
+          "lineNumber": 144
+        },
+        {
+          "caller": "main",
+          "callee": "args.includes",
+          "lineNumber": 145
+        },
+        {
+          "caller": "main",
+          "callee": "args.indexOf",
+          "lineNumber": 148
+        },
+        {
+          "caller": "main",
+          "callee": "resolve",
+          "lineNumber": 149
+        },
+        {
+          "caller": "main",
+          "callee": "resolve",
+          "lineNumber": 151
+        },
+        {
+          "caller": "main",
+          "callee": "flagIndices.add",
+          "lineNumber": 156
+        },
+        {
+          "caller": "main",
+          "callee": "args.indexOf",
+          "lineNumber": 156
+        },
+        {
+          "caller": "main",
+          "callee": "flagIndices.add",
+          "lineNumber": 158
+        },
+        {
+          "caller": "main",
+          "callee": "flagIndices.add",
+          "lineNumber": 159
+        },
+        {
+          "caller": "main",
+          "callee": "args.find",
+          "lineNumber": 161
+        },
+        {
+          "caller": "main",
+          "callee": "flagIndices.has",
+          "lineNumber": 161
+        },
+        {
+          "caller": "main",
+          "callee": "a.startsWith",
+          "lineNumber": 161
+        },
+        {
+          "caller": "main",
+          "callee": "resolve",
+          "lineNumber": 162
+        },
+        {
+          "caller": "main",
+          "callee": "process.cwd",
+          "lineNumber": 162
+        },
+        {
+          "caller": "main",
+          "callee": "mkdirSync",
+          "lineNumber": 164
+        },
+        {
+          "caller": "main",
+          "callee": "join",
+          "lineNumber": 165
+        },
+        {
+          "caller": "main",
+          "callee": "homedir",
+          "lineNumber": 165
+        },
+        {
+          "caller": "main",
+          "callee": "cwdToSessionDir",
+          "lineNumber": 166
+        },
+        {
+          "caller": "main",
+          "callee": "join",
+          "lineNumber": 167
+        },
+        {
+          "caller": "main",
+          "callee": "existsSync",
+          "lineNumber": 169
+        },
+        {
+          "caller": "main",
+          "callee": "console.error",
+          "lineNumber": 170
+        },
+        {
+          "caller": "main",
+          "callee": "console.error",
+          "lineNumber": 171
+        },
+        {
+          "caller": "main",
+          "callee": "process.exit",
+          "lineNumber": 172
+        },
+        {
+          "caller": "main",
+          "callee": "readdirSync(sessionDir)\n\t\t.filter((f) => f.endsWith(\".jsonl\"))\n\t\t.sort",
+          "lineNumber": 175
+        },
+        {
+          "caller": "main",
+          "callee": "readdirSync(sessionDir)\n\t\t.filter",
+          "lineNumber": 175
+        },
+        {
+          "caller": "main",
+          "callee": "readdirSync",
+          "lineNumber": 175
+        },
+        {
+          "caller": "main",
+          "callee": "f.endsWith",
+          "lineNumber": 176
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 179
+        },
+        {
+          "caller": "main",
+          "callee": "join",
+          "lineNumber": 184
+        },
+        {
+          "caller": "main",
+          "callee": "parseSession",
+          "lineNumber": 185
+        },
+        {
+          "caller": "main",
+          "callee": "allTranscripts.push",
+          "lineNumber": 187
+        },
+        {
+          "caller": "main",
+          "callee": "messages.join",
+          "lineNumber": 187
+        },
+        {
+          "caller": "main",
+          "callee": "console.error",
+          "lineNumber": 192
+        },
+        {
+          "caller": "main",
+          "callee": "process.exit",
+          "lineNumber": 193
+        },
+        {
+          "caller": "main",
+          "callee": "String(fileIndex).padStart",
+          "lineNumber": 204
+        },
+        {
+          "caller": "main",
+          "callee": "String",
+          "lineNumber": 204
+        },
+        {
+          "caller": "main",
+          "callee": "writeFileSync",
+          "lineNumber": 205
+        },
+        {
+          "caller": "main",
+          "callee": "join",
+          "lineNumber": 205
+        },
+        {
+          "caller": "main",
+          "callee": "outputFiles.push",
+          "lineNumber": 206
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 207
+        },
+        {
+          "caller": "main",
+          "callee": "String(fileIndex).padStart",
+          "lineNumber": 216
+        },
+        {
+          "caller": "main",
+          "callee": "String",
+          "lineNumber": 216
+        },
+        {
+          "caller": "main",
+          "callee": "writeFileSync",
+          "lineNumber": 217
+        },
+        {
+          "caller": "main",
+          "callee": "join",
+          "lineNumber": 217
+        },
+        {
+          "caller": "main",
+          "callee": "outputFiles.push",
+          "lineNumber": 218
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 219
+        },
+        {
+          "caller": "main",
+          "callee": "String(fileIndex).padStart",
+          "lineNumber": 224
+        },
+        {
+          "caller": "main",
+          "callee": "String",
+          "lineNumber": 224
+        },
+        {
+          "caller": "main",
+          "callee": "writeFileSync",
+          "lineNumber": 225
+        },
+        {
+          "caller": "main",
+          "callee": "join",
+          "lineNumber": 225
+        },
+        {
+          "caller": "main",
+          "callee": "outputFiles.push",
+          "lineNumber": 226
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 227
+        },
+        {
+          "caller": "main",
+          "callee": "chalk.yellow",
+          "lineNumber": 227
+        },
+        {
+          "caller": "main",
+          "callee": "String(fileIndex).padStart",
+          "lineNumber": 237
+        },
+        {
+          "caller": "main",
+          "callee": "String",
+          "lineNumber": 237
+        },
+        {
+          "caller": "main",
+          "callee": "writeFileSync",
+          "lineNumber": 238
+        },
+        {
+          "caller": "main",
+          "callee": "join",
+          "lineNumber": 238
+        },
+        {
+          "caller": "main",
+          "callee": "outputFiles.push",
+          "lineNumber": 239
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 240
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 243
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 246
+        },
+        {
+          "caller": "main",
+          "callee": "join",
+          "lineNumber": 251
+        },
+        {
+          "caller": "main",
+          "callee": "homedir",
+          "lineNumber": 251
+        },
+        {
+          "caller": "main",
+          "callee": "join",
+          "lineNumber": 252
+        },
+        {
+          "caller": "main",
+          "callee": "[globalAgentsMd, localAgentsMd].filter",
+          "lineNumber": 253
+        },
+        {
+          "caller": "main",
+          "callee": "agentsMdFiles.join",
+          "lineNumber": 256
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 300
+        },
+        {
+          "caller": "main",
+          "callee": "file.replace",
+          "lineNumber": 302
+        },
+        {
+          "caller": "main",
+          "callee": "join",
+          "lineNumber": 303
+        },
+        {
+          "caller": "main",
+          "callee": "join",
+          "lineNumber": 304
+        },
+        {
+          "caller": "main",
+          "callee": "readFileSync",
+          "lineNumber": 306
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 309
+        },
+        {
+          "caller": "main",
+          "callee": "fileContent.split",
+          "lineNumber": 311
+        },
+        {
+          "caller": "main",
+          "callee": "runSubagent",
+          "lineNumber": 314
+        },
+        {
+          "caller": "main",
+          "callee": "existsSync",
+          "lineNumber": 316
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 317
+        },
+        {
+          "caller": "main",
+          "callee": "chalk.green",
+          "lineNumber": 317
+        },
+        {
+          "caller": "main",
+          "callee": "console.error",
+          "lineNumber": 319
+        },
+        {
+          "caller": "main",
+          "callee": "chalk.yellow",
+          "lineNumber": 319
+        },
+        {
+          "caller": "main",
+          "callee": "console.error",
+          "lineNumber": 321
+        },
+        {
+          "caller": "main",
+          "callee": "chalk.red",
+          "lineNumber": 321
+        },
+        {
+          "caller": "main",
+          "callee": "readdirSync(outputDir)\n\t\t.filter((f) => f.endsWith(\".summary.txt\"))\n\t\t.sort",
+          "lineNumber": 326
+        },
+        {
+          "caller": "main",
+          "callee": "readdirSync(outputDir)\n\t\t.filter",
+          "lineNumber": 326
+        },
+        {
+          "caller": "main",
+          "callee": "readdirSync",
+          "lineNumber": 326
+        },
+        {
+          "caller": "main",
+          "callee": "f.endsWith",
+          "lineNumber": 327
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 330
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 331
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 334
+        },
+        {
+          "caller": "main",
+          "callee": "chalk.yellow",
+          "lineNumber": 334
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 339
+        },
+        {
+          "caller": "main",
+          "callee": "summaryFiles.map((f) => join(outputDir, f)).join",
+          "lineNumber": 341
+        },
+        {
+          "caller": "main",
+          "callee": "summaryFiles.map",
+          "lineNumber": 341
+        },
+        {
+          "caller": "main",
+          "callee": "join",
+          "lineNumber": 341
+        },
+        {
+          "caller": "main",
+          "callee": "join",
+          "lineNumber": 342
+        },
+        {
+          "caller": "main",
+          "callee": "agentsMdFiles.join",
+          "lineNumber": 347
+        },
+        {
+          "caller": "main",
+          "callee": "runSubagent",
+          "lineNumber": 394
+        },
+        {
+          "caller": "main",
+          "callee": "existsSync",
+          "lineNumber": 396
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 397
+        },
+        {
+          "caller": "main",
+          "callee": "chalk.green",
+          "lineNumber": 397
+        },
+        {
+          "caller": "main",
+          "callee": "console.log",
+          "lineNumber": 398
+        },
+        {
+          "caller": "main",
+          "callee": "chalk.green",
+          "lineNumber": 398
+        },
+        {
+          "caller": "main",
+          "callee": "console.error",
+          "lineNumber": 400
+        },
+        {
+          "caller": "main",
+          "callee": "chalk.yellow",
+          "lineNumber": 400
+        },
+        {
+          "caller": "main",
+          "callee": "console.error",
+          "lineNumber": 402
+        },
+        {
+          "caller": "main",
+          "callee": "chalk.red",
+          "lineNumber": 402
+        }
+      ],
+      "metrics": {
+        "importCount": 1,
+        "exportCount": 0,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    }
+  ]
+}

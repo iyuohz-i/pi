@@ -1,0 +1,1927 @@
+{
+  "nodes": [
+    {
+      "id": "file:packages/ai/scripts/generate-image-models.ts",
+      "type": "file",
+      "name": "generate-image-models.ts",
+      "filePath": "packages/ai/scripts/generate-image-models.ts",
+      "summary": "从 OpenRouter API 获取图像模型列表并生成 TypeScript 模型定义文件的脚本工具。",
+      "tags": [
+        "script",
+        "code-generation",
+        "image-models",
+        "openrouter"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:packages/ai/src/api/anthropic-messages.ts",
+      "type": "file",
+      "name": "anthropic-messages.ts",
+      "filePath": "packages/ai/src/api/anthropic-messages.ts",
+      "summary": "Anthropic Messages API 适配器，实现消息转换、SSE 流解析、工具调用和 thinking 级别映射等核心功能。",
+      "tags": [
+        "api-handler",
+        "anthropic",
+        "streaming",
+        "sse",
+        "tool-calling"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/ai/src/api/azure-openai-responses.lazy.ts",
+      "type": "file",
+      "name": "azure-openai-responses.lazy.ts",
+      "filePath": "packages/ai/src/api/azure-openai-responses.lazy.ts",
+      "summary": "Azure OpenAI Responses API 的惰性加载包装器，实现按需初始化模块。",
+      "tags": [
+        "lazy-loader",
+        "azure",
+        "openai-responses",
+        "barrel"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/api/azure-openai-responses.ts",
+      "type": "file",
+      "name": "azure-openai-responses.ts",
+      "filePath": "packages/ai/src/api/azure-openai-responses.ts",
+      "summary": "Azure OpenAI Responses API 适配器，处理 Azure 部署名称映射、base URL 规范化和请求参数构建。",
+      "tags": [
+        "api-handler",
+        "azure",
+        "openai-responses",
+        "streaming"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/ai/src/api/bedrock-converse-stream.lazy.ts",
+      "type": "file",
+      "name": "bedrock-converse-stream.lazy.ts",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.lazy.ts",
+      "summary": "AWS Bedrock Converse Stream API 的惰性加载包装器，支持运行时注入 provider 模块。",
+      "tags": [
+        "lazy-loader",
+        "bedrock",
+        "aws",
+        "barrel"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "type": "file",
+      "name": "bedrock-converse-stream.ts",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "summary": "AWS Bedrock Converse Stream API 适配器，实现凭证解析、消息转换、SSE 流处理和 thinking 级别映射。",
+      "tags": [
+        "api-handler",
+        "bedrock",
+        "aws",
+        "streaming",
+        "tool-calling"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:packages/ai/src/api/cloudflare-gateway-binding.ts",
+      "type": "file",
+      "name": "cloudflare-gateway-binding.ts",
+      "filePath": "packages/ai/src/api/cloudflare-gateway-binding.ts",
+      "summary": "Cloudflare AI Gateway 绑定适配器，通过 Workers fetch binding 代理 LLM 请求并收集诊断头信息。",
+      "tags": [
+        "api-handler",
+        "cloudflare",
+        "gateway",
+        "proxy"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/scripts/generate-image-models.ts:parseOpenRouterImageModels",
+      "type": "function",
+      "name": "parseOpenRouterImageModels",
+      "filePath": "packages/ai/scripts/generate-image-models.ts",
+      "lineRange": [
+        36,
+        90
+      ],
+      "summary": "解析 OpenRouter 图像模型 API 响应，提取模型 ID、名称和定价信息。",
+      "tags": [
+        "utility",
+        "exported",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/scripts/generate-image-models.ts:fetchOpenRouterImageModels",
+      "type": "function",
+      "name": "fetchOpenRouterImageModels",
+      "filePath": "packages/ai/scripts/generate-image-models.ts",
+      "lineRange": [
+        92,
+        105
+      ],
+      "summary": "从 OpenRouter API 获取图像模型列表，支持严格模式校验。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/scripts/generate-image-models.ts:generateImageModelsFile",
+      "type": "function",
+      "name": "generateImageModelsFile",
+      "filePath": "packages/ai/scripts/generate-image-models.ts",
+      "lineRange": [
+        107,
+        146
+      ],
+      "summary": "将解析后的模型数据生成为 TypeScript 源文件。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/anthropic-messages.ts:getCacheControl",
+      "type": "function",
+      "name": "getCacheControl",
+      "filePath": "packages/ai/src/api/anthropic-messages.ts",
+      "lineRange": [
+        59,
+        73
+      ],
+      "summary": "getCacheControl 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/anthropic-messages.ts:convertContentBlocks",
+      "type": "function",
+      "name": "convertContentBlocks",
+      "filePath": "packages/ai/src/api/anthropic-messages.ts",
+      "lineRange": [
+        117,
+        164
+      ],
+      "summary": "转换内容块，处理文本、图像和 tool use/tool result。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/anthropic-messages.ts:getAnthropicCompat",
+      "type": "function",
+      "name": "getAnthropicCompat",
+      "filePath": "packages/ai/src/api/anthropic-messages.ts",
+      "lineRange": [
+        173,
+        186
+      ],
+      "summary": "getAnthropicCompat 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/anthropic-messages.ts:assertRequestAuth",
+      "type": "function",
+      "name": "assertRequestAuth",
+      "filePath": "packages/ai/src/api/anthropic-messages.ts",
+      "lineRange": [
+        283,
+        293
+      ],
+      "summary": "assertRequestAuth 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/anthropic-messages.ts:flushSseEvent",
+      "type": "function",
+      "name": "flushSseEvent",
+      "filePath": "packages/ai/src/api/anthropic-messages.ts",
+      "lineRange": [
+        316,
+        330
+      ],
+      "summary": "flushSseEvent 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/anthropic-messages.ts:decodeSseLine",
+      "type": "function",
+      "name": "decodeSseLine",
+      "filePath": "packages/ai/src/api/anthropic-messages.ts",
+      "lineRange": [
+        332,
+        356
+      ],
+      "summary": "解析 SSE 数据行，处理多行数据和事件边界。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/anthropic-messages.ts:nextLineBreakIndex",
+      "type": "function",
+      "name": "nextLineBreakIndex",
+      "filePath": "packages/ai/src/api/anthropic-messages.ts",
+      "lineRange": [
+        358,
+        368
+      ],
+      "summary": "nextLineBreakIndex 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/anthropic-messages.ts:consumeLine",
+      "type": "function",
+      "name": "consumeLine",
+      "filePath": "packages/ai/src/api/anthropic-messages.ts",
+      "lineRange": [
+        370,
+        385
+      ],
+      "summary": "consumeLine 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/anthropic-messages.ts:stream",
+      "type": "function",
+      "name": "stream",
+      "filePath": "packages/ai/src/api/anthropic-messages.ts",
+      "lineRange": [
+        487,
+        774
+      ],
+      "summary": "Anthropic Messages API 核心流式入口，处理 SSE 解析、内容块分发和工具调用。",
+      "tags": [
+        "api-handler",
+        "streaming",
+        "entry-point"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/src/api/anthropic-messages.ts:mapThinkingLevelToEffort",
+      "type": "function",
+      "name": "mapThinkingLevelToEffort",
+      "filePath": "packages/ai/src/api/anthropic-messages.ts",
+      "lineRange": [
+        781,
+        799
+      ],
+      "summary": "将 thinking 级别映射为 Anthropic effort 参数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/anthropic-messages.ts:streamSimple",
+      "type": "function",
+      "name": "streamSimple",
+      "filePath": "packages/ai/src/api/anthropic-messages.ts",
+      "lineRange": [
+        801,
+        841
+      ],
+      "summary": "Anthropic 简化流式接口，委托给 stream 函数并处理简单选项。",
+      "tags": [
+        "api-handler",
+        "streaming",
+        "exported"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/anthropic-messages.ts:createClient",
+      "type": "function",
+      "name": "createClient",
+      "filePath": "packages/ai/src/api/anthropic-messages.ts",
+      "lineRange": [
+        847,
+        937
+      ],
+      "summary": "创建 Anthropic API 客户端，配置 base URL、headers 和 OAuth token。",
+      "tags": [
+        "utility",
+        "client-creation",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/anthropic-messages.ts:buildParams",
+      "type": "function",
+      "name": "buildParams",
+      "filePath": "packages/ai/src/api/anthropic-messages.ts",
+      "lineRange": [
+        939,
+        1074
+      ],
+      "summary": "构建 Anthropic API 请求参数，包括 model、messages、tools 和 thinking 配置。",
+      "tags": [
+        "api-handler",
+        "request-builder",
+        "function",
+        "internal"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/src/api/anthropic-messages.ts:convertToolResult",
+      "type": "function",
+      "name": "convertToolResult",
+      "filePath": "packages/ai/src/api/anthropic-messages.ts",
+      "lineRange": [
+        1081,
+        1114
+      ],
+      "summary": "转换工具结果消息为 Anthropic 格式，处理延迟工具和名称规范化。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/anthropic-messages.ts:convertMessages",
+      "type": "function",
+      "name": "convertMessages",
+      "filePath": "packages/ai/src/api/anthropic-messages.ts",
+      "lineRange": [
+        1116,
+        1281
+      ],
+      "summary": "将内部消息格式转换为 Anthropic API 消息格式，处理 cache control 和签名。",
+      "tags": [
+        "utility",
+        "message-conversion",
+        "function",
+        "internal"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/src/api/anthropic-messages.ts:convertTools",
+      "type": "function",
+      "name": "convertTools",
+      "filePath": "packages/ai/src/api/anthropic-messages.ts",
+      "lineRange": [
+        1287,
+        1324
+      ],
+      "summary": "将工具定义转换为 Anthropic API 格式，支持 eager tool input 和延迟加载。",
+      "tags": [
+        "utility",
+        "tool-conversion",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/anthropic-messages.ts:mapStopReason",
+      "type": "function",
+      "name": "mapStopReason",
+      "filePath": "packages/ai/src/api/anthropic-messages.ts",
+      "lineRange": [
+        1326,
+        1352
+      ],
+      "summary": "将 Anthropic stop reason 映射为统一的停止原因枚举。",
+      "tags": [
+        "utility",
+        "stop-reason-mapping",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/azure-openai-responses.ts:parseDeploymentNameMap",
+      "type": "function",
+      "name": "parseDeploymentNameMap",
+      "filePath": "packages/ai/src/api/azure-openai-responses.ts",
+      "lineRange": [
+        28,
+        39
+      ],
+      "summary": "parseDeploymentNameMap 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/azure-openai-responses.ts:stream",
+      "type": "function",
+      "name": "stream",
+      "filePath": "packages/ai/src/api/azure-openai-responses.ts",
+      "lineRange": [
+        68,
+        159
+      ],
+      "summary": "Azure OpenAI Responses API 流式入口，委托给共享的 openai-responses-shared 逻辑。",
+      "tags": [
+        "api-handler",
+        "streaming",
+        "entry-point"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/azure-openai-responses.ts:streamSimple",
+      "type": "function",
+      "name": "streamSimple",
+      "filePath": "packages/ai/src/api/azure-openai-responses.ts",
+      "lineRange": [
+        161,
+        179
+      ],
+      "summary": "Azure OpenAI Responses 简化流式接口。",
+      "tags": [
+        "api-handler",
+        "streaming",
+        "exported"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/azure-openai-responses.ts:normalizeAzureBaseUrl",
+      "type": "function",
+      "name": "normalizeAzureBaseUrl",
+      "filePath": "packages/ai/src/api/azure-openai-responses.ts",
+      "lineRange": [
+        181,
+        210
+      ],
+      "summary": "规范化 Azure OpenAI base URL，处理 deployment 路径和 API 版本。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/azure-openai-responses.ts:resolveAzureConfig",
+      "type": "function",
+      "name": "resolveAzureConfig",
+      "filePath": "packages/ai/src/api/azure-openai-responses.ts",
+      "lineRange": [
+        216,
+        249
+      ],
+      "summary": "解析 Azure OpenAI 配置，提取 API key、base URL 和 deployment name。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/azure-openai-responses.ts:createClient",
+      "type": "function",
+      "name": "createClient",
+      "filePath": "packages/ai/src/api/azure-openai-responses.ts",
+      "lineRange": [
+        251,
+        268
+      ],
+      "summary": "创建 Azure OpenAI API 客户端，配置认证头和 base URL。",
+      "tags": [
+        "utility",
+        "client-creation",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/azure-openai-responses.ts:buildParams",
+      "type": "function",
+      "name": "buildParams",
+      "filePath": "packages/ai/src/api/azure-openai-responses.ts",
+      "lineRange": [
+        270,
+        330
+      ],
+      "summary": "构建 Azure OpenAI Responses API 请求参数，包含 deployment name 和 grammar 配置。",
+      "tags": [
+        "api-handler",
+        "request-builder",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/bedrock-converse-stream.ts:stream",
+      "type": "function",
+      "name": "stream",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "lineRange": [
+        107,
+        328
+      ],
+      "summary": "Bedrock Converse Stream API 核心流式入口，处理凭证解析和事件分发。",
+      "tags": [
+        "api-handler",
+        "streaming",
+        "entry-point"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/src/api/bedrock-converse-stream.ts:formatBedrockError",
+      "type": "function",
+      "name": "formatBedrockError",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "lineRange": [
+        358,
+        375
+      ],
+      "summary": "formatBedrockError 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/bedrock-converse-stream.ts:appendBedrockFailureDiagnostic",
+      "type": "function",
+      "name": "appendBedrockFailureDiagnostic",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "lineRange": [
+        404,
+        423
+      ],
+      "summary": "appendBedrockFailureDiagnostic 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/bedrock-converse-stream.ts:addCustomHeadersMiddleware",
+      "type": "function",
+      "name": "addCustomHeadersMiddleware",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "lineRange": [
+        445,
+        459
+      ],
+      "summary": "addCustomHeadersMiddleware 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/bedrock-converse-stream.ts:streamSimple",
+      "type": "function",
+      "name": "streamSimple",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "lineRange": [
+        461,
+        507
+      ],
+      "summary": "Bedrock 简化流式接口，委托给 stream 函数。",
+      "tags": [
+        "api-handler",
+        "streaming",
+        "exported"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/bedrock-converse-stream.ts:handleContentBlockStart",
+      "type": "function",
+      "name": "handleContentBlockStart",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "lineRange": [
+        509,
+        530
+      ],
+      "summary": "handleContentBlockStart 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/bedrock-converse-stream.ts:handleContentBlockDelta",
+      "type": "function",
+      "name": "handleContentBlockDelta",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "lineRange": [
+        532,
+        588
+      ],
+      "summary": "处理 Bedrock 内容块增量事件，分发 text、tool use 和 thinking delta。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/bedrock-converse-stream.ts:handleMetadata",
+      "type": "function",
+      "name": "handleMetadata",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "lineRange": [
+        590,
+        603
+      ],
+      "summary": "handleMetadata 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/bedrock-converse-stream.ts:handleContentBlockStop",
+      "type": "function",
+      "name": "handleContentBlockStop",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "lineRange": [
+        605,
+        631
+      ],
+      "summary": "handleContentBlockStop 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/bedrock-converse-stream.ts:supportsAdaptiveThinking",
+      "type": "function",
+      "name": "supportsAdaptiveThinking",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "lineRange": [
+        646,
+        658
+      ],
+      "summary": "supportsAdaptiveThinking 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/bedrock-converse-stream.ts:supportsNativeXhighEffort",
+      "type": "function",
+      "name": "supportsNativeXhighEffort",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "lineRange": [
+        660,
+        670
+      ],
+      "summary": "supportsNativeXhighEffort 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/bedrock-converse-stream.ts:mapThinkingLevelToEffort",
+      "type": "function",
+      "name": "mapThinkingLevelToEffort",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "lineRange": [
+        672,
+        692
+      ],
+      "summary": "将 thinking 级别映射为 Bedrock 模型对应的 effort 参数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/bedrock-converse-stream.ts:isAnthropicClaudeModel",
+      "type": "function",
+      "name": "isAnthropicClaudeModel",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "lineRange": [
+        713,
+        723
+      ],
+      "summary": "isAnthropicClaudeModel 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/bedrock-converse-stream.ts:supportsPromptCaching",
+      "type": "function",
+      "name": "supportsPromptCaching",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "lineRange": [
+        737,
+        756
+      ],
+      "summary": "检测 Bedrock 模型是否支持 prompt caching。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/bedrock-converse-stream.ts:buildSystemPrompt",
+      "type": "function",
+      "name": "buildSystemPrompt",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "lineRange": [
+        770,
+        788
+      ],
+      "summary": "buildSystemPrompt 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/bedrock-converse-stream.ts:sanitizeBedrockDocument",
+      "type": "function",
+      "name": "sanitizeBedrockDocument",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "lineRange": [
+        804,
+        816
+      ],
+      "summary": "sanitizeBedrockDocument 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/bedrock-converse-stream.ts:convertToolResultContent",
+      "type": "function",
+      "name": "convertToolResultContent",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "lineRange": [
+        818,
+        830
+      ],
+      "summary": "convertToolResultContent 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/bedrock-converse-stream.ts:convertMessages",
+      "type": "function",
+      "name": "convertMessages",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "lineRange": [
+        832,
+        995
+      ],
+      "summary": "将内部消息格式转换为 Bedrock Converse 格式，处理 system prompt 和 cache control。",
+      "tags": [
+        "utility",
+        "message-conversion",
+        "function",
+        "internal"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:packages/ai/src/api/bedrock-converse-stream.ts:convertToolConfig",
+      "type": "function",
+      "name": "convertToolConfig",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "lineRange": [
+        997,
+        1032
+      ],
+      "summary": "将工具定义转换为 Bedrock tool config 格式。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/bedrock-converse-stream.ts:mapStopReason",
+      "type": "function",
+      "name": "mapStopReason",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "lineRange": [
+        1034,
+        1049
+      ],
+      "summary": "将 Bedrock stop reason 映射为统一的停止原因枚举。",
+      "tags": [
+        "utility",
+        "stop-reason-mapping",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/bedrock-converse-stream.ts:getConfiguredBedrockCredentials",
+      "type": "function",
+      "name": "getConfiguredBedrockCredentials",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "lineRange": [
+        1060,
+        1072
+      ],
+      "summary": "getConfiguredBedrockCredentials 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/bedrock-converse-stream.ts:getStandardBedrockEndpointRegion",
+      "type": "function",
+      "name": "getStandardBedrockEndpointRegion",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "lineRange": [
+        1074,
+        1086
+      ],
+      "summary": "getStandardBedrockEndpointRegion 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/bedrock-converse-stream.ts:shouldUseExplicitBedrockEndpoint",
+      "type": "function",
+      "name": "shouldUseExplicitBedrockEndpoint",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "lineRange": [
+        1088,
+        1099
+      ],
+      "summary": "shouldUseExplicitBedrockEndpoint 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/bedrock-converse-stream.ts:buildAdditionalModelRequestFields",
+      "type": "function",
+      "name": "buildAdditionalModelRequestFields",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "lineRange": [
+        1111,
+        1159
+      ],
+      "summary": "构建 Bedrock 额外模型请求字段，包括 thinking 配置。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/bedrock-converse-stream.ts:createImageBlock",
+      "type": "function",
+      "name": "createImageBlock",
+      "filePath": "packages/ai/src/api/bedrock-converse-stream.ts",
+      "lineRange": [
+        1161,
+        1188
+      ],
+      "summary": "createImageBlock 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/cloudflare-gateway-binding.ts:createGatewayBindingFetch",
+      "type": "function",
+      "name": "createGatewayBindingFetch",
+      "filePath": "packages/ai/src/api/cloudflare-gateway-binding.ts",
+      "lineRange": [
+        79,
+        143
+      ],
+      "summary": "创建 Cloudflare Gateway binding fetch 函数，代理请求并收集诊断头。",
+      "tags": [
+        "utility",
+        "exported",
+        "function",
+        "internal"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:packages/ai/src/api/cloudflare-gateway-binding.ts:readBodyText",
+      "type": "function",
+      "name": "readBodyText",
+      "filePath": "packages/ai/src/api/cloudflare-gateway-binding.ts",
+      "lineRange": [
+        145,
+        167
+      ],
+      "summary": "读取请求 body 文本内容用于诊断日志。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:packages/ai/src/api/cloudflare-gateway-binding.ts:collectHeaders",
+      "type": "function",
+      "name": "collectHeaders",
+      "filePath": "packages/ai/src/api/cloudflare-gateway-binding.ts",
+      "lineRange": [
+        171,
+        192
+      ],
+      "summary": "collectHeaders 函数。",
+      "tags": [
+        "utility",
+        "function",
+        "internal"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:packages/ai/scripts/generate-image-models.ts",
+      "target": "function:packages/ai/scripts/generate-image-models.ts:parseOpenRouterImageModels",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/scripts/generate-image-models.ts",
+      "target": "function:packages/ai/scripts/generate-image-models.ts:fetchOpenRouterImageModels",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/scripts/generate-image-models.ts",
+      "target": "function:packages/ai/scripts/generate-image-models.ts:generateImageModelsFile",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "function:packages/ai/src/api/anthropic-messages.ts:getCacheControl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "function:packages/ai/src/api/anthropic-messages.ts:convertContentBlocks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "function:packages/ai/src/api/anthropic-messages.ts:getAnthropicCompat",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "function:packages/ai/src/api/anthropic-messages.ts:assertRequestAuth",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "function:packages/ai/src/api/anthropic-messages.ts:flushSseEvent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "function:packages/ai/src/api/anthropic-messages.ts:decodeSseLine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "function:packages/ai/src/api/anthropic-messages.ts:nextLineBreakIndex",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "function:packages/ai/src/api/anthropic-messages.ts:consumeLine",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "function:packages/ai/src/api/anthropic-messages.ts:stream",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "function:packages/ai/src/api/anthropic-messages.ts:mapThinkingLevelToEffort",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "function:packages/ai/src/api/anthropic-messages.ts:streamSimple",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "function:packages/ai/src/api/anthropic-messages.ts:createClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "function:packages/ai/src/api/anthropic-messages.ts:buildParams",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "function:packages/ai/src/api/anthropic-messages.ts:convertToolResult",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "function:packages/ai/src/api/anthropic-messages.ts:convertMessages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "function:packages/ai/src/api/anthropic-messages.ts:convertTools",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "function:packages/ai/src/api/anthropic-messages.ts:mapStopReason",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/azure-openai-responses.ts",
+      "target": "function:packages/ai/src/api/azure-openai-responses.ts:parseDeploymentNameMap",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/azure-openai-responses.ts",
+      "target": "function:packages/ai/src/api/azure-openai-responses.ts:stream",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/azure-openai-responses.ts",
+      "target": "function:packages/ai/src/api/azure-openai-responses.ts:streamSimple",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/azure-openai-responses.ts",
+      "target": "function:packages/ai/src/api/azure-openai-responses.ts:normalizeAzureBaseUrl",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/azure-openai-responses.ts",
+      "target": "function:packages/ai/src/api/azure-openai-responses.ts:resolveAzureConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/azure-openai-responses.ts",
+      "target": "function:packages/ai/src/api/azure-openai-responses.ts:createClient",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/azure-openai-responses.ts",
+      "target": "function:packages/ai/src/api/azure-openai-responses.ts:buildParams",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:stream",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:formatBedrockError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:appendBedrockFailureDiagnostic",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:addCustomHeadersMiddleware",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:streamSimple",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:handleContentBlockStart",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:handleContentBlockDelta",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:handleMetadata",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:handleContentBlockStop",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:supportsAdaptiveThinking",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:supportsNativeXhighEffort",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:mapThinkingLevelToEffort",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:isAnthropicClaudeModel",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:supportsPromptCaching",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:buildSystemPrompt",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:sanitizeBedrockDocument",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:convertToolResultContent",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:convertMessages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:convertToolConfig",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:mapStopReason",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:getConfiguredBedrockCredentials",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:getStandardBedrockEndpointRegion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:shouldUseExplicitBedrockEndpoint",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:buildAdditionalModelRequestFields",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:createImageBlock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/cloudflare-gateway-binding.ts",
+      "target": "function:packages/ai/src/api/cloudflare-gateway-binding.ts:createGatewayBindingFetch",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/cloudflare-gateway-binding.ts",
+      "target": "function:packages/ai/src/api/cloudflare-gateway-binding.ts:readBodyText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/src/api/cloudflare-gateway-binding.ts",
+      "target": "function:packages/ai/src/api/cloudflare-gateway-binding.ts:collectHeaders",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:packages/ai/scripts/generate-image-models.ts",
+      "target": "function:packages/ai/scripts/generate-image-models.ts:parseOpenRouterImageModels",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "function:packages/ai/src/api/anthropic-messages.ts:stream",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "function:packages/ai/src/api/anthropic-messages.ts:streamSimple",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/api/azure-openai-responses.ts",
+      "target": "function:packages/ai/src/api/azure-openai-responses.ts:stream",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/api/azure-openai-responses.ts",
+      "target": "function:packages/ai/src/api/azure-openai-responses.ts:streamSimple",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:stream",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "function:packages/ai/src/api/bedrock-converse-stream.ts:streamSimple",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/src/api/cloudflare-gateway-binding.ts",
+      "target": "function:packages/ai/src/api/cloudflare-gateway-binding.ts:createGatewayBindingFetch",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:packages/ai/scripts/generate-image-models.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "file:packages/ai/src/api/constrained-sampling.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "file:packages/ai/src/api/github-copilot-headers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "file:packages/ai/src/api/simple-options.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "file:packages/ai/src/api/transform-messages.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "file:packages/ai/src/utils/deferred-tools.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "file:packages/ai/src/utils/event-stream.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "file:packages/ai/src/utils/headers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "file:packages/ai/src/utils/json-parse.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "file:packages/ai/src/utils/provider-env.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "file:packages/ai/src/utils/provider-retry.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/anthropic-messages.ts",
+      "target": "file:packages/ai/src/utils/sanitize-unicode.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/azure-openai-responses.lazy.ts",
+      "target": "file:packages/ai/src/api/lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/azure-openai-responses.lazy.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/azure-openai-responses.ts",
+      "target": "file:packages/ai/src/api/constrained-sampling.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/azure-openai-responses.ts",
+      "target": "file:packages/ai/src/api/openai-prompt-cache.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/azure-openai-responses.ts",
+      "target": "file:packages/ai/src/api/openai-responses-shared.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/azure-openai-responses.ts",
+      "target": "file:packages/ai/src/api/simple-options.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/azure-openai-responses.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/azure-openai-responses.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/azure-openai-responses.ts",
+      "target": "file:packages/ai/src/utils/error-body.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/azure-openai-responses.ts",
+      "target": "file:packages/ai/src/utils/event-stream.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/azure-openai-responses.ts",
+      "target": "file:packages/ai/src/utils/headers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/azure-openai-responses.ts",
+      "target": "file:packages/ai/src/utils/provider-env.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/azure-openai-responses.ts",
+      "target": "file:packages/ai/src/utils/provider-retry.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.lazy.ts",
+      "target": "file:packages/ai/src/api/lazy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.lazy.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "file:packages/ai/src/api/constrained-sampling.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "file:packages/ai/src/api/simple-options.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "file:packages/ai/src/api/transform-messages.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "file:packages/ai/src/models.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "file:packages/ai/src/utils/diagnostics.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "file:packages/ai/src/utils/error-body.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "file:packages/ai/src/utils/event-stream.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "file:packages/ai/src/utils/headers.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "file:packages/ai/src/utils/json-parse.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "file:packages/ai/src/utils/node-http-proxy.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "file:packages/ai/src/utils/provider-env.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/bedrock-converse-stream.ts",
+      "target": "file:packages/ai/src/utils/sanitize-unicode.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:packages/ai/src/api/cloudflare-gateway-binding.ts",
+      "target": "file:packages/ai/src/types.ts",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:packages/ai/src/api/anthropic-messages.ts:stream",
+      "target": "function:packages/ai/src/api/github-copilot-headers.ts:hasCopilotVisionInput",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/anthropic-messages.ts:stream",
+      "target": "function:packages/ai/src/api/github-copilot-headers.ts:buildCopilotDynamicHeaders",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/anthropic-messages.ts:streamSimple",
+      "target": "function:packages/ai/src/api/simple-options.ts:buildBaseOptions",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/anthropic-messages.ts:streamSimple",
+      "target": "function:packages/ai/src/api/simple-options.ts:adjustMaxTokensForThinking",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/anthropic-messages.ts:streamSimple",
+      "target": "function:packages/ai/src/api/simple-options.ts:clampMaxTokensToContext",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/anthropic-messages.ts:buildParams",
+      "target": "function:packages/ai/src/api/transform-messages.ts:transformMessages",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/anthropic-messages.ts:convertTools",
+      "target": "function:packages/ai/src/api/constrained-sampling.ts:resolveJsonSchemaStrictSampling",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/azure-openai-responses.ts:stream",
+      "target": "function:packages/ai/src/api/constrained-sampling.ts:createGrammarToolInputProperties",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/azure-openai-responses.ts:stream",
+      "target": "function:packages/ai/src/api/openai-responses-shared.ts:processResponsesStream",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/azure-openai-responses.ts:streamSimple",
+      "target": "function:packages/ai/src/api/simple-options.ts:buildBaseOptions",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/azure-openai-responses.ts:buildParams",
+      "target": "function:packages/ai/src/api/constrained-sampling.ts:createGrammarToolInputProperties",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/azure-openai-responses.ts:buildParams",
+      "target": "function:packages/ai/src/api/openai-responses-shared.ts:convertResponsesMessages",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/azure-openai-responses.ts:buildParams",
+      "target": "function:packages/ai/src/api/openai-prompt-cache.ts:clampOpenAIPromptCacheKey",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/azure-openai-responses.ts:buildParams",
+      "target": "function:packages/ai/src/api/openai-responses-shared.ts:convertResponsesTools",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/bedrock-converse-stream.ts:streamSimple",
+      "target": "function:packages/ai/src/api/simple-options.ts:buildBaseOptions",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/bedrock-converse-stream.ts:streamSimple",
+      "target": "function:packages/ai/src/api/simple-options.ts:adjustMaxTokensForThinking",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/bedrock-converse-stream.ts:streamSimple",
+      "target": "function:packages/ai/src/api/simple-options.ts:clampMaxTokensToContext",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/bedrock-converse-stream.ts:convertMessages",
+      "target": "function:packages/ai/src/api/transform-messages.ts:transformMessages",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:packages/ai/src/api/bedrock-converse-stream.ts:convertToolConfig",
+      "target": "function:packages/ai/src/api/constrained-sampling.ts:resolveJsonSchemaStrictSampling",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}
